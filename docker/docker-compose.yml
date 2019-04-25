@@ -214,7 +214,7 @@ services:
           - PHP_UPSTREAM_PORT=${NGINX_PHP_UPSTREAM_PORT}
           - CHANGE_SOURCE=${CHANGE_SOURCE}
       volumes:
-        - ${SYMFONY_CODE_PATH_HOST}:${APP_CODE_PATH_CONTAINER}${APP_CODE_CONTAINER_FLAG}
+        - ${REACT_CODE_PATH_HOST}:${APP_CODE_PATH_CONTAINER}${APP_CODE_CONTAINER_FLAG}
         - ${NGINX_HOST_LOG_PATH}:/var/log/nginx
         - ${NGINX_SITES_PATH}:/etc/nginx/sites-available
         - ${NGINX_SSL_PATH}:/etc/nginx/ssl
