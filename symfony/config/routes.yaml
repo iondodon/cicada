@@ -1,3 +1,3 @@
-index:
-    path: /admin
-    controller: App\Controller\DefaultController::indexAction
+app_api:
+    path: /api/ion
+    controller: App\Controller\BaseController::index

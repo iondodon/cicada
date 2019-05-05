@@ -127,7 +127,7 @@ RUN if [ ${INSTALL_SWOOLE} = true ]; then \
 # Optional Supervisord Configuration
 #--------------------------------------------------------------------------
 #
-# Modify the ./supervisor.conf file to match your App's requirements.
+# Modify the ./supervisor.conf file to match your APIBundle's requirements.
 # Make sure you rebuild your container with every change.
 #
 
