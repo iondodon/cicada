@@ -73,7 +73,7 @@ RUN rm /var/cache/apk/* \
 # Optional Supervisord Configuration
 #--------------------------------------------------------------------------
 #
-# Modify the ./supervisor.conf file to match your APIBundle's requirements.
+# Modify the ./supervisor.conf file to match your App's requirements.
 # Make sure you rebuild your container with every change.
 #
 
