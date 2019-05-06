@@ -16,7 +16,7 @@ class BaseController extends AbstractController
 {
     /**
      * @return JsonResponse
-     * @Route("/ion", name="ion")
+     * @Route("/")
      */
     public function index()
     {

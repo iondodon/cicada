@@ -3,23 +3,42 @@ security:
         App\Entity\User:
             algorithm: argon2i
 
+
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
         # used to reload user from session & other features (e.g. switch_user)
         app_user_provider:
             entity:
                 class: App\Entity\User
-                property: email
+                property: username
+#        in_memory:
+#            memory:
+#                users:
+#                    ion:
+#                        password: ionpass
+#                        roles: 'ROLE_USER'
+#                    admin:
+#                        password: adminpass
+#                        roles: 'ROLE_ADMIN'
+
+        # used to reload user from session & other features (e.g. switch_user)
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
-            anonymous: true
+            anonymous: ~
+            logout: ~
+            guard:
+                authenticators:
+                    - App\Security\TokenAuthenticator
+
+            # if you want, disable storing the user in the session
+            # stateless: true
 
             # activate different ways to authenticate
 
-            # http_basic: true
+#             http_basic: true
             # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
 
             # form_login: true
@@ -30,3 +49,5 @@ security:
     access_control:
         # - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
+
+        - { path: ^/api/, roles: ROLE_USER }

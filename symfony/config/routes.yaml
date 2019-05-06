@@ -1,3 +1,7 @@
 app_api:
-    path: /api/ion
+    path: /api
     controller: App\Controller\BaseController::index
+
+security:
+    path: /register
+    controller: App\Controller\RegistrationController::register
