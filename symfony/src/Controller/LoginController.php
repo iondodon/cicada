@@ -16,6 +16,8 @@ class LoginController extends Controller
     /**
      * @Route("/api/token", name="token_authentication")
      * @Method("POST")
+     * @param Request $request
+     * @return JsonResponse
      */
     public function newTokenAction(Request $request): JsonResponse
     {
