@@ -2,61 +2,48 @@
 
 namespace App\Controller;
 
-use App\Entity\User;
-use App\Security\TokenAuthenticator;
-use Doctrine\ORM\EntityManagerInterface;
-use Exception;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Security\Guard\GuardAuthenticatorHandler;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use FOS\RestBundle\Controller\FOSRestController;
+use Symfony\Component\HttpKernel\Exception\HttpException;
+use App\Form\UserType;
+use App\Entity\User;
+use App\Event\EmailRegistrationUserEvent;
 
-
-/**
- * Class RegistrationController
- * @package App\Controller
- */
-class RegistrationController extends AbstractController
+class RegistrationController extends FOSRestController
 {
-
     /**
-     * @param TokenAuthenticator $authenticator
-     * @param GuardAuthenticatorHandler $guardHandler
+     * @Route(path="/api/register", name="registration")
+     * @Method("POST")
      * @param Request $request
-     * @param EntityManagerInterface $em
-     * @return Response|null
-     *
-     * @Route("/register", name="register")
+     * @return JsonResponse
      */
-    public function register(TokenAuthenticator $authenticator, GuardAuthenticatorHandler $guardHandler, Request $request, EntityManagerInterface $em)
+    public function postRegisterAction(Request $request): JsonResponse
     {
-
         $user = new User();
-        $user->setPassword("pass");
-        $user->setUsername("ion");
-        $user->setRoles(["ROLE_USER"]);
-        $user->setApiToken($this->generateToken($user->getUsername()));
+        $form = $this->createForm(UserType::class, $user);
+        $form->handleRequest($request);
 
-        $em->persist($user);
-        $em->flush();
+        if ($form->isSubmitted() && $form->isValid()) {
+            $password = $this->get('security.password_encoder')
+                ->encodePassword($user, $user->getPassword());
+            $user->setPassword($password);
+            $user->setRoles(['ROLE_ADMIN']);
+            $em = $this->getDoctrine()->getManager();
 
-        // after validating the user and saving them to the database
-        // authenticate the user and use onAuthenticationSuccess on the authenticator
-        return $guardHandler->authenticateUserAndHandleSuccess(
-            $user,                // the User object you just created
-            $request,
-            $authenticator,       // authenticator whose onAuthenticationSuccess you want to use
-            'main'     // the name of your firewall in security.yaml
-        );
-    }
+            $event = new EmailRegistrationUserEvent($user);
+            $dispatcher = $this->get('event_dispatcher');
+            $dispatcher->dispatch(EmailRegistrationUserEvent::NAME, $event);
 
-    public function generateToken(string $username)
-    {
-        try {
-            return rtrim(strtr(base64_encode(random_bytes(32)), '+/', '-_'), '=').$username;
-        } catch (Exception $e) {
+            $em->persist($user);
+            $em->flush();
 
+            return new JsonResponse(['status' => 'ok']);
         }
+
+        throw new HttpException(400, "Invalid data");
     }
 }

@@ -1,7 +1,3 @@
-app_api:
-    path: /api
-    controller: App\Controller\BaseController::index
-
-security:
-    path: /register
-    controller: App\Controller\RegistrationController::register
+#index:
+#    path: /
+#    defaults: { _controller: 'App\Controller\HelloController::index' }

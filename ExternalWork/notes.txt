@@ -1,0 +1,12 @@
+possible problems:
+    when tokens expire, maybe to use refresh tokens to get new access tokens
+
+
+public_key and private_key pass phrase:
+    eronat98
+
+
+sources:
+    https://github.com/awd-studio/symfony-4-oauth2-server
+    https://github.com/hwi/HWIOAuthBundle/blob/master/Resources/doc/index.md
+    https://github.com/plewandowski/sf4-rest-api-boilerplate
