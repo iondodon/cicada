@@ -11,7 +11,8 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
-            anonymous: ~
+            pattern: ^/api/token
+            anonymous: true
 
         api:
             pattern:  ^/api
@@ -26,5 +27,7 @@ security:
             # https://symfony.com/doc/current/book/security.html#a-configuring-how-your-users-will-authenticate
     access_control:
         - { path: ^/api/token, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-            # form_login: ~
+        - { path: ^/api, roles: ROLE_ADMIN }
+
+          # form_login: ~
             # https://symfony.com/doc/current/cookbook/security/form_login_setup.html

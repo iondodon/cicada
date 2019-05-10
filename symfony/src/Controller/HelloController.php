@@ -2,6 +2,10 @@
 
 namespace App\Controller;
 
+use FOS\RestBundle\Controller\Annotations as Rest;
+use Lexik\Bundle\JWTAuthenticationBundle\Encoder\JWTEncoderInterface;
+use Lexik\Bundle\JWTAuthenticationBundle\TokenExtractor\AuthorizationHeaderTokenExtractor;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use FOS\RestBundle\Controller\FOSRestController;
 use Symfony\Component\HttpFoundation\Response;
@@ -11,12 +15,12 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 class HelloController extends FOSRestController
 {
 	/**
-	 * @Route("/", name="hello")
+	 * @Route("/api", name="hello", methods={"GET", "POST"})
      */
-    public function indexAction(): Response
+    public function indexAction(Request $request, JWTEncoderInterface $jwtEncoder): Response
     {
-        return new JsonResponse([
-            'hello' => 'This is a simple example of resource returned by your APIs'
-        ]);
+
+        dump($this->getUser()); die;
+        return new Response("hm");
     }
 }
