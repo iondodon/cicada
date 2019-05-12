@@ -1,0 +1,856 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/symfony/src/Controller/FacebookController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/symfony/src/Security/MyFacebookAuthenticator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/.env" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/.travis.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/bin/console" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/bin/phpunit" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/composer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/config/bootstrap.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/config/bundles.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/config/packages/cache.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/config/packages/dev/debug.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/config/packages/dev/easy_log_handler.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/config/packages/dev/jms_serializer.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/config/packages/dev/monolog.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/config/packages/dev/routing.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/config/packages/dev/swiftmailer.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/config/packages/dev/web_profiler.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/config/packages/doctrine.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/config/packages/doctrine_migrations.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/config/packages/fos_rest.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/config/packages/framework.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/config/packages/jms_serializer.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/config/packages/lexik_jwt_authentication.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/config/packages/prod/doctrine.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/config/packages/prod/jms_serializer.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/config/packages/prod/monolog.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/config/packages/routing.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/config/packages/security.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/config/packages/sensio_framework_extra.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/config/packages/swiftmailer.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/config/packages/test/framework.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/config/packages/test/monolog.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/config/packages/test/routing.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/config/packages/test/swiftmailer.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/config/packages/test/web_profiler.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/config/packages/twig.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/config/routes.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/config/routes/annotations.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/config/routes/dev/twig.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/config/routes/dev/web_profiler.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/config/services.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/config/services_test.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/phpunit.xml.dist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/public/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Controller/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Controller/ChangePasswordController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Controller/ForgotPasswordController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Controller/HelloController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Controller/LoginController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Controller/RegistrationController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/DataFixtures/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/DataFixtures/AppFixtures.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Entity/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Entity/User.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Event/EmailChangePasswordEvent.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Event/EmailForgotPasswordEvent.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Event/EmailRegistrationUserEvent.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/EventListener/MailChangePasswordListener.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/EventListener/MailForgotPasswordListener.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/EventListener/MailRegistrationUserListener.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Form/ChangePasswordType.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Form/ForgotPasswordType.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Form/UserType.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Kernel.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Migrations/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Migrations/Version20190507190118.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Repository/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Repository/UserRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Security/JwtAuthenticator.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Utils/PasswordGenerator.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Utils/PasswordGeneratorInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/templates/base.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/templates/emails/changePassword.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/templates/emails/forgotPassword.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/templates/emails/registration.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/tests/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/tests/ChangePasswordControllerTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/tests/ForgotPasswordControllerTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/tests/HelloControllerTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/tests/RegistrationControllerTest.php" beforeDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/cicada-reactjs/node_modules/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/cicada-symfony/composer.json</pharConfigPath>
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="cicada_db@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="cicada_db@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="cicada_db@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="cicada_db: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/symfony/src/Controller/FacebookController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="532">
+              <caret line="38" column="44" selection-start-line="38" selection-start-column="44" selection-end-line="38" selection-end-column="44" />
+              <folding>
+                <element signature="e#34#84#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/symfony/src/Security/MyFacebookAuthenticator.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="62" column="50" selection-start-line="62" selection-start-column="50" selection-end-line="62" selection-end-column="50" />
+              <folding>
+                <element signature="e#32#52#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/symfony/config/packages/security.yaml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="9" selection-start-column="9" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/symfony/src/Controller/DefaultController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
+              <folding>
+                <element signature="e#34#99#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>File</find>
+      <find>Fi</find>
+      <find>default</find>
+      <find>php</find>
+      <find>black</find>
+      <find>network</find>
+      <find>bod</find>
+      <find>App</find>
+      <find>Volume</find>
+      <find>VOLUMES_DRIVER</find>
+      <find>API</find>
+      <find>meth</find>
+      <find>pass</find>
+      <find>laradock</find>
+      <find>email</find>
+      <find>Maker</find>
+      <find>invalid</find>
+      <find>api</find>
+      <find>salt</find>
+      <find>maker</find>
+      <find>dump</find>
+      <find>expire</find>
+      <find>stat</find>
+      <find>user</find>
+      <find>onMailForgotPasswordEvent</find>
+      <find>fetch</find>
+      <find>token</find>
+      <find>flex</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/symfony/src/APIBundle/CicadaAPIBundle.php" />
+        <option value="$PROJECT_DIR$/symfony/src/Controller/APITestController.php" />
+        <option value="$PROJECT_DIR$/symfony/src/AppBundle/AppBundle.php" />
+        <option value="$PROJECT_DIR$/symfony/src/APIBundle/AppBundle.php" />
+        <option value="$PROJECT_DIR$/symfony/src/APIBundle/Controller/APIBaseController.php" />
+        <option value="$PROJECT_DIR$/symfony/src/APIBundle/APIBundle.php" />
+        <option value="$PROJECT_DIR$/symfony/src/APIBundle/Controller/BaseController.php" />
+        <option value="$PROJECT_DIR$/symfony/config/bundles.php" />
+        <option value="$PROJECT_DIR$/symfony/config/routes/annotations.yaml" />
+        <option value="$PROJECT_DIR$/symfony/composer.json" />
+        <option value="$PROJECT_DIR$/symfony/config/packages/dev/maker.yaml" />
+        <option value="$PROJECT_DIR$/docker/laravel-horizon/Dockerfile" />
+        <option value="$PROJECT_DIR$/docker/php-worker/Dockerfile" />
+        <option value="$PROJECT_DIR$/reactjs/src/serviceWorker.js" />
+        <option value="$PROJECT_DIR$/docker/docker-compose.yml" />
+        <option value="$PROJECT_DIR$/docker/mysql/my.cnf" />
+        <option value="$PROJECT_DIR$/docker/.env" />
+        <option value="$PROJECT_DIR$/symfony/config/packages/doctrine.yaml" />
+        <option value="$PROJECT_DIR$/docker/mysql/docker-entrypoint-initdb.d/createdb.sql" />
+        <option value="$PROJECT_DIR$/docker/mysql/docker-entrypoint-initdb.d/.gitignore" />
+        <option value="$PROJECT_DIR$/symfony/src/Entity/MigrationVersions.php" />
+        <option value="$PROJECT_DIR$/symfony/src/Controller/BaseController.php" />
+        <option value="$PROJECT_DIR$/symfony/vendor/symfony/security-guard/GuardAuthenticatorHandler.php" />
+        <option value="$PROJECT_DIR$/symfony/src/Security/TokenAuthenticator.php" />
+        <option value="$PROJECT_DIR$/symfony/src/Entity/User.php" />
+        <option value="$PROJECT_DIR$/symfony/src/Controller/SecurityController.php" />
+        <option value="$PROJECT_DIR$/ExternalWork/notes.txt" />
+        <option value="$PROJECT_DIR$/symfony/tests/ChangePasswordControllerTest.php" />
+        <option value="$PROJECT_DIR$/symfony/config/packages/dev/web_profiler.yaml" />
+        <option value="$PROJECT_DIR$/symfony/config/packages/fos_rest.yaml" />
+        <option value="$PROJECT_DIR$/symfony/src/Controller/RegistrationController.php" />
+        <option value="$PROJECT_DIR$/symfony/.gitignore" />
+        <option value="$PROJECT_DIR$/symfony/vendor/symfony/security/Http/Firewall/ExceptionListener.php" />
+        <option value="$PROJECT_DIR$/symfony/src/Controller/LoginController.php" />
+        <option value="$PROJECT_DIR$/reactjs/src/pages/homePageComponent.js" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
+        <option value="$PROJECT_DIR$/symfony/src/Controller/HelloController.php" />
+        <option value="$PROJECT_DIR$/symfony/src/Security/JwtAuthenticator.php" />
+        <option value="$PROJECT_DIR$/symfony/src/Utils/PasswordGenerator.php" />
+        <option value="$PROJECT_DIR$/symfony/src/Repository/UserRepository.php" />
+        <option value="$PROJECT_DIR$/symfony/.env.dist" />
+        <option value="$PROJECT_DIR$/symfony/config/packages/knpu_oauth2_client.yaml" />
+        <option value="$PROJECT_DIR$/symfony/.env" />
+        <option value="$PROJECT_DIR$/symfony/config/routes.yaml" />
+        <option value="$PROJECT_DIR$/symfony/config/services.yaml" />
+        <option value="$PROJECT_DIR$/symfony/src/Security/Authenticators/MyFacebookAuthenticator.php" />
+        <option value="$PROJECT_DIR$/symfony/config/packages/security.yaml" />
+        <option value="$PROJECT_DIR$/symfony/vendor/league/oauth2-client/src/Provider/AbstractProvider.php" />
+        <option value="$PROJECT_DIR$/symfony/src/Controller/FacebookController.php" />
+        <option value="$PROJECT_DIR$/symfony/src/Controller/DefaultController.php" />
+        <option value="$PROJECT_DIR$/symfony/src/Security/MyFacebookAuthenticator.php" />
+      </list>
+    </option>
+  </component>
+  <component name="PhpServers">
+    <servers />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/cicada-symfony/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/cicada-symfony/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/cicada-symfony/vendor/symfony/contracts" />
+      <path value="$PROJECT_DIR$/cicada-symfony/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/cicada-symfony/vendor/symfony/dependency-injection" />
+      <path value="$PROJECT_DIR$/cicada-symfony/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/cicada-symfony/vendor/symfony/cache" />
+      <path value="$PROJECT_DIR$/cicada-symfony/vendor/symfony/debug" />
+      <path value="$PROJECT_DIR$/cicada-symfony/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/cicada-symfony/vendor/symfony/framework-bundle" />
+      <path value="$PROJECT_DIR$/cicada-symfony/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/cicada-symfony/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/cicada-symfony/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/cicada-symfony/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/cicada-symfony/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/cicada-symfony/vendor/symfony/var-exporter" />
+      <path value="$PROJECT_DIR$/cicada-symfony/vendor/symfony/config" />
+      <path value="$PROJECT_DIR$/cicada-symfony/vendor/composer" />
+      <path value="$PROJECT_DIR$/cicada-symfony/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/cicada-symfony/vendor/symfony/flex" />
+      <path value="$PROJECT_DIR$/cicada-symfony/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/cicada-symfony/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/cicada-symfony/vendor/symfony/dotenv" />
+    </include_path>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="width" value="1366" />
+    <option name="height" value="749" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="cicada" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cicada" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cicada" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cicada" type="462c0819:PsiDirectoryNode" />
+              <item name="symfony" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cicada" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cicada" type="462c0819:PsiDirectoryNode" />
+              <item name="symfony" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cicada" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cicada" type="462c0819:PsiDirectoryNode" />
+              <item name="symfony" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cicada" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cicada" type="462c0819:PsiDirectoryNode" />
+              <item name="symfony" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Entity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cicada" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cicada" type="462c0819:PsiDirectoryNode" />
+              <item name="symfony" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="database.console.LAST_STATE" value="false" />
+    <property name="last.edited.regexp" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/symfony/src/Security" />
+      <recent name="$PROJECT_DIR$/symfony/src/Security/Authenticators" />
+      <recent name="$PROJECT_DIR$/symfony/src/Security/Authenticator" />
+      <recent name="$PROJECT_DIR$/temp" />
+      <recent name="$PROJECT_DIR$/symfony/src" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/cicada-symfony/public" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="docker: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.docker: Compose Deployment" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="" />
+      <created>1556145406851</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1556145406851</updated>
+      <workItem from="1556145410368" duration="127000" />
+      <workItem from="1556145562208" duration="302000" />
+      <workItem from="1556146136468" duration="888000" />
+      <workItem from="1556204455481" duration="7052000" />
+      <workItem from="1556264936015" duration="2003000" />
+      <workItem from="1556370539299" duration="9112000" />
+      <workItem from="1556388635847" duration="9300000" />
+      <workItem from="1556438086069" duration="446000" />
+      <workItem from="1556438863887" duration="3325000" />
+      <workItem from="1556539728732" duration="3009000" />
+      <workItem from="1556646522583" duration="3172000" />
+      <workItem from="1556808272953" duration="6400000" />
+      <workItem from="1556871241255" duration="1516000" />
+      <workItem from="1556880599621" duration="27000" />
+      <workItem from="1556895982765" duration="1044000" />
+      <workItem from="1556898778827" duration="2898000" />
+      <workItem from="1556903259176" duration="2410000" />
+      <workItem from="1557045511607" duration="2002000" />
+      <workItem from="1557051719171" duration="8851000" />
+      <workItem from="1557061405186" duration="1085000" />
+      <workItem from="1557062718203" duration="17423000" />
+      <workItem from="1557133880020" duration="26000" />
+      <workItem from="1557133945057" duration="403000" />
+      <workItem from="1557134376658" duration="23301000" />
+      <workItem from="1557170434728" duration="22204000" />
+      <workItem from="1557494722146" duration="12849000" />
+      <workItem from="1557591349725" duration="3258000" />
+      <workItem from="1557642391548" duration="28000" />
+      <workItem from="1557642483919" duration="12773000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="157234000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1366" height="749" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20757575" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3291536" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3291536" />
+      <window_info anchor="bottom" id="Docker" order="7" sideWeight="0.49924242" weight="0.3291536" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5007576" side_tool="true" weight="0.3291536" />
+      <window_info anchor="bottom" id="Database Console" order="12" weight="0.3291536" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" weight="0.19090909" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/laradock" />
+    </ignored-roots>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/symfony/tests/ChangePasswordControllerTest.php</url>
+          <line>4</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/symfony/vendor/lexik/jwt-authentication-bundle/Services/JWTManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="76" column="47" lean-forward="true" selection-start-line="76" selection-start-column="47" selection-end-line="76" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/vendor/lexik/jwt-authentication-bundle/Encoder/JWTEncoderInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/vendor/symfony/security/Core/Exception/AuthenticationCredentialsNotFoundException.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="20" column="6" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/src/Security/AppCustomAuthenticator.php" />
+    <entry file="file://$PROJECT_DIR$/reactjs/src/client.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactjs/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactjs/src/pages/homePageComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/src/Security/JwtAuthenticator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="994">
+          <caret line="71" column="12" selection-start-line="71" selection-start-column="12" selection-end-line="71" selection-end-column="12" />
+          <folding>
+            <element signature="e#32#72#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/src/Controller/HelloController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+          <folding>
+            <element signature="e#34#84#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://03fd938c-ea34-4a83-9555-46f3202cadfb/schema/cicada_db/table/migration_versions">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/src/Utils/PasswordGeneratorInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/src/Utils/PasswordGenerator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/src/Repository/UserRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="e#34#54#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/src/Migrations/Version20190507190118.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+          <folding>
+            <element signature="e#64#96#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/src/Controller/RegistrationController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="36" column="41" lean-forward="true" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="41" />
+          <folding>
+            <element signature="e#34#93#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/src/Form/UserType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/src/Controller/ForgotPasswordController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/src/Event/EmailChangePasswordEvent.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/src/Event/EmailForgotPasswordEvent.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/src/Event/EmailRegistrationUserEvent.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/src/Controller/LoginController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="602">
+          <caret line="43" column="53" selection-start-line="43" selection-start-column="53" selection-end-line="43" selection-end-column="53" />
+          <folding>
+            <element signature="e#34#91#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/src/EventListener/MailForgotPasswordListener.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="13" column="78" selection-start-line="13" selection-start-column="71" selection-end-line="13" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/config/services_test.yaml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/config/packages/twig.yaml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/config/packages/swiftmailer.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14">
+          <caret line="1" column="25" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker/maildev/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker/mailhog/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/Makefile">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/.env.test">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="das://03fd938c-ea34-4a83-9555-46f3202cadfb/schema/cicada_db/table/users">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+          <column-attributes>
+            <column name="roles" languageId="JSON" />
+          </column-attributes>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/.env.dist">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="21" column="63" selection-start-line="21" selection-start-column="63" selection-end-line="21" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/config/oauth2/private.key">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/config/oauth2/public.key">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/89715e81-bc9c-4fca-9f4c-1a8fd517663e/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/config/bundles.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/src/Controller/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/config/packages/routing.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/config/routes.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/vendor/knpuniversity/oauth2-client-bundle/src/Client/OAuth2Client.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="83" column="54" selection-start-line="83" selection-start-column="49" selection-end-line="83" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/config/routes/annotations.yaml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/vendor/sensio/framework-extra-bundle/Resources/doc/annotations/security.rst">
+      <provider selected="true" editor-type-id="restructured-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/config/packages/knpu_oauth2_client.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="14" column="32" lean-forward="true" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/config/services.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/vendor/knpuniversity/oauth2-client-bundle/src/Client/ClientRegistry.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="40" column="20" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="30" column="54" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/vendor/league/oauth2-client/src/Provider/AbstractProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="466">
+          <caret line="841" column="5" selection-start-line="841" selection-start-column="5" selection-end-line="841" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/templates/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/config/packages/security.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="9" selection-start-column="9" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/src/Controller/DefaultController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
+          <folding>
+            <element signature="e#34#99#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/src/Controller/FacebookController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="38" column="44" selection-start-line="38" selection-start-column="44" selection-end-line="38" selection-end-column="44" />
+          <folding>
+            <element signature="e#34#84#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/src/Security/MyFacebookAuthenticator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="62" column="50" selection-start-line="62" selection-start-column="50" selection-end-line="62" selection-end-column="50" />
+          <folding>
+            <element signature="e#32#52#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
