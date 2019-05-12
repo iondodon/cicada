@@ -4,7 +4,7 @@ import {Helmet} from 'react-helmet';
 class Home extends React.Component {
 
     exampleMethod(){
-        console.log("js is running");
+        console.log("hmm");
     }
 
     head(){

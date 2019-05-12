@@ -69,7 +69,7 @@ class JwtAuthenticator extends AbstractGuardAuthenticator
 
         $username = $data['username'];
         $user = $this->em->getRepository(User::class)
-            			 ->findOneBy(['username' => $username]);
+            ->findOneBy(['username' => $username]);
 
         if (!$user) {
             throw new AuthenticationCredentialsNotFoundException();
