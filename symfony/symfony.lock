@@ -105,8 +105,8 @@
     "league/oauth2-client": {
         "version": "2.4.1"
     },
-    "league/oauth2-facebook": {
-        "version": "2.0.1"
+    "league/oauth2-google": {
+        "version": "3.0.1"
     },
     "nikic/php-parser": {
         "version": "v4.2.1"
@@ -269,9 +269,6 @@
             "config/routes.yaml"
         ]
     },
-    "symfony/security": {
-        "version": "v4.2.8"
-    },
     "symfony/security-bundle": {
         "version": "3.3",
         "recipe": {
@@ -283,6 +280,18 @@
         "files": [
             "config/packages/security.yaml"
         ]
+    },
+    "symfony/security-core": {
+        "version": "v4.2.8"
+    },
+    "symfony/security-csrf": {
+        "version": "v4.2.8"
+    },
+    "symfony/security-guard": {
+        "version": "v4.2.8"
+    },
+    "symfony/security-http": {
+        "version": "v4.2.8"
     },
     "symfony/stopwatch": {
         "version": "v4.2.8"
