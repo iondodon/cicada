@@ -1,9 +1,26 @@
-
+.DS_Store
+composer.phar
+composer.lock
 ###> symfony/framework-bundle ###
 /.env.local
-/.env.local.php
 /.env.*.local
+.env.*
 /public/bundles/
 /var/
 /vendor/
+symfony.lock
+config/jwt
 ###< symfony/framework-bundle ###
+
+###> symfony/web-server-bundle ###
+.web-server-pid
+###< symfony/web-server-bundle ###
+
+###> symfony/phpunit-bridge ###
+.phpunit
+/phpunit.xml
+###< symfony/phpunit-bridge ###
+
+###> lexik/jwt-authentication-bundle ###
+/config/jwt/*.pem
+###< lexik/jwt-authentication-bundle ###

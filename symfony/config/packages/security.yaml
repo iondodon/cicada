@@ -1,62 +1,33 @@
 security:
     encoders:
-        App\Entity\User:
-            algorithm: argon2i
+        App\Entity\User: bcrypt # or argon2i
 
-    # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+    # https://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
     providers:
-        my_provider:
-            entity: { class: App:User, property: username }
-        # used to reload user from session & other features (e.g. switch_user)
-
+        database_users:
+            entity: { class: App:User , property: username }
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
-
         main:
-            anonymous: ~
-            logout:
-                path: /logout
-                target: /login
-            logout_on_user_change: true
+            pattern: ^/api/token
+            anonymous: true
 
+        api:
+            pattern:  ^/api
+            anonymous: true
+            http_basic: ~
             guard:
                 authenticators:
-                    - App\Security\GoogleAuthenticator
-
-    # Easy way to control access for large sections of your site
-    # Note: Only the *first* access control that matches will be used
-    access_control:
-        - { path: ^/connect, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/api, roles: ROLE_USER }
-
-
-
-knpu_oauth2_client:
-    clients:
-        google:
-            # must be "google" - it activates that type!
-            type: google
-            # add and configure client_id and client_secret in parameters.yml
-            client_id: '%env(resolve:GOOGLE_CLIENT_ID)%'
-            client_secret: '%env(resolve:GOOGLE_CLIENT_SECRET)%'
-            # a route name you'll create
-            redirect_route: connect_google_check
-            redirect_params: {}
-            # Optional value for sending access_type parameter. More detail: https://developers.google.com/identity/protocols/OpenIDConnect#authenticationuriparameters
-            # access_type: ''
-            # Optional value for sending hd parameter. More detail: https://developers.google.com/identity/protocols/OpenIDConnect#hd-param
-            # hosted_domain: ''
-            # Optional value for additional fields to be requested from the user profile. If set, these values will be included with the defaults. More details: https://developers.google.com/+/web/api/rest/latest/people
-            # user_fields: {}
-            # whether to check OAuth2 "state": defaults to true
-            # use_state: true
-
+                    - App\Security\JwtAuthenticator
             # activate different ways to authenticate
 
-            # http_basic: true
-            # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
+            # http_basic: ~
+            # https://symfony.com/doc/current/book/security.html#a-configuring-how-your-users-will-authenticate
+    access_control:
+        - { path: ^/api/token, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/api, roles: ROLE_ADMIN }
 
-            # form_login: true
-            # https://symfony.com/doc/current/security/form_login_setup.html
+          # form_login: ~
+            # https://symfony.com/doc/current/cookbook/security/form_login_setup.html

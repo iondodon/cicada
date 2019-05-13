@@ -906,7 +906,7 @@
     <table id="226" parent="2" name="migration_versions">
       <Collation>utf8mb4_unicode_ci</Collation>
     </table>
-    <table id="227" parent="2" name="user">
+    <table id="227" parent="2" name="users">
       <Collation>utf8mb4_unicode_ci</Collation>
     </table>
     <column id="228" parent="226" name="version">
@@ -934,36 +934,46 @@
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="232" parent="227" name="email">
+    <column id="232" parent="227" name="name">
       <Position>2</Position>
-      <DataType>varchar(180)|0s</DataType>
+      <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="233" parent="227" name="roles">
+    <column id="233" parent="227" name="surname">
       <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="234" parent="227" name="username">
+      <Position>4</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="235" parent="227" name="email">
+      <Position>5</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="236" parent="227" name="password">
+      <Position>6</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="237" parent="227" name="roles">
+      <Position>7</Position>
       <DataType>json|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="234" parent="227" name="password">
-      <Position>4</Position>
-      <DataType>varchar(255)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <index id="235" parent="227" name="UNIQ_8D93D649E7927C74">
-      <ColNames>email</ColNames>
-      <Unique>1</Unique>
-      <Type>btree</Type>
-    </index>
-    <key id="236" parent="227" name="PRIMARY">
+    <key id="238" parent="227" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
-    </key>
-    <key id="237" parent="227" name="UNIQ_8D93D649E7927C74">
-      <ColNames>email</ColNames>
-      <UnderlyingIndexName>UNIQ_8D93D649E7927C74</UnderlyingIndexName>
     </key>
   </database-model>
 </dataSource>
