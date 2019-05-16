@@ -10,3 +10,5 @@ sources:
     https://github.com/awd-studio/symfony-4-oauth2-server
     https://github.com/hwi/HWIOAuthBundle/blob/master/Resources/doc/index.md
     https://github.com/plewandowski/sf4-rest-api-boilerplate
+    https://packagist.org/packages/tony133/symfony4-api-boilerplate-jwt
+    https://hackernoon.com/simple-http-middleware-with-go-79a4ad62889b

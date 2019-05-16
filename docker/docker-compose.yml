@@ -206,6 +206,25 @@ services:
       links:
         - docker-in-docker
 
+### go ###########################################
+    go:
+      build:
+        context: ./go
+      volumes:
+        - ${PROXY_PATH_HOST}:${APP_CODE_PATH_CONTAINER}${APP_CODE_CONTAINER_FLAG}
+      extra_hosts:
+        - "dockerhost:${DOCKER_HOST_IP}"
+      ports:
+        - "8080:8080"
+      tty: true
+      environment:
+        - DOCKER_HOST=tcp://docker-in-docker:2375
+      networks:
+        - frontend
+        - backend
+      links:
+        - docker-in-docker
+
 ### NGINX Server #########################################
     nginx:
       build:
