@@ -11,7 +11,7 @@ class Home extends React.Component {
         return(
             <Helmet>
                 <title>
-                    My page title
+                    Title
                 </title>
             </Helmet>
         )
@@ -22,7 +22,7 @@ class Home extends React.Component {
             <div>
                 {this.head()}
                 <h1>
-                    My home page
+                    interesant
                 </h1>
                 <p>
                     Some content

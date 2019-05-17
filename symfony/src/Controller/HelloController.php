@@ -15,9 +15,7 @@ class HelloController extends FOSRestController
      */
     public function indexAction(Request $request, JWTEncoderInterface $jwtEncoder) : JsonResponse
     {
-        return new JsonResponse([
-            "name" => "ion",
-            "mhm" => ["aaa", "addaaa"]
-        ]);
+
+        return new JsonResponse(["name" => "Ion Dodon"]);
     }
 }
