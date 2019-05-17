@@ -38,7 +38,7 @@ class LoginController extends Controller
         $token = $this->get('lexik_jwt_authentication.encoder')
             ->encode([
                 'username' => $user->getUsername(),
-                'exp' => time() + 50 // 1 hour expiration
+                'exp' => time() + 3600 // 1 hour expiration
             ]);
 
         return new JsonResponse(['token' => $token]);

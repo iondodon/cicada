@@ -27,6 +27,7 @@ security:
             # https://symfony.com/doc/current/book/security.html#a-configuring-how-your-users-will-authenticate
     access_control:
         - { path: ^/api/token, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/api/register, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/api, roles: ROLE_ADMIN }
 
           # form_login: ~
