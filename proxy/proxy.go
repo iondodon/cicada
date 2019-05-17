@@ -7,9 +7,7 @@ import (
 	"net/http"
 )
 
-type JsonResponse struct {
-	Message string
-}
+var parsed map[string]interface{}
 
 func init() {
 	log.SetFlags(log.Lshortfile)
@@ -49,27 +47,20 @@ func withTracing(next http.HandlerFunc) http.HandlerFunc {
 }
 
 func home(w http.ResponseWriter, r *http.Request) {
-
-	var data JsonResponse
-
 	client := &http.Client{}
 	var resp *http.Response
 	var err error
 	var req *http.Request
-	var token = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1NTgwODU2MTQsInVzZXJuYW1lIjoiaW9uZG9kb24iLCJleHAiOjE1NTgwODkyMTR9.e91tJdTM9MKx77YR4l0tRQQubBPOFM7x6ENxq3_FyiSerp8a6EahMEP1X-vHQSJDB-OQti1ObplTaXlYz-6gYkcv46OdXXA0oi5AQeQxW9B2RkLsPJyYtu8v-YMQ4clHZQC6P7rFkHB_gbHm9X04ZjSKZJrxMtfx7vBhd8bJeJaieLEFYj_pzP5OxWXOM-AWMkSSXVqwf6gfQsVWqhPBLsbl2wmhLfNdoZxN82UhbO4s9GQeBIq-ltRfcixWhuW92pmGbBVh2G_OBKag-G05DYDprvOzMJj3JE63FbUBUOXu_2vXC1RHD7ybQKad0srWVEGgfnP2UpxRZHLkZy3EZWiwJtkaR8iMl8jCV7Gd6De7ykN2rQQdKpdGzTF8dWyyYM5q5xgwa1i8I5glITD_mI2URaBi7ACpdKvOYxnrw8CaDK6A1exEUbDUvDkVWl0MZBpT-XuYfA9SHFmaCvlqD3nPStysMcqwubfgNZ9puUv2lr_KLHor95FBe0H2TppHrwi02vX4TBFtMSPBIwKXN6JGkqjVX6YyofoS0d0dgSuNqKA2lChFtbS0gjN68X1jKoYSw-0zxlhWUgIIbwflYPfT_D5wkIfr13Z64582t-YXj_SKo78TL97pv0DI4CrhoCdQsO1z9S8cwCfbWRstTej-kQGmIn3b2RUH3S9JZxs"
+	var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1NTgxMDU3MzYsInVzZXJuYW1lIjoiaW9uZG9kb24iLCJleHAiOjE1NTgxMDkzMzZ9.YgSe1gfCyDIvRI4i09_Dsew1TGTgxjonsVqUor4HFK4DAliQ9UnRuF5zLQgn46GvuVI5neQ5AS_eh2dB1vQkbYNoFjJUJpEKpjTTqJn9pfW0LyACQykCQq6ru70Z2SLka26EdjaAO4P1PdanOMmPxzsiui0aDt3FfKhf5fvgq-X3yVn3N77tTDAo0A0MZpVsdCDQXNNMISNQ1Q70sSTt1uCF1SOw2yRU4KLA7pPLFEPw4lc-M9YqDVZkCj1CNaa2-n9nD7Yi-W-m8f8ElayPo2BYymhOAySF79eoXY-vZiPC_2MjgiGAYQTGlyPZbv5WKPUI8_p8Z195N4kvVGcQ9sqJFe_Z7rxHkEZVqe0V9qbYOHQkSIZdceoQhfxgUbHf0DSb2ccJzmKbibOJ6bzKpDtO5YAD_QJRrUsQDJTgInndaaMCeJfGwMpi_L2_vjoSxiX6l22khQTjP2iigBVyRr2X2AXAJL3Eel0noElfOSTbota8zJyJe2CdRG25oVC96aSXjbIx2X-OMdNF6KkLISUeWeO5x4szlNqWcdcXse92vRhEKxvamnsrHgi4r3AvOJS8eVyhD9CmQnDSX-GgI2HkNvxwqX9oqB8xCzGp4EtwJshdLbHffvcGgX6uhw4-hM7ZB34HLCZB21hIWYyYRWZwhQnzzgbfcgCU6JBAyjU"
 
 	req, err = http.NewRequest(r.Method, "http://nginx:9000" + r.RequestURI, r.Body)
 	for name, value := range r.Header {
 		req.Header.Set(name, value[0])
 	}
-
 	req.Header.Set("Content_type", "application/x-www-form-urlencoded")
-	req.Header.Set("Authorization", token)
-
+	req.Header.Set("Authorization", "Bearer " + token)
 	resp, err = client.Do(req)
 	r.Body.Close()
-
-	//response, err := http.Post("http://nginx:9000/api", "application/x-www-form-urlencoded", r.Body)
 
 	if err != nil {
 		panic(err)
@@ -77,17 +68,15 @@ func home(w http.ResponseWriter, r *http.Request) {
 
 	defer resp.Body.Close()
 
-	// read the payload, in this case, Jhon's info
 	body, err := ioutil.ReadAll(resp.Body)
 
 	if err != nil {
 		panic(err)
 	}
 
-	// this is where the magic happens, I pass a pointer of type JsonResponse and Go'll do the rest
-	err = json.Unmarshal(body, &data)
+	err = json.Unmarshal(body, &parsed)
 
-	js, err := json.Marshal(data)
+	js, err := json.Marshal(parsed)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
