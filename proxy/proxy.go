@@ -7,7 +7,8 @@ import (
 	"net/http"
 )
 
-var parsed map[string]interface{}
+var token string
+
 
 func init() {
 	log.SetFlags(log.Lshortfile)
@@ -46,12 +47,14 @@ func withTracing(next http.HandlerFunc) http.HandlerFunc {
 	}
 }
 
-func home(w http.ResponseWriter, r *http.Request) {
+func index(w http.ResponseWriter, r *http.Request) {
+	log.Println("Index function called")
+
 	client := &http.Client{}
 	var resp *http.Response
 	var err error
 	var req *http.Request
-	var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1NTgxMDU3MzYsInVzZXJuYW1lIjoiaW9uZG9kb24iLCJleHAiOjE1NTgxMDkzMzZ9.YgSe1gfCyDIvRI4i09_Dsew1TGTgxjonsVqUor4HFK4DAliQ9UnRuF5zLQgn46GvuVI5neQ5AS_eh2dB1vQkbYNoFjJUJpEKpjTTqJn9pfW0LyACQykCQq6ru70Z2SLka26EdjaAO4P1PdanOMmPxzsiui0aDt3FfKhf5fvgq-X3yVn3N77tTDAo0A0MZpVsdCDQXNNMISNQ1Q70sSTt1uCF1SOw2yRU4KLA7pPLFEPw4lc-M9YqDVZkCj1CNaa2-n9nD7Yi-W-m8f8ElayPo2BYymhOAySF79eoXY-vZiPC_2MjgiGAYQTGlyPZbv5WKPUI8_p8Z195N4kvVGcQ9sqJFe_Z7rxHkEZVqe0V9qbYOHQkSIZdceoQhfxgUbHf0DSb2ccJzmKbibOJ6bzKpDtO5YAD_QJRrUsQDJTgInndaaMCeJfGwMpi_L2_vjoSxiX6l22khQTjP2iigBVyRr2X2AXAJL3Eel0noElfOSTbota8zJyJe2CdRG25oVC96aSXjbIx2X-OMdNF6KkLISUeWeO5x4szlNqWcdcXse92vRhEKxvamnsrHgi4r3AvOJS8eVyhD9CmQnDSX-GgI2HkNvxwqX9oqB8xCzGp4EtwJshdLbHffvcGgX6uhw4-hM7ZB34HLCZB21hIWYyYRWZwhQnzzgbfcgCU6JBAyjU"
+	var generalParsed map[string]interface{}
 
 	req, err = http.NewRequest(r.Method, "http://nginx:9000" + r.RequestURI, r.Body)
 	for name, value := range r.Header {
@@ -74,9 +77,9 @@ func home(w http.ResponseWriter, r *http.Request) {
 		panic(err)
 	}
 
-	err = json.Unmarshal(body, &parsed)
+	err = json.Unmarshal(body, &generalParsed)
 
-	js, err := json.Marshal(parsed)
+	js, err := json.Marshal(generalParsed)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
@@ -84,10 +87,66 @@ func home(w http.ResponseWriter, r *http.Request) {
 
 	w.Header().Set("Content-Type", "application/json")
 	w.Write(js)
+	log.Println()
+}
+
+func login(w http.ResponseWriter, r *http.Request) {
+	log.Println("token function called")
+
+	client := &http.Client{}
+	var resp *http.Response
+	var err error
+	var req *http.Request
+	var jsonToken struct { Token string }
+
+	req, err = http.NewRequest(r.Method, "http://nginx:9000" + r.RequestURI, r.Body)
+	for name, value := range r.Header {
+		req.Header.Set(name, value[0])
+	}
+	resp, err = client.Do(req)
+	r.Body.Close()
+
+	if err != nil {
+		panic(err)
+	}
+
+	defer resp.Body.Close()
+
+	body, err := ioutil.ReadAll(resp.Body)
+
+	if err != nil {
+		panic(err)
+	}
+
+	err = json.Unmarshal(body, &jsonToken)
+
+	js, err := json.Marshal(jsonToken)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	if jsonToken.Token != "" {
+		token = jsonToken.Token
+	}
+
+	log.Println(token)
+
+	w.Write(js)
+	log.Println()
+}
+
+
+func logout(w http.ResponseWriter, r *http.Request) {
+	log.Println("logout function called")
+	token = ""
+	log.Println()
 }
 
 func main() {
 	mw := chainMiddleware(withLogging, withTracing)
-	http.Handle("/", mw(home))
+	http.Handle("/api/token", mw(login))
+	http.Handle("/api/logout", mw(logout))
+	http.Handle("/", mw(index))
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }

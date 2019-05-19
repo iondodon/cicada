@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/src/pages/Page404.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/src/pages/Page404.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/src/pages/homePageComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/src/pages/homePageComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/proxy.go" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/proxy.go" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cicada-reactjs/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,36 +48,12 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/reactjs/src/pages/Page404.js">
+        <entry file="file://$PROJECT_DIR$/symfony/src/Controller/HelloController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="98">
-              <caret line="7" column="20" lean-forward="true" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+            <state relative-caret-position="140">
+              <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
               <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/reactjs/src/App.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/reactjs/src/pages/homePageComponent.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
+                <element signature="e#34#103#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -181,11 +155,11 @@
         <option value="$PROJECT_DIR$/ExternalWork/notes.txt" />
         <option value="$PROJECT_DIR$/symfony/config/packages/security.yaml" />
         <option value="$PROJECT_DIR$/symfony/src/Controller/LoginController.php" />
-        <option value="$PROJECT_DIR$/proxy/proxy.go" />
         <option value="$PROJECT_DIR$/reactjs/package.json" />
         <option value="$PROJECT_DIR$/reactjs/src/pages/Page404.js" />
         <option value="$PROJECT_DIR$/reactjs/src/App.js" />
         <option value="$PROJECT_DIR$/reactjs/src/pages/homePageComponent.js" />
+        <option value="$PROJECT_DIR$/proxy/proxy.go" />
       </list>
     </option>
   </component>
@@ -229,7 +203,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -240,31 +213,26 @@
             <path>
               <item name="cicada" type="b2602c69:ProjectViewProjectNode" />
               <item name="cicada" type="462c0819:PsiDirectoryNode" />
-              <item name="reactjs" type="462c0819:PsiDirectoryNode" />
+              <item name="symfony" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cicada" type="b2602c69:ProjectViewProjectNode" />
               <item name="cicada" type="462c0819:PsiDirectoryNode" />
-              <item name="reactjs" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cicada" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cicada" type="462c0819:PsiDirectoryNode" />
-              <item name="reactjs" type="462c0819:PsiDirectoryNode" />
+              <item name="symfony" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cicada" type="b2602c69:ProjectViewProjectNode" />
               <item name="cicada" type="462c0819:PsiDirectoryNode" />
-              <item name="reactjs" type="462c0819:PsiDirectoryNode" />
+              <item name="symfony" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="Controller" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -371,11 +339,12 @@
       <workItem from="1558033175513" duration="758000" />
       <workItem from="1558078542178" duration="3084000" />
       <workItem from="1558121299556" duration="26000" />
+      <workItem from="1558287542034" duration="344000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="187157000" />
+    <option name="totallyTimeSpent" value="187675000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -390,7 +359,7 @@
     <frame x="0" y="0" width="1366" height="749" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4984326" visible="true" weight="0.20681818" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4984326" visible="true" weight="0.23181818" />
       <window_info id="Structure" order="1" sideWeight="0.5015674" side_tool="true" weight="0.20757575" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -454,16 +423,7 @@
     <entry file="file://$PROJECT_DIR$/symfony/src/Security/MyFacebookAuthenticator.php" />
     <entry file="file://$PROJECT_DIR$/symfony/src/Controller/GoogleController.php" />
     <entry file="file://$PROJECT_DIR$/symfony/src/Security/UserProvider.php" />
-    <entry file="file://$PROJECT_DIR$/ExternalWork/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1564">
-          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-          <folding>
-            <element signature="e#30#62#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/ExternalWork/User.php" />
     <entry file="das://89715e81-bc9c-4fca-9f4c-1a8fd517663e/schema/cicada_db/table/user" />
     <entry file="file://$PROJECT_DIR$/symfony/src/Controller/DefaultController.php" />
     <entry file="file://$PROJECT_DIR$/symfony/vendor/symfony/security-core/Authentication/Token/Storage/TokenStorage.php" />
@@ -642,23 +602,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/symfony/src/Controller/HelloController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/proxy/proxy.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="e#14#73#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/reactjs/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="392">
@@ -683,6 +626,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/reactjs/src/pages/Page404.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="7" column="20" lean-forward="true" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/reactjs/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
@@ -703,12 +656,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reactjs/src/pages/Page404.js">
+    <entry file="file://$PROJECT_DIR$/proxy/proxy.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="7" column="20" lean-forward="true" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+        <state relative-caret-position="472">
+          <caret line="149" column="31" lean-forward="true" selection-start-line="149" selection-start-column="31" selection-end-line="149" selection-end-column="31" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#14#73#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/src/Controller/HelloController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+          <folding>
+            <element signature="e#34#103#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
