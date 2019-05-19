@@ -1,0 +1,24 @@
+import React from 'react';
+import { BrowserRouter, Route } from "react-router-dom";
+import {Switch} from "react-router";
+
+import Home from './pages/homePageComponent';
+import Page404 from './pages/404Page'
+
+
+class App extends React.Component {
+
+    render(){
+        return(
+            <BrowserRouter>
+                <Switch>
+                    <Route path="/home" component={Home} exact />
+                    <Route component={Page404} />
+                </Switch>
+            </BrowserRouter>
+        )
+    }
+}
+
+
+export default App;

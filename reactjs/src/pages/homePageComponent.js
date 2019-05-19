@@ -4,7 +4,7 @@ import {Helmet} from 'react-helmet';
 class Home extends React.Component {
 
     exampleMethod(){
-        console.log("hmm");
+        console.log("clicked");
     }
 
     head(){
@@ -22,7 +22,7 @@ class Home extends React.Component {
             <div>
                 {this.head()}
                 <h1>
-                    interesant
+                    Interesting
                 </h1>
                 <p>
                     Some content
