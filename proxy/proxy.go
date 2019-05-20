@@ -8,6 +8,7 @@ import (
 )
 
 var token string
+var var1 int
 
 
 func init() {
@@ -143,10 +144,61 @@ func logout(w http.ResponseWriter, r *http.Request) {
 	log.Println()
 }
 
+func setvar(w http.ResponseWriter, r *http.Request) {
+	log.Println("setvar function called")
+	var1 = var1 + 1
+	log.Println(var1)
+}
+
+func getvar(w http.ResponseWriter, r *http.Request) {
+	log.Println("token function called")
+
+	client := &http.Client{}
+	var resp *http.Response
+	var err error
+	var req *http.Request
+	var jsonVar struct { Var1 int }
+
+	req, err = http.NewRequest(r.Method, "http://nginx:9000" + r.RequestURI, r.Body)
+	for name, value := range r.Header {
+		req.Header.Set(name, value[0])
+	}
+	resp, err = client.Do(req)
+	r.Body.Close()
+
+	if err != nil {
+		panic(err)
+	}
+
+	defer resp.Body.Close()
+
+	body, err := ioutil.ReadAll(resp.Body)
+
+	if err != nil {
+		panic(err)
+	}
+
+	err = json.Unmarshal(body, &jsonVar)
+
+	jsonVar.Var1 = var1
+
+	js, err := json.Marshal(jsonVar)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	w.Write(js)
+	log.Println()
+}
+
+
 func main() {
 	mw := chainMiddleware(withLogging, withTracing)
 	http.Handle("/api/token", mw(login))
 	http.Handle("/api/logout", mw(logout))
 	http.Handle("/", mw(index))
+	http.Handle("/setvar", mw(setvar))
+	http.Handle("/getvar", mw(getvar))
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }

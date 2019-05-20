@@ -13,6 +13,7 @@
       <w>dotenv</w>
       <w>elazarl</w>
       <w>eronat</w>
+      <w>getvar</w>
       <w>goproxy</w>
       <w>iconv</w>
       <w>intelli</w>
@@ -25,6 +26,7 @@
       <w>paragonie</w>
       <w>potencier</w>
       <w>sensio</w>
+      <w>setvar</w>
     </words>
   </dictionary>
 </component>
