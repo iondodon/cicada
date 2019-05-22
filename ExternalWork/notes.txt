@@ -12,3 +12,18 @@ sources:
     https://github.com/plewandowski/sf4-rest-api-boilerplate
     https://packagist.org/packages/tony133/symfony4-api-boilerplate-jwt
     https://hackernoon.com/simple-http-middleware-with-go-79a4ad62889b
+
+    $tokenCookie = new Cookie(
+        'BEARER',
+        $token,
+        (new DateTime())->add(new DateInterval('PT' . 3600 . 'S')),
+        '/',
+        null,
+        false,
+        true
+    );
+
+    $response = new Response();
+    $response->headers->setCookie($tokenCookie);
+
+    return $response;

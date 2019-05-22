@@ -5,6 +5,7 @@ namespace App\Security;
 use Doctrine\ORM\EntityManagerInterface;
 use Lexik\Bundle\JWTAuthenticationBundle\Encoder\JWTEncoderInterface;
 use Lexik\Bundle\JWTAuthenticationBundle\TokenExtractor\AuthorizationHeaderTokenExtractor;
+use Lexik\Bundle\JWTAuthenticationBundle\TokenExtractor\CookieTokenExtractor;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
@@ -30,7 +31,7 @@ class JwtAuthenticator extends AbstractGuardAuthenticator
 
     public function supports(Request $request)
     {
-        return $request->headers->has('Authorization');
+        return $request->cookies->has('BEARER');
     }
 
     public function start(Request $request, AuthenticationException $authException = null)
@@ -40,14 +41,16 @@ class JwtAuthenticator extends AbstractGuardAuthenticator
 
     public function getCredentials(Request $request)
     {
-        if (!$request->headers->has('Authorization')) {
+        if (!$request->cookies->has('BEARER')) {
             return;
         }
 
-        $extractor = new AuthorizationHeaderTokenExtractor(
-            'Bearer',
-            'Authorization'
-        );
+//        $extractor = new AuthorizationHeaderTokenExtractor(
+//            'Bearer',
+//            'Authorization'
+//        );
+
+        $extractor = new CookieTokenExtractor('BEARER');
 
         $token = $extractor->extract($request);
 

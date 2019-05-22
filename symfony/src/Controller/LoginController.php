@@ -2,7 +2,10 @@
 
 namespace App\Controller;
 
+use DateInterval;
+use DateTime;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Cookie;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -17,9 +20,10 @@ class LoginController extends Controller
      * @Route("/api/token", name="token_authentication")
      * @Method("POST")
      * @param Request $request
-     * @return JsonResponse
+     * @return Response
+     * @throws \Exception
      */
-    public function newTokenAction(Request $request): JsonResponse
+    public function newTokenAction(Request $request): Response
     {
         $user = $this->getDoctrine()->getRepository(User::class)
             ->findOneBy(['username'=> $request->getUser()]);
@@ -41,6 +45,19 @@ class LoginController extends Controller
                 'exp' => time() + 3600 // 1 hour expiration
             ]);
 
-        return new JsonResponse(['token' => $token]);
+        $tokenCookie = new Cookie(
+            'BEARER',
+            $token,
+            (new DateTime())->add(new DateInterval('PT' . 3600 . 'S')),
+            '/',
+            null,
+            false,
+            true
+        );
+
+        $response = new Response();
+        $response->headers->setCookie($tokenCookie);
+
+        return $response;
     }
 }
