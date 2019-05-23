@@ -38,12 +38,15 @@ class LoginController extends Controller
             throw new BadCredentialsException();
         }
 
-        dump($request->getClientIps());
-        dump($request->headers->get('User-Agent')); die;
+//        dump($request->getClientIp());
+//        dump($request->getUserInfo());
+//        dump($request->headers->get('User-Agent')); die;
 
         $token = $this->get('lexik_jwt_authentication.encoder')
             ->encode([
                 'username' => $user->getUsername(),
+                'clientIp' => $request->getClientIp(),
+                'userAgent' => $request->headers->get('User-Agent'),
                 'exp' => time() + 3600 // 1 hour expiration
             ]);
 
