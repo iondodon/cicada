@@ -8,7 +8,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Cookie;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Security\Core\Exception\BadCredentialsException;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -38,6 +37,9 @@ class LoginController extends Controller
         if (!$isValid) {
             throw new BadCredentialsException();
         }
+
+        dump($request->getClientIps());
+        dump($request->headers->get('User-Agent')); die;
 
         $token = $this->get('lexik_jwt_authentication.encoder')
             ->encode([
