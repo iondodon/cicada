@@ -4,7 +4,6 @@ namespace App\Security;
 
 use Doctrine\ORM\EntityManagerInterface;
 use Lexik\Bundle\JWTAuthenticationBundle\Encoder\JWTEncoderInterface;
-use Lexik\Bundle\JWTAuthenticationBundle\TokenExtractor\AuthorizationHeaderTokenExtractor;
 use Lexik\Bundle\JWTAuthenticationBundle\TokenExtractor\CookieTokenExtractor;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -45,16 +44,11 @@ class JwtAuthenticator extends AbstractGuardAuthenticator
             return;
         }
 
-//        $extractor = new AuthorizationHeaderTokenExtractor(
-//            'Bearer',
-//            'Authorization'
-//        );
-
         $extractor = new CookieTokenExtractor('BEARER');
 
         $token = $extractor->extract($request);
 
-        if (!$token) {
+        if (!$token || $this->isHack($token, $request)) {
             return;
         }
 
@@ -97,6 +91,24 @@ class JwtAuthenticator extends AbstractGuardAuthenticator
 
     public function supportsRememberMe()
     {
+        return false;
+    }
+
+    private function isHack($token, Request $request)
+    {
+        $data = $this->jwtEncoder->decode($token);
+
+        if ($data == false) {
+            throw new CustomUserMessageAuthenticationException('Invalid Token');
+        }
+
+        $clientIp = $data['clientIp'];
+        $userAgent = $data['userAgent'];
+
+        if($clientIp != $request->getClientIp() || $userAgent != $request->headers->get('User-Agent')) {
+            return true;
+        }
+
         return false;
     }
 }

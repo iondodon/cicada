@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/symfony/src/Controller/LogoutController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/symfony/src/Controller/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Controller/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Controller/LogoutController.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Controller/LogoutController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Security/JwtAuthenticator.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Security/JwtAuthenticator.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cicada-reactjs/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -51,8 +52,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/symfony/src/Controller/LoginController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-192">
-              <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+            <state relative-caret-position="358">
+              <caret line="44" column="65" selection-start-line="44" selection-start-column="55" selection-end-line="44" selection-end-column="65" />
               <folding>
                 <element signature="e#34#51#0#PHP" expanded="true" />
               </folding>
@@ -61,12 +62,12 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/symfony/src/Controller/LogoutController.php">
+        <entry file="file://$PROJECT_DIR$/symfony/src/Security/JwtAuthenticator.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="30" column="1" lean-forward="true" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
+            <state relative-caret-position="74">
+              <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
               <folding>
-                <element signature="e#34#51#0#PHP" expanded="true" />
+                <element signature="e#32#72#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -122,7 +123,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/docker/mysql/docker-entrypoint-initdb.d/.gitignore" />
         <option value="$PROJECT_DIR$/symfony/src/Entity/MigrationVersions.php" />
         <option value="$PROJECT_DIR$/symfony/src/Controller/BaseController.php" />
         <option value="$PROJECT_DIR$/symfony/vendor/symfony/security-guard/GuardAuthenticatorHandler.php" />
@@ -164,15 +164,16 @@
         <option value="$PROJECT_DIR$/proxy/proxy.go" />
         <option value="$PROJECT_DIR$/symfony/.env" />
         <option value="$PROJECT_DIR$/symfony/config/packages/lexik_jwt_authentication.yaml" />
-        <option value="$PROJECT_DIR$/symfony/src/Security/JwtAuthenticator.php" />
         <option value="$PROJECT_DIR$/symfony/vendor/symfony/http-foundation/Request.php" />
         <option value="$PROJECT_DIR$/docker/nginx/sites/react.conf" />
         <option value="$PROJECT_DIR$/ExternalWork/notes.txt" />
         <option value="$PROJECT_DIR$/docker/nginx/sites/symfony.conf" />
         <option value="$PROJECT_DIR$/docker/logs/nginx/error.log" />
         <option value="$PROJECT_DIR$/docker/nginx/nginx.conf" />
-        <option value="$PROJECT_DIR$/symfony/src/Controller/LoginController.php" />
         <option value="$PROJECT_DIR$/symfony/src/Controller/LogoutController.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/symfony/src/Controller/LoginController.php" />
+        <option value="$PROJECT_DIR$/symfony/src/Security/JwtAuthenticator.php" />
       </list>
     </option>
   </component>
@@ -240,6 +241,13 @@
               <item name="symfony" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cicada" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cicada" type="462c0819:PsiDirectoryNode" />
+              <item name="symfony" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Security" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -357,12 +365,12 @@
       <workItem from="1558613428028" duration="32000" />
       <workItem from="1558613531799" duration="7580000" />
       <workItem from="1558631707470" duration="40000" />
-      <workItem from="1558631780893" duration="4333000" />
+      <workItem from="1558631780893" duration="5312000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="211652000" />
+    <option name="totallyTimeSpent" value="212631000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -430,9 +438,6 @@
           <caret line="17" column="45" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/docker/php-fpm/Dockerfile">
       <provider selected="true" editor-type-id="text-editor">
@@ -600,16 +605,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/symfony/src/Security/JwtAuthenticator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="536">
-          <caret line="50" column="12" lean-forward="true" selection-start-line="50" selection-start-column="12" selection-end-line="50" selection-end-column="12" />
-          <folding>
-            <element signature="e#32#72#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/docker/nginx/Dockerfile">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -685,16 +680,6 @@
     <entry file="file://$PROJECT_DIR$/docker/logs/nginx/error.log">
       <provider selected="true" editor-type-id="LogFileEditorProvider" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/symfony/src/Controller/LoginController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-192">
-          <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
-          <folding>
-            <element signature="e#34#51#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/docker/logs/nginx/symfony_access.log">
       <provider selected="true" editor-type-id="LogFileEditorProvider">
         <state relative-caret-position="557">
@@ -702,12 +687,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="6" selection-start-column="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/symfony/src/Controller/LogoutController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="30" column="1" lean-forward="true" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
+        <state relative-caret-position="322">
+          <caret line="23" column="25" lean-forward="true" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+          <folding>
+            <element signature="e#34#91#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/src/Controller/LoginController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="44" column="65" selection-start-line="44" selection-start-column="55" selection-end-line="44" selection-end-column="65" />
           <folding>
             <element signature="e#34#51#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/src/Security/JwtAuthenticator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="74">
+          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+          <folding>
+            <element signature="e#32#72#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
