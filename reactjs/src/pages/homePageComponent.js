@@ -4,14 +4,14 @@ import {Helmet} from 'react-helmet';
 class Home extends React.Component {
 
     exampleMethod(){
-        console.log("js is running");
+        console.log("clicked");
     }
 
     head(){
         return(
             <Helmet>
                 <title>
-                    My page title
+                    Title
                 </title>
             </Helmet>
         )
@@ -22,7 +22,7 @@ class Home extends React.Component {
             <div>
                 {this.head()}
                 <h1>
-                    My home page
+                    Interesting
                 </h1>
                 <p>
                     Some content

@@ -29,8 +29,8 @@
     "webpack-node-externals": "^1.7.2"
   },
   "scripts": {
-    "webpack:client": "webpack --config webpack.client.js --watch",
     "webpack:server": "webpack --config webpack.server.js --watch",
+    "webpack:client": "webpack --config webpack.client.js --watch",
     "webpack:start": "nodemon --watch build --exec node build/bundle.js",
     "dev": "npm-run-all --parallel webpack:*",
     "build": "webpack --config webpack.client.js && webpack --config webpack.server.js"
