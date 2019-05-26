@@ -4,9 +4,11 @@ namespace App\Security;
 
 use Doctrine\ORM\EntityManagerInterface;
 use Lexik\Bundle\JWTAuthenticationBundle\Encoder\JWTEncoderInterface;
+use Lexik\Bundle\JWTAuthenticationBundle\Exception\JWTDecodeFailureException;
 use Lexik\Bundle\JWTAuthenticationBundle\TokenExtractor\CookieTokenExtractor;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Core\Exception\AuthenticationException;
 use Symfony\Component\Security\Core\Exception\AuthenticationCredentialsNotFoundException;
@@ -22,26 +24,45 @@ class JwtAuthenticator extends AbstractGuardAuthenticator
 
     private $jwtEncoder;
 
+    /**
+     * JwtAuthenticator constructor.
+     * @param EntityManagerInterface $em
+     * @param JWTEncoderInterface $jwtEncoder
+     */
     public function __construct(EntityManagerInterface $em, JWTEncoderInterface $jwtEncoder)
     {
         $this->em = $em;
         $this->jwtEncoder = $jwtEncoder;
     }
 
+    /**
+     * @param Request $request
+     * @return bool
+     */
     public function supports(Request $request)
     {
         return $request->cookies->has('BEARER');
     }
 
+    /**
+     * @param Request $request
+     * @param AuthenticationException|null $authException
+     * @return JsonResponse|Response
+     */
     public function start(Request $request, AuthenticationException $authException = null)
     {
         return new JsonResponse(['message' => 'Authentication required!'], 401);
     }
 
+    /**
+     * @param Request $request
+     * @return false|mixed|string|void
+     * @throws JWTDecodeFailureException
+     */
     public function getCredentials(Request $request)
     {
         if (!$request->cookies->has('BEARER')) {
-            return;
+            return false;
         }
 
         $extractor = new CookieTokenExtractor('BEARER');
@@ -49,12 +70,18 @@ class JwtAuthenticator extends AbstractGuardAuthenticator
         $token = $extractor->extract($request);
 
         if (!$token || $this->isHack($token, $request)) {
-            return;
+            return false;
         }
 
         return $token;
     }
 
+    /**
+     * @param mixed $credentials
+     * @param UserProviderInterface $userProvider
+     * @return object|UserInterface|null
+     * @throws JWTDecodeFailureException
+     */
     public function getUser($credentials, UserProviderInterface $userProvider)
     {
         $data = $this->jwtEncoder->decode($credentials);
@@ -74,26 +101,51 @@ class JwtAuthenticator extends AbstractGuardAuthenticator
         return $user;
     }
 
+    /**
+     * @param mixed $credentials
+     * @param UserInterface $user
+     * @return bool
+     */
     public function checkCredentials($credentials, UserInterface $user)
     {
         return true;
     }
 
+    /**
+     * @param Request $request
+     * @param AuthenticationException $exception
+     * @return JsonResponse|Response|null
+     */
     public function onAuthenticationFailure(Request $request, AuthenticationException $exception)
     {
         return new JsonResponse(['message' => $exception->getMessage()], 401);
     }
 
+    /**
+     * @param Request $request
+     * @param TokenInterface $token
+     * @param string $providerKey
+     * @return Response|void|null
+     */
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, $providerKey)
     {
         return;
     }
 
+    /**
+     * @return bool
+     */
     public function supportsRememberMe()
     {
         return false;
     }
 
+    /**
+     * @param $token
+     * @param Request $request
+     * @return bool
+     * @throws JWTDecodeFailureException
+     */
     private function isHack($token, Request $request)
     {
         $data = $this->jwtEncoder->decode($token);
@@ -102,10 +154,11 @@ class JwtAuthenticator extends AbstractGuardAuthenticator
             throw new CustomUserMessageAuthenticationException('Invalid Token');
         }
 
-        $clientIp = $data['clientIp'];
-        $userAgent = $data['userAgent'];
+        if($data['clientIp'] != $request->getClientIp()) {
+            return true;
+        }
 
-        if($clientIp != $request->getClientIp() || $userAgent != $request->headers->get('User-Agent')) {
+        if($data['userAgent'] != $request->headers->get('User-Agent')) {
             return true;
         }
 
