@@ -5,7 +5,6 @@ namespace App\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use FOS\RestBundle\Controller\FOSRestController;
 use Symfony\Component\HttpKernel\Exception\HttpException;
@@ -19,6 +18,8 @@ class ForgotPasswordController extends FOSRestController
     /**
      * @Route(path="api/forgotPassword", name="forgot_password")
      * @Method("POST")
+     * @param Request $request
+     * @return JsonResponse
      */
     public function postForgotPasswordAction(Request $request): JsonResponse
     {
@@ -27,7 +28,7 @@ class ForgotPasswordController extends FOSRestController
         $form = $this->createForm(ForgotPasswordType::class, $user);
         $form->handleRequest($request);
 
-        if ($form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid()) {
             $email = $request->request->get('email');
             $em = $this->getDoctrine()->getManager();
             $userRepository = $em->getRepository(User::class)->findOneBy(['email' => $email]);
