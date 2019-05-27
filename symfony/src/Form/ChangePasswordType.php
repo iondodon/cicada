@@ -7,7 +7,6 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
-use App\Entity\User;
 
 class ChangePasswordType extends AbstractType
 {
@@ -19,8 +18,9 @@ class ChangePasswordType extends AbstractType
     {
         $builder
             ->add('email', EmailType::class, ['label'=> 'email'])
-            ->add('password', TextType::class, ['label'=> 'password'])
-            ;
+            ->add('old_password', TextType::class, ['label'=> 'old_password'])
+            ->add('new_password', TextType::class, ['label'=> 'new_password'])
+        ;
     }
     /**
      * @param OptionsResolver $resolver
@@ -28,7 +28,6 @@ class ChangePasswordType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => User::class,
             'csrf_protection'   => false,
         ));
     }
