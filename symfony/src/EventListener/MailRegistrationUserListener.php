@@ -2,8 +2,12 @@
 
 namespace App\EventListener;
 
-use Symfony\Component\HttpFoundation\Response;
 use App\Event\EmailRegistrationUserEvent;
+use Swift_Message;
+use Twig\Error\LoaderError;
+use Twig\Error\RuntimeError;
+use Twig\Error\SyntaxError;
+use Twig_Environment;
 
 class MailRegistrationUserListener
 {
@@ -11,7 +15,7 @@ class MailRegistrationUserListener
 
     protected $mailer;
 
-    public function __construct(\Twig_Environment $twig, \Swift_Mailer $mailer)
+    public function __construct(Twig_Environment $twig, \Swift_Mailer $mailer)
     {
         $this->twig = $twig;
         $this->mailer = $mailer;
@@ -20,13 +24,13 @@ class MailRegistrationUserListener
     public function onMailRegistrationUserEvent(EmailRegistrationUserEvent $event): void
     {
         $user = $event->getUser();
-        $email = $event->getUser()->getEmail();
-        $password = $event->getUser()->getPassword();
+        $email = $user->getEmail();
+        $password = $user->getPassword();
         $name = $event->getUser()->getName();
 
         $body = $this->renderTemplate($name, $email);
 
-		$message = (new \Swift_Message('Registration User Successfully!'))
+		$message = (new Swift_Message('Registration User Successfully!'))
             ->setFrom($email)
             ->setTo($email)
             ->setBody($body, 'text/html')
@@ -37,13 +41,19 @@ class MailRegistrationUserListener
 
     protected function renderTemplate($name, $email): string
     {
-		return $this->twig->render(
-            'emails/registration.html.twig',
-            [
-                'name' => $name,
-				'email' => $email
-            ]
-        );
-    }
+        try {
+            return $this->twig->render(
+                'emails/registration.html.twig',
+                [
+                    'name' => $name,
+                    'email' => $email
+                ]
+            );
+        } catch (LoaderError $e) {
+        } catch (RuntimeError $e) {
+        } catch (SyntaxError $e) {
+        }
 
+        return null;
+    }
 }

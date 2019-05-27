@@ -22,6 +22,26 @@ class RegistrationController extends FOSRestController
      */
     public function postRegisterAction(Request $request): JsonResponse
     {
+        $username = $request->request->get('username');
+        $email = $request->request->get('email');
+
+        $em  = $this->getDoctrine()->getManager();
+        $user =  $em->getRepository(User::class)->findBy(
+            array('email' => $email)
+        );
+
+        if($user){
+            return new JsonResponse(['message' => 'Email already registered.']);
+        }
+
+        $user =  $em->getRepository(User::class)->findBy(
+            array('username' => $username)
+        );
+
+        if($user){
+            return new JsonResponse(['message' => 'Username taken.']);
+        }
+
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);

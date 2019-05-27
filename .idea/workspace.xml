@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony/src/Controller/ChangePasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Controller/ChangePasswordController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony/src/EventListener/MailChangePasswordListener.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/EventListener/MailChangePasswordListener.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony/src/Form/ChangePasswordType.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Form/ChangePasswordType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony/templates/emails/changePassword.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/templates/emails/changePassword.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Controller/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Controller/RegistrationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/EventListener/MailRegistrationUserListener.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/EventListener/MailRegistrationUserListener.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/templates/emails/registration.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/templates/emails/registration.html.twig" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cicada-reactjs/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -51,24 +49,12 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/symfony/src/Controller/ChangePasswordController.php">
+        <entry file="file://$PROJECT_DIR$/symfony/src/Controller/RegistrationController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
-              <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+            <state relative-caret-position="382">
+              <caret line="49" column="70" lean-forward="true" selection-start-line="49" selection-start-column="70" selection-end-line="49" selection-end-column="70" />
               <folding>
                 <element signature="e#34#93#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/symfony/src/EventListener/MailChangePasswordListener.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="406">
-              <caret line="29" selection-start-line="29" selection-end-line="29" />
-              <folding>
-                <element signature="e#37#54#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -124,8 +110,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/symfony/config/packages/fos_rest.yaml" />
-        <option value="$PROJECT_DIR$/symfony/.gitignore" />
         <option value="$PROJECT_DIR$/symfony/vendor/symfony/security/Http/Firewall/ExceptionListener.php" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
         <option value="$PROJECT_DIR$/symfony/src/Controller/HelloController.php" />
@@ -167,7 +151,6 @@
         <option value="$PROJECT_DIR$/symfony/src/Controller/ForgotPasswordController.php" />
         <option value="$PROJECT_DIR$/symfony/config/packages/dev/swiftmailer.yaml" />
         <option value="$PROJECT_DIR$/symfony/.env" />
-        <option value="$PROJECT_DIR$/symfony/src/Controller/RegistrationController.php" />
         <option value="$PROJECT_DIR$/symfony/config/services.yaml" />
         <option value="$PROJECT_DIR$/symfony/src/Utils/PasswordGenerator.php" />
         <option value="$PROJECT_DIR$/symfony/src/EventListener/MailForgotPasswordListener.php" />
@@ -175,6 +158,9 @@
         <option value="$PROJECT_DIR$/symfony/src/EventListener/MailChangePasswordListener.php" />
         <option value="$PROJECT_DIR$/symfony/src/Form/ChangePasswordType.php" />
         <option value="$PROJECT_DIR$/symfony/src/Controller/ChangePasswordController.php" />
+        <option value="$PROJECT_DIR$/symfony/src/EventListener/MailRegistrationUserListener.php" />
+        <option value="$PROJECT_DIR$/symfony/templates/emails/registration.html.twig" />
+        <option value="$PROJECT_DIR$/symfony/src/Controller/RegistrationController.php" />
       </list>
     </option>
   </component>
@@ -255,20 +241,6 @@
               <item name="cicada" type="b2602c69:ProjectViewProjectNode" />
               <item name="cicada" type="462c0819:PsiDirectoryNode" />
               <item name="symfony" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Form" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cicada" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cicada" type="462c0819:PsiDirectoryNode" />
-              <item name="symfony" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Security" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cicada" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cicada" type="462c0819:PsiDirectoryNode" />
-              <item name="symfony" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -277,12 +249,6 @@
               <item name="symfony" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="emails" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cicada" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cicada" type="462c0819:PsiDirectoryNode" />
-              <item name="symfony" type="462c0819:PsiDirectoryNode" />
-              <item name="var" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -402,12 +368,12 @@
       <workItem from="1558631780893" duration="5970000" />
       <workItem from="1558902966241" duration="919000" />
       <workItem from="1558961282259" duration="27000" />
-      <workItem from="1558961365386" duration="9839000" />
+      <workItem from="1558961365386" duration="11529000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="226206000" />
+    <option name="totallyTimeSpent" value="227896000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -422,7 +388,7 @@
     <frame x="0" y="0" width="1366" height="749" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4984326" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4984326" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" sideWeight="0.5015674" side_tool="true" weight="0.20757575" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -435,7 +401,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" sideWeight="0.49924242" weight="0.3291536" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.5344828" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.37931034" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5007576" side_tool="true" weight="0.3275862" />
       <window_info anchor="bottom" id="Database Console" order="12" weight="0.3291536" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -453,23 +419,6 @@
     </ignored-roots>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/reactjs/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="28" column="38" lean-forward="true" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reactjs/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/reactjs/src/pages/Page404.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="98">
@@ -709,16 +658,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://89715e81-bc9c-4fca-9f4c-1a8fd517663e/schema/cicada_db/table/users">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering />
-          <column-attributes>
-            <column name="roles" languageId="JSON" />
-          </column-attributes>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/symfony/config/services.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
@@ -781,32 +720,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/symfony/src/EventListener/MailChangePasswordListener.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
-          <folding>
-            <element signature="e#37#54#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/symfony/src/Form/ChangePasswordType.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="448">
           <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
           <folding>
             <element signature="e#28#68#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/symfony/src/Controller/RegistrationController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="30" column="56" selection-start-line="30" selection-start-column="56" selection-end-line="30" selection-end-column="56" />
-          <folding>
-            <element signature="e#34#93#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -833,8 +752,55 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/symfony/src/Controller/ChangePasswordController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+        <state relative-caret-position="896">
+          <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
+          <folding>
+            <element signature="e#34#93#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/src/EventListener/MailChangePasswordListener.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+          <folding>
+            <element signature="e#37#54#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/templates/emails/registration.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="2" column="58" selection-start-line="2" selection-start-column="58" selection-end-line="2" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://89715e81-bc9c-4fca-9f4c-1a8fd517663e/schema/cicada_db/table/users">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering />
+          <column-attributes>
+            <column name="roles" languageId="JSON" />
+          </column-attributes>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/src/EventListener/MailRegistrationUserListener.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="27" column="17" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="17" />
+          <folding>
+            <element signature="e#37#78#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/src/Controller/RegistrationController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="49" column="70" lean-forward="true" selection-start-line="49" selection-start-column="70" selection-end-line="49" selection-end-column="70" />
           <folding>
             <element signature="e#34#93#0#PHP" expanded="true" />
           </folding>
