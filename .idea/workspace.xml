@@ -2,472 +2,57 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/reactjs/i18n.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/locales/en/translation.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactjs/.next/build-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/build-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/.next/react-loadable-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/react-loadable-manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactjs/.next/server/pages-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/server/pages-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/.next/server/ssr-module-cache.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/server/ssr-module-cache.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/.next/server/static/development/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/server/static/development/pages/_app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/.next/server/static/development/pages/_app.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/server/static/development/pages/_app.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/.next/server/static/development/pages/_document.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/server/static/development/pages/_document.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/.next/server/static/development/pages/_document.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/server/static/development/pages/_document.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/.next/server/static/development/pages/_error.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/server/static/development/pages/_error.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/.next/server/static/development/pages/_error.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/server/static/development/pages/_error.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactjs/.next/server/static/development/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/server/static/development/pages/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactjs/.next/server/static/development/pages/index.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/server/static/development/pages/index.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/.next/server/static/development/pages/next/dist/pages/_error.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/server/static/development/pages/next/dist/pages/_error.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/chunks/0.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/static/chunks/0.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/chunks/0.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/static/chunks/0.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/development/dll/dll_599a58a60c43245180de.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/static/development/dll/dll_599a58a60c43245180de.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/development/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/static/development/pages/_app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/development/pages/_app.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/static/development/pages/_app.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/development/pages/_error.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/static/development/pages/_error.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/development/pages/_error.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/static/development/pages/_error.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactjs/.next/static/development/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/static/development/pages/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactjs/.next/static/development/pages/index.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/static/development/pages/index.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/development/pages/next/dist/pages/_error.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/static/development/pages/next/dist/pages/_error.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/runtime/amp.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/static/runtime/amp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/runtime/amp.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/static/runtime/amp.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/runtime/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/static/runtime/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/runtime/main.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/static/runtime/main.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactjs/.next/static/runtime/webpack.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/static/runtime/webpack.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactjs/.next/static/runtime/webpack.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/static/runtime/webpack.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/0f43e7a45763f4f44571.hot-update.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/3539aec9e7959445bbf2.hot-update.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/6d7ba5a9ff9d586a020d.hot-update.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/7c2c276f22545d251dea.hot-update.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/a53fa56fec6ab324555d.hot-update.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/c357095ae21c5d9cb63f.hot-update.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/da70f5cf4406139c38d7.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/013683c8778b4d6418cc.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/0ce877765e2e1cd4ca6c.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/27998e61401590d7412b.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/5366d5b0fc73d121a3ba.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/6f2c8f3104a502f243cd.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/9ae2040607e0bb138d46.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/cfcab7bd10f12bf92434.hot-update.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/df91f82fb27f1b79026d.hot-update.json" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/static/webpack/df91f82fb27f1b79026d.hot-update.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/f02e860364451b98bb41.hot-update.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/static/development/pages/index.js.3539aec9e7959445bbf2.hot-update.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/static/development/pages/index.js.3539aec9e7959445bbf2.hot-update.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/static/development/pages/index.js.7c2c276f22545d251dea.hot-update.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/static/development/pages/index.js.7c2c276f22545d251dea.hot-update.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/static/development/pages/index.js.c357095ae21c5d9cb63f.hot-update.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/static/development/pages/index.js.c357095ae21c5d9cb63f.hot-update.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/static/development/pages/index.js.da70f5cf4406139c38d7.hot-update.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/static/development/pages/index.js.da70f5cf4406139c38d7.hot-update.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/static/development/pages/index.js.f02e860364451b98bb41.hot-update.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/static/development/pages/index.js.f02e860364451b98bb41.hot-update.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/Layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/fd8396743627c338a7d3.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/static/development/pages/index.js.013683c8778b4d6418cc.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/static/development/pages/index.js.013683c8778b4d6418cc.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/static/development/pages/index.js.0ce877765e2e1cd4ca6c.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/static/development/pages/index.js.0ce877765e2e1cd4ca6c.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/static/development/pages/index.js.9ae2040607e0bb138d46.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/static/development/pages/index.js.9ae2040607e0bb138d46.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/static/development/pages/index.js.cfcab7bd10f12bf92434.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/static/development/pages/index.js.cfcab7bd10f12bf92434.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/static/development/pages/index.js.fd8396743627c338a7d3.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/static/development/pages/index.js.fd8396743627c338a7d3.hot-update.js.map" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/reactjs/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/pages/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/.babelrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/.babelrc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/.eslintignore" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/.eslintignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/.eslintrc.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/.gitattributes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/.github/CONTRIBUTING.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/.github/CONTRIBUTING.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/.github/ISSUE_TEMPLATE.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/.github/ISSUE_TEMPLATE.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/.stylelintignore" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/.stylelintignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/.stylelintrc" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/.stylelintrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/.travis.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/CNAME" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/CNAME" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/CODE_OF_CONDUCT.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/CODE_OF_CONDUCT.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_data/breakpoints.yml" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_data/breakpoints.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_data/browser-bugs.yml" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_data/browser-bugs.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_data/browser-features.yml" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_data/browser-features.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_data/colors.yml" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_data/colors.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_data/examples.yml" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_data/examples.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_data/grays.yml" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_data/grays.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_data/nav.yml" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_data/nav.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_data/theme-colors.yml" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_data/theme-colors.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_data/translations.yml" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_data/translations.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_includes/ads.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_includes/ads.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_includes/callout-danger-async-methods.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_includes/callout-danger-async-methods.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_includes/callout-info-mediaqueries-breakpoints.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_includes/callout-info-mediaqueries-breakpoints.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_includes/callout-warning-color-assistive-technologies.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_includes/callout-warning-color-assistive-technologies.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_includes/docs-navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_includes/docs-navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_includes/docs-sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_includes/docs-sidebar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_includes/favicons.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_includes/favicons.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_includes/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_includes/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_includes/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_includes/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_includes/icons/bootstrap.svg" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_includes/icons/bootstrap.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_includes/icons/download.svg" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_includes/icons/download.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_includes/icons/github.svg" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_includes/icons/github.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_includes/icons/import.svg" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_includes/icons/import.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_includes/icons/lightning.svg" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_includes/icons/lightning.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_includes/icons/menu.svg" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_includes/icons/menu.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_includes/icons/slack.svg" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_includes/icons/slack.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_includes/icons/twitter.svg" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_includes/icons/twitter.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_includes/scripts.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_includes/scripts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_includes/social.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_includes/social.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_layouts/default.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_layouts/default.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_layouts/docs.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_layouts/docs.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_layouts/examples.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_layouts/examples.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_layouts/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_layouts/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_layouts/redirect.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_layouts/redirect.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_layouts/simple.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_layouts/simple.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_plugins/bugify.rb" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_plugins/bugify.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_plugins/callout.rb" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_plugins/callout.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_plugins/example.rb" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_plugins/example.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_plugins/markdown-block.rb" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/_plugins/markdown-block.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/brand/bootstrap-outline.svg" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/brand/bootstrap-outline.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/brand/bootstrap-punchout.svg" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/brand/bootstrap-punchout.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/brand/bootstrap-social-logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/brand/bootstrap-social-logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/brand/bootstrap-social.png" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/brand/bootstrap-social.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/brand/bootstrap-solid.svg" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/brand/bootstrap-solid.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/css/docs.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/css/docs.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/css/docs.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/css/docs.min.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/img/bootstrap-stack.png" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/img/bootstrap-stack.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/img/bootstrap-themes.png" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/img/bootstrap-themes.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/img/favicons/android-chrome-192x192.png" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/img/favicons/android-chrome-192x192.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/img/favicons/android-chrome-512x512.png" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/img/favicons/android-chrome-512x512.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/img/favicons/apple-touch-icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/img/favicons/apple-touch-icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/img/favicons/browserconfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/img/favicons/browserconfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/img/favicons/favicon-16x16.png" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/img/favicons/favicon-16x16.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/img/favicons/favicon-32x32.png" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/img/favicons/favicon-32x32.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/img/favicons/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/img/favicons/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/img/favicons/mstile-144x144.png" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/img/favicons/mstile-144x144.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/img/favicons/mstile-150x150.png" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/img/favicons/mstile-150x150.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/img/favicons/mstile-310x150.png" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/img/favicons/mstile-310x150.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/img/favicons/mstile-310x310.png" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/img/favicons/mstile-310x310.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/img/favicons/mstile-70x70.png" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/img/favicons/mstile-70x70.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/img/favicons/safari-pinned-tab.svg" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/img/favicons/safari-pinned-tab.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/js/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/js/.eslintrc.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/js/docs.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/js/docs.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/js/src/application.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/js/src/application.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/js/src/ie-emulation-modes-warning.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/js/src/ie-emulation-modes-warning.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/js/src/pwa.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/js/src/pwa.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/js/vendor/anchor.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/js/vendor/anchor.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/js/vendor/clipboard.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/js/vendor/clipboard.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/js/vendor/holder.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/js/vendor/holder.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/js/vendor/jquery-slim.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/js/vendor/jquery-slim.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/js/vendor/popper.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/js/vendor/popper.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/scss/_ads.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/scss/_ads.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/scss/_algolia.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/scss/_algolia.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/scss/_anchor.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/scss/_anchor.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/scss/_brand.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/scss/_brand.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/scss/_browser-bugs.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/scss/_browser-bugs.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/scss/_buttons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/scss/_buttons.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/scss/_callouts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/scss/_callouts.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/scss/_clipboard-js.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/scss/_clipboard-js.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/scss/_colors.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/scss/_colors.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/scss/_component-examples.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/scss/_component-examples.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/scss/_content.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/scss/_content.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/scss/_examples.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/scss/_examples.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/scss/_footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/scss/_footer.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/scss/_masthead.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/scss/_masthead.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/scss/_nav.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/scss/_nav.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/scss/_sidebar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/scss/_sidebar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/scss/_skiplink.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/scss/_skiplink.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/scss/_syntax.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/scss/_syntax.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/scss/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/scss/_variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/scss/docs.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/assets/scss/docs.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/build/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/build/.eslintrc.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/build/.htmllintrc" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/build/.htmllintrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/build/gcp-key.json.enc" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/build/gcp-key.json.enc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/build/generate-sri.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/build/generate-sri.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/build/lint-vars.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/build/lint-vars.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/build/postcss.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/build/postcss.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/build/rollup.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/build/rollup.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/build/sauce_browsers.json" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/build/sauce_browsers.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/build/saucelabs-unit-test.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/build/saucelabs-unit-test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/build/vnu-jar.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/build/vnu-jar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/build/workbox.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/build/workbox.config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/build/workbox.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/build/workbox.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/dist/css/bootstrap-grid.css" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/dist/css/bootstrap-grid.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/dist/css/bootstrap-grid.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/dist/css/bootstrap-grid.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/dist/css/bootstrap-grid.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/dist/css/bootstrap-grid.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/dist/css/bootstrap-grid.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/dist/css/bootstrap-grid.min.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/dist/css/bootstrap-reboot.css" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/dist/css/bootstrap-reboot.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/dist/css/bootstrap-reboot.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/dist/css/bootstrap-reboot.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/dist/css/bootstrap-reboot.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/dist/css/bootstrap-reboot.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/dist/css/bootstrap-reboot.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/dist/css/bootstrap-reboot.min.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/dist/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/dist/css/bootstrap.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/dist/css/bootstrap.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/dist/css/bootstrap.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/dist/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/dist/css/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/dist/css/bootstrap.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/dist/css/bootstrap.min.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/dist/js/bootstrap.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/dist/js/bootstrap.bundle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/dist/js/bootstrap.bundle.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/dist/js/bootstrap.bundle.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/dist/js/bootstrap.bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/dist/js/bootstrap.bundle.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/dist/js/bootstrap.bundle.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/dist/js/bootstrap.bundle.min.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/dist/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/dist/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/dist/js/bootstrap.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/dist/js/bootstrap.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/dist/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/dist/js/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/dist/js/bootstrap.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/dist/js/bootstrap.min.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/about/brand.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/about/brand.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/about/license.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/about/license.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/about/overview.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/about/overview.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/about/translations.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/about/translations.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/browser-bugs.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/browser-bugs.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/components/alerts.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/components/alerts.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/components/badge.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/components/badge.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/components/breadcrumb.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/components/breadcrumb.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/components/button-group.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/components/button-group.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/components/buttons.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/components/buttons.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/components/card.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/components/card.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/components/carousel.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/components/carousel.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/components/collapse.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/components/collapse.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/components/dropdowns.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/components/dropdowns.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/components/forms.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/components/forms.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/components/input-group.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/components/input-group.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/components/jumbotron.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/components/jumbotron.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/components/list-group.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/components/list-group.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/components/modal.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/components/modal.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/components/navbar.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/components/navbar.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/components/navs.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/components/navs.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/components/pagination.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/components/pagination.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/components/popovers.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/components/popovers.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/components/progress.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/components/progress.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/components/scrollspy.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/components/scrollspy.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/components/tooltips.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/components/tooltips.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/content/code.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/content/code.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/content/figures.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/content/figures.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/content/images.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/content/images.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/content/reboot.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/content/reboot.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/content/tables.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/content/tables.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/content/typography.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/content/typography.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/.eslintrc.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/.stylelintrc" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/.stylelintrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/album/album.css" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/album/album.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/album/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/album/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/blog/blog.css" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/blog/blog.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/blog/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/blog/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/carousel/carousel.css" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/carousel/carousel.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/carousel/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/carousel/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/checkout/form-validation.css" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/checkout/form-validation.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/checkout/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/checkout/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/cover/cover.css" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/cover/cover.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/cover/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/cover/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/dashboard/dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/dashboard/dashboard.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/dashboard/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/dashboard/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/floating-labels/floating-labels.css" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/floating-labels/floating-labels.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/floating-labels/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/floating-labels/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/grid/grid.css" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/grid/grid.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/grid/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/grid/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/jumbotron/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/jumbotron/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/jumbotron/jumbotron.css" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/jumbotron/jumbotron.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/navbar-bottom/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/navbar-bottom/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/navbar-fixed/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/navbar-fixed/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/navbar-fixed/navbar-top-fixed.css" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/navbar-fixed/navbar-top-fixed.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/navbar-static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/navbar-static/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/navbar-static/navbar-top.css" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/navbar-static/navbar-top.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/navbars/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/navbars/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/navbars/navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/navbars/navbar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/offcanvas/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/offcanvas/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/offcanvas/offcanvas.css" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/offcanvas/offcanvas.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/offcanvas/offcanvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/offcanvas/offcanvas.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/pricing/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/pricing/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/pricing/pricing.css" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/pricing/pricing.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/product/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/product/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/product/product.css" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/product/product.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/screenshots/album.png" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/screenshots/album.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/screenshots/blog.png" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/screenshots/blog.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/screenshots/carousel.png" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/screenshots/carousel.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/screenshots/checkout.png" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/screenshots/checkout.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/screenshots/cover.png" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/screenshots/cover.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/screenshots/dashboard.png" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/screenshots/dashboard.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/screenshots/floating-labels.png" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/screenshots/floating-labels.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/screenshots/grid.png" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/screenshots/grid.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/screenshots/jumbotron.png" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/screenshots/jumbotron.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/screenshots/navbar-bottom.png" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/screenshots/navbar-bottom.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/screenshots/navbar-fixed.png" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/screenshots/navbar-fixed.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/screenshots/navbar-static.png" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/screenshots/navbar-static.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/screenshots/navbars.png" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/screenshots/navbars.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/screenshots/offcanvas.png" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/screenshots/offcanvas.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/screenshots/pricing.png" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/screenshots/pricing.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/screenshots/product.png" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/screenshots/product.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/screenshots/sign-in.png" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/screenshots/sign-in.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/screenshots/starter-template.png" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/screenshots/starter-template.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/screenshots/sticky-footer-navbar.png" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/screenshots/sticky-footer-navbar.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/screenshots/sticky-footer.png" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/screenshots/sticky-footer.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/sign-in/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/sign-in/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/sign-in/signin.css" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/sign-in/signin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/starter-template/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/starter-template/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/starter-template/starter-template.css" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/starter-template/starter-template.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/sticky-footer-navbar/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/sticky-footer-navbar/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/sticky-footer-navbar/sticky-footer-navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/sticky-footer-navbar/sticky-footer-navbar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/sticky-footer/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/sticky-footer/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/sticky-footer/sticky-footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/sticky-footer/sticky-footer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/tooltip-viewport/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/tooltip-viewport/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/tooltip-viewport/tooltip-viewport.css" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/tooltip-viewport/tooltip-viewport.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/tooltip-viewport/tooltip-viewport.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/examples/tooltip-viewport/tooltip-viewport.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/extend/approach.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/extend/approach.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/extend/icons.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/extend/icons.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/extend/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/extend/index.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/getting-started/accessibility.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/getting-started/accessibility.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/getting-started/best-practices.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/getting-started/best-practices.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/getting-started/browsers-devices.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/getting-started/browsers-devices.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/getting-started/build-tools.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/getting-started/build-tools.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/getting-started/contents.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/getting-started/contents.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/getting-started/download.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/getting-started/download.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/getting-started/introduction.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/getting-started/introduction.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/getting-started/javascript.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/getting-started/javascript.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/getting-started/theming.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/getting-started/theming.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/getting-started/webpack.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/getting-started/webpack.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/layout/grid.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/layout/grid.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/layout/media-object.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/layout/media-object.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/layout/overview.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/layout/overview.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/layout/utilities-for-layout.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/layout/utilities-for-layout.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/migration.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/migration.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/utilities/borders.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/utilities/borders.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/utilities/clearfix.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/utilities/clearfix.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/utilities/close-icon.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/utilities/close-icon.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/utilities/colors.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/utilities/colors.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/utilities/display.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/utilities/display.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/utilities/embed.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/utilities/embed.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/utilities/flex.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/utilities/flex.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/utilities/float.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/utilities/float.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/utilities/image-replacement.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/utilities/image-replacement.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/utilities/position.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/utilities/position.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/utilities/screenreaders.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/utilities/screenreaders.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/utilities/sizing.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/utilities/sizing.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/utilities/spacing.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/utilities/spacing.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/utilities/text.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/utilities/text.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/utilities/vertical-align.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/utilities/vertical-align.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/utilities/visibility.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/docs/4.0/utilities/visibility.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/dist/alert.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/dist/alert.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/dist/alert.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/dist/alert.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/dist/button.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/dist/button.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/dist/button.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/dist/button.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/dist/carousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/dist/carousel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/dist/carousel.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/dist/carousel.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/dist/collapse.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/dist/collapse.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/dist/collapse.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/dist/collapse.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/dist/dropdown.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/dist/dropdown.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/dist/dropdown.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/dist/dropdown.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/dist/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/dist/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/dist/index.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/dist/index.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/dist/modal.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/dist/modal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/dist/modal.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/dist/modal.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/dist/popover.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/dist/popover.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/dist/popover.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/dist/popover.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/dist/scrollspy.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/dist/scrollspy.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/dist/scrollspy.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/dist/scrollspy.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/dist/tab.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/dist/tab.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/dist/tab.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/dist/tab.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/dist/tooltip.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/dist/tooltip.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/dist/tooltip.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/dist/tooltip.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/dist/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/dist/util.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/dist/util.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/dist/util.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/src/alert.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/src/alert.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/src/button.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/src/button.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/src/carousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/src/carousel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/src/collapse.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/src/collapse.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/src/dropdown.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/src/dropdown.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/src/modal.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/src/modal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/src/popover.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/src/popover.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/src/scrollspy.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/src/scrollspy.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/src/tab.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/src/tab.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/src/tooltip.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/src/tooltip.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/src/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/src/util.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/tests/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/tests/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/tests/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/tests/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/tests/karma.conf.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/tests/karma.conf.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/tests/unit/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/tests/unit/.eslintrc.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/tests/unit/alert.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/tests/unit/alert.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/tests/unit/button.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/tests/unit/button.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/tests/unit/carousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/tests/unit/carousel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/tests/unit/collapse.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/tests/unit/collapse.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/tests/unit/dropdown.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/tests/unit/dropdown.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/tests/unit/modal.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/tests/unit/modal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/tests/unit/popover.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/tests/unit/popover.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/tests/unit/scrollspy.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/tests/unit/scrollspy.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/tests/unit/tab.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/tests/unit/tab.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/tests/unit/tooltip.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/tests/unit/tooltip.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/tests/unit/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/tests/unit/util.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/tests/vendor/jquery-1.9.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/tests/vendor/jquery-1.9.1.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/tests/vendor/qunit.css" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/tests/vendor/qunit.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/tests/vendor/qunit.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/tests/vendor/qunit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/tests/visual/alert.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/tests/visual/alert.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/tests/visual/button.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/tests/visual/button.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/tests/visual/carousel.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/tests/visual/carousel.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/tests/visual/collapse.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/tests/visual/collapse.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/tests/visual/dropdown.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/tests/visual/dropdown.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/tests/visual/modal.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/tests/visual/modal.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/tests/visual/popover.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/tests/visual/popover.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/tests/visual/scrollspy.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/tests/visual/scrollspy.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/tests/visual/tab.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/tests/visual/tab.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/tests/visual/tooltip.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/js/tests/visual/tooltip.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/nuget/MyGet.ps1" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/nuget/MyGet.ps1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/nuget/bootstrap.nuspec" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/nuget/bootstrap.nuspec" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/nuget/bootstrap.sass.nuspec" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/nuget/bootstrap.sass.nuspec" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/package.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/package.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/robots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/robots.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/sache.json" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/sache.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_alert.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_alert.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_badge.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_badge.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_breadcrumb.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_breadcrumb.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_button-group.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_button-group.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_buttons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_buttons.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_card.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_carousel.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_carousel.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_close.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_close.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_code.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_code.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_custom-forms.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_custom-forms.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_dropdown.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_dropdown.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_forms.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_forms.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_functions.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_functions.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_grid.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_grid.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_images.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_images.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_input-group.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_input-group.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_jumbotron.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_jumbotron.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_list-group.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_list-group.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_media.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_media.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_mixins.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_modal.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_modal.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_nav.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_nav.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_navbar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_navbar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_pagination.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_pagination.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_popover.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_popover.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_print.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_print.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_progress.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_progress.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_reboot.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_reboot.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_root.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_root.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_tables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_tables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_tooltip.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_tooltip.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_transitions.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_transitions.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_type.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_type.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_utilities.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_utilities.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/_variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/bootstrap-grid.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/bootstrap-grid.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/bootstrap-reboot.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/bootstrap-reboot.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/bootstrap.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/bootstrap.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_alert.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_alert.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_background-variant.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_background-variant.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_badge.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_badge.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_border-radius.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_border-radius.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_box-shadow.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_box-shadow.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_breakpoints.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_breakpoints.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_buttons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_buttons.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_caret.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_caret.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_clearfix.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_clearfix.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_float.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_float.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_forms.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_forms.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_gradients.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_gradients.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_grid-framework.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_grid-framework.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_grid.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_grid.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_hover.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_hover.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_image.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_image.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_list-group.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_list-group.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_lists.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_lists.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_nav-divider.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_nav-divider.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_navbar-align.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_navbar-align.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_pagination.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_pagination.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_reset-text.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_reset-text.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_resize.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_resize.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_screen-reader.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_screen-reader.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_size.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_size.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_table-row.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_table-row.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_text-emphasis.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_text-emphasis.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_text-hide.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_text-hide.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_text-truncate.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_text-truncate.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_transition.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_transition.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_visibility.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/mixins/_visibility.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/utilities/_align.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/utilities/_align.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/utilities/_background.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/utilities/_background.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/utilities/_borders.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/utilities/_borders.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/utilities/_clearfix.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/utilities/_clearfix.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/utilities/_display.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/utilities/_display.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/utilities/_embed.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/utilities/_embed.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/utilities/_flex.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/utilities/_flex.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/utilities/_float.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/utilities/_float.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/utilities/_position.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/utilities/_position.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/utilities/_screenreaders.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/utilities/_screenreaders.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/utilities/_sizing.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/utilities/_sizing.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/utilities/_spacing.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/utilities/_spacing.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/utilities/_text.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/utilities/_text.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/utilities/_visibility.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/scss/utilities/_visibility.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/sw.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/sw.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cicada-reactjs/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -514,20 +99,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/reactjs/pages/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="23" column="38" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
+            <state relative-caret-position="168">
+              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/reactjs/i18n.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="28">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
             </state>
           </provider>
         </entry>
@@ -692,26 +268,7 @@
               <item name="cicada" type="b2602c69:ProjectViewProjectNode" />
               <item name="cicada" type="462c0819:PsiDirectoryNode" />
               <item name="reactjs" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cicada" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cicada" type="462c0819:PsiDirectoryNode" />
-              <item name="reactjs" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cicada" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cicada" type="462c0819:PsiDirectoryNode" />
-              <item name="reactjs" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cicada" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cicada" type="462c0819:PsiDirectoryNode" />
-              <item name="reactjs" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="locales" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -740,16 +297,16 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ExternalWork" />
+      <recent name="$PROJECT_DIR$/cicada-symfony/public" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/reactjs" />
       <recent name="$PROJECT_DIR$/reactjs/pages" />
       <recent name="$PROJECT_DIR$/ExternalWork" />
       <recent name="$PROJECT_DIR$/symfony/src/Security" />
       <recent name="$PROJECT_DIR$/symfony/src/Security/Authenticators" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/ExternalWork" />
-      <recent name="$PROJECT_DIR$/cicada-symfony/public" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -837,7 +394,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="237487000" />
+    <option name="totallyTimeSpent" value="237806000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -852,10 +409,9 @@
     <frame x="0" y="0" width="1366" height="749" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4984326" visible="true" weight="0.27954546" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4984326" visible="true" weight="0.27954546" />
       <window_info id="Structure" order="1" sideWeight="0.5015674" side_tool="true" weight="0.20757575" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="TypeScript" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3291536" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -866,9 +422,10 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" sideWeight="0.49924242" weight="0.3291536" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.49529782" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32288402" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5007576" side_tool="true" weight="0.3275862" />
       <window_info anchor="bottom" id="Database Console" order="12" weight="0.3291536" />
+      <window_info anchor="bottom" id="TypeScript" order="13" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -1167,17 +724,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reactjs/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="17" selection-start-line="17" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reactjs/.next/static/webpack/static/development/pages/index.js.3812e83c11bc956c1cd0.hot-update.js.map">
-      <provider selected="true" editor-type-id="text-editor" />
-      <provider editor-type-id="sourcemapFileViewerProvider" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/reactjs/.next/static/webpack/static/development/pages/index.js.3812e83c11bc956c1cd0.hot-update.js.map" />
     <entry file="file://$PROJECT_DIR$/reactjs/.next/build-manifest.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -1218,12 +765,13 @@
     <entry file="file://$PROJECT_DIR$/reactjs/yarn.lock">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/reactjs/pages/_app.js">
+    <entry file="file://$PROJECT_DIR$/reactjs/pages/_app.js" />
+    <entry file="file://$PROJECT_DIR$/reactjs/components/Layout.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        <state relative-caret-position="14">
+          <caret line="1" column="39" selection-start-line="1" selection-start-column="39" selection-end-line="1" selection-end-column="39" />
           <folding>
-            <element signature="e#0#25#0" expanded="true" />
+            <element signature="e#0#29#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1235,27 +783,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reactjs/components/Layout.js">
+    <entry file="file://$PROJECT_DIR$/reactjs/i18n.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14">
-          <caret line="1" column="39" selection-start-line="1" selection-start-column="39" selection-end-line="1" selection-end-column="39" />
+        <state relative-caret-position="70">
+          <caret line="5" column="13" lean-forward="true" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding>
-            <element signature="e#0#29#0" expanded="true" />
+            <element signature="e#0#27#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reactjs/i18n.js">
+    <entry file="file://$PROJECT_DIR$/reactjs/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        <state relative-caret-position="238">
+          <caret line="17" selection-start-line="17" selection-end-line="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/reactjs/pages/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="23" column="38" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
+        <state relative-caret-position="168">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>

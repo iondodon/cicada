@@ -64,7 +64,7 @@ function (_React$Component) {
           lineNumber: 18
         },
         __self: this
-      }, this.t('Welcome to React')));
+      }, this.t('aha')));
     }
   }]);
 
@@ -76,4 +76,4 @@ function (_React$Component) {
 /***/ })
 
 })
-//# sourceMappingURL=index.js.cfcab7bd10f12bf92434.hot-update.js.map
+//# sourceMappingURL=index.js.b716028cbb55574d1f77.hot-update.js.map
