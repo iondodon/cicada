@@ -1,5 +1,5 @@
-import Head from 'next/head'
-import { Container } from 'reactstrap'
+import Head from 'next/head';
+import { Container } from 'reactstrap';
 
 const Layout = (props) => (
     <div>
