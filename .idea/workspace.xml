@@ -2,9 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/symfony/src/Controller/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Controller/RegistrationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony/src/EventListener/MailRegistrationUserListener.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/EventListener/MailRegistrationUserListener.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony/templates/emails/registration.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/templates/emails/registration.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ExternalWork/cicada.postman_collection.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/pages/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExternalWork/App.js.client" beforeDir="false" afterPath="$PROJECT_DIR$/ExternalWork/App.js.client" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/laravel-echo-server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/docker/laravel-echo-server/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/public/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/src/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/src/client.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/src/pages/Page404.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/src/pages/homePageComponent.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/src/serviceWorker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/webpack.client.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/webpack.server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/yarn.lock" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cicada-reactjs/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -48,14 +65,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/symfony/src/Controller/RegistrationController.php">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/reactjs/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="382">
-              <caret line="49" column="70" lean-forward="true" selection-start-line="49" selection-start-column="70" selection-end-line="49" selection-end-column="70" />
-              <folding>
-                <element signature="e#34#93#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="210">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/reactjs/pages/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="42">
+              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
         </entry>
@@ -71,8 +94,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>bod</find>
-      <find>App</find>
       <find>Volume</find>
       <find>VOLUMES_DRIVER</find>
       <find>API</find>
@@ -101,6 +122,8 @@
       <find>pass</find>
       <find>old</find>
       <find>user</find>
+      <find>react</find>
+      <find>script</find>
     </findStrings>
   </component>
   <component name="GOROOT" path="$USER_HOME$/go/sdk/go1.12.5" />
@@ -110,9 +133,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/symfony/vendor/symfony/security/Http/Firewall/ExceptionListener.php" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
-        <option value="$PROJECT_DIR$/symfony/src/Controller/HelloController.php" />
         <option value="$PROJECT_DIR$/symfony/.env.dist" />
         <option value="$PROJECT_DIR$/symfony/config/packages/knpu_oauth2_client.yaml" />
         <option value="$PROJECT_DIR$/symfony/config/routes.yaml" />
@@ -130,7 +150,6 @@
         <option value="$PROJECT_DIR$/docker/.env" />
         <option value="$PROJECT_DIR$/docker/docker-compose.yml" />
         <option value="$PROJECT_DIR$/docker/go/Dockerfile" />
-        <option value="$PROJECT_DIR$/reactjs/package.json" />
         <option value="$PROJECT_DIR$/reactjs/src/pages/Page404.js" />
         <option value="$PROJECT_DIR$/reactjs/src/App.js" />
         <option value="$PROJECT_DIR$/reactjs/src/pages/homePageComponent.js" />
@@ -161,6 +180,10 @@
         <option value="$PROJECT_DIR$/symfony/src/EventListener/MailRegistrationUserListener.php" />
         <option value="$PROJECT_DIR$/symfony/templates/emails/registration.html.twig" />
         <option value="$PROJECT_DIR$/symfony/src/Controller/RegistrationController.php" />
+        <option value="$PROJECT_DIR$/reactjs/package.json" />
+        <option value="$PROJECT_DIR$/reactjs/.gitignore" />
+        <option value="$PROJECT_DIR$/reactjs/pages/Home.js" />
+        <option value="$PROJECT_DIR$/reactjs/pages/index.js" />
       </list>
     </option>
   </component>
@@ -204,7 +227,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -215,45 +237,13 @@
             <path>
               <item name="cicada" type="b2602c69:ProjectViewProjectNode" />
               <item name="cicada" type="462c0819:PsiDirectoryNode" />
-              <item name="symfony" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cicada" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cicada" type="462c0819:PsiDirectoryNode" />
-              <item name="symfony" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cicada" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cicada" type="462c0819:PsiDirectoryNode" />
-              <item name="symfony" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cicada" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cicada" type="462c0819:PsiDirectoryNode" />
-              <item name="symfony" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="EventListener" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cicada" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cicada" type="462c0819:PsiDirectoryNode" />
-              <item name="symfony" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cicada" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cicada" type="462c0819:PsiDirectoryNode" />
-              <item name="symfony" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="emails" type="462c0819:PsiDirectoryNode" />
+              <item name="reactjs" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -373,7 +363,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="227896000" />
+    <option name="totallyTimeSpent" value="229280000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -388,7 +378,7 @@
     <frame x="0" y="0" width="1366" height="749" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4984326" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4984326" visible="true" weight="0.26136363" />
       <window_info id="Structure" order="1" sideWeight="0.5015674" side_tool="true" weight="0.20757575" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -401,7 +391,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" sideWeight="0.49924242" weight="0.3291536" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.37931034" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.44670847" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5007576" side_tool="true" weight="0.3275862" />
       <window_info anchor="bottom" id="Database Console" order="12" weight="0.3291536" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -419,46 +409,6 @@
     </ignored-roots>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/reactjs/src/pages/Page404.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="7" column="20" lean-forward="true" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reactjs/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reactjs/src/pages/homePageComponent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/symfony/src/Controller/HelloController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-          <folding>
-            <element signature="e#34#103#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/symfony/config/packages/lexik_jwt_authentication.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
@@ -804,6 +754,34 @@
           <folding>
             <element signature="e#34#93#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactjs/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18340">
+          <caret line="1310" column="24" selection-start-line="1310" selection-start-column="18" selection-end-line="1310" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactjs/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="17" selection-start-line="17" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactjs/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactjs/pages/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
