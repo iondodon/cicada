@@ -2,57 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/build-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/build-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/react-loadable-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/react-loadable-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/server/pages-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/server/pages-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/server/ssr-module-cache.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/server/ssr-module-cache.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/server/static/development/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/server/static/development/pages/_app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/server/static/development/pages/_app.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/server/static/development/pages/_app.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/server/static/development/pages/_document.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/server/static/development/pages/_document.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/server/static/development/pages/_document.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/server/static/development/pages/_document.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/server/static/development/pages/_error.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/server/static/development/pages/_error.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/server/static/development/pages/_error.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/server/static/development/pages/_error.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactjs/.next/server/static/development/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/server/static/development/pages/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactjs/.next/server/static/development/pages/index.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/server/static/development/pages/index.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/server/static/development/pages/next/dist/pages/_error.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/server/static/development/pages/next/dist/pages/_error.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/chunks/0.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/static/chunks/0.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/chunks/0.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/static/chunks/0.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/development/dll/dll_599a58a60c43245180de.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/static/development/dll/dll_599a58a60c43245180de.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/development/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/static/development/pages/_app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/development/pages/_app.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/static/development/pages/_app.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/development/pages/_error.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/static/development/pages/_error.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/development/pages/_error.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/static/development/pages/_error.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactjs/.next/static/development/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/static/development/pages/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactjs/.next/static/development/pages/index.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/static/development/pages/index.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/development/pages/next/dist/pages/_error.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/static/development/pages/next/dist/pages/_error.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/runtime/amp.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/static/runtime/amp.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/runtime/amp.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/static/runtime/amp.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/runtime/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/static/runtime/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/runtime/main.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/static/runtime/main.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactjs/.next/static/runtime/webpack.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/static/runtime/webpack.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactjs/.next/static/runtime/webpack.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/static/runtime/webpack.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/013683c8778b4d6418cc.hot-update.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/0ce877765e2e1cd4ca6c.hot-update.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/27998e61401590d7412b.hot-update.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/5366d5b0fc73d121a3ba.hot-update.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/6f2c8f3104a502f243cd.hot-update.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/9ae2040607e0bb138d46.hot-update.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/cfcab7bd10f12bf92434.hot-update.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/df91f82fb27f1b79026d.hot-update.json" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/.next/static/webpack/df91f82fb27f1b79026d.hot-update.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/fd8396743627c338a7d3.hot-update.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/static/development/pages/index.js.013683c8778b4d6418cc.hot-update.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/static/development/pages/index.js.013683c8778b4d6418cc.hot-update.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/static/development/pages/index.js.0ce877765e2e1cd4ca6c.hot-update.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/static/development/pages/index.js.0ce877765e2e1cd4ca6c.hot-update.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/static/development/pages/index.js.9ae2040607e0bb138d46.hot-update.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/static/development/pages/index.js.9ae2040607e0bb138d46.hot-update.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/static/development/pages/index.js.cfcab7bd10f12bf92434.hot-update.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/static/development/pages/index.js.cfcab7bd10f12bf92434.hot-update.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/static/development/pages/index.js.fd8396743627c338a7d3.hot-update.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/static/development/pages/index.js.fd8396743627c338a7d3.hot-update.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/pages/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/components/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/Layout.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cicada-reactjs/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -95,20 +52,7 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/reactjs/pages/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -207,8 +151,8 @@
         <option value="$PROJECT_DIR$/reactjs/pages/_app.js" />
         <option value="$PROJECT_DIR$/reactjs/static/locales/en/translation.json" />
         <option value="$PROJECT_DIR$/reactjs/i18n.js" />
-        <option value="$PROJECT_DIR$/reactjs/components/Layout.js" />
         <option value="$PROJECT_DIR$/reactjs/pages/index.js" />
+        <option value="$PROJECT_DIR$/reactjs/components/Layout.js" />
       </list>
     </option>
   </component>
@@ -262,7 +206,18 @@
             <path>
               <item name="cicada" type="b2602c69:ProjectViewProjectNode" />
               <item name="cicada" type="462c0819:PsiDirectoryNode" />
+              <item name="ExternalWork" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cicada" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cicada" type="462c0819:PsiDirectoryNode" />
               <item name="reactjs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cicada" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cicada" type="462c0819:PsiDirectoryNode" />
+              <item name="reactjs" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cicada" type="b2602c69:ProjectViewProjectNode" />
@@ -394,7 +349,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="237806000" />
+    <option name="totallyTimeSpent" value="238205000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -407,9 +362,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="749" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4984326" visible="true" weight="0.27954546" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4984326" visible="true" weight="0.27954546" />
       <window_info id="Structure" order="1" sideWeight="0.5015674" side_tool="true" weight="0.20757575" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -766,30 +720,10 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/reactjs/pages/_app.js" />
-    <entry file="file://$PROJECT_DIR$/reactjs/components/Layout.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14">
-          <caret line="1" column="39" selection-start-line="1" selection-start-column="39" selection-end-line="1" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/reactjs/static/locales/en/translation.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="28">
           <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reactjs/i18n.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
-          <caret line="5" column="13" lean-forward="true" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#27#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -800,12 +734,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/reactjs/i18n.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/reactjs/pages/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        <state relative-caret-position="28">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactjs/components/Layout.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#29#0" expanded="true" />
           </folding>
         </state>
       </provider>
