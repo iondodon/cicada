@@ -23,7 +23,7 @@ class User implements UserInterface
     /**
      * @ORM\Column(type="string")
      */
-    private $name;
+    private $fullName;
 
     /**
      * @ORM\Column(type="string")
@@ -55,14 +55,14 @@ class User implements UserInterface
 		return $this->id;
 	}
 
-	public function setName(string $name): void
+	public function setFullName(string $fullName): void
 	{
-		$this->name = $name;
+		$this->fullName = $fullName;
 	}
 
-	public function getName(): ?string
+	public function getFullName(): ?string
 	{
-		return $this->name;
+		return $this->fullName;
 	}
 
 	public function setSurname(string $surname): void

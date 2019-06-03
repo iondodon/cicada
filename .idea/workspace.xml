@@ -2,39 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExternalWork/.cicada.vpp.lck" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExternalWork/cicada.vpp" beforeDir="false" afterPath="$PROJECT_DIR$/ExternalWork/cicada.vpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExternalWork/cicada.vpp.bak_020d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExternalWork/cicada.vpp.bak_021d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExternalWork/cicada.vpp.bak_022d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExternalWork/cicada.vpp.bak_023d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExternalWork/cicada.vpp.bak_024d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExternalWork/cicada.vpp.bak_025d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExternalWork/cicada.vpp.bak_026d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExternalWork/cicada.vpp.bak_027d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExternalWork/cicada.vpp.bak_028d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExternalWork/cicada.vpp.bak_029d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExternalWork/cicada.vpp.bak_030d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExternalWork/cicada.vpp.bak_031f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExternalWork/cicada.vpp.bak_032d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExternalWork/cicada.vpp.bak_033d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExternalWork/cicada.vpp.bak_034d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExternalWork/cicada.vpp.bak_035d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExternalWork/cicada.vpp.bak_036d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExternalWork/cicada.vpp.bak_037d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExternalWork/cicada.vpp.bak_038d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExternalWork/cicada.vpp.bak_039d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExternalWork/cicada.vpp.bak_040d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExternalWork/cicada.vpp.bak_041d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExternalWork/cicada.vpp.bak_042d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExternalWork/cicada.vpp.bak_043d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExternalWork/cicada.vpp.bak_044d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExternalWork/cicada.vpp.bak_045d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExternalWork/cicada.vpp.bak_046d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExternalWork/cicada.vpp.bak_047d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExternalWork/cicada.vpp.bak_048d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExternalWork/cicada.vpp.bak_049d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExternalWork/EntitiesClassDiagram.vpp" beforeDir="false" afterPath="$PROJECT_DIR$/ExternalWork/EntitiesClassDiagram.vpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Entity/User.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cicada-reactjs/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -77,20 +46,7 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/symfony/src/Entity/User.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-              <folding>
-                <element signature="e#30#62#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -144,7 +100,6 @@
         <option value="$PROJECT_DIR$/symfony/src/Security/MyFacebookAuthenticator.php" />
         <option value="$PROJECT_DIR$/symfony/src/Security/UserProvider.php" />
         <option value="$PROJECT_DIR$/symfony/src/Controller/GoogleController.php" />
-        <option value="$PROJECT_DIR$/symfony/src/Entity/User.php" />
         <option value="$PROJECT_DIR$/symfony/src/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/symfony/src/Security/GoogleAuthenticator.php" />
         <option value="$PROJECT_DIR$/docker/workspace/Dockerfile" />
@@ -191,6 +146,7 @@
         <option value="$PROJECT_DIR$/reactjs/i18n.js" />
         <option value="$PROJECT_DIR$/reactjs/pages/index.js" />
         <option value="$PROJECT_DIR$/reactjs/components/Layout.js" />
+        <option value="$PROJECT_DIR$/symfony/src/Entity/User.php" />
       </list>
     </option>
   </component>
@@ -385,12 +341,12 @@
       <workItem from="1558961282259" duration="27000" />
       <workItem from="1558961365386" duration="11529000" />
       <workItem from="1559572068388" duration="38000" />
-      <workItem from="1559572180200" duration="2196000" />
+      <workItem from="1559572180200" duration="6365000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="240439000" />
+    <option name="totallyTimeSpent" value="244608000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -403,7 +359,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="749" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4984326" visible="true" weight="0.2871212" />
       <window_info id="Structure" order="1" sideWeight="0.5015674" side_tool="true" weight="0.20757575" />
@@ -418,7 +373,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" sideWeight="0.49924242" weight="0.3291536" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32288402" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.52978057" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5007576" side_tool="true" weight="0.3275862" />
       <window_info anchor="bottom" id="Database Console" order="12" weight="0.3291536" />
       <window_info anchor="bottom" id="TypeScript" order="13" />
@@ -792,8 +747,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/symfony/src/Entity/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+        <state relative-caret-position="518">
+          <caret line="130" lean-forward="true" selection-start-line="130" selection-end-line="130" />
           <folding>
             <element signature="e#30#62#0#PHP" expanded="true" />
           </folding>
