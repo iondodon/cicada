@@ -4,7 +4,7 @@ import { Container } from 'reactstrap';
 const Layout = (props) => (
     <div>
         <Head>
-            <title>PairHub</title>
+            <title>Cicada</title>
             <meta name="viewport" content="initial-scale=1.0, width=device-width" />
             <link rel="stylesheet" type="text/css" href={"./static/bootstrap-4.0.0/dist/css/bootstrap.min.css"}/>
         </Head>

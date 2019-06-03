@@ -38,7 +38,7 @@ var Layout = function Layout(props) {
       lineNumber: 7
     },
     __self: this
-  }, "PairHub"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("meta", {
+  }, "Cicada"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("meta", {
     name: "viewport",
     content: "initial-scale=1.0, width=device-width",
     __source: {

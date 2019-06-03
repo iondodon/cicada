@@ -35,16 +35,12 @@ var Home =
 function (_React$Component) {
   Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(Home, _React$Component);
 
-  function Home(_ref) {
+  function Home(t) {
     var _this;
-
-    var t = _ref.t;
 
     Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, Home);
 
-    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(Home).call(this, {
-      t: t
-    }));
+    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(Home).call(this, t));
     _this.t = t;
     return _this;
   }
@@ -76,4 +72,4 @@ function (_React$Component) {
 /***/ })
 
 })
-//# sourceMappingURL=index.js.fd8396743627c338a7d3.hot-update.js.map
+//# sourceMappingURL=index.js.e1dc644c1fd7eeccb45b.hot-update.js.map
