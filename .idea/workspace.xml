@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/ExternalWork/.EntitiesClassDiagram.vpp.lck" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ExternalWork/EntitiesClassDiagram.vpp" beforeDir="false" afterPath="$PROJECT_DIR$/ExternalWork/EntitiesClassDiagram.vpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Entity/User.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cicada-reactjs/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -341,12 +341,12 @@
       <workItem from="1558961282259" duration="27000" />
       <workItem from="1558961365386" duration="11529000" />
       <workItem from="1559572068388" duration="38000" />
-      <workItem from="1559572180200" duration="6365000" />
+      <workItem from="1559572180200" duration="6554000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="244608000" />
+    <option name="totallyTimeSpent" value="244797000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
