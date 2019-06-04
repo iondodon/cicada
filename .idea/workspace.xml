@@ -2,66 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/symfony/src/Entity/Account.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/symfony/src/Entity/Puzzle.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ExternalWork/EntitiesClassDiagram.vpp" beforeDir="false" afterPath="$PROJECT_DIR$/ExternalWork/EntitiesClassDiagram.vpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/build-manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/react-loadable-manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/server/pages-manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/server/ssr-module-cache.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/server/static/development/pages/_app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/server/static/development/pages/_app.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/server/static/development/pages/_document.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/server/static/development/pages/_document.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/server/static/development/pages/_error.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/server/static/development/pages/_error.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/server/static/development/pages/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/server/static/development/pages/index.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/server/static/development/pages/next/dist/pages/_error.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/chunks/0.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/chunks/0.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/development/dll/dll_599a58a60c43245180de.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/development/pages/_app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/development/pages/_app.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/development/pages/_error.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/development/pages/_error.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/development/pages/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/development/pages/index.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/development/pages/next/dist/pages/_error.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/runtime/amp.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/runtime/amp.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/runtime/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/runtime/main.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/runtime/webpack.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/runtime/webpack.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/0f3e06adbca05963a89e.hot-update.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/1bfc3ec988ccdfd4c0af.hot-update.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/23275d26b992d6264122.hot-update.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/361436ceed77b4fda9ee.hot-update.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/449a18dfc6eb3b6d5cf0.hot-update.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/4c8df15216de07a32260.hot-update.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/928ecc03571bd4b43032.hot-update.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/a35ae2ea651537c6f00c.hot-update.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/b716028cbb55574d1f77.hot-update.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/df91f82fb27f1b79026d.hot-update.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/e1dc644c1fd7eeccb45b.hot-update.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/static/development/pages/index.js.0f3e06adbca05963a89e.hot-update.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/static/development/pages/index.js.0f3e06adbca05963a89e.hot-update.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/static/development/pages/index.js.23275d26b992d6264122.hot-update.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/static/development/pages/index.js.23275d26b992d6264122.hot-update.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/static/development/pages/index.js.361436ceed77b4fda9ee.hot-update.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/static/development/pages/index.js.361436ceed77b4fda9ee.hot-update.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/static/development/pages/index.js.449a18dfc6eb3b6d5cf0.hot-update.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/static/development/pages/index.js.449a18dfc6eb3b6d5cf0.hot-update.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/static/development/pages/index.js.4c8df15216de07a32260.hot-update.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/static/development/pages/index.js.4c8df15216de07a32260.hot-update.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/static/development/pages/index.js.928ecc03571bd4b43032.hot-update.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/static/development/pages/index.js.928ecc03571bd4b43032.hot-update.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/static/development/pages/index.js.b716028cbb55574d1f77.hot-update.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/static/development/pages/index.js.b716028cbb55574d1f77.hot-update.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/static/development/pages/index.js.e1dc644c1fd7eeccb45b.hot-update.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/.next/static/webpack/static/development/pages/index.js.e1dc644c1fd7eeccb45b.hot-update.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExternalWork/UseCase.vpp" beforeDir="false" afterPath="$PROJECT_DIR$/ExternalWork/UseCase.vpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cicada-reactjs/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -104,12 +48,12 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/symfony/src/Entity/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-948">
-              <caret line="79" selection-start-line="79" selection-end-line="79" />
+            <state relative-caret-position="354">
+              <caret line="60" column="10" selection-start-line="60" selection-start-column="10" selection-end-line="60" selection-end-column="10" />
               <folding>
                 <element signature="e#30#62#0#PHP" expanded="true" />
               </folding>
@@ -120,8 +64,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/symfony/src/Entity/Account.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1312">
-              <caret line="13" column="7" lean-forward="true" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
+            <state relative-caret-position="224">
+              <caret line="28" column="63" selection-start-line="28" selection-start-column="63" selection-end-line="28" selection-end-column="63" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/symfony/src/Entity/Puzzle.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="603">
+              <caret line="113" column="33" selection-start-line="113" selection-start-column="33" selection-end-line="113" selection-end-column="33" />
+              <folding>
+                <element signature="e#30#43#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -176,7 +132,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/symfony/src/Security/MyFacebookAuthenticator.php" />
         <option value="$PROJECT_DIR$/symfony/src/Security/UserProvider.php" />
         <option value="$PROJECT_DIR$/symfony/src/Controller/GoogleController.php" />
         <option value="$PROJECT_DIR$/symfony/src/Controller/DefaultController.php" />
@@ -227,6 +182,7 @@
         <option value="$PROJECT_DIR$/reactjs/components/Layout.js" />
         <option value="$PROJECT_DIR$/symfony/src/Entity/User.php" />
         <option value="$PROJECT_DIR$/symfony/src/Entity/Account.php" />
+        <option value="$PROJECT_DIR$/symfony/src/Entity/Puzzle.php" />
       </list>
     </option>
   </component>
@@ -261,8 +217,10 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="1366" />
-    <option name="height" value="749" />
+    <option name="x" value="-2" />
+    <option name="y" value="-18" />
+    <option name="width" value="1370" />
+    <option name="height" value="788" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -276,6 +234,11 @@
             <path>
               <item name="cicada" type="b2602c69:ProjectViewProjectNode" />
               <item name="cicada" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cicada" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cicada" type="462c0819:PsiDirectoryNode" />
+              <item name="ExternalWork" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cicada" type="b2602c69:ProjectViewProjectNode" />
@@ -417,11 +380,13 @@
       <workItem from="1558961365386" duration="11529000" />
       <workItem from="1559572068388" duration="38000" />
       <workItem from="1559572180200" duration="6554000" />
+      <workItem from="1559660974969" duration="31000" />
+      <workItem from="1559661158210" duration="10141000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="247112000" />
+    <option name="totallyTimeSpent" value="257524000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -433,10 +398,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1366" height="749" extended-state="0" />
+    <frame x="-2" y="-18" width="1370" height="788" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4984326" visible="true" weight="0.2871212" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4984326" visible="true" weight="0.22960725" />
       <window_info id="Structure" order="1" sideWeight="0.5015674" side_tool="true" weight="0.20757575" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -456,7 +421,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" id="Database" order="3" visible="true" weight="0.19090909" />
+      <window_info anchor="right" id="Database" order="3" weight="0.18106061" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -468,13 +433,6 @@
     </ignored-roots>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/docker/logs/nginx/symfony_access.log">
-      <provider selected="true" editor-type-id="LogFileEditorProvider">
-        <state relative-caret-position="557">
-          <caret line="198" column="63" lean-forward="true" selection-start-line="198" selection-start-column="63" selection-end-line="198" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/symfony/src/Controller/LogoutController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
@@ -729,16 +687,8 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/reactjs/.next/static/webpack/static/development/pages/index.js.3812e83c11bc956c1cd0.hot-update.js.map" />
-    <entry file="file://$PROJECT_DIR$/reactjs/.next/build-manifest.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reactjs/.next/react-loadable-manifest.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/reactjs/.next/build-manifest.json" />
+    <entry file="file://$PROJECT_DIR$/reactjs/.next/react-loadable-manifest.json" />
     <entry file="file://$PROJECT_DIR$/reactjs/static/bootstrap-4.0.0/index.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -818,19 +768,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/symfony/src/Entity/Account.php">
+    <entry file="file://$PROJECT_DIR$/symfony/src/Entity/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1312">
-          <caret line="13" column="7" lean-forward="true" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
+        <state relative-caret-position="354">
+          <caret line="60" column="10" selection-start-line="60" selection-start-column="10" selection-end-line="60" selection-end-column="10" />
+          <folding>
+            <element signature="e#30#62#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/symfony/src/Entity/User.php">
+    <entry file="file://$PROJECT_DIR$/symfony/src/Entity/Account.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-948">
-          <caret line="79" selection-start-line="79" selection-end-line="79" />
+        <state relative-caret-position="224">
+          <caret line="28" column="63" selection-start-line="28" selection-start-column="63" selection-end-line="28" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/src/Entity/Puzzle.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="603">
+          <caret line="113" column="33" selection-start-line="113" selection-start-column="33" selection-end-line="113" selection-end-column="33" />
           <folding>
-            <element signature="e#30#62#0#PHP" expanded="true" />
+            <element signature="e#30#43#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
