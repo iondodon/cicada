@@ -51,32 +51,32 @@ class User implements UserInterface
      */
     private $account;
 
-//    /**
-//     * @var array
-//     *
-//     * @ORM\ManyToMany(targetEntity="Team")
-//     * @ORM\JoinTable(name="users_teams",
-//     *      joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")},
-//     *      inverseJoinColumns={@ORM\JoinColumn(name="team_id", referencedColumnName="id", unique=true)}
-//     * )
-//     */
-//    private $teams;
-//
-//    /**
-//     * @return mixed
-//     */
-//    public function getTeams()
-//    {
-//        return $this->teams;
-//    }
-//
-//    /**
-//     * @param mixed $teams
-//     */
-//    public function setTeams($teams): void
-//    {
-//        $this->teams = $teams;
-//    }
+    /**
+     * @var array
+     *
+     * @ORM\ManyToMany(targetEntity="Team")
+     * @ORM\JoinTable(name="users_teams",
+     *      joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="team_id", referencedColumnName="id", unique=true)}
+     * )
+     */
+    private $teams;
+
+    /**
+     * @return mixed
+     */
+    public function getTeams()
+    {
+        return $this->teams;
+    }
+
+    /**
+     * @param mixed $teams
+     */
+    public function setTeams($teams): void
+    {
+        $this->teams = $teams;
+    }
 
     /**
      * @return mixed

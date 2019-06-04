@@ -3,12 +3,13 @@
 namespace App\Entity;
 
 use DateTime;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Puzzle
  * @ORM\Entity
- * @ORM\Table(name="accounts")
+ * @ORM\Table(name="puzzle")
  */
 class Puzzle
 {
@@ -27,7 +28,7 @@ class Puzzle
     private $name;
 
     /**
-     * @var array
+     * @var Collection
      *
      * @ORM\ManyToMany(targetEntity="User")
      * @ORM\JoinTable(name="puzzles_users",
@@ -38,7 +39,7 @@ class Puzzle
     private $enrolledPlayers;
 
     /**
-     * @var array
+     * @var Collection
      *
      * @ORM\ManyToMany(targetEntity="Team")
      * @ORM\JoinTable(name="puzzles_teams",
@@ -49,7 +50,7 @@ class Puzzle
     private $enrolledTeams;
 
     /**
-     * @var array
+     * @var Collection
      *
      * @ORM\ManyToMany(targetEntity="Stage")
      * @ORM\JoinTable(name="puzzles_stages",
@@ -60,7 +61,7 @@ class Puzzle
     private $stages;
 
     /**
-     * @var array
+     * @var Collection
      *
      * @ORM\ManyToMany(targetEntity="Tag")
      * @ORM\JoinTable(name="puzzles_tags",
@@ -112,6 +113,4 @@ class Puzzle
      * @ORM\Column(nullable=true)
      */
     private $difficultyByCreator;
-
-
 }

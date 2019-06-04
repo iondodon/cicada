@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -19,9 +20,15 @@ class Account
     private $id;
 
 
-//    private $puzzlesEnrolledAt;
-//
-//    private $teamsMemberOf;
+    private $puzzlesEnrolledAt;
+
+    /**
+     * @var Collection
+     *
+     * @ORM\ManyToMany(targetEntity="Team", inversedBy="members")
+     * @ORM\JoinTable(name="accounts_teams")
+     */
+    private $teamsMemberOf;
 
     /**
      * @var User
@@ -33,111 +40,60 @@ class Account
 
 
     /**
-     * @ORM\Column(type="integer")
+     * @var integer
+     *
+     * @ORM\Column(type="integer", nullable=false)
      */
     private $puzzlesSolvedCount;
 
     /**
-     * @ORM\Column(type="integer")
+     * @var integer
+     *
+     * @ORM\Column(type="integer", nullable=false)
      */
-    private $winsContestCount;
-
-
-
-
-//    /**
-//     * @return mixed
-//     */
-//    public function getTeamsMemberOf()
-//    {
-//        return $this->teamsMemberOf;
-//    }
-//
-//    /**
-//     * @param mixed $teamsMemberOf
-//     */
-//    public function setTeamsMemberOf($teamsMemberOf): void
-//    {
-//        $this->teamsMemberOf = $teamsMemberOf;
-//    }
+    private $winedContestCount;
 
     /**
-     * @return mixed
+     * @var Collection
+     *
+     * @ORM\ManyToMany(targetEntity="PuzzleSession")
+     * @ORM\JoinTable(name="accounts_puzzleSessions",
+     *      JoinColumns={@ORM\JoinColumn(name="account_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="puzzleSession_id", referencedColumnName="id", unique=true)}
+     * )
      */
-    public function getUser()
-    {
-        return $this->user;
-    }
+    private $puzzleSessions;
 
     /**
-     * @param mixed $user
+     * @var Collection
+     *
+     * @ORM\ManyToMany(targetEntity="Puzzle")
+     * @ORM\JoinTable(name="accounts_puzzles",
+     *      joinColumns={@ORM\JoinColumn(name="account_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="puzzle_id", referencedColumnName="id", unique=true)}
+     * )
      */
-    public function setUser($user): void
-    {
-        $this->user = $user;
-    }
+    private $createdPuzzles;
 
     /**
-     * @return mixed
+     * @var Collection
+     *
+     * @ORM\ManyToMany(targetEntity="Team")
+     * @ORM\JoinTable(name="accounts_teams",
+     *     joinColumns={@ORM\JoinColumn(name="account_id", referencedColumnName="id")},
+     *     inverseJoinColumns={@ORM\JoinColumn(name="team_id", referencedColumnName="id", unique=true)}
+     * )
      */
-    public function getWinsContestCount()
-    {
-        return $this->winsContestCount;
-    }
+    private $createTeams;
 
     /**
-     * @param mixed $winsContestCount
+     * @var Collection
+     *
+     * @ORM\ManyToMany(targetEntity="Contest")
+     * @ORM\JoinTable(name="accounts_contests",
+     *      joinColumns={@ORM\JoinColumn(name="account_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="contest_id", referencedColumnName="id", unique=true)}
+     * )
      */
-    public function setWinsContestCount($winsContestCount): void
-    {
-        $this->winsContestCount = $winsContestCount;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getPuzzlesSolvedCount()
-    {
-        return $this->puzzlesSolvedCount;
-    }
-
-    /**
-     * @param mixed $puzzlesSolvedCount
-     */
-    public function setPuzzlesSolvedCount($puzzlesSolvedCount): void
-    {
-        $this->puzzlesSolvedCount = $puzzlesSolvedCount;
-    }
-
-//    /**
-//     * @return mixed
-//     */
-//    public function getPuzzlesEnrolledAt()
-//    {
-//        return $this->puzzlesEnrolledAt;
-//    }
-//
-//    /**
-//     * @param mixed $puzzlesEnrolledAt
-//     */
-//    public function setPuzzlesEnrolledAt($puzzlesEnrolledAt): void
-//    {
-//        $this->puzzlesEnrolledAt = $puzzlesEnrolledAt;
-//    }
-
-    /**
-     * @return mixed
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * @param mixed $id
-     */
-    public function setId($id): void
-    {
-        $this->id = $id;
-    }
+    private $createdContests;
 }
