@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * PuzzleSession
  * @ORM\Entity
- * @ORM\Table(name="puzzle_session")
+ * @ORM\Table(name="puzzle_sessions")
  */
 class PuzzleSession
 {

@@ -28,11 +28,6 @@ class User implements UserInterface
     /**
      * @ORM\Column(type="string")
      */
-    private $surname;
-
-    /**
-     * @ORM\Column(type="string")
-     */
     private $username;
 
     /**
@@ -52,107 +47,66 @@ class User implements UserInterface
     private $account;
 
     /**
-     * @var array
-     *
-     * @ORM\ManyToMany(targetEntity="Team")
-     * @ORM\JoinTable(name="users_teams",
-     *      joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")},
-     *      inverseJoinColumns={@ORM\JoinColumn(name="team_id", referencedColumnName="id", unique=true)}
-     * )
+     * @ORM\Column(type="json")
      */
-    private $teams;
+    private $roles = [];
+
 
     /**
      * @return mixed
      */
-    public function getTeams()
+    public function getId()
     {
-        return $this->teams;
-    }
-
-    /**
-     * @param mixed $teams
-     */
-    public function setTeams($teams): void
-    {
-        $this->teams = $teams;
+        return $this->id;
     }
 
     /**
      * @return mixed
      */
-    public function getAccount()
+    public function getFullName()
+    {
+        return $this->fullName;
+    }
+
+    /**
+     * @param mixed $fullName
+     */
+    public function setFullName($fullName): void
+    {
+        $this->fullName = $fullName;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * @param mixed $email
+     */
+    public function setEmail($email): void
+    {
+        $this->email = $email;
+    }
+
+    /**
+     * @return Account
+     */
+    public function getAccount(): Account
     {
         return $this->account;
     }
 
     /**
-     * @param mixed $account
+     * @param Account $account
      */
-    public function setAccount($account): void
+    public function setAccount(Account $account): void
     {
         $this->account = $account;
     }
-
-    /**
-     * @ORM\Column(type="json")
-     */
-    private $roles = [];
-
-	public function getId(): int
-	{
-		return $this->id;
-	}
-
-	public function setFullName(string $fullName): void
-	{
-		$this->fullName = $fullName;
-	}
-
-	public function getFullName(): ?string
-	{
-		return $this->fullName;
-	}
-
-	public function setSurname(string $surname): void
-	{
-		$this->surname = $surname;
-	}
-
-	public function getSurname(): ?string
-	{
-		return $this->surname;
-	}
-
-	public function setUsername(string $username): void
-	{
-		$this->username = $username;
-	}
-
-	public function getUsername(): ?string
-	{
-		return $this->username;
-	}
-
-	public function setEmail(string $email): void
-	{
-		$this->email = $email;
-	}
-
-	public function getEmail(): ?string
-	{
-		return $this->email;
-	}
-
-	public function setPassword(string $password): void
-	{
-		$this->password = $password;
-	}
-
-	public function getPassword(): ?string
-	{
-		return $this->password;
-	}
 
 	public function getRoles(): array
 	{
@@ -179,4 +133,32 @@ class User implements UserInterface
 	{
 
 	}
+
+    /**
+     * @param mixed $username
+     */
+    public function setUsername($username): void
+    {
+        $this->username = $username;
+    }
+
+    /**
+     * Returns the username used to authenticate the user.
+     *
+     * @return string The username
+     */
+    public function getUsername()
+    {
+        return $this->username;
+    }
+
+    public function setPassword(string $password): void
+    {
+        $this->password = $password;
+    }
+
+    public function getPassword(): ?string
+    {
+        return $this->password;
+    }
 }
