@@ -13,11 +13,10 @@ class UserType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function buildForm(FormBuilderInterface $builder, array $options)
+    public function buildForm(FormBuilderInterface $builder, array $options) : void
     {
         $builder
-            ->add('name', TextType::class, ['label'=> 'name'])
-            ->add('surname', TextType::class, ['label'=> 'surname'])
+            ->add('fullName', TextType::class, ['label'=> 'fullName'])
             ->add('username',TextType::class, ['label'=> 'username'])
             ->add('email', TextType::class, ['label'=> 'email'])
             ->add('password', TextType::class, ['label'=> 'password'])
@@ -27,7 +26,7 @@ class UserType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function configureOptions(OptionsResolver $resolver)
+    public function configureOptions(OptionsResolver $resolver) : void
     {
         $resolver->setDefaults(array(
             'data_class' => User::class,
@@ -38,7 +37,7 @@ class UserType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function getBlockPrefix()
+    public function getBlockPrefix() : string
     {
         return '';
     }

@@ -2345,7 +2345,7 @@ function (_React$Component) {
 /*! exports provided: Welcome to React, aha, default */
 /***/ (function(module) {
 
-module.exports = {"Welcome to React":"Welcome to React and react-i18next","aha":"aahhhaaaaaaaa"};
+module.exports = {"Welcome to React":"Welcome to React and react-i18next","aha":"aaaaaa"};
 
 /***/ }),
 

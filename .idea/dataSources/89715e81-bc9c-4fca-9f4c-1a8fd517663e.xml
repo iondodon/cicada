@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataSource name="cicada_db@localhost">
+<dataSource name="MySQL - cicada_db@localhost">
   <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.15">
     <root id="1">
       <ServerVersion>5.7.26</ServerVersion>
@@ -10,7 +10,7 @@
     <schema id="2" parent="1" name="cicada_db">
       <Current>1</Current>
       <Visible>1</Visible>
-      <Collation>latin1_swedish_ci</Collation>
+      <Collation>utf8_general_ci</Collation>
     </schema>
     <schema id="3" parent="1" name="information_schema">
       <Collation>utf8_general_ci</Collation>
@@ -903,74 +903,610 @@
       <Charset>utf8mb4</Charset>
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
-    <table id="226" parent="2" name="migration_versions">
+    <table id="226" parent="2" name="accounts">
       <Collation>utf8mb4_unicode_ci</Collation>
     </table>
-    <table id="227" parent="2" name="users">
+    <table id="227" parent="2" name="accounts_puzzlesEnrolledAt">
       <Collation>utf8mb4_unicode_ci</Collation>
     </table>
-    <column id="228" parent="226" name="version">
-      <Position>1</Position>
-      <DataType>varchar(14)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="229" parent="226" name="executed_at">
-      <Position>2</Position>
-      <Comment>(DC2Type:datetime_immutable)</Comment>
-      <DataType>datetime|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <key id="230" parent="226" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>version</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="231" parent="227" name="id">
+    <table id="228" parent="2" name="accounts_teams">
+      <Collation>utf8mb4_unicode_ci</Collation>
+    </table>
+    <table id="229" parent="2" name="contests">
+      <Collation>utf8mb4_unicode_ci</Collation>
+    </table>
+    <table id="230" parent="2" name="puzzleSessions">
+      <Collation>utf8mb4_unicode_ci</Collation>
+    </table>
+    <table id="231" parent="2" name="puzzles">
+      <Collation>utf8mb4_unicode_ci</Collation>
+    </table>
+    <table id="232" parent="2" name="puzzles_tags">
+      <Collation>utf8mb4_unicode_ci</Collation>
+    </table>
+    <table id="233" parent="2" name="puzzles_teams">
+      <Collation>utf8mb4_unicode_ci</Collation>
+    </table>
+    <table id="234" parent="2" name="stages">
+      <Collation>utf8mb4_unicode_ci</Collation>
+    </table>
+    <table id="235" parent="2" name="tags">
+      <Collation>utf8mb4_unicode_ci</Collation>
+    </table>
+    <table id="236" parent="2" name="teams">
+      <Collation>utf8mb4_unicode_ci</Collation>
+    </table>
+    <table id="237" parent="2" name="users">
+      <Collation>utf8mb4_unicode_ci</Collation>
+    </table>
+    <column id="238" parent="226" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="232" parent="227" name="name">
+    <column id="239" parent="226" name="user_id">
       <Position>2</Position>
-      <DataType>varchar(255)|0s</DataType>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="240" parent="226" name="puzzles_solved_count">
+      <Position>3</Position>
+      <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="233" parent="227" name="surname">
+    <column id="241" parent="226" name="wined_contest_count">
+      <Position>4</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="242" parent="226" name="UNIQ_CAC89EACA76ED395">
+      <ColNames>user_id</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <key id="243" parent="226" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="244" parent="226" name="UNIQ_CAC89EACA76ED395">
+      <ColNames>user_id</ColNames>
+      <UnderlyingIndexName>UNIQ_CAC89EACA76ED395</UnderlyingIndexName>
+    </key>
+    <foreign-key id="245" parent="226" name="FK_CAC89EACA76ED395">
+      <ColNames>user_id</ColNames>
+      <RefSchemaName>cicada_db</RefSchemaName>
+      <RefTableName>users</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="246" parent="227" name="account_id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="247" parent="227" name="puzzle_id">
+      <Position>2</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="248" parent="227" name="IDX_9E1D5CD19B6B5FBA">
+      <ColNames>account_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="249" parent="227" name="IDX_9E1D5CD1D9816812">
+      <ColNames>puzzle_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="250" parent="227" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>account_id
+puzzle_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="251" parent="227" name="FK_9E1D5CD19B6B5FBA">
+      <ColNames>account_id</ColNames>
+      <RefSchemaName>cicada_db</RefSchemaName>
+      <RefTableName>accounts</RefTableName>
+      <RefColNames>id</RefColNames>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <foreign-key id="252" parent="227" name="FK_9E1D5CD1D9816812">
+      <ColNames>puzzle_id</ColNames>
+      <RefSchemaName>cicada_db</RefSchemaName>
+      <RefTableName>puzzles</RefTableName>
+      <RefColNames>id</RefColNames>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="253" parent="228" name="account_id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="254" parent="228" name="team_id">
+      <Position>2</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="255" parent="228" name="IDX_33D3535F9B6B5FBA">
+      <ColNames>account_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="256" parent="228" name="IDX_33D3535F296CD8AE">
+      <ColNames>team_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="257" parent="228" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>account_id
+team_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="258" parent="228" name="FK_33D3535F9B6B5FBA">
+      <ColNames>account_id</ColNames>
+      <RefSchemaName>cicada_db</RefSchemaName>
+      <RefTableName>accounts</RefTableName>
+      <RefColNames>id</RefColNames>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <foreign-key id="259" parent="228" name="FK_33D3535F296CD8AE">
+      <ColNames>team_id</ColNames>
+      <RefSchemaName>cicada_db</RefSchemaName>
+      <RefTableName>teams</RefTableName>
+      <RefColNames>id</RefColNames>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="260" parent="229" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="261" parent="229" name="puzzle_id">
+      <Position>2</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="262" parent="229" name="account_id">
+      <Position>3</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="263" parent="229" name="team_id">
+      <Position>4</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="264" parent="229" name="created_at">
+      <Position>5</Position>
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="265" parent="229" name="finishes_at">
+      <Position>6</Position>
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="266" parent="229" name="key">
+      <Position>7</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="267" parent="229" name="is_private">
+      <Position>8</Position>
+      <DataType>tinyint(1)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="268" parent="229" name="UNIQ_A0042154D9816812">
+      <ColNames>puzzle_id</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <index id="269" parent="229" name="IDX_A00421549B6B5FBA">
+      <ColNames>account_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="270" parent="229" name="IDX_A0042154296CD8AE">
+      <ColNames>team_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="271" parent="229" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="272" parent="229" name="UNIQ_A0042154D9816812">
+      <ColNames>puzzle_id</ColNames>
+      <UnderlyingIndexName>UNIQ_A0042154D9816812</UnderlyingIndexName>
+    </key>
+    <foreign-key id="273" parent="229" name="FK_A0042154D9816812">
+      <ColNames>puzzle_id</ColNames>
+      <RefSchemaName>cicada_db</RefSchemaName>
+      <RefTableName>puzzles</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="274" parent="229" name="FK_A00421549B6B5FBA">
+      <ColNames>account_id</ColNames>
+      <RefSchemaName>cicada_db</RefSchemaName>
+      <RefTableName>accounts</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="275" parent="229" name="FK_A0042154296CD8AE">
+      <ColNames>team_id</ColNames>
+      <RefSchemaName>cicada_db</RefSchemaName>
+      <RefTableName>teams</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="276" parent="230" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="277" parent="230" name="account_id">
+      <Position>2</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="278" parent="230" name="team_id">
+      <Position>3</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="279" parent="230" name="puzzle_id">
+      <Position>4</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="280" parent="230" name="completeness">
+      <Position>5</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="281" parent="230" name="IDX_95E466CE9B6B5FBA">
+      <ColNames>account_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="282" parent="230" name="IDX_95E466CE296CD8AE">
+      <ColNames>team_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="283" parent="230" name="IDX_95E466CED9816812">
+      <ColNames>puzzle_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="284" parent="230" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="285" parent="230" name="FK_95E466CE9B6B5FBA">
+      <ColNames>account_id</ColNames>
+      <RefSchemaName>cicada_db</RefSchemaName>
+      <RefTableName>accounts</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="286" parent="230" name="FK_95E466CE296CD8AE">
+      <ColNames>team_id</ColNames>
+      <RefSchemaName>cicada_db</RefSchemaName>
+      <RefTableName>teams</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="287" parent="230" name="FK_95E466CED9816812">
+      <ColNames>puzzle_id</ColNames>
+      <RefSchemaName>cicada_db</RefSchemaName>
+      <RefTableName>puzzles</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="288" parent="231" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="289" parent="231" name="account_id">
+      <Position>2</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="290" parent="231" name="name">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="234" parent="227" name="username">
+    <column id="291" parent="231" name="created_at">
       <Position>4</Position>
-      <DataType>varchar(255)|0s</DataType>
+      <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="235" parent="227" name="email">
+    <column id="292" parent="231" name="is_private">
       <Position>5</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="236" parent="227" name="password">
+    <column id="293" parent="231" name="stages_count">
       <Position>6</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="237" parent="227" name="roles">
+    <column id="294" parent="231" name="difficulty_by_statistics">
       <Position>7</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="295" parent="231" name="difficulty_by_creator">
+      <Position>8</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="296" parent="231" name="UNIQ_D40A6915E237E06">
+      <ColNames>name</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <index id="297" parent="231" name="IDX_D40A6919B6B5FBA">
+      <ColNames>account_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="298" parent="231" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="299" parent="231" name="UNIQ_D40A6915E237E06">
+      <ColNames>name</ColNames>
+      <UnderlyingIndexName>UNIQ_D40A6915E237E06</UnderlyingIndexName>
+    </key>
+    <foreign-key id="300" parent="231" name="FK_D40A6919B6B5FBA">
+      <ColNames>account_id</ColNames>
+      <RefSchemaName>cicada_db</RefSchemaName>
+      <RefTableName>accounts</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="301" parent="232" name="puzzle_id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="302" parent="232" name="tag_id">
+      <Position>2</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="303" parent="232" name="IDX_73CB5FC9D9816812">
+      <ColNames>puzzle_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="304" parent="232" name="IDX_73CB5FC9BAD26311">
+      <ColNames>tag_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="305" parent="232" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>puzzle_id
+tag_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="306" parent="232" name="FK_73CB5FC9D9816812">
+      <ColNames>puzzle_id</ColNames>
+      <RefSchemaName>cicada_db</RefSchemaName>
+      <RefTableName>puzzles</RefTableName>
+      <RefColNames>id</RefColNames>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <foreign-key id="307" parent="232" name="FK_73CB5FC9BAD26311">
+      <ColNames>tag_id</ColNames>
+      <RefSchemaName>cicada_db</RefSchemaName>
+      <RefTableName>tags</RefTableName>
+      <RefColNames>id</RefColNames>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="308" parent="233" name="puzzle_id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="309" parent="233" name="team_id">
+      <Position>2</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="310" parent="233" name="IDX_A66BAA7AD9816812">
+      <ColNames>puzzle_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="311" parent="233" name="IDX_A66BAA7A296CD8AE">
+      <ColNames>team_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="312" parent="233" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>puzzle_id
+team_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="313" parent="233" name="FK_A66BAA7AD9816812">
+      <ColNames>puzzle_id</ColNames>
+      <RefSchemaName>cicada_db</RefSchemaName>
+      <RefTableName>puzzles</RefTableName>
+      <RefColNames>id</RefColNames>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <foreign-key id="314" parent="233" name="FK_A66BAA7A296CD8AE">
+      <ColNames>team_id</ColNames>
+      <RefSchemaName>cicada_db</RefSchemaName>
+      <RefTableName>teams</RefTableName>
+      <RefColNames>id</RefColNames>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="315" parent="234" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="316" parent="234" name="level">
+      <Position>2</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="317" parent="234" name="created_at">
+      <Position>3</Position>
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="318" parent="234" name="content">
+      <Position>4</Position>
+      <DataType>longtext|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="319" parent="234" name="code">
+      <Position>5</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="320" parent="234" name="puzzleParent_id">
+      <Position>6</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="321" parent="234" name="IDX_2FA26A648A17E0E2">
+      <ColNames>puzzleParent_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="322" parent="234" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="323" parent="234" name="FK_2FA26A648A17E0E2">
+      <ColNames>puzzleParent_id</ColNames>
+      <RefSchemaName>cicada_db</RefSchemaName>
+      <RefTableName>puzzles</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="324" parent="235" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="325" parent="235" name="tag">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="326" parent="235" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="327" parent="236" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="328" parent="236" name="account_id">
+      <Position>2</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="329" parent="236" name="puzzles_solved_count">
+      <Position>3</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="330" parent="236" name="wined_contests_count">
+      <Position>4</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="331" parent="236" name="IDX_96C222589B6B5FBA">
+      <ColNames>account_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="332" parent="236" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="333" parent="236" name="FK_96C222589B6B5FBA">
+      <ColNames>account_id</ColNames>
+      <RefSchemaName>cicada_db</RefSchemaName>
+      <RefTableName>accounts</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="334" parent="237" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="335" parent="237" name="full_name">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="336" parent="237" name="username">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="337" parent="237" name="email">
+      <Position>4</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="338" parent="237" name="password">
+      <Position>5</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="339" parent="237" name="roles">
+      <Position>6</Position>
       <DataType>json|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="238" parent="227" name="PRIMARY">
+    <key id="340" parent="237" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>

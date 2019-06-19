@@ -26,9 +26,9 @@ class MailRegistrationUserListener
         $user = $event->getUser();
         $email = $user->getEmail();
         $password = $user->getPassword();
-        $name = $event->getUser()->getName();
+        $fullName = $event->getUser()->getFullName();
 
-        $body = $this->renderTemplate($name, $email);
+        $body = $this->renderTemplate($fullName, $email);
 
 		$message = (new Swift_Message('Registration User Successfully!'))
             ->setFrom($email)

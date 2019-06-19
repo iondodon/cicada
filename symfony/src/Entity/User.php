@@ -21,89 +21,92 @@ class User implements UserInterface
     private $id;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=false)
      */
     private $fullName;
 
     /**
-     * @ORM\Column(type="string")
-     */
-    private $surname;
-
-    /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=false)
      */
     private $username;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=false)
      */
     private $email;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=false)
      */
     private $password;
 
     /**
-     * @ORM\Column(type="json")
+     * @var Account
+     * @ORM\OneToOne(targetEntity="Account", mappedBy="user")
+     */
+    private $account;
+
+    /**
+     * @ORM\Column(type="json", nullable=false)
      */
     private $roles = [];
 
-	public function getId(): int
-	{
-		return $this->id;
-	}
 
-	public function setFullName(string $fullName): void
-	{
-		$this->fullName = $fullName;
-	}
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 
-	public function getFullName(): ?string
-	{
-		return $this->fullName;
-	}
+    /**
+     * @return mixed
+     */
+    public function getFullName()
+    {
+        return $this->fullName;
+    }
 
-	public function setSurname(string $surname): void
-	{
-		$this->surname = $surname;
-	}
+    /**
+     * @param mixed $fullName
+     */
+    public function setFullName($fullName): void
+    {
+        $this->fullName = $fullName;
+    }
 
-	public function getSurname(): ?string
-	{
-		return $this->surname;
-	}
+    /**
+     * @return mixed
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
 
-	public function setUsername(string $username): void
-	{
-		$this->username = $username;
-	}
+    /**
+     * @param mixed $email
+     */
+    public function setEmail($email): void
+    {
+        $this->email = $email;
+    }
 
-	public function getUsername(): ?string
-	{
-		return $this->username;
-	}
+    /**
+     * @return Account
+     */
+    public function getAccount(): Account
+    {
+        return $this->account;
+    }
 
-	public function setEmail(string $email): void
-	{
-		$this->email = $email;
-	}
-
-	public function getEmail(): ?string
-	{
-		return $this->email;
-	}
-
-	public function setPassword(string $password): void
-	{
-		$this->password = $password;
-	}
-
-	public function getPassword(): ?string
-	{
-		return $this->password;
-	}
+    /**
+     * @param Account $account
+     */
+    public function setAccount(Account $account): void
+    {
+        $this->account = $account;
+    }
 
 	public function getRoles(): array
 	{
@@ -130,4 +133,32 @@ class User implements UserInterface
 	{
 
 	}
+
+    /**
+     * @param mixed $username
+     */
+    public function setUsername($username): void
+    {
+        $this->username = $username;
+    }
+
+    /**
+     * Returns the username used to authenticate the user.
+     *
+     * @return string The username
+     */
+    public function getUsername()
+    {
+        return $this->username;
+    }
+
+    public function setPassword(string $password): void
+    {
+        $this->password = $password;
+    }
+
+    public function getPassword(): ?string
+    {
+        return $this->password;
+    }
 }
