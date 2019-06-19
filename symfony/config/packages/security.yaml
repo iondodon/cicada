@@ -29,7 +29,7 @@ security:
         - { path: ^/api/token, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/api/register, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/api/forgotPassword, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/api, roles: ROLE_ADMIN }
+        - { path: ^/api, roles: ROLE_USER }
 
           # form_login: ~
             # https://symfony.com/doc/current/cookbook/security/form_login_setup.html

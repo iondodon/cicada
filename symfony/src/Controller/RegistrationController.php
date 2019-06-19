@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Account;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpFoundation\Request;
@@ -18,6 +19,7 @@ class RegistrationController extends FOSRestController
      * @Route(path="/api/register", name="registration")
      * @Method("POST")
      * @param Request $request
+     *
      * @return JsonResponse
      */
     public function postRegisterAction(Request $request): JsonResponse
@@ -26,10 +28,10 @@ class RegistrationController extends FOSRestController
         $email = $request->request->get('email');
 
         $em  = $this->getDoctrine()->getManager();
+
         $user =  $em->getRepository(User::class)->findBy(
             array('email' => $email)
         );
-
         if($user){
             return new JsonResponse(['message' => 'Email already registered.']);
         }
@@ -37,7 +39,6 @@ class RegistrationController extends FOSRestController
         $user =  $em->getRepository(User::class)->findBy(
             array('username' => $username)
         );
-
         if($user){
             return new JsonResponse(['message' => 'Username taken.']);
         }
@@ -47,22 +48,29 @@ class RegistrationController extends FOSRestController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $password = $this->get('security.password_encoder')
-                ->encodePassword($user, $user->getPassword());
+            $password = $this->get('security.password_encoder')->encodePassword($user, $user->getPassword());
             $user->setPassword($password);
-            $user->setRoles(['ROLE_ADMIN']);
-            $em = $this->getDoctrine()->getManager();
+            $user->setRoles(['ROLE_USER']);
+
+            $account = new Account();
+            $account->setUser($user);
+            $account->setPuzzlesSolvedCount(0);
+            $account->setWinedContestCount(0);
+            $em->persist($account);
+
+            $user->setAccount($account);
 
             $event = new EmailRegistrationUserEvent($user);
             $dispatcher = $this->get('event_dispatcher');
             $dispatcher->dispatch(EmailRegistrationUserEvent::NAME, $event);
 
+            $em = $this->getDoctrine()->getManager();
             $em->persist($user);
             $em->flush();
 
             return new JsonResponse(['status' => 'ok']);
         }
 
-        throw new HttpException(400, "Invalid data");
+        throw new HttpException(400, 'Invalid data');
     }
 }

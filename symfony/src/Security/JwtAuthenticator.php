@@ -39,7 +39,7 @@ class JwtAuthenticator extends AbstractGuardAuthenticator
      * @param Request $request
      * @return bool
      */
-    public function supports(Request $request)
+    public function supports(Request $request) : bool
     {
         return $request->cookies->has('BEARER');
     }
@@ -106,7 +106,7 @@ class JwtAuthenticator extends AbstractGuardAuthenticator
      * @param UserInterface $user
      * @return bool
      */
-    public function checkCredentials($credentials, UserInterface $user)
+    public function checkCredentials($credentials, UserInterface $user) : bool
     {
         return true;
     }
@@ -135,7 +135,7 @@ class JwtAuthenticator extends AbstractGuardAuthenticator
     /**
      * @return bool
      */
-    public function supportsRememberMe()
+    public function supportsRememberMe() : bool
     {
         return false;
     }
@@ -146,7 +146,7 @@ class JwtAuthenticator extends AbstractGuardAuthenticator
      * @return bool
      * @throws JWTDecodeFailureException
      */
-    private function isHack($token, Request $request)
+    private function isHack($token, Request $request) : bool
     {
         $data = $this->jwtEncoder->decode($token);
 
