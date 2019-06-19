@@ -53,11 +53,7 @@ class Account
     /**
      * @var Collection
      *
-     * @ORM\ManyToMany(targetEntity="PuzzleSession")
-     * @ORM\JoinTable(name="accounts_puzzleSessions",
-     *      joinColumns={@ORM\JoinColumn(name="account_id", referencedColumnName="id")},
-     *      inverseJoinColumns={@ORM\JoinColumn(name="puzzleSession_id", referencedColumnName="id", unique=true)}
-     * )
+     * @ORM\OneToMany(targetEntity="PuzzleSession", mappedBy="singlePlayer")
      */
     private $puzzleSessions;
 

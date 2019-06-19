@@ -101,6 +101,29 @@ class Puzzle
     private $difficultyByCreator;
 
     /**
+     * @var Collection
+     *
+     * @ORM\OneToMany(targetEntity="PuzzleSession", mappedBy="puzzle")
+     */
+    private $openSessions;
+
+    /**
+     * @return Collection
+     */
+    public function getOpenSessions(): Collection
+    {
+        return $this->openSessions;
+    }
+
+    /**
+     * @param Collection $openSessions
+     */
+    public function setOpenSessions(Collection $openSessions): void
+    {
+        $this->openSessions = $openSessions;
+    }
+
+    /**
      * @return mixed
      */
     public function getId()
