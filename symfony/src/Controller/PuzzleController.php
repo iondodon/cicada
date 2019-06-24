@@ -3,27 +3,42 @@
 namespace App\Controller;
 
 use App\Entity\Puzzle;
+use App\Entity\Tag;
 use DateTime;
+use Doctrine\Common\Collections\ArrayCollection;
 use FOS\RestBundle\Controller\Annotations\Route;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Response;
 
 class PuzzleController extends AbstractFOSRestController
 {
     /**
      * @Route("/api/puzzles/create", name="puzzles.create", methods={"POST"})
      * @param Request $request
-     * @return JsonResponse
+     * @return Response
      * @throws \Exception
      */
-    public function indexAction(Request $request) : JsonResponse
+    public function create(Request $request) : Response
     {
         $data = json_decode($request->getContent(), true);
+        $em = $this->getDoctrine()->getManager();
 
         $puzzle = new Puzzle();
         $puzzle->setName($data['name']);
-        //$puzzle->setTags($data['tags']);
+
+        $tags = new ArrayCollection();
+        foreach($data['tags'] as $tg){
+            $tag = $em->getRepository(Tag::class)->findOneBy(['tag' => $tg]);
+            if(!$tag) {
+                $tag = new Tag();
+                $tag->setTag($tg);
+                $em->persist($tag);
+            }
+            $tags->add($tag);
+        }
+        $puzzle->setTags($tags);
+
         $puzzle->setIsPrivate($data['isPrivate']);
         $puzzle->setDifficultyByCreator($data['difficultyByCreator']);
         $puzzle->setDifficultyByStatistics($data['difficultyByCreator']);
@@ -31,10 +46,15 @@ class PuzzleController extends AbstractFOSRestController
         $puzzle->setCreatedBy($this->getUser()->getAccount());
         $puzzle->setCreatedAt(new DateTime());
 
-        $em = $this->getDoctrine()->getManager();
         $em->persist($puzzle);
         $em->flush();
 
-        return new JsonResponse($data);
+        $response = new Response(
+            'Puzzle created.',
+            Response::HTTP_CREATED,
+            ['content-type' => 'text/html']
+        );
+
+        return $response;
     }
 }

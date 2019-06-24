@@ -79,9 +79,9 @@ class Puzzle
     private $createdAt;
 
     /**
-     * @var boolean
+     * @var bool
      *
-     * @ORM\Column(nullable=false)
+     * @ORM\Column(type="integer", nullable=false)
      */
     private $isPrivate;
 
