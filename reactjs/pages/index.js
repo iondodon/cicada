@@ -1,5 +1,6 @@
 import React from 'react';
 import Layout from "../components/Layout";
+import { Button } from "reactstrap"
 
 import '../i18n';
 import { withNamespaces } from 'react-i18next';
@@ -15,7 +16,10 @@ class Home extends React.Component {
 
         return (
             <Layout>
-                <div>{ this.t('aha') }</div>
+                <Button className={"bbtn"}>
+                    <div>{ this.t('aha') }</div>
+                </Button>
+                cxzczxc
             </Layout>
         );
     }

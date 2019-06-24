@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use DateTime;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -14,6 +15,12 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Contest
 {
+    public function __construct()
+    {
+        $this->enrolledTeams = new ArrayCollection();
+        $this->enrolledPlayers = new ArrayCollection();
+    }
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
@@ -99,10 +106,13 @@ class Contest
 
     /**
      * @param Puzzle $puzzle
+     * @return Contest
      */
-    public function setPuzzle(Puzzle $puzzle): void
+    public function setPuzzle(Puzzle $puzzle): Contest
     {
         $this->puzzle = $puzzle;
+
+        return $this;
     }
 
     /**
@@ -115,10 +125,13 @@ class Contest
 
     /**
      * @param DateTime $createdAt
+     * @return Contest
      */
-    public function setCreatedAt(DateTime $createdAt): void
+    public function setCreatedAt(DateTime $createdAt): Contest
     {
         $this->createdAt = $createdAt;
+
+        return $this;
     }
 
     /**
@@ -131,10 +144,13 @@ class Contest
 
     /**
      * @param Account $createdBy
+     * @return Contest
      */
-    public function setCreatedBy(Account $createdBy): void
+    public function setCreatedBy(Account $createdBy): Contest
     {
         $this->createdBy = $createdBy;
+
+        return $this;
     }
 
     /**
@@ -147,10 +163,13 @@ class Contest
 
     /**
      * @param DateTime $finishesAt
+     * @return Contest
      */
-    public function setFinishesAt(DateTime $finishesAt): void
+    public function setFinishesAt(DateTime $finishesAt): Contest
     {
         $this->finishesAt = $finishesAt;
+
+        return $this;
     }
 
     /**
@@ -163,10 +182,13 @@ class Contest
 
     /**
      * @param string $key
+     * @return Contest
      */
-    public function setKey(string $key): void
+    public function setKey(string $key): Contest
     {
         $this->key = $key;
+
+        return $this;
     }
 
     /**
@@ -179,10 +201,13 @@ class Contest
 
     /**
      * @param bool $isPrivate
+     * @return Contest
      */
-    public function setIsPrivate(bool $isPrivate): void
+    public function setIsPrivate(bool $isPrivate): Contest
     {
         $this->isPrivate = $isPrivate;
+
+        return $this;
     }
 
     /**
@@ -195,10 +220,13 @@ class Contest
 
     /**
      * @param Collection $enrolledPlayers
+     * @return Contest
      */
-    public function setEnrolledPlayers(Collection $enrolledPlayers): void
+    public function setEnrolledPlayers(Collection $enrolledPlayers): Contest
     {
         $this->enrolledPlayers = $enrolledPlayers;
+
+        return $this;
     }
 
     /**
@@ -211,9 +239,12 @@ class Contest
 
     /**
      * @param Collection $enrolledTeams
+     * @return Contest
      */
-    public function setEnrolledTeams(Collection $enrolledTeams): void
+    public function setEnrolledTeams(Collection $enrolledTeams): Contest
     {
         $this->enrolledTeams = $enrolledTeams;
+
+        return $this;
     }
 }

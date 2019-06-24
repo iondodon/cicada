@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -13,6 +14,11 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Tag
 {
+    public function __construct()
+    {
+        $this->puzzles = new ArrayCollection();
+    }
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
@@ -50,10 +56,13 @@ class Tag
 
     /**
      * @param mixed $tag
+     * @return Tag
      */
-    public function setTag($tag): void
+    public function setTag($tag): Tag
     {
         $this->tag = $tag;
+
+        return $this;
     }
 
     /**
@@ -66,9 +75,12 @@ class Tag
 
     /**
      * @param Collection $puzzles
+     * @return Tag
      */
-    public function setPuzzles(Collection $puzzles): void
+    public function setPuzzles(Collection $puzzles): Tag
     {
         $this->puzzles = $puzzles;
+
+        return $this;
     }
 }

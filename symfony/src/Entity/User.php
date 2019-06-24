@@ -13,6 +13,11 @@ use Symfony\Component\Security\Core\User\UserInterface;
  */
 class User implements UserInterface
 {
+    public function __construct()
+    {
+
+    }
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
@@ -70,10 +75,13 @@ class User implements UserInterface
 
     /**
      * @param mixed $fullName
+     * @return User
      */
-    public function setFullName($fullName): void
+    public function setFullName($fullName): User
     {
         $this->fullName = $fullName;
+
+        return $this;
     }
 
     /**
@@ -86,10 +94,13 @@ class User implements UserInterface
 
     /**
      * @param mixed $email
+     * @return User
      */
-    public function setEmail($email): void
+    public function setEmail($email): User
     {
         $this->email = $email;
+
+        return $this;
     }
 
     /**
@@ -102,10 +113,13 @@ class User implements UserInterface
 
     /**
      * @param Account $account
+     * @return User
      */
-    public function setAccount(Account $account): void
+    public function setAccount(Account $account): User
     {
         $this->account = $account;
+
+        return $this;
     }
 
 	public function getRoles(): array
@@ -119,9 +133,15 @@ class User implements UserInterface
 		return array_unique($roles);
 	}
 
-	public function setRoles(array $roles): void
+    /**
+     * @param array $roles
+     * @return User
+     */
+	public function setRoles(array $roles): User
 	{
 		$this->roles = $roles;
+
+		return $this;
 	}
 
 	public function getSalt(): ?string
@@ -136,10 +156,13 @@ class User implements UserInterface
 
     /**
      * @param mixed $username
+     * @return User
      */
-    public function setUsername($username): void
+    public function setUsername($username): User
     {
         $this->username = $username;
+
+        return $this;
     }
 
     /**
@@ -147,14 +170,20 @@ class User implements UserInterface
      *
      * @return string The username
      */
-    public function getUsername()
+    public function getUsername(): string
     {
         return $this->username;
     }
 
-    public function setPassword(string $password): void
+    /**
+     * @param mixed $password
+     * @return User
+     */
+    public function setPassword(string $password): User
     {
         $this->password = $password;
+
+        return $this;
     }
 
     public function getPassword(): ?string

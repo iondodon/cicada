@@ -11,8 +11,7 @@
     "next-i18next": "^0.40.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-i18next": "^9.0.10",
-    "reactstrap": "^8.0.0"
+    "react-i18next": "^9.0.10"
   },
   "scripts": {
     "dev": "next",

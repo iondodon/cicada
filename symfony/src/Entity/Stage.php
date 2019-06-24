@@ -13,6 +13,11 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Stage
 {
+    public function __construct()
+    {
+
+    }
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
@@ -74,10 +79,13 @@ class Stage
 
     /**
      * @param Puzzle $puzzleParent
+     * @return Stage
      */
-    public function setPuzzleParent(Puzzle $puzzleParent): void
+    public function setPuzzleParent(Puzzle $puzzleParent): Stage
     {
         $this->puzzleParent = $puzzleParent;
+
+        return $this;
     }
 
     /**
@@ -90,10 +98,13 @@ class Stage
 
     /**
      * @param int $level
+     * @return Stage
      */
-    public function setLevel(int $level): void
+    public function setLevel(int $level): Stage
     {
         $this->level = $level;
+
+        return $this;
     }
 
     /**
@@ -106,10 +117,13 @@ class Stage
 
     /**
      * @param DateTime $createdAt
+     * @return Stage
      */
-    public function setCreatedAt(DateTime $createdAt): void
+    public function setCreatedAt(DateTime $createdAt): Stage
     {
         $this->createdAt = $createdAt;
+
+        return $this;
     }
 
     /**
@@ -122,10 +136,13 @@ class Stage
 
     /**
      * @param string $content
+     * @return Stage
      */
-    public function setContent(string $content): void
+    public function setContent(string $content): Stage
     {
         $this->content = $content;
+
+        return $this;
     }
 
     /**
@@ -138,9 +155,12 @@ class Stage
 
     /**
      * @param string $code
+     * @return Stage
      */
-    public function setCode(string $code): void
+    public function setCode(string $code): Stage
     {
         $this->code = $code;
+
+        return $this;
     }
 }
