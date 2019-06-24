@@ -11,6 +11,11 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class PuzzleSession
 {
+    public function __construct()
+    {
+
+    }
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
@@ -67,10 +72,13 @@ class PuzzleSession
 
     /**
      * @param Account $singlePlayer
+     * @return PuzzleSession
      */
-    public function setSinglePlayer(Account $singlePlayer): void
+    public function setSinglePlayer(Account $singlePlayer): PuzzleSession
     {
         $this->singlePlayer = $singlePlayer;
+
+        return $this;
     }
 
     /**
@@ -83,10 +91,13 @@ class PuzzleSession
 
     /**
      * @param Team $teamPlayer
+     * @return PuzzleSession
      */
-    public function setTeamPlayer(Team $teamPlayer): void
+    public function setTeamPlayer(Team $teamPlayer): PuzzleSession
     {
         $this->teamPlayer = $teamPlayer;
+
+        return $this;
     }
 
     /**
@@ -99,10 +110,13 @@ class PuzzleSession
 
     /**
      * @param Puzzle $puzzle
+     * @return PuzzleSession
      */
-    public function setPuzzle(Puzzle $puzzle): void
+    public function setPuzzle(Puzzle $puzzle): PuzzleSession
     {
         $this->puzzle = $puzzle;
+
+        return $this;
     }
 
     /**
@@ -115,9 +129,12 @@ class PuzzleSession
 
     /**
      * @param int $completeness
+     * @return PuzzleSession
      */
-    public function setCompleteness(int $completeness): void
+    public function setCompleteness(int $completeness): PuzzleSession
     {
         $this->completeness = $completeness;
+
+        return $this;
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -12,6 +13,14 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Team
 {
+    public function __construct()
+    {
+        $this->contestsEnrolledAt = new ArrayCollection();
+        $this->puzzleSessions = new ArrayCollection();
+        $this->puzzlesEnrolledAt = new ArrayCollection();
+        $this->members = new ArrayCollection();
+    }
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
@@ -87,10 +96,13 @@ class Team
 
     /**
      * @param Collection $members
+     * @return Team
      */
-    public function setMembers(Collection $members): void
+    public function setMembers(Collection $members): Team
     {
         $this->members = $members;
+
+        return $this;
     }
 
     /**
@@ -103,10 +115,13 @@ class Team
 
     /**
      * @param int $puzzlesSolvedCount
+     * @return Team
      */
-    public function setPuzzlesSolvedCount(int $puzzlesSolvedCount): void
+    public function setPuzzlesSolvedCount(int $puzzlesSolvedCount): Team
     {
         $this->puzzlesSolvedCount = $puzzlesSolvedCount;
+
+        return $this;
     }
 
     /**
@@ -119,10 +134,13 @@ class Team
 
     /**
      * @param int $winedContestsCount
+     * @return Team
      */
-    public function setWinedContestsCount(int $winedContestsCount): void
+    public function setWinedContestsCount(int $winedContestsCount): Team
     {
         $this->winedContestsCount = $winedContestsCount;
+
+        return $this;
     }
 
     /**
@@ -135,10 +153,13 @@ class Team
 
     /**
      * @param Collection $puzzleSessions
+     * @return Team
      */
-    public function setPuzzleSessions(Collection $puzzleSessions): void
+    public function setPuzzleSessions(Collection $puzzleSessions): Team
     {
         $this->puzzleSessions = $puzzleSessions;
+
+        return $this;
     }
 
     /**
@@ -151,10 +172,13 @@ class Team
 
     /**
      * @param Account $creator
+     * @return Team
      */
-    public function setCreator(Account $creator): void
+    public function setCreator(Account $creator): Team
     {
         $this->creator = $creator;
+
+        return $this;
     }
 
     /**
@@ -167,10 +191,13 @@ class Team
 
     /**
      * @param Collection $puzzlesEnrolledAt
+     * @return Team
      */
-    public function setPuzzlesEnrolledAt(Collection $puzzlesEnrolledAt): void
+    public function setPuzzlesEnrolledAt(Collection $puzzlesEnrolledAt): Team
     {
         $this->puzzlesEnrolledAt = $puzzlesEnrolledAt;
+
+        return $this;
     }
 
     /**
@@ -183,9 +210,12 @@ class Team
 
     /**
      * @param Collection $contestsEnrolledAt
+     * @return Team
      */
-    public function setContestsEnrolledAt(Collection $contestsEnrolledAt): void
+    public function setContestsEnrolledAt(Collection $contestsEnrolledAt): Team
     {
         $this->contestsEnrolledAt = $contestsEnrolledAt;
+
+        return $this;
     }
 }

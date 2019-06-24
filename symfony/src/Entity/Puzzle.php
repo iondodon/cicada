@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use DateTime;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -13,6 +14,11 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Puzzle
 {
+    public function __construct()
+    {
+        $this->tags = new ArrayCollection();
+    }
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
@@ -108,6 +114,14 @@ class Puzzle
     private $openSessions;
 
     /**
+     * @return integer
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    /**
      * @return Collection
      */
     public function getOpenSessions(): Collection
@@ -117,18 +131,13 @@ class Puzzle
 
     /**
      * @param Collection $openSessions
+     * @return Puzzle
      */
-    public function setOpenSessions(Collection $openSessions): void
+    public function setOpenSessions(Collection $openSessions): Puzzle
     {
         $this->openSessions = $openSessions;
-    }
 
-    /**
-     * @return mixed
-     */
-    public function getId()
-    {
-        return $this->id;
+        return $this;
     }
 
     /**
@@ -141,10 +150,13 @@ class Puzzle
 
     /**
      * @param string $name
+     * @return Puzzle
      */
-    public function setName(string $name): void
+    public function setName(string $name): Puzzle
     {
         $this->name = $name;
+
+        return $this;
     }
 
     /**
@@ -157,10 +169,13 @@ class Puzzle
 
     /**
      * @param Collection $enrolledPlayers
+     * @return Puzzle
      */
-    public function setEnrolledPlayers(Collection $enrolledPlayers): void
+    public function setEnrolledPlayers(Collection $enrolledPlayers): Puzzle
     {
         $this->enrolledPlayers = $enrolledPlayers;
+
+        return $this;
     }
 
     /**
@@ -173,10 +188,13 @@ class Puzzle
 
     /**
      * @param Collection $enrolledTeams
+     * @return Puzzle
      */
-    public function setEnrolledTeams(Collection $enrolledTeams): void
+    public function setEnrolledTeams(Collection $enrolledTeams): Puzzle
     {
         $this->enrolledTeams = $enrolledTeams;
+
+        return $this;
     }
 
     /**
@@ -189,10 +207,13 @@ class Puzzle
 
     /**
      * @param Collection $stages
+     * @return Puzzle
      */
-    public function setStages(Collection $stages): void
+    public function setStages(Collection $stages): Puzzle
     {
         $this->stages = $stages;
+
+        return $this;
     }
 
     /**
@@ -205,10 +226,13 @@ class Puzzle
 
     /**
      * @param Collection $tags
+     * @return Puzzle
      */
-    public function setTags(Collection $tags): void
+    public function setTags(Collection $tags): Puzzle
     {
         $this->tags = $tags;
+
+        return $this;
     }
 
     /**
@@ -221,10 +245,13 @@ class Puzzle
 
     /**
      * @param Account $createdBy
+     * @return Puzzle
      */
-    public function setCreatedBy(Account $createdBy): void
+    public function setCreatedBy(Account $createdBy): Puzzle
     {
         $this->createdBy = $createdBy;
+
+        return $this;
     }
 
     /**
@@ -237,10 +264,13 @@ class Puzzle
 
     /**
      * @param DateTime $createdAt
+     * @return Puzzle
      */
-    public function setCreatedAt(DateTime $createdAt): void
+    public function setCreatedAt(DateTime $createdAt): Puzzle
     {
         $this->createdAt = $createdAt;
+
+        return $this;
     }
 
     /**
@@ -253,10 +283,13 @@ class Puzzle
 
     /**
      * @param bool $isPrivate
+     * @return Puzzle
      */
-    public function setIsPrivate(bool $isPrivate): void
+    public function setIsPrivate(bool $isPrivate): Puzzle
     {
         $this->isPrivate = $isPrivate;
+
+        return $this;
     }
 
     /**
@@ -269,10 +302,13 @@ class Puzzle
 
     /**
      * @param int $stagesCount
+     * @return Puzzle
      */
-    public function setStagesCount(int $stagesCount): void
+    public function setStagesCount(int $stagesCount): Puzzle
     {
         $this->stagesCount = $stagesCount;
+
+        return $this;
     }
 
     /**
@@ -285,10 +321,13 @@ class Puzzle
 
     /**
      * @param int $difficultyByStatistics
+     * @return Puzzle
      */
-    public function setDifficultyByStatistics(int $difficultyByStatistics): void
+    public function setDifficultyByStatistics(int $difficultyByStatistics): Puzzle
     {
         $this->difficultyByStatistics = $difficultyByStatistics;
+
+        return $this;
     }
 
     /**
@@ -301,9 +340,12 @@ class Puzzle
 
     /**
      * @param int $difficultyByCreator
+     * @return Puzzle
      */
-    public function setDifficultyByCreator(int $difficultyByCreator): void
+    public function setDifficultyByCreator(int $difficultyByCreator): Puzzle
     {
         $this->difficultyByCreator = $difficultyByCreator;
+
+        return $this;
     }
 }
