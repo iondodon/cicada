@@ -6,7 +6,6 @@ use App\Entity\Puzzle;
 use App\Entity\Tag;
 use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
-use FOS\RestBundle\Controller\Annotations as Rest;
 use FOS\RestBundle\Controller\Annotations\Route;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -85,5 +84,34 @@ class PuzzleController extends AbstractFOSRestController
         );
 
         return $response;
+    }
+
+    /**
+     * @Route("/api/puzzles/{id}", name="puzzles.show", methods={"GET"})
+     * @param $id
+     * @return JsonResponse
+     */
+    public function show($id): JsonResponse
+    {
+        $em = $this->getDoctrine()->getManager();
+        $puzzle = $em->getRepository(Puzzle::class)->findOneBy(['id' => $id]);
+
+        $encoders = [new JsonEncoder()];
+        $normalizers = [new ObjectNormalizer()];
+        $serializer = new Serializer($normalizers, $encoders);
+
+        $puzzleJson = $serializer->serialize($puzzle, 'json', [
+            'circular_reference_handler' => static function ($object) {
+                return $object->getId();
+            }
+        ]);
+
+        $jsonResponse = new JsonResponse(json_decode($puzzleJson, true));
+
+        if(!$puzzle){
+            $jsonResponse->setStatusCode(204);
+        }
+
+        return $jsonResponse;
     }
 }
