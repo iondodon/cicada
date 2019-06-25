@@ -51,7 +51,7 @@ class Puzzle
     /**
      * @var Collection
      *
-     * @ORM\ManyToMany(targetEntity="Stage", mappedBy="puzzleParent")
+     * @ORM\OneToMany(targetEntity="Stage", mappedBy="puzzleParent")
      */
     private $stages;
 

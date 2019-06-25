@@ -130,7 +130,7 @@ class Account
     {
         $this->user = $user;
 
-        return this;
+        return $this;
     }
 
     /**
@@ -267,9 +267,9 @@ class Account
     }
 
     /**
-     * @return Contest
+     * @return Collection
      */
-    public function getContestsEnrolledAt(): Contest
+    public function getContestsEnrolledAt(): Collection
     {
         return $this->contestsEnrolledAt;
     }
