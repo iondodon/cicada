@@ -114,4 +114,48 @@ class PuzzleController extends AbstractFOSRestController
 
         return $jsonResponse;
     }
+
+    /**
+     * @Route("/api/puzzles/{id}", name="puzzles.update", methods={"PUT"})
+     * @param Request $request
+     * @param $id
+     * @return Response
+     * @throws \Exception
+     */
+    public function update(Request $request, $id): Response
+    {
+        $editedPuzzle = json_decode($request->getContent(), true);
+
+        $em = $this->getDoctrine()->getManager();
+        $puzzle = $em->getRepository(Puzzle::class)->findOneBy(['id' => $id]);
+
+        $puzzle->setName($editedPuzzle['name']);
+        $puzzle->setStagesCount($editedPuzzle['stagesCount']);
+        $puzzle->setIsPrivate($editedPuzzle['isPrivate']);
+        $tags = new ArrayCollection();
+        foreach($editedPuzzle['tags'] as $tg){
+            $tag = $em->getRepository(Tag::class)->findOneBy(['tag' => $tg]);
+            if(!$tag) {
+                $tag = new Tag();
+                $tag->setTag($tg);
+                $em->persist($tag);
+            }
+            $tags->add($tag);
+        }
+        $puzzle->setTags($tags);
+        $puzzle->setUpdatedAt(new DateTime());
+        $puzzle->setDifficultyByCreator($editedPuzzle['difficultyByCreator']);
+
+        $em->persist($puzzle);
+        $em->flush();
+
+
+        $response = new Response(
+            'Puzzle updated.',
+            Response::HTTP_OK,
+            ['content-type' => 'text/html']
+        );
+
+        return $response;
+    }
 }
