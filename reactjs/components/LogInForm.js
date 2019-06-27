@@ -3,22 +3,50 @@ import React from 'react';
 import '../i18n';
 import { withNamespaces } from 'react-i18next';
 
-import Head from 'next/head';
 
 class LogInForm extends React.Component {
 
     constructor({t}){
         super({t});
         this.t = t;
+
+        this.state = {
+            email: '',
+            password: ''
+        };
+
+        this.getToken = this.getToken.bind(this);
+    }
+
+    getToken(){
+        console.log("submitted");
+
+        let headers = new Headers();
+
+        console.log(Buffer.from(this.state.email + ":" + this.state.password).toString('base64'));
+
+        //headers.append('Content-Type', 'text/json');
+        headers.append('Authorization', 'Basic ' + Buffer.from(this.state.email + ":" + this.state.password).toString('base64'));
+
+
+        fetch('http://127.0.0.11:45647/api/token',  {
+            method: 'POST', // *GET, POST, PUT, DELETE, etc.
+            mode: 'no-cors', // no-cors, cors, *same-origin
+            cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+            credentials: 'same-origin', // include, *same-origin, omit
+            headers: headers,
+            redirect: 'follow', // manual, *follow, error
+            referrer: 'no-referrer', // no-referrer, *client
+            // body: JSON.stringify(data), // body data type must match "Content-Type" header
+        })
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(error => console.log(error));
     }
 
     render(){
         return (
             <div className="d-flex justify-content-end">
-                <Head>
-                    <title>Login</title>
-                    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-                </Head>
                 <div className="card" style={{width: 18 + 'rem'}}>
                         <div className="card-body">
                             <h5 className="card-title">Card title</h5>
@@ -29,20 +57,26 @@ class LogInForm extends React.Component {
                             <form>
                                 <div className="form-group">
                                     <label htmlFor="exampleInputEmail1">Email address</label>
-                                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
+                                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"
+                                           onChange={e => this.setState({ email: e.target.value })}
+                                           value={this.state.email}
+                                    />
                                         <small id="emailHelp" className="form-text text-muted">
                                             We'll never share your email with anyone else
                                         </small>
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="exampleInputPassword1">Password</label>
-                                    <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password"/>
+                                    <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password"
+                                           onChange={e => this.setState({ password: e.target.value })}
+                                           value={this.state.password}
+                                    />
                                 </div>
                                 <div className="form-group form-check">
                                     <input type="checkbox" className="form-check-input" id="exampleCheck1"/>
                                         <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label>
                                 </div>
-                                <button type="submit" className="btn btn-primary btn-sm">Submit</button>
+                                <button type="submit" className="btn btn-primary btn-sm" onClick={this.getToken}>Submit</button>
                             </form>
                         </div>
                 </div>
