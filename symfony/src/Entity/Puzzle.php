@@ -51,7 +51,7 @@ class Puzzle
     /**
      * @var Collection
      *
-     * @ORM\ManyToMany(targetEntity="Stage", mappedBy="puzzleParent")
+     * @ORM\OneToMany(targetEntity="Stage", mappedBy="puzzleParent")
      */
     private $stages;
 
@@ -79,9 +79,16 @@ class Puzzle
     private $createdAt;
 
     /**
-     * @var boolean
+     * @var DateTime
      *
-     * @ORM\Column(nullable=false)
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $updatedAt;
+
+    /**
+     * @var bool
+     *
+     * @ORM\Column(type="integer", nullable=false)
      */
     private $isPrivate;
 
@@ -345,6 +352,25 @@ class Puzzle
     public function setDifficultyByCreator(int $difficultyByCreator): Puzzle
     {
         $this->difficultyByCreator = $difficultyByCreator;
+
+        return $this;
+    }
+
+    /**
+     * @return DateTime
+     */
+    public function getUpdatedAt(): DateTime
+    {
+        return $this->updatedAt;
+    }
+
+    /**
+     * @param DateTime $updatedAt
+     * @return Puzzle
+     */
+    public function setUpdatedAt(DateTime $updatedAt): Puzzle
+    {
+        $this->updatedAt = $updatedAt;
 
         return $this;
     }

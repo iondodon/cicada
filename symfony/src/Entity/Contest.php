@@ -68,7 +68,7 @@ class Contest
     /**
      * @var boolean
      *
-     * @ORM\Column(type="boolean", nullable=false)
+     * @ORM\Column(type="integer", nullable=false)
      */
     private $isPrivate;
 
