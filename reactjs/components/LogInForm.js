@@ -11,37 +11,41 @@ class LogInForm extends React.Component {
         this.t = t;
 
         this.state = {
-            email: '',
+            username: '',
             password: ''
         };
 
         this.getToken = this.getToken.bind(this);
+        this.listCookies = this.listCookies.bind(this);
+    }
+
+
+    listCookies() {
+        var theCookies = document.cookie.split(';');
+        var aString = '';
+        for (var i = 1 ; i <= theCookies.length; i++) {
+            aString += i + ' ' + theCookies[i-1] + "\n";
+        }
+        return aString;
     }
 
     getToken(){
-        console.log("submitted");
-
-        let headers = new Headers();
-
-        console.log(Buffer.from(this.state.email + ":" + this.state.password).toString('base64'));
-
-        //headers.append('Content-Type', 'text/json');
-        headers.append('Authorization', 'Basic ' + Buffer.from(this.state.email + ":" + this.state.password).toString('base64'));
-
-
-        fetch('http://127.0.0.11:45647/api/token',  {
+        const headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+        headers.append('Authorization', 'Basic ' + Buffer.from(this.state.username + ":" + this.state.password).toString('base64'));
+        fetch('http://localhost:9000/api/token',  {
             method: 'POST', // *GET, POST, PUT, DELETE, etc.
-            mode: 'no-cors', // no-cors, cors, *same-origin
-            cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-            credentials: 'same-origin', // include, *same-origin, omit
+            mode: 'cors', // no-cors, cors, *same-origin
+            cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
+            credentials: 'include', // include, *same-origin, omit
             headers: headers,
-            redirect: 'follow', // manual, *follow, error
+            redirect: 'manual', // manual, *follow, error
             referrer: 'no-referrer', // no-referrer, *client
             // body: JSON.stringify(data), // body data type must match "Content-Type" header
         })
-            .then(response => response.json())
-            .then(data => console.log(data))
             .catch(error => console.log(error));
+
+        console.log(this.listCookies());
     }
 
     render(){
@@ -57,9 +61,9 @@ class LogInForm extends React.Component {
                             <form>
                                 <div className="form-group">
                                     <label htmlFor="exampleInputEmail1">Email address</label>
-                                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"
-                                           onChange={e => this.setState({ email: e.target.value })}
-                                           value={this.state.email}
+                                    <input type="username" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"
+                                           onChange={e => this.setState({ username: e.target.value })}
+                                           value={this.state.username}
                                     />
                                         <small id="emailHelp" className="form-text text-muted">
                                             We'll never share your email with anyone else
@@ -76,8 +80,8 @@ class LogInForm extends React.Component {
                                     <input type="checkbox" className="form-check-input" id="exampleCheck1"/>
                                         <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label>
                                 </div>
-                                <button type="submit" className="btn btn-primary btn-sm" onClick={this.getToken}>Submit</button>
                             </form>
+                            <button /** type="submit" **/ className="btn btn-primary btn-sm" onClick={this.getToken}>Submit</button>
                         </div>
                 </div>
             </div>
