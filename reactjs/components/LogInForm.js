@@ -1,10 +1,9 @@
 import React from 'react';
-import Layout from "../components/Layout";
 
 import '../i18n';
 import { withNamespaces } from 'react-i18next';
 
-class Home extends React.Component {
+class LogInForm extends React.Component {
 
     constructor({t}){
         super({t});
@@ -14,11 +13,9 @@ class Home extends React.Component {
     render(){
 
         return (
-            <Layout>
-
-            </Layout>
+            <div>asda</div>
         );
     }
 }
 
-export default withNamespaces()(Home);
+export default withNamespaces()(LogInForm);

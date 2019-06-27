@@ -158,4 +158,27 @@ class PuzzleController extends AbstractFOSRestController
 
         return $response;
     }
+
+    /**
+     * @Route("/api/puzzles/destroy/{id}", name="puzzles.destroy", methods={"DELETE"})
+     * @param Request $request
+     * @param $id
+     * @return Response
+     */
+    public function destroy(Request $request, int $id): Response
+    {
+        $em = $this->getDoctrine()->getManager();
+        $puzzle = $em->getRepository(Puzzle::class)->findOneBy(['id' => $id]);
+
+        $em->remove($puzzle);
+        $em->flush();
+
+        $response = new Response(
+            'Puzzle deleted.',
+            Response::HTTP_OK,
+            ['content-type' => 'text/html']
+        );
+
+        return $response;
+    }
 }
