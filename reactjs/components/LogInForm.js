@@ -14,9 +14,9 @@ class LogInForm extends React.Component {
 
     render(){
         return (
-            <div class="d-flex justify-content-center">
+            <div className="d-flex justify-content-end">
                 <Head>
-                    <title>My page title</title>
+                    <title>Login</title>
                     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                 </Head>
                 <div className="card" style={{width: 18 + 'rem'}}>
