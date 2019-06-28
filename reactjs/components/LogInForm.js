@@ -50,39 +50,23 @@ class LogInForm extends React.Component {
 
     render(){
         return (
-            <div className="d-flex justify-content-end">
-                <div className="card" style={{width: 18 + 'rem'}}>
-                        <div className="card-body">
-                            <h5 className="card-title">Card title</h5>
-                            <p className="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.
-                            </p>
-
-                            <form>
-                                <div className="form-group">
-                                    <label htmlFor="exampleInputEmail1">Email address</label>
-                                    <input type="username" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"
-                                           onChange={e => this.setState({ username: e.target.value })}
-                                           value={this.state.username}
-                                    />
-                                        <small id="emailHelp" className="form-text text-muted">
-                                            We'll never share your email with anyone else
-                                        </small>
-                                </div>
-                                <div className="form-group">
-                                    <label htmlFor="exampleInputPassword1">Password</label>
-                                    <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password"
-                                           onChange={e => this.setState({ password: e.target.value })}
-                                           value={this.state.password}
-                                    />
-                                </div>
-                                <div className="form-group form-check">
-                                    <input type="checkbox" className="form-check-input" id="exampleCheck1"/>
-                                        <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label>
-                                </div>
-                            </form>
-                            <button /** type="submit" **/ className="btn btn-primary btn-sm" onClick={this.getToken}>Submit</button>
+            <div className="card">
+                <header className="card-header">title</header>
+                <div className={"inner"}>
+                    <div className="card-content">
+                        <div className="form-group form-success">
+                            <label htmlFor="username">username:</label>
+                            <input type="text" placeholder="" className="form-control"/>
                         </div>
+                        <div className="form-group form-warning">
+                            <label htmlFor="password">password:</label>
+                            <input type="password" placeholder="" className="form-control"/>
+                        </div>
+                        <button type={"submit"} className="btn btn-default">
+                            {/*<span className="loading"/>*/}
+                            Login
+                        </button>
+                    </div>
                 </div>
             </div>
         );

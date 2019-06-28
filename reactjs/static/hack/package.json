@@ -1,0 +1,75 @@
+{
+  "_from": "hack",
+  "_id": "hack@0.8.1",
+  "_inBundle": false,
+  "_integrity": "sha1-TC52st3Aia1NiB1poGGweWDMyzU=",
+  "_location": "/hack",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "hack",
+    "name": "hack",
+    "escapedName": "hack",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/hack/-/hack-0.8.1.tgz",
+  "_shasum": "4c2e76b2ddc089ad4d881d69a061b07960cccb35",
+  "_spec": "hack",
+  "_where": "/var/www",
+  "author": {
+    "name": "EGOIST",
+    "email": "0x142857@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/egoist/hack/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Dead simple CSS framework.",
+  "devDependencies": {
+    "color-preset": "^0.1.1",
+    "cssnano": "^3.7.3",
+    "gulp": "^3.9.1",
+    "gulp-jade": "^1.1.0",
+    "gulp-postcss": "^6.1.1",
+    "gulp-serve": "^1.4.0",
+    "jstransformer-marked": "^1.0.1",
+    "postcss-cssnext": "^2.7.0",
+    "postcss-import": "^8.1.2",
+    "postcss-mixins": "^5.0.0",
+    "postcss-simple-vars": "^3.0.0"
+  },
+  "files": [
+    "dist"
+  ],
+  "homepage": "https://github.com/egoist/hack#readme",
+  "keywords": [
+    "hack",
+    "css",
+    "ui",
+    "web",
+    "bootstrap"
+  ],
+  "license": "MIT",
+  "main": "dist/hack.css",
+  "name": "hack",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/egoist/hack.git"
+  },
+  "scripts": {
+    "build": "gulp build",
+    "dev": "gulp",
+    "gh": "npm run build && gh-pages -d demo",
+    "test": "npm run build",
+    "toc": "markdown-toc -i README.md"
+  },
+  "version": "0.8.1"
+}
