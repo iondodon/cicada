@@ -1,3 +1,19 @@
-/*.btn, .card, .checkbox, .form-control {*/
-/*    border-radius: 0;*/
-/*}*/
+.container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+/* Medium screens */
+@media all and (max-width: 800px) {
+    .container {
+        justify-content: center;
+    }
+}
+
+/* Small screens */
+@media all and (max-width: 500px) {
+    .container {
+        justify-content: center;
+    }
+}
