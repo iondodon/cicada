@@ -1,8 +1,23 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
 .container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     min-width: 80%;
+    background: rgba(251, 250, 242, 0.79);
+
+    -webkit-box-shadow: 0px 0px 29px 0px rgba(219,209,131,1);
+    -moz-box-shadow: 0px 0px 29px 0px rgba(219,209,131,1);
+    box-shadow: 0px 0px 29px 0px rgba(219,209,131,1);
+}
+
+#__next,
+#__next > div,
+#__next > div > .container {
+    height: 100%;
 }
 
 .menu {
@@ -20,5 +35,7 @@
 
 /* Medium screens */
 @media all and (max-width: 800px) {
-
+    .container {
+        min-width: 100%;
+    }
 }

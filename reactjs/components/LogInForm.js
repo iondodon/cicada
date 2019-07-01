@@ -94,7 +94,6 @@ class LogInForm extends React.Component {
                         </button>
                         <button className="btn btn-primary">Register</button>
                     </div>
-                    <input type="checkbox" name="vehicle2" value="Car"/> dasdasdasdasd
                 </div>
             </div>
         );
