@@ -20,33 +20,43 @@ class LogInForm extends React.Component {
     }
 
     async getToken(){
-        try {
-            const headers = new Headers();
-            headers.append('Content-Type', 'application/json');
-            headers.append(
-                'Authorization',
-                'Basic ' + Buffer.from(this.state.username + ":" + this.state.password).toString('base64')
-            );
+        document.getElementsByClassName('alert-warning')[0]
+            .setAttribute('style', 'display: none');
+        document.getElementsByClassName('alert-error')[0]
+            .setAttribute('style', 'display: none');
 
-            let response = await fetch('http://localhost:9000/api/token', {
-                method: 'POST', // *GET, POST, PUT, DELETE, etc.
-                mode: 'cors', // no-cors, cors, *same-origin
-                cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
-                credentials: 'include', // include, *same-origin, omit
-                headers: headers,
-                redirect: 'manual', // manual, *follow, error
-                referrer: 'no-referrer', // no-referrer, *client
-                // body: JSON.stringify(data), // body data type must match "Content-Type" header
-            });
+        if(this.state.username === '' || this.state.password === ''){
+            document.getElementsByClassName('alert-warning')[0]
+                .setAttribute('style', 'display: inline');
+        } else
+            try {
+                const headers = new Headers();
+                headers.append('Content-Type', 'application/json');
+                headers.append(
+                    'Authorization',
+                    'Basic ' + Buffer.from(this.state.username + ":" + this.state.password).toString('base64')
+                );
 
-            if(response.status === 404){
-                console.log(response.statusText);
-             } else if(response.status === 200) {
-                console.log("Logged in");
+                let response = await fetch('http://localhost:9000/api/token', {
+                    method: 'POST', // *GET, POST, PUT, DELETE, etc.
+                    mode: 'cors', // no-cors, cors, *same-origin
+                    cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
+                    credentials: 'include', // include, *same-origin, omit
+                    headers: headers,
+                    redirect: 'manual', // manual, *follow, error
+                    referrer: 'no-referrer', // no-referrer, *client
+                    // body: JSON.stringify(data), // body data type must match "Content-Type" header
+                });
+
+                if(response.status === 404){
+                    document.getElementsByClassName('alert-error')[0]
+                        .setAttribute('style', 'display: inline');
+                 } else if(response.status === 200) {
+                    console.log("Logged in successfully");
+                }
+            }catch (e) {
+                console.log(e.message);
             }
-        }catch (e) {
-            console.log(e.message);
-        }
     }
 
     _handleKeyDown(e){
@@ -76,12 +86,15 @@ class LogInForm extends React.Component {
                                value={this.state.password}
                         />
                     </fieldset>
+                    <div className="alert alert-warning" style={{display: 'none'}}>Fill all fields.</div>
+                    <div className="alert alert-error" style={{display: 'none'}}>Bad credentials.</div>
                     <div className="btn-group">
                         <button type={"submit"} className="btn btn-default" onClick={this.getToken}>
                             Login
                         </button>
                         <button className="btn btn-primary">Register</button>
                     </div>
+                    <input type="checkbox" name="vehicle2" value="Car"/> dasdasdasdasd
                 </div>
             </div>
         );

@@ -24,8 +24,10 @@ class LogIn extends React.Component {
                     <link rel="stylesheet" type="text/css" href={"./static/pages/login/loginStyle.css"}/>
                     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                 </Head>
-                <LogInInfo/>
-                <LogInForm/>
+                <div className={"loginPageContent"}>
+                    <LogInInfo/>
+                    <LogInForm/>
+                </div>
             </Layout>
         );
     }

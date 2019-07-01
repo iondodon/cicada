@@ -1,5 +1,7 @@
 import Head from 'next/head';
 import Container from "./Container";
+import TopMenu from "./TopMenu";
+import Footer from "./Footer";
 
 const Layout = (props) => (
     <div>
@@ -10,7 +12,9 @@ const Layout = (props) => (
             <link rel="stylesheet" type="text/css" href={"./static/style.css"}/>
         </Head>
         <Container>
+            <TopMenu/>
             {props.children}
+            <Footer/>
         </Container>
     </div>
 );
