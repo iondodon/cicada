@@ -1,19 +1,10 @@
 .container {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
+    min-width: 80%;
 }
-
 
 /* Medium screens */
 @media all and (max-width: 800px) {
-    .container {
-        justify-content: center;
-    }
-}
 
-/* Small screens */
-@media all and (max-width: 500px) {
-    .container {
-        justify-content: center;
-    }
 }

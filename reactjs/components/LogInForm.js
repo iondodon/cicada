@@ -20,7 +20,6 @@ class LogInForm extends React.Component {
     }
 
     async getToken(){
-        document.getElementsByClassName('loading')[0].setAttribute('style', 'display: initial;');
         try {
             const headers = new Headers();
             headers.append('Content-Type', 'application/json');
@@ -42,8 +41,7 @@ class LogInForm extends React.Component {
 
             if(response.status === 404){
                 console.log(response.statusText);
-                document.getElementsByClassName('loading')[0].setAttribute('style', 'display: none;');
-            } else if(response.status === 200) {
+             } else if(response.status === 200) {
                 console.log("Logged in");
             }
         }catch (e) {
@@ -53,7 +51,7 @@ class LogInForm extends React.Component {
 
     _handleKeyDown(e){
         if(e.key === 'Enter'){
-            this.getToken().then(() => console.log("done"));
+            this.getToken().then(() => console.log("sent"));
         }
     }
 
@@ -80,7 +78,6 @@ class LogInForm extends React.Component {
                     </fieldset>
                     <div className="btn-group">
                         <button type={"submit"} className="btn btn-default" onClick={this.getToken}>
-                            <span className="loading" style={{display: 'none'}}/>
                             Login
                         </button>
                         <button className="btn btn-primary">Register</button>

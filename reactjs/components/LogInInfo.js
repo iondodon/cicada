@@ -15,6 +15,7 @@ class LogInInfo extends React.Component {
         return (
             <div className={"info"}>
                 <img className="bg" src={"/static/pages/login/cicada.png"} alt={"cicada"} style={{width: '50%;'}}/>
+                <br/>
                 asdasdasdasd
             </div>
         );

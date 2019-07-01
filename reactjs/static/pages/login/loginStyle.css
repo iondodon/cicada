@@ -1,12 +1,13 @@
 .card {
-    width: 75%;
-    overflow: auto;
     margin-top: 15%;
+    max-width: 34%;
+    min-width: 300px;
 }
 
 .card-content {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .btn-group {
@@ -15,20 +16,40 @@
     justify-content: center;
 }
 
-.info{
+.info {
     margin-top: 15%;
     display: flex;
     flex-direction: column;
-    width: 100%;
-    z-index: 0;
+}
+
+fieldset {
+    min-width: 100%;
+    justify-content: center;
+}
+
+label {
+    max-width: 25%;
+}
+
+input {
+    max-width: 74%;
 }
 
 /* Medium screens */
 @media all and (max-width: 800px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 
-}
+    .card {
+        order: 0;
+        min-width: 100%;
+    }
 
-/* Small screens */
-@media all and (max-width: 500px) {
-
+    .info {
+        order: 1;
+        min-width: 100%;
+    }
 }
