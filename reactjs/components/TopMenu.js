@@ -3,6 +3,7 @@ import React from 'react';
 import '../i18n';
 import { withNamespaces } from 'react-i18next';
 
+import Link from 'next/link';
 
 class TopMenu extends React.Component {
 
@@ -14,9 +15,16 @@ class TopMenu extends React.Component {
     render(){
         return (
             <div className="menu top-menu">
-                <a className="menu-item">Login</a>
+                <Link href={"/login"}>
+                    <a className="menu-item">Login</a>
+                </Link>{' '}
+
                 |
-                <a className="menu-item">Register</a>
+
+                <Link href={"/signup"}>
+                    <a className="menu-item">SignUp</a>
+                </Link>{' '}
+
                 |
                 <a className="menu-item">About</a>
             </div>

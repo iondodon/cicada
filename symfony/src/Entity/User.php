@@ -168,9 +168,9 @@ class User implements UserInterface
     /**
      * Returns the username used to authenticate the user.
      *
-     * @return string The username
+     * @return string $username
      */
-    public function getUsername(): string
+    public function getUsername(): ?string
     {
         return $this->username;
     }

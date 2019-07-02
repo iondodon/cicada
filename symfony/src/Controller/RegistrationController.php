@@ -3,11 +3,10 @@
 namespace App\Controller;
 
 use App\Entity\Account;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use FOS\RestBundle\Controller\Annotations\Route;
+use FOS\RestBundle\Controller\FOSRestController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use FOS\RestBundle\Controller\FOSRestController;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use App\Form\UserType;
 use App\Entity\User;
@@ -16,8 +15,7 @@ use App\Event\EmailRegistrationUserEvent;
 class RegistrationController extends FOSRestController
 {
     /**
-     * @Route(path="/api/register", name="registration")
-     * @Method("POST")
+     * @Route(path="/api/register", name="registration", methods={"POST"})
      * @param Request $request
      *
      * @return JsonResponse
@@ -46,6 +44,7 @@ class RegistrationController extends FOSRestController
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
+
 
         if ($form->isSubmitted() && $form->isValid()) {
             $password = $this->get('security.password_encoder')->encodePassword($user, $user->getPassword());
