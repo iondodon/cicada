@@ -6,6 +6,7 @@ import '../i18n';
 
 import Layout from "../components/Layout";
 import LogInForm from "../components/LogInForm";
+import LogInInfo from "../components/LogInInfo";
 
 class LogIn extends React.Component {
 
@@ -21,8 +22,12 @@ class LogIn extends React.Component {
                 <Head>
                     <title>Login</title>
                     <link rel="stylesheet" type="text/css" href={"./static/pages/login/loginStyle.css"}/>
+                    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                 </Head>
-                <LogInForm/>
+                <div className={"loginPageContent"}>
+                    <LogInInfo/>
+                    <LogInForm/>
+                </div>
             </Layout>
         );
     }

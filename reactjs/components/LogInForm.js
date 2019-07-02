@@ -3,48 +3,97 @@ import React from 'react';
 import '../i18n';
 import { withNamespaces } from 'react-i18next';
 
-import Head from 'next/head';
 
 class LogInForm extends React.Component {
 
     constructor({t}){
         super({t});
         this.t = t;
+
+        this.state = {
+            username: '',
+            password: ''
+        };
+
+        this.getToken = this.getToken.bind(this);
+        this._handleKeyDown = this._handleKeyDown.bind(this);
+    }
+
+    async getToken(){
+        document.getElementsByClassName('alert-warning')[0]
+            .setAttribute('style', 'display: none');
+        document.getElementsByClassName('alert-error')[0]
+            .setAttribute('style', 'display: none');
+
+        if(this.state.username === '' || this.state.password === ''){
+            document.getElementsByClassName('alert-warning')[0]
+                .setAttribute('style', 'display: inline');
+        } else
+            try {
+                const headers = new Headers();
+                headers.append('Content-Type', 'application/json');
+                headers.append(
+                    'Authorization',
+                    'Basic ' + Buffer.from(this.state.username + ":" + this.state.password).toString('base64')
+                );
+
+                let response = await fetch('http://localhost:9000/api/token', {
+                    method: 'POST', // *GET, POST, PUT, DELETE, etc.
+                    mode: 'cors', // no-cors, cors, *same-origin
+                    cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
+                    credentials: 'include', // include, *same-origin, omit
+                    headers: headers,
+                    redirect: 'manual', // manual, *follow, error
+                    referrer: 'no-referrer', // no-referrer, *client
+                    // body: JSON.stringify(data), // body data type must match "Content-Type" header
+                });
+
+                if(response.status === 404){
+                    document.getElementsByClassName('alert-error')[0]
+                        .setAttribute('style', 'display: inline');
+                 } else if(response.status === 200) {
+                    console.log("Logged in successfully");
+                }
+            }catch (e) {
+                console.log(e.message);
+            }
+    }
+
+    _handleKeyDown(e){
+        if(e.key === 'Enter'){
+            this.getToken().then(() => console.log("sent"));
+        }
     }
 
     render(){
         return (
-            <div class="d-flex justify-content-center">
-                <Head>
-                    <title>My page title</title>
-                    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-                </Head>
-                <div className="card" style={{width: 18 + 'rem'}}>
-                        <div className="card-body">
-                            <h5 className="card-title">Card title</h5>
-                            <p className="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.
-                            </p>
-
-                            <form>
-                                <div className="form-group">
-                                    <label htmlFor="exampleInputEmail1">Email address</label>
-                                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
-                                        <small id="emailHelp" className="form-text text-muted">
-                                            We'll never share your email with anyone else
-                                        </small>
-                                </div>
-                                <div className="form-group">
-                                    <label htmlFor="exampleInputPassword1">Password</label>
-                                    <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password"/>
-                                </div>
-                                <div className="form-group form-check">
-                                    <input type="checkbox" className="form-check-input" id="exampleCheck1"/>
-                                        <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label>
-                                </div>
-                                <button type="submit" className="btn btn-primary btn-sm">Submit</button>
-                            </form>
-                        </div>
+            <div className="card">
+                <header className="card-header">Login</header>
+                <div className="card-content inner">
+                    <fieldset className="form-group form-success">
+                        <label htmlFor="username">username:</label>
+                        <input type="text" placeholder="" className="form-control"
+                               onChange={e => this.setState({ username: e.target.value })}
+                               onKeyDown={this._handleKeyDown}
+                               value={this.state.username}
+                        />
+                    </fieldset>
+                    <fieldset className="form-group form-warning">
+                        <label htmlFor="password">password:</label>
+                        <input type="password" placeholder="" className="form-control"
+                               onChange={e => this.setState({ password: e.target.value })}
+                               onKeyDown={this._handleKeyDown}
+                               value={this.state.password}
+                        />
+                    </fieldset>
+                    <div className="alert alert-warning" style={{display: 'none'}}>Fill all fields.</div>
+                    <div className="alert alert-error" style={{display: 'none'}}>Bad credentials.</div>
+                    <div className="btn-group">
+                        <button type={"submit"} className="btn btn-default" onClick={this.getToken}>
+                            Login
+                        </button>
+                        <button className="btn btn-primary">SignUp</button>
+                    </div>
                 </div>
             </div>
         );
