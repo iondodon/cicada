@@ -20,6 +20,7 @@ class Footer extends React.Component {
     render(){
         return (
             <div className="footer">
+                <hr/>
                 Footer content here
             </div>
         );
