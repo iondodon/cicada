@@ -41,12 +41,8 @@ class SignUpForm extends React.Component {
 
         const request = {
             method: 'POST',
-            mode: 'cors', // no-cors, cors, *same-origin
-            cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
-            credentials: 'include', // include, *same-origin, omit
+            mode: 'no-cors',
             headers: headers,
-            redirect: 'manual', // manual, *follow, error
-            referrer: 'no-referrer', // no-referrer, *client
             body: formData.toString()
         };
 

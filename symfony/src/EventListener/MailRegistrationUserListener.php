@@ -12,7 +12,6 @@ use Twig_Environment;
 class MailRegistrationUserListener
 {
     protected $twig;
-
     protected $mailer;
 
     public function __construct(Twig_Environment $twig, \Swift_Mailer $mailer)
