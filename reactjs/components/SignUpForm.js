@@ -20,12 +20,43 @@ class SignUpForm extends React.Component {
         };
 
         this.sendData = this.sendData.bind(this);
+        this.closeWarning = this.closeWarning.bind(this);
+        this.validateFields = this.validateFields.bind(this);
+        this.validateEmail = this.validateEmail.bind(this);
         this._handleKeyDown = this._handleKeyDown.bind(this);
+    }
+
+    validateEmail(email) {
+        let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
     }
 
     _handleKeyDown(e){
         if(e.key === 'Enter'){
             this.sendData().then(() => console.log('done'));
+        }
+    }
+
+    validateFields(){
+        document.getElementsByClassName('fill-all')[0]
+            .setAttribute('style', 'display: none; margin-top: 3px;');
+        document.getElementsByClassName('too-short')[0]
+            .setAttribute('style', 'display: none; margin-top: 3px;');
+        document.getElementsByClassName('invalid-email-format')[0]
+            .setAttribute('style', 'display: none; margin-top: 3px;');
+
+        let validFields;
+
+        if(!this.validateEmail(this.state.email)){
+            document.getElementsByClassName('invalid-email-format')[0]
+                .setAttribute('style', 'display: inline');
+            validFields = false;
+        }
+
+        
+
+        if(validFields){
+            this.sendData().then(() => console.log('sent'))
         }
     }
 
@@ -59,6 +90,10 @@ class SignUpForm extends React.Component {
         } catch (e) {
             console.log(e.message);
         }
+    }
+
+    closeWarning(e){
+        e.target.parentElement.setAttribute('style', 'display: none;');
     }
 
     render(){
@@ -110,10 +145,20 @@ class SignUpForm extends React.Component {
                         <label htmlFor="passwordRetyped">agree:</label>
                         <input type="checkbox" name="vehicle1" value="Bike"/>
                     </div>
-                    <div className="alert alert-warning" style={{display: 'none'}}>Fill all fields.</div>
-                    <div className="alert alert-error" style={{display: 'none'}}>Bad credentials.</div>
                     <div className="btn-group">
-                        <button className="btn btn-primary" onClick={this.sendData}>SignUp</button>
+                        <button className="btn btn-primary" onClick={this.validateFields}>SignUp</button>
+                    </div>
+                    <div className="alert alert-warning fill-all" style={{display: 'none', 'margin-top': '3px'}}>
+                        Fill all fields.
+                        <a onClick={this.closeWarning}>x</a>
+                    </div>
+                    <div className="alert alert-warning invalid-email-format" style={{display: 'none', 'margin-top': '3px'}}>
+                        Invalid email format.
+                        <a onClick={this.closeWarning}>x</a>
+                    </div>
+                    <div className="alert alert-warning too-short" style={{display: 'none', 'margin-top': '3px'}}>
+                        All fields should be at least 6 chars long.
+                        <a onClick={this.closeWarning}>x</a>
                     </div>
                 </div>
             </div>
