@@ -13,7 +13,7 @@ class TopMenu extends React.Component {
 
     render(){
         return (
-            <div className="menu">
+            <div className="menu top-menu">
                 <a className="menu-item active">Login</a>
                 |
                 <a className="menu-item">Register</a>
