@@ -19,12 +19,49 @@ class SignUpForm extends React.Component {
             agree: ''
         };
 
+        this.sendData = this.sendData.bind(this);
         this._handleKeyDown = this._handleKeyDown.bind(this);
     }
 
     _handleKeyDown(e){
         if(e.key === 'Enter'){
+            this.sendData().then(() => console.log('done'));
+        }
+    }
 
+    async sendData(){
+        const formData = new URLSearchParams();
+        formData.append('email', this.state.email);
+        formData.append('fullName', this.state.fullName);
+        formData.append('username', this.state.username);
+        formData.append('password', this.state.password);
+
+        let headers = new Headers();
+        headers.append('Content-Type', 'application/x-www-form-urlencoded');
+
+        const request = {
+            method: 'POST',
+            mode: 'cors', // no-cors, cors, *same-origin
+            cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
+            credentials: 'include', // include, *same-origin, omit
+            headers: headers,
+            redirect: 'manual', // manual, *follow, error
+            referrer: 'no-referrer', // no-referrer, *client
+            body: formData.toString()
+        };
+
+        try {
+            let response = await fetch('http://localhost:9000/api/register', request);
+
+            if(response.status === 403){
+                console.log(response.statusText);
+                document.getElementsByClassName('alert-error')[0]
+                    .setAttribute('style', 'display: inline');
+            } else if(response.status === 201) {
+                console.log("Registered successfully");
+            }
+        } catch (e) {
+            console.log(e.message);
         }
     }
 
@@ -80,7 +117,7 @@ class SignUpForm extends React.Component {
                     <div className="alert alert-warning" style={{display: 'none'}}>Fill all fields.</div>
                     <div className="alert alert-error" style={{display: 'none'}}>Bad credentials.</div>
                     <div className="btn-group">
-                        <button className="btn btn-primary">SignUp</button>
+                        <button className="btn btn-primary" onClick={this.sendData}>SignUp</button>
                     </div>
                 </div>
             </div>
