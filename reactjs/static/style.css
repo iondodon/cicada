@@ -10,6 +10,17 @@ html, body {
     box-shadow: 0px 0px 29px 0px rgba(219,209,131,1);
 }
 
+.dashboard {
+    display: flex;
+    flex-direction: row;
+}
+
+.left-panel {
+    display: flex;
+    flex-direction: column;
+    max-width: 30%;
+}
+
 hr {
     text-align: center;
 }

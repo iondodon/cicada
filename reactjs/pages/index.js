@@ -23,7 +23,16 @@ class Home extends React.Component {
                     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                 </Head>
                 <Dashboard>
-                    dsadasdaSAASDASD
+                    <hr/>
+                    <div className="card">
+                        <header className="card-header">title</header>
+                        <div className="card-content">
+                            <div className="inner">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita,
+                                quas ex vero enim in doloribus officiis ullam vel nam esse sapiente velit incidunt.
+                                Eaque quod et, aut maiores excepturi sint.
+                            </div>
+                        </div>
+                    </div>
                 </Dashboard>
             </Layout>
         );
