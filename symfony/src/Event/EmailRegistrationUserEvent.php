@@ -7,7 +7,7 @@ use App\Entity\User;
 
 class EmailRegistrationUserEvent extends Event
 {
-    const NAME = 'registration.user.event.email_registration_user_event';
+    public const NAME = 'registration.user.event.email_registration_user_event';
 
 	protected $user;
 
@@ -16,7 +16,7 @@ class EmailRegistrationUserEvent extends Event
         $this->user = $user;
     }
 
-    public function getUser()
+    public function getUser(): User
     {
         return $this->user;
     }

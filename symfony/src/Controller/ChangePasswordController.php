@@ -63,6 +63,6 @@ class ChangePasswordController extends FOSRestController
             return new JsonResponse(['status' => 'ok']);
         }
 
-        throw new HttpException(400, "Invalid data");
+        throw new HttpException(400, 'Invalid data');
     }
 }

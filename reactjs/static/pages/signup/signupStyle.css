@@ -1,0 +1,76 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    min-width: 80%;
+    padding: 0 5% 0 5%;
+}
+
+.card {
+    max-width: 40%;
+    min-width: 40%;
+    text-align: center;
+}
+
+.card-content {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.btn-group {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.info {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+}
+
+fieldset {
+    min-width: 100%;
+    justify-content: center;
+}
+
+label {
+    max-width: 25%;
+}
+
+input {
+    max-width: 74%;
+}
+
+.signupPageContent {
+    margin-top: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.alert {
+    margin: auto;
+}
+
+/* Medium screens */
+@media all and (max-width: 800px) {
+    .signupPageContent {
+        margin-top: 2%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card {
+        order: 0;
+        margin-top: 5%;
+        min-width: 100%;
+    }
+
+    .info {
+        margin-top: 2px;
+        order: 1;
+        min-width: 100%;
+    }
+}

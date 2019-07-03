@@ -4,7 +4,7 @@ import '../i18n';
 import { withNamespaces } from 'react-i18next';
 
 
-class LogInInfo extends React.Component {
+class SignUpInfo extends React.Component {
 
     constructor({t}){
         super({t});
@@ -31,4 +31,4 @@ class LogInInfo extends React.Component {
     }
 }
 
-export default withNamespaces()(LogInInfo);
+export default withNamespaces()(SignUpInfo);

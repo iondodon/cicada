@@ -3,11 +3,10 @@
 namespace App\Controller;
 
 use App\Entity\Account;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\JsonResponse;
+use FOS\RestBundle\Controller\Annotations\Route;
 use FOS\RestBundle\Controller\FOSRestController;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use App\Form\UserType;
 use App\Entity\User;
@@ -16,13 +15,12 @@ use App\Event\EmailRegistrationUserEvent;
 class RegistrationController extends FOSRestController
 {
     /**
-     * @Route(path="/api/register", name="registration")
-     * @Method("POST")
+     * @Route(path="/api/register", name="registration", methods={"POST"})
      * @param Request $request
      *
-     * @return JsonResponse
+     * @return Response
      */
-    public function postRegisterAction(Request $request): JsonResponse
+    public function postRegisterAction(Request $request): Response
     {
         $username = $request->request->get('username');
         $email = $request->request->get('email');
@@ -33,19 +31,20 @@ class RegistrationController extends FOSRestController
             array('email' => $email)
         );
         if($user){
-            return new JsonResponse(['message' => 'Email already registered.']);
+            throw new HttpException(Response::HTTP_FORBIDDEN, 'Email taken.');
         }
 
         $user =  $em->getRepository(User::class)->findBy(
             array('username' => $username)
         );
         if($user){
-            return new JsonResponse(['message' => 'Username taken.']);
+            throw new HttpException(Response::HTTP_FORBIDDEN, 'Username taken.');
         }
 
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
+
 
         if ($form->isSubmitted() && $form->isValid()) {
             $password = $this->get('security.password_encoder')->encodePassword($user, $user->getPassword());
@@ -68,7 +67,9 @@ class RegistrationController extends FOSRestController
             $em->persist($user);
             $em->flush();
 
-            return new JsonResponse(['status' => 'ok']);
+            $response = new Response();
+            $response->setStatusCode(Response::HTTP_CREATED);
+            return $response;
         }
 
         throw new HttpException(400, 'Invalid data');
