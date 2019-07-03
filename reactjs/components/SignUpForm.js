@@ -16,7 +16,7 @@ class SignUpForm extends React.Component {
             username: '',
             password: '',
             passwordRetyped: '',
-            agree: ''
+            agree: false
         };
 
         this.sendData = this.sendData.bind(this);
@@ -38,14 +38,14 @@ class SignUpForm extends React.Component {
     }
 
     validateFields(){
-        document.getElementsByClassName('fill-all')[0]
-            .setAttribute('style', 'display: none; margin-top: 3px;');
-        document.getElementsByClassName('too-short')[0]
-            .setAttribute('style', 'display: none; margin-top: 3px;');
-        document.getElementsByClassName('invalid-email-format')[0]
-            .setAttribute('style', 'display: none; margin-top: 3px;');
+        document.getElementsByClassName('fill-all')[0].setAttribute('style', 'display: none;');
+        document.getElementsByClassName('short-username')[0].setAttribute('style', 'display: none;');
+        document.getElementsByClassName('short-password')[0].setAttribute('style', 'display: none;');
+        document.getElementsByClassName('invalid-email-format')[0].setAttribute('style', 'display: none;');
+        document.getElementsByClassName('passwords-dont-match')[0].setAttribute('style', 'display: none;');
+        document.getElementsByClassName('terms-of-use-agree')[0].setAttribute('style', 'display: none;');
 
-        let validFields;
+        let validFields = true;
 
         if(!this.validateEmail(this.state.email)){
             document.getElementsByClassName('invalid-email-format')[0]
@@ -53,10 +53,33 @@ class SignUpForm extends React.Component {
             validFields = false;
         }
 
-        
+        if(this.state.username.length < 6 || !this.state.username){
+            console.log(this.state.username.length);
+            document.getElementsByClassName('short-username')[0]
+                .setAttribute('style', 'display: inline');
+            validFields = false;
+        }
+
+        if(this.state.password.length < 6 || !this.state.password){
+            document.getElementsByClassName('short-password')[0]
+                .setAttribute('style', 'display: inline');
+            validFields = false;
+        }
+
+        if(this.state.password !== this.state.passwordRetyped){
+            document.getElementsByClassName('passwords-dont-match')[0]
+                .setAttribute('style', 'display: inline');
+            validFields = false;
+        }
+
+        if(!this.state.agree){
+            document.getElementsByClassName('terms-of-use-agree')[0]
+                .setAttribute('style', 'display: inline');
+            validFields = false;
+        }
 
         if(validFields){
-            this.sendData().then(() => console.log('sent'))
+            this.sendData().then(() => console.log('sent'));
         }
     }
 
@@ -143,22 +166,34 @@ class SignUpForm extends React.Component {
                     </fieldset>
                     <div style={{'margin' : 'auto'}}>
                         <label htmlFor="passwordRetyped">agree:</label>
-                        <input type="checkbox" name="vehicle1" value="Bike"/>
+                        <input type="checkbox" onChange={e => this.setState({agree: e.target.checked})} name="agree"/>
                     </div>
                     <div className="btn-group">
                         <button className="btn btn-primary" onClick={this.validateFields}>SignUp</button>
                     </div>
                     <div className="alert alert-warning fill-all" style={{display: 'none', 'margin-top': '3px'}}>
                         Fill all fields.
-                        <a onClick={this.closeWarning}>x</a>
+                        <a onClick={this.closeWarning}> x</a>
                     </div>
                     <div className="alert alert-warning invalid-email-format" style={{display: 'none', 'margin-top': '3px'}}>
                         Invalid email format.
-                        <a onClick={this.closeWarning}>x</a>
+                        <a onClick={this.closeWarning}> x</a>
                     </div>
-                    <div className="alert alert-warning too-short" style={{display: 'none', 'margin-top': '3px'}}>
-                        All fields should be at least 6 chars long.
-                        <a onClick={this.closeWarning}>x</a>
+                    <div className="alert alert-warning short-username" style={{display: 'none', 'margin-top': '3px'}}>
+                        Short username
+                        <a onClick={this.closeWarning}> x</a>
+                    </div>
+                    <div className="alert alert-warning short-password" style={{display: 'none', 'margin-top': '3px'}}>
+                        Too short password
+                        <a onClick={this.closeWarning}> x</a>
+                    </div>
+                    <div className="alert alert-warning passwords-dont-match" style={{display: 'none', 'margin-top': '3px'}}>
+                        Passwords don't match
+                        <a onClick={this.closeWarning}> x</a>
+                    </div>
+                    <div className="alert alert-warning terms-of-use-agree" style={{display: 'none', 'margin-top': '3px'}}>
+                        Read - terms of use.
+                        <a onClick={this.closeWarning}> x</a>
                     </div>
                 </div>
             </div>
