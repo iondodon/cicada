@@ -16,9 +16,21 @@ class LeftMenu extends React.Component {
             <div className="card">
                 <header className="card-header">left menu</header>
                 <div className="card-content">
-                    <div className="inner">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita,
-                        quas ex vero enim in doloribus officiis ullam vel nam esse sapiente velit incidunt.
-                        Eaque quod et, aut maiores excepturi sint.
+                    <div className="inner">
+                        <div className="menu">
+                            <a className="menu-item">
+                                Last puzzles <div className="pull-right">»</div>
+                            </a>
+                            <a className="menu-item active">
+                                Find puzzle <div className="pull-right">»</div>
+                            </a>
+                            <a className="menu-item">
+                                Create new puzzle <div className="pull-right">»</div>
+                            </a>
+                            <a className="menu-item">
+                                Players <div className="pull-right">»</div>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
