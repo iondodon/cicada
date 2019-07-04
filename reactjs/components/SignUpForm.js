@@ -121,7 +121,7 @@ class SignUpForm extends React.Component {
 
     render(){
         return (
-            <div className="card">
+            <div className="card" id={"signup-form"}>
                 <header className="card-header">SignUp</header>
                 <div className="card-content inner">
                     <fieldset className="form-group form-success">
@@ -173,29 +173,70 @@ class SignUpForm extends React.Component {
                     </div>
                     <div className="alert alert-warning fill-all" style={{display: 'none', 'margin-top': '3px'}}>
                         Fill all fields.
-                        <a onClick={this.closeWarning}> x</a>
+                        {'\u00A0'} <a onClick={this.closeWarning}>x</a>
                     </div>
                     <div className="alert alert-warning invalid-email-format" style={{display: 'none', 'margin-top': '3px'}}>
                         Invalid email format.
-                        <a onClick={this.closeWarning}> x</a>
+                        {'\u00A0'} <a onClick={this.closeWarning}>x</a>
                     </div>
                     <div className="alert alert-warning short-username" style={{display: 'none', 'margin-top': '3px'}}>
                         Short username
-                        <a onClick={this.closeWarning}> x</a>
+                        {'\u00A0'} <a onClick={this.closeWarning}>x</a>
                     </div>
                     <div className="alert alert-warning short-password" style={{display: 'none', 'margin-top': '3px'}}>
                         Too short password
-                        <a onClick={this.closeWarning}> x</a>
+                        {'\u00A0'} <a onClick={this.closeWarning}>x</a>
                     </div>
                     <div className="alert alert-warning passwords-dont-match" style={{display: 'none', 'margin-top': '3px'}}>
                         Passwords don't match
-                        <a onClick={this.closeWarning}> x</a>
+                        {'\u00A0'} <a onClick={this.closeWarning}>x</a>
                     </div>
                     <div className="alert alert-warning terms-of-use-agree" style={{display: 'none', 'margin-top': '3px'}}>
                         Read - terms of use.
-                        <a onClick={this.closeWarning}> x</a>
+                        {'\u00A0'} <a onClick={this.closeWarning}>x</a>
                     </div>
                 </div>
+
+                { /*language=SCSS*/ }
+                <style jsx>{`
+                  .card {
+                        max-width: 40%;
+                        min-width: 40%;
+                        text-align: center;
+                        margin: auto;
+                    }
+                    
+                    .card-content {
+                        display: flex;
+                        flex-wrap: wrap;
+                    
+                    }
+                    
+                    .btn-group {
+                        display: flex;
+                        width: 100%;
+                        justify-content: center;
+                        margin-top: 10px;
+                    }
+                    
+                    fieldset {
+                        min-width: 100%;
+                        justify-content: center;
+                    }
+                    
+                    label {
+                        max-width: 25%;
+                    }
+                    
+                    input {
+                        max-width: 74%;
+                    }
+                    
+                    .alert {
+                        margin: auto;
+                    }
+                `}
+                </style>
             </div>
         );
     }

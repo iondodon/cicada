@@ -13,10 +13,22 @@ const Layout = (props) => (
         </Head>
         <Container>
             <TopMenu/>
-            <hr/>
             {props.children}
             <Footer/>
         </Container>
+
+        { /*language=SCSS*/ }
+        <style jsx>{`            
+              html, body {
+                height: 100%;
+                margin: 0;
+            }
+            
+            hr {
+                text-align: center;
+            }    
+        `}
+        </style>
     </div>
 );
 

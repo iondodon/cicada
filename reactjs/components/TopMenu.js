@@ -15,6 +15,11 @@ class TopMenu extends React.Component {
     render(){
         return (
             <div className="menu top-menu">
+                <Link href={"/"}>
+                    <a className="menu-item">Home</a>
+                </Link>{' '}
+
+                |
                 <Link href={"/login"}>
                     <a className="menu-item">Login</a>
                 </Link>{' '}
@@ -27,6 +32,17 @@ class TopMenu extends React.Component {
 
                 |
                 <a className="menu-item">About</a>
+
+                { /*language=SCSS*/ }
+                <style jsx>{`
+                  .top-menu {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    margin-bottom: 1rem;
+                  }
+                `}
+                </style>
             </div>
         );
     }

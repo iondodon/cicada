@@ -67,7 +67,7 @@ class LogInForm extends React.Component {
 
     render(){
         return (
-            <div className="card">
+            <div className="card" id={"login-form"}>
                 <header className="card-header">Login</header>
                 <div className="card-content inner">
                     <fieldset className="form-group form-success">
@@ -95,6 +95,47 @@ class LogInForm extends React.Component {
                         <button className="btn btn-primary">SignUp</button>
                     </div>
                 </div>
+
+                { /*language=SCSS*/ }
+                <style jsx>{`
+                  .card {
+                        max-width: 35%;
+                        min-width: 35%;
+                        text-align: center;
+                        margin: auto;
+                    }
+                    
+                    .card-content {
+                        display: flex;
+                        flex-wrap: wrap;
+                    
+                    }
+                    
+                    .btn-group {
+                        display: flex;
+                        width: 100%;
+                        justify-content: center;
+                        margin-top: 10px;
+                    }
+                    
+                    fieldset {
+                        min-width: 100%;
+                        justify-content: center;
+                    }
+                    
+                    label {
+                        max-width: 25%;
+                    }
+                    
+                    input {
+                        max-width: 74%;
+                    }
+                    
+                    .alert {
+                        margin: auto;
+                    }
+                `}
+                </style>
             </div>
         );
     }
