@@ -14,7 +14,6 @@ class LogInInfo extends React.Component {
     render(){
         return (
             <div className={"info"}>
-                {/*<img className="bg" src={"/static/pages/login/cicada.png"} alt={"cicada"} style={{width: '50%;'}}/>*/}
                 <br/>
                 asdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasd
                 asdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasd
@@ -26,6 +25,26 @@ class LogInInfo extends React.Component {
                 asdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasd
                 asdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasd
                 asdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasd
+
+                { /*language=SCSS*/ }
+                <style jsx>{`
+                  .info {
+                        display: flex;
+                        text-align: center;
+                        flex-direction: column;
+                    }
+
+                    /* Medium screens */
+                    @media all and (max-width: 800px) {
+                    
+                        .info {
+                            margin-top: 2px;
+                            order: 1;
+                            min-width: 100%;
+                        }
+                    }
+                `}
+                </style>
             </div>
         );
     }

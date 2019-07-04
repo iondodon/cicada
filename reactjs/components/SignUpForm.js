@@ -196,6 +196,56 @@ class SignUpForm extends React.Component {
                         <a onClick={this.closeWarning}> x</a>
                     </div>
                 </div>
+
+                { /*language=SCSS*/ }
+                <style jsx>{`
+                  .card {
+                        max-width: 40%;
+                        min-width: 40%;
+                        text-align: center;
+                        margin: auto;
+                    }
+                    
+                    .card-content {
+                        display: flex;
+                        flex-wrap: wrap;
+                    
+                    }
+                    
+                    .btn-group {
+                        display: flex;
+                        width: 100%;
+                        justify-content: center;
+                        margin-top: 10px;
+                    }
+                    
+                    fieldset {
+                        min-width: 100%;
+                        justify-content: center;
+                    }
+                    
+                    label {
+                        max-width: 25%;
+                    }
+                    
+                    input {
+                        max-width: 74%;
+                    }
+                    
+                    .alert {
+                        margin: auto;
+                    }
+                    
+                    /* Medium screens */
+                    @media all and (max-width: 800px) {
+                        .card {
+                            order: 0;
+                            margin-top: 5%;
+                            min-width: 100%;
+                        }
+                    }
+                `}
+                </style>
             </div>
         );
     }

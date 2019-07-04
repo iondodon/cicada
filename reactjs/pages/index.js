@@ -19,7 +19,6 @@ class Home extends React.Component {
             <Layout>
                 <Head>
                     <title>Cicada</title>
-                    <link rel="stylesheet" type="text/css" href={"./static/pages/index/indexStyle.css"}/>
                     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                 </Head>
                 <Dashboard>

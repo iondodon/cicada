@@ -18,6 +18,16 @@ class LeftPanel extends React.Component {
                 <LeftMenu/>
                 {this.props.children}
                 <TopPlayers/>
+
+                { /*language=SCSS*/ }
+                <style jsx>{`
+                  .left-panel {
+                        display: flex;
+                        flex-direction: column;
+                        max-width: 25%;
+                   }
+                `}
+                </style>
             </div>
         );
     }

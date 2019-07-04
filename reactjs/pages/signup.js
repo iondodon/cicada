@@ -21,13 +21,10 @@ class SignUp extends React.Component {
             <Layout>
                 <Head>
                     <title>Login</title>
-                    <link rel="stylesheet" type="text/css" href={"./static/pages/signup/signupStyle.css"}/>
                     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                 </Head>
-                <div className={"signupPageContent"}>
-                    <SignUpInfo/>
-                    <SignUpForm/>
-                </div>
+                <SignUpForm/>
+                <SignUpInfo/>
             </Layout>
         );
     }

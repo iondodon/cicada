@@ -15,11 +15,33 @@ class TopPlayers extends React.Component {
             <div className="card">
                 <header className="card-header">top players</header>
                 <div className="card-content">
-                    <div className="inner">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita,
-                        quas ex vero enim in doloribus officiis ullam vel nam esse sapiente velit incidunt.
-                        Eaque quod et, aut maiores excepturi sint.
+                    <div className="inner">
+                        <ul>
+                            <li>Ion Dodon</li>
+                            <li>Marin Guidea</li>
+                            <li>Asadasd SAdsad</li>
+                            <li>Asadasd SAdsad</li>
+                            <li>Asadasd SAdsad</li>
+                            <li>Asadasd SAdsad</li>
+                        </ul>
                     </div>
                 </div>
+
+                { /*language=SCSS*/ }
+                <style jsx>{`
+                    .inner {
+                        margin-left: 2rem;
+                        margin-top: 0;
+                    }
+                    
+                    .card-content {
+                        padding-top: 0;
+                    }
+                    
+                    .card-header {
+                        
+                    }
+                `}</style>
             </div>
         );
     }

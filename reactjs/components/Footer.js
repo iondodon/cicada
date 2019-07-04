@@ -22,6 +22,17 @@ class Footer extends React.Component {
             <div className="footer">
                 <hr/>
                 Footer content here
+
+                { /*language=SCSS*/ }
+                <style jsx>{`
+                  .footer {
+                        align-self: flex-end;
+                        margin-bottom: 2%;
+                        width: 100%;
+                        text-align: center;
+                  }
+                `}
+                </style>
             </div>
         );
     }

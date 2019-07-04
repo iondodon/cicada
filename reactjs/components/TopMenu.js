@@ -32,6 +32,16 @@ class TopMenu extends React.Component {
 
                 |
                 <a className="menu-item">About</a>
+
+                { /*language=SCSS*/ }
+                <style jsx>{`
+                  .top-menu {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                  }
+                `}
+                </style>
             </div>
         );
     }

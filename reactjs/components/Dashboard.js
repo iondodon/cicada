@@ -26,6 +26,17 @@ class Dashboard extends React.Component {
                     </div>
                 </LeftPanel>
                 {this.props.children}
+
+                { /*language=SCSS*/ }
+                <style jsx>{`
+                    .dashboard {
+                        display: flex;
+                        flex-direction: row;
+                    }
+                    
+                    
+                `}
+                </style>
             </div>
         );
     }

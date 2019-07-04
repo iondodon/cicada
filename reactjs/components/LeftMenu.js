@@ -17,6 +17,7 @@ class LeftMenu extends React.Component {
                 <header className="card-header">left menu</header>
                 <div className="card-content">
                     <div className="inner">
+                        {/*<img src={"/static/cicada.png"} width="50%" />*/}
                         <div className="menu">
                             <a className="menu-item">
                                 Last puzzles <div className="pull-right">»</div>
@@ -33,6 +34,19 @@ class LeftMenu extends React.Component {
                         </div>
                     </div>
                 </div>
+
+                { /*language=SCSS*/ }
+                <style jsx>{`
+                  .menu {
+                        font-size: 13px;
+                    }
+                    
+                    /* Medium screens */
+                    @media all and (max-width: 800px) {
+                    
+                    }
+                `}
+                </style>
             </div>
         );
     }
