@@ -13,7 +13,6 @@ const Layout = (props) => (
         </Head>
         <Container>
             <TopMenu/>
-            <hr/>
             {props.children}
             <Footer/>
         </Container>

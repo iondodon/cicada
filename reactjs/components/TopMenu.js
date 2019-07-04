@@ -39,6 +39,7 @@ class TopMenu extends React.Component {
                     display: flex;
                     flex-direction: row;
                     justify-content: center;
+                    margin-bottom: 1rem;
                   }
                 `}
                 </style>

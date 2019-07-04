@@ -36,7 +36,7 @@ class LeftMenu extends React.Component {
                             <a className="menu-item">
                                 Contest enrolled at <div className="pull-right">»</div>
                             </a>
-                            <hr/>
+                            <br/>
                             <a className="menu-item">
                                 Create puzzle<div className="pull-right">»</div>
                             </a>
@@ -46,7 +46,7 @@ class LeftMenu extends React.Component {
                             <a className="menu-item">
                                 Create team<div className="pull-right">»</div>
                             </a>
-                            <hr/>
+                            <br/>
                             <a className="menu-item">
                                 My account<div className="pull-right">»</div>
                             </a>
@@ -58,11 +58,6 @@ class LeftMenu extends React.Component {
                 <style jsx>{`
                   .menu {
                         font-size: 13px;
-                    }
-                    
-                    hr {
-                        padding: 0;
-                        margin: 0;
                     }
                 `}
                 </style>
