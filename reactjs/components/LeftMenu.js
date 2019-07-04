@@ -17,19 +17,38 @@ class LeftMenu extends React.Component {
                 <header className="card-header">left menu</header>
                 <div className="card-content">
                     <div className="inner">
-                        {/*<img src={"/static/cicada.png"} width="50%" />*/}
                         <div className="menu">
                             <a className="menu-item">
-                                Last puzzles <div className="pull-right">»</div>
+                                My puzzles <div className="pull-right">»</div>
                             </a>
                             <a className="menu-item active">
                                 Find puzzle <div className="pull-right">»</div>
                             </a>
                             <a className="menu-item">
-                                Create new puzzle <div className="pull-right">»</div>
+                                Created teams <div className="pull-right">»</div>
                             </a>
                             <a className="menu-item">
-                                Players <div className="pull-right">»</div>
+                                Teams member of<div className="pull-right">»</div>
+                            </a>
+                            <a className="menu-item">
+                                Created contests <div className="pull-right">»</div>
+                            </a>
+                            <a className="menu-item">
+                                Contest enrolled at <div className="pull-right">»</div>
+                            </a>
+                            <hr/>
+                            <a className="menu-item">
+                                Create puzzle<div className="pull-right">»</div>
+                            </a>
+                            <a className="menu-item">
+                                Create contest<div className="pull-right">»</div>
+                            </a>
+                            <a className="menu-item">
+                                Create team<div className="pull-right">»</div>
+                            </a>
+                            <hr/>
+                            <a className="menu-item">
+                                My account<div className="pull-right">»</div>
                             </a>
                         </div>
                     </div>
@@ -39,6 +58,11 @@ class LeftMenu extends React.Component {
                 <style jsx>{`
                   .menu {
                         font-size: 13px;
+                    }
+                    
+                    hr {
+                        padding: 0;
+                        margin: 0;
                     }
                 `}
                 </style>
