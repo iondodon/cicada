@@ -30,8 +30,7 @@ class TopPlayers extends React.Component {
                 { /*language=SCSS*/ }
                 <style jsx>{`
                     .inner {
-                        margin-left: 2rem;
-                        margin-top: 0;
+                        padding-left: 2rem;
                     }
                     
                     .card-content {

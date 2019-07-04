@@ -13,7 +13,7 @@ class LogInInfo extends React.Component {
 
     render(){
         return (
-            <div className={"info"}>
+            <div className={"info"} id={"login-info"}>
                 <br/>
                 asdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasd
                 asdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasd
@@ -32,16 +32,6 @@ class LogInInfo extends React.Component {
                         display: flex;
                         text-align: center;
                         flex-direction: column;
-                    }
-
-                    /* Medium screens */
-                    @media all and (max-width: 800px) {
-                    
-                        .info {
-                            margin-top: 2px;
-                            order: 1;
-                            min-width: 100%;
-                        }
                     }
                 `}
                 </style>

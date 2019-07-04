@@ -121,7 +121,7 @@ class SignUpForm extends React.Component {
 
     render(){
         return (
-            <div className="card">
+            <div className="card" id={"signup-form"}>
                 <header className="card-header">SignUp</header>
                 <div className="card-content inner">
                     <fieldset className="form-group form-success">
@@ -234,15 +234,6 @@ class SignUpForm extends React.Component {
                     
                     .alert {
                         margin: auto;
-                    }
-                    
-                    /* Medium screens */
-                    @media all and (max-width: 800px) {
-                        .card {
-                            order: 0;
-                            margin-top: 5%;
-                            min-width: 100%;
-                        }
                     }
                 `}
                 </style>

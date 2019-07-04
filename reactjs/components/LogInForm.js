@@ -67,7 +67,7 @@ class LogInForm extends React.Component {
 
     render(){
         return (
-            <div className="card">
+            <div className="card" id={"login-form"}>
                 <header className="card-header">Login</header>
                 <div className="card-content inner">
                     <fieldset className="form-group form-success">
@@ -133,15 +133,6 @@ class LogInForm extends React.Component {
                     
                     .alert {
                         margin: auto;
-                    }
-                    
-                    /* Medium screens */
-                    @media all and (max-width: 800px) {
-                        .card {
-                            order: 0;
-                            margin-top: 5%;
-                            min-width: 100%;
-                        }
                     }
                 `}
                 </style>

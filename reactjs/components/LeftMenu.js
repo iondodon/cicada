@@ -40,11 +40,6 @@ class LeftMenu extends React.Component {
                   .menu {
                         font-size: 13px;
                     }
-                    
-                    /* Medium screens */
-                    @media all and (max-width: 800px) {
-                    
-                    }
                 `}
                 </style>
             </div>
