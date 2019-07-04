@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/reactjs/components/CKEditor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactjs/components/CreatePuzzleForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/CreatePuzzleForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/LeftMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/LeftMenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/LeftPanel.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/LeftPanel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/TopPlayers.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/TopPlayers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/pages/createPuzzle.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/pages/createPuzzle.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cicada-reactjs/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -58,8 +52,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/reactjs/components/CreatePuzzleForm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
+            <state relative-caret-position="435">
+              <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -428,12 +422,12 @@
       <workItem from="1562234245279" duration="652000" />
       <workItem from="1562234938404" duration="225000" />
       <workItem from="1562235193566" duration="13513000" />
-      <workItem from="1562252997077" duration="1299000" />
+      <workItem from="1562252997077" duration="1873000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="388157000" />
+    <option name="totallyTimeSpent" value="388731000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -888,8 +882,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/reactjs/components/CreatePuzzleForm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
+        <state relative-caret-position="435">
+          <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>

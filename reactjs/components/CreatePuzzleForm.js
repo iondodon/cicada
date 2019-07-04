@@ -47,7 +47,6 @@ class CreatePuzzleForm extends React.Component {
                 </fieldset>
 
                 <CKEditor
-                    
                     data="<p>Hello from CKEditor 5!</p>"
                     onInit={ editor => {
                         // You can store the "editor" and use when it is needed.
