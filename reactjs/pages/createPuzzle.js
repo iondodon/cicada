@@ -6,8 +6,9 @@ import '../i18n';
 import { withNamespaces } from 'react-i18next';
 import Head from "next/head";
 import LeftPanel from "../components/LeftPanel";
+import CreatePuzzleForm from "../components/CreatePuzzleForm";
 
-class Index extends React.Component {
+class CreatePuzzle extends React.Component {
 
     constructor({t}){
         super({t});
@@ -34,20 +35,28 @@ class Index extends React.Component {
                             </div>
                         </div>
                     </LeftPanel>
-                    <hr/>
-                    <div className="card">
-                        <header className="card-header">title</header>
+
+                    <div className="card" id={"page-content"}>
+                        <header className="card-header">Create puzzle</header>
                         <div className="card-content">
-                            <div className="inner">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita,
-                                quas ex vero enim in doloribus officiis ullam vel nam esse sapiente velit incidunt.
-                                Eaque quod et, aut maiores excepturi sint.
+                            <div className="inner">
+                                <CreatePuzzleForm/>
                             </div>
                         </div>
                     </div>
                 </Dashboard>
+
+                { /*language=SCSS*/ }
+                <style jsx>{`                    
+                    #page-content {
+                      display: flex;
+                      flex-grow: 100;
+                      flex-direction: column;
+                    }
+                `}</style>
             </Layout>
         );
     }
 }
 
-export default withNamespaces()(Index);
+export default withNamespaces()(CreatePuzzle);
