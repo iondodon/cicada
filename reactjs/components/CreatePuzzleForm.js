@@ -1,16 +1,24 @@
-import React, { Component } from 'react';
-import CKEditor from '@ckeditor/ckeditor5-react';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import React from 'react';
+import dynamic from 'next/dynamic'
 
 
 import '../i18n';
 import { withNamespaces } from 'react-i18next';
+
+const CKEditor = dynamic(() => import('../components/CKEditor'), {
+    ssr: false
+});
 
 class CreatePuzzleForm extends React.Component {
 
     constructor({t}){
         super({t});
         this.t = t;
+
+    }
+
+    static getInitialProps({ req, query }) {
+        return {}
     }
 
     render(){
@@ -39,7 +47,7 @@ class CreatePuzzleForm extends React.Component {
                 </fieldset>
 
                 <CKEditor
-                    editor={ ClassicEditor }
+                    
                     data="<p>Hello from CKEditor 5!</p>"
                     onInit={ editor => {
                         // You can store the "editor" and use when it is needed.
@@ -56,6 +64,7 @@ class CreatePuzzleForm extends React.Component {
                         console.log( 'Focus.', editor );
                     } }
                 />
+
 
                 <div className="form-actions">
                     <button type="button" className="btn btn-primary btn-block">Submit</button>
