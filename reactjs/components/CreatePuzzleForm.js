@@ -73,9 +73,17 @@ class CreatePuzzleForm extends React.Component {
                 <style jsx>{`                    
                     .form {
                       display: flex;
-                      flex-direction: column;
-                      justify-content: center;
-                      margin: auto;
+                      flex-direction: row;
+                      flex-wrap: wrap; margin: auto;
+                      width: 100%;
+                    }
+                    
+                    fieldset {
+                        width: 50%;
+                    }
+                    
+                    label {
+                      width: 20%;
                     }
                 `}</style>
             </form>
