@@ -3,6 +3,8 @@ import React from 'react';
 import '../i18n';
 import { withNamespaces } from 'react-i18next';
 
+import Link from 'next/link';
+
 class LeftMenu extends React.Component {
 
     constructor({t}){
@@ -37,9 +39,11 @@ class LeftMenu extends React.Component {
                                 Contest enrolled at <div className="pull-right">»</div>
                             </a>
                             <br/>
-                            <a className="menu-item">
-                                Create puzzle<div className="pull-right">»</div>
-                            </a>
+                            <Link href={"/createPuzzle"}>
+                                <a className="menu-item">
+                                    Create puzzle<div className="pull-right">»</div>
+                                </a>
+                            </Link>{' '}
                             <a className="menu-item">
                                 Create contest<div className="pull-right">»</div>
                             </a>

@@ -25,26 +25,17 @@ class CreatePuzzleForm extends React.Component {
         return (
             <form className="form">
                 <fieldset className="form-group">
-                    <label htmlFor="username">USERNAME:</label>
-                    <input id="username" type="text" placeholder="type your name..." className="form-control"/>
+                    <label >Name:</label>
+                    <input type="text" placeholder="puzzle name..." className="form-control"/>
                 </fieldset>
                 <fieldset className="form-group">
                     <label htmlFor="email">EMAIL:</label>
                     <input id="email" type="email" placeholder="" className="form-control"/>
                 </fieldset>
-                <fieldset className="form-group">
-                    <label htmlFor="country">COUNTRY:</label>
-                    <select id="country" className="form-control">
-                        <option>China</option>
-                        <option>U.S.</option>
-                        <option>U.K.</option>
-                        <option>Japan</option>
-                    </select>
-                </fieldset>
-                <fieldset className="form-group form-textarea">
-                    <label htmlFor="message">MESSAGE:</label>
-                    <textarea id="message" rows="5" className="form-control"/>
-                </fieldset>
+
+
+                <label htmlFor="private">Private <input type="checkbox"/></label>
+                
 
                 <CKEditor
                     data="<p>Hello from CKEditor 5!</p>"
@@ -63,7 +54,6 @@ class CreatePuzzleForm extends React.Component {
                         console.log( 'Focus.', editor );
                     } }
                 />
-
 
                 <div className="form-actions">
                     <button type="button" className="btn btn-primary btn-block">Submit</button>
@@ -87,8 +77,7 @@ class CreatePuzzleForm extends React.Component {
                     }
                 `}</style>
             </form>
-
-    );
+        );
     }
 }
 
