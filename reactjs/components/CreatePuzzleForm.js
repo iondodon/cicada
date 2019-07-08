@@ -35,7 +35,7 @@ class CreatePuzzleForm extends React.Component {
 
 
                 <label htmlFor="private">Private <input type="checkbox"/></label>
-                
+
 
                 <CKEditor
                     data="<p>Hello from CKEditor 5!</p>"
