@@ -12,7 +12,7 @@ class Dashboard extends React.Component {
 
     render(){
         return (
-            <div className="dashboard">
+            <div className="dashboard" id={"dashboard"}>
                 {this.props.children}
 
                 { /*language=SCSS*/ }
@@ -21,8 +21,6 @@ class Dashboard extends React.Component {
                         display: flex;
                         flex-direction: row;
                     }
-                    
-                    
                 `}
                 </style>
             </div>

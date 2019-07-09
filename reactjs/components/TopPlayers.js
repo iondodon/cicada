@@ -12,7 +12,7 @@ class TopPlayers extends React.Component {
 
     render(){
         return (
-            <div className="card">
+            <div className="card" id={"top-players-card"}>
                 <header className="card-header">top players</header>
                 <div className="card-content">
                     <div className="inner">

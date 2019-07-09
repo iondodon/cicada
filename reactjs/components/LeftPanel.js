@@ -14,7 +14,7 @@ class LeftPanel extends React.Component {
 
     render(){
         return (
-            <div className={'left-panel'}>
+            <div className={'left-panel'} id={"left-panel"}>
                 <LeftMenu/>
                 {this.props.children}
                 <TopPlayers/>

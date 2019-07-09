@@ -21,4 +21,19 @@
         min-width: 100%;
         max-width: 100%;
     }
+
+    #top-players-card {
+        display: none;
+    }
+
+    #dashboard {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #left-panel {
+        display: flex;
+        flex-direction: column;
+        min-width: 100%;
+    }
 }
