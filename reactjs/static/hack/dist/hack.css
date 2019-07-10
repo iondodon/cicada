@@ -301,7 +301,7 @@ a:hover {
 }
 
 .hack ul>li:after {
-    content: "-"
+    content: ''
 }
 
 .hack ol {

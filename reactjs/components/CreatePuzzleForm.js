@@ -38,6 +38,18 @@ class CreatePuzzleForm extends React.Component {
                 <select className="js-example-basic-multiple" name="states[]" multiple="multiple">
                     <option value="AL">Alabama</option>
                     <option value="WY">Wyoming</option>
+                    <option value="AL">Alabama</option>
+                    <option value="WY">Wyoming</option>
+                    <option value="AL">Alabama</option>
+                    <option value="WY">Wyoming</option>
+                    <option value="AL">Alabama</option>
+                    <option value="WY">Wyoming</option>
+                    <option value="AL">Alabama</option>
+                    <option value="WY">Wyoming</option>
+                    <option value="AL">Alabama</option>
+                    <option value="WY">Wyoming</option>
+                    <option value="AL">Alabama</option>
+                    <option value="WY">Wyoming</option>
                 </select>
 
                 <label htmlFor="private">Private <input type="checkbox"/></label>
