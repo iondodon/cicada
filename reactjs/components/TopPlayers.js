@@ -17,12 +17,12 @@ class TopPlayers extends React.Component {
                 <div className="card-content">
                     <div className="inner">
                         <ul>
-                            <li>Ion Dodon</li>
-                            <li>Marin Guidea</li>
-                            <li>Asadasd SAdsad</li>
-                            <li>Asadasd SAdsad</li>
-                            <li>Asadasd SAdsad</li>
-                            <li>Asadasd SAdsad</li>
+                            <li> - Ion Dodon</li>
+                            <li> - Marin Guidea</li>
+                            <li> - Asadasd SAdsad</li>
+                            <li> - Asadasd SAdsad</li>
+                            <li> - Asadasd SAdsad</li>
+                            <li> - Asadasd SAdsa</li>
                         </ul>
                     </div>
                 </div>

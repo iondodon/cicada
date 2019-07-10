@@ -26,7 +26,7 @@ class CreatePuzzleForm extends React.Component {
 
     render(){
         return (
-            <form className="form">
+            <form className="form" id={"create-puzzle-from"}>
                 <fieldset className="form-group">
                     <label >Name:</label>
                     <input type="text" placeholder="puzzle name..." className="form-control"/>
@@ -35,22 +35,16 @@ class CreatePuzzleForm extends React.Component {
                     <label htmlFor="email">EMAIL:</label>
                     <input id="email" type="email" placeholder="" className="form-control"/>
                 </fieldset>
-                <select className="js-example-basic-multiple" name="states[]" multiple="multiple">
-                    <option value="AL">Alabama</option>
-                    <option value="WY">Wyoming</option>
-                    <option value="AL">Alabama</option>
-                    <option value="WY">Wyoming</option>
-                    <option value="AL">Alabama</option>
-                    <option value="WY">Wyoming</option>
-                    <option value="AL">Alabama</option>
-                    <option value="WY">Wyoming</option>
-                    <option value="AL">Alabama</option>
-                    <option value="WY">Wyoming</option>
-                    <option value="AL">Alabama</option>
-                    <option value="WY">Wyoming</option>
-                    <option value="AL">Alabama</option>
-                    <option value="WY">Wyoming</option>
-                </select>
+
+                <div className="form-tags-group">
+                    <label htmlFor="tags" className="label-tags">Tags:</label>
+                    <select className="js-example-basic-multiple" name="states[]" multiple="multiple">
+                        <option value="AL">Alabama</option>
+                        <option value="WY">Wyoming</option>
+                        <option value="AL">Alabama</option>
+                        <option value="WY">Wyoming</option>
+                    </select>
+                </div>
 
                 <label htmlFor="private">Private <input type="checkbox"/></label>
 
@@ -89,13 +83,28 @@ class CreatePuzzleForm extends React.Component {
                     fieldset {
                         width: 50%;
                     }
+
+                    .form-tags-group {
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        width: 46%;
+                        margin-right: 4%;
+                    }
                     
                     label {
                       width: 20%;
                     }
                     
                     .js-example-basic-multiple {
-                        min-width: 30vw;
+                        flex-grow: 100;
+                    }
+                    
+                    .label-tags {
+                        padding-left: 0;
+                        width: auto;
+                        height: auto;
+                        margin: auto;    
                     }
                 `}</style>
             </form>

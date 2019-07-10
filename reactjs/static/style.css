@@ -36,4 +36,16 @@
         flex-direction: column;
         min-width: 100%;
     }
+
+    #create-puzzle-from {
+        display: flex;
+        flex-direction: column;
+        flex-grow: unset;
+        margin: auto;
+    }
+
+    #create-puzzle-from > * {
+        margin: auto;
+        width: 100%;
+    }
 }
