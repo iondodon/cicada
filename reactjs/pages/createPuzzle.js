@@ -54,6 +54,7 @@ class CreatePuzzle extends React.Component {
                     #page-content {
                       display: flex;
                       flex-grow: 100;
+                      max-width: inherit;
                       flex-direction: column;
                     }
                 `}</style>

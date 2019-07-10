@@ -13,11 +13,18 @@ class CreatePuzzleForm extends React.Component {
     constructor({t}){
         super({t});
         this.t = t;
-
     }
 
     componentDidMount() {
         $('.js-example-basic-multiple').select2();
+
+        let puzzleDescription = document.getElementsByClassName('puzzle-description')[0];
+        puzzleDescription.setAttribute(
+            'style', 'width: ' + puzzleDescription.offsetWidth + 'px'
+        );
+        puzzleDescription.setAttribute(
+            'style', 'max-width: ' + puzzleDescription.offsetWidth + 'px'
+        );
     }
 
     static getInitialProps({ req, query }) {
@@ -48,24 +55,25 @@ class CreatePuzzleForm extends React.Component {
 
                 <label htmlFor="private">Private <input type="checkbox"/></label>
 
-
-                <CKEditor
-                    data="<p>Hello from CKEditor 5!</p>"
-                    onInit={ editor => {
-                        // You can store the "editor" and use when it is needed.
-                        console.log( 'Editor is ready to use!', editor );
-                    } }
-                    onChange={ ( event, editor ) => {
-                        const data = editor.getData();
-                        console.log( { event, editor, data } );
-                    } }
-                    onBlur={ editor => {
-                        console.log( 'Blur.', editor );
-                    } }
-                    onFocus={ editor => {
-                        console.log( 'Focus.', editor );
-                    } }
-                />
+                <div className={"puzzle-description"}>
+                    <CKEditor
+                        data="<p>Puzzle description...</p>"
+                        onInit={ editor => {
+                            // You can store the "editor" and use when it is needed.
+                            console.log( 'Editor is ready to use!', editor );
+                        } }
+                        onChange={ ( event, editor ) => {
+                            const data = editor.getData();
+                            console.log( { event, editor, data } );
+                        } }
+                        onBlur={ editor => {
+                            console.log( 'Blur.', editor );
+                        } }
+                        onFocus={ editor => {
+                            console.log( 'Focus.', editor );
+                        } }
+                    />
+                </div>
 
                 <div className="form-actions">
                     <button type="button" className="btn btn-primary btn-block">Submit</button>
@@ -105,6 +113,12 @@ class CreatePuzzleForm extends React.Component {
                         width: auto;
                         height: auto;
                         margin: auto;    
+                    }
+                    
+                    .puzzle-description {
+                        margin-top: 10px;
+                        width: 100%;
+                        max-width: 100%;
                     }
                 `}</style>
             </form>
