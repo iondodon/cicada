@@ -2,16 +2,765 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/cicada.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/cicada.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/89715e81-bc9c-4fca-9f4c-1a8fd517663e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/89715e81-bc9c-4fca-9f4c-1a8fd517663e.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/AUTHORS.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/dist/core.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/dist/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/dist/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/dist/jquery.min.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/dist/jquery.slim.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/dist/jquery.slim.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/dist/jquery.slim.min.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/external/sizzle/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/external/sizzle/dist/sizzle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/external/sizzle/dist/sizzle.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/external/sizzle/dist/sizzle.min.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/.eslintrc.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/ajax.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/ajax/jsonp.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/ajax/load.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/ajax/parseXML.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/ajax/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/ajax/var/location.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/ajax/var/nonce.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/ajax/var/rquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/ajax/xhr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/attributes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/attributes/attr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/attributes/classes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/attributes/prop.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/attributes/support.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/attributes/val.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/callbacks.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/core.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/core/DOMEval.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/core/access.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/core/camelCase.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/core/init.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/core/isAttached.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/core/nodeName.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/core/parseHTML.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/core/ready-no-deferred.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/core/ready.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/core/readyException.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/core/stripAndCollapse.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/core/support.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/core/toType.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/core/var/rsingleTag.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/css.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/css/addGetHookIf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/css/adjustCSS.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/css/curCSS.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/css/finalPropName.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/css/hiddenVisibleSelectors.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/css/showHide.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/css/support.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/css/var/cssExpand.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/css/var/getStyles.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/css/var/isHiddenWithinTree.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/css/var/rboxStyle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/css/var/rnumnonpx.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/css/var/swap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/data/Data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/data/var/acceptData.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/data/var/dataPriv.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/data/var/dataUser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/deferred.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/deferred/exceptionHook.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/deprecated.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/dimensions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/effects.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/effects/Tween.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/effects/animatedSelector.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/event.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/event/ajax.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/event/alias.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/event/focusin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/event/support.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/event/trigger.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/exports/amd.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/exports/global.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/manipulation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/manipulation/_evalUrl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/manipulation/buildFragment.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/manipulation/getAll.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/manipulation/setGlobalEval.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/manipulation/support.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/manipulation/var/rscriptType.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/manipulation/var/rtagName.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/manipulation/wrapMap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/offset.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/queue.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/queue/delay.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/selector-native.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/selector-sizzle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/selector.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/serialize.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/traversing.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/traversing/findFilter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/traversing/var/dir.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/traversing/var/rneedsContext.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/traversing/var/siblings.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/var/ObjectFunctionString.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/var/arr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/var/class2type.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/var/concat.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/var/document.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/var/documentElement.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/var/fnToString.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/var/getProto.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/var/hasOwn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/var/indexOf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/var/isFunction.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/var/isWindow.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/var/pnum.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/var/push.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/var/rcheckableType.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/var/rcssNum.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/var/rnothtmlwhite.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/var/slice.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/var/support.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/var/toString.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery/src/wrap.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExternalWork/.UseCase.vpp.lck" beforeDir="false" afterPath="$PROJECT_DIR$/ExternalWork/.UseCase.vpp.lck" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/CKEditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/CKEditor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.bin/loose-envify" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/AUTHORS.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/bower.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/dist/core.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/dist/jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/dist/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/dist/jquery.min.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/dist/jquery.slim.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/dist/jquery.slim.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/dist/jquery.slim.min.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/external/sizzle/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/external/sizzle/dist/sizzle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/external/sizzle/dist/sizzle.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/external/sizzle/dist/sizzle.min.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/.eslintrc.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/ajax.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/ajax/jsonp.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/ajax/load.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/ajax/parseXML.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/ajax/script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/ajax/var/location.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/ajax/var/nonce.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/ajax/var/rquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/ajax/xhr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/attributes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/attributes/attr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/attributes/classes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/attributes/prop.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/attributes/support.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/attributes/val.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/callbacks.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/core.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/core/DOMEval.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/core/access.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/core/camelCase.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/core/init.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/core/isAttached.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/core/nodeName.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/core/parseHTML.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/core/ready-no-deferred.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/core/ready.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/core/readyException.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/core/stripAndCollapse.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/core/support.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/core/toType.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/core/var/rsingleTag.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/css.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/css/addGetHookIf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/css/adjustCSS.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/css/curCSS.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/css/finalPropName.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/css/hiddenVisibleSelectors.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/css/showHide.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/css/support.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/css/var/cssExpand.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/css/var/getStyles.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/css/var/isHiddenWithinTree.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/css/var/rboxStyle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/css/var/rnumnonpx.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/css/var/swap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/data/Data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/data/var/acceptData.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/data/var/dataPriv.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/data/var/dataUser.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/deferred.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/deferred/exceptionHook.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/deprecated.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/dimensions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/effects.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/effects/Tween.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/effects/animatedSelector.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/event.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/event/ajax.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/event/alias.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/event/focusin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/event/support.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/event/trigger.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/exports/amd.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/exports/global.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/manipulation.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/manipulation/_evalUrl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/manipulation/buildFragment.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/manipulation/getAll.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/manipulation/setGlobalEval.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/manipulation/support.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/manipulation/var/rscriptType.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/manipulation/var/rtagName.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/manipulation/wrapMap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/offset.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/queue.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/queue/delay.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/selector-native.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/selector-sizzle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/selector.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/serialize.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/traversing.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/traversing/findFilter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/traversing/var/dir.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/traversing/var/rneedsContext.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/traversing/var/siblings.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/var/ObjectFunctionString.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/var/arr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/var/class2type.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/var/concat.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/var/document.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/var/documentElement.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/var/fnToString.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/var/getProto.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/var/hasOwn.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/var/indexOf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/var/isFunction.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/var/isWindow.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/var/pnum.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/var/push.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/var/rcheckableType.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/var/rcssNum.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/var/rnothtmlwhite.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/var/slice.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/var/support.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/var/toString.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/jquery/src/wrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/js-tokens/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/js-tokens/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/js-tokens/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/js-tokens/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/js-tokens/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/loose-envify/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/loose-envify/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/loose-envify/cli.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/loose-envify/custom.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/loose-envify/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/loose-envify/loose-envify.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/loose-envify/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/loose-envify/replace.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/object-assign/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/object-assign/license" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/object-assign/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/object-assign/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/prop-types/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/prop-types/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/prop-types/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/prop-types/checkPropTypes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/prop-types/factory.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/prop-types/factoryWithThrowingShims.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/prop-types/factoryWithTypeCheckers.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/prop-types/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/prop-types/lib/ReactPropTypesSecret.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/prop-types/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/prop-types/prop-types.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/prop-types/prop-types.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-is/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-is/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-is/build-info.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-is/cjs/react-is.development.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-is/cjs/react-is.production.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-is/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-is/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-is/umd/react-is.development.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-is/umd/react-is.production.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-select2-wrapper/LICENSE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-select2-wrapper/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-select2-wrapper/css/select2.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-select2-wrapper/css/select2.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-select2-wrapper/lib/components/Select2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-select2-wrapper/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-select2-wrapper/src/components/Select2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-select2/.npmignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-select2/LICENSE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-select2/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-select2/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-select2/node_modules/react-select2-wrapper/LICENSE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-select2/node_modules/react-select2-wrapper/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-select2/node_modules/react-select2-wrapper/css/select2.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-select2/node_modules/react-select2-wrapper/css/select2.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-select2/node_modules/react-select2-wrapper/lib/components/Select2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-select2/node_modules/react-select2-wrapper/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-select2/node_modules/react-select2-wrapper/src/components/Select2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-select2/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/LICENSE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/css/select2.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/css/select2.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/af.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/ar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/az.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/bg.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/bn.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/bs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/build.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/ca.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/cs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/da.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/de.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/dsb.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/el.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/en.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/es.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/et.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/eu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/fa.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/fi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/fr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/gl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/he.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/hi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/hr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/hsb.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/hu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/hy.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/id.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/is.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/it.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/ja.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/ka.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/km.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/ko.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/lt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/lv.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/mk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/ms.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/nb.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/ne.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/nl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/pl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/ps.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/pt-BR.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/pt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/ro.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/ru.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/sk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/sl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/sq.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/sr-Cyrl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/sr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/sv.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/th.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/tk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/tr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/uk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/vi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/zh-CN.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/i18n/zh-TW.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/select2.full.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/select2.full.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/select2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/dist/js/select2.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/banner.end.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/banner.start.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/jquery.mousewheel.shim.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/jquery.select2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/jquery.shim.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/compat/containerCss.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/compat/dropdownCss.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/compat/initSelection.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/compat/inputData.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/compat/matcher.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/compat/query.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/compat/utils.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/core.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/data/ajax.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/data/array.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/data/base.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/data/maximumInputLength.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/data/maximumSelectionLength.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/data/minimumInputLength.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/data/select.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/data/tags.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/data/tokenizer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/defaults.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/diacritics.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/dropdown.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/dropdown/attachBody.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/dropdown/attachContainer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/dropdown/closeOnSelect.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/dropdown/hidePlaceholder.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/dropdown/infiniteScroll.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/dropdown/minimumResultsForSearch.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/dropdown/search.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/dropdown/selectOnClose.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/dropdown/stopPropagation.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/i18n/af.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/i18n/ar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/i18n/az.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/i18n/bg.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/i18n/bn.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/i18n/bs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/i18n/ca.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/i18n/cs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/i18n/da.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/i18n/de.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/i18n/dsb.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/i18n/el.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/i18n/en.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/i18n/es.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/i18n/et.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/i18n/eu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/i18n/fa.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/i18n/fi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/i18n/fr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/i18n/gl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/i18n/he.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/i18n/hi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/i18n/hr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/i18n/hsb.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/i18n/hu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/i18n/hy.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/i18n/id.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/i18n/is.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/i18n/it.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/i18n/ja.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/i18n/ka.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/i18n/km.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/i18n/ko.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/i18n/lt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/i18n/lv.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/i18n/mk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/i18n/ms.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/i18n/nb.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/i18n/ne.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/i18n/nl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/i18n/pl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/i18n/ps.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/i18n/pt-BR.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/i18n/pt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/i18n/ro.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/i18n/ru.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/i18n/sk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/i18n/sl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/i18n/sq.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/i18n/sr-Cyrl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/i18n/sr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/i18n/sv.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/i18n/th.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/i18n/tk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/i18n/tr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/i18n/uk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/i18n/vi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/i18n/zh-CN.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/i18n/zh-TW.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/keys.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/options.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/results.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/selection/allowClear.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/selection/base.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/selection/clickMask.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/selection/eventRelay.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/selection/multiple.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/selection/placeholder.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/selection/search.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/selection/single.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/selection/stopPropagation.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/translation.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/select2/utils.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/wrapper.end.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/js/wrapper.start.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/scss/_dropdown.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/scss/_multiple.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/scss/_single.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/scss/core.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/scss/mixins/_gradients.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/scss/theme/classic/_defaults.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/scss/theme/classic/_multiple.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/scss/theme/classic/_single.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/scss/theme/classic/layout.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/scss/theme/default/_multiple.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/scss/theme/default/_single.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/select2/src/scss/theme/default/layout.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/shallow-equal-fuzzy/.npmignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/shallow-equal-fuzzy/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/shallow-equal-fuzzy/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/shallow-equal-fuzzy/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/shallow-equal-fuzzy/package.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/reactjs/components/CreatePuzzleForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/CreatePuzzleForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactjs/pages/createPuzzle.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/pages/createPuzzle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/.github/CONTRIBUTING.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/.github/CONTRIBUTING.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/.github/ISSUE_TEMPLATE.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/.github/ISSUE_TEMPLATE.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/.github/PULL_REQUEST_TEMPLATE.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/.github/PULL_REQUEST_TEMPLATE.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/.github/stale.yml" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/.github/stale.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/.jshintignore" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/.jshintignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/.jshintrc" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/.jshintrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/.travis.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/Gruntfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/Gruntfile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/LICENSE.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/LICENSE.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/bower.json" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/bower.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/component.json" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/component.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/css/select2.css" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/css/select2.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/css/select2.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/css/select2.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/af.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/af.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/ar.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/ar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/az.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/az.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/bg.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/bg.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/bn.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/bn.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/bs.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/bs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/ca.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/ca.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/cs.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/cs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/da.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/da.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/de.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/de.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/dsb.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/dsb.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/el.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/el.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/en.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/en.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/es.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/es.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/et.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/et.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/eu.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/eu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/fa.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/fa.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/fi.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/fi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/fr.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/fr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/gl.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/gl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/he.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/he.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/hi.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/hi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/hr.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/hr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/hsb.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/hsb.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/hu.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/hu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/hy.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/hy.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/id.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/id.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/is.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/is.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/it.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/it.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/ja.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/ja.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/ka.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/ka.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/km.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/km.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/ko.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/ko.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/lt.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/lt.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/lv.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/lv.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/mk.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/mk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/ms.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/ms.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/nb.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/nb.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/ne.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/ne.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/nl.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/nl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/pl.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/pl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/ps.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/ps.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/pt-BR.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/pt-BR.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/pt.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/pt.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/ro.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/ro.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/ru.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/ru.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/sk.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/sk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/sl.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/sl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/sq.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/sq.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/sr-Cyrl.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/sr-Cyrl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/sr.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/sr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/sv.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/sv.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/th.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/th.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/tk.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/tk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/tr.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/tr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/uk.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/uk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/vi.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/vi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/zh-CN.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/zh-CN.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/zh-TW.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/i18n/zh-TW.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/select2.full.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/select2.full.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/select2.full.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/select2.full.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/select2.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/select2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/select2.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/js/select2.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/docs/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/docs/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/docs/announcements-4.0.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/docs/announcements-4.0.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/docs/community.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/docs/community.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/docs/examples.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/docs/examples.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/docs/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/docs/options-old.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/docs/options-old.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/docs/options.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/docs/options.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/banner.end.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/banner.end.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/banner.start.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/banner.start.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/jquery.mousewheel.shim.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/jquery.mousewheel.shim.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/jquery.select2.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/jquery.select2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/jquery.shim.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/jquery.shim.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/compat/containerCss.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/compat/containerCss.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/compat/dropdownCss.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/compat/dropdownCss.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/compat/initSelection.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/compat/initSelection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/compat/inputData.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/compat/inputData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/compat/matcher.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/compat/matcher.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/compat/query.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/compat/query.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/compat/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/compat/utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/core.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/core.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/data/ajax.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/data/ajax.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/data/array.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/data/array.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/data/base.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/data/base.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/data/maximumInputLength.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/data/maximumInputLength.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/data/maximumSelectionLength.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/data/maximumSelectionLength.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/data/minimumInputLength.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/data/minimumInputLength.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/data/select.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/data/select.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/data/tags.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/data/tags.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/data/tokenizer.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/data/tokenizer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/defaults.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/defaults.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/diacritics.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/diacritics.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/dropdown.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/dropdown.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/dropdown/attachBody.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/dropdown/attachBody.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/dropdown/attachContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/dropdown/attachContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/dropdown/closeOnSelect.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/dropdown/closeOnSelect.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/dropdown/hidePlaceholder.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/dropdown/hidePlaceholder.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/dropdown/infiniteScroll.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/dropdown/infiniteScroll.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/dropdown/minimumResultsForSearch.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/dropdown/minimumResultsForSearch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/dropdown/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/dropdown/search.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/dropdown/selectOnClose.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/dropdown/selectOnClose.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/dropdown/stopPropagation.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/dropdown/stopPropagation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/af.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/af.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/ar.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/ar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/az.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/az.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/bg.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/bg.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/bn.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/bn.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/bs.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/bs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/ca.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/ca.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/cs.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/cs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/da.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/da.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/de.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/de.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/dsb.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/dsb.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/el.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/el.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/en.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/en.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/es.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/es.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/et.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/et.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/eu.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/eu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/fa.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/fa.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/fi.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/fi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/fr.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/fr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/gl.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/gl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/he.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/he.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/hi.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/hi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/hr.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/hr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/hsb.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/hsb.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/hu.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/hu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/hy.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/hy.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/id.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/id.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/is.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/is.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/it.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/it.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/ja.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/ja.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/ka.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/ka.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/km.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/km.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/ko.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/ko.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/lt.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/lt.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/lv.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/lv.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/mk.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/mk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/ms.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/ms.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/nb.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/nb.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/ne.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/ne.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/nl.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/nl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/pl.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/pl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/ps.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/ps.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/pt-BR.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/pt-BR.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/pt.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/pt.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/ro.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/ro.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/ru.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/ru.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/sk.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/sk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/sl.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/sl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/sq.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/sq.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/sr-Cyrl.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/sr-Cyrl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/sr.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/sr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/sv.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/sv.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/th.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/th.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/tk.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/tk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/tr.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/tr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/uk.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/uk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/vi.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/vi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/zh-CN.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/zh-CN.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/zh-TW.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/i18n/zh-TW.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/keys.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/keys.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/options.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/options.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/results.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/results.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/selection/allowClear.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/selection/allowClear.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/selection/base.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/selection/base.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/selection/clickMask.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/selection/clickMask.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/selection/eventRelay.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/selection/eventRelay.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/selection/multiple.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/selection/multiple.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/selection/placeholder.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/selection/placeholder.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/selection/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/selection/search.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/selection/single.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/selection/single.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/selection/stopPropagation.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/selection/stopPropagation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/translation.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/translation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/select2/utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/wrapper.end.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/wrapper.end.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/wrapper.start.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/js/wrapper.start.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/scss/_dropdown.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/scss/_dropdown.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/scss/_multiple.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/scss/_multiple.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/scss/_single.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/scss/_single.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/scss/core.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/scss/core.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/scss/mixins/_gradients.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/scss/mixins/_gradients.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/scss/theme/classic/_defaults.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/scss/theme/classic/_defaults.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/scss/theme/classic/_multiple.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/scss/theme/classic/_multiple.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/scss/theme/classic/_single.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/scss/theme/classic/_single.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/scss/theme/classic/layout.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/scss/theme/classic/layout.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/scss/theme/default/_multiple.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/scss/theme/default/_multiple.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/scss/theme/default/_single.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/scss/theme/default/_single.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/scss/theme/default/layout.scss" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/src/scss/theme/default/layout.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/a11y/search-tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/a11y/search-tests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/a11y/selection-tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/a11y/selection-tests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/data/array-tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/data/array-tests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/data/base-tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/data/base-tests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/data/inputData-tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/data/inputData-tests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/data/maximumInputLength-tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/data/maximumInputLength-tests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/data/maximumSelectionLength-tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/data/maximumSelectionLength-tests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/data/minimumInputLength-tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/data/minimumInputLength-tests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/data/select-tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/data/select-tests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/data/tags-tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/data/tags-tests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/data/tokenizer-tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/data/tokenizer-tests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/dropdown/dropdownCss-tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/dropdown/dropdownCss-tests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/dropdown/positioning-tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/dropdown/positioning-tests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/dropdown/selectOnClose-tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/dropdown/selectOnClose-tests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/dropdown/stopPropagation-tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/dropdown/stopPropagation-tests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/helpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/helpers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/integration-jq1.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/integration-jq1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/integration-jq2.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/integration-jq2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/integration/dom-changes.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/integration/dom-changes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/integration/jquery-calls.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/integration/jquery-calls.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/integration/select2-methods.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/integration/select2-methods.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/options/ajax-tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/options/ajax-tests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/options/data-tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/options/data-tests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/options/deprecated-tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/options/deprecated-tests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/options/translation-tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/options/translation-tests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/options/width-tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/options/width-tests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/results/focusing-tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/results/focusing-tests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/selection/allowClear-tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/selection/allowClear-tests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/selection/containerCss-tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/selection/containerCss-tests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/selection/multiple-tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/selection/multiple-tests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/selection/placeholder-tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/selection/placeholder-tests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/selection/search-tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/selection/search-tests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/selection/single-tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/selection/single-tests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/selection/stopPropagation-tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/selection/stopPropagation-tests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/unit-jq1.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/unit-jq1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/unit-jq2.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/unit-jq2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/utils/decorator-tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/utils/decorator-tests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/utils/escapeMarkup-tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/utils/escapeMarkup-tests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/vendor/jquery-1.7.2.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/vendor/jquery-1.7.2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/vendor/jquery-2.2.4.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/vendor/jquery-2.2.4.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/vendor/qunit-1.23.1.css" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/vendor/qunit-1.23.1.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/vendor/qunit-1.23.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/select2-4.0.7/tests/vendor/qunit-1.23.1.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cicada-reactjs/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -57,12 +806,12 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/reactjs/pages/createPuzzle.js">
+        <entry file="file://$PROJECT_DIR$/reactjs/components/CreatePuzzleForm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="40" selection-start-line="40" selection-end-line="40" />
+            <state relative-caret-position="412">
+              <caret line="87" column="20" selection-start-line="87" selection-start-column="20" selection-end-line="87" selection-end-column="20" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -71,10 +820,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/reactjs/components/CreatePuzzleForm.js">
+        <entry file="file://$PROJECT_DIR$/reactjs/pages/createPuzzle.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="38" column="23" selection-start-line="38" selection-start-column="23" selection-end-line="38" selection-end-column="23" />
+            <state relative-caret-position="405">
+              <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -182,8 +931,8 @@
         <option value="$PROJECT_DIR$/reactjs/static/style.css" />
         <option value="$PROJECT_DIR$/reactjs/components/CKEditor.js" />
         <option value="$PROJECT_DIR$/reactjs/components/Layout.js" />
-        <option value="$PROJECT_DIR$/reactjs/components/CreatePuzzleForm.js" />
         <option value="$PROJECT_DIR$/reactjs/pages/createPuzzle.js" />
+        <option value="$PROJECT_DIR$/reactjs/components/CreatePuzzleForm.js" />
       </list>
     </option>
   </component>
@@ -355,19 +1104,31 @@
               <item name="cicada" type="b2602c69:ProjectViewProjectNode" />
               <item name="cicada" type="462c0819:PsiDirectoryNode" />
               <item name="reactjs" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cicada" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cicada" type="462c0819:PsiDirectoryNode" />
-              <item name="reactjs" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cicada" type="b2602c69:ProjectViewProjectNode" />
               <item name="cicada" type="462c0819:PsiDirectoryNode" />
               <item name="reactjs" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="jquery" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cicada" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cicada" type="462c0819:PsiDirectoryNode" />
+              <item name="reactjs" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="jquery" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cicada" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cicada" type="462c0819:PsiDirectoryNode" />
+              <item name="reactjs" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="jquery" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
+              <item name="jquery.js" type="620a8d5e:NestingTreeNode" />
             </path>
           </expand>
           <select />
@@ -398,18 +1159,18 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/reactjs/static" />
-      <recent name="$PROJECT_DIR$/reactjs/static/pages/login" />
-      <recent name="$PROJECT_DIR$/ExternalWork" />
-      <recent name="$PROJECT_DIR$/cicada-symfony/public" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/reactjs" />
       <recent name="$PROJECT_DIR$/reactjs/pages" />
       <recent name="$PROJECT_DIR$/ExternalWork" />
       <recent name="$PROJECT_DIR$/symfony/src/Security" />
       <recent name="$PROJECT_DIR$/symfony/src/Security/Authenticators" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/reactjs/static" />
+      <recent name="$PROJECT_DIR$/reactjs/static/pages/login" />
+      <recent name="$PROJECT_DIR$/ExternalWork" />
+      <recent name="$PROJECT_DIR$/cicada-symfony/public" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -526,11 +1287,13 @@
       <workItem from="1562252997077" duration="2039000" />
       <workItem from="1562313396359" duration="1048000" />
       <workItem from="1562358653638" duration="1904000" />
+      <workItem from="1562750447741" duration="2080000" />
+      <workItem from="1562752956361" duration="2851000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="405554000" />
+    <option name="totallyTimeSpent" value="410593000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -545,7 +1308,7 @@
     <frame x="0" y="0" width="1366" height="749" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4984326" visible="true" weight="0.26136363" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4984326" visible="true" weight="0.2689394" />
       <window_info id="Structure" order="1" sideWeight="0.5015674" side_tool="true" weight="0.20757575" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -602,30 +1365,6 @@
     </ignored-roots>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/symfony/config/bundles.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="65" lean-forward="true" selection-start-line="20" selection-start-column="65" selection-end-line="20" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/symfony/src/Controller/RegistrationController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="63" column="42" selection-start-line="63" selection-start-column="42" selection-end-line="63" selection-end-column="42" />
-          <folding>
-            <element signature="e#34#57#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/symfony/config/packages/nelmio_cors.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="59" selection-start-line="15" selection-start-column="59" selection-end-line="15" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/symfony/src/EventListener/MailRegistrationUserListener.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="137">
@@ -909,9 +1648,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reactjs/static/select2/src/js/select2/data/ajax.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/reactjs/static/select2/src/js/select2/data/ajax.js" />
     <entry file="file://$PROJECT_DIR$/reactjs/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -939,20 +1676,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reactjs/components/CreatePuzzleForm.js">
+    <entry file="file://$PROJECT_DIR$/reactjs/static/jquery/jquery.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="38" column="23" selection-start-line="38" selection-start-column="23" selection-end-line="38" selection-end-column="23" />
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactjs/node_modules/jquery/dist/jquery.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactjs/static/jquery/src/css/var/swap.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactjs/pages/createPuzzle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reactjs/pages/createPuzzle.js">
+    <entry file="file://$PROJECT_DIR$/reactjs/components/CreatePuzzleForm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="40" selection-start-line="40" selection-end-line="40" />
+        <state relative-caret-position="412">
+          <caret line="87" column="20" selection-start-line="87" selection-start-column="20" selection-end-line="87" selection-end-column="20" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
