@@ -21,14 +21,7 @@ class CreatePuzzleForm extends React.Component {
 
     componentDidMount() {
         $('.js-example-basic-multiple').select2();
-
-        let puzzleDescription = document.getElementsByClassName('puzzle-description')[0];
-        puzzleDescription.setAttribute(
-            'style', 'width: ' + puzzleDescription.offsetWidth + 'px'
-        );
-        puzzleDescription.setAttribute(
-            'style', 'max-width: ' + puzzleDescription.offsetWidth + 'px'
-        );
+        //TODO: $ undefined - sometimes
     }
 
     static getInitialProps({ req, query }) {
@@ -101,6 +94,34 @@ class CreatePuzzleForm extends React.Component {
                             console.log( 'Focus.', editor );
                         } }
                     />
+                    {/*TODO: CKEditor overlaps page content */}
+                </div>
+
+                <div className="card stage">
+                    <header className="card-header">
+                        <div className="pull-left stage-word">Stage 1</div>
+                        <div className="pull-right open-stage">+</div>
+                        <p/>
+                    </header>
+                    <div className="card-content">
+                        <CKEditor
+                            data="<p>Stage 1 description here</p>"
+                            onInit={ editor => {
+                                // You can store the "editor" and use when it is needed.
+                                console.log( 'Editor is ready to use!', editor );
+                            } }
+                            onChange={ ( event, editor ) => {
+                                const data = editor.getData();
+                                console.log( { event, editor, data } );
+                            } }
+                            onBlur={ editor => {
+                                console.log( 'Blur.', editor );
+                            } }
+                            onFocus={ editor => {
+                                console.log( 'Focus.', editor );
+                            } }
+                        />
+                    </div>
                 </div>
 
                 <div className="form-actions">
@@ -108,65 +129,80 @@ class CreatePuzzleForm extends React.Component {
                 </div>
 
                 { /*language=SCSS*/ }
-                <style jsx>{`                    
-                    .form {
-                      display: flex;
-                      flex-direction: row;
-                      flex-wrap: wrap; margin: auto;
-                      width: 100%;
-                    }
-                    
-                    fieldset {
-                        width: 50%;
-                    }
+                <style jsx>{`
+                  .form {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    margin: auto;
+                    width: 100%;
+                  }
 
-                    .form-tags-group {
-                        display: flex;
-                        flex-direction: row;
-                        flex-wrap: wrap;
-                        width: 46%;
-                        margin-right: 4%;
-                    }
-                    
-                    label {
-                      width: 20%;
-                    }
-                    
-                    .js-example-basic-multiple {
-                        flex-grow: 100;
-                    }
-                    
-                    .label-tags {
-                        padding-left: 0;
-                        width: auto;
-                        height: auto;
-                        margin: auto;    
-                    }
-                    
-                    .puzzle-description {
-                        margin-top: 10px;
-                        width: 100%;
-                        max-width: 100%;
-                    }
-                    
-                    
-                    input[type=number]::-webkit-inner-spin-button,
-                    input[type=number]::-webkit-outer-spin-button {
-                      -webkit-appearance: none;
-                    }
-                    
-                    .number-input {
-                      border: 1px solid #ddd;
-                      display: inline-flex;
-                    }
-                    
-                    .minus, .plus {
-                        padding: .3rem .7rem;
-                    }
-                    
-                    .number-input > input {
-                        text-align: center;
-                    }
+                  fieldset {
+                    width: 50%;
+                  }
+
+                  .form-tags-group {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    width: 46%;
+                    margin-right: 4%;
+                  }
+
+                  label {
+                    width: 20%;
+                  }
+
+                  .js-example-basic-multiple {
+                    flex-grow: 100;
+                  }
+
+                  .label-tags {
+                    padding-left: 0;
+                    width: auto;
+                    height: auto;
+                    margin: auto;
+                  }
+
+                  .puzzle-description, .stage {
+                    margin-top: 10px;
+                    width: 100%;
+                    max-width: 100%;
+                  }
+
+
+                  input[type=number]::-webkit-inner-spin-button,
+                  input[type=number]::-webkit-outer-spin-button {
+                    -webkit-appearance: none;
+                  }
+
+                  .number-input {
+                    border: 1px solid #ddd;
+                    display: inline-flex;
+                  }
+
+                  .minus, .plus {
+                    padding: .3rem .7rem;
+                    font-size: 1rem;
+                  }
+
+                  .number-input > input {
+                    text-align: center;
+                  }
+
+                  .stage-word {
+                    margin-left: 1rem;
+                  }
+
+                  .open-stage {
+                    margin-right: 1rem;
+                    padding-left: 4px;
+                    padding-right: 4px;
+                    color: #4caf50;
+                    border: 1px solid #4caf50;
+                    cursor: pointer;
+                  }
                 `}</style>
             </form>
         );
