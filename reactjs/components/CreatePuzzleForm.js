@@ -3,6 +3,7 @@ import dynamic from 'next/dynamic'
 
 import '../i18n';
 import { withNamespaces } from 'react-i18next';
+import Stage from "./Stage";
 
 const CKEditor = dynamic(() => import('../components/CKEditor'), {
     ssr: false
@@ -17,15 +18,19 @@ class CreatePuzzleForm extends React.Component {
         this.state = {
             name: '',
             difficulty: 1,
-            private: false
+            private: false,
+            stagesCount: 1
         };
 
         this.difficulty = 1;
+        this.stages = [Stage];
 
         this.toggleStage = this.toggleStage.bind(this);
         this.difficultyUp = this.difficultyUp.bind(this);
         this.difficultyDown = this.difficultyDown.bind(this);
         this.updateDifficulty = this.updateDifficulty.bind(this);
+        this.getScene = this.getScene.bind(this);
+        this.addNewScene = this.addNewScene.bind(this);
     }
 
     difficultyUp(e) {
@@ -67,6 +72,41 @@ class CreatePuzzleForm extends React.Component {
             cardContent.setAttribute('style', 'display: block;');
             e.target.innerHTML = '-';
         }
+    }
+
+    getScene(){
+        return(
+            <div className="card stage">
+                <header className="card-header">
+                    <div className="pull-left stage-word">Stage 1</div>
+                    <div className="pull-right open-stage" onClick={this.toggleStage}>-</div>
+                    <p/>
+                </header>
+                <div className="card-content">
+                    <CKEditor
+                        data="<p>New stage description...</p>"
+                        onInit={ editor => {
+                            // You can store the "editor" and use when it is needed.
+
+                        } }
+                        onChange={ ( event, editor ) => {
+                            const data = editor.getData();
+
+                        } }
+                        onBlur={ editor => {
+
+                        } }
+                        onFocus={ editor => {
+
+                        } }
+                    />
+                </div>
+            </div>
+        );
+    }
+
+    addNewScene(e){
+        e.target.appendChild(this.getScene());
     }
 
     render(){
@@ -123,39 +163,14 @@ class CreatePuzzleForm extends React.Component {
                     {/*TODO: CKEditor overlaps page content */}
                 </div>
 
-                <div className="card stage">
-                    <header className="card-header">
-                        <div className="pull-left stage-word">Stage 1</div>
-                        <div className="pull-right open-stage" onClick={this.toggleStage}>-</div>
-                        <p/>
-                    </header>
-                    <div className="card-content">
-                        <CKEditor
-                            data="<p>Stage 1 description here</p>"
-                            onInit={ editor => {
-                                // You can store the "editor" and use when it is needed.
 
-                            } }
-                            onChange={ ( event, editor ) => {
-                                const data = editor.getData();
-
-                            } }
-                            onBlur={ editor => {
-
-                            } }
-                            onFocus={ editor => {
-
-                            } }
-                        />
-                    </div>
+                <div className={"stages-cards"}>
+                    { this.stages }
+                    <div className={"btn btn-primary btn-ghost btn-block btn-add-scene"} onClick={this.addNewScene}>Add scene</div>
                 </div>
 
-                <div className="form-actions">
-                    <div className="btn-group">
-                        <div className="btn btn-info btn-ghost">Add stage</div>
-                        <div className="btn btn-success btn-ghost">Create</div>
-                    </div>
-                </div>
+                <button className={"btn btn-success btn-block btn-save-puzzle"}>Save puzzle</button>
+
 
                 { /*language=SCSS*/ }
                 <style jsx>{`
@@ -197,9 +212,8 @@ class CreatePuzzleForm extends React.Component {
                   .puzzle-description, .stage {
                     margin-top: 10px;
                     width: 100%;
-                    max-width: 100%;
                   }
-                  
+
                   .stage-word {
                     margin-left: 1rem;
                   }
@@ -212,7 +226,7 @@ class CreatePuzzleForm extends React.Component {
                     border: 1px solid #4caf50;
                     cursor: pointer;
                   }
-                  
+
                   input[type=number]::-webkit-inner-spin-button,
                   input[type=number]::-webkit-outer-spin-button {
                     -webkit-appearance: none;
@@ -231,15 +245,24 @@ class CreatePuzzleForm extends React.Component {
                   .number-input > input {
                     text-align: center;
                   }
-                  
+
                   .quantity {
-                    padding-left: 6px;
-                    padding-right: 6px;
-                    padding-top: 2px;
-                    padding-bottom: 2px;
+                    padding: 2px 6px;
                   }
                   
-                   #create-puzzle-from {
+                  .btn-add-scene{
+                      margin-top: 1rem;
+                  }
+
+                  .btn-save-puzzle{
+                      margin-top: 2rem;
+                  }
+
+                  .stages-cards {
+                      width: 100%;
+                  }
+
+                  #create-puzzle-from {
                     // display: flex;
                     // flex-direction: row;
                     // flex-grow: unset;
