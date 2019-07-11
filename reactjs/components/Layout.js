@@ -10,6 +10,7 @@ const Layout = (props) => (
             <meta name="viewport" content="initial-scale=1.0, width=device-width" />
             <link rel="stylesheet" type="text/css" href={"./static/hack/dist/hack.css"}/>
             <link rel="stylesheet" type="text/css" href={"./static/style.css"}/>
+            <script src="../static/jquery/dist/jquery.min.js" crossOrigin="anonymous"/>
         </Head>
         <Container>
             <TopMenu/>

@@ -22,7 +22,6 @@ class CreatePuzzle extends React.Component {
                 <Head>
                     <title>Cicada</title>
                     <scr name="viewport" content="initial-scale=1.0, width=device-width" />
-                    <script src="../static/jquery/dist/jquery.min.js" crossOrigin="anonymous"/>
                     <link href="../static/select2-4.0.7/dist/css/select2.css" rel="stylesheet" />
                     <script src="../static/select2-4.0.7/dist/js/select2.min.js"/>
                 </Head>
