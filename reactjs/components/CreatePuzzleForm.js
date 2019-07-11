@@ -46,13 +46,13 @@ class CreatePuzzleForm extends React.Component {
 
         if(cardContent.style.display !== 'none'){
             cardContent.setAttribute('style', 'display: none;');
+            e.target.innerHTML = '+';
         } else {
             cardContent.setAttribute('style', 'display: block;');
+            e.target.innerHTML = '-';
         }
 
-        console.log(cardContent.style.display);
     }
-
     render(){
         return (
             <form className="form" id={"create-puzzle-from"}>
@@ -113,7 +113,7 @@ class CreatePuzzleForm extends React.Component {
                 <div className="card stage">
                     <header className="card-header">
                         <div className="pull-left stage-word">Stage 1</div>
-                        <div className="pull-right open-stage" onClick={this.toggleStage}>+</div>
+                        <div className="pull-right open-stage" onClick={this.toggleStage}>-</div>
                         <p/>
                     </header>
                     <div className="card-content">
@@ -138,7 +138,10 @@ class CreatePuzzleForm extends React.Component {
                 </div>
 
                 <div className="form-actions">
-                    <button type="button" className="btn btn-primary btn-block">Submit</button>
+                    <div className="btn-group">
+                        <div className="btn btn-info btn-ghost">Add stage</div>
+                        <div className="btn btn-success btn-ghost">Create</div>
+                    </div>
                 </div>
 
                 { /*language=SCSS*/ }
