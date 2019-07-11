@@ -14,10 +14,38 @@ class CreatePuzzleForm extends React.Component {
         super({t});
         this.t = t;
 
+        this.state = {
+            name: '',
+            difficulty: 1,
+            private: false
+        };
+
+        this.difficulty = 1;
+
+        this.toggleStage = this.toggleStage.bind(this);
         this.difficultyUp = this.difficultyUp.bind(this);
         this.difficultyDown = this.difficultyDown.bind(this);
         this.updateDifficulty = this.updateDifficulty.bind(this);
-        this.toggleStage = this.toggleStage.bind(this);
+    }
+
+    difficultyUp(e) {
+        if(parseInt(this.difficulty) + 1 <= 5){
+            this.difficulty = parseInt(this.difficulty) + 1;
+            e.target.parentElement.querySelector('.quantity').innerHTML = ''+this.difficulty;
+            this.updateDifficulty();
+        }
+    }
+
+    difficultyDown(e) {
+        if(parseInt(this.difficulty) - 1 > 0){
+            this.difficulty = parseInt(this.difficulty) - 1;
+            e.target.parentElement.querySelector('.quantity').innerHTML = ''+this.difficulty;
+            this.updateDifficulty();
+        }
+    }
+
+    updateDifficulty(){
+        this.setState({difficulty: this.difficulty});
     }
 
     componentDidMount() {
@@ -27,18 +55,6 @@ class CreatePuzzleForm extends React.Component {
 
     static getInitialProps({ req, query }) {
         return {}
-    }
-
-    difficultyUp() {
-
-    }
-
-    difficultyDown() {
-
-    }
-
-    updateDifficulty(){
-
     }
 
     toggleStage(e){
@@ -51,8 +67,8 @@ class CreatePuzzleForm extends React.Component {
             cardContent.setAttribute('style', 'display: block;');
             e.target.innerHTML = '-';
         }
-
     }
+
     render(){
         return (
             <form className="form" id={"create-puzzle-from"}>
@@ -79,12 +95,9 @@ class CreatePuzzleForm extends React.Component {
                     <label htmlFor="private">Private <input type="checkbox"/></label>
                     <label htmlFor="difficulty">Difficulty
                         <div className="number-input">
-                            <div onClick={this.difficultyUp} className="btn btn-success btn-ghost minus">-</div>
-                            <input
-                                className="quantity btn btn-success btn-ghost minus"
-                                min="1" max="5" value="1" type="number" onChange={this.updateDifficulty}
-                            />
-                            <div onClick={this.difficultyDown} className="btn btn-success btn-ghost minus plus">+</div>
+                            <div onClick={this.difficultyDown} className="btn btn-success btn-ghost minus">-</div>
+                            <div className="quantity btn btn-success btn-ghost" onChange={this.updateDifficulty}> 1 </div>
+                            <div onClick={this.difficultyUp} className="btn btn-success btn-ghost minus plus">+</div>
                         </div>
                     </label>
                 </fieldset>
@@ -94,17 +107,17 @@ class CreatePuzzleForm extends React.Component {
                         data="<p>Puzzle description...</p>"
                         onInit={ editor => {
                             // You can store the "editor" and use when it is needed.
-                            console.log( 'Editor is ready to use!', editor );
+
                         } }
                         onChange={ ( event, editor ) => {
                             const data = editor.getData();
-                            console.log( { event, editor, data } );
+
                         } }
                         onBlur={ editor => {
-                            console.log( 'Blur.', editor );
+
                         } }
                         onFocus={ editor => {
-                            console.log( 'Focus.', editor );
+
                         } }
                     />
                     {/*TODO: CKEditor overlaps page content */}
@@ -121,17 +134,17 @@ class CreatePuzzleForm extends React.Component {
                             data="<p>Stage 1 description here</p>"
                             onInit={ editor => {
                                 // You can store the "editor" and use when it is needed.
-                                console.log( 'Editor is ready to use!', editor );
+
                             } }
                             onChange={ ( event, editor ) => {
                                 const data = editor.getData();
-                                console.log( { event, editor, data } );
+
                             } }
                             onBlur={ editor => {
-                                console.log( 'Blur.', editor );
+
                             } }
                             onFocus={ editor => {
-                                console.log( 'Focus.', editor );
+
                             } }
                         />
                     </div>
@@ -186,8 +199,20 @@ class CreatePuzzleForm extends React.Component {
                     width: 100%;
                     max-width: 100%;
                   }
+                  
+                  .stage-word {
+                    margin-left: 1rem;
+                  }
 
-
+                  .open-stage {
+                    margin-right: 1rem;
+                    padding-left: 4px;
+                    padding-right: 4px;
+                    color: #4caf50;
+                    border: 1px solid #4caf50;
+                    cursor: pointer;
+                  }
+                  
                   input[type=number]::-webkit-inner-spin-button,
                   input[type=number]::-webkit-outer-spin-button {
                     -webkit-appearance: none;
@@ -206,18 +231,12 @@ class CreatePuzzleForm extends React.Component {
                   .number-input > input {
                     text-align: center;
                   }
-
-                  .stage-word {
-                    margin-left: 1rem;
-                  }
-
-                  .open-stage {
-                    margin-right: 1rem;
-                    padding-left: 4px;
-                    padding-right: 4px;
-                    color: #4caf50;
-                    border: 1px solid #4caf50;
-                    cursor: pointer;
+                  
+                  .quantity {
+                    padding-left: 6px;
+                    padding-right: 6px;
+                    padding-top: 2px;
+                    padding-bottom: 2px;
                   }
                   
                    #create-puzzle-from {
