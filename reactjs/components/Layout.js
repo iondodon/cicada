@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Container from "./Container";
 import TopMenu from "./TopMenu";
 import Footer from "./Footer";
+import React from "react";
 
 const Layout = (props) => (
     <div>
@@ -10,7 +11,7 @@ const Layout = (props) => (
             <meta name="viewport" content="initial-scale=1.0, width=device-width" />
             <link rel="stylesheet" type="text/css" href={"./static/hack/dist/hack.css"}/>
             <link rel="stylesheet" type="text/css" href={"./static/style.css"}/>
-            <script src="../static/jquery/dist/jquery.min.js" crossOrigin="anonymous"/>
+            <script src="../static/jquery/dist/jquery.min.js"/>
         </Head>
         <Container>
             <TopMenu/>

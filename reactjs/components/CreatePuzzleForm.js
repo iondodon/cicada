@@ -17,6 +17,7 @@ class CreatePuzzleForm extends React.Component {
         this.difficultyUp = this.difficultyUp.bind(this);
         this.difficultyDown = this.difficultyDown.bind(this);
         this.updateDifficulty = this.updateDifficulty.bind(this);
+        this.toggleStage = this.toggleStage.bind(this);
     }
 
     componentDidMount() {
@@ -38,6 +39,18 @@ class CreatePuzzleForm extends React.Component {
 
     updateDifficulty(){
 
+    }
+
+    toggleStage(e){
+        let cardContent = e.target.parentElement.parentElement.querySelector('.card-content');
+
+        if(cardContent.style.display !== 'none'){
+            cardContent.setAttribute('style', 'display: none;');
+        } else {
+            cardContent.setAttribute('style', 'display: block;');
+        }
+
+        console.log(cardContent.style.display);
     }
 
     render(){
@@ -62,19 +75,19 @@ class CreatePuzzleForm extends React.Component {
                     </select>
                 </div>
 
-                <label htmlFor="private">Private <input type="checkbox"/></label>
-
-                <label htmlFor="difficulty">Difficulty
-                    <div className="number-input">
-                        <div onClick={this.difficultyUp} className="btn btn-success btn-ghost minus">-</div>
-                        <input
-                            className="quantity btn btn-success btn-ghost minus"
-                            min="1" max="5" value="1" type="number" onChange={this.updateDifficulty}
-                        />
-                        <div onClick={this.difficultyDown} className="btn btn-success btn-ghost minus plus">+</div>
-                    </div>
-                </label>
-
+                <fieldset>
+                    <label htmlFor="private">Private <input type="checkbox"/></label>
+                    <label htmlFor="difficulty">Difficulty
+                        <div className="number-input">
+                            <div onClick={this.difficultyUp} className="btn btn-success btn-ghost minus">-</div>
+                            <input
+                                className="quantity btn btn-success btn-ghost minus"
+                                min="1" max="5" value="1" type="number" onChange={this.updateDifficulty}
+                            />
+                            <div onClick={this.difficultyDown} className="btn btn-success btn-ghost minus plus">+</div>
+                        </div>
+                    </label>
+                </fieldset>
 
                 <div className={"puzzle-description"}>
                     <CKEditor
@@ -100,7 +113,7 @@ class CreatePuzzleForm extends React.Component {
                 <div className="card stage">
                     <header className="card-header">
                         <div className="pull-left stage-word">Stage 1</div>
-                        <div className="pull-right open-stage">+</div>
+                        <div className="pull-right open-stage" onClick={this.toggleStage}>+</div>
                         <p/>
                     </header>
                     <div className="card-content">
@@ -202,6 +215,13 @@ class CreatePuzzleForm extends React.Component {
                     color: #4caf50;
                     border: 1px solid #4caf50;
                     cursor: pointer;
+                  }
+                  
+                   #create-puzzle-from {
+                    // display: flex;
+                    // flex-direction: row;
+                    // flex-grow: unset;
+                    // margin: auto;
                   }
                 `}</style>
             </form>
