@@ -33,6 +33,12 @@ class CreatePuzzleForm extends React.Component {
         this.addNewScene = this.addNewScene.bind(this);
     }
 
+    componentDidMount() {
+        // language=JQuery-CSS
+        $('.js-example-basic-multiple').select2();
+        //TODO: $ undefined - sometimes
+    }
+
     difficultyUp(e) {
         if(parseInt(this.difficulty) + 1 <= 5){
             this.difficulty = parseInt(this.difficulty) + 1;
@@ -51,11 +57,6 @@ class CreatePuzzleForm extends React.Component {
 
     updateDifficulty(){
         this.setState({difficulty: this.difficulty});
-    }
-
-    componentDidMount() {
-        $('.js-example-basic-multiple').select2();
-        //TODO: $ undefined - sometimes
     }
 
     static getInitialProps({ req, query }) {
