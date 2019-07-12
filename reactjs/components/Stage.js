@@ -31,7 +31,7 @@ class Stage extends React.Component {
 
     render(){
         return (
-            <div className="card stage">
+            <div className="card stage" key={this.props.id}>
                 <header className="card-header">
                     <div className="pull-left stage-word">Stage { this.props.stageNumber }</div>
                     <div className="pull-right open-stage" onClick={this.toggleStage}>-</div>
@@ -39,7 +39,7 @@ class Stage extends React.Component {
                 </header>
                 <div className="card-content">
                     <CKEditor
-                        data={ this.props.content }
+                        data={this.props.content}
                         onInit={ editor => {
                             // You can store the "editor" and use when it is needed.
 
@@ -58,13 +58,13 @@ class Stage extends React.Component {
                 </div>
 
                 { /*language=SCSS*/ }
-                <style jsx>{`
-                  .stages-cards {
-                      width: 100%;
-                  }
-                  
+                <style jsx>{`                    
                   .stage-word {
                     margin-left: 1rem;
+                  }
+                  
+                  .card {
+                    margin-top: 10px;
                   }
 
                   .open-stage {

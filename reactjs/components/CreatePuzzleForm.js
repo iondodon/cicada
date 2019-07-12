@@ -21,8 +21,8 @@ class CreatePuzzleForm extends React.Component {
             private: false,
             stagesCount: 1,
             stages: [
-                {stageNumber: 1, content: "stage 1 content"},
-                {stageNumber: 2, content: "stage 2 content"}
+                {stageNumber: 1, content: 'stage 1 content'},
+                {stageNumber: 2, content: 'stage 2 content'}
             ]
         };
 
@@ -71,7 +71,7 @@ class CreatePuzzleForm extends React.Component {
 
     render(){
         return (
-            <form className="form" id={"create-puzzle-from"}>
+            <form className="form" id={"create-puzzle-form"}>
                 <fieldset className="form-group">
                     <label >Name:</label>
                     <input type="text" placeholder="puzzle name..." className="form-control"/>
@@ -80,16 +80,6 @@ class CreatePuzzleForm extends React.Component {
                     <label htmlFor="email">EMAIL:</label>
                     <input id="email" type="email" placeholder="" className="form-control"/>
                 </fieldset>
-
-                <div className="form-tags-group">
-                    <label htmlFor="tags" className="label-tags">Tags:</label>
-                    <select className="js-example-basic-multiple" name="states[]" multiple="multiple">
-                        <option value="AL">Alabama</option>
-                        <option value="WY">Wyoming</option>
-                        <option value="AL">Alabama</option>
-                        <option value="WY">Wyoming</option>
-                    </select>
-                </div>
 
                 <fieldset>
                     <label htmlFor="private">Private <input type="checkbox"/></label>
@@ -102,26 +92,36 @@ class CreatePuzzleForm extends React.Component {
                     </label>
                 </fieldset>
 
-                <div className={"puzzle-description"}>
-                    <CKEditor
-                        data="<p>Puzzle description...</p>"
-                        onInit={ editor => {
-                            // You can store the "editor" and use when it is needed.
-
-                        } }
-                        onChange={ ( event, editor ) => {
-                            const data = editor.getData();
-
-                        } }
-                        onBlur={ editor => {
-
-                        } }
-                        onFocus={ editor => {
-
-                        } }
-                    />
-                    {/*TODO: CKEditor overlaps page content */}
+                <div className="form-tags-group">
+                    <label htmlFor="tags" className="label-tags">Tags:</label>
+                    <select className="js-example-basic-multiple" name="states[]" multiple="multiple">
+                        <option value="AL">Alabama</option>
+                        <option value="WY">Wyoming</option>
+                        <option value="AL">Alabama</option>
+                        <option value="WY">Wyoming</option>
+                    </select>
                 </div>
+
+
+                <CKEditor
+                    data="<p>Puzzle description...</p>"
+                    onInit={ editor => {
+                        // You can store the "editor" and use when it is needed.
+
+                    } }
+                    onChange={ ( event, editor ) => {
+                        const data = editor.getData();
+
+                    } }
+                    onBlur={ editor => {
+
+                    } }
+                    onFocus={ editor => {
+
+                    } }
+                />
+                {/*TODO: CKEditor overlaps page content */}
+
 
 
                 <div className={"stages-cards"}>
@@ -130,6 +130,7 @@ class CreatePuzzleForm extends React.Component {
                         this.state.stages.map((stage, index) => {
                             return(
                                 <Stage
+                                    key={stage.stageNumber}
                                     stageNumber={stage.stageNumber}
                                     startContent={stage.content}
                                 />
@@ -180,7 +181,7 @@ class CreatePuzzleForm extends React.Component {
                     margin: auto;
                   }
 
-                  .puzzle-description, .stage {
+                  .stage {
                     margin-top: 10px;
                     width: 100%;
                   }
@@ -215,13 +216,17 @@ class CreatePuzzleForm extends React.Component {
                   .btn-save-puzzle{
                       margin-top: 2rem;
                   }
-                  
 
-                  #create-puzzle-from {
+                  #create-puzzle-form {
                     // display: flex;
                     // flex-direction: row;
                     // flex-grow: unset;
                     // margin: auto;
+                  }
+                  
+                  .stages-cards {
+                    width: 100%;
+                    margin-top: 20px;
                   }
                 `}</style>
             </form>

@@ -13,6 +13,7 @@ const Container = (props) => (
                 display: flex;
                 flex-direction: column;
                 min-width: 80%;
+                max-width: 80%;
                 padding: 0 5% 0 5%;
             }
             

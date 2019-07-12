@@ -42,7 +42,7 @@ class Layout extends React.Component {
                     
                     hr {
                         text-align: center;
-                    }    
+                    }
                 `}
                 </style>
             </div>

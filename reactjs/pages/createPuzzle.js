@@ -49,7 +49,7 @@ class CreatePuzzle extends React.Component {
                 </Dashboard>
 
                 { /*language=SCSS*/ }
-                <style jsx>{`                    
+                <style jsx>{`
                     #page-content {
                       display: flex;
                       flex-direction: column;
