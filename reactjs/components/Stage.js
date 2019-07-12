@@ -13,6 +13,20 @@ class Stage extends React.Component {
     constructor({t}){
         super({t});
         this.t = t;
+
+        this.toggleStage = this.toggleStage.bind(this);
+    }
+
+    toggleStage(e){
+        let cardContent = e.target.parentElement.parentElement.querySelector('.card-content');
+
+        if(cardContent.style.display !== 'none'){
+            cardContent.setAttribute('style', 'display: none;');
+            e.target.innerHTML = '+';
+        } else {
+            cardContent.setAttribute('style', 'display: block;');
+            e.target.innerHTML = '-';
+        }
     }
 
     render(){
@@ -42,6 +56,26 @@ class Stage extends React.Component {
                         } }
                     />
                 </div>
+
+                { /*language=SCSS*/ }
+                <style jsx>{`
+                  .stages-cards {
+                      width: 100%;
+                  }
+                  
+                  .stage-word {
+                    margin-left: 1rem;
+                  }
+
+                  .open-stage {
+                    margin-right: 1rem;
+                    padding-left: 4px;
+                    padding-right: 4px;
+                    color: #4caf50;
+                    border: 1px solid #4caf50;
+                    cursor: pointer;
+                  }
+                `}</style>
             </div>
         );
     }
