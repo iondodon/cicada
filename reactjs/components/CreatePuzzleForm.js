@@ -19,7 +19,11 @@ class CreatePuzzleForm extends React.Component {
             name: '',
             difficulty: 1,
             private: false,
-            stagesCount: 1
+            stagesCount: 1,
+            stages: [
+                {stageNumber: 1, content: 'stage 1 content'},
+                {stageNumber: 2, content: 'stage 2 content'}
+            ]
         };
 
         this.difficulty = 1;
@@ -166,7 +170,18 @@ class CreatePuzzleForm extends React.Component {
 
 
                 <div className={"stages-cards"}>
-                    { this.stages }
+
+                    {
+                        this.state.stages.map((stage, index) => {
+                            return(
+                                <Stage
+                                    stageNumber={stage.stageNumber}
+                                    startContent={stage.content}
+                                />
+                            );
+                        })
+                    }
+
                     <div className={"btn btn-primary btn-ghost btn-block btn-add-scene"} onClick={this.addNewScene}>Add scene</div>
                 </div>
 

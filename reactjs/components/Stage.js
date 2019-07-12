@@ -19,13 +19,13 @@ class Stage extends React.Component {
         return (
             <div className="card stage">
                 <header className="card-header">
-                    <div className="pull-left stage-word">Stage 1</div>
+                    <div className="pull-left stage-word">Stage { this.props.stageNumber }</div>
                     <div className="pull-right open-stage" onClick={this.toggleStage}>-</div>
                     <p/>
                 </header>
                 <div className="card-content">
                     <CKEditor
-                        data="<p>New Stage description here</p>"
+                        data={ this.props.content }
                         onInit={ editor => {
                             // You can store the "editor" and use when it is needed.
 
