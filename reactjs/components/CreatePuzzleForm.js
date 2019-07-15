@@ -21,13 +21,12 @@ class CreatePuzzleForm extends React.Component {
             private: false,
             stagesCount: 1,
             stages: [
-                {stageNumber: 1, content: 'stage 1 content'},
+                {stageNumber: 3, content: 'stage 1 content'},
                 {stageNumber: 2, content: 'stage 2 content'}
             ]
         };
 
         this.difficulty = 1;
-        this.stages = [Stage];
 
         this.difficultyUp = this.difficultyUp.bind(this);
         this.difficultyDown = this.difficultyDown.bind(this);
@@ -103,23 +102,25 @@ class CreatePuzzleForm extends React.Component {
                 </div>
 
 
-                <CKEditor
-                    data="<p>Puzzle description...</p>"
-                    onInit={ editor => {
-                        // You can store the "editor" and use when it is needed.
+                <div className={"puzzle-description"}>
+                    <CKEditor
+                        data="<p>Puzzle description...</p>"
+                        onInit={ editor => {
+                            // You can store the "editor" and use when it is needed.
 
-                    } }
-                    onChange={ ( event, editor ) => {
-                        const data = editor.getData();
+                        } }
+                        onChange={ ( event, editor ) => {
+                            const data = editor.getData();
 
-                    } }
-                    onBlur={ editor => {
+                        } }
+                        onBlur={ editor => {
 
-                    } }
-                    onFocus={ editor => {
+                        } }
+                        onFocus={ editor => {
 
-                    } }
-                />
+                        } }
+                    />
+                </div>
                 {/*TODO: CKEditor overlaps page content */}
 
 
@@ -153,6 +154,11 @@ class CreatePuzzleForm extends React.Component {
                     margin: auto;
                     width: 100%;
                   }
+                  
+                  .puzzle-description {
+                      width: 100%;
+                      margin-top: 2rem;
+                  }
 
                   fieldset {
                     width: 50%;
@@ -182,8 +188,8 @@ class CreatePuzzleForm extends React.Component {
                   }
 
                   .stage {
-                    margin-top: 10px;
-                    width: 100%;
+                   margin-top: 10px;
+                   width: 100%;
                   }
 
                   input[type=number]::-webkit-inner-spin-button,
@@ -225,8 +231,8 @@ class CreatePuzzleForm extends React.Component {
                   }
                   
                   .stages-cards {
-                    width: 100%;
-                    margin-top: 20px;
+                   width: 100%;
+                   margin-top: 20px;
                   }
                 `}</style>
             </form>

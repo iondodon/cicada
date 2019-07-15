@@ -39,18 +39,22 @@ class Stage extends React.Component {
                 </header>
                 <div className="card-content">
                     <CKEditor
-                        data={this.props.content}
+                        data={this.props.startContent}
+
                         onInit={ editor => {
                             // You can store the "editor" and use when it is needed.
 
                         } }
+
                         onChange={ ( event, editor ) => {
                             const data = editor.getData();
 
                         } }
+
                         onBlur={ editor => {
 
                         } }
+
                         onFocus={ editor => {
 
                         } }
@@ -65,6 +69,11 @@ class Stage extends React.Component {
                   
                   .card {
                     margin-top: 10px;
+                  }
+                  
+                  .card-content {
+                      padding: 0;
+                      margin: 0;
                   }
 
                   .open-stage {

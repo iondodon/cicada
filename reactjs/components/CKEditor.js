@@ -4,6 +4,7 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 
 class CKEditorWrapper extends Component {
+
     render() {
         return(
             <div className={"puzzle-description"}>
@@ -15,7 +16,6 @@ class CKEditorWrapper extends Component {
                 { /*language=SCSS*/ }
                 <style jsx>{`                    
                   .puzzle-description {
-                    margin-top: 10px;
                     width: 100%;
                   }
                 `}</style>
