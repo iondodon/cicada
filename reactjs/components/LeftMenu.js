@@ -7,8 +7,8 @@ import Link from 'next/link';
 
 class LeftMenu extends React.Component {
 
-    constructor({t}){
-        super({t});
+    constructor(props, {t}){
+        super(props, {t});
         this.t = t;
     }
 

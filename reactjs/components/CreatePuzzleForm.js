@@ -11,8 +11,8 @@ const CKEditor = dynamic(() => import('../components/CKEditor'), {
 
 class CreatePuzzleForm extends React.Component {
 
-    constructor({t}){
-        super({t});
+    constructor(props, {t}){
+        super(props, {t});
         this.t = t;
 
         this.state = {
@@ -27,9 +27,12 @@ class CreatePuzzleForm extends React.Component {
 
         this.difficulty = 1;
 
+        this.CreatePuzzleForm = React.createRef();
+
         this.difficultyUp = this.difficultyUp.bind(this);
         this.difficultyDown = this.difficultyDown.bind(this);
         this.updateDifficulty = this.updateDifficulty.bind(this);
+        this.addNewStage = this.addNewStage.bind(this);
     }
 
     componentDidMount() {
@@ -64,6 +67,17 @@ class CreatePuzzleForm extends React.Component {
 
     static getInitialProps({ req, query }) {
         return {}
+    }
+
+    addNewStage(){
+        this.setState({
+            stages: [...this.state.stages, {
+                stageNumber: this.state.stagesCount,
+                content: 'Description of stage ' + this.state.stagesCount
+            }]
+        });
+
+        this.setState({stagesCount: this.state.stagesCount + 1});
     }
 
     render(){
@@ -120,7 +134,9 @@ class CreatePuzzleForm extends React.Component {
                     />
                 </div>
 
-                <PuzzleStages stages={this.state.stages} />
+                <PuzzleStages stages={this.state.stages}
+                    addNewStage={this.addNewStage}
+                />
                 <button className={"btn btn-success btn-block btn-save-puzzle"}>Save puzzle</button>
 
 
@@ -194,10 +210,6 @@ class CreatePuzzleForm extends React.Component {
                     padding: 2px 6px;
                   }
                   
-                  .btn-add-scene{
-                      margin-top: 1rem;
-                  }
-
                   .btn-save-puzzle{
                       margin-top: 2rem;
                   }

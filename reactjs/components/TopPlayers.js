@@ -5,8 +5,8 @@ import { withNamespaces } from 'react-i18next';
 
 class TopPlayers extends React.Component {
 
-    constructor({t}){
-        super({t});
+    constructor(props, {t}){
+        super(props, {t});
         this.t = t;
     }
 

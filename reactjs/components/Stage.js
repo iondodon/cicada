@@ -10,31 +10,34 @@ const CKEditor = dynamic(() => import('../components/CKEditor'), {
 
 class Stage extends React.Component {
 
-    constructor({t}){
-        super({t});
+    constructor(props, {t}){
+        super(props, {t});
         this.t = t;
 
         this.toggleStage = this.toggleStage.bind(this);
+        this.removeStage = this.removeStage.bind(this);
     }
 
     toggleStage(e){
-        let cardContent = e.target.parentElement.parentElement.querySelector('.card-content');
+        let cardContent = e.target.parentElement.querySelector('.card-content');
 
         if(cardContent.style.display !== 'none'){
             cardContent.setAttribute('style', 'display: none;');
-            e.target.innerHTML = '+';
         } else {
             cardContent.setAttribute('style', 'display: block;');
-            e.target.innerHTML = '-';
         }
+    }
+
+    removeStage() {
+        console.log('removing');
     }
 
     render(){
         return (
             <div className="card stage" key={this.props.key}>
-                <header className="card-header">
+                <header className="card-header"  onClick={this.toggleStage}>
                     <div className="pull-left stage-word">Stage { this.props.stageNumber }</div>
-                    <div className="pull-right open-stage" onClick={this.toggleStage}>-</div>
+                    <div className="pull-right remove-stage" onClick={this.removeStage}>Remove</div>
                     <p/>
                 </header>
                 <div className="card-content">
@@ -76,12 +79,16 @@ class Stage extends React.Component {
                       margin: 0;
                   }
 
-                  .open-stage {
+                  .remove-stage {
                     margin-right: 1rem;
                     padding-left: 4px;
                     padding-right: 4px;
-                    color: #4caf50;
+                    color: darkred;
                     border: 1px solid #4caf50;
+                    cursor: pointer;
+                  }
+                  
+                  .card-header {
                     cursor: pointer;
                   }
                 `}</style>

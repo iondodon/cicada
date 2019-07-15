@@ -8,8 +8,8 @@ import config from '../configs/keys';
 
 class SignUpForm extends React.Component {
 
-    constructor({t}){
-        super({t});
+    constructor(props, {t}){
+        super(props, {t});
         this.t = t;
 
         this.state = {

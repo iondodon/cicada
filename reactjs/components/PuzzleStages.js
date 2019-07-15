@@ -6,11 +6,11 @@ import Stage from "./Stage";
 
 class PuzzleStages extends React.Component {
 
-    constructor({t}){
-        super({t});
+    constructor(props, {t}){
+        super(props, {t});
         this.t = t;
 
-        this.addNewScene = this.addNewScene.bind(this);
+        this.addNewStage = props.addNewStage;
     }
 
     componentDidMount() {
@@ -19,10 +19,6 @@ class PuzzleStages extends React.Component {
         let stagesCards = document.getElementsByClassName('stages-cards')[0];
         let widthPX = stagesCards.offsetWidth;
         stagesCards.setAttribute('style', 'width:' + widthPX + 'px');
-    }
-
-    addNewScene(e){
-
     }
 
     render(){
@@ -41,7 +37,7 @@ class PuzzleStages extends React.Component {
                         })
                     }
 
-                    <div className={"btn btn-primary btn-ghost btn-block btn-add-scene"} onClick={this.addNewScene}>Add scene</div>
+                    <div className={"btn btn-primary btn-ghost btn-block btn-add-scene"} onClick={this.props.addNewStage}>Add stage</div>
                 </div>
 
                 { /*language=SCSS*/ }
@@ -51,8 +47,8 @@ class PuzzleStages extends React.Component {
                    margin-top: 20px;
                   }
                   
-                  .btn {
-                    margin-top: 10px;
+                  .btn-add-scene{
+                      margin-top: 1rem;
                   }
                 `}</style>
             </div>
