@@ -7,19 +7,10 @@ class CKEditorWrapper extends Component {
 
     render() {
         return(
-            <div className={"puzzle-description"}>
-                <CKEditor
-                    editor={ ClassicEditor }
-                    {...this.props}
-                />
-
-                { /*language=SCSS*/ }
-                <style jsx>{`                    
-                  .puzzle-description {
-                    width: 100%;
-                  }
-                `}</style>
-            </div>
+            <CKEditor
+                editor={ ClassicEditor }
+                {...this.props}
+            />
         )
     }
 }

@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic'
 
 import '../i18n';
 import { withNamespaces } from 'react-i18next';
-import Stage from "./Stage";
+import PuzzleStages from "./PuzzleStages";
 
 const CKEditor = dynamic(() => import('../components/CKEditor'), {
     ssr: false
@@ -21,8 +21,7 @@ class CreatePuzzleForm extends React.Component {
             private: false,
             stagesCount: 1,
             stages: [
-                {stageNumber: 3, content: 'stage 1 content'},
-                {stageNumber: 2, content: 'stage 2 content'}
+                {stageNumber: 0, content: 'Stage 0 description...'}
             ]
         };
 
@@ -31,13 +30,16 @@ class CreatePuzzleForm extends React.Component {
         this.difficultyUp = this.difficultyUp.bind(this);
         this.difficultyDown = this.difficultyDown.bind(this);
         this.updateDifficulty = this.updateDifficulty.bind(this);
-        this.addNewScene = this.addNewScene.bind(this);
     }
 
     componentDidMount() {
         // language=JQuery-CSS
         $('.js-example-basic-multiple').select2();
-        //TODO: $ undefined - sometimes
+
+        // TODO: CKEditor overlaps page content, if page size changed
+        let puzzleDescription = document.getElementsByClassName('puzzle-description')[0];
+        let widthPX = puzzleDescription.offsetWidth;
+        puzzleDescription.setAttribute('style', 'width:' + widthPX + 'px');
     }
 
     difficultyUp(e) {
@@ -62,10 +64,6 @@ class CreatePuzzleForm extends React.Component {
 
     static getInitialProps({ req, query }) {
         return {}
-    }
-
-    addNewScene(e){
-
     }
 
     render(){
@@ -121,27 +119,8 @@ class CreatePuzzleForm extends React.Component {
                         } }
                     />
                 </div>
-                {/*TODO: CKEditor overlaps page content */}
 
-
-
-                <div className={"stages-cards"}>
-
-                    {
-                        this.state.stages.map((stage, index) => {
-                            return(
-                                <Stage
-                                    key={stage.stageNumber}
-                                    stageNumber={stage.stageNumber}
-                                    startContent={stage.content}
-                                />
-                            );
-                        })
-                    }
-
-                    <div className={"btn btn-primary btn-ghost btn-block btn-add-scene"} onClick={this.addNewScene}>Add scene</div>
-                </div>
-
+                <PuzzleStages stages={this.state.stages} />
                 <button className={"btn btn-success btn-block btn-save-puzzle"}>Save puzzle</button>
 
 
@@ -221,18 +200,6 @@ class CreatePuzzleForm extends React.Component {
 
                   .btn-save-puzzle{
                       margin-top: 2rem;
-                  }
-
-                  #create-puzzle-form {
-                    // display: flex;
-                    // flex-direction: row;
-                    // flex-grow: unset;
-                    // margin: auto;
-                  }
-                  
-                  .stages-cards {
-                   width: 100%;
-                   margin-top: 20px;
                   }
                 `}</style>
             </form>

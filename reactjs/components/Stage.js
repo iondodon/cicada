@@ -31,7 +31,7 @@ class Stage extends React.Component {
 
     render(){
         return (
-            <div className="card stage" key={this.props.id}>
+            <div className="card stage" key={this.props.key}>
                 <header className="card-header">
                     <div className="pull-left stage-word">Stage { this.props.stageNumber }</div>
                     <div className="pull-right open-stage" onClick={this.toggleStage}>-</div>
