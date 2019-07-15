@@ -19,7 +19,7 @@ class Stage extends React.Component {
     }
 
     toggleStage(e){
-        let cardContent = e.target.parentElement.querySelector('.card-content');
+        let cardContent = e.target.parentElement.parentElement.querySelector('.card-content');
 
         if(cardContent.style.display !== 'none'){
             cardContent.setAttribute('style', 'display: none;');
@@ -32,11 +32,16 @@ class Stage extends React.Component {
         console.log('removing');
     }
 
+    componentDidMount() {
+        
+    }
+
     render(){
         return (
             <div className="card stage" key={this.props.key}>
-                <header className="card-header"  onClick={this.toggleStage}>
+                <header className="card-header">
                     <div className="pull-left stage-word">Stage { this.props.stageNumber }</div>
+                    <div className={"header-trigger"} onClick={this.toggleStage}>-</div>
                     <div className="pull-right remove-stage" onClick={this.removeStage}>Remove</div>
                     <p/>
                 </header>
@@ -84,12 +89,16 @@ class Stage extends React.Component {
                     padding-left: 4px;
                     padding-right: 4px;
                     color: darkred;
-                    border: 1px solid #4caf50;
+                    border: 1px solid darkred;
                     cursor: pointer;
                   }
                   
-                  .card-header {
+                  .header-trigger {
+                    margin-right: 1rem;
+                    padding-left: 4px;
+                    padding-right: 4px;
                     cursor: pointer;
+                    float: left;
                   }
                 `}</style>
             </div>

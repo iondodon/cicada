@@ -2,24 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/reactjs/components/CreatePuzzleForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/CreatePuzzleForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/Dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/Footer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/Layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/LeftMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/LeftMenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/LeftPanel.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/LeftPanel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/LogInForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/LogInForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/LogInInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/LogInInfo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/PuzzleStages.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/PuzzleStages.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/SignUpForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/SignUpForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/SignUpInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/SignUpInfo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactjs/components/Stage.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/Stage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/TopMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/TopMenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/TopPlayers.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/TopPlayers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/pages/createPuzzle.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/pages/createPuzzle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/pages/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/pages/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/pages/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/pages/signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/pages/signup.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cicada-reactjs/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -81,8 +64,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/reactjs/components/Stage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="84" column="18" lean-forward="true" selection-start-line="84" selection-start-column="18" selection-end-line="84" selection-end-column="18" />
+            <state relative-caret-position="472">
+              <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -137,13 +120,13 @@
       <find>:after</find>
       <find>button</find>
       <find>content</find>
-      <find>pull</find>
       <find>config.</find>
       <find>multiple</find>
       <find>from</find>
       <find>margin-top</find>
       <find>pos</find>
       <find>position</find>
+      <find>pull</find>
     </findStrings>
   </component>
   <component name="GOROOT" path="$USER_HOME$/go/sdk/go1.12.5" />
@@ -389,6 +372,21 @@
               <item name="reactjs" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="cicada" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cicada" type="462c0819:PsiDirectoryNode" />
+              <item name="reactjs" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="hack" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cicada" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cicada" type="462c0819:PsiDirectoryNode" />
+              <item name="reactjs" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="hack" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -553,12 +551,12 @@
       <workItem from="1562829560708" duration="19889000" />
       <workItem from="1562927102862" duration="2490000" />
       <workItem from="1562955371639" duration="9370000" />
-      <workItem from="1563174370664" duration="12256000" />
+      <workItem from="1563174370664" duration="14234000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="463491000" />
+    <option name="totallyTimeSpent" value="465469000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -744,13 +742,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="4" column="65" selection-start-line="4" selection-start-column="65" selection-end-line="4" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reactjs/static/hack/dist/hack.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="503" column="25" selection-start-line="503" selection-start-column="19" selection-end-line="503" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -966,10 +957,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/reactjs/static/hack/dist/hack.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="406" column="5" selection-start-line="406" selection-start-column="1" selection-end-line="406" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/reactjs/components/Stage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="84" column="18" lean-forward="true" selection-start-line="84" selection-start-column="18" selection-end-line="84" selection-end-column="18" />
+        <state relative-caret-position="472">
+          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
