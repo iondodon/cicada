@@ -33,7 +33,7 @@ class Stage extends React.Component {
     }
 
     componentDidMount() {
-        
+
     }
 
     render(){
