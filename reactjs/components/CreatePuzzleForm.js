@@ -21,7 +21,9 @@ class CreatePuzzleForm extends React.Component {
             private: false,
             stagesCount: 1,
             stages: [
-                {stageNumber: 0, content: 'Stage 0 description...'}
+                {stageNumber: 0, content: 'Stage 0 description...'},
+                {stageNumber: 1, content: 'Stage 0 description...'},
+                {stageNumber: 2, content: 'Stage 0 description...'}
             ]
         };
 
@@ -33,6 +35,8 @@ class CreatePuzzleForm extends React.Component {
         this.difficultyDown = this.difficultyDown.bind(this);
         this.updateDifficulty = this.updateDifficulty.bind(this);
         this.addNewStage = this.addNewStage.bind(this);
+        this.removeStage = this.removeStage.bind(this);
+        this.findInAttr = this.findInAttr.bind(this);
     }
 
     componentDidMount() {
@@ -83,6 +87,24 @@ class CreatePuzzleForm extends React.Component {
         });
 
         this.setState({stagesCount: this.state.stagesCount + 1});
+    }
+
+    findInAttr(array, attr, value) {
+        for(let i = 0; i < array.length; i += 1) {
+            if(array[i][attr] === value) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    removeStage(child) {
+        let array = [...this.state.stages];
+        let index = this.findInAttr(array, 'stageNumber', child.props.stageNumber);
+        if (index !== -1) {
+            array.splice(index, 1);
+            this.setState({stages: array});
+        }
     }
 
     render(){
@@ -149,6 +171,7 @@ class CreatePuzzleForm extends React.Component {
                                         key={stage.stageNumber}
                                         stageNumber={stage.stageNumber}
                                         startContent={stage.content}
+                                        removeStage={this.removeStage}
                                     />
                                 );
                             })

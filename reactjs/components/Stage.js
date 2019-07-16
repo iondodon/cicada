@@ -23,17 +23,15 @@ class Stage extends React.Component {
 
         if(cardContent.style.display !== 'none'){
             cardContent.setAttribute('style', 'display: none;');
+            e.target.innerHTML = 'open';
         } else {
             cardContent.setAttribute('style', 'display: block;');
+            e.target.innerHTML = 'close';
         }
     }
 
-    removeStage() {
-        console.log('removing');
-    }
-
-    componentDidMount() {
-
+    removeStage(){
+        this.props.removeStage(this);
     }
 
     render(){
@@ -41,8 +39,10 @@ class Stage extends React.Component {
             <div className="card stage" key={this.props.key}>
                 <header className="card-header">
                     <div className="pull-left stage-word">Stage { this.props.stageNumber }</div>
-                    <div className={"header-trigger"} onClick={this.toggleStage}>-</div>
-                    <div className="pull-right remove-stage" onClick={this.removeStage}>Remove</div>
+                    <div className={"header-trigger"} onClick={this.toggleStage}>
+                        close
+                    </div>
+                    <div className="pull-right remove-stage" onClick={ this.removeStage }>Remove</div>
                     <p/>
                 </header>
                 <div className="card-content">
@@ -99,6 +99,9 @@ class Stage extends React.Component {
                     padding-right: 4px;
                     cursor: pointer;
                     float: left;
+                    color: darkgreen;
+                    border: 1px solid darkgreen;
+                    margin-left: 1rem;
                   }
                 `}</style>
             </div>
