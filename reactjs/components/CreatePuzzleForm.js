@@ -80,7 +80,7 @@ class CreatePuzzleForm extends React.Component {
         this.setState({
             stages: [...this.state.stages, {
                 stageNumber: this.state.stagesCount,
-                content: 'Description of stage ' + this.state.stagesCount
+                content: 'Description of stage ' + this.state.stagesCount + '...'
             }]
         });
 
@@ -97,14 +97,18 @@ class CreatePuzzleForm extends React.Component {
     }
 
     removeStage(child) {
-        let array = [...this.state.stages];
-        let index = this.findInAttr(array, 'stageNumber', child.props.stageNumber);
-        if (index !== -1) {
-            array.splice(index, 1);
-            this.setState({stages: array});
-        }
+        let r = confirm('Press OK to confirm.');
 
-        this.setState({ stagesCount: this.state.stagesCount - 1 });
+        if(r === true){
+            let array = [...this.state.stages];
+            let index = this.findInAttr(array, 'stageNumber', child.props.stageNumber);
+            if (index !== -1) {
+                array.splice(index, 1);
+                this.setState({stages: array});
+            }
+
+            this.setState({ stagesCount: this.state.stagesCount - 1 });
+        }
     }
 
     render(){
@@ -168,7 +172,7 @@ class CreatePuzzleForm extends React.Component {
                             this.state.stages.map((stage, index) => {
                                 let isLast = false;
 
-                                if(index === this.state.stagesCount - 1){
+                                if(index === this.state.stagesCount - 1 && index !== 0){
                                     isLast = true;
                                 }
 
