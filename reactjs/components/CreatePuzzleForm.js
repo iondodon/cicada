@@ -144,7 +144,6 @@ class CreatePuzzleForm extends React.Component {
                     </select>
                 </div>
 
-
                 <div className={"puzzle-description"}>
                     <CKEditor
                         data="<p>Puzzle description...</p>"
@@ -276,6 +275,10 @@ class CreatePuzzleForm extends React.Component {
                       
                   .btn-add-scene{
                       margin-top: 1rem;
+                  }
+                  
+                  #editor {
+                    resize: none;
                   }
                 `}</style>
             </form>
