@@ -18,15 +18,15 @@ class CreatePuzzleForm extends React.Component {
         this.state = {
             name: '',
             difficulty: 1,
-            private: false,
+            isPrivate: false,
             stagesCount: 1,
             stages: [
                 {stageNumber: 0, content: 'Description of stage 0...'}
-            ]
+            ],
+            tags: []
         };
 
         this.difficulty = 1;
-
         this.CreatePuzzleForm = React.createRef();
 
         this.difficultyUp = this.difficultyUp.bind(this);
@@ -35,7 +35,7 @@ class CreatePuzzleForm extends React.Component {
         this.addNewStage = this.addNewStage.bind(this);
         this.removeStage = this.removeStage.bind(this);
         this.findInAttr = this.findInAttr.bind(this);
-        this.updateTags = this.updateTags.bind(this);
+        this.setIsPrivate = this.setIsPrivate.bind(this);
     }
 
     componentDidMount() {
@@ -51,6 +51,12 @@ class CreatePuzzleForm extends React.Component {
         let stagesCards = document.getElementsByClassName('stages-cards')[0];
         let widthPixels = stagesCards.offsetWidth;
         stagesCards.setAttribute('style', 'width:' + widthPixels + 'px');
+
+        document.getElementsByClassName('is-private')[0].checked = this.state.isPrivate;
+
+        $('.tags-multiple-select').on('change', () => {
+            this.setState({ tags: $(".tags-multiple-select").val() });
+        });
     }
 
     difficultyUp(e) {
@@ -112,8 +118,8 @@ class CreatePuzzleForm extends React.Component {
         }
     }
 
-    updateTags() {
-        console.log('update');
+    setIsPrivate(){
+        this.state.isPrivate = document.getElementsByClassName('is-private')[0].checked;
     }
 
     render(){
@@ -129,7 +135,9 @@ class CreatePuzzleForm extends React.Component {
                 </fieldset>
 
                 <fieldset>
-                    <label htmlFor="private">Private <input type="checkbox"/></label>
+                    <label htmlFor="private">Private
+                        <input type="checkbox" className={'is-private'} onChange={this.setIsPrivate} />
+                    </label>
                     <label htmlFor="difficulty">Difficulty
                         <div className="number-input">
                             <div onClick={this.difficultyDown} className="btn btn-success btn-ghost minus">-</div>
