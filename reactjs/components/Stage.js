@@ -38,7 +38,7 @@ class Stage extends React.Component {
     checkRemoveBtn(){
         if(this.props.isLast === true){
             return(
-                <div className="pull-right remove-stage" onClick={ this.removeStage }>Remove
+                <div className="pull-right remove-stage" onClick={ this.removeStage }>remove
                     { /*language=SCSS*/ }
                     <style jsx>{`                    
                       .remove-stage {
@@ -60,10 +60,9 @@ class Stage extends React.Component {
             <div className="card stage" key={this.props.key}>
                 <header className="card-header">
                     <div className="pull-left stage-word">Stage { this.props.stageNumber }</div>
-                    <div className={"header-trigger"} onClick={this.toggleStage}>
-                        minimize
-                    </div>
+                    <div className={"header-trigger pull-right"} onClick={this.toggleStage}>minimize</div>
                     { this.checkRemoveBtn() }
+                    <input type="text" placeholder="code" className={"stage-code"}/>
                     <p/>
                 </header>
                 <div className="card-content">
@@ -103,6 +102,16 @@ class Stage extends React.Component {
                   .card-content {
                       padding: 0;
                       margin: 0;
+                  }
+                  
+                  .stage-code {
+                    margin-right: 1rem;
+                    padding-left: 4px;
+                    padding-right: 4px;
+                    cursor: pointer;
+                    color: gray;
+                    border: 1px solid gray;
+                    margin-left: 1rem;
                   }
                   
                   .header-trigger {
