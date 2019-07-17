@@ -35,11 +35,12 @@ class CreatePuzzleForm extends React.Component {
         this.addNewStage = this.addNewStage.bind(this);
         this.removeStage = this.removeStage.bind(this);
         this.findInAttr = this.findInAttr.bind(this);
+        this.updateTags = this.updateTags.bind(this);
     }
 
     componentDidMount() {
         // language=JQuery-CSS
-        $('.js-example-basic-multiple').select2();
+        $('.tags-multiple-select').select2();
 
         // TODO: CKEditor overlaps page content, if page size changed
         let puzzleDescription = document.getElementsByClassName('puzzle-description')[0];
@@ -111,6 +112,10 @@ class CreatePuzzleForm extends React.Component {
         }
     }
 
+    updateTags() {
+        console.log('update');
+    }
+
     render(){
         return (
             <form className="form" id={"create-puzzle-form"}>
@@ -134,9 +139,9 @@ class CreatePuzzleForm extends React.Component {
                     </label>
                 </fieldset>
 
-                <div className="form-tags-group">
+                <div className="form-tags-group" >
                     <label htmlFor="tags" className="label-tags">Tags:</label>
-                    <select className="js-example-basic-multiple" name="states[]" multiple="multiple">
+                    <select className="tags-multiple-select" name="states[]" multiple="multiple">
                         <option value="AL">Alabama</option>
                         <option value="WY">Wyoming</option>
                         <option value="AL">Alabama</option>
@@ -225,7 +230,7 @@ class CreatePuzzleForm extends React.Component {
                     width: 20%;
                   }
 
-                  .js-example-basic-multiple {
+                  .tags-multiple-select {
                     flex-grow: 100;
                   }
 
