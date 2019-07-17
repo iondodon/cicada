@@ -16,6 +16,7 @@ class Stage extends React.Component {
 
         this.toggleStage = this.toggleStage.bind(this);
         this.removeStage = this.removeStage.bind(this);
+        this.checkRemoveBtn = this.checkRemoveBtn.bind(this);
     }
 
     toggleStage(e){
@@ -23,15 +24,35 @@ class Stage extends React.Component {
 
         if(cardContent.style.display !== 'none'){
             cardContent.setAttribute('style', 'display: none;');
-            e.target.innerHTML = 'open';
+            e.target.innerHTML = 'maximize';
         } else {
             cardContent.setAttribute('style', 'display: block;');
-            e.target.innerHTML = 'close';
+            e.target.innerHTML = 'minimize';
         }
     }
 
     removeStage(){
         this.props.removeStage(this);
+    }
+
+    checkRemoveBtn(){
+        if(this.props.isLast === true){
+            return(
+                <div className="pull-right remove-stage" onClick={ this.removeStage }>Remove
+                    { /*language=SCSS*/ }
+                    <style jsx>{`                    
+                      .remove-stage {
+                        margin-right: 1rem;
+                        padding-left: 4px;
+                        padding-right: 4px;
+                        color: gray;
+                        border: 1px solid gray;
+                        cursor: pointer;
+                      }
+                    `}</style>
+                </div>
+            );
+        }
     }
 
     render(){
@@ -40,9 +61,9 @@ class Stage extends React.Component {
                 <header className="card-header">
                     <div className="pull-left stage-word">Stage { this.props.stageNumber }</div>
                     <div className={"header-trigger"} onClick={this.toggleStage}>
-                        close
+                        minimize
                     </div>
-                    <div className="pull-right remove-stage" onClick={ this.removeStage }>Remove</div>
+                    { this.checkRemoveBtn() }
                     <p/>
                 </header>
                 <div className="card-content">
@@ -83,24 +104,15 @@ class Stage extends React.Component {
                       padding: 0;
                       margin: 0;
                   }
-
-                  .remove-stage {
-                    margin-right: 1rem;
-                    padding-left: 4px;
-                    padding-right: 4px;
-                    color: darkred;
-                    border: 1px solid darkred;
-                    cursor: pointer;
-                  }
                   
                   .header-trigger {
                     margin-right: 1rem;
                     padding-left: 4px;
                     padding-right: 4px;
                     cursor: pointer;
-                    float: left;
-                    color: darkgreen;
-                    border: 1px solid darkgreen;
+                    float: right;
+                    color: gray;
+                    border: 1px solid gray;
                     margin-left: 1rem;
                   }
                 `}</style>

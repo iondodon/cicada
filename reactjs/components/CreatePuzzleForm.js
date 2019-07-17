@@ -21,9 +21,7 @@ class CreatePuzzleForm extends React.Component {
             private: false,
             stagesCount: 1,
             stages: [
-                {stageNumber: 0, content: 'Stage 0 description...'},
-                {stageNumber: 1, content: 'Stage 0 description...'},
-                {stageNumber: 2, content: 'Stage 0 description...'}
+                {stageNumber: 0, content: 'Description of stage 0...'}
             ]
         };
 
@@ -105,6 +103,8 @@ class CreatePuzzleForm extends React.Component {
             array.splice(index, 1);
             this.setState({stages: array});
         }
+
+        this.setState({ stagesCount: this.state.stagesCount - 1 });
     }
 
     render(){
@@ -166,12 +166,19 @@ class CreatePuzzleForm extends React.Component {
                     <div>
                         {
                             this.state.stages.map((stage, index) => {
+                                let isLast = false;
+
+                                if(index === this.state.stagesCount - 1){
+                                    isLast = true;
+                                }
+
                                 return(
                                     <Stage
                                         key={stage.stageNumber}
                                         stageNumber={stage.stageNumber}
                                         startContent={stage.content}
                                         removeStage={this.removeStage}
+                                        isLast={isLast}
                                     />
                                 );
                             })
