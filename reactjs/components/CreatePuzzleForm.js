@@ -129,10 +129,6 @@ class CreatePuzzleForm extends React.Component {
                     <label >Name:</label>
                     <input type="text" placeholder="puzzle name..." className="form-control"/>
                 </fieldset>
-                <fieldset className="form-group">
-                    <label htmlFor="email">EMAIL:</label>
-                    <input id="email" type="email" placeholder="" className="form-control"/>
-                </fieldset>
 
                 <fieldset>
                     <label htmlFor="private">Private

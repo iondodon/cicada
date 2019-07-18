@@ -60,9 +60,9 @@ class Stage extends React.Component {
             <div className="card stage" key={this.props.key}>
                 <header className="card-header">
                     <div className="pull-left stage-word">Stage { this.props.stageNumber }</div>
+                    <input type="text" placeholder="code" className={"stage-code pull-left"}/>
                     <div className={"header-trigger pull-right"} onClick={this.toggleStage}>minimize</div>
                     { this.checkRemoveBtn() }
-                    <input type="text" placeholder="code" className={"stage-code"}/>
                     <p/>
                 </header>
                 <div className="card-content">
@@ -108,7 +108,7 @@ class Stage extends React.Component {
                     margin-right: 1rem;
                     padding-left: 4px;
                     padding-right: 4px;
-                    cursor: pointer;
+                    cursor: text;
                     color: gray;
                     border: 1px solid gray;
                     margin-left: 1rem;
