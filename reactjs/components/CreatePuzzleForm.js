@@ -126,19 +126,19 @@ class CreatePuzzleForm extends React.Component {
                     <input type="text" placeholder="puzzle name..." className="form-control"/>
                 </fieldset>
 
-                <fieldset>
-                    <label htmlFor="private">Private
-                        <input type="checkbox" className={'is-private'} onChange={this.setIsPrivate} />
-                    </label>
-                    <br/>
-                    <label htmlFor="difficulty">Difficulty
-                        <div className="number-input">
-                            <div onClick={this.difficultyDown} className="btn btn-success btn-ghost minus">-</div>
-                            <div className="quantity btn btn-success btn-ghost" onChange={this.updateDifficulty}> 1 </div>
-                            <div onClick={this.difficultyUp} className="btn btn-success btn-ghost minus plus">+</div>
-                        </div>
-                    </label>
-                </fieldset>
+
+                <label htmlFor="private" className={'is-private'}>Private
+                    <input type="checkbox" onChange={this.setIsPrivate} />
+                </label>
+                
+                <label htmlFor="difficulty" className={"difficulty"}>Difficulty
+                    <div className="number-input">
+                        <div onClick={this.difficultyDown} className="btn btn-success btn-ghost minus">-</div>
+                        <div className="quantity btn btn-success btn-ghost" onChange={this.updateDifficulty}> 1 </div>
+                        <div onClick={this.difficultyUp} className="btn btn-success btn-ghost minus plus">+</div>
+                    </div>
+                </label>
+
 
                 <div className="form-tags-group" >
                     <select className="tags-multiple-select" name="states[]" multiple="multiple">
@@ -260,6 +260,19 @@ class CreatePuzzleForm extends React.Component {
                   .btn-add-scene{
                       margin-top: 1rem;
                   }
+                  
+                  .is-private {
+                      margin-top: 2rem;
+                      margin-left: auto;
+                      margin-right: auto;
+                  }
+                  
+                  .difficulty {
+                      margin-top: 1rem;
+                      margin-left: auto;
+                      margin-right: auto;
+                  }
+                  
                 `}</style>
             </form>
         );
