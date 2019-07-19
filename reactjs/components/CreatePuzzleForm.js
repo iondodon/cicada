@@ -80,6 +80,11 @@ class CreatePuzzleForm extends React.Component {
     }
 
     addNewStage(){
+        if(this.state.stagesCount + 1 > 30){
+            alert("No more than 30 stages.");
+            return;
+        }
+        
         this.setState({
             stages: [...this.state.stages, {
                 stageNumber: this.state.stagesCount,
