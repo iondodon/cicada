@@ -43,14 +43,7 @@ class CreatePuzzleForm extends React.Component {
         $('.tags-multiple-select').select2();
 
         // TODO: CKEditor overlaps page content, if page size changed
-        let puzzleDescription = document.getElementsByClassName('puzzle-description')[0];
-        let widthPX = puzzleDescription.offsetWidth;
-        puzzleDescription.setAttribute('style', 'width:' + widthPX + 'px');
-
-        {/*TODO: CKEditor overlaps page content, if page size changed */}
-        let stagesCards = document.getElementsByClassName('stages-cards')[0];
-        let widthPixels = stagesCards.offsetWidth;
-        stagesCards.setAttribute('style', 'width:' + widthPixels + 'px');
+        // TODO: CKEditor overlaps page content, if page size changed
 
         document.getElementsByClassName('is-private')[0].checked = this.state.isPrivate;
 
@@ -211,7 +204,7 @@ class CreatePuzzleForm extends React.Component {
                   }
 
                   .puzzle-description {
-                      width: 100%;
+                      max-width: 100%;
                       margin-top: 2rem;
                   }
                   
