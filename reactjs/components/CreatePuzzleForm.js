@@ -158,8 +158,8 @@ class CreatePuzzleForm extends React.Component {
                         data="<p>Puzzle description...</p>"
                         onInit={ editor => {
                             // You can store the "editor" and use when it is needed.
-
                         } }
+
                         onChange={ ( event, editor ) => {
                             const data = editor.getData();
 
@@ -195,64 +195,29 @@ class CreatePuzzleForm extends React.Component {
                                 );
                             })
                         }
-                        <div className={"btn btn-primary btn-ghost btn-block btn-add-scene"} onClick={this.addNewStage}>Add stage</div>
                     </div>
                 </div>
 
-
+                <div className={"btn btn-primary btn-ghost btn-block btn-add-scene"} onClick={this.addNewStage}>Add stage</div>
                 <button className={"btn btn-success btn-block btn-save-puzzle"}>Save puzzle</button>
 
 
                 { /*language=SCSS*/ }
                 <style jsx>{`
                   .form {
-                    display: flex;
-                    flex-direction: row;
-                    flex-wrap: wrap;
-                    margin: auto;
-                    width: 100%;
+                       display: flex;
+                       flex-direction: column;
+                       width: 100%;
                   }
-                  
+
                   .puzzle-description {
                       width: 100%;
                       margin-top: 2rem;
                   }
-
-                  fieldset {
-                    width: 50%;
-                  }
-
-                  .form-tags-group {
-                    display: flex;
-                    flex-direction: row;
-                    flex-wrap: wrap;
-                    width: 46%;
-                    margin-right: 4%;
-                  }
-
-                  label {
-                    width: 20%;
-                  }
-
-                  .tags-multiple-select {
-                    flex-grow: 100;
-                  }
-
-                  .label-tags {
-                    padding-left: 0;
-                    width: auto;
-                    height: auto;
-                    margin: auto;
-                  }
-
-                  .stage {
-                   margin-top: 10px;
-                   width: 100%;
-                  }
-
+                  
                   input[type=number]::-webkit-inner-spin-button,
                   input[type=number]::-webkit-outer-spin-button {
-                    -webkit-appearance: none;
+                   -webkit-appearance: none;
                   }
 
                   .number-input {
@@ -261,33 +226,28 @@ class CreatePuzzleForm extends React.Component {
                   }
 
                   .minus, .plus {
-                    padding: .3rem .7rem;
-                    font-size: 1rem;
+                   padding: .3rem .7rem;
+                   font-size: 1rem;
                   }
 
                   .number-input > input {
-                    text-align: center;
+                   text-align: center;
                   }
 
                   .quantity {
                     padding: 2px 6px;
                   }
-                  
+
                   .btn-save-puzzle{
-                      margin-top: 2rem;
+                    margin-top: 2rem;
                   }
-                  
+
                   .stages-cards {
-                      width: 100%;
                       margin-top: 20px;
                   }
-                      
+                  
                   .btn-add-scene{
                       margin-top: 1rem;
-                  }
-                  
-                  #editor {
-                    resize: none;
                   }
                 `}</style>
             </form>

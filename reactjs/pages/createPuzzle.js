@@ -38,7 +38,7 @@ class CreatePuzzle extends React.Component {
                         </div>
                     </LeftPanel>
 
-                    <div className="card" id={"page-content"}>
+                    <div className="card page-content">
                         <header className="card-header">Create puzzle</header>
                         <div className="card-content">
                             <div className="inner">
@@ -50,9 +50,10 @@ class CreatePuzzle extends React.Component {
 
                 { /*language=SCSS*/ }
                 <style jsx>{`
-                    #page-content {
+                    .page-content {
                       display: flex;
                       flex-direction: column;
+                      width: 100%;
                     }
                 `}</style>
             </Layout>
