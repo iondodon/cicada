@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactjs/components/CreatePuzzleForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/CreatePuzzleForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/components/Stage.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/Stage.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cicada-reactjs/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -52,20 +54,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/reactjs/components/CreatePuzzleForm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="562">
-              <caret line="264" column="22" selection-start-line="264" selection-start-column="22" selection-end-line="264" selection-end-column="22" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/reactjs/pages/createPuzzle.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="403">
-              <caret line="55" column="37" selection-start-line="55" selection-start-column="22" selection-end-line="55" selection-end-column="37" />
+            <state relative-caret-position="428">
+              <caret line="285" column="19" lean-forward="true" selection-start-line="285" selection-start-column="19" selection-end-line="285" selection-end-column="19" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -172,8 +162,8 @@
         <option value="$PROJECT_DIR$/reactjs/components/LeftPanel.js" />
         <option value="$PROJECT_DIR$/reactjs/static/style.css" />
         <option value="$PROJECT_DIR$/reactjs/pages/createPuzzle.js" />
-        <option value="$PROJECT_DIR$/reactjs/components/Stage.js" />
         <option value="$PROJECT_DIR$/reactjs/pages/index.js" />
+        <option value="$PROJECT_DIR$/reactjs/components/Stage.js" />
         <option value="$PROJECT_DIR$/reactjs/components/CreatePuzzleForm.js" />
       </list>
     </option>
@@ -552,11 +542,13 @@
       <workItem from="1563366399960" duration="183000" />
       <workItem from="1563366612327" duration="2346000" />
       <workItem from="1563385497445" duration="7626000" />
+      <workItem from="1563566968038" duration="23000" />
+      <workItem from="1563567019812" duration="232000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="502006000" />
+    <option name="totallyTimeSpent" value="503615000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -571,7 +563,7 @@
     <frame x="0" y="0" width="1366" height="749" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49534884" visible="true" weight="0.24772727" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49534884" visible="true" weight="0.25530303" />
       <window_info id="Structure" order="1" sideWeight="0.5046512" side_tool="true" weight="0.23333333" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -912,26 +904,6 @@
     <entry file="file://$PROJECT_DIR$/reactjs/static/style.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/reactjs/components/Stage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reactjs/pages/createPuzzle.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="55" column="37" selection-start-line="55" selection-start-column="22" selection-end-line="55" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/reactjs/pages/login.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -952,10 +924,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/reactjs/components/Stage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="46" column="40" selection-start-line="46" selection-start-column="40" selection-end-line="46" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactjs/pages/createPuzzle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="29" column="36" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/reactjs/components/CreatePuzzleForm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="562">
-          <caret line="264" column="22" selection-start-line="264" selection-start-column="22" selection-end-line="264" selection-end-column="22" />
+        <state relative-caret-position="428">
+          <caret line="285" column="19" lean-forward="true" selection-start-line="285" selection-start-column="19" selection-end-line="285" selection-end-column="19" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>

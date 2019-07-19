@@ -127,11 +127,12 @@ class CreatePuzzleForm extends React.Component {
                 </fieldset>
 
 
-                <label htmlFor="private" className={'is-private'}>Private
+                <label htmlFor="private" className={"is-private btn btn-success btn-ghost minus"}>Private
                     <input type="checkbox" onChange={this.setIsPrivate} />
                 </label>
-                
-                <label htmlFor="difficulty" className={"difficulty"}>Difficulty
+
+                <label htmlFor="difficulty" className={"difficulty"}>
+                    <div className={"btn btn-success btn-ghost minus"}>Difficulty</div>
                     <div className="number-input">
                         <div onClick={this.difficultyDown} className="btn btn-success btn-ghost minus">-</div>
                         <div className="quantity btn btn-success btn-ghost" onChange={this.updateDifficulty}> 1 </div>
@@ -234,6 +235,7 @@ class CreatePuzzleForm extends React.Component {
                   .number-input {
                     border: 1px solid #ddd;
                     display: inline-flex;
+                    
                   }
 
                   .minus, .plus {
@@ -247,6 +249,7 @@ class CreatePuzzleForm extends React.Component {
 
                   .quantity {
                     padding: 2px 6px;
+                    cursor: auto;
                   }
 
                   .btn-save-puzzle{
@@ -265,14 +268,22 @@ class CreatePuzzleForm extends React.Component {
                       margin-top: 2rem;
                       margin-left: auto;
                       margin-right: auto;
+                      cursor: auto;
                   }
                   
+                  .is-private > input {
+                      cursor: pointer;
+                  }
+                 
                   .difficulty {
                       margin-top: 1rem;
                       margin-left: auto;
                       margin-right: auto;
                   }
                   
+                  .difficulty > div {
+                      cursor: auto;
+                  }
                 `}</style>
             </form>
         );

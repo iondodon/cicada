@@ -43,8 +43,8 @@ class Stage extends React.Component {
                     <style jsx>{`                    
                       .remove-stage {
                         margin-right: 1px;
-                        padding-left: 0;
-                        padding-right: 0;
+                        padding-left: 2px;
+                        padding-right: 2px;
                         color: gray;
                         border: 1px solid gray;
                         cursor: pointer;
