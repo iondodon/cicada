@@ -24,10 +24,10 @@ class Stage extends React.Component {
 
         if(cardContent.style.display !== 'none'){
             cardContent.setAttribute('style', 'display: none;');
-            e.target.innerHTML = 'maximize';
+            e.target.innerHTML = '+';
         } else {
             cardContent.setAttribute('style', 'display: block;');
-            e.target.innerHTML = 'minimize';
+            e.target.innerHTML = '-';
         }
     }
 
@@ -42,9 +42,9 @@ class Stage extends React.Component {
                     { /*language=SCSS*/ }
                     <style jsx>{`                    
                       .remove-stage {
-                        margin-right: 1rem;
-                        padding-left: 4px;
-                        padding-right: 4px;
+                        margin-right: 1px;
+                        padding-left: 0;
+                        padding-right: 0;
                         color: gray;
                         border: 1px solid gray;
                         cursor: pointer;
@@ -61,7 +61,7 @@ class Stage extends React.Component {
                 <header className="card-header">
                     <div className="pull-left stage-word">Stage { this.props.stageNumber }</div>
                     <input type="text" placeholder="code" className={"stage-code pull-left"}/>
-                    <div className={"header-trigger pull-right"} onClick={this.toggleStage}>minimize</div>
+                    <div className={"header-trigger pull-right"} onClick={this.toggleStage}>-</div>
                     { this.checkRemoveBtn() }
                     <p/>
                 </header>
@@ -122,7 +122,7 @@ class Stage extends React.Component {
                     float: right;
                     color: gray;
                     border: 1px solid gray;
-                    margin-left: 1rem;
+                    margin-left: 2rem;
                   }
                 `}</style>
             </div>

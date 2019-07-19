@@ -53,7 +53,7 @@ class CreatePuzzle extends React.Component {
                     .page-content {
                       display: flex;
                       flex-direction: column;
-                      min-width: 70%;
+                      min-width: 75%;
                     }
                 `}</style>
             </Layout>
