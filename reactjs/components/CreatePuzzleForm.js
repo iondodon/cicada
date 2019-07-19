@@ -40,7 +40,10 @@ class CreatePuzzleForm extends React.Component {
 
     componentDidMount() {
         // language=JQuery-CSS
-        $('.tags-multiple-select').select2();
+        $('.tags-multiple-select').select2({
+            placeholder: 'Select tags',
+            width: '100%'
+        });
 
         // TODO: CKEditor overlaps page content, if page size changed
         // TODO: CKEditor overlaps page content, if page size changed
@@ -138,7 +141,6 @@ class CreatePuzzleForm extends React.Component {
                 </fieldset>
 
                 <div className="form-tags-group" >
-                    <label htmlFor="tags" className="label-tags">Tags:</label>
                     <select className="tags-multiple-select" name="states[]" multiple="multiple">
                         <option value="AL">Alabama</option>
                         <option value="WY">Wyoming</option>
@@ -190,9 +192,9 @@ class CreatePuzzleForm extends React.Component {
                             })
                         }
                     </div>
+                    <div className={"btn btn-primary btn-ghost btn-block btn-add-scene"} onClick={this.addNewStage}>Add stage</div>
                 </div>
 
-                <div className={"btn btn-primary btn-ghost btn-block btn-add-scene"} onClick={this.addNewStage}>Add stage</div>
                 <button className={"btn btn-success btn-block btn-save-puzzle"}>Save puzzle</button>
 
 

@@ -52,8 +52,20 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/reactjs/components/CreatePuzzleForm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="562">
-              <caret line="223" column="20" selection-start-line="223" selection-start-column="20" selection-end-line="223" selection-end-column="20" />
+            <state relative-caret-position="247">
+              <caret line="141" column="50" selection-start-line="141" selection-start-column="50" selection-end-line="141" selection-end-column="50" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/reactjs/pages/createPuzzle.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="403">
+              <caret line="55" column="37" selection-start-line="55" selection-start-column="22" selection-end-line="55" selection-end-column="37" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -156,12 +168,12 @@
         <option value="$PROJECT_DIR$/reactjs/components/Layout.js" />
         <option value="$PROJECT_DIR$/docker/docker-compose.yml" />
         <option value="$PROJECT_DIR$/reactjs/components/Container.js" />
-        <option value="$PROJECT_DIR$/reactjs/pages/index.js" />
         <option value="$PROJECT_DIR$/reactjs/static/hack/dist/hack.css" />
         <option value="$PROJECT_DIR$/reactjs/components/LeftPanel.js" />
         <option value="$PROJECT_DIR$/reactjs/static/style.css" />
         <option value="$PROJECT_DIR$/reactjs/pages/createPuzzle.js" />
         <option value="$PROJECT_DIR$/reactjs/components/Stage.js" />
+        <option value="$PROJECT_DIR$/reactjs/pages/index.js" />
         <option value="$PROJECT_DIR$/reactjs/components/CreatePuzzleForm.js" />
       </list>
     </option>
@@ -544,7 +556,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="500294000" />
+    <option name="totallyTimeSpent" value="501482000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -773,16 +785,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reactjs/pages/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/reactjs/pages/signup.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -880,16 +882,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reactjs/pages/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="48" selection-start-line="48" selection-end-line="48" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/reactjs/static/hack/dist/hack.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="215">
@@ -932,8 +924,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/reactjs/pages/createPuzzle.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="56" column="21" selection-start-line="56" selection-start-column="21" selection-end-line="56" selection-end-column="21" />
+        <state relative-caret-position="403">
+          <caret line="55" column="37" selection-start-line="55" selection-start-column="22" selection-end-line="55" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactjs/pages/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactjs/pages/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="54" column="37" selection-start-line="54" selection-start-column="37" selection-end-line="54" selection-end-column="37" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -942,8 +954,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/reactjs/components/CreatePuzzleForm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="562">
-          <caret line="223" column="20" selection-start-line="223" selection-start-column="20" selection-end-line="223" selection-end-column="20" />
+        <state relative-caret-position="247">
+          <caret line="141" column="50" selection-start-line="141" selection-start-column="50" selection-end-line="141" selection-end-column="50" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
