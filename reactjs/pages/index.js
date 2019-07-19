@@ -52,7 +52,7 @@ class Index extends React.Component {
                     .page-content {
                       display: flex;
                       flex-direction: column;
-                      width: 100%;
+                      min-width: 75%;
                     }
                 `}</style>
             </Layout>

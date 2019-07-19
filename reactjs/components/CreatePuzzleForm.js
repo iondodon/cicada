@@ -127,6 +127,7 @@ class CreatePuzzleForm extends React.Component {
                     <label htmlFor="private">Private
                         <input type="checkbox" className={'is-private'} onChange={this.setIsPrivate} />
                     </label>
+                    <br/>
                     <label htmlFor="difficulty">Difficulty
                         <div className="number-input">
                             <div onClick={this.difficultyDown} className="btn btn-success btn-ghost minus">-</div>
@@ -202,10 +203,25 @@ class CreatePuzzleForm extends React.Component {
                        flex-direction: column;
                        width: 100%;
                   }
+                  
+                  fieldset {
+                    margin: auto;
+                  }
 
                   .puzzle-description {
                       max-width: 100%;
                       margin-top: 2rem;
+                  }
+                  
+                  .form-tags-group {
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-top: 2rem;
+                    width: 100%;
+                  }
+                  
+                  .tags-multiple-select {
+                    width: 100%;
                   }
                   
                   input[type=number]::-webkit-inner-spin-button,

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/reactjs/components/Stage.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/Stage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/components/CreatePuzzleForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/CreatePuzzleForm.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cicada-reactjs/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -49,35 +49,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/reactjs/components/CreatePuzzleForm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="870">
-              <caret line="208" column="19" selection-start-line="208" selection-start-column="19" selection-end-line="208" selection-end-column="19" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/reactjs/pages/createPuzzle.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="382">
-              <caret line="55" column="34" selection-start-line="55" selection-start-column="34" selection-end-line="55" selection-end-column="34" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/reactjs/components/Stage.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="47" column="36" lean-forward="true" selection-start-line="47" selection-start-column="36" selection-end-line="47" selection-end-column="36" />
+            <state relative-caret-position="562">
+              <caret line="223" column="20" selection-start-line="223" selection-start-column="20" selection-end-line="223" selection-end-column="20" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -182,11 +158,11 @@
         <option value="$PROJECT_DIR$/reactjs/components/Container.js" />
         <option value="$PROJECT_DIR$/reactjs/pages/index.js" />
         <option value="$PROJECT_DIR$/reactjs/static/hack/dist/hack.css" />
-        <option value="$PROJECT_DIR$/reactjs/components/CreatePuzzleForm.js" />
         <option value="$PROJECT_DIR$/reactjs/components/LeftPanel.js" />
         <option value="$PROJECT_DIR$/reactjs/static/style.css" />
         <option value="$PROJECT_DIR$/reactjs/pages/createPuzzle.js" />
         <option value="$PROJECT_DIR$/reactjs/components/Stage.js" />
+        <option value="$PROJECT_DIR$/reactjs/components/CreatePuzzleForm.js" />
       </list>
     </option>
   </component>
@@ -568,7 +544,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="499158000" />
+    <option name="totallyTimeSpent" value="500294000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -941,33 +917,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reactjs/components/CreatePuzzleForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="870">
-          <caret line="208" column="19" selection-start-line="208" selection-start-column="19" selection-end-line="208" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/reactjs/static/style.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/reactjs/pages/createPuzzle.js">
+    <entry file="file://$PROJECT_DIR$/reactjs/components/Stage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="55" column="34" selection-start-line="55" selection-start-column="34" selection-end-line="55" selection-end-column="34" />
+        <state relative-caret-position="172">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reactjs/components/Stage.js">
+    <entry file="file://$PROJECT_DIR$/reactjs/pages/createPuzzle.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="47" column="36" lean-forward="true" selection-start-line="47" selection-start-column="36" selection-end-line="47" selection-end-column="36" />
+        <state relative-caret-position="397">
+          <caret line="56" column="21" selection-start-line="56" selection-start-column="21" selection-end-line="56" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactjs/components/CreatePuzzleForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="562">
+          <caret line="223" column="20" selection-start-line="223" selection-start-column="20" selection-end-line="223" selection-end-column="20" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
