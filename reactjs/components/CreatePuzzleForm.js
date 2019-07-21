@@ -174,6 +174,8 @@ class CreatePuzzleForm extends React.Component {
 
         if(valid === true) {
             this.submitPuzzle();
+            document.getElementsByClassName('error-content')[0].innerHTML = '';
+            document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: none;');
         } else {
             document.getElementsByClassName('error-content')[0].innerHTML = errorMsg;
             document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
