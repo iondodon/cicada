@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Puzzle;
+use App\Entity\Stage;
 use App\Entity\Tag;
 use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -50,34 +51,46 @@ class PuzzleController extends AbstractFOSRestController
     public function create(Request $request): Response
     {
         $data = json_decode($request->getContent(), true);
-        dump($data); die;
+        $em = $this->getDoctrine()->getManager();
 
-//        $em = $this->getDoctrine()->getManager();
-//
-//        $puzzle = new Puzzle();
-//        $puzzle->setName($data['name']);
-//
-//        $tags = new ArrayCollection();
-//        foreach($data['tags'] as $tg){
-//            $tag = $em->getRepository(Tag::class)->findOneBy(['tag' => $tg]);
-//            if(!$tag) {
-//                $tag = new Tag();
-//                $tag->setTag($tg);
-//                $em->persist($tag);
-//            }
-//            $tags->add($tag);
-//        }
-//        $puzzle->setTags($tags);
-//
-//        $puzzle->setIsPrivate($data['isPrivate']);
-//        $puzzle->setDifficultyByCreator($data['difficultyByCreator']);
-//        $puzzle->setDifficultyByStatistics($data['difficultyByCreator']);
-//        $puzzle->setStagesCount(0);
-//        $puzzle->setCreatedBy($this->getUser()->getAccount());
-//        $puzzle->setCreatedAt(new DateTime());
-//
-//        $em->persist($puzzle);
-//        $em->flush();
+        $puzzle = new Puzzle();
+        $puzzle->setName($data['name']);
+
+        $tags = new ArrayCollection();
+        foreach($data['tags'] as $tg){
+            $tag = $em->getRepository(Tag::class)->findOneBy(['tag' => $tg]);
+            if(!$tag) {
+                $tag = new Tag();
+                $tag->setTag($tg);
+                $em->persist($tag);
+            }
+            $tags->add($tag);
+        }
+        $puzzle->setTags($tags);
+
+        $stages = new ArrayCollection();
+        foreach ($data['stages'] as $stg) {
+            $stage = new Stage();
+            $stage->setCreatedAt(new DateTime());
+            $stage->setCode($stg['code']);
+            $stage->setContent($stg['description']);
+            $stage->setLevel($stg['stageNumber']);
+            $stage->setPuzzleParent($puzzle);
+
+            $em->persist($stage);
+            $stages->add($stage);
+        }
+        $puzzle->setStages($stages);
+
+        $puzzle->setIsPrivate($data['isPrivate']);
+        $puzzle->setDifficultyByCreator($data['difficultyByCreator']);
+        $puzzle->setDifficultyByStatistics($data['difficultyByCreator']);
+        $puzzle->setStagesCount($data['stagesCount']);
+        $puzzle->setCreatedBy($this->getUser()->getAccount());
+        $puzzle->setCreatedAt(new DateTime());
+
+        $em->persist($puzzle);
+        $em->flush();
 
         $response = new Response(
             'Puzzle created.',
