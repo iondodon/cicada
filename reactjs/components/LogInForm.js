@@ -3,11 +3,13 @@ import React from 'react';
 import '../i18n';
 import { withNamespaces } from 'react-i18next';
 
+import config from '../configs/keys';
+
 
 class LogInForm extends React.Component {
 
-    constructor({t}){
-        super({t});
+    constructor(props, {t}){
+        super(props, {t});
         this.t = t;
 
         this.state = {
@@ -37,7 +39,7 @@ class LogInForm extends React.Component {
                     'Basic ' + Buffer.from(this.state.username + ":" + this.state.password).toString('base64')
                 );
 
-                let response = await fetch('http://localhost:9000/api/token', {
+                let response = await fetch(config.SymfonyTokenURL, {
                     method: 'POST', // *GET, POST, PUT, DELETE, etc.
                     mode: 'cors', // no-cors, cors, *same-origin
                     cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached

@@ -6,7 +6,6 @@
         <list>
           <option value="\Codeception\Util\Debug::debug" />
           <option value="\Codeception\Util\Debug::pause" />
-          <option value="\Doctrine::dump" />
           <option value="\Doctrine\Common\Util\Debug::dump" />
           <option value="\Doctrine\Common\Util\Debug::export" />
           <option value="\Illuminate\Support\Debug\Dumper::dump" />
@@ -17,14 +16,12 @@
           <option value="\TYPO3\CMS\Core\Utility\DebugUtility::debug" />
           <option value="\Zend\Debug\Debug::dump" />
           <option value="\Zend\Di\Display\Console::export" />
-          <option value="\Zend_Debug::dump" />
           <option value="dd" />
           <option value="debug_print_backtrace" />
           <option value="debug_zval_dump" />
           <option value="dpm" />
           <option value="dpq" />
           <option value="dsm" />
-          <option value="dump" />
           <option value="dvm" />
           <option value="error_log" />
           <option value="kpr" />
@@ -72,26 +69,9 @@
     <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="myValues">
         <value>
-          <list size="3">
+          <list size="2">
             <item index="0" class="java.lang.String" itemvalue="jsx" />
             <item index="1" class="java.lang.String" itemvalue="class" />
-            <item index="2" class="java.lang.String" itemvalue="classname" />
-          </list>
-        </value>
-      </option>
-      <option name="myCustomValuesEnabled" value="true" />
-    </inspection_tool>
-    <inspection_tool class="HtmlUnknownTag" enabled="true" level="WARNING" enabled_by_default="true">
-      <option name="myValues">
-        <value>
-          <list size="7">
-            <item index="0" class="java.lang.String" itemvalue="nobr" />
-            <item index="1" class="java.lang.String" itemvalue="noembed" />
-            <item index="2" class="java.lang.String" itemvalue="comment" />
-            <item index="3" class="java.lang.String" itemvalue="noscript" />
-            <item index="4" class="java.lang.String" itemvalue="embed" />
-            <item index="5" class="java.lang.String" itemvalue="script" />
-            <item index="6" class="java.lang.String" itemvalue="mediaquery" />
           </list>
         </value>
       </option>
@@ -104,9 +84,6 @@
           <option value="behat/behat" />
           <option value="brianium/paratest" />
           <option value="codeception/codeception" />
-          <option value="codeception/mockery-module" />
-          <option value="codeception/specify" />
-          <option value="codeception/verify" />
           <option value="codedungeon/phpunit-result-printer" />
           <option value="composer/composer" />
           <option value="doctrine/coding-standard" />
@@ -130,10 +107,7 @@
           <option value="phpspec/phpspec" />
           <option value="phpspec/prophecy" />
           <option value="phpstan/phpstan" />
-          <option value="phpunit/dbunit" />
-          <option value="phpunit/phpcov" />
           <option value="phpunit/phpunit" />
-          <option value="phpunit/phpunit-selenium" />
           <option value="povils/phpmnd" />
           <option value="roave/security-advisories" />
           <option value="satooshi/php-coveralls" />

@@ -7,14 +7,14 @@ import TopPlayers from "./TopPlayers";
 
 class LeftPanel extends React.Component {
 
-    constructor({t}){
-        super({t});
+    constructor(props, {t}){
+        super(props, {t});
         this.t = t;
     }
 
     render(){
         return (
-            <div className={'left-panel'}>
+            <div className={'left-panel'} id={"left-panel"}>
                 <LeftMenu/>
                 {this.props.children}
                 <TopPlayers/>
@@ -24,7 +24,6 @@ class LeftPanel extends React.Component {
                   .left-panel {
                         display: flex;
                         flex-direction: column;
-                        max-width: 25%;
                    }
                 `}
                 </style>

@@ -3,11 +3,13 @@ import React from 'react';
 import '../i18n';
 import { withNamespaces } from 'react-i18next';
 
+import config from '../configs/keys';
+
 
 class SignUpForm extends React.Component {
 
-    constructor({t}){
-        super({t});
+    constructor(props, {t}){
+        super(props, {t});
         this.t = t;
 
         this.state = {
@@ -101,7 +103,7 @@ class SignUpForm extends React.Component {
         };
 
         try {
-            let response = await fetch('http://localhost:9000/api/register', request);
+            let response = await fetch(config.SymfonyRegisterURL, request);
 
             if(response.status === 403){
                 console.log(response.statusText);

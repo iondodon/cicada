@@ -10,8 +10,8 @@ import LogInInfo from "../components/LogInInfo";
 
 class LogIn extends React.Component {
 
-    constructor({t}){
-        super({t});
+    constructor(props, {t}){
+        super(props, {t});
         this.t = t;
     }
 

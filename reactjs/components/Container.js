@@ -1,5 +1,5 @@
 const Container = (props) => (
-    <div className={"container hack"}>
+    <div className={"container hack"} id={"container"}>
         {props.children}
 
         { /*language=SCSS*/ }
@@ -13,14 +13,8 @@ const Container = (props) => (
                 display: flex;
                 flex-direction: column;
                 min-width: 80%;
+                max-width: 80%;
                 padding: 0 5% 0 5%;
-            }
-            
-            /* Medium screens */
-            @media all and (max-width: 800px) {
-                .container {
-                    min-width: 100%;
-                }
             }
         `}</style>
     </div>

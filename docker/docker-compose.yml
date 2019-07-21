@@ -123,8 +123,8 @@ services:
       networks:
         - frontend
         - backend
-      links:
-        - docker-in-docker
+#      links:
+#        - docker-in-docker
 
 ### PHP-FPM ##############################################
     php-fpm:
@@ -184,8 +184,8 @@ services:
       networks:
         - backend
         - frontend
-      links:
-        - docker-in-docker
+#      links:
+#        - docker-in-docker
 
 ### node ###########################################
     node:
@@ -203,8 +203,8 @@ services:
       networks:
         - frontend
         - backend
-      links:
-        - docker-in-docker
+#      links:
+#        - docker-in-docker
 #
 #### go ###########################################
 #    go:
@@ -272,15 +272,15 @@ services:
         - backend
 
 ### Docker-in-Docker ################################################
-    docker-in-docker:
-      image: docker:dind
-      privileged: true
-      volumes:
-        - ${SYMFONY_CODE_PATH_HOST}:${APP_CODE_PATH_CONTAINER}
-      expose:
-        - 2375
-      networks:
-        - backend
+#    docker-in-docker:
+#      image: docker:dind
+#      privileged: true
+#      volumes:
+#        - ${SYMFONY_CODE_PATH_HOST}:${APP_CODE_PATH_CONTAINER}
+#      expose:
+#        - 2375
+#      networks:
+#        - backend
 
 
 #### PHP Worker ############################################

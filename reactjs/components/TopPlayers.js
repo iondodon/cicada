@@ -5,24 +5,24 @@ import { withNamespaces } from 'react-i18next';
 
 class TopPlayers extends React.Component {
 
-    constructor({t}){
-        super({t});
+    constructor(props, {t}){
+        super(props, {t});
         this.t = t;
     }
 
     render(){
         return (
-            <div className="card">
+            <div className="card" id={"top-players-card"}>
                 <header className="card-header">top players</header>
                 <div className="card-content">
                     <div className="inner">
                         <ul>
-                            <li>Ion Dodon</li>
-                            <li>Marin Guidea</li>
-                            <li>Asadasd SAdsad</li>
-                            <li>Asadasd SAdsad</li>
-                            <li>Asadasd SAdsad</li>
-                            <li>Asadasd SAdsad</li>
+                            <li> - Ion Dodon</li>
+                            <li> - Marin Guidea</li>
+                            <li> - Asadasd SAdsad</li>
+                            <li> - Asadasd SAdsad</li>
+                            <li> - Asadasd SAdsad</li>
+                            <li> - Asadasd SAdsa</li>
                         </ul>
                     </div>
                 </div>
