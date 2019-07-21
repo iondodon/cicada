@@ -1,5 +1,6 @@
 import React from 'react';
-import dynamic from 'next/dynamic'
+import dynamic from 'next/dynamic';
+import Router from 'next/router';
 
 import '../i18n';
 import { withNamespaces } from 'react-i18next';
@@ -17,11 +18,12 @@ class CreatePuzzleForm extends React.Component {
 
         this.state = {
             name: '',
+            description: 'Puzzle description...',
             difficulty: 1,
             isPrivate: false,
             stagesCount: 1,
             stages: [
-                {stageNumber: 0, content: 'Description of stage 0...'}
+                {stageNumber: 0, description: 'Description of stage 0...'}
             ],
            tags: []
         };
@@ -36,6 +38,9 @@ class CreatePuzzleForm extends React.Component {
         this.removeStage = this.removeStage.bind(this);
         this.findInAttr = this.findInAttr.bind(this);
         this.setIsPrivate = this.setIsPrivate.bind(this);
+        this.submitPuzzle = this.submitPuzzle.bind(this);
+        this.updateDescription = this.updateDescription.bind(this);
+        this.setCode = this.setCode.bind(this);
     }
 
     componentDidMount() {
@@ -44,9 +49,6 @@ class CreatePuzzleForm extends React.Component {
             placeholder: 'Select tags',
             width: '100%'
         });
-
-        // TODO: CKEditor overlaps page content, if page size changed
-        // TODO: CKEditor overlaps page content, if page size changed
 
         document.getElementsByClassName('is-private')[0].checked = this.state.isPrivate;
 
@@ -62,6 +64,7 @@ class CreatePuzzleForm extends React.Component {
             this.updateDifficulty();
         }
     }
+
     difficultyDown(e) {
         if(parseInt(this.difficulty) - 1 > 0){
             this.difficulty = parseInt(this.difficulty) - 1;
@@ -72,10 +75,6 @@ class CreatePuzzleForm extends React.Component {
 
     updateDifficulty(){
         this.setState({difficulty: this.difficulty});
-    }
-
-    static getInitialProps({ req, query }) {
-        return {}
     }
 
     addNewStage(){
@@ -118,8 +117,30 @@ class CreatePuzzleForm extends React.Component {
         }
     }
 
+    updateDescription(child, data) {
+        let array = [...this.state.stages];
+        array[child.props.stageNumber].description = data;
+        this.setState({ stages: array });
+    }
+
+    setCode(child, code) {
+        let array = [...this.state.stages];
+        array[child.props.stageNumber].code = code;
+        this.setState({ stages: array });
+
+        console.log(this.state);
+    }
+
     setIsPrivate(){
-        this.state.isPrivate = document.getElementsByClassName('is-private')[0].checked;
+        this.state.isPrivate = document.getElementsByClassName('is-private-ck-box')[0].checked;
+    }
+
+    submitPuzzle() {
+        console.log(this.state);
+
+
+
+        // Router.push(`/`);
     }
 
     render(){
@@ -127,12 +148,16 @@ class CreatePuzzleForm extends React.Component {
             <form className="form" id={"create-puzzle-form"}>
                 <fieldset className="form-group">
                     <label >Name:</label>
-                    <input type="text" placeholder="puzzle name..." className="form-control"/>
+                    <input
+                        type="text" placeholder="puzzle name..."
+                        className="form-control"
+                        onChange={(e) => this.setState({ name: e.target.value }) }
+                    />
                 </fieldset>
 
 
                 <label htmlFor="private" className={"is-private btn btn-success btn-ghost minus"}>Private
-                    <input type="checkbox" onChange={this.setIsPrivate} />
+                    <input type="checkbox" className={"is-private-ck-box"} onChange={this.setIsPrivate} />
                 </label>
 
                 <label htmlFor="difficulty" className={"difficulty"}>
@@ -156,14 +181,14 @@ class CreatePuzzleForm extends React.Component {
 
                 <div className={"puzzle-description"}>
                     <CKEditor
-                        data="<p>Puzzle description...</p>"
+                        data={this.state.description}
                         onInit={ editor => {
                             // You can store the "editor" and use when it is needed.
                         } }
 
                         onChange={ ( event, editor ) => {
                             const data = editor.getData();
-
+                            this.setState({ description: data });
                         } }
                         onBlur={ editor => {
 
@@ -188,9 +213,11 @@ class CreatePuzzleForm extends React.Component {
                                 return(
                                     <Stage
                                         key={stage.stageNumber}
+                                        startContent={"Description of stage " + stage.stageNumber + "..."}
                                         stageNumber={stage.stageNumber}
-                                        startContent={stage.content}
                                         removeStage={this.removeStage}
+                                        updateDescription={this.updateDescription}
+                                        setCode={this.setCode}
                                         isLast={isLast}
                                     />
                                 );
@@ -200,7 +227,11 @@ class CreatePuzzleForm extends React.Component {
                     <div className={"btn btn-primary btn-ghost btn-block btn-add-scene"} onClick={this.addNewStage}>Add stage</div>
                 </div>
 
-                <button className={"btn btn-success btn-block btn-save-puzzle"}>Save puzzle</button>
+                <button
+                    type={"button"}
+                    onClick={this.submitPuzzle}
+                    className={"btn btn-success btn-block btn-save-puzzle"}
+                >Save puzzle</button>
 
 
                 { /*language=SCSS*/ }

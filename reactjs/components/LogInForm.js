@@ -39,7 +39,7 @@ class LogInForm extends React.Component {
                     'Basic ' + Buffer.from(this.state.username + ":" + this.state.password).toString('base64')
                 );
 
-                let response = await fetch(config.SymfonyTokenURL, {
+                let response = await fetch(config.API_URL + '/api/token', {
                     method: 'POST', // *GET, POST, PUT, DELETE, etc.
                     mode: 'cors', // no-cors, cors, *same-origin
                     cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
