@@ -1,0 +1,961 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/reactjs/components/CreatePuzzleForm.js" line="25" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/components/CreatePuzzleForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/CreatePuzzleForm.js" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/cicada-reactjs/node_modules/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/cicada-symfony/composer.json</pharConfigPath>
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL - cicada_db@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL - cicada_db@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL - cicada_db@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="cicada_db: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/reactjs/components/CreatePuzzleForm.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="405">
+              <caret line="27" selection-start-line="27" selection-end-line="27" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>card-content</find>
+      <find>center</find>
+      <find>container</find>
+      <find>pass</find>
+      <find>passw</find>
+      <find>event</find>
+      <find>thro</find>
+      <find>signup</find>
+      <find>DATA</find>
+      <find>border-ra</find>
+      <find>list-style</find>
+      <find>style</find>
+      <find>-</find>
+      <find>ul</find>
+      <find>select</find>
+      <find>:after</find>
+      <find>button</find>
+      <find>content</find>
+      <find>config.</find>
+      <find>multiple</find>
+      <find>from</find>
+      <find>margin-top</find>
+      <find>pos</find>
+      <find>pull</find>
+      <find>private</find>
+      <find>position</find>
+      <find>btn</find>
+      <find>card</find>
+      <find>inner</find>
+      <find>header</find>
+    </findStrings>
+  </component>
+  <component name="GOROOT" path="$USER_HOME$/go/sdk/go1.12.5" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/symfony/src/Entity/Account.php" />
+        <option value="$PROJECT_DIR$/symfony/src/Entity/Puzzle.php" />
+        <option value="$PROJECT_DIR$/reactjs/pages/LogIn.js" />
+        <option value="$PROJECT_DIR$/reactjs/static/pages/login/style.css" />
+        <option value="$PROJECT_DIR$/reactjs/static/pages/login/loginScript.js" />
+        <option value="$PROJECT_DIR$/symfony/src/Controller/PuzzleController.php" />
+        <option value="$PROJECT_DIR$/docker/nginx/Dockerfile" />
+        <option value="$PROJECT_DIR$/ExternalWork/notes.txt" />
+        <option value="$PROJECT_DIR$/symfony/src/Controller/LoginController.php" />
+        <option value="$PROJECT_DIR$/reactjs/components/GlobalMenu.js" />
+        <option value="$PROJECT_DIR$/reactjs/components/HorizontalSeparator.js" />
+        <option value="$PROJECT_DIR$/symfony/src/Entity/User.php" />
+        <option value="$PROJECT_DIR$/symfony/src/Controller/RegistrationController.php" />
+        <option value="$PROJECT_DIR$/symfony/src/Event/EmailRegistrationUserEvent.php" />
+        <option value="$PROJECT_DIR$/symfony/config/packages/nelmio_cors.yaml" />
+        <option value="$PROJECT_DIR$/symfony/src/EventListener/MailRegistrationUserListener.php" />
+        <option value="$PROJECT_DIR$/symfony/.env" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
+        <option value="$PROJECT_DIR$/symfony/src/Controller/ChangePasswordController.php" />
+        <option value="$PROJECT_DIR$/reactjs/pages/home.js" />
+        <option value="$PROJECT_DIR$/reactjs/static/pages/index/indexStyle.css" />
+        <option value="$PROJECT_DIR$/reactjs/static/pages/login/loginStyle.css" />
+        <option value="$PROJECT_DIR$/reactjs/static/pages/signup/signupStyle.css" />
+        <option value="$PROJECT_DIR$/docker/.env" />
+        <option value="$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/css/select2.css" />
+        <option value="$PROJECT_DIR$/reactjs/configs/keys.js" />
+        <option value="$PROJECT_DIR$/reactjs/components/DifficultyInput.js" />
+        <option value="$PROJECT_DIR$/reactjs/components/DifficultyInputAndPrivate.js" />
+        <option value="$PROJECT_DIR$/reactjs/components/CKEditor.js" />
+        <option value="$PROJECT_DIR$/reactjs/components/Dashboard.js" />
+        <option value="$PROJECT_DIR$/reactjs/components/Footer.js" />
+        <option value="$PROJECT_DIR$/reactjs/components/LeftMenu.js" />
+        <option value="$PROJECT_DIR$/reactjs/components/LogInForm.js" />
+        <option value="$PROJECT_DIR$/reactjs/components/LogInInfo.js" />
+        <option value="$PROJECT_DIR$/reactjs/components/SignUpForm.js" />
+        <option value="$PROJECT_DIR$/reactjs/components/SignUpInfo.js" />
+        <option value="$PROJECT_DIR$/reactjs/components/TopMenu.js" />
+        <option value="$PROJECT_DIR$/reactjs/components/TopPlayers.js" />
+        <option value="$PROJECT_DIR$/reactjs/pages/login.js" />
+        <option value="$PROJECT_DIR$/reactjs/pages/signup.js" />
+        <option value="$PROJECT_DIR$/reactjs/components/PuzzleStages.js" />
+        <option value="$PROJECT_DIR$/reactjs/components/Layout.js" />
+        <option value="$PROJECT_DIR$/docker/docker-compose.yml" />
+        <option value="$PROJECT_DIR$/reactjs/components/Container.js" />
+        <option value="$PROJECT_DIR$/reactjs/static/hack/dist/hack.css" />
+        <option value="$PROJECT_DIR$/reactjs/components/LeftPanel.js" />
+        <option value="$PROJECT_DIR$/reactjs/static/style.css" />
+        <option value="$PROJECT_DIR$/reactjs/pages/createPuzzle.js" />
+        <option value="$PROJECT_DIR$/reactjs/pages/index.js" />
+        <option value="$PROJECT_DIR$/reactjs/components/Stage.js" />
+        <option value="$PROJECT_DIR$/reactjs/components/CreatePuzzleForm.js" />
+      </list>
+    </option>
+  </component>
+  <component name="PhpServers">
+    <servers />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/cicada-symfony/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/cicada-symfony/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/cicada-symfony/vendor/symfony/contracts" />
+      <path value="$PROJECT_DIR$/cicada-symfony/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/cicada-symfony/vendor/symfony/dependency-injection" />
+      <path value="$PROJECT_DIR$/cicada-symfony/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/cicada-symfony/vendor/symfony/cache" />
+      <path value="$PROJECT_DIR$/cicada-symfony/vendor/symfony/debug" />
+      <path value="$PROJECT_DIR$/cicada-symfony/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/cicada-symfony/vendor/symfony/framework-bundle" />
+      <path value="$PROJECT_DIR$/cicada-symfony/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/cicada-symfony/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/cicada-symfony/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/cicada-symfony/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/cicada-symfony/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/cicada-symfony/vendor/symfony/var-exporter" />
+      <path value="$PROJECT_DIR$/cicada-symfony/vendor/symfony/config" />
+      <path value="$PROJECT_DIR$/cicada-symfony/vendor/composer" />
+      <path value="$PROJECT_DIR$/cicada-symfony/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/cicada-symfony/vendor/symfony/flex" />
+      <path value="$PROJECT_DIR$/cicada-symfony/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/cicada-symfony/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/cicada-symfony/vendor/symfony/dotenv" />
+      <path value="$PROJECT_DIR$/symfony/vendor/composer" />
+      <path value="$PROJECT_DIR$/symfony/vendor/jms/metadata" />
+      <path value="$PROJECT_DIR$/symfony/vendor/jms/serializer-bundle" />
+      <path value="$PROJECT_DIR$/symfony/vendor/jms/serializer" />
+      <path value="$PROJECT_DIR$/symfony/vendor/jms/parser-lib" />
+      <path value="$PROJECT_DIR$/symfony/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/symfony/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/symfony/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/symfony/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/symfony/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/symfony/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/symfony/vendor/jdorn/sql-formatter" />
+      <path value="$PROJECT_DIR$/symfony/vendor/lexik/jwt-authentication-bundle" />
+      <path value="$PROJECT_DIR$/symfony/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/symfony/vendor/namshi/jose" />
+      <path value="$PROJECT_DIR$/symfony/vendor/nelmio/cors-bundle" />
+      <path value="$PROJECT_DIR$/symfony/vendor/sensio/framework-extra-bundle" />
+      <path value="$PROJECT_DIR$/symfony/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/symfony/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/dependency-injection" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/security-bundle" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/browser-kit" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/profiler-pack" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/templating" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/dom-crawler" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/test-pack" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/property-access" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/monolog-bundle" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/polyfill-intl-icu" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/cache" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/serializer-pack" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/swiftmailer-bundle" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/options-resolver" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/doctrine-bridge" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/twig-bundle" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/web-server-bundle" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/phpunit-bridge" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/maker-bundle" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/inflector" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/var-exporter" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/web-profiler-bundle" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/serializer" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/orm-pack" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/contracts" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/debug-bundle" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/security" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/flex" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/property-info" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/debug-pack" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/framework-bundle" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/debug" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/intl" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/twig-bridge" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/dotenv" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/form" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/monolog-bridge" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/config" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/stopwatch" />
+      <path value="$PROJECT_DIR$/symfony/vendor/doctrine/doctrine-cache-bundle" />
+      <path value="$PROJECT_DIR$/symfony/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/symfony/vendor/doctrine/reflection" />
+      <path value="$PROJECT_DIR$/symfony/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/symfony/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/symfony/vendor/doctrine/annotations" />
+      <path value="$PROJECT_DIR$/symfony/vendor/doctrine/orm" />
+      <path value="$PROJECT_DIR$/symfony/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/symfony/vendor/doctrine/data-fixtures" />
+      <path value="$PROJECT_DIR$/symfony/vendor/doctrine/doctrine-bundle" />
+      <path value="$PROJECT_DIR$/symfony/vendor/doctrine/common" />
+      <path value="$PROJECT_DIR$/symfony/vendor/doctrine/migrations" />
+      <path value="$PROJECT_DIR$/symfony/vendor/doctrine/collections" />
+      <path value="$PROJECT_DIR$/symfony/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/symfony/vendor/doctrine/doctrine-fixtures-bundle" />
+      <path value="$PROJECT_DIR$/symfony/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/symfony/vendor/doctrine/doctrine-migrations-bundle" />
+      <path value="$PROJECT_DIR$/symfony/vendor/doctrine/persistence" />
+      <path value="$PROJECT_DIR$/symfony/vendor/easycorp/easy-log-handler" />
+      <path value="$PROJECT_DIR$/symfony/vendor/lcobucci/jwt" />
+      <path value="$PROJECT_DIR$/symfony/vendor/ocramius/package-versions" />
+      <path value="$PROJECT_DIR$/symfony/vendor/ocramius/proxy-manager" />
+      <path value="$PROJECT_DIR$/symfony/vendor/phpoption/phpoption" />
+      <path value="$PROJECT_DIR$/symfony/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/symfony/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/symfony/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/symfony/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/symfony/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/symfony/vendor/willdurand/jsonp-callback-validator" />
+      <path value="$PROJECT_DIR$/symfony/vendor/willdurand/negotiation" />
+      <path value="$PROJECT_DIR$/symfony/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/symfony/vendor/phpcollection/phpcollection" />
+      <path value="$PROJECT_DIR$/symfony/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/symfony/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/symfony/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/symfony/vendor/zendframework/zend-code" />
+      <path value="$PROJECT_DIR$/symfony/vendor/zendframework/zend-eventmanager" />
+      <path value="$PROJECT_DIR$/symfony/vendor/friendsofsymfony/rest-bundle" />
+    </include_path>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="width" value="1366" />
+    <option name="height" value="749" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="cicada" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cicada" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cicada" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cicada" type="462c0819:PsiDirectoryNode" />
+              <item name="reactjs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cicada" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cicada" type="462c0819:PsiDirectoryNode" />
+              <item name="reactjs" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cicada" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cicada" type="462c0819:PsiDirectoryNode" />
+              <item name="reactjs" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cicada" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cicada" type="462c0819:PsiDirectoryNode" />
+              <item name="reactjs" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cicada" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cicada" type="462c0819:PsiDirectoryNode" />
+              <item name="symfony" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cicada" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cicada" type="462c0819:PsiDirectoryNode" />
+              <item name="symfony" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cicada" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cicada" type="462c0819:PsiDirectoryNode" />
+              <item name="symfony" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Entity" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="database.console.LAST_STATE" value="false" />
+    <property name="go.gopath.indexing.explicitly.defined" value="true" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="go.sdk.automatically.set" value="true" />
+    <property name="go.vendoring.notification.had.been.shown" value="true" />
+    <property name="javascript.nodejs.core.library.configured.version" value="10.15.2" />
+    <property name="last.edited.regexp" value="iondods2onoda@s.com" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/reactjs/static" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/reactjs" />
+      <recent name="$PROJECT_DIR$/reactjs/pages" />
+      <recent name="$PROJECT_DIR$/ExternalWork" />
+      <recent name="$PROJECT_DIR$/symfony/src/Security" />
+      <recent name="$PROJECT_DIR$/symfony/src/Security/Authenticators" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/reactjs/static" />
+      <recent name="$PROJECT_DIR$/reactjs/static/pages/login" />
+      <recent name="$PROJECT_DIR$/ExternalWork" />
+      <recent name="$PROJECT_DIR$/cicada-symfony/public" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="docker: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.docker: Compose Deployment" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="" />
+      <created>1556145406851</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1556145406851</updated>
+      <workItem from="1556145410368" duration="127000" />
+      <workItem from="1556145562208" duration="302000" />
+      <workItem from="1556146136468" duration="888000" />
+      <workItem from="1556204455481" duration="7052000" />
+      <workItem from="1556264936015" duration="2003000" />
+      <workItem from="1556370539299" duration="9112000" />
+      <workItem from="1556388635847" duration="9300000" />
+      <workItem from="1556438086069" duration="446000" />
+      <workItem from="1556438863887" duration="3325000" />
+      <workItem from="1556539728732" duration="3009000" />
+      <workItem from="1556646522583" duration="3172000" />
+      <workItem from="1556808272953" duration="6400000" />
+      <workItem from="1556871241255" duration="1516000" />
+      <workItem from="1556880599621" duration="27000" />
+      <workItem from="1556895982765" duration="1044000" />
+      <workItem from="1556898778827" duration="2898000" />
+      <workItem from="1556903259176" duration="2410000" />
+      <workItem from="1557045511607" duration="2002000" />
+      <workItem from="1557051719171" duration="8851000" />
+      <workItem from="1557061405186" duration="1085000" />
+      <workItem from="1557062718203" duration="17423000" />
+      <workItem from="1557133880020" duration="26000" />
+      <workItem from="1557133945057" duration="403000" />
+      <workItem from="1557134376658" duration="23301000" />
+      <workItem from="1557170434728" duration="22204000" />
+      <workItem from="1557494722146" duration="12849000" />
+      <workItem from="1557591349725" duration="3258000" />
+      <workItem from="1557642391548" duration="28000" />
+      <workItem from="1557642483919" duration="31305000" />
+      <workItem from="1557861731589" duration="2166000" />
+      <workItem from="1558031652050" duration="40000" />
+      <workItem from="1558031751903" duration="1389000" />
+      <workItem from="1558033175513" duration="758000" />
+      <workItem from="1558078542178" duration="3084000" />
+      <workItem from="1558121299556" duration="26000" />
+      <workItem from="1558287542034" duration="344000" />
+      <workItem from="1558553790453" duration="11360000" />
+      <workItem from="1558613428028" duration="32000" />
+      <workItem from="1558613531799" duration="7580000" />
+      <workItem from="1558631707470" duration="40000" />
+      <workItem from="1558631780893" duration="5970000" />
+      <workItem from="1558902966241" duration="919000" />
+      <workItem from="1558961282259" duration="27000" />
+      <workItem from="1558961365386" duration="11529000" />
+      <workItem from="1559572068388" duration="38000" />
+      <workItem from="1559572180200" duration="6554000" />
+      <workItem from="1560973410743" duration="352000" />
+      <workItem from="1561233638306" duration="4113000" />
+      <workItem from="1561307216440" duration="372000" />
+      <workItem from="1561359467620" duration="2760000" />
+      <workItem from="1561370110817" duration="5105000" />
+      <workItem from="1561375892174" duration="1048000" />
+      <workItem from="1561618681814" duration="13796000" />
+      <workItem from="1561649569789" duration="9197000" />
+      <workItem from="1561659654809" duration="3373000" />
+      <workItem from="1561726199146" duration="1798000" />
+      <workItem from="1561745451192" duration="9677000" />
+      <workItem from="1561965948962" duration="1814000" />
+      <workItem from="1561970307562" duration="4499000" />
+      <workItem from="1561975331001" duration="8429000" />
+      <workItem from="1562005163259" duration="3903000" />
+      <workItem from="1562054226465" duration="6133000" />
+      <workItem from="1562063608690" duration="3286000" />
+      <workItem from="1562067900592" duration="4319000" />
+      <workItem from="1562072691657" duration="2380000" />
+      <workItem from="1562076428835" duration="3088000" />
+      <workItem from="1562091858642" duration="8678000" />
+      <workItem from="1562148436631" duration="178000" />
+      <workItem from="1562148639729" duration="7685000" />
+      <workItem from="1562184720083" duration="3214000" />
+      <workItem from="1562232468727" duration="607000" />
+      <workItem from="1562234245279" duration="652000" />
+      <workItem from="1562234938404" duration="225000" />
+      <workItem from="1562235193566" duration="13513000" />
+      <workItem from="1562252997077" duration="2039000" />
+      <workItem from="1562313396359" duration="1048000" />
+      <workItem from="1562358653638" duration="1904000" />
+      <workItem from="1562750447741" duration="2080000" />
+      <workItem from="1562752956361" duration="4858000" />
+      <workItem from="1562781942185" duration="3886000" />
+      <workItem from="1562786508564" duration="3000000" />
+      <workItem from="1562829560708" duration="19889000" />
+      <workItem from="1562927102862" duration="2490000" />
+      <workItem from="1562955371639" duration="9370000" />
+      <workItem from="1563174370664" duration="14443000" />
+      <workItem from="1563300608480" duration="1776000" />
+      <workItem from="1563303049311" duration="6807000" />
+      <workItem from="1563361985594" duration="4081000" />
+      <workItem from="1563366399960" duration="183000" />
+      <workItem from="1563366612327" duration="2346000" />
+      <workItem from="1563385497445" duration="7626000" />
+      <workItem from="1563566968038" duration="23000" />
+      <workItem from="1563567019812" duration="620000" />
+      <workItem from="1563710959580" duration="1166000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="505169000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1366" height="749" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49534884" visible="true" weight="0.2590909" />
+      <window_info id="Structure" order="1" sideWeight="0.5046512" side_tool="true" weight="0.23333333" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3291536" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3291536" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" sideWeight="0.49924242" weight="0.3291536" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.52978057" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5007576" side_tool="true" weight="0.3260188" />
+      <window_info anchor="bottom" id="Database Console" order="12" weight="0.3291536" />
+      <window_info anchor="bottom" id="TypeScript" order="13" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" weight="0.18484849" />
+      <window_info anchor="right" id="PHP Inspections" order="4" weight="0.32903716" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/laradock" />
+    </ignored-roots>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/reactjs/static/cicada.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ExternalWork/cicada.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactjs/static/pages/index/indexStyle.css" />
+    <entry file="file://$PROJECT_DIR$/reactjs/static/pages/login/loginStyle.css" />
+    <entry file="file://$PROJECT_DIR$/reactjs/static/pages/signup/signupStyle.css" />
+    <entry file="file://$PROJECT_DIR$/symfony/src/Entity/PuzzleSession.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker/mysql/my.cnf">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker/mysql/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker/mysql/docker-entrypoint-initdb.d/createdb.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/.env.test">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="27" lean-forward="true" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ExternalWork/notes.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://89715e81-bc9c-4fca-9f4c-1a8fd517663e/schema/cicada_db/table/users">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="c3cea383-16be-42d3-b3f0-f752ae6e6f80">
+          <filtering>
+            <filter text="" />
+          </filtering>
+          <column-attributes>
+            <column name="roles" languageId="JSON" position="6" />
+          </column-attributes>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://89715e81-bc9c-4fca-9f4c-1a8fd517663e/schema/cicada_db/table/accounts">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="c3cea383-16be-42d3-b3f0-f752ae6e6f80">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactjs/static/select2/src/js/select2/data/ajax.js" />
+    <entry file="file://$PROJECT_DIR$/reactjs/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="33" lean-forward="true" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactjs/static/jquery/jquery.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactjs/node_modules/jquery/dist/jquery.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactjs/static/jquery/src/css/var/swap.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactjs/static/select2-4.0.7/dist/css/select2.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="95" column="54" selection-start-line="95" selection-start-column="52" selection-end-line="95" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactjs/node_modules/@ckeditor/ckeditor5-react/dist/ckeditor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="4" column="65" selection-start-line="4" selection-start-column="65" selection-end-line="4" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactjs/configs/keys.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactjs/components/DifficultyInputAndPrivate.js" />
+    <entry file="file://$PROJECT_DIR$/symfony/src/Entity/Puzzle.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="562">
+          <caret line="113" column="33" selection-start-line="113" selection-start-column="33" selection-end-line="113" selection-end-column="33" />
+          <folding>
+            <element signature="e#30#43#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactjs/components/LogInForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactjs/components/LogInInfo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactjs/components/SignUpForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactjs/components/SignUpInfo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactjs/components/TopPlayers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactjs/pages/signup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactjs/components/PuzzleStages.js" />
+    <entry file="file://$PROJECT_DIR$/reactjs/components/Footer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactjs/static/ckeditor5-build-classic/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="855">
+          <caret line="57" column="14" lean-forward="true" selection-start-line="41" selection-start-column="8" selection-end-line="57" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactjs/components/LeftMenu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactjs/static/ckeditor5-build-classic/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactjs/components/CKEditor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactjs/components/Layout.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker/docker-compose.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3300">
+          <caret line="283" lean-forward="true" selection-start-line="283" selection-end-line="283" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactjs/components/TopMenu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/src/Entity/Stage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="61" column="17" selection-start-line="61" selection-start-column="12" selection-end-line="61" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactjs/components/Container.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="24" lean-forward="true" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactjs/static/hack/dist/hack.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="213" column="12" selection-start-line="213" selection-start-column="6" selection-end-line="213" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactjs/components/Dashboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactjs/components/LeftPanel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactjs/static/style.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactjs/pages/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactjs/pages/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="54" column="37" selection-start-line="54" selection-start-column="37" selection-end-line="54" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactjs/components/Stage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="46" column="40" selection-start-line="46" selection-start-column="40" selection-end-line="46" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactjs/pages/createPuzzle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="29" column="36" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactjs/components/CreatePuzzleForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

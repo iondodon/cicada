@@ -1,0 +1,55 @@
+/* Medium screens */
+@media all and (max-width: 800px) {
+    #container {
+        min-width: 100%;
+    }
+
+    #signup-info {
+        margin-top: 2px;
+        min-width: 100%;
+    }
+
+    #login-info {
+        margin-top: 2px;
+        min-width: 100%;
+    }
+
+    #login-form {
+        margin-top: 5%;
+        max-width: 100%;
+        min-width: 100%;
+    }
+
+    #signup-form {
+        margin-top: 5%;
+        min-width: 100%;
+        max-width: 100%;
+    }
+
+    #top-players-card {
+        display: none;
+    }
+
+    #dashboard {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #left-panel {
+        display: flex;
+        flex-direction: column;
+        min-width: 100%;
+    }
+
+    #create-puzzle-from {
+        display: flex;
+        flex-direction: column;
+        flex-grow: unset;
+        margin: auto;
+    }
+
+    #create-puzzle-from > * {
+        margin: auto;
+        width: 100%;
+    }
+}

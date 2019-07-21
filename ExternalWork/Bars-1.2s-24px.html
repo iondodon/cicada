@@ -1,0 +1,62 @@
+<div class="lds-css ng-scope"><div style="width:100%;height:100%" class="lds-bars"><div></div><div></div><div></div><div></div></div><style type="text/css">@keyframes lds-bars {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes lds-bars {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.lds-bars {
+  position: relative;
+}
+.lds-bars div {
+  position: absolute;
+  width: 4px;
+  height: 80px;
+  top: 60px;
+  -webkit-animation: lds-bars 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  animation: lds-bars 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+.lds-bars div:nth-child(1) {
+  left: 38px;
+  background: #000000;
+  -webkit-animation-delay: -0.72s;
+  animation-delay: -0.72s;
+}
+.lds-bars div:nth-child(2) {
+  left: 78px;
+  background: #000000;
+  -webkit-animation-delay: -0.48s;
+  animation-delay: -0.48s;
+}
+.lds-bars div:nth-child(3) {
+  left: 118px;
+  background: #000000;
+  -webkit-animation-delay: -0.24s;
+  animation-delay: -0.24s;
+}
+.lds-bars div:nth-child(4) {
+  left: 158px;
+  background: #000000;
+}
+.lds-bars {
+  width: 24px !important;
+  height: 24px !important;
+  -webkit-transform: translate(-12px, -12px) scale(0.12) translate(12px, 12px);
+  transform: translate(-12px, -12px) scale(0.12) translate(12px, 12px);
+}
+</style></div>
