@@ -42,6 +42,7 @@ class CreatePuzzleForm extends React.Component {
         this.updateDescription = this.updateDescription.bind(this);
         this.setCode = this.setCode.bind(this);
         this.validateForm = this.validateForm.bind(this);
+        this.closeError = this.closeError.bind(this);
     }
 
     componentDidMount() {
@@ -136,42 +137,46 @@ class CreatePuzzleForm extends React.Component {
 
     validateForm() {
         let valid = true;
+        let errorMsg = '';
 
         if(this.state.name === '') {
-            console.log('should specify a name');
+            errorMsg += 'You should specify a name' + '<br/>';
             valid = false;
         } else if(this.state.name.length < 3) {
-            console.log('name should have at least 3 chars');
+            errorMsg += 'The name should have at least 3 chars' + '<br/>';
             valid = false;
         }
 
         if(this.state.tags.length < 1) {
-            console.log('specify at least one tag');
+            errorMsg += 'Specify at least one tag' + '<br/>';
             valid = false;
         }
 
         if(this.state.description.length < 300) {
-            console.log('puzzle description and stage description should have at least 300 chars');
+            errorMsg += 'Puzzle description and stage description should have at least 300 chars' + '<br/>';
             valid = false;
         }
 
         this.state.stages.map((stage, index) => {
             if(stage.description.length < 200) {
-                console.log('stage ' + index + ' description should have at least 200 chars');
+                errorMsg += 'Stage ' + index + ' description should have at least 200 chars' + '<br/>';
                 valid = false;
             }
 
             if(stage.code === undefined) {
-                console.log('you should define a code for stage ' + index);
+                errorMsg += 'You should define a code for stage ' + index + '<br/>';
                 valid = false;
             } else if(stage.code.length < 3) {
-                console.log('stage code should have at least 3 chars. See stage ' + index);
+                errorMsg += 'Stage code should have at least 3 chars. See stage ' + index + '<br/>';
                 valid = false;
             }
         });
 
         if(valid === true) {
             this.submitPuzzle();
+        } else {
+            document.getElementsByClassName('error-content')[0].innerHTML = errorMsg;
+            document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
         }
     }
 
@@ -180,6 +185,10 @@ class CreatePuzzleForm extends React.Component {
 
 
         // Router.push(`/`);
+    }
+
+    closeError(e) {
+        e.target.parentElement.setAttribute('style', 'display: none;');
     }
 
     render(){
@@ -266,6 +275,11 @@ class CreatePuzzleForm extends React.Component {
                     <div className={"btn btn-primary btn-ghost btn-block btn-add-scene"} onClick={this.addNewStage}>Add stage</div>
                 </div>
 
+                <div className="alert alert-error" style={{ display: 'none' }} >
+                    <div className={"error-content"} >Error message</div>
+                    {'\u00A0'} <a onClick={this.closeError}>x</a>
+                </div>
+
                 <button
                     type={"button"}
                     onClick={this.validateForm}
@@ -275,6 +289,15 @@ class CreatePuzzleForm extends React.Component {
 
                 { /*language=SCSS*/ }
                 <style jsx>{`
+                  .alert {
+                        display: flex;
+                        flex-direction: row;
+                        text-align: center;
+                        margin-top: 2rem;
+                        margin-bottom: 0;
+                        justify-content: center;
+                  }
+                
                   .form {
                        display: flex;
                        flex-direction: column;
