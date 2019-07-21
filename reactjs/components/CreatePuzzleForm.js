@@ -8,7 +8,7 @@ import Stage from "./Stage";
 const CKEditor = dynamic(() => import('../components/CKEditor'), {
     ssr: false
 });
- 
+
 class CreatePuzzleForm extends React.Component {
 
     constructor(props, {t}){
