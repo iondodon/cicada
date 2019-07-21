@@ -23,7 +23,7 @@ class CreatePuzzleForm extends React.Component {
             stages: [
                 {stageNumber: 0, content: 'Description of stage 0...'}
             ],
-            tags: []
+           tags: []
         };
 
         this.difficulty = 1;
@@ -62,7 +62,6 @@ class CreatePuzzleForm extends React.Component {
             this.updateDifficulty();
         }
     }
-
     difficultyDown(e) {
         if(parseInt(this.difficulty) - 1 > 0){
             this.difficulty = parseInt(this.difficulty) - 1;
@@ -84,7 +83,7 @@ class CreatePuzzleForm extends React.Component {
             alert("No more than 30 stages.");
             return;
         }
-        
+
         this.setState({
             stages: [...this.state.stages, {
                 stageNumber: this.state.stagesCount,
