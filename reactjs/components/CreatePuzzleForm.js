@@ -41,6 +41,7 @@ class CreatePuzzleForm extends React.Component {
         this.submitPuzzle = this.submitPuzzle.bind(this);
         this.updateDescription = this.updateDescription.bind(this);
         this.setCode = this.setCode.bind(this);
+        this.validateForm = this.validateForm.bind(this);
     }
 
     componentDidMount() {
@@ -86,7 +87,7 @@ class CreatePuzzleForm extends React.Component {
         this.setState({
             stages: [...this.state.stages, {
                 stageNumber: this.state.stagesCount,
-                content: 'Description of stage ' + this.state.stagesCount + '...'
+                description: 'Description of stage ' + this.state.stagesCount + '...'
             }]
         });
 
@@ -127,17 +128,55 @@ class CreatePuzzleForm extends React.Component {
         let array = [...this.state.stages];
         array[child.props.stageNumber].code = code;
         this.setState({ stages: array });
-
-        console.log(this.state);
     }
 
     setIsPrivate(){
         this.state.isPrivate = document.getElementsByClassName('is-private-ck-box')[0].checked;
     }
 
+    validateForm() {
+        let valid = true;
+
+        if(this.state.name === '') {
+            console.log('should specify a name');
+            valid = false;
+        } else if(this.state.name.length < 3) {
+            console.log('name should have at least 3 chars');
+            valid = false;
+        }
+
+        if(this.state.tags.length < 1) {
+            console.log('specify at least one tag');
+            valid = false;
+        }
+
+        if(this.state.description.length < 300) {
+            console.log('puzzle description and stage description should have at least 300 chars');
+            valid = false;
+        }
+
+        this.state.stages.map((stage, index) => {
+            if(stage.description.length < 200) {
+                console.log('stage ' + index + ' description should have at least 200 chars');
+                valid = false;
+            }
+
+            if(stage.code === undefined) {
+                console.log('you should define a code for stage ' + index);
+                valid = false;
+            } else if(stage.code.length < 3) {
+                console.log('stage code should have at least 3 chars. See stage ' + index);
+                valid = false;
+            }
+        });
+
+        if(valid === true) {
+            this.submitPuzzle();
+        }
+    }
+
     submitPuzzle() {
         console.log(this.state);
-
 
 
         // Router.push(`/`);
@@ -229,7 +268,7 @@ class CreatePuzzleForm extends React.Component {
 
                 <button
                     type={"button"}
-                    onClick={this.submitPuzzle}
+                    onClick={this.validateForm}
                     className={"btn btn-success btn-block btn-save-puzzle"}
                 >Save puzzle</button>
 

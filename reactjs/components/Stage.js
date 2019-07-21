@@ -91,9 +91,6 @@ class Stage extends React.Component {
 
                         onChange={ ( event, editor ) => {
                             const data = editor.getData();
-
-                            console.log(data);
-
                             this.updateDescription(data);
                         } }
 
