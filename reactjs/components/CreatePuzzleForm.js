@@ -19,7 +19,7 @@ class CreatePuzzleForm extends React.Component {
         this.state = {
             name: '',
             description: 'Puzzle description...',
-            difficulty: 1,
+            difficultyByCreator: 1,
             isPrivate: false,
             stagesCount: 1,
             stages: [
@@ -28,12 +28,11 @@ class CreatePuzzleForm extends React.Component {
            tags: []
         };
 
-        this.difficulty = 1;
+        this.difficultyByCreator = 1;
         this.CreatePuzzleForm = React.createRef();
 
         this.difficultyUp = this.difficultyUp.bind(this);
         this.difficultyDown = this.difficultyDown.bind(this);
-        this.updateDifficulty = this.updateDifficulty.bind(this);
         this.addNewStage = this.addNewStage.bind(this);
         this.removeStage = this.removeStage.bind(this);
         this.findInAttr = this.findInAttr.bind(this);
@@ -60,23 +59,19 @@ class CreatePuzzleForm extends React.Component {
     }
 
     difficultyUp(e) {
-        if(parseInt(this.difficulty) + 1 <= 5){
-            this.difficulty = parseInt(this.difficulty) + 1;
-            e.target.parentElement.querySelector('.quantity').innerHTML = ''+this.difficulty;
-            this.updateDifficulty();
+        if(parseInt(this.difficultyByCreator) + 1 <= 5){
+            this.difficultyByCreator = parseInt(this.difficultyByCreator) + 1;
+            e.target.parentElement.querySelector('.quantity').innerHTML = ''+this.difficultyByCreator;
+            this.setState({difficultyByCreator: this.difficultyByCreator});
         }
     }
 
     difficultyDown(e) {
-        if(parseInt(this.difficulty) - 1 > 0){
-            this.difficulty = parseInt(this.difficulty) - 1;
-            e.target.parentElement.querySelector('.quantity').innerHTML = ''+this.difficulty;
-            this.updateDifficulty();
+        if(parseInt(this.difficultyByCreator) - 1 > 0){
+            this.difficultyByCreator = parseInt(this.difficultyByCreator) - 1;
+            e.target.parentElement.querySelector('.quantity').innerHTML = ''+this.difficultyByCreator;
+            this.setState({difficultyByCreator: this.difficultyByCreator});
         }
-    }
-
-    updateDifficulty(){
-        this.setState({difficulty: this.difficulty});
     }
 
     addNewStage(){
