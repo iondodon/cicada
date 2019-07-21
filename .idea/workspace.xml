@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactjs/components/CreatePuzzleForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/CreatePuzzleForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Controller/PuzzleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Controller/PuzzleController.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cicada-reactjs/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,11 +50,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/reactjs/components/CreatePuzzleForm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="335">
-              <caret line="74" column="5" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
+            <state relative-caret-position="367">
+              <caret line="191" selection-start-line="191" selection-end-line="191" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -63,10 +63,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/reactjs/components/SignUpForm.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="100" column="29" selection-start-line="100" selection-start-column="29" selection-end-line="100" selection-end-column="29" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/symfony/src/Controller/PuzzleController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="577">
-              <caret line="84" selection-start-line="84" selection-end-line="84" />
+            <state relative-caret-position="202">
+              <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
               <folding>
                 <element signature="e#34#56#0#PHP" expanded="true" />
               </folding>
@@ -86,7 +98,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>event</find>
       <find>thro</find>
       <find>signup</find>
       <find>DATA</find>
@@ -116,6 +127,7 @@
       <find>console</find>
       <find>console.</find>
       <find>difficulty</find>
+      <find>create</find>
     </findStrings>
   </component>
   <component name="GOROOT" path="$USER_HOME$/go/sdk/go1.12.5" />
@@ -130,7 +142,6 @@
         <option value="$PROJECT_DIR$/reactjs/pages/LogIn.js" />
         <option value="$PROJECT_DIR$/reactjs/static/pages/login/style.css" />
         <option value="$PROJECT_DIR$/reactjs/static/pages/login/loginScript.js" />
-        <option value="$PROJECT_DIR$/symfony/src/Controller/PuzzleController.php" />
         <option value="$PROJECT_DIR$/docker/nginx/Dockerfile" />
         <option value="$PROJECT_DIR$/ExternalWork/notes.txt" />
         <option value="$PROJECT_DIR$/symfony/src/Controller/LoginController.php" />
@@ -173,9 +184,10 @@
         <option value="$PROJECT_DIR$/reactjs/pages/index.js" />
         <option value="$PROJECT_DIR$/reactjs/components/LogInForm.js" />
         <option value="$PROJECT_DIR$/reactjs/configs/keys.js" />
-        <option value="$PROJECT_DIR$/reactjs/components/SignUpForm.js" />
         <option value="$PROJECT_DIR$/reactjs/components/Stage.js" />
+        <option value="$PROJECT_DIR$/reactjs/components/SignUpForm.js" />
         <option value="$PROJECT_DIR$/reactjs/components/CreatePuzzleForm.js" />
+        <option value="$PROJECT_DIR$/symfony/src/Controller/PuzzleController.php" />
       </list>
     </option>
   </component>
@@ -551,12 +563,12 @@
       <workItem from="1563566968038" duration="23000" />
       <workItem from="1563567019812" duration="620000" />
       <workItem from="1563710959580" duration="3744000" />
-      <workItem from="1563720790557" duration="10338000" />
+      <workItem from="1563720790557" duration="13024000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="518085000" />
+    <option name="totallyTimeSpent" value="520771000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -604,7 +616,6 @@
     </ignored-roots>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/reactjs/static/pages/login/loginStyle.css" />
     <entry file="file://$PROJECT_DIR$/reactjs/static/pages/signup/signupStyle.css" />
     <entry file="file://$PROJECT_DIR$/symfony/src/Entity/PuzzleSession.php">
       <provider selected="true" editor-type-id="text-editor" />
@@ -708,16 +719,6 @@
           <caret line="113" column="33" selection-start-line="113" selection-start-column="33" selection-end-line="113" selection-end-column="33" />
           <folding>
             <element signature="e#30#43#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reactjs/components/SignUpInfo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -922,16 +923,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reactjs/components/SignUpForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="166" column="26" lean-forward="true" selection-start-line="166" selection-start-column="26" selection-end-line="166" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="das://89715e81-bc9c-4fca-9f4c-1a8fd517663e/schema/cicada_db/table/accounts">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state projectRestartId="0b010dfc-69cb-4c27-bc74-2607ebd9a16f">
@@ -957,22 +948,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/symfony/src/Controller/PuzzleController.php">
+    <entry file="file://$PROJECT_DIR$/reactjs/components/SignUpInfo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="577">
-          <caret line="84" selection-start-line="84" selection-end-line="84" />
+        <state relative-caret-position="90">
+          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
           <folding>
-            <element signature="e#34#56#0#PHP" expanded="true" />
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/vendor/symfony/http-foundation/Response.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="25" column="21" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactjs/components/SignUpForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="100" column="29" selection-start-line="100" selection-start-column="29" selection-end-line="100" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/reactjs/components/CreatePuzzleForm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="74" column="5" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
+        <state relative-caret-position="367">
+          <caret line="191" selection-start-line="191" selection-end-line="191" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/src/Controller/PuzzleController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+          <folding>
+            <element signature="e#34#56#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

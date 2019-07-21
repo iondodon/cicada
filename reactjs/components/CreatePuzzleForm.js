@@ -5,6 +5,7 @@ import Router from 'next/router';
 import '../i18n';
 import { withNamespaces } from 'react-i18next';
 import Stage from "./Stage";
+import config from "../configs/keys";
 
 const CKEditor = dynamic(() => import('../components/CKEditor'), {
     ssr: false
@@ -177,9 +178,29 @@ class CreatePuzzleForm extends React.Component {
         }
     }
 
-    submitPuzzle() {
-        console.log(this.state);
+    async submitPuzzle() {
+        let headers = new Headers();
+        headers.append('Content-Type', 'application/json');
 
+        const request = {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: headers,
+            credentials: "include",
+            body: JSON.stringify(this.state)
+        };
+
+        try {
+            let response = await fetch(config.API_URL + '/api/puzzles/create', request);
+
+            if (response.status === 403) {
+                console.log(response.statusText);
+            } else if (response.status === 201) {
+                console.log("Puzzle created successfully");
+            }
+        } catch (e) {
+            console.log(e.message);
+        }
 
         // Router.push(`/`);
     }

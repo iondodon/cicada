@@ -50,32 +50,34 @@ class PuzzleController extends AbstractFOSRestController
     public function create(Request $request): Response
     {
         $data = json_decode($request->getContent(), true);
-        $em = $this->getDoctrine()->getManager();
+        dump($data); die;
 
-        $puzzle = new Puzzle();
-        $puzzle->setName($data['name']);
-
-        $tags = new ArrayCollection();
-        foreach($data['tags'] as $tg){
-            $tag = $em->getRepository(Tag::class)->findOneBy(['tag' => $tg]);
-            if(!$tag) {
-                $tag = new Tag();
-                $tag->setTag($tg);
-                $em->persist($tag);
-            }
-            $tags->add($tag);
-        }
-        $puzzle->setTags($tags);
-
-        $puzzle->setIsPrivate($data['isPrivate']);
-        $puzzle->setDifficultyByCreator($data['difficultyByCreator']);
-        $puzzle->setDifficultyByStatistics($data['difficultyByCreator']);
-        $puzzle->setStagesCount(0);
-        $puzzle->setCreatedBy($this->getUser()->getAccount());
-        $puzzle->setCreatedAt(new DateTime());
-
-        $em->persist($puzzle);
-        $em->flush();
+//        $em = $this->getDoctrine()->getManager();
+//
+//        $puzzle = new Puzzle();
+//        $puzzle->setName($data['name']);
+//
+//        $tags = new ArrayCollection();
+//        foreach($data['tags'] as $tg){
+//            $tag = $em->getRepository(Tag::class)->findOneBy(['tag' => $tg]);
+//            if(!$tag) {
+//                $tag = new Tag();
+//                $tag->setTag($tg);
+//                $em->persist($tag);
+//            }
+//            $tags->add($tag);
+//        }
+//        $puzzle->setTags($tags);
+//
+//        $puzzle->setIsPrivate($data['isPrivate']);
+//        $puzzle->setDifficultyByCreator($data['difficultyByCreator']);
+//        $puzzle->setDifficultyByStatistics($data['difficultyByCreator']);
+//        $puzzle->setStagesCount(0);
+//        $puzzle->setCreatedBy($this->getUser()->getAccount());
+//        $puzzle->setCreatedAt(new DateTime());
+//
+//        $em->persist($puzzle);
+//        $em->flush();
 
         $response = new Response(
             'Puzzle created.',
