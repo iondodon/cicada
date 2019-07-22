@@ -3,8 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\Puzzle;
-use App\Entity\Stage;
 use App\Entity\Tag;
+use App\Repository\PuzzleRepository;
 use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use FOS\RestBundle\Controller\Annotations\Route;
@@ -37,60 +37,19 @@ class PuzzleController extends AbstractFOSRestController
             }
         ]);
 
-        $jsonResponse = new JsonResponse(json_decode($puzzlesJson, true));
-
-        return $jsonResponse;
+        return new JsonResponse(json_decode($puzzlesJson, true));
     }
 
     /**
      * @Route("/api/puzzles/create", name="puzzles.create", methods={"POST"})
      * @param Request $request
+     * @param PuzzleRepository $puzzleRepository
      * @return Response
-     * @throws \Exception
      */
-    public function create(Request $request): Response
+    public function create(Request $request, PuzzleRepository $puzzleRepository): Response
     {
         $data = json_decode($request->getContent(), true);
-        $em = $this->getDoctrine()->getManager();
-
-        $puzzle = new Puzzle();
-        $puzzle->setName($data['name']);
-
-        $tags = new ArrayCollection();
-        foreach($data['tags'] as $tg){
-            $tag = $em->getRepository(Tag::class)->findOneBy(['tag' => $tg]);
-            if(!$tag) {
-                $tag = new Tag();
-                $tag->setTag($tg);
-                $em->persist($tag);
-            }
-            $tags->add($tag);
-        }
-        $puzzle->setTags($tags);
-
-        $stages = new ArrayCollection();
-        foreach ($data['stages'] as $stg) {
-            $stage = new Stage();
-            $stage->setCreatedAt(new DateTime());
-            $stage->setCode($stg['code']);
-            $stage->setContent($stg['description']);
-            $stage->setLevel($stg['stageNumber']);
-            $stage->setPuzzleParent($puzzle);
-
-            $em->persist($stage);
-            $stages->add($stage);
-        }
-        $puzzle->setStages($stages);
-
-        $puzzle->setIsPrivate($data['isPrivate']);
-        $puzzle->setDifficultyByCreator($data['difficultyByCreator']);
-        $puzzle->setDifficultyByStatistics($data['difficultyByCreator']);
-        $puzzle->setStagesCount($data['stagesCount']);
-        $puzzle->setCreatedBy($this->getUser()->getAccount());
-        $puzzle->setCreatedAt(new DateTime());
-
-        $em->persist($puzzle);
-        $em->flush();
+        $puzzleRepository->createPuzzleAndSave($data, $this->getUser());
 
         $response = new Response(
             'Puzzle created.',
@@ -144,34 +103,35 @@ class PuzzleController extends AbstractFOSRestController
         $em = $this->getDoctrine()->getManager();
         $puzzle = $em->getRepository(Puzzle::class)->findOneBy(['id' => $id]);
 
-        $puzzle->setName($editedPuzzle['name']);
-        $puzzle->setStagesCount($editedPuzzle['stagesCount']);
-        $puzzle->setIsPrivate($editedPuzzle['isPrivate']);
-        $tags = new ArrayCollection();
-        foreach($editedPuzzle['tags'] as $tg){
-            $tag = $em->getRepository(Tag::class)->findOneBy(['tag' => $tg]);
-            if(!$tag) {
-                $tag = new Tag();
-                $tag->setTag($tg);
-                $em->persist($tag);
+        if($puzzle) {
+
+            $puzzle->setName($editedPuzzle['name']);
+            $puzzle->setStagesCount($editedPuzzle['stagesCount']);
+            $puzzle->setIsPrivate($editedPuzzle['isPrivate']);
+            $tags = new ArrayCollection();
+            foreach ($editedPuzzle['tags'] as $tg) {
+                $tag = $em->getRepository(Tag::class)->findOneBy(['tag' => $tg]);
+                if (!$tag) {
+                    $tag = new Tag();
+                    $tag->setTag($tg);
+                    $em->persist($tag);
+                }
+                $tags->add($tag);
             }
-            $tags->add($tag);
+            $puzzle->setTags($tags);
+            $puzzle->setUpdatedAt(new DateTime());
+            $puzzle->setDifficultyByCreator($editedPuzzle['difficultyByCreator']);
+            $em->persist($puzzle);
+            $em->flush();
+
+            return new Response(
+                'Puzzle updated.', Response::HTTP_OK, ['content-type' => 'text/html']
+            );
         }
-        $puzzle->setTags($tags);
-        $puzzle->setUpdatedAt(new DateTime());
-        $puzzle->setDifficultyByCreator($editedPuzzle['difficultyByCreator']);
 
-        $em->persist($puzzle);
-        $em->flush();
-
-
-        $response = new Response(
-            'Puzzle updated.',
-            Response::HTTP_OK,
-            ['content-type' => 'text/html']
+        return new Response(
+            'No such puzzle', Response::HTTP_NOT_FOUND, ['content-type'=> 'text/html']
         );
-
-        return $response;
     }
 
     /**
