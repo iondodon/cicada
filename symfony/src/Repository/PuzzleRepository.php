@@ -19,12 +19,11 @@ class PuzzleRepository extends ServiceEntityRepository
         parent::__construct($registry, Puzzle::class);
     }
 
-    public function createPuzzleAndSave($data, User $user): void
+    public function createPuzzleAndSave($data, User $user): bool
     {
         $em = $this->getEntityManager();
 
         try {
-
             $puzzle = new Puzzle();
             $puzzle->setName($data['name']);
 
@@ -63,8 +62,9 @@ class PuzzleRepository extends ServiceEntityRepository
             $em->flush();
 
         } catch (Exception $e) {
-
+            return false;
         }
 
+        return true;
     }
 }

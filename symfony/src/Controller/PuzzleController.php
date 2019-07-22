@@ -3,12 +3,10 @@
 namespace App\Controller;
 
 use App\Entity\Puzzle;
-use App\Entity\Stage;
 use App\Entity\Tag;
 use App\Repository\PuzzleRepository;
 use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
-use Exception;
 use FOS\RestBundle\Controller\Annotations\Route;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -51,15 +49,21 @@ class PuzzleController extends AbstractFOSRestController
     public function create(Request $request, PuzzleRepository $puzzleRepository): Response
     {
         $data = json_decode($request->getContent(), true);
-        $puzzleRepository->createPuzzleAndSave($data, $this->getUser());
+        $success = $puzzleRepository->createPuzzleAndSave($data, $this->getUser());
 
-        $response = new Response(
-            'Puzzle created.',
+        if(!$success){
+            return new Response(
+                'Puzzle wasn\'t saved',
+                Response::HTTP_INTERNAL_SERVER_ERROR,
+                ['content-type' => 'text/html']
+            );
+        }
+
+        return new Response(
+            'Puzzle successfully saved.',
             Response::HTTP_CREATED,
             ['content-type' => 'text/html']
         );
-
-        return $response;
     }
 
     /**

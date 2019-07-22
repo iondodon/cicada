@@ -170,8 +170,6 @@ class CreatePuzzleForm extends React.Component {
 
         if(valid === true) {
             await this.submitPuzzle();
-            document.getElementsByClassName('error-content')[0].innerHTML = '';
-            document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: none;');
         } else {
             document.getElementsByClassName('error-content')[0].innerHTML = errorMsg;
             document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
@@ -193,16 +191,22 @@ class CreatePuzzleForm extends React.Component {
         try {
             let response = await fetch(config.API_URL + '/api/puzzles/create', request);
 
-            if (response.status === 403) {
-                console.log(response.statusText);
+            if (response.status === 401) {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Unauthorized.';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            } else if (response.status === 500) {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Server error. Check the fields and try again. ';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
             } else if (response.status === 201) {
-                console.log("Puzzle created successfully");
+                Router.push(`/`);
+            } else {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Unknown error. Check the fields and try again.';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
             }
         } catch (e) {
-            console.log(e.message);
+            document.getElementsByClassName('error-content')[0].innerHTML += e.message;
+            document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
         }
-
-        Router.push(`/`);
     }
 
     closeError(e) {
