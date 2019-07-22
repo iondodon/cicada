@@ -17,6 +17,8 @@ class Stage extends React.Component {
         this.toggleStage = this.toggleStage.bind(this);
         this.removeStage = this.removeStage.bind(this);
         this.checkRemoveBtn = this.checkRemoveBtn.bind(this);
+        this.updateDescription = this.updateDescription.bind(this);
+        this.setCode = this.setCode.bind(this);
     }
 
     toggleStage(e){
@@ -33,6 +35,14 @@ class Stage extends React.Component {
 
     removeStage(){
         this.props.removeStage(this);
+    }
+
+    updateDescription(data){
+        this.props.updateDescription(this, data);
+    }
+
+    setCode(code) {
+        this.props.setCode(this, code);
     }
 
     checkRemoveBtn(){
@@ -60,7 +70,12 @@ class Stage extends React.Component {
             <div className="card stage" key={this.props.key}>
                 <header className="card-header">
                     <div className="pull-left stage-word">Stage { this.props.stageNumber }</div>
-                    <input type="text" placeholder="code" className={"stage-code pull-left"}/>
+                    <input
+                        type="text"
+                        placeholder="code"
+                        className={"stage-code pull-left"}
+                        onChange={e => this.setCode(e.target.value)}
+                    />
                     <div className={"header-trigger pull-right"} onClick={this.toggleStage}>-</div>
                     { this.checkRemoveBtn() }
                     <p/>
@@ -76,7 +91,7 @@ class Stage extends React.Component {
 
                         onChange={ ( event, editor ) => {
                             const data = editor.getData();
-
+                            this.updateDescription(data);
                         } }
 
                         onBlur={ editor => {

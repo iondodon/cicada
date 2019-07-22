@@ -103,7 +103,7 @@ class SignUpForm extends React.Component {
         };
 
         try {
-            let response = await fetch(config.SymfonyRegisterURL, request);
+            let response = await fetch(config.API_URL + '/api/register', request);
 
             if(response.status === 403){
                 console.log(response.statusText);

@@ -1,14 +1,16 @@
 import React from 'react';
-import dynamic from 'next/dynamic'
+import dynamic from 'next/dynamic';
+import Router from 'next/router';
 
 import '../i18n';
 import { withNamespaces } from 'react-i18next';
 import Stage from "./Stage";
+import config from "../configs/keys";
 
 const CKEditor = dynamic(() => import('../components/CKEditor'), {
     ssr: false
 });
- 
+
 class CreatePuzzleForm extends React.Component {
 
     constructor(props, {t}){
@@ -17,25 +19,30 @@ class CreatePuzzleForm extends React.Component {
 
         this.state = {
             name: '',
-            difficulty: 1,
+            description: 'Puzzle description...',
+            difficultyByCreator: 1,
             isPrivate: false,
             stagesCount: 1,
             stages: [
-                {stageNumber: 0, content: 'Description of stage 0...'}
+                {stageNumber: 0, description: 'Description of stage 0...'}
             ],
            tags: []
         };
 
-        this.difficulty = 1;
+        this.difficultyByCreator = 1;
         this.CreatePuzzleForm = React.createRef();
 
         this.difficultyUp = this.difficultyUp.bind(this);
         this.difficultyDown = this.difficultyDown.bind(this);
-        this.updateDifficulty = this.updateDifficulty.bind(this);
         this.addNewStage = this.addNewStage.bind(this);
         this.removeStage = this.removeStage.bind(this);
         this.findInAttr = this.findInAttr.bind(this);
         this.setIsPrivate = this.setIsPrivate.bind(this);
+        this.submitPuzzle = this.submitPuzzle.bind(this);
+        this.updateDescription = this.updateDescription.bind(this);
+        this.setCode = this.setCode.bind(this);
+        this.validateForm = this.validateForm.bind(this);
+        this.closeError = this.closeError.bind(this);
     }
 
     componentDidMount() {
@@ -45,9 +52,6 @@ class CreatePuzzleForm extends React.Component {
             width: '100%'
         });
 
-        // TODO: CKEditor overlaps page content, if page size changed
-        // TODO: CKEditor overlaps page content, if page size changed
-
         document.getElementsByClassName('is-private')[0].checked = this.state.isPrivate;
 
         $('.tags-multiple-select').on('change', () => {
@@ -56,26 +60,19 @@ class CreatePuzzleForm extends React.Component {
     }
 
     difficultyUp(e) {
-        if(parseInt(this.difficulty) + 1 <= 5){
-            this.difficulty = parseInt(this.difficulty) + 1;
-            e.target.parentElement.querySelector('.quantity').innerHTML = ''+this.difficulty;
-            this.updateDifficulty();
+        if(parseInt(this.difficultyByCreator) + 1 <= 5){
+            this.difficultyByCreator = parseInt(this.difficultyByCreator) + 1;
+            e.target.parentElement.querySelector('.quantity').innerHTML = ''+this.difficultyByCreator;
+            this.setState({difficultyByCreator: this.difficultyByCreator});
         }
     }
+
     difficultyDown(e) {
-        if(parseInt(this.difficulty) - 1 > 0){
-            this.difficulty = parseInt(this.difficulty) - 1;
-            e.target.parentElement.querySelector('.quantity').innerHTML = ''+this.difficulty;
-            this.updateDifficulty();
+        if(parseInt(this.difficultyByCreator) - 1 > 0){
+            this.difficultyByCreator = parseInt(this.difficultyByCreator) - 1;
+            e.target.parentElement.querySelector('.quantity').innerHTML = ''+this.difficultyByCreator;
+            this.setState({difficultyByCreator: this.difficultyByCreator});
         }
-    }
-
-    updateDifficulty(){
-        this.setState({difficulty: this.difficulty});
-    }
-
-    static getInitialProps({ req, query }) {
-        return {}
     }
 
     addNewStage(){
@@ -87,7 +84,7 @@ class CreatePuzzleForm extends React.Component {
         this.setState({
             stages: [...this.state.stages, {
                 stageNumber: this.state.stagesCount,
-                content: 'Description of stage ' + this.state.stagesCount + '...'
+                description: 'Description of stage ' + this.state.stagesCount + '...'
             }]
         });
 
@@ -118,8 +115,102 @@ class CreatePuzzleForm extends React.Component {
         }
     }
 
+    updateDescription(child, data) {
+        let array = [...this.state.stages];
+        array[child.props.stageNumber].description = data;
+        this.setState({ stages: array });
+    }
+
+    setCode(child, code) {
+        let array = [...this.state.stages];
+        array[child.props.stageNumber].code = code;
+        this.setState({ stages: array });
+    }
+
     setIsPrivate(){
-        this.state.isPrivate = document.getElementsByClassName('is-private')[0].checked;
+        this.state.isPrivate = document.getElementsByClassName('is-private-ck-box')[0].checked;
+    }
+
+    async validateForm() {
+        let valid = true;
+        let errorMsg = '';
+
+        if(this.state.name === '') {
+            errorMsg += 'You should specify a name' + '<br/>';
+            valid = false;
+        } else if(this.state.name.length < 3) {
+            errorMsg += 'The name should have at least 3 chars' + '<br/>';
+            valid = false;
+        }
+
+        if(this.state.tags.length < 1) {
+            errorMsg += 'Specify at least one tag' + '<br/>';
+            valid = false;
+        }
+
+        if(this.state.description.length < 300) {
+            errorMsg += 'Puzzle description and stage description should have at least 300 chars' + '<br/>';
+            valid = false;
+        }
+
+        this.state.stages.map((stage, index) => {
+            if(stage.description.length < 200) {
+                errorMsg += 'Stage ' + index + ' description should have at least 200 chars' + '<br/>';
+                valid = false;
+            }
+
+            if(stage.code === undefined) {
+                errorMsg += 'You should define a code for stage ' + index + '<br/>';
+                valid = false;
+            } else if(stage.code.length < 3) {
+                errorMsg += 'Stage code should have at least 3 chars. See stage ' + index + '<br/>';
+                valid = false;
+            }
+        });
+
+        if(valid === true) {
+            await this.submitPuzzle();
+        } else {
+            document.getElementsByClassName('error-content')[0].innerHTML = errorMsg;
+            document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+        }
+    }
+
+    async submitPuzzle() {
+        let headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+
+        const request = {
+            method: 'POST',
+            mode: 'cors',
+            headers: headers,
+            credentials: "include",
+            body: JSON.stringify(this.state)
+        };
+
+        try {
+            let response = await fetch(config.API_URL + '/api/puzzles/create', request);
+
+            if (response.status === 401) {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Unauthorized.';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            } else if (response.status === 500) {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Server error. Check the fields and try again. ';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            } else if (response.status === 201) {
+                Router.push(`/`);
+            } else {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Unknown error. Check the fields and try again.';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            }
+        } catch (e) {
+            document.getElementsByClassName('error-content')[0].innerHTML += e.message;
+            document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+        }
+    }
+
+    closeError(e) {
+        e.target.parentElement.setAttribute('style', 'display: none;');
     }
 
     render(){
@@ -127,12 +218,16 @@ class CreatePuzzleForm extends React.Component {
             <form className="form" id={"create-puzzle-form"}>
                 <fieldset className="form-group">
                     <label >Name:</label>
-                    <input type="text" placeholder="puzzle name..." className="form-control"/>
+                    <input
+                        type="text" placeholder="puzzle name..."
+                        className="form-control"
+                        onChange={(e) => this.setState({ name: e.target.value }) }
+                    />
                 </fieldset>
 
 
                 <label htmlFor="private" className={"is-private btn btn-success btn-ghost minus"}>Private
-                    <input type="checkbox" onChange={this.setIsPrivate} />
+                    <input type="checkbox" className={"is-private-ck-box"} onChange={this.setIsPrivate} />
                 </label>
 
                 <label htmlFor="difficulty" className={"difficulty"}>
@@ -149,21 +244,19 @@ class CreatePuzzleForm extends React.Component {
                     <select className="tags-multiple-select" name="states[]" multiple="multiple">
                         <option value="AL">Alabama</option>
                         <option value="WY">Wyoming</option>
-                        <option value="AL">Alabama</option>
-                        <option value="WY">Wyoming</option>
                     </select>
                 </div>
 
                 <div className={"puzzle-description"}>
                     <CKEditor
-                        data="<p>Puzzle description...</p>"
+                        data={this.state.description}
                         onInit={ editor => {
                             // You can store the "editor" and use when it is needed.
                         } }
 
                         onChange={ ( event, editor ) => {
                             const data = editor.getData();
-
+                            this.setState({ description: data });
                         } }
                         onBlur={ editor => {
 
@@ -188,9 +281,11 @@ class CreatePuzzleForm extends React.Component {
                                 return(
                                     <Stage
                                         key={stage.stageNumber}
+                                        startContent={"Description of stage " + stage.stageNumber + "..."}
                                         stageNumber={stage.stageNumber}
-                                        startContent={stage.content}
                                         removeStage={this.removeStage}
+                                        updateDescription={this.updateDescription}
+                                        setCode={this.setCode}
                                         isLast={isLast}
                                     />
                                 );
@@ -200,11 +295,29 @@ class CreatePuzzleForm extends React.Component {
                     <div className={"btn btn-primary btn-ghost btn-block btn-add-scene"} onClick={this.addNewStage}>Add stage</div>
                 </div>
 
-                <button className={"btn btn-success btn-block btn-save-puzzle"}>Save puzzle</button>
+                <div className="alert alert-error" style={{ display: 'none' }} >
+                    <div className={"error-content"} >Error message</div>
+                    {'\u00A0'} <a onClick={this.closeError}>x</a>
+                </div>
+
+                <button
+                    type={"button"}
+                    onClick={this.validateForm}
+                    className={"btn btn-success btn-block btn-save-puzzle"}
+                >Save puzzle</button>
 
 
                 { /*language=SCSS*/ }
                 <style jsx>{`
+                  .alert {
+                        display: flex;
+                        flex-direction: row;
+                        text-align: center;
+                        margin-top: 2rem;
+                        margin-bottom: 0;
+                        justify-content: center;
+                  }
+                
                   .form {
                        display: flex;
                        flex-direction: column;
