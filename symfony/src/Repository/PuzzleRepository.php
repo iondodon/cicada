@@ -27,6 +27,7 @@ class PuzzleRepository extends ServiceEntityRepository
 
             $puzzle = new Puzzle();
             $puzzle->setName($data['name']);
+
             $tags = new ArrayCollection();
             foreach ($data['tags'] as $tg) {
                 $tag = $em->getRepository(Tag::class)->findOneBy(['tag' => $tg]);
@@ -37,6 +38,7 @@ class PuzzleRepository extends ServiceEntityRepository
                 }
                 $tags->add($tag);
             }
+
             $puzzle->setTags($tags);
             $stages = new ArrayCollection();
             foreach ($data['stages'] as $stg) {
@@ -49,6 +51,7 @@ class PuzzleRepository extends ServiceEntityRepository
                 $em->persist($stage);
                 $stages->add($stage);
             }
+
             $puzzle->setStages($stages);
             $puzzle->setIsPrivate($data['isPrivate']);
             $puzzle->setDifficultyByCreator($data['difficultyByCreator']);

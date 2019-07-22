@@ -131,7 +131,7 @@ class CreatePuzzleForm extends React.Component {
         this.state.isPrivate = document.getElementsByClassName('is-private-ck-box')[0].checked;
     }
 
-    validateForm() {
+    async validateForm() {
         let valid = true;
         let errorMsg = '';
 
@@ -169,7 +169,7 @@ class CreatePuzzleForm extends React.Component {
         });
 
         if(valid === true) {
-            this.submitPuzzle();
+            await this.submitPuzzle();
             document.getElementsByClassName('error-content')[0].innerHTML = '';
             document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: none;');
         } else {
@@ -184,7 +184,7 @@ class CreatePuzzleForm extends React.Component {
 
         const request = {
             method: 'POST',
-            mode: 'no-cors',
+            mode: 'cors',
             headers: headers,
             credentials: "include",
             body: JSON.stringify(this.state)
@@ -202,7 +202,7 @@ class CreatePuzzleForm extends React.Component {
             console.log(e.message);
         }
 
-        // Router.push(`/`);
+        Router.push(`/`);
     }
 
     closeError(e) {
@@ -238,8 +238,6 @@ class CreatePuzzleForm extends React.Component {
 
                 <div className="form-tags-group" >
                     <select className="tags-multiple-select" name="states[]" multiple="multiple">
-                        <option value="AL">Alabama</option>
-                        <option value="WY">Wyoming</option>
                         <option value="AL">Alabama</option>
                         <option value="WY">Wyoming</option>
                     </select>

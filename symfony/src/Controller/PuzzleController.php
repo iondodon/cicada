@@ -3,10 +3,12 @@
 namespace App\Controller;
 
 use App\Entity\Puzzle;
+use App\Entity\Stage;
 use App\Entity\Tag;
 use App\Repository\PuzzleRepository;
 use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
+use Exception;
 use FOS\RestBundle\Controller\Annotations\Route;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
 use Symfony\Component\HttpFoundation\JsonResponse;
