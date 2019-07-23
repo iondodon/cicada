@@ -15,12 +15,16 @@ class TopMenu extends React.Component {
     render(){
         return (
             <div className="alert alert-success">
-                <div className="menu top-menu">
+
+                <div className="menu left-menu">
                     <Link href={"/"}>
                         <a className="menu-item">Home</a>
                     </Link>{' '}
+                </div>
 
-                    |
+                <img src={'../static/cicada.png'} className={"logo"}  alt="true" />
+
+                <div className="menu right-menu">
                     <Link href={"/login"}>
                         <a className="menu-item">Login</a>
                     </Link>{' '}
@@ -35,18 +39,26 @@ class TopMenu extends React.Component {
                     <a className="menu-item">About</a>
                 </div>
 
-                <img src={'../static/cicada.png'} className={"logo"}  alt="true" />
-
                 { /*language=SCSS*/ }
                 <style jsx>{`
-                      .top-menu {
+                      .right-menu {
                         display: flex;
                         flex-direction: row;
+                        justify-content: flex-end;
+                        width: 30%;
+                      }
+                      
+                      .left-menu {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: flex-start;
+                        width: 30%;
                       }
                       
                       .alert {
                         display: flex;
                         flex-direction: row;
+                        justify-content: space-evenly;
                         margin-top: 1rem;
                         overflow: hidden;
                       }
