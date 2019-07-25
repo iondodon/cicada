@@ -1,14 +1,14 @@
 import React from 'react';
-import Layout from "../components/Layout";
-import Dashboard from "../components/Dashboard";
+import Layout from "../../components/Layout";
+import Dashboard from "../../components/Dashboard";
 
-import '../i18n';
+import '../../i18n';
 import { withNamespaces } from 'react-i18next';
 import Head from "next/head";
-import LeftPanel from "../components/LeftPanel";
-import CreatePuzzleForm from "../components/CreatePuzzleForm";
+import LeftPanel from "../../components/LeftPanel";
+import CreatePuzzleForm from "../../components/CreatePuzzleForm";
 
-class CreatePuzzle extends React.Component {
+class Create extends React.Component {
 
     constructor(props, {t}){
         super(props, {t});
@@ -16,15 +16,15 @@ class CreatePuzzle extends React.Component {
     }
 
     render(){
-
         return (
             <Layout>
                 <Head>
                     <title>Cicada</title>
                     <scr name="viewport" content="initial-scale=1.0, width=device-width" />
-                    <link href="../static/select2-4.0.7/dist/css/select2.css" rel="stylesheet" />
-                    <script src="../static/select2-4.0.7/dist/js/select2.min.js"/>
+                    <link href="../../static/select2-4.0.7/dist/css/select2.css" rel="stylesheet" />
+                    <script src="../../static/select2-4.0.7/dist/js/select2.min.js"/>
                 </Head>
+
                 <Dashboard>
                     <LeftPanel>
                         <div className="card">
@@ -55,10 +55,14 @@ class CreatePuzzle extends React.Component {
                       flex-direction: column;
                       min-width: 75%;
                     }
+                    
+                    .card-content {
+                        padding: 2rem;
+                    }
                 `}</style>
             </Layout>
         );
     }
 }
 
-export default withNamespaces()(CreatePuzzle);
+export default withNamespaces()(Create);
