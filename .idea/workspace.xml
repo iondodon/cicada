@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/CreatePuzzleForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/PuzzleForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/pages/puzzle/create.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/pages/puzzle/create.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/pages/puzzle/update.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/pages/puzzle/update.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Controller/PuzzleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Controller/PuzzleController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/symfony/src/Entity/Puzzle.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Entity/Puzzle.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony/src/Entity/Stage.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Entity/Stage.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/symfony/src/Repository/PuzzleRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Repository/PuzzleRepository.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cicada-reactjs/node_modules/" />
@@ -58,8 +54,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/reactjs/components/PuzzleForm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="266" column="61" selection-start-line="266" selection-start-column="57" selection-end-line="266" selection-end-column="61" />
+            <state relative-caret-position="555">
+              <caret line="277" lean-forward="true" selection-start-line="277" selection-end-line="277" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -68,40 +64,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/symfony/src/Entity/Stage.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="439">
-              <caret line="142" column="16" selection-start-line="142" selection-start-column="16" selection-end-line="142" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/symfony/src/Entity/Puzzle.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="346">
-              <caret line="128" lean-forward="true" selection-start-line="128" selection-end-line="128" />
-              <folding>
-                <element signature="e#30#43#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/symfony/src/Controller/PuzzleController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="60" selection-start-line="60" selection-end-line="60" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/symfony/src/Repository/PuzzleRepository.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="25" selection-start-line="25" selection-end-line="25" />
+            <state relative-caret-position="465">
+              <caret line="97" lean-forward="true" selection-start-line="97" selection-end-line="97" />
               <folding>
                 <element signature="e#34#56#0#PHP" expanded="true" />
               </folding>
@@ -194,7 +160,6 @@
         <option value="$PROJECT_DIR$/reactjs/components/LogInForm.js" />
         <option value="$PROJECT_DIR$/reactjs/configs/keys.js" />
         <option value="$PROJECT_DIR$/reactjs/components/Stage.js" />
-        <option value="$PROJECT_DIR$/symfony/src/Controller/PuzzleController.php" />
         <option value="$PROJECT_DIR$/reactjs/components/CreatePuzzleForm.js" />
         <option value="$PROJECT_DIR$/reactjs/components/Container.js" />
         <option value="$PROJECT_DIR$/reactjs/pages/createPuzzle.js" />
@@ -208,9 +173,10 @@
         <option value="$PROJECT_DIR$/reactjs/pages/puzzle/update.js" />
         <option value="$PROJECT_DIR$/reactjs/pages/puzzle/create.js" />
         <option value="$PROJECT_DIR$/reactjs/components/PuzzleForm.js" />
-        <option value="$PROJECT_DIR$/symfony/src/Repository/PuzzleRepository.php" />
-        <option value="$PROJECT_DIR$/symfony/src/Entity/Puzzle.php" />
         <option value="$PROJECT_DIR$/symfony/src/Entity/Stage.php" />
+        <option value="$PROJECT_DIR$/symfony/src/Entity/Puzzle.php" />
+        <option value="$PROJECT_DIR$/symfony/src/Controller/PuzzleController.php" />
+        <option value="$PROJECT_DIR$/symfony/src/Repository/PuzzleRepository.php" />
       </list>
     </option>
   </component>
@@ -422,13 +388,6 @@
               <item name="cicada" type="462c0819:PsiDirectoryNode" />
               <item name="symfony" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cicada" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cicada" type="462c0819:PsiDirectoryNode" />
-              <item name="symfony" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Repository" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -618,12 +577,12 @@
       <workItem from="1563966987012" duration="25000" />
       <workItem from="1564000851836" duration="38000" />
       <workItem from="1564000921764" duration="37000" />
-      <workItem from="1564048032022" duration="15748000" />
+      <workItem from="1564048032022" duration="16888000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="564296000" />
+    <option name="totallyTimeSpent" value="565436000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -658,7 +617,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.2128788" />
+      <window_info anchor="right" id="Database" order="3" weight="0.2128788" />
       <window_info anchor="right" id="PHP Inspections" order="4" weight="0.32903716" />
     </layout>
   </component>
@@ -1010,7 +969,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://89715e81-bc9c-4fca-9f4c-1a8fd517663e/schema/cicada_db/table/puzzles">
+    <entry file="das://89715e81-bc9c-4fca-9f4c-1a8fd517663e/schema/cicada_db/table/users">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="863770aa-4fd7-4603-b056-cc7102095d3a">
+          <filtering>
+            <filter text="" />
+          </filtering>
+          <column-attributes>
+            <column name="roles" languageId="JSON" position="6" />
+          </column-attributes>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://89715e81-bc9c-4fca-9f4c-1a8fd517663e/schema/cicada_db/table/stages">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state projectRestartId="863770aa-4fd7-4603-b056-cc7102095d3a">
           <filtering>
@@ -1028,22 +999,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://89715e81-bc9c-4fca-9f4c-1a8fd517663e/schema/cicada_db/table/users">
+    <entry file="das://89715e81-bc9c-4fca-9f4c-1a8fd517663e/schema/cicada_db/table/puzzles">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state projectRestartId="863770aa-4fd7-4603-b056-cc7102095d3a">
           <filtering>
             <filter text="" />
           </filtering>
-          <column-attributes>
-            <column name="roles" languageId="JSON" position="6" />
-          </column-attributes>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/src/Entity/Stage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="142" column="41" selection-start-line="142" selection-start-column="29" selection-end-line="142" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/src/Entity/Puzzle.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="363" column="5" lean-forward="true" selection-start-line="363" selection-start-column="5" selection-end-line="363" selection-end-column="5" />
+          <folding>
+            <element signature="e#30#43#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactjs/components/PuzzleForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="277" lean-forward="true" selection-start-line="277" selection-end-line="277" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/symfony/src/Repository/PuzzleRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        <state relative-caret-position="1110">
+          <caret line="74" column="5" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
           <folding>
             <element signature="e#34#56#0#PHP" expanded="true" />
           </folding>
@@ -1052,44 +1047,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/symfony/src/Controller/PuzzleController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="60" selection-start-line="60" selection-end-line="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://89715e81-bc9c-4fca-9f4c-1a8fd517663e/schema/cicada_db/table/stages">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="863770aa-4fd7-4603-b056-cc7102095d3a">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reactjs/components/PuzzleForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="266" column="61" selection-start-line="266" selection-start-column="57" selection-end-line="266" selection-end-column="61" />
+        <state relative-caret-position="465">
+          <caret line="97" lean-forward="true" selection-start-line="97" selection-end-line="97" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#34#56#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/symfony/src/Entity/Puzzle.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="128" lean-forward="true" selection-start-line="128" selection-end-line="128" />
-          <folding>
-            <element signature="e#30#43#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/symfony/src/Entity/Stage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="142" column="16" selection-start-line="142" selection-start-column="16" selection-end-line="142" selection-end-column="16" />
         </state>
       </provider>
     </entry>

@@ -19,6 +19,11 @@ class PuzzleRepository extends ServiceEntityRepository
         parent::__construct($registry, Puzzle::class);
     }
 
+    /**
+     * @param $data
+     * @param User $user
+     * @return bool
+     */
     public function createPuzzleAndSave($data, User $user): bool
     {
         $em = $this->getEntityManager();
