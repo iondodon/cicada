@@ -17,21 +17,17 @@ class PuzzleForm extends React.Component {
         super(props, {t});
         this.t = t;
 
-        if(props.isFor === "update") {
-            this.fetchSetState();
-        } else if(props.isFor === "create") {
-            this.state = {
-                name: '',
-                description: 'Puzzle description...',
-                difficultyByCreator: 1,
-                isPrivate: false,
-                stagesCount: 1,
-                stages: [
-                    {stageNumber: 0, description: 'Description of stage 0...'}
-                ],
-                tags: []
-            };
-        }
+        this.state = {
+            name: '',
+            description: 'Puzzle description...',
+            difficultyByCreator: 1,
+            isPrivate: false,
+            stagesCount: 1,
+            stages: [
+                {stageNumber: 0, description: 'Description of stage 0...'}
+            ],
+            tags: []
+        };
 
         this.difficultyByCreator = 1;
         this.CreatePuzzleForm = React.createRef();
@@ -47,11 +43,9 @@ class PuzzleForm extends React.Component {
         this.setCode = this.setCode.bind(this);
         this.validateForm = this.validateForm.bind(this);
         this.closeError = this.closeError.bind(this);
+        this.fetchSetState = this.fetchSetState.bind(this);
     }
 
-    fetchSetState() {
-
-    }
 
     componentDidMount() {
         // language=JQuery-CSS
@@ -65,6 +59,42 @@ class PuzzleForm extends React.Component {
         $('.tags-multiple-select').on('change', () => {
             this.setState({ tags: $(".tags-multiple-select").val() });
         });
+
+        if(this.props.isFor === "update") {
+            this.fetchSetState();
+        }
+    }
+
+    async fetchSetState() {
+        const urlParams = new URLSearchParams(window.location.search);
+        this.puzzleId = urlParams.get('puzzleId');
+
+        const request = {
+            method: 'GET',
+            mode: 'cors',
+            credentials: "include"
+        };
+
+        try {
+            let response = await fetch(config.API_URL + '/api/puzzles/' + this.puzzleId, request);
+
+            if (response.status === 401) {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Unauthorized.';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            } else if (response.status === 204) {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Such puzzle doesn\'t exist.';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            } else if (response.status === 200) {
+                this.setState( await response.json() );
+                console.log(this.state);
+            } else {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Unknown error. Check the fields and try again.';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            }
+        } catch (e) {
+            document.getElementsByClassName('error-content')[0].innerHTML += e.message;
+            document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+        }
     }
 
     difficultyUp(e) {

@@ -111,8 +111,8 @@ class PuzzleController extends AbstractFOSRestController
         $puzzle = $em->getRepository(Puzzle::class)->findOneBy(['id' => $id]);
 
         if($puzzle) {
-
             $puzzle->setName($editedPuzzle['name']);
+            $puzzle->setDescription($editedPuzzle['description']);
             $puzzle->setStagesCount($editedPuzzle['stagesCount']);
             $puzzle->setIsPrivate($editedPuzzle['isPrivate']);
             $tags = new ArrayCollection();

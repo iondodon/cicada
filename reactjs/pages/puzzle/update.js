@@ -15,11 +15,6 @@ class Update extends React.Component {
         this.t = t;
     }
 
-    componentDidMount() {
-        const urlParams = new URLSearchParams(window.location.search);
-        this.puzzleId = urlParams.get('puzzleId');
-    }
-
     render(){
         return (
             <Layout>
