@@ -6,7 +6,7 @@ import '../../i18n';
 import {withNamespaces} from 'react-i18next';
 import Head from "next/head";
 import LeftPanel from "../../components/LeftPanel";
-import CreatePuzzleForm from "../../components/CreatePuzzleForm";
+import PuzzleForm from "../../components/PuzzleForm";
 
 class Update extends React.Component {
 
@@ -47,7 +47,7 @@ class Update extends React.Component {
                         <header className="card-header">Create puzzle</header>
                         <div className="card-content">
                             <div className="inner">
-                                <CreatePuzzleForm/>
+                                <PuzzleForm isFor={"update"} />
                             </div>
                         </div>
                     </div>

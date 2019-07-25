@@ -121,6 +121,13 @@ class Puzzle
     private $openSessions;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(type="text", nullable=false)
+     */
+    private $description;
+
+    /**
      * @return integer
      */
     public function getId(): int
@@ -371,6 +378,25 @@ class Puzzle
     public function setUpdatedAt(DateTime $updatedAt): Puzzle
     {
         $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDescription(): string
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param string $description
+     * @return Puzzle
+     */
+    public function setDescription(string $description): Puzzle
+    {
+        $this->description = $description;
 
         return $this;
     }

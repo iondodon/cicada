@@ -52,7 +52,7 @@ class Stage
      *
      * @ORM\Column(type="text", nullable=false)
      */
-    private $content;
+    private $description;
 
     /**
      * @var string
@@ -129,18 +129,18 @@ class Stage
     /**
      * @return string
      */
-    public function getContent(): string
+    public function getDescription(): string
     {
-        return $this->content;
+        return $this->description;
     }
 
     /**
-     * @param string $content
+     * @param string $description
      * @return Stage
      */
-    public function setContent(string $content): Stage
+    public function setDescription(string $description): Stage
     {
-        $this->content = $content;
+        $this->description = $description;
 
         return $this;
     }

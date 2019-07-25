@@ -11,23 +11,27 @@ const CKEditor = dynamic(() => import('../components/CKEditor'), {
     ssr: false
 });
 
-class CreatePuzzleForm extends React.Component {
+class PuzzleForm extends React.Component {
 
     constructor(props, {t}){
         super(props, {t});
         this.t = t;
 
-        this.state = {
-            name: '',
-            description: 'Puzzle description...',
-            difficultyByCreator: 1,
-            isPrivate: false,
-            stagesCount: 1,
-            stages: [
-                {stageNumber: 0, description: 'Description of stage 0...'}
-            ],
-           tags: []
-        };
+        if(props.isFor === "update") {
+            this.fetchSetState();
+        } else if(props.isFor === "create") {
+            this.state = {
+                name: '',
+                description: 'Puzzle description...',
+                difficultyByCreator: 1,
+                isPrivate: false,
+                stagesCount: 1,
+                stages: [
+                    {stageNumber: 0, description: 'Description of stage 0...'}
+                ],
+                tags: []
+            };
+        }
 
         this.difficultyByCreator = 1;
         this.CreatePuzzleForm = React.createRef();
@@ -43,6 +47,10 @@ class CreatePuzzleForm extends React.Component {
         this.setCode = this.setCode.bind(this);
         this.validateForm = this.validateForm.bind(this);
         this.closeError = this.closeError.bind(this);
+    }
+
+    fetchSetState() {
+
     }
 
     componentDidMount() {
@@ -407,4 +415,4 @@ class CreatePuzzleForm extends React.Component {
     }
 }
 
-export default withNamespaces()(CreatePuzzleForm);
+export default withNamespaces()(PuzzleForm);
