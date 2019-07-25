@@ -173,27 +173,27 @@ class SignUpForm extends React.Component {
                     <div className="btn-group">
                         <button className="btn btn-primary" onClick={this.validateFields}>SignUp</button>
                     </div>
-                    <div className="alert alert-warning fill-all" style={{display: 'none', 'margin-top': '3px'}}>
+                    <div className="alert alert-warning fill-all" style={{display: 'none', 'marginTop': '3px'}}>
                         Fill all fields.
                         {'\u00A0'} <a onClick={this.closeWarning}>x</a>
                     </div>
-                    <div className="alert alert-warning invalid-email-format" style={{display: 'none', 'margin-top': '3px'}}>
+                    <div className="alert alert-warning invalid-email-format" style={{display: 'none', 'marginTop': '3px'}}>
                         Invalid email format.
                         {'\u00A0'} <a onClick={this.closeWarning}>x</a>
                     </div>
-                    <div className="alert alert-warning short-username" style={{display: 'none', 'margin-top': '3px'}}>
+                    <div className="alert alert-warning short-username" style={{display: 'none', 'marginTop': '3px'}}>
                         Short username
                         {'\u00A0'} <a onClick={this.closeWarning}>x</a>
                     </div>
-                    <div className="alert alert-warning short-password" style={{display: 'none', 'margin-top': '3px'}}>
+                    <div className="alert alert-warning short-password" style={{display: 'none', 'marginTop': '3px'}}>
                         Too short password
                         {'\u00A0'} <a onClick={this.closeWarning}>x</a>
                     </div>
-                    <div className="alert alert-warning passwords-dont-match" style={{display: 'none', 'margin-top': '3px'}}>
+                    <div className="alert alert-warning passwords-dont-match" style={{display: 'none', 'marginTop': '3px'}}>
                         Passwords don't match
                         {'\u00A0'} <a onClick={this.closeWarning}>x</a>
                     </div>
-                    <div className="alert alert-warning terms-of-use-agree" style={{display: 'none', 'margin-top': '3px'}}>
+                    <div className="alert alert-warning terms-of-use-agree" style={{display: 'none', 'marginTop': '3px'}}>
                         Read - terms of use.
                         {'\u00A0'} <a onClick={this.closeWarning}>x</a>
                     </div>

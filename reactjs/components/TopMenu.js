@@ -20,7 +20,12 @@ class TopMenu extends React.Component {
                     <Link href={"/"}>
                         <a className="menu-item">Home</a>
                     </Link>{' '}
+                    |
+                    <Link href={"/"}>
+                        <a className="menu-item">About</a>
+                    </Link>{' '}
                 </div>
+
 
                 <img src={'../static/cicada.png'} className={"logo"}  alt="true" />
 
@@ -34,9 +39,6 @@ class TopMenu extends React.Component {
                     <Link href={"/signup"}>
                         <a className="menu-item">SignUp</a>
                     </Link>{' '}
-
-                    |
-                    <a className="menu-item">About</a>
                 </div>
 
                 { /*language=SCSS*/ }
@@ -58,11 +60,10 @@ class TopMenu extends React.Component {
                       .alert {
                         display: flex;
                         flex-direction: row;
-                        justify-content: space-evenly;
-                        margin-top: 1rem;
+                        justify-content: space-between;
+                        margin-top: -1px;
                         margin-left: 1rem;
                         margin-right: 1rem;
-                        overflow: hidden;
                       }
                       
                       .logo {
