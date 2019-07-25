@@ -27,8 +27,10 @@ class Layout extends React.Component {
                     <script src="../static/jquery/dist/jquery.min.js"/>
                     <script src={"../static/select2-4.0.7/dist/js/select2.min.js"}/>
                 </Head>
+
+                <TopMenu/>
+
                 <Container>
-                    <TopMenu/>
                     {this.props.children}
                     <Footer/>
                 </Container>

@@ -60,11 +60,13 @@ class TopMenu extends React.Component {
                         flex-direction: row;
                         justify-content: space-evenly;
                         margin-top: 1rem;
+                        margin-left: 1rem;
+                        margin-right: 1rem;
                         overflow: hidden;
                       }
                       
                       .logo {
-                        height: 10rem;
+                        height: 2rem;
                       }
                     `}
                 </style>

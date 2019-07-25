@@ -16,7 +16,6 @@ class CreatePuzzle extends React.Component {
     }
 
     render(){
-
         return (
             <Layout>
                 <Head>
@@ -25,6 +24,7 @@ class CreatePuzzle extends React.Component {
                     <link href="../static/select2-4.0.7/dist/css/select2.css" rel="stylesheet" />
                     <script src="../static/select2-4.0.7/dist/js/select2.min.js"/>
                 </Head>
+
                 <Dashboard>
                     <LeftPanel>
                         <div className="card">
@@ -54,6 +54,10 @@ class CreatePuzzle extends React.Component {
                       display: flex;
                       flex-direction: column;
                       min-width: 75%;
+                    }
+                    
+                    .card-content {
+                        padding: 2rem;
                     }
                 `}</style>
             </Layout>
