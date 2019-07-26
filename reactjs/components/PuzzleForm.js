@@ -26,7 +26,7 @@ class PuzzleForm extends React.Component {
             stages: [
                 {level: 0, description: 'Description of stage 0...', code: ""}
             ],
-            tags: []
+            tags: ['AL']
         };
 
         this.difficultyByCreator = 1;
@@ -271,7 +271,7 @@ class PuzzleForm extends React.Component {
                     <div className={"btn btn-success btn-ghost minus"}>Difficulty</div>
                     <div className="number-input">
                         <div onClick={this.difficultyDown} className="btn btn-success btn-ghost minus">-</div>
-                        <div className="quantity btn btn-success btn-ghost" onChange={this.updateDifficulty}> 1 </div>
+                        <div className="quantity btn btn-success btn-ghost"> 1 </div>
                         <div onClick={this.difficultyUp} className="btn btn-success btn-ghost minus plus">+</div>
                     </div>
                 </label>
