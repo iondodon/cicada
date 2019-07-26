@@ -48,6 +48,13 @@ class Stage
     private $createdAt;
 
     /**
+     * @var DateTime
+     *
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $updatedAt;
+
+    /**
      * @var string
      *
      * @ORM\Column(type="text", nullable=false)
@@ -122,6 +129,25 @@ class Stage
     public function setCreatedAt(DateTime $createdAt): Stage
     {
         $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    /**
+     * @return DateTime
+     */
+    public function getUpdatedAt(): DateTime
+    {
+        return $this->updatedAt;
+    }
+
+    /**
+     * @param DateTime $updatedAt
+     * @return Stage
+     */
+    public function setUpdatedAt(DateTime $updatedAt): Stage
+    {
+        $this->updatedAt = $updatedAt;
 
         return $this;
     }

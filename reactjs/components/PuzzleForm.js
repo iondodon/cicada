@@ -24,7 +24,7 @@ class PuzzleForm extends React.Component {
             isPrivate: false,
             stagesCount: 1,
             stages: [
-                {stageNumber: 0, description: 'Description of stage 0...'}
+                {level: 0, description: 'Description of stage 0...', code: ""}
             ],
             tags: []
         };
@@ -121,7 +121,7 @@ class PuzzleForm extends React.Component {
 
         this.setState({
             stages: [...this.state.stages, {
-                stageNumber: this.state.stagesCount,
+                level: this.state.stagesCount,
                 description: 'Description of stage ' + this.state.stagesCount + '...'
             }]
         });
@@ -143,7 +143,7 @@ class PuzzleForm extends React.Component {
 
         if(r === true){
             let array = [...this.state.stages];
-            let index = this.findInAttr(array, 'stageNumber', child.props.stageNumber);
+            let index = this.findInAttr(array, 'level', child.props.level);
             if (index !== -1) {
                 array.splice(index, 1);
                 this.setState({stages: array});
@@ -155,13 +155,13 @@ class PuzzleForm extends React.Component {
 
     updateDescription(child, data) {
         let array = [...this.state.stages];
-        array[child.props.stageNumber].description = data;
+        array[child.props.level].description = data;
         this.setState({ stages: array });
     }
 
     setCode(child, code) {
         let array = [...this.state.stages];
-        array[child.props.stageNumber].code = code;
+        array[child.props.level].code = code;
         this.setState({ stages: array });
     }
 
@@ -263,7 +263,6 @@ class PuzzleForm extends React.Component {
                     />
                 </fieldset>
 
-
                 <label htmlFor="private" className={"is-private btn btn-success btn-ghost minus"}>Private
                     <input type="checkbox" className={"is-private-ck-box"} onChange={this.setIsPrivate} />
                 </label>
@@ -318,9 +317,9 @@ class PuzzleForm extends React.Component {
 
                                 return(
                                     <Stage
-                                        key={stage.stageNumber}
-                                        startContent={"Description of stage " + stage.stageNumber + "..."}
-                                        stageNumber={stage.stageNumber}
+                                        key={stage.level}
+                                        startDescription={"Description of stage " + stage.level + "..."}
+                                        level={stage.level}
                                         removeStage={this.removeStage}
                                         updateDescription={this.updateDescription}
                                         setCode={this.setCode}
