@@ -26,7 +26,7 @@ class PuzzleForm extends React.Component {
             stages: [
                 {level: 0, description: 'Description of stage 0...', code: ""}
             ],
-            tags: ['AL']
+            tags: [] // TODO: set each tag as object (edit puzzle)
         };
 
         this.difficultyByCreator = 1;
@@ -47,21 +47,19 @@ class PuzzleForm extends React.Component {
     }
 
 
-    componentDidMount() {
+    async componentDidMount() {
         // language=JQuery-CSS
         $('.tags-multiple-select').select2({
             placeholder: 'Select tags',
             width: '100%'
         });
 
-        document.getElementsByClassName('is-private')[0].checked = this.state.isPrivate;
-
         $('.tags-multiple-select').on('change', () => {
             this.setState({ tags: $(".tags-multiple-select").val() });
         });
 
         if(this.props.isFor === "update") {
-            this.fetchSetState();
+            await this.fetchSetState();
         }
     }
 
@@ -85,8 +83,12 @@ class PuzzleForm extends React.Component {
                 document.getElementsByClassName('error-content')[0].innerHTML = 'Such puzzle doesn\'t exist.';
                 document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
             } else if (response.status === 200) {
-                this.setState( await response.json() );
-                console.log(this.state);
+                let responseJson = await response.json();
+
+                this.setState( {name: responseJson['name'] });
+
+                document.getElementsByClassName('is-private-ck-box')[0].checked = responseJson['private'] === true;
+                this.setState( {isPrivate: responseJson['private'] });
             } else {
                 document.getElementsByClassName('error-content')[0].innerHTML = 'Unknown error. Check the fields and try again.';
                 document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
@@ -166,7 +168,8 @@ class PuzzleForm extends React.Component {
     }
 
     setIsPrivate(){
-        this.state.isPrivate = document.getElementsByClassName('is-private-ck-box')[0].checked;
+        this.setState({ isPrivate: document.getElementsByClassName('is-private-ck-box')[0].checked });
+        console.log(this.state.isPrivate);
     }
 
     async validateForm() {
@@ -259,12 +262,18 @@ class PuzzleForm extends React.Component {
                     <input
                         type="text" placeholder="puzzle name..."
                         className="form-control"
+                        value={this.state.name}
                         onChange={(e) => this.setState({ name: e.target.value }) }
                     />
                 </fieldset>
 
                 <label htmlFor="private" className={"is-private btn btn-success btn-ghost minus"}>Private
-                    <input type="checkbox" className={"is-private-ck-box"} onChange={this.setIsPrivate} />
+                    <input
+                        type="checkbox"
+                        className={"is-private-ck-box"}
+                        checked={this.state.isPrivate}
+                        onChange={this.setIsPrivate}
+                    />
                 </label>
 
                 <label htmlFor="difficulty" className={"difficulty"}>
