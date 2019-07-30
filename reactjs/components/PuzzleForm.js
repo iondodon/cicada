@@ -46,7 +46,6 @@ class PuzzleForm extends React.Component {
         this.fetchSetState = this.fetchSetState.bind(this);
     }
 
-
     async componentDidMount() {
         // language=JQuery-CSS
         $('.tags-multiple-select').select2({
@@ -95,8 +94,6 @@ class PuzzleForm extends React.Component {
             document.getElementsByClassName('error-content')[0].innerHTML += e.message;
             document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
         }
-
-        console.log(this.state);
     }
 
     difficultyUp(e) {
@@ -167,11 +164,8 @@ class PuzzleForm extends React.Component {
         this.setState({ stages: array });
     }
 
-    setIsPrivate(){
-        this.setState(prevState => ({
-            isPrivate: !prevState.isPrivate
-        }));
-        console.log(this.state.isPrivate);
+    setIsPrivate(e){
+        this.setState({ isPrivate: e.target.checked });
     }
 
     async validateForm() {
@@ -256,6 +250,11 @@ class PuzzleForm extends React.Component {
         e.target.parentElement.setAttribute('style', 'display: none;');
     }
 
+    componentDidUpdate(prevProps, prevState) {
+        // console.log(prevState);
+        // console.log(this.state);
+    }
+
     render(){
         return (
             <form className="form" id={"create-puzzle-form"}>
@@ -273,7 +272,7 @@ class PuzzleForm extends React.Component {
                     <input
                         type="checkbox"
                         className={"is-private-ck-box"}
-                        // checked={this.state.isPrivate}
+                        checked={this.state.isPrivate}
                         onChange = {this.setIsPrivate}
                     />
                 </label>
