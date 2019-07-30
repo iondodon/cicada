@@ -134,7 +134,7 @@ class PuzzleController extends AbstractFOSRestController
                     $newStage->setCode($editedStage['code']);
                     $newStage->setDescription($editedStage['description']);
                     $newStage->setLevel($editedStage['level']);
-                    $newStage->setPuzzleParent($puzzle['id']);
+                    $newStage->setPuzzleParent($puzzle);
 
                     $em->persist($newStage);
                     $stages->add($newStage);
