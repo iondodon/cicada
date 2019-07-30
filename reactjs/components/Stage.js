@@ -73,6 +73,7 @@ class Stage extends React.Component {
                     <input
                         type="text"
                         placeholder="code"
+                        value={this.props.code}
                         className={"stage-code pull-left"}
                         onChange={e => this.setCode(e.target.value)}
                     />

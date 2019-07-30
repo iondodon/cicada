@@ -26,7 +26,7 @@ class PuzzleForm extends React.Component {
             stages: [
                 {level: 0, description: 'Description of stage 0...', code: ""}
             ],
-            tags: [] // TODO: set each tag as object (edit puzzle)
+            tags: []
         };
 
         this.CreatePuzzleForm = React.createRef();
@@ -43,6 +43,7 @@ class PuzzleForm extends React.Component {
         this.validateForm = this.validateForm.bind(this);
         this.closeError = this.closeError.bind(this);
         this.fetchSetState = this.fetchSetState.bind(this);
+        this.populateForm = this.populateForm.bind(this);
     }
 
     async componentDidMount() {
@@ -59,6 +60,28 @@ class PuzzleForm extends React.Component {
         if(this.props.isFor === "update") {
             await this.fetchSetState();
         }
+    }
+
+    populateForm(responseJson) {
+        this.setState( {name: responseJson['name'] });
+        this.setState( {isPrivate: responseJson['private'] });
+        this.setState({difficultyByCreator: responseJson['difficultyByCreator']});
+
+        let tags = [];
+        responseJson['tags'].forEach((value) => {
+            tags.push(value.tag);
+        });
+        $('.tags-multiple-select').val(tags);
+        $('.tags-multiple-select').trigger('change');
+        this.setState({tags: tags});
+
+        this.setState({description: responseJson['description']});
+
+        let stages = [];
+        responseJson['stages'].forEach((value) => {
+            stages.push(value);
+        });
+        this.setState({stages: stages});
     }
 
     async fetchSetState() {
@@ -82,10 +105,7 @@ class PuzzleForm extends React.Component {
                 document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
             } else if (response.status === 200) {
                 let responseJson = await response.json();
-
-                this.setState( {name: responseJson['name'] });
-                this.setState( {isPrivate: responseJson['private'] });
-                this.setState({difficultyByCreator: responseJson['difficultyByCreator']});
+                this.populateForm(responseJson);
             } else {
                 document.getElementsByClassName('error-content')[0].innerHTML = 'Unknown error. Check the fields and try again.';
                 document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
@@ -324,11 +344,12 @@ class PuzzleForm extends React.Component {
                                 return(
                                     <Stage
                                         key={stage.level}
-                                        startDescription={"Description of stage " + stage.level + "..."}
+                                        startDescription={stage.description}
                                         level={stage.level}
                                         removeStage={this.removeStage}
                                         updateDescription={this.updateDescription}
                                         setCode={this.setCode}
+                                        code={stage.code}
                                         isLast={isLast}
                                     />
                                 );
