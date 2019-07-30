@@ -44,6 +44,7 @@ class PuzzleForm extends React.Component {
         this.closeError = this.closeError.bind(this);
         this.fetchSetState = this.fetchSetState.bind(this);
         this.populateForm = this.populateForm.bind(this);
+        this.fetchUpdatePuzzle = this.fetchUpdatePuzzle.bind(this);
     }
 
     async componentDidMount() {
@@ -222,9 +223,46 @@ class PuzzleForm extends React.Component {
         });
 
         if(valid === true) {
-            await this.submitPuzzle();
+            if(this.props.isFor === "create") {
+                await this.submitPuzzle();
+            } else if(this.props.isFor === "update") {
+                await this.fetchUpdatePuzzle();
+            }
         } else {
             document.getElementsByClassName('error-content')[0].innerHTML = errorMsg;
+            document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+        }
+    }
+
+    async fetchUpdatePuzzle() {
+        let headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+
+        const request = {
+            method: 'PUT',
+            mode: 'cors',
+            headers: headers,
+            credentials: "include",
+            body: JSON.stringify(this.state)
+        };
+
+        try {
+            let response = await fetch(config.API_URL + '/api/puzzles/' + this.puzzleId, request);
+
+            if (response.status === 401) {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Unauthorized.';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            } else if (response.status === 500) {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Server error. Check the fields and try again. ';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            } else if (response.status === 200) {
+                Router.push(`/`);
+            } else {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Unknown error. Check the fields and try again.';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            }
+        } catch (e) {
+            document.getElementsByClassName('error-content')[0].innerHTML += e.message;
             document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
         }
     }
@@ -268,7 +306,7 @@ class PuzzleForm extends React.Component {
 
     componentDidUpdate(prevProps, prevState) {
         // console.log(prevState);
-        console.log(this.state);
+        // console.log(this.state);
     }
 
     render(){

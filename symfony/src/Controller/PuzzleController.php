@@ -144,10 +144,10 @@ class PuzzleController extends AbstractFOSRestController
 
             $tags = new ArrayCollection();
             foreach ($editedPuzzle['tags'] as $tg) {
-                $tag = $em->getRepository(Tag::class)->findOneBy(['tag' => $tg['tag']]);
+                $tag = $em->getRepository(Tag::class)->findOneBy(['tag' => $tg]);
                 if (!$tag) {
                     $tag = new Tag();
-                    $tag->setTag($tg['tag']);
+                    $tag->setTag($tg);
                     $em->persist($tag);
                 }
                 $tags->add($tag);
