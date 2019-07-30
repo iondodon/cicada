@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Puzzle;
+use App\Entity\Stage;
 use App\Entity\Tag;
 use App\Repository\PuzzleRepository;
 use DateTime;
@@ -69,9 +70,10 @@ class PuzzleController extends AbstractFOSRestController
     /**
      * @Route("/api/puzzles/{id}", name="puzzles.show", methods={"GET"})
      * @param $id
+     * @param PuzzleRepository $puzzleRepository
      * @return JsonResponse
      */
-    public function show($id): JsonResponse
+    public function show($id, PuzzleRepository $puzzleRepository): JsonResponse
     {
         $em = $this->getDoctrine()->getManager();
         $puzzle = $em->getRepository(Puzzle::class)->findOneBy(['id' => $id]);
@@ -110,10 +112,36 @@ class PuzzleController extends AbstractFOSRestController
         $puzzle = $em->getRepository(Puzzle::class)->findOneBy(['id' => $id]);
 
         if($puzzle) {
-
             $puzzle->setName($editedPuzzle['name']);
+            $puzzle->setDescription($editedPuzzle['description']);
             $puzzle->setStagesCount($editedPuzzle['stagesCount']);
             $puzzle->setIsPrivate($editedPuzzle['isPrivate']);
+
+            $stages = new ArrayCollection();
+            foreach ($editedPuzzle['stages'] as $editedStage) {
+                $stageLevel = $editedStage['level'];
+                $stage = $em->getRepository(Stage::class)->findOneBy(['level' => $stageLevel]);
+                if($stage){
+                    $stage->setDescription($editedStage['description']);
+                    $stage->setCode($editedStage['code']);
+                    $stage->setUpdatedAt(new DateTime());
+
+                    $em->persist($stage);
+                    $stages->add($stage);
+                } else {
+                    $newStage = new Stage();
+                    $newStage->setCreatedAt(new DateTime());
+                    $newStage->setCode($editedStage['code']);
+                    $newStage->setDescription($editedStage['description']);
+                    $newStage->setLevel($editedStage['level']);
+                    $newStage->setPuzzleParent($puzzle);
+
+                    $em->persist($newStage);
+                    $stages->add($newStage);
+                }
+            }
+            $puzzle->setStages($stages);
+
             $tags = new ArrayCollection();
             foreach ($editedPuzzle['tags'] as $tg) {
                 $tag = $em->getRepository(Tag::class)->findOneBy(['tag' => $tg]);
@@ -125,6 +153,7 @@ class PuzzleController extends AbstractFOSRestController
                 $tags->add($tag);
             }
             $puzzle->setTags($tags);
+
             $puzzle->setUpdatedAt(new DateTime());
             $puzzle->setDifficultyByCreator($editedPuzzle['difficultyByCreator']);
             $em->persist($puzzle);

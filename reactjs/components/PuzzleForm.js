@@ -11,7 +11,7 @@ const CKEditor = dynamic(() => import('../components/CKEditor'), {
     ssr: false
 });
 
-class CreatePuzzleForm extends React.Component {
+class PuzzleForm extends React.Component {
 
     constructor(props, {t}){
         super(props, {t});
@@ -24,12 +24,11 @@ class CreatePuzzleForm extends React.Component {
             isPrivate: false,
             stagesCount: 1,
             stages: [
-                {stageNumber: 0, description: 'Description of stage 0...'}
+                {level: 0, description: 'Description of stage 0...', code: ""}
             ],
-           tags: []
+            tags: []
         };
 
-        this.difficultyByCreator = 1;
         this.CreatePuzzleForm = React.createRef();
 
         this.difficultyUp = this.difficultyUp.bind(this);
@@ -43,35 +42,90 @@ class CreatePuzzleForm extends React.Component {
         this.setCode = this.setCode.bind(this);
         this.validateForm = this.validateForm.bind(this);
         this.closeError = this.closeError.bind(this);
+        this.fetchSetState = this.fetchSetState.bind(this);
+        this.populateForm = this.populateForm.bind(this);
+        this.fetchUpdatePuzzle = this.fetchUpdatePuzzle.bind(this);
     }
 
-    componentDidMount() {
+    async componentDidMount() {
         // language=JQuery-CSS
         $('.tags-multiple-select').select2({
             placeholder: 'Select tags',
             width: '100%'
         });
 
-        document.getElementsByClassName('is-private')[0].checked = this.state.isPrivate;
-
         $('.tags-multiple-select').on('change', () => {
             this.setState({ tags: $(".tags-multiple-select").val() });
         });
-    }
 
-    difficultyUp(e) {
-        if(parseInt(this.difficultyByCreator) + 1 <= 5){
-            this.difficultyByCreator = parseInt(this.difficultyByCreator) + 1;
-            e.target.parentElement.querySelector('.quantity').innerHTML = ''+this.difficultyByCreator;
-            this.setState({difficultyByCreator: this.difficultyByCreator});
+        if(this.props.isFor === "update") {
+            await this.fetchSetState();
         }
     }
 
-    difficultyDown(e) {
-        if(parseInt(this.difficultyByCreator) - 1 > 0){
-            this.difficultyByCreator = parseInt(this.difficultyByCreator) - 1;
-            e.target.parentElement.querySelector('.quantity').innerHTML = ''+this.difficultyByCreator;
-            this.setState({difficultyByCreator: this.difficultyByCreator});
+    populateForm(responseJson) {
+        this.setState( {name: responseJson['name'] });
+        this.setState( {isPrivate: responseJson['private'] });
+        this.setState({difficultyByCreator: responseJson['difficultyByCreator']});
+
+        let tags = [];
+        responseJson['tags'].forEach((value) => {
+            tags.push(value.tag);
+        });
+        $('.tags-multiple-select').val(tags);
+        $('.tags-multiple-select').trigger('change');
+        this.setState({tags: tags});
+
+        this.setState({description: responseJson['description']});
+
+        let stages = [];
+        responseJson['stages'].forEach((value) => {
+            stages.push(value);
+        });
+        this.setState({stages: stages});
+    }
+
+    async fetchSetState() {
+        const urlParams = new URLSearchParams(window.location.search);
+        this.puzzleId = urlParams.get('puzzleId');
+
+        const request = {
+            method: 'GET',
+            mode: 'cors',
+            credentials: "include"
+        };
+
+        try {
+            let response = await fetch(config.API_URL + '/api/puzzles/' + this.puzzleId, request);
+
+            if (response.status === 401) {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Unauthorized.';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            } else if (response.status === 204) {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Such puzzle doesn\'t exist.';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            } else if (response.status === 200) {
+                let responseJson = await response.json();
+                this.populateForm(responseJson);
+            } else {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Unknown error. Check the fields and try again.';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            }
+        } catch (e) {
+            document.getElementsByClassName('error-content')[0].innerHTML += e.message;
+            document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+        }
+    }
+
+    difficultyUp() {
+        if(this.state.difficultyByCreator + 1 <= 5){
+            this.setState(prevState => ({difficultyByCreator: prevState.difficultyByCreator+1}));
+        }
+    }
+
+    difficultyDown() {
+        if(parseInt(this.state.difficultyByCreator) - 1 > 0){
+            this.setState(prevState => ({difficultyByCreator: prevState.difficultyByCreator-1}));
         }
     }
 
@@ -83,7 +137,7 @@ class CreatePuzzleForm extends React.Component {
 
         this.setState({
             stages: [...this.state.stages, {
-                stageNumber: this.state.stagesCount,
+                level: this.state.stagesCount,
                 description: 'Description of stage ' + this.state.stagesCount + '...'
             }]
         });
@@ -105,7 +159,7 @@ class CreatePuzzleForm extends React.Component {
 
         if(r === true){
             let array = [...this.state.stages];
-            let index = this.findInAttr(array, 'stageNumber', child.props.stageNumber);
+            let index = this.findInAttr(array, 'level', child.props.level);
             if (index !== -1) {
                 array.splice(index, 1);
                 this.setState({stages: array});
@@ -117,18 +171,18 @@ class CreatePuzzleForm extends React.Component {
 
     updateDescription(child, data) {
         let array = [...this.state.stages];
-        array[child.props.stageNumber].description = data;
+        array[child.props.level].description = data;
         this.setState({ stages: array });
     }
 
     setCode(child, code) {
         let array = [...this.state.stages];
-        array[child.props.stageNumber].code = code;
+        array[child.props.level].code = code;
         this.setState({ stages: array });
     }
 
-    setIsPrivate(){
-        this.state.isPrivate = document.getElementsByClassName('is-private-ck-box')[0].checked;
+    setIsPrivate(e){
+        this.setState({ isPrivate: e.target.checked });
     }
 
     async validateForm() {
@@ -169,9 +223,46 @@ class CreatePuzzleForm extends React.Component {
         });
 
         if(valid === true) {
-            await this.submitPuzzle();
+            if(this.props.isFor === "create") {
+                await this.submitPuzzle();
+            } else if(this.props.isFor === "update") {
+                await this.fetchUpdatePuzzle();
+            }
         } else {
             document.getElementsByClassName('error-content')[0].innerHTML = errorMsg;
+            document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+        }
+    }
+
+    async fetchUpdatePuzzle() {
+        let headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+
+        const request = {
+            method: 'PUT',
+            mode: 'cors',
+            headers: headers,
+            credentials: "include",
+            body: JSON.stringify(this.state)
+        };
+
+        try {
+            let response = await fetch(config.API_URL + '/api/puzzles/' + this.puzzleId, request);
+
+            if (response.status === 401) {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Unauthorized.';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            } else if (response.status === 500) {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Server error. Check the fields and try again. ';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            } else if (response.status === 200) {
+                Router.push(`/`);
+            } else {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Unknown error. Check the fields and try again.';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            }
+        } catch (e) {
+            document.getElementsByClassName('error-content')[0].innerHTML += e.message;
             document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
         }
     }
@@ -213,6 +304,11 @@ class CreatePuzzleForm extends React.Component {
         e.target.parentElement.setAttribute('style', 'display: none;');
     }
 
+    componentDidUpdate(prevProps, prevState) {
+        // console.log(prevState);
+        // console.log(this.state);
+    }
+
     render(){
         return (
             <form className="form" id={"create-puzzle-form"}>
@@ -221,20 +317,25 @@ class CreatePuzzleForm extends React.Component {
                     <input
                         type="text" placeholder="puzzle name..."
                         className="form-control"
+                        value={this.state.name}
                         onChange={(e) => this.setState({ name: e.target.value }) }
                     />
                 </fieldset>
 
-
                 <label htmlFor="private" className={"is-private btn btn-success btn-ghost minus"}>Private
-                    <input type="checkbox" className={"is-private-ck-box"} onChange={this.setIsPrivate} />
+                    <input
+                        type="checkbox"
+                        className={"is-private-ck-box"}
+                        checked={this.state.isPrivate}
+                        onChange = {this.setIsPrivate}
+                    />
                 </label>
 
                 <label htmlFor="difficulty" className={"difficulty"}>
                     <div className={"btn btn-success btn-ghost minus"}>Difficulty</div>
                     <div className="number-input">
                         <div onClick={this.difficultyDown} className="btn btn-success btn-ghost minus">-</div>
-                        <div className="quantity btn btn-success btn-ghost" onChange={this.updateDifficulty}> 1 </div>
+                        <div className="quantity btn btn-success btn-ghost"> {this.state.difficultyByCreator} </div>
                         <div onClick={this.difficultyUp} className="btn btn-success btn-ghost minus plus">+</div>
                     </div>
                 </label>
@@ -280,12 +381,13 @@ class CreatePuzzleForm extends React.Component {
 
                                 return(
                                     <Stage
-                                        key={stage.stageNumber}
-                                        startContent={"Description of stage " + stage.stageNumber + "..."}
-                                        stageNumber={stage.stageNumber}
+                                        key={stage.level}
+                                        startDescription={stage.description}
+                                        level={stage.level}
                                         removeStage={this.removeStage}
                                         updateDescription={this.updateDescription}
                                         setCode={this.setCode}
+                                        code={stage.code}
                                         isLast={isLast}
                                     />
                                 );
@@ -407,4 +509,4 @@ class CreatePuzzleForm extends React.Component {
     }
 }
 
-export default withNamespaces()(CreatePuzzleForm);
+export default withNamespaces()(PuzzleForm);

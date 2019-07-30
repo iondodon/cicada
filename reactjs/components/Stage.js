@@ -69,10 +69,11 @@ class Stage extends React.Component {
         return (
             <div className="card stage" key={this.props.key}>
                 <header className="card-header">
-                    <div className="pull-left stage-word">Stage { this.props.stageNumber }</div>
+                    <div className="pull-left stage-word">Stage { this.props.level }</div>
                     <input
                         type="text"
                         placeholder="code"
+                        value={this.props.code}
                         className={"stage-code pull-left"}
                         onChange={e => this.setCode(e.target.value)}
                     />
@@ -82,7 +83,7 @@ class Stage extends React.Component {
                 </header>
                 <div className="card-content">
                     <CKEditor
-                        data={this.props.startContent}
+                        data={this.props.startDescription}
 
                         onInit={ editor => {
                             // You can store the "editor" and use when it is needed.

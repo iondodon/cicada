@@ -19,6 +19,11 @@ class PuzzleRepository extends ServiceEntityRepository
         parent::__construct($registry, Puzzle::class);
     }
 
+    /**
+     * @param $data
+     * @param User $user
+     * @return bool
+     */
     public function createPuzzleAndSave($data, User $user): bool
     {
         $em = $this->getEntityManager();
@@ -26,6 +31,7 @@ class PuzzleRepository extends ServiceEntityRepository
         try {
             $puzzle = new Puzzle();
             $puzzle->setName($data['name']);
+            $puzzle->setDescription($data['description']);
 
             $tags = new ArrayCollection();
             foreach ($data['tags'] as $tg) {
@@ -44,7 +50,7 @@ class PuzzleRepository extends ServiceEntityRepository
                 $stage = new Stage();
                 $stage->setCreatedAt(new DateTime());
                 $stage->setCode($stg['code']);
-                $stage->setContent($stg['description']);
+                $stage->setDescription($stg['description']);
                 $stage->setLevel($stg['stageNumber']);
                 $stage->setPuzzleParent($puzzle);
                 $em->persist($stage);

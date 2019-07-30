@@ -3,14 +3,14 @@ import Layout from "../../components/Layout";
 import Dashboard from "../../components/Dashboard";
 
 import '../../i18n';
-import { withNamespaces } from 'react-i18next';
+import {withNamespaces} from 'react-i18next';
 import Head from "next/head";
 import LeftPanel from "../../components/LeftPanel";
 import PuzzleForm from "../../components/PuzzleForm";
 
-class Create extends React.Component {
+class Update extends React.Component {
 
-    constructor(props, {t}){
+    constructor(props, {t}) {
         super(props, {t});
         this.t = t;
     }
@@ -21,8 +21,8 @@ class Create extends React.Component {
                 <Head>
                     <title>Cicada</title>
                     <scr name="viewport" content="initial-scale=1.0, width=device-width" />
-                    <link href="../../static/select2-4.0.7/dist/css/select2.css" rel="stylesheet" />
-                    <script src="../../static/select2-4.0.7/dist/js/select2.min.js"/>
+                    <link href={"/static/select2-4.0.7/dist/css/select2.css"} rel="stylesheet" />
+                    <script src={"/static/select2-4.0.7/dist/js/select2.min.js"}/>
                 </Head>
 
                 <Dashboard>
@@ -42,7 +42,7 @@ class Create extends React.Component {
                         <header className="card-header">Create puzzle</header>
                         <div className="card-content">
                             <div className="inner">
-                                <PuzzleForm isFor={"create"} />
+                                <PuzzleForm isFor={"update"} />
                             </div>
                         </div>
                     </div>
@@ -65,4 +65,4 @@ class Create extends React.Component {
     }
 }
 
-export default withNamespaces()(Create);
+export default withNamespaces()(Update);

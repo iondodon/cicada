@@ -48,11 +48,18 @@ class Stage
     private $createdAt;
 
     /**
+     * @var DateTime
+     *
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $updatedAt;
+
+    /**
      * @var string
      *
      * @ORM\Column(type="text", nullable=false)
      */
-    private $content;
+    private $description;
 
     /**
      * @var string
@@ -127,20 +134,39 @@ class Stage
     }
 
     /**
-     * @return string
+     * @return DateTime
      */
-    public function getContent(): string
+    public function getUpdatedAt(): ?DateTime
     {
-        return $this->content;
+        return $this->updatedAt;
     }
 
     /**
-     * @param string $content
+     * @param DateTime $updatedAt
      * @return Stage
      */
-    public function setContent(string $content): Stage
+    public function setUpdatedAt(DateTime $updatedAt): Stage
     {
-        $this->content = $content;
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDescription(): string
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param string $description
+     * @return Stage
+     */
+    public function setDescription(string $description): Stage
+    {
+        $this->description = $description;
 
         return $this;
     }
