@@ -29,7 +29,6 @@ class PuzzleForm extends React.Component {
             tags: [] // TODO: set each tag as object (edit puzzle)
         };
 
-        this.difficultyByCreator = 1;
         this.CreatePuzzleForm = React.createRef();
 
         this.difficultyUp = this.difficultyUp.bind(this);
@@ -86,6 +85,7 @@ class PuzzleForm extends React.Component {
 
                 this.setState( {name: responseJson['name'] });
                 this.setState( {isPrivate: responseJson['private'] });
+                this.setState({difficultyByCreator: responseJson['difficultyByCreator']});
             } else {
                 document.getElementsByClassName('error-content')[0].innerHTML = 'Unknown error. Check the fields and try again.';
                 document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
@@ -96,19 +96,15 @@ class PuzzleForm extends React.Component {
         }
     }
 
-    difficultyUp(e) {
-        if(parseInt(this.difficultyByCreator) + 1 <= 5){
-            this.difficultyByCreator = parseInt(this.difficultyByCreator) + 1;
-            e.target.parentElement.querySelector('.quantity').innerHTML = ''+this.difficultyByCreator;
-            this.setState({difficultyByCreator: this.difficultyByCreator});
+    difficultyUp() {
+        if(this.state.difficultyByCreator + 1 <= 5){
+            this.setState(prevState => ({difficultyByCreator: prevState.difficultyByCreator+1}));
         }
     }
 
-    difficultyDown(e) {
-        if(parseInt(this.difficultyByCreator) - 1 > 0){
-            this.difficultyByCreator = parseInt(this.difficultyByCreator) - 1;
-            e.target.parentElement.querySelector('.quantity').innerHTML = ''+this.difficultyByCreator;
-            this.setState({difficultyByCreator: this.difficultyByCreator});
+    difficultyDown() {
+        if(parseInt(this.state.difficultyByCreator) - 1 > 0){
+            this.setState(prevState => ({difficultyByCreator: prevState.difficultyByCreator-1}));
         }
     }
 
@@ -252,7 +248,7 @@ class PuzzleForm extends React.Component {
 
     componentDidUpdate(prevProps, prevState) {
         // console.log(prevState);
-        // console.log(this.state);
+        console.log(this.state);
     }
 
     render(){
@@ -281,7 +277,7 @@ class PuzzleForm extends React.Component {
                     <div className={"btn btn-success btn-ghost minus"}>Difficulty</div>
                     <div className="number-input">
                         <div onClick={this.difficultyDown} className="btn btn-success btn-ghost minus">-</div>
-                        <div className="quantity btn btn-success btn-ghost"> 1 </div>
+                        <div className="quantity btn btn-success btn-ghost"> {this.state.difficultyByCreator} </div>
                         <div onClick={this.difficultyUp} className="btn btn-success btn-ghost minus plus">+</div>
                     </div>
                 </label>
