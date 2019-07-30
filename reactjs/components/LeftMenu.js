@@ -13,7 +13,6 @@ class LeftMenu extends React.Component {
     }
 
     render(){
-
         return (
             <div className="card" id={"left-menu-card"}>
                 <header className="card-header">left menu</header>
@@ -38,6 +37,11 @@ class LeftMenu extends React.Component {
                             <a className="menu-item">
                                 Contest enrolled at <div className="pull-right">»</div>
                             </a>
+                            <Link href={"/puzzle/list"}>
+                                <a className="menu-item">
+                                    Explore puzzles<div className="pull-right">»</div>
+                                </a>
+                            </Link>{' '}
                             <br/>
                             <Link href={"/puzzle/create"}>
                                 <a className="menu-item">
@@ -62,7 +66,7 @@ class LeftMenu extends React.Component {
                 <style jsx>{`
                   .menu {
                         font-size: 13px;
-                    }
+                  }
                 `}
                 </style>
             </div>
