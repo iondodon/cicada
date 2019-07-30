@@ -86,8 +86,6 @@ class PuzzleForm extends React.Component {
                 let responseJson = await response.json();
 
                 this.setState( {name: responseJson['name'] });
-
-                document.getElementsByClassName('is-private-ck-box')[0].checked = responseJson['private'] === true;
                 this.setState( {isPrivate: responseJson['private'] });
             } else {
                 document.getElementsByClassName('error-content')[0].innerHTML = 'Unknown error. Check the fields and try again.';
@@ -97,6 +95,8 @@ class PuzzleForm extends React.Component {
             document.getElementsByClassName('error-content')[0].innerHTML += e.message;
             document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
         }
+
+        console.log(this.state);
     }
 
     difficultyUp(e) {
@@ -168,7 +168,9 @@ class PuzzleForm extends React.Component {
     }
 
     setIsPrivate(){
-        this.setState({ isPrivate: document.getElementsByClassName('is-private-ck-box')[0].checked });
+        this.setState(prevState => ({
+            isPrivate: !prevState.isPrivate
+        }));
         console.log(this.state.isPrivate);
     }
 
@@ -271,8 +273,8 @@ class PuzzleForm extends React.Component {
                     <input
                         type="checkbox"
                         className={"is-private-ck-box"}
-                        checked={this.state.isPrivate}
-                        onChange={this.setIsPrivate}
+                        // checked={this.state.isPrivate}
+                        onChange = {this.setIsPrivate}
                     />
                 </label>
 

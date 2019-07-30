@@ -4,7 +4,6 @@
     <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactjs/components/PuzzleForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/PuzzleForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony/src/Entity/Stage.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Entity/Stage.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -395,7 +394,7 @@
       <workItem from="1564071503168" duration="215000" />
       <workItem from="1564164369795" duration="576000" />
       <workItem from="1564165065208" duration="8379000" />
-      <workItem from="1564403360225" duration="10886000" />
+      <workItem from="1564403360225" duration="13601000" />
     </task>
     <servers />
   </component>
