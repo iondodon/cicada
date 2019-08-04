@@ -13,6 +13,10 @@ class Pagination extends React.Component {
 
         this.paginate = this.paginate.bind(this);
         this.calculatePageNumbers = this.calculatePageNumbers.bind(this);
+        this.showPrev = this.showPrev.bind(this);
+        this.prev = this.prev.bind(this);
+        this.showNext = this.showNext.bind(this);
+        this.next = this.next.bind(this);
     }
 
     calculatePageNumbers() {
@@ -28,14 +32,13 @@ class Pagination extends React.Component {
             }
         }
         this.pageNumbers = pageNumbers;
-        console.log(this.pageNumbers);
     }
 
     componentDidMount() {
         this.calculatePageNumbers();
     }
 
-    componentWillUpdate(prevProps, prevState, snapshot) {
+    componentDidUpdate(prevProps, prevState, snapshot) {
         this.calculatePageNumbers();
     }
 
@@ -44,15 +47,40 @@ class Pagination extends React.Component {
         this.props.paginate(number);
     }
 
+    showPrev() {
+        if(this.props.currentPage !== 1){
+            return(
+                <a className="menu-item" onClick={this.prev}>
+                    <div className="pull-left">««</div> Previous
+                </a>
+            )
+        }
+    }
+
+    showNext() {
+        let pages = Math.ceil(this.totalItems / this.itemsPerPage);
+        if(this.props.currentPage !== pages){
+            return(
+                <a className="menu-item" onClick={this.next}>
+                    Next <div className="pull-right">»»</div>
+                </a>
+            )
+        }
+    }
+
+    prev() {
+        this.props.prev();
+    }
+
+    next() {
+        this.props.next();
+    }
+
     render(){
         return (
             <div className="menu">
 
-
-                <a className="menu-item">
-                    <div className="pull-left">««</div> Previous
-                </a>
-                |
+                {this.showPrev()}
                 {
                     this.pageNumbers.map(number => {
                             let classname = "menu-item ";
@@ -68,10 +96,7 @@ class Pagination extends React.Component {
                         }
                     )
                 }
-                |
-                <a className="menu-item">
-                    Next <div className="pull-right">»»</div>
-                </a>
+                {this.showNext()}
 
 
                 { /*language=SCSS*/ }

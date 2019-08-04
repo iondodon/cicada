@@ -21,6 +21,8 @@ class ListPuzzles extends React.Component {
 
         this.closeError = this.closeError.bind(this);
         this.paginate = this.paginate.bind(this);
+        this.prev = this.prev.bind(this);
+        this.next = this.next.bind(this);
     }
 
     componentDidMount() {
@@ -72,6 +74,14 @@ class ListPuzzles extends React.Component {
         const indexOfLastPuzzle = pageNumber * this.state.puzzlesPerPage;
         const indexOfFirstPuzzle = indexOfLastPuzzle - this.state.puzzlesPerPage;
         this.setState({ currentPuzzles: this.state.puzzles.slice(indexOfFirstPuzzle, indexOfLastPuzzle) });
+    }
+
+    prev() {
+        this.setState({currentPage: this.state.currentPage - 1});
+    }
+
+    next() {
+        this.setState({currentPage: this.state.currentPage + 1});
     }
 
     render(){
@@ -145,6 +155,8 @@ class ListPuzzles extends React.Component {
                     paginate={this.paginate}
                     totalItems={this.state.puzzles.length}
                     itemsPerPage={this.state.puzzlesPerPage}
+                    prev={this.prev}
+                    next={this.next}
                 />
 
                 { /*language=SCSS*/ }
