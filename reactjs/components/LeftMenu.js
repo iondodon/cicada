@@ -15,7 +15,7 @@ class LeftMenu extends React.Component {
     render(){
         return (
             <div className="card" id={"left-menu-card"}>
-                <header className="card-header">left menu</header>
+                {/*<header className="card-header">left menu</header>*/}
                 <div className="card-content">
                     <div className="inner">
                         <div className="menu">

@@ -39,7 +39,7 @@ class Create extends React.Component {
                     </LeftPanel>
 
                     <div className="card page-content">
-                        <header className="card-header">Create puzzle</header>
+                        {/*<header className="card-header">Create puzzle</header>*/}
                         <div className="card-content">
                             <div className="inner">
                                 <PuzzleForm isFor={"create"} />

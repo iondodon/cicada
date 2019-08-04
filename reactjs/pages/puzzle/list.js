@@ -37,7 +37,7 @@ class List extends React.Component {
                     </LeftPanel>
 
                     <div className="card page-content">
-                        <header className="card-header">Puzzles</header>
+                        {/*<header className="card-header">Puzzles</header>*/}
                         <div className="card-content">
                             <div className="inner">
                                 <ListPuzzles/>
