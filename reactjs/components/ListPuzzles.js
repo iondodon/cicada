@@ -13,12 +13,14 @@ class ListPuzzles extends React.Component {
 
         this.state = {
             puzzles: [],
+            currentPuzzles: [],
             loading: false,
             currentPage: 1,
-            puzzlesPerPage: 5
+            puzzlesPerPage: 3
         };
 
         this.closeError = this.closeError.bind(this);
+        this.paginate = this.paginate.bind(this);
     }
 
     componentDidMount() {
@@ -40,8 +42,12 @@ class ListPuzzles extends React.Component {
                 } else if (response.status === 200) {
                     let responseJson = await response.json();
                     this.setState({puzzles: responseJson});
+
+                    const indexOfLastPuzzle = this.state.currentPage * this.state.puzzlesPerPage;
+                    const indexOfFirstPuzzle = indexOfLastPuzzle - this.state.puzzlesPerPage;
+                    this.setState({ currentPuzzles: this.state.puzzles.slice(indexOfFirstPuzzle, indexOfLastPuzzle) });
+
                     this.setState({loading: false});
-                    console.log(this.state.puzzles);
                 } else {
                     document.getElementsByClassName('error-content')[0].innerHTML = 'Unknown error. Check the fields and try again.';
                     document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
@@ -58,6 +64,14 @@ class ListPuzzles extends React.Component {
 
     closeError(e) {
         e.target.parentElement.setAttribute('style', 'display: none;');
+    }
+
+    paginate(pageNumber) {
+        this.setState({currentPage: pageNumber});
+
+        const indexOfLastPuzzle = pageNumber * this.state.puzzlesPerPage;
+        const indexOfFirstPuzzle = indexOfLastPuzzle - this.state.puzzlesPerPage;
+        this.setState({ currentPuzzles: this.state.puzzles.slice(indexOfFirstPuzzle, indexOfLastPuzzle) });
     }
 
     render(){
@@ -110,7 +124,7 @@ class ListPuzzles extends React.Component {
                     <tbody>
 
                     {
-                        this.state.puzzles.map((puzzle) => {
+                        this.state.currentPuzzles.map((puzzle) => {
                             return (
                                 <tr key={puzzle['id']} >
                                     <td>{ puzzle['name'] }</td>
@@ -126,7 +140,12 @@ class ListPuzzles extends React.Component {
                     </tbody>
                 </table>
 
-                <Pagination/>
+                <Pagination
+                    currentPage={this.state.currentPage}
+                    paginate={this.paginate}
+                    totalItems={this.state.puzzles.length}
+                    itemsPerPage={this.state.puzzlesPerPage}
+                />
 
                 { /*language=SCSS*/ }
                 <style jsx>{`                    
