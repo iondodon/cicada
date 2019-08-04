@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/ListPuzzles.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/ListPuzzles.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactjs/components/Pagination.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/Pagination.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -400,7 +399,8 @@
       <workItem from="1564648307892" duration="26000" />
       <workItem from="1564783822518" duration="30000" />
       <workItem from="1564853970191" duration="24000" />
-      <workItem from="1564929963005" duration="12348000" />
+      <workItem from="1564929963005" duration="12437000" />
+      <workItem from="1564947518846" duration="3137000" />
     </task>
     <servers />
   </component>

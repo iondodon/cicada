@@ -9,22 +9,34 @@ class Pagination extends React.Component {
         super(props, {t});
         this.t = t;
 
-        this.state = {
-            currentPage: props.currentPage,
-            totalItems: props.totalItems,
-            itemsPerPage: props.itemsPerPage,
-            pageNumbers: []
-        };
+        this.calculatePageNumbers();
 
         this.paginate = this.paginate.bind(this);
+        this.calculatePageNumbers = this.calculatePageNumbers.bind(this);
+    }
+
+    calculatePageNumbers() {
+        this.currentPage = this.props.currentPage;
+        this.totalItems = this.props.totalItems;
+        this.itemsPerPage = this.props.itemsPerPage;
+
+        let pages = Math.ceil(this.totalItems / this.itemsPerPage);
+        let pageNumbers = [];
+        for(let i = this.currentPage - 5; i <= this.currentPage + 5 ; i++) {
+            if(i >= 1 && i <= pages) {
+                pageNumbers.push(i);
+            }
+        }
+        this.pageNumbers = pageNumbers;
+        console.log(this.pageNumbers);
     }
 
     componentDidMount() {
-        let pageNumbers = [];
-        for(let i = 1; i <= Math.ceil(this.state.totalItems / this.state.itemsPerPage); i++) {
-            pageNumbers.push(i);
-        }
-        this.setState({pageNumbers: pageNumbers});
+        this.calculatePageNumbers();
+    }
+
+    componentWillUpdate(prevProps, prevState, snapshot) {
+        this.calculatePageNumbers();
     }
 
     paginate(e) {
@@ -42,11 +54,19 @@ class Pagination extends React.Component {
                 </a>
                 |
                 {
-                    this.state.pageNumbers.map(number => (
-                        <a className="menu-item active" key={number} onClick={this.paginate}>
-                            {number}
-                        </a>
-                    ))
+                    this.pageNumbers.map(number => {
+                            let classname = "menu-item ";
+                            if(number === this.props.currentPage) {
+                                classname += "active";
+                            }
+
+                            return(
+                                <a className={classname} key={number} onClick={this.paginate}>
+                                    {number}
+                                </a>
+                            )
+                        }
+                    )
                 }
                 |
                 <a className="menu-item">
