@@ -13,6 +13,8 @@ class PuzzleShow extends React.Component {
     render(){
         return (
             <div>
+                showing ...
+                
                 { /*language=SCSS*/ }
                 <style jsx>{`
                   
