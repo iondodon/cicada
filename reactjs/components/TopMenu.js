@@ -28,6 +28,10 @@ class TopMenu extends React.Component {
                     <Link href={{ pathname: '/puzzle/update', query: { puzzleId: 3 } }}>
                         <a className="menu-item">Update</a>
                     </Link>{' '}
+                    |
+                    <Link href={{ pathname: '/puzzle/show', query: { puzzleId: 3 } }}>
+                        <a className="menu-item">Show</a>
+                    </Link>{' '}
                 </div>
 
                 <img src={'../static/cicada.png'} className={"logo"}  alt="true" />

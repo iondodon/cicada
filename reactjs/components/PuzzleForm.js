@@ -45,6 +45,7 @@ class PuzzleForm extends React.Component {
         this.fetchSetState = this.fetchSetState.bind(this);
         this.populateForm = this.populateForm.bind(this);
         this.fetchUpdatePuzzle = this.fetchUpdatePuzzle.bind(this);
+        this.showPuzzle = this.showPuzzle.bind(this);
     }
 
     async componentDidMount() {
@@ -58,7 +59,7 @@ class PuzzleForm extends React.Component {
             this.setState({ tags: $(".tags-multiple-select").val() });
         });
 
-        if(this.props.isFor === "update") {
+        if(this.props.isFor === "update" || this.props.isFor === "show") {
             await this.fetchSetState();
         }
     }
@@ -106,7 +107,9 @@ class PuzzleForm extends React.Component {
                 document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
             } else if (response.status === 200) {
                 let responseJson = await response.json();
-                this.populateForm(responseJson);
+                if(this.props.isFor === "update"){
+                    this.populateForm(responseJson);
+                }
             } else {
                 document.getElementsByClassName('error-content')[0].innerHTML = 'Unknown error. Check the fields and try again.';
                 document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
@@ -309,7 +312,31 @@ class PuzzleForm extends React.Component {
         // console.log(this.state);
     }
 
+    showPuzzle() {
+        return(
+            <div>
+                <ul>
+                    <li>foo
+                        <ul>
+                            <li>sub foo</li>
+                            <li>sub bar</li>
+                            <li>sub baz</li>
+                        </ul>
+                    </li>
+                    <li>bar</li>
+                    <li>baz</li>
+                </ul>
+            </div>
+        );
+    }
+
     render(){
+        if(this.props.isFor === "show"){
+            return(
+                this.showPuzzle()
+            );
+        }
+
         return (
             <form className="form" id={"create-puzzle-form"}>
                 <fieldset className="form-group">
