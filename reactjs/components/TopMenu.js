@@ -67,6 +67,7 @@ class TopMenu extends React.Component {
                         margin-top: -1px;
                         margin-left: 1rem;
                         margin-right: 1rem;
+                        margin-bottom: 1rem;
                       }
                       
                       .logo {

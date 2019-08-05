@@ -26,7 +26,7 @@ class PuzzleForm extends React.Component {
             stages: [
                 {level: 0, description: 'Description of stage 0...', code: ""}
             ],
-            tags: []
+            tags: [],
         };
 
         this.CreatePuzzleForm = React.createRef();
