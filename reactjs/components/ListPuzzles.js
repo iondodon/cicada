@@ -76,12 +76,20 @@ class ListPuzzles extends React.Component {
         this.setState({ currentPuzzles: this.state.puzzles.slice(indexOfFirstPuzzle, indexOfLastPuzzle) });
     }
 
-    prev() {
-        this.setState({currentPage: this.state.currentPage - 1});
+    async prev() {
+        await this.setState({currentPage: this.state.currentPage - 1});
+
+        const indexOfLastPuzzle = this.state.currentPage * this.state.puzzlesPerPage;
+        const indexOfFirstPuzzle = indexOfLastPuzzle - this.state.puzzlesPerPage;
+        await this.setState({ currentPuzzles: this.state.puzzles.slice(indexOfFirstPuzzle, indexOfLastPuzzle) });
     }
 
-    next() {
-        this.setState({currentPage: this.state.currentPage + 1});
+    async next() {
+        await this.setState({currentPage: this.state.currentPage + 1});
+
+        const indexOfLastPuzzle = this.state.currentPage * this.state.puzzlesPerPage;
+        const indexOfFirstPuzzle = indexOfLastPuzzle - this.state.puzzlesPerPage;
+        await this.setState({ currentPuzzles: this.state.puzzles.slice(indexOfFirstPuzzle, indexOfLastPuzzle) });
     }
 
     render(){

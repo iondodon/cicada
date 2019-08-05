@@ -4,7 +4,6 @@
     <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactjs/components/ListPuzzles.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/ListPuzzles.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/Pagination.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/Pagination.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -401,7 +400,9 @@
       <workItem from="1564783822518" duration="30000" />
       <workItem from="1564853970191" duration="24000" />
       <workItem from="1564929963005" duration="12437000" />
-      <workItem from="1564947518846" duration="5503000" />
+      <workItem from="1564947518846" duration="5930000" />
+      <workItem from="1565031092432" duration="28000" />
+      <workItem from="1565031154903" duration="768000" />
     </task>
     <servers />
   </component>
