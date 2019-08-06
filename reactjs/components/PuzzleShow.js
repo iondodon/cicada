@@ -4,6 +4,7 @@ import '../i18n';
 import { withNamespaces } from 'react-i18next';
 import config from "../configs/keys";
 import timeConverter from '../utlis/utlis';
+import Stage from "./Stage";
 
 class PuzzleShow extends React.Component {
 
@@ -17,10 +18,12 @@ class PuzzleShow extends React.Component {
 
         this.fetchSetState = this.fetchSetState.bind(this);
         this.prepareState = this.prepareState.bind(this);
+        this.closeError = this.closeError.bind(this);
     }
 
     async componentDidMount() {
         await this.fetchSetState();
+        document.getElementsByClassName("description")[0].innerHTML = this.state['description'];
     }
 
     async fetchSetState() {
@@ -65,6 +68,12 @@ class PuzzleShow extends React.Component {
         await this.setState( { updatedAt: timeConverter(responseJson['updatedAt']['timestamp']) } );
         await this.setState( { enrolledPlayers: responseJson['enrolledPlayers'] } );
         await this.setState( { enrolledTeams: responseJson['enrolledTeams'] } );
+        await this.setState( { description: responseJson['description'] } );
+        await this.setState( { stages: responseJson['stages'] } );
+    }
+
+    closeError(e) {
+        e.target.parentElement.setAttribute('style', 'display: none;');
     }
 
     render(){
@@ -110,29 +119,75 @@ class PuzzleShow extends React.Component {
                 <h2>updated at: { this.state['updatedAt'] }</h2>
 
                 <h2>enrolled players:</h2>
-                {
-                    this.state['enrolledPlayers'].map((account) => {
-                        return(
-                            <span key={account['id']}> { account['user']['fullName'] }, </span>
-                        );
-                    })
-                }
+                <div className={"enrolled-players"}>
+                    {
+                        this.state['enrolledPlayers'].map((account) => {
+                            return (
+                                <a key={account['id']} className={"players-link"}> {account['user']['fullName']}</a>
+                            );
+                        })
+                    }
+                </div>
 
                 <h2>enrolled teams:</h2>
-                {
-                    this.state['enrolledTeams'].map((team) => {
-                        return(
-                            <span key={team['id']}> { team['id'] } </span>
-                        );
-                    })
-                }
+                <div className={"enrolled-teams"}>
+                    {
+                        this.state['enrolledTeams'].map((team) => {
+                            return(
+                                <a key={team['id']} className={"team-link"}> { team['name'] } </a>
+                            );
+                        })
+                    }
+                </div>
 
+                <h2>description:</h2>
+                <div className={"description"}/>
+
+                <h2>stages:</h2>
+                <div className={"stages-cards"}>
+                    <div>
+                        {
+                            this.state.stages.map((stage, index) => {
+                                let isLast = false;
+
+                                if(index === this.state.stagesCount - 1 && index !== 0){
+                                    isLast = true;
+                                }
+
+                                return(
+                                    <Stage
+                                        key={stage.level}
+                                        startDescription={stage.description}
+                                        level={stage.level}
+                                        removeStage={this.removeStage}
+                                        updateDescription={this.updateDescription}
+                                        setCode={this.setCode}
+                                        code={stage.code}
+                                        isLast={isLast}
+                                    />
+                                );
+                            })
+                        }
+                    </div>
+                </div>
 
                 { /*language=SCSS*/ }
                 <style jsx>{`
                   .puzzle-data {
                     display: flex;
                     flex-direction: column;
+                  }
+                  
+                  .enrolled-players, .enrolled-teams {
+                    margin-bottom: 2rem;
+                  }
+
+                  .players-link, .team-link {
+                    margin-right: 0.5rem;
+                  }
+                  
+                  .description {
+                    margin: 0;
                   }
 
                   .alert {

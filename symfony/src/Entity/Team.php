@@ -29,6 +29,13 @@ class Team
     private $id;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(unique=true, nullable=false)
+     */
+    private $name;
+
+    /**
      * @var Collection
      *
      * @ORM\ManyToMany(targetEntity="Account", mappedBy="teamsMemberOf")
@@ -84,6 +91,25 @@ class Team
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param string $name
+     * @return Team
+     */
+    public function setName(string $name): Team
+    {
+        $this->name = $name;
+
+        return $this;
     }
 
     /**
