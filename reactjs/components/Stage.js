@@ -82,27 +82,37 @@ class Stage extends React.Component {
                     <p/>
                 </header>
                 <div className="card-content">
-                    <CKEditor
-                        data={this.props.startDescription}
+                    {() => {
+                        if(this.props.isFor === "show"){
+                            return(
+                                <p>aaaaaa</p>
+                            );
+                        } else {
+                            return(
+                                <CKEditor
+                                    data={this.props.startDescription}
 
-                        onInit={ editor => {
-                            // You can store the "editor" and use when it is needed.
+                                    onInit={ editor => {
+                                        // You can store the "editor" and use when it is needed.
 
-                        } }
+                                    } }
 
-                        onChange={ ( event, editor ) => {
-                            const data = editor.getData();
-                            this.updateDescription(data);
-                        } }
+                                    onChange={ ( event, editor ) => {
+                                        const data = editor.getData();
+                                        this.updateDescription(data);
+                                    } }
 
-                        onBlur={ editor => {
+                                    onBlur={ editor => {
 
-                        } }
+                                    } }
 
-                        onFocus={ editor => {
+                                    onFocus={ editor => {
 
-                        } }
-                    />
+                                    } }
+                                />
+                            );
+                        }
+                    }}
                 </div>
 
                 { /*language=SCSS*/ }

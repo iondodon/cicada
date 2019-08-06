@@ -164,6 +164,7 @@ class PuzzleShow extends React.Component {
                                         setCode={this.setCode}
                                         code={stage.code}
                                         isLast={isLast}
+                                        isFor={"show"}
                                     />
                                 );
                             })
