@@ -45,7 +45,6 @@ class PuzzleForm extends React.Component {
         this.fetchSetState = this.fetchSetState.bind(this);
         this.populateForm = this.populateForm.bind(this);
         this.fetchUpdatePuzzle = this.fetchUpdatePuzzle.bind(this);
-        this.showPuzzle = this.showPuzzle.bind(this);
     }
 
     async componentDidMount() {
@@ -59,7 +58,7 @@ class PuzzleForm extends React.Component {
             this.setState({ tags: $(".tags-multiple-select").val() });
         });
 
-        if(this.props.isFor === "update" || this.props.isFor === "show") {
+        if(this.props.isFor === "update") {
             await this.fetchSetState();
         }
     }
@@ -312,31 +311,7 @@ class PuzzleForm extends React.Component {
         // console.log(this.state);
     }
 
-    showPuzzle() {
-        return(
-            <div>
-                <ul>
-                    <li>foo
-                        <ul>
-                            <li>sub foo</li>
-                            <li>sub bar</li>
-                            <li>sub baz</li>
-                        </ul>
-                    </li>
-                    <li>bar</li>
-                    <li>baz</li>
-                </ul>
-            </div>
-        );
-    }
-
     render(){
-        if(this.props.isFor === "show"){
-            return(
-                this.showPuzzle()
-            );
-        }
-
         return (
             <form className="form" id={"create-puzzle-form"}>
                 <fieldset className="form-group">
