@@ -63,12 +63,37 @@ class PuzzleShow extends React.Component {
         await this.setState( { createdBy: responseJson['createdBy']['user']['fullName'] } );
         await this.setState( { createdAt: timeConverter(responseJson['createdAt']['timestamp']) } );
         await this.setState( { updatedAt: timeConverter(responseJson['updatedAt']['timestamp']) } );
+        await this.setState( { enrolledPlayers: responseJson['enrolledPlayers'] } );
+        await this.setState( { enrolledTeams: responseJson['enrolledTeams'] } );
     }
 
     render(){
         if(this.state.loading) {
             return(
-                <h2>loading...</h2>
+                <div className={"puzzle-data"}>
+                    <div className="alert alert-error" style={{ display: 'none' }} >
+                        <div className={"error-content"} >Error message</div>
+                        {'\u00A0'} <a onClick={this.closeError}>x</a>
+                    </div>
+                    <h2>loading...</h2>
+
+                    { /*language=SCSS*/ }
+                    <style jsx>{`
+                      .puzzle-data {
+                        display: flex;
+                        flex-direction: column;
+                      }
+    
+                      .alert {
+                            display: flex;
+                            flex-direction: row;
+                            text-align: center;
+                            margin-top: 2rem;
+                            margin-bottom: 0;
+                            justify-content: center;
+                      }
+                    `}</style>
+                </div>
             );
         }
 
@@ -83,6 +108,25 @@ class PuzzleShow extends React.Component {
                 <h2>created by: { this.state['createdBy'] }</h2>
                 <h2>created at: { this.state['createdAt'] } </h2>
                 <h2>updated at: { this.state['updatedAt'] }</h2>
+
+                <h2>enrolled players:</h2>
+                {
+                    this.state['enrolledPlayers'].map((account) => {
+                        return(
+                            <span key={account['id']}> { account['user']['fullName'] }, </span>
+                        );
+                    })
+                }
+
+                <h2>enrolled teams:</h2>
+                {
+                    this.state['enrolledTeams'].map((team) => {
+                        return(
+                            <span key={team['id']}> { team['id'] } </span>
+                        );
+                    })
+                }
+
 
                 { /*language=SCSS*/ }
                 <style jsx>{`
