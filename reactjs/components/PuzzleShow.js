@@ -5,6 +5,7 @@ import { withNamespaces } from 'react-i18next';
 import config from "../configs/keys";
 import timeConverter from '../utlis/utlis';
 import Stage from "./Stage";
+import StageShow from "./StageShow";
 
 class PuzzleShow extends React.Component {
 
@@ -23,7 +24,6 @@ class PuzzleShow extends React.Component {
 
     async componentDidMount() {
         await this.fetchSetState();
-        document.getElementsByClassName("description")[0].innerHTML = this.state['description'];
     }
 
     async fetchSetState() {
@@ -141,7 +141,7 @@ class PuzzleShow extends React.Component {
                 </div>
 
                 <h2>description:</h2>
-                <div className={"description"}/>
+                <div className={"description"} dangerouslySetInnerHTML={{__html:this.state['description']}} />
 
                 <h2>stages:</h2>
                 <div className={"stages-cards"}>
@@ -155,16 +155,11 @@ class PuzzleShow extends React.Component {
                                 }
 
                                 return(
-                                    <Stage
+                                    <StageShow
                                         key={stage.level}
-                                        startDescription={stage.description}
+                                        description={stage.description}
                                         level={stage.level}
-                                        removeStage={this.removeStage}
-                                        updateDescription={this.updateDescription}
-                                        setCode={this.setCode}
                                         code={stage.code}
-                                        isLast={isLast}
-                                        isFor={"show"}
                                     />
                                 );
                             })

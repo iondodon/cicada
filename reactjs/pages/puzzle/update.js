@@ -54,6 +54,7 @@ class Update extends React.Component {
                       display: flex;
                       flex-direction: column;
                       min-width: 75%;
+                      max-width: 75%;
                     }
                     
                     .card-content {
