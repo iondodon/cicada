@@ -38,7 +38,7 @@ class Update extends React.Component {
                         </div>
                     </LeftPanel>
 
-                    <div className="card page-content">
+                    <div className="card page-content" id={"page-content"}>
                         {/*<header className="card-header">Create puzzle</header>*/}
                         <div className="card-content">
                             <div className="inner">

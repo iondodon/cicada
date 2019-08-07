@@ -36,7 +36,7 @@ class List extends React.Component {
                         </div>
                     </LeftPanel>
 
-                    <div className="card page-content">
+                    <div className="card page-content" id={"page-content"}>
                         {/*<header className="card-header">Puzzles</header>*/}
                         <div className="card-content">
                             <div className="inner">
