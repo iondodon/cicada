@@ -4,7 +4,6 @@ import '../i18n';
 import { withNamespaces } from 'react-i18next';
 import config from "../configs/keys";
 import timeConverter from '../utlis/utlis';
-import Stage from "./Stage";
 import StageShow from "./StageShow";
 
 class PuzzleShow extends React.Component {
@@ -66,6 +65,9 @@ class PuzzleShow extends React.Component {
         await this.setState( { createdBy: responseJson['createdBy']['user']['fullName'] } );
         await this.setState( { createdAt: timeConverter(responseJson['createdAt']['timestamp']) } );
         await this.setState( { updatedAt: timeConverter(responseJson['updatedAt']['timestamp']) } );
+        await this.setState( { difficultyByCreator: responseJson['difficultyByCreator'] } );
+        await this.setState( { difficultyByStatistics: responseJson['difficultyByStatistics'] } );
+        await this.setState( { tags: responseJson['tags'] } );
         await this.setState( { enrolledPlayers: responseJson['enrolledPlayers'] } );
         await this.setState( { enrolledTeams: responseJson['enrolledTeams'] } );
         await this.setState( { description: responseJson['description'] } );
@@ -117,6 +119,18 @@ class PuzzleShow extends React.Component {
                 <h2>created by: { this.state['createdBy'] }</h2>
                 <h2>created at: { this.state['createdAt'] } </h2>
                 <h2>updated at: { this.state['updatedAt'] }</h2>
+                <h2>difficulty by creator: { this.state['difficultyByCreator'] }</h2>
+                <h2>difficulty by statistics: { this.state['difficultyByStatistics'] }</h2>
+                <h2>tags: </h2>
+                <div className={'tags'}>
+                    {
+                        this.state.tags.map((tag) => {
+                            return(
+                                <a key={tag['id']} className={'tag-link'}>{tag['tag']}</a>
+                            )
+                        })
+                    }
+                </div>
 
                 <h2>enrolled players:</h2>
                 <div className={"enrolled-players"}>
@@ -148,12 +162,6 @@ class PuzzleShow extends React.Component {
                     <div>
                         {
                             this.state.stages.map((stage, index) => {
-                                let isLast = false;
-
-                                if(index === this.state.stagesCount - 1 && index !== 0){
-                                    isLast = true;
-                                }
-
                                 return(
                                     <StageShow
                                         key={stage.level}
@@ -174,11 +182,11 @@ class PuzzleShow extends React.Component {
                     flex-direction: column;
                   }
                   
-                  .enrolled-players, .enrolled-teams {
+                  .enrolled-players, .enrolled-teams, .tags {
                     margin-bottom: 2rem;
                   }
 
-                  .players-link, .team-link {
+                  .players-link, .team-link, .tag-link {
                     margin-right: 0.5rem;
                   }
                   

@@ -29,12 +29,12 @@ class StageShow extends React.Component {
             <div className="card stage" key={this.props.key}>
                 <header className="card-header">
                     <div className="pull-left stage-word">Stage { this.props.level }</div>
-                    <input
-                        type="text"
-                        placeholder="code"
-                        value={this.props.code}
-                        className={"stage-code pull-left"}
-                    />
+                    {/*<input*/}
+                    {/*    type="text"*/}
+                    {/*    placeholder="code"*/}
+                    {/*    defaultValue={this.props.code}*/}
+                    {/*    className={"stage-code pull-left"}*/}
+                    {/*/>*/}
                     <div className={"header-trigger pull-right"} onClick={this.toggleStage}>-</div>
                     <p/>
                 </header>
