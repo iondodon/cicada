@@ -106,7 +106,9 @@ class PuzzleForm extends React.Component {
                 document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
             } else if (response.status === 200) {
                 let responseJson = await response.json();
-                this.populateForm(responseJson);
+                if(this.props.isFor === "update"){
+                    this.populateForm(responseJson);
+                }
             } else {
                 document.getElementsByClassName('error-content')[0].innerHTML = 'Unknown error. Check the fields and try again.';
                 document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
