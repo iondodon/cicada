@@ -6,7 +6,7 @@ import '../../i18n';
 import { withNamespaces } from 'react-i18next';
 import Head from "next/head";
 import LeftPanel from "../../components/LeftPanel";
-import PuzzleForm from "../../components/PuzzleForm";
+import TeamForm from "../../components/TeamForm";
 
 class Create extends React.Component {
 
@@ -42,7 +42,7 @@ class Create extends React.Component {
                         {/*<header className="card-header">Create puzzle</header>*/}
                         <div className="card-content">
                             <div className="inner">
-                                <PuzzleForm isFor={"create"} />
+                                <TeamForm/>
                             </div>
                         </div>
                     </div>

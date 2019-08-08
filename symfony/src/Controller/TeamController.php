@@ -91,7 +91,7 @@ class TeamController extends AbstractFOSRestController
         }
 
         return $jsonResponse;
-    }   
+    }
 
     /**
      * @Route("/api/teams/{id}", name="teams.update", methods={"PUT"})

@@ -67,7 +67,7 @@ class Team
      * @var Account
      *
      * @ORM\ManyToOne(targetEntity="Account", inversedBy="createdTeams")
-     * @ORM\JoinColumn(name="account_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="creator_account_id", referencedColumnName="id")
      */
     private $creator;
 
