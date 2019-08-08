@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/symfony/src/Entity/Notification.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExternalWork/notes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ExternalWork/notes.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony/src/Entity/Account.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Entity/Account.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/components/TeamForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/TeamForm.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -407,7 +405,7 @@
       <workItem from="1565031154903" duration="5386000" />
       <workItem from="1565078937348" duration="9481000" />
       <workItem from="1565173336408" duration="8743000" />
-      <workItem from="1565250781788" duration="11241000" />
+      <workItem from="1565250781788" duration="14349000" />
     </task>
     <servers />
   </component>

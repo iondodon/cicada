@@ -27,69 +27,94 @@ class TeamForm extends React.Component {
 
     searchUser() {
 
-
         return null;
     }
 
     render(){
         return (
             <div className={"team-form"}>
-                <fieldset className="form-group">
-                    <label htmlFor="username">team name:</label>
-                    <input id="team-name" type="text" placeholder="type your team name..." className="form-control"/>
-                </fieldset>
+                <h1>
+                    name:
+                    <fieldset className="form-group">
+                        <input id="team-name" type="text" placeholder="type your team name..." className="form-control"/>
+                    </fieldset>
+                </h1>
 
-                <table>
-                    <thead>
-                    <tr>
-                        <th>no.</th>
-                        <th>username</th>
-                        <th>action</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>iondodon</td>
-                        <td>
-                            <button className="btn btn-error btn-ghost btn-block">remove</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>
-                            <fieldset className="form-group">
-                                <input
-                                    id="username"
-                                    type="text"
-                                    placeholder="username..."
-                                    className={"form-control username-input"}
-                                />
-                                <div className="help-block">...</div>
-                            </fieldset>
-                        </td>
-                        <td>
-                            <button className="btn btn-success btn-ghost btn-block">add</button>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
+                <h1>
+                    members:
+
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>no.</th>
+                            <th>username</th>
+                            <th>action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>iondodon</td>
+                            <td>
+                                <button className="btn btn-error btn-ghost btn-block">remove</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>
+                                <fieldset className="form-group">
+                                    <input
+                                        id="username"
+                                        type="text"
+                                        placeholder="username..."
+                                        className={"form-control username-input"}
+                                    />
+                                    <div className="help-block">...</div>
+                                </fieldset>
+                            </td>
+                            <td>
+                                <button className="btn btn-success btn-ghost btn-block">add</button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </h1>
 
                 <button className="btn btn-success btn-block">Save</button>
 
                 { /*language=SCSS*/ }
                 <style jsx>{`
                   .team-form {
-                    
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
                   }
                   
                   .username-input {
                     width: 100%;
                   }
                   
-                  td {
+                  .form-group {
+                    text-align: center;
+                    margin: 0;
+                  }
+                  
+                  input {
                     text-align: center;
                   }
+                  
+                  th {
+                    border: none;
+                  }
+                  
+                  h1 {
+                    font-weight: normal;
+                  }
+                  
+                  td {
+                    text-align: center;
+                    border: none;
+                  } 
                 `}
                 </style>
             </div>
