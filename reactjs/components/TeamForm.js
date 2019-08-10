@@ -12,6 +12,7 @@ class TeamForm extends React.Component {
         this.t = t;
 
         this.state = {
+            teamName: "",
             newMemberUsername: "",
             members: ["iondodon"]
         };
@@ -38,24 +39,10 @@ class TeamForm extends React.Component {
 
         let r = confirm('Press OK to confirm.');
 
-        // let array = [...this.state.members];
-        // let index = this.findInAttr(array, username);
-        // console.log(index);
-        // if (index !== -1) {
-        //     array.splice(index, 1);
-        //     await this.setState({members: array});
-        // }
-
         if(r === true){
-            this.state.members.find(
-                async (memberUsername, index, arr) => {
-                    if(memberUsername === username) {
-                        let array = [...this.state.members];
-                        array.splice(index, 1);
-                        await this.setState({members: array});
-                    }
-                }
-            );
+            let array = this.state.members;
+            array.splice(array.indexOf(username), 1);
+            await this.setState( { members: array } );
         }
     }
 
@@ -90,6 +77,7 @@ class TeamForm extends React.Component {
 
                 if(!getUsernameFromState()) {
                     await this.setState( { members: [...this.state.members, this.state.newMemberUsername ] } );
+                    await this.setState( { newMemberUsername: "" } );
                 } else {
                     document.getElementsByClassName('error-content')[0].innerHTML = this.state.newMemberUsername + ' is already a member.';
                     document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
@@ -114,7 +102,16 @@ class TeamForm extends React.Component {
                 <h2>name:</h2>
 
                 <fieldset className="form-group">
-                    <input id="team-name" type="text" placeholder="type your team name..." className="form-control"/>
+                    <input
+                        id="team-name"
+                        type="text"
+                        placeholder="type your team name..."
+                        className="form-control"
+                        value={this.state.teamName}
+                        onChange={async (event) => {
+                            await this.setState( { teamName: event.target.value } );
+                        }}
+                    />
                 </fieldset>
 
                 <h2>members:</h2>
@@ -130,13 +127,21 @@ class TeamForm extends React.Component {
                     <tbody>
                         {
                             this.state.members.map((member, index) => {
+                                const getRemoveBtn = () => {
+                                    if(index > 0){
+                                        return(
+                                            <td>
+                                                <button className="btn btn-error btn-ghost btn-block" onClick={this.removeMember}>remove</button>
+                                            </td>
+                                        );
+                                    }
+                                };
+
                                 return(
                                     <tr key={member}>
                                         <td>{index + 1}</td>
                                         <td>{member}</td>
-                                        <td>
-                                            <button className="btn btn-error btn-ghost btn-block" onClick={this.removeMember}>remove</button>
-                                        </td>
+                                        {getRemoveBtn()}
                                     </tr>
                                 );
                             })
@@ -149,6 +154,7 @@ class TeamForm extends React.Component {
                                     <input
                                         type="text"
                                         placeholder="username..."
+                                        value={this.state.newMemberUsername}
                                         className={"form-control username-input"}
                                         onChange={async (event) => {
                                             await this.setState( { newMemberUsername: event.target.value } );
