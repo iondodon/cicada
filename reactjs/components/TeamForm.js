@@ -10,6 +10,10 @@ class TeamForm extends React.Component {
         super(props, {t});
         this.t = t;
 
+        this.state = {
+            members: ["iondodon"]
+        };
+
         this.searchUser = this.searchUser.bind(this);
     }
 
@@ -33,35 +37,40 @@ class TeamForm extends React.Component {
     render(){
         return (
             <div className={"team-form"}>
-                <h1>
-                    name:
-                    <fieldset className="form-group">
-                        <input id="team-name" type="text" placeholder="type your team name..." className="form-control"/>
-                    </fieldset>
-                </h1>
+                <h2>name:</h2>
 
-                <h1>
-                    members:
+                <fieldset className="form-group">
+                    <input id="team-name" type="text" placeholder="type your team name..." className="form-control"/>
+                </fieldset>
 
-                    <table>
-                        <thead>
+                <h2>members:</h2>
+
+                <table>
+                    <thead>
+                    <tr>
+                        <th>no.</th>
+                        <th>username</th>
+                        <th>action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            this.state.members.map((member, index) => {
+                                return(
+                                    <tr key={member}>
+                                        <td>{index + 1}</td>
+                                        <td>{member}</td>
+                                        <td>
+                                            <button className="btn btn-error btn-ghost btn-block">remove</button>
+                                        </td>
+                                    </tr>
+                                );
+                            })
+                        }
+
                         <tr>
-                            <th>no.</th>
-                            <th>username</th>
-                            <th>action</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>iondodon</td>
-                            <td>
-                                <button className="btn btn-error btn-ghost btn-block">remove</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>
+                            <td>{this.state.members.length + 1}</td>
+                            <td className={"td-content-center"}>
                                 <fieldset className="form-group">
                                     <input
                                         id="username"
@@ -76,9 +85,9 @@ class TeamForm extends React.Component {
                                 <button className="btn btn-success btn-ghost btn-block">add</button>
                             </td>
                         </tr>
-                        </tbody>
-                    </table>
-                </h1>
+
+                    </tbody>
+                </table>
 
                 <button className="btn btn-success btn-block">Save</button>
 
@@ -94,9 +103,13 @@ class TeamForm extends React.Component {
                     width: 100%;
                   }
                   
+                  td {
+                    vertical-align: middle;
+                  }
+                  
                   .form-group {
                     text-align: center;
-                    margin: 0;
+                    margin-bottom: 2rem;
                   }
                   
                   input {
@@ -105,10 +118,6 @@ class TeamForm extends React.Component {
                   
                   th {
                     border: none;
-                  }
-                  
-                  h1 {
-                    font-weight: normal;
                   }
                   
                   td {
