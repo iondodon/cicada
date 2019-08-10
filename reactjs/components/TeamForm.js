@@ -18,6 +18,7 @@ class TeamForm extends React.Component {
 
         this.addNewMember = this.addNewMember.bind(this);
         this.closeError = this.closeError.bind(this);
+        this.removeMember = this.removeMember.bind(this);
     }
 
     componentDidMount() {
@@ -32,7 +33,39 @@ class TeamForm extends React.Component {
         });
     }
 
+    async removeMember(e) {
+        let username = e.target.parentNode.parentNode.childNodes[1].innerText;
+
+        let r = confirm('Press OK to confirm.');
+
+        // let array = [...this.state.members];
+        // let index = this.findInAttr(array, username);
+        // console.log(index);
+        // if (index !== -1) {
+        //     array.splice(index, 1);
+        //     await this.setState({members: array});
+        // }
+
+        if(r === true){
+            this.state.members.find(
+                async (memberUsername, index, arr) => {
+                    if(memberUsername === username) {
+                        let array = [...this.state.members];
+                        array.splice(index, 1);
+                        await this.setState({members: array});
+                    }
+                }
+            );
+        }
+    }
+
     async addNewMember() {
+        if(this.state.newMemberUsername === "") {
+            document.getElementsByClassName('error-content')[0].innerHTML = 'Specify a username';
+            document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            return;
+        }
+
         const request = {
             method: 'GET',
             mode: 'cors',
@@ -49,13 +82,12 @@ class TeamForm extends React.Component {
                 document.getElementsByClassName('error-content')[0].innerHTML = 'Such user doesn\'t exist.';
                 document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
             } else if (response.status === 302) {
-
                 const getUsernameFromState = () => {
                     return this.state.members.find((memberUsername) => {
                         return memberUsername === this.state.newMemberUsername;
                     })
                 };
-                
+
                 if(!getUsernameFromState()) {
                     await this.setState( { members: [...this.state.members, this.state.newMemberUsername ] } );
                 } else {
@@ -103,7 +135,7 @@ class TeamForm extends React.Component {
                                         <td>{index + 1}</td>
                                         <td>{member}</td>
                                         <td>
-                                            <button className="btn btn-error btn-ghost btn-block">remove</button>
+                                            <button className="btn btn-error btn-ghost btn-block" onClick={this.removeMember}>remove</button>
                                         </td>
                                     </tr>
                                 );
@@ -178,8 +210,8 @@ class TeamForm extends React.Component {
                         display: flex;
                         flex-direction: row;
                         text-align: center;
-                        margin-top: 2rem;
-                        margin-bottom: 0;
+                        margin-top: 1rem;
+                        margin-bottom: 2rem;
                         justify-content: center;
                   }
                 `}

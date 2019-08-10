@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/symfony/src/Controller/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactjs/components/TeamForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/TeamForm.js" afterDir="false" />
     </list>
@@ -408,7 +406,7 @@
       <workItem from="1565078937348" duration="9481000" />
       <workItem from="1565173336408" duration="8743000" />
       <workItem from="1565250781788" duration="14431000" />
-      <workItem from="1565446406033" duration="8550000" />
+      <workItem from="1565446406033" duration="10505000" />
     </task>
     <servers />
   </component>
