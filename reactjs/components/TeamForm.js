@@ -3,6 +3,7 @@ import React from 'react';
 import '../i18n';
 import { withNamespaces } from 'react-i18next';
 import config from "../configs/keys";
+import Router from "next/dist/client/router";
 
 
 class TeamForm extends React.Component {
@@ -20,6 +21,8 @@ class TeamForm extends React.Component {
         this.addNewMember = this.addNewMember.bind(this);
         this.closeError = this.closeError.bind(this);
         this.removeMember = this.removeMember.bind(this);
+        this.saveTeam = this.saveTeam.bind(this);
+        this.goodForm = this.goodForm.bind(this);
     }
 
     componentDidMount() {
@@ -88,6 +91,93 @@ class TeamForm extends React.Component {
             }
         } catch (e) {
             document.getElementsByClassName('error-content')[0].innerHTML += e.message;
+            document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+        }
+    }
+
+    async goodForm() {
+        let good;
+        let message = "";
+
+        const request = {
+            method: 'GET',
+            mode: 'cors',
+            credentials: "include"
+        };
+
+        try {
+            let response = await fetch(config.API_URL + '/api/teams/exists/' + this.state.teamName, request);
+
+            if (response.status === 401) {
+                message += 'Unauthorized. ';
+                good = false;
+            } else if (response.status === 204) {
+                good = true;
+            } else if (response.status === 302) {
+                message += 'A team with this name already exists. ';
+                good = false;
+            } else {
+                message += 'Unexpected error. ';
+                good = false;
+            }
+        } catch (e) {
+            message += e.message;
+            return false;
+        }
+
+        console.log(good);
+
+        if(this.state.members.length < 2){
+            message += 'At least two members. ';
+            good = false;
+        }
+
+        if(this.state.teamName.length < 3) {
+            message += 'The team name should be at least 3 chars long. ';
+            good = false;
+        }
+
+        if(!good) {
+            document.getElementsByClassName('error-content')[0].innerHTML = message;
+            document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+        }
+
+       return good;
+    }
+
+    async saveTeam() {
+        if(!this.goodForm()){
+            return;
+        }
+
+        let headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+
+        const request = {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: headers,
+            credentials: "include",
+            body: JSON.stringify(this.state)
+        };
+
+        try {
+            let response = await fetch(config.API_URL + '/api/teams/create', request);
+
+            if (response.status === 401) {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Unauthorized. ';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            } else if (response.status === 500) {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Server error. Check the fields and try again. ';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            } else if (response.status === 201) {
+                Router.push(`/`);
+            } else {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Unknown error. Check the fields and try again. ';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            }
+        } catch (e) {
+            document.getElementsByClassName('error-content')[0].innerHTML += e.message + ' ';
             document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
         }
     }
@@ -176,7 +266,7 @@ class TeamForm extends React.Component {
                     {'\u00A0'} <a onClick={this.closeError}>x</a>
                 </div>
 
-                <button className="btn btn-success btn-block">Save</button>
+                <button className="btn btn-success btn-block" onClick={this.saveTeam}>Save</button>
 
                 { /*language=SCSS*/ }
                 <style jsx>{`

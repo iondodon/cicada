@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Team;
+use App\Entity\User;
 use App\Repository\TeamRepository;
 use FOS\RestBundle\Controller\Annotations\Route;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
@@ -46,7 +47,7 @@ class TeamController extends AbstractFOSRestController
     public function create(Request $request, TeamRepository $teamRepository): Response
     {
         $data = json_decode($request->getContent(), true);
-        $success = $teamRepository->createPuzzleAndSave($data, $this->getUser());
+        $success = $teamRepository->createTeamAndSave($data, $this->getUser());
 
         if(!$success){
             return new Response(
@@ -138,6 +139,27 @@ class TeamController extends AbstractFOSRestController
             ['content-type' => 'text/html']
         );
 
+        return $response;
+    }
+
+    /**
+     * @Route("/api/teams/exists/{name}", name="teams.exists", methods={"GET"})
+     * @param $name
+     * @return Response
+     */
+    public function teamExists($name): Response
+    {
+        $em = $this->getDoctrine()->getManager();
+        $team = $em->getRepository(Team::class)->findOneBy(['name' => $name]);
+
+        $response = new Response();
+
+        if(!$team){
+            $response->setStatusCode(Response::HTTP_NO_CONTENT);
+            return $response;
+        }
+
+        $response->setStatusCode(Response::HTTP_FOUND);
         return $response;
     }
 }
