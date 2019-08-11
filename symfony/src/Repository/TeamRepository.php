@@ -3,8 +3,10 @@
 namespace App\Repository;
 
 use App\Entity\Puzzle;
+use App\Entity\Team;
 use App\Entity\User;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
 class TeamRepository extends ServiceEntityRepository
@@ -21,7 +23,30 @@ class TeamRepository extends ServiceEntityRepository
      */
     public function createTeamAndSave($data, User $user): bool
     {
-        dump($data); die;
+        $em = $this->getEntityManager();
+
+        try {
+            $new_team = new Team();
+            $new_team->setName($data['teamName']);
+
+            $members = new ArrayCollection();
+            foreach ($data['members'] as $username) {
+                $member = $em->getRepository(User::class)->findOneBy(['username' => $username]);
+                if($member){
+                    $members->add($member);
+                }
+                $new_team->setMembers($members);
+            }
+
+            $new_team->setPuzzlesSolvedCount(0);
+            $new_team->setWinedContestsCount(0);
+            $new_team->setCreator($user->getAccount());
+
+            $em->persist($new_team);
+            $em->flush();
+        } catch (\Exception $exception) {
+            return false;
+        }
 
         return true;
     }

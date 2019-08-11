@@ -22,19 +22,11 @@ class TeamForm extends React.Component {
         this.closeError = this.closeError.bind(this);
         this.removeMember = this.removeMember.bind(this);
         this.saveTeam = this.saveTeam.bind(this);
-        this.goodForm = this.goodForm.bind(this);
+        this.checkForm = this.checkForm.bind(this);
     }
 
     componentDidMount() {
-        // language=JQuery-CSS
-        $('.tags-multiple-select').select2({
-            placeholder: 'Select users',
-            width: '100%'
-        });
 
-        $('.tags-multiple-select').on('change', () => {
-            let user = this.searchUser();
-        });
     }
 
     async removeMember(e) {
@@ -95,37 +87,9 @@ class TeamForm extends React.Component {
         }
     }
 
-    async goodForm() {
-        let good;
+    async checkForm() {
+        let good = true;
         let message = "";
-
-        const request = {
-            method: 'GET',
-            mode: 'cors',
-            credentials: "include"
-        };
-
-        try {
-            let response = await fetch(config.API_URL + '/api/teams/exists/' + this.state.teamName, request);
-
-            if (response.status === 401) {
-                message += 'Unauthorized. ';
-                good = false;
-            } else if (response.status === 204) {
-                good = true;
-            } else if (response.status === 302) {
-                message += 'A team with this name already exists. ';
-                good = false;
-            } else {
-                message += 'Unexpected error. ';
-                good = false;
-            }
-        } catch (e) {
-            message += e.message;
-            return false;
-        }
-
-        console.log(good);
 
         if(this.state.members.length < 2){
             message += 'At least two members. ';
@@ -137,49 +101,79 @@ class TeamForm extends React.Component {
             good = false;
         }
 
+        const request = {
+            method: 'GET',
+            mode: 'cors',
+            credentials: "include"
+        };
+
+        if(good) {
+            try {
+                let response = await fetch(config.API_URL + '/api/teams/exists/' + this.state.teamName, request);
+
+                if (response.status === 401) {
+                    message += 'Unauthorized. ';
+                    good = false;
+                } else if (response.status === 204) {
+                    good = true;
+                } else if (response.status === 302) {
+                    message += 'A team with this name already exists. ';
+                    good = false;
+                } else {
+                    message += 'Unexpected error. ';
+                    good = false;
+                }
+            } catch (e) {
+                message += e.message;
+                good = false;
+            }
+        }
+
         if(!good) {
             document.getElementsByClassName('error-content')[0].innerHTML = message;
             document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
         }
 
-       return good;
+        return good;
     }
 
     async saveTeam() {
-        if(!this.goodForm()){
-            return;
-        }
+        this.checkForm().then(async good => {
+            if(good) {
+                let headers = new Headers();
+                headers.append('Content-Type', 'application/json');
 
-        let headers = new Headers();
-        headers.append('Content-Type', 'application/json');
+                const request = {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: headers,
+                    credentials: "include",
+                    body: JSON.stringify(this.state)
+                };
 
-        const request = {
-            method: 'POST',
-            mode: 'no-cors',
-            headers: headers,
-            credentials: "include",
-            body: JSON.stringify(this.state)
-        };
+                try {
+                    let response = await fetch(config.API_URL + '/api/teams/create', request);
 
-        try {
-            let response = await fetch(config.API_URL + '/api/teams/create', request);
+                    console.log(response);
 
-            if (response.status === 401) {
-                document.getElementsByClassName('error-content')[0].innerHTML = 'Unauthorized. ';
-                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
-            } else if (response.status === 500) {
-                document.getElementsByClassName('error-content')[0].innerHTML = 'Server error. Check the fields and try again. ';
-                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
-            } else if (response.status === 201) {
-                Router.push(`/`);
-            } else {
-                document.getElementsByClassName('error-content')[0].innerHTML = 'Unknown error. Check the fields and try again. ';
-                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+                    if (response.status === 401) {
+                        document.getElementsByClassName('error-content')[0].innerHTML = 'Unauthorized. ';
+                        document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+                    } else if (response.status === 500) {
+                        document.getElementsByClassName('error-content')[0].innerHTML = 'Server error. Check the fields and try again. ';
+                        document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+                    } else if (response.status === 201) {
+                        Router.push(`/`);
+                    } else {
+                        document.getElementsByClassName('error-content')[0].innerHTML = 'Unknown error. Check the fields and try again. ';
+                        document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+                    }
+                } catch (e) {
+                    document.getElementsByClassName('error-content')[0].innerHTML += e.message + ' ';
+                    document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+                }
             }
-        } catch (e) {
-            document.getElementsByClassName('error-content')[0].innerHTML += e.message + ' ';
-            document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
-        }
+        });
     }
 
     closeError(e) {
