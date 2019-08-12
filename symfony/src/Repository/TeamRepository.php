@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use App\Entity\Account;
 use App\Entity\Puzzle;
 use App\Entity\Team;
 use App\Entity\User;
@@ -29,14 +30,17 @@ class TeamRepository extends ServiceEntityRepository
             $new_team = new Team();
             $new_team->setName($data['teamName']);
 
-            $members = new ArrayCollection();
+            $accounts = new ArrayCollection();
             foreach ($data['members'] as $username) {
                 $member = $em->getRepository(User::class)->findOneBy(['username' => $username]);
                 if($member){
-                    $members->add($member);
+                    /** @var Account $member_account */
+                    $member_account = $member->getAccount();
+                    $member_account->getTeamsMemberOf()->add($new_team);
+                    $em->persist($member_account);
                 }
-                $new_team->setMembers($members);
             }
+            $new_team->setMembers($accounts);
 
             $new_team->setPuzzlesSolvedCount(0);
             $new_team->setWinedContestsCount(0);

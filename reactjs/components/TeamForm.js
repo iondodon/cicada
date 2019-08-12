@@ -145,7 +145,7 @@ class TeamForm extends React.Component {
 
                 const request = {
                     method: 'POST',
-                    mode: 'no-cors',
+                    mode: 'cors',
                     headers: headers,
                     credentials: "include",
                     body: JSON.stringify(this.state)
