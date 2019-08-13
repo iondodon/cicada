@@ -154,8 +154,6 @@ class TeamForm extends React.Component {
                 try {
                     let response = await fetch(config.API_URL + '/api/teams/create', request);
 
-                    console.log(response);
-
                     if (response.status === 401) {
                         document.getElementsByClassName('error-content')[0].innerHTML = 'Unauthorized. ';
                         document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
