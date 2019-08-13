@@ -23,9 +23,52 @@ class TeamForm extends React.Component {
         this.removeMember = this.removeMember.bind(this);
         this.saveTeam = this.saveTeam.bind(this);
         this.checkForm = this.checkForm.bind(this);
+        this.fetchAndSetState = this.fetchAndSetState.bind(this);
+        this.populateForm = this.populateForm.bind(this);
     }
 
     componentDidMount() {
+        if(this.props.isFor === "update") {
+            this.fetchAndSetState().then()
+        }
+    }
+
+    populateForm(responseJson) {
+        console.log(responseJson);
+    }
+
+    async fetchAndSetState() {
+        const urlParams = new URLSearchParams(window.location.search);
+        this.teamId = urlParams.get('teamId');
+
+        const request = {
+            method: 'GET',
+            mode: 'cors',
+            credentials: "include"
+        };
+
+        try {
+            let response = await fetch(config.API_URL + '/api/teams/' + this.teamId, request);
+
+            if (response.status === 401) {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Unauthorized.';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            } else if (response.status === 204) {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Such team doesn\'t exist.';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            } else if (response.status === 200) {
+                let responseJson = await response.json();
+                if(this.props.isFor === "update"){
+                    this.populateForm(responseJson);
+                }
+            } else {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Unknown error. Check the fields and try again.';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            }
+        } catch (e) {
+            document.getElementsByClassName('error-content')[0].innerHTML += e.message;
+            document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+        }
 
     }
 

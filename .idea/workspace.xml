@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/reactjs/pages/team/update.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactjs/components/TeamForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/TeamForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/components/TopMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/TopMenu.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -270,12 +272,7 @@
     <option name="allServicesViewState">
       <serviceView>
         <treeState>
-          <expand>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@2c6aa7e8" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-          </expand>
+          <expand />
           <select />
         </treeState>
       </serviceView>
@@ -414,7 +411,7 @@
       <workItem from="1565446406033" duration="13663000" />
       <workItem from="1565526046255" duration="18022000" />
       <workItem from="1565638647413" duration="5053000" />
-      <workItem from="1565686104860" duration="283000" />
+      <workItem from="1565686104860" duration="3259000" />
     </task>
     <servers />
   </component>
