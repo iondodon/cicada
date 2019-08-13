@@ -51,9 +51,11 @@ class LeftMenu extends React.Component {
                             <a className="menu-item">
                                 Create contest<div className="pull-right">»</div>
                             </a>
-                            <a className="menu-item">
-                                Create team<div className="pull-right">»</div>
-                            </a>
+                            <Link href={"/team/create"}>
+                                <a className="menu-item">
+                                    Create team<div className="pull-right">»</div>
+                                </a>
+                            </Link>{' '}
                             <br/>
                             <a className="menu-item">
                                 My account<div className="pull-right">»</div>

@@ -22,6 +22,8 @@ class Account
         $this->createdContests = new ArrayCollection();
         $this->contestsEnrolledAt = new ArrayCollection();
         $this->teamsMemberOf = new ArrayCollection();
+        $this->notificationsSent = new ArrayCollection();
+        $this->notificationsReceived = new ArrayCollection();
     }
 
     /**
@@ -105,6 +107,17 @@ class Account
      */
     private $teamsMemberOf;
 
+    /**
+     * @var Collection
+     * @ORM\OneToMany(targetEntity="Notification", mappedBy="sourceAccount")
+     */
+    private $notificationsSent;
+
+    /**
+     * @var Collection
+     * @ORM\OneToMany(targetEntity="Notification", mappedBy="destinationAccount")
+     */
+    private $notificationsReceived;
 
     /**
      * @return mixed
@@ -300,6 +313,44 @@ class Account
     public function setTeamsMemberOf(Collection $teamsMemberOf): Account
     {
         $this->teamsMemberOf = $teamsMemberOf;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection
+     */
+    public function getNotificationsSent(): Collection
+    {
+        return $this->notificationsSent;
+    }
+
+    /**
+     * @param Collection $notificationsSent
+     * @return Account
+     */
+    public function setNotificationsSent(Collection $notificationsSent): Account
+    {
+        $this->notificationsSent = $notificationsSent;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection
+     */
+    public function getNotificationsReceived(): Collection
+    {
+        return $this->notificationsReceived;
+    }
+
+    /**
+     * @param Collection $notificationsReceived
+     * @return Account
+     */
+    public function setNotificationsReceived(Collection $notificationsReceived): Account
+    {
+        $this->notificationsReceived = $notificationsReceived;
 
         return $this;
     }
