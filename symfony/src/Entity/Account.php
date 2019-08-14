@@ -317,6 +317,11 @@ class Account
         return $this;
     }
 
+    public function addTeam(Team $team): void
+    {
+        $this->teamsMemberOf[] = $team;
+    }
+
     /**
      * @return Collection
      */

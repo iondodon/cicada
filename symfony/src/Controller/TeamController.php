@@ -2,8 +2,11 @@
 
 namespace App\Controller;
 
+use App\Entity\Account;
 use App\Entity\Team;
+use App\Entity\User;
 use App\Repository\TeamRepository;
+use Doctrine\Common\Collections\ArrayCollection;
 use FOS\RestBundle\Controller\Annotations\Route;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -108,6 +111,23 @@ class TeamController extends AbstractFOSRestController
         $team = $em->getRepository(Team::class)->findOneBy(['id' => $id]);
 
         if($team) {
+            $team->setName($editedTeam['teamName']);
+
+            $members = new ArrayCollection();
+            foreach ($editedTeam['members'] as $member_username) {
+                $user = $em->getRepository(User::class)->findOneBy(['username' => $member_username]);
+                if($user){
+                    /** @var Account $user_account */
+                    $user_account = $user->getAccount();
+                    $user_account->getTeamsMemberOf()->add($team);
+                    $em->persist($user_account);
+                }
+            }
+            $team->setMembers($members);
+
+            $em->persist($team);
+            $em->flush();
+
             return new Response(
                 'Team updated.', Response::HTTP_OK, ['content-type' => 'text/html']
             );

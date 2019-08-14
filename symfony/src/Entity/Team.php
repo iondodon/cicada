@@ -131,6 +131,12 @@ class Team
         return $this;
     }
 
+    public function addMember(Account $account): void
+    {
+        $account->addTeam($this); // synchronously updating inverse side
+        $this->members[] = $account;
+    }
+
     /**
      * @return int
      */

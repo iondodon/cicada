@@ -59,8 +59,6 @@ class PuzzleShow extends React.Component {
     }
 
     async prepareState(responseJson) {
-        console.log(responseJson);
-
         await this.setState({ name: responseJson['name'] });
         await this.setState( { createdBy: responseJson['createdBy']['user']['fullName'] } );
         await this.setState( { createdAt: timeConverter(responseJson['createdAt']['timestamp']) } );

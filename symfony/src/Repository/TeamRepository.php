@@ -36,8 +36,7 @@ class TeamRepository extends ServiceEntityRepository
                 if($member){
                     /** @var Account $member_account */
                     $member_account = $member->getAccount();
-                    $member_account->getTeamsMemberOf()->add($new_team);
-                    $em->persist($member_account);
+                    $new_team->addMember($member_account);
                 }
             }
             $new_team->setMembers($accounts);
