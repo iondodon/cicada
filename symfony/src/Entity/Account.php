@@ -102,8 +102,7 @@ class Account
     /**
      * @var Collection
      *
-     * @ORM\ManyToMany(targetEntity="Team", inversedBy="members")
-     * @ORM\JoinTable(name="accounts_teams")
+     * @ORM\ManyToMany(targetEntity="Team", mappedBy="members")
      */
     private $teamsMemberOf;
 
@@ -315,11 +314,6 @@ class Account
         $this->teamsMemberOf = $teamsMemberOf;
 
         return $this;
-    }
-
-    public function addTeam(Team $team): void
-    {
-        $this->teamsMemberOf[] = $team;
     }
 
     /**

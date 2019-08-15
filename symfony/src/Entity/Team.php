@@ -38,7 +38,8 @@ class Team
     /**
      * @var Collection
      *
-     * @ORM\ManyToMany(targetEntity="Account", mappedBy="teamsMemberOf")
+     * @ORM\ManyToMany(targetEntity="Account", inversedBy="teamsMemberOf")
+     * @ORM\JoinTable(name="teams_accounts")
      */
     private $members;
 
@@ -129,12 +130,6 @@ class Team
         $this->members = $members;
 
         return $this;
-    }
-
-    public function addMember(Account $account): void
-    {
-        $account->addTeam($this); // synchronously updating inverse side
-        $this->members[] = $account;
     }
 
     /**

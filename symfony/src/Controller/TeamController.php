@@ -119,8 +119,7 @@ class TeamController extends AbstractFOSRestController
                 if($user){
                     /** @var Account $user_account */
                     $user_account = $user->getAccount();
-                    $user_account->getTeamsMemberOf()->add($team);
-                    $em->persist($user_account);
+                    $members->add($user_account);
                 }
             }
             $team->setMembers($members);
