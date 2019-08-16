@@ -15,7 +15,7 @@ class TeamForm extends React.Component {
         this.state = {
             teamName: "",
             newMemberUsername: "",
-            members: ["iondodon"]
+            members: ["iondodon"] //TODO: current logged in user
         };
 
         this.addNewMember = this.addNewMember.bind(this);
@@ -23,9 +23,58 @@ class TeamForm extends React.Component {
         this.removeMember = this.removeMember.bind(this);
         this.saveTeam = this.saveTeam.bind(this);
         this.checkForm = this.checkForm.bind(this);
+        this.fetchAndSetState = this.fetchAndSetState.bind(this);
+        this.populateForm = this.populateForm.bind(this);
+        this.fetchUpdateTeam = this.fetchUpdateTeam.bind(this);
     }
 
     componentDidMount() {
+        if(this.props.isFor === "update") {
+            this.fetchAndSetState().then()
+        }
+    }
+
+    async populateForm(responseJson) {
+        await this.setState( { teamName: responseJson['name'] } );
+        let array = [];
+        responseJson['members'].forEach(member => {
+            array.push(member['user']['username']);
+        });
+        await this.setState( { members: array } );
+    }
+
+    async fetchAndSetState() {
+        const urlParams = new URLSearchParams(window.location.search);
+        this.teamId = urlParams.get('teamId');
+
+        const request = {
+            method: 'GET',
+            mode: 'cors',
+            credentials: "include"
+        };
+
+        try {
+            let response = await fetch(config.API_URL + '/api/teams/' + this.teamId, request);
+
+            if (response.status === 401) {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Unauthorized.';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            } else if (response.status === 204) {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Such team doesn\'t exist.';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            } else if (response.status === 200) {
+                let responseJson = await response.json();
+                if(this.props.isFor === "update"){
+                    this.populateForm(responseJson);
+                }
+            } else {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Unknown error. Check the fields and try again.';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            }
+        } catch (e) {
+            document.getElementsByClassName('error-content')[0].innerHTML += e.message;
+            document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+        }
 
     }
 
@@ -117,8 +166,10 @@ class TeamForm extends React.Component {
                 } else if (response.status === 204) {
                     good = true;
                 } else if (response.status === 302) {
-                    message += 'A team with this name already exists. ';
-                    good = false;
+                    if(!(this.props.isFor === "update")){
+                        message += 'A team with this name already exists. ';
+                        good = false;
+                    }
                 } else {
                     message += 'Unexpected error. ';
                     good = false;
@@ -137,41 +188,84 @@ class TeamForm extends React.Component {
         return good;
     }
 
+    async fetchUpdateTeam() {
+        let headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+
+        const request = {
+            method: 'PUT',
+            mode: 'cors',
+            headers: headers,
+            credentials: "include",
+            body: JSON.stringify(this.state)
+        };
+
+        try {
+            let response = await fetch(config.API_URL + '/api/teams/' + this.teamId, request);
+
+            console.log(response);
+
+            if (response.status === 401) {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Unauthorized.';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            } else if (response.status === 500) {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Server error. Check the fields and try again. ';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            } else if (response.status === 200) {
+                Router.push(`/`);
+            } else {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Unknown error. Check the fields and try again.';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            }
+        } catch (e) {
+            document.getElementsByClassName('error-content')[0].innerHTML += e.message;
+            document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+        }
+    }
+
     async saveTeam() {
-        this.checkForm().then(async good => {
-            if(good) {
-                let headers = new Headers();
-                headers.append('Content-Type', 'application/json');
+        if(this.props.isFor === "update") {
+            this.checkForm().then(good => {
+                if(good){
+                    this.fetchUpdateTeam().then();
+                }
+            });
+        } else {
+            this.checkForm().then(async good => {
+                if(good) {
+                    let headers = new Headers();
+                    headers.append('Content-Type', 'application/json');
 
-                const request = {
-                    method: 'POST',
-                    mode: 'cors',
-                    headers: headers,
-                    credentials: "include",
-                    body: JSON.stringify(this.state)
-                };
+                    const request = {
+                        method: 'POST',
+                        mode: 'cors',
+                        headers: headers,
+                        credentials: "include",
+                        body: JSON.stringify(this.state)
+                    };
 
-                try {
-                    let response = await fetch(config.API_URL + '/api/teams/create', request);
+                    try {
+                        let response = await fetch(config.API_URL + '/api/teams/create', request);
 
-                    if (response.status === 401) {
-                        document.getElementsByClassName('error-content')[0].innerHTML = 'Unauthorized. ';
-                        document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
-                    } else if (response.status === 500) {
-                        document.getElementsByClassName('error-content')[0].innerHTML = 'Server error. Check the fields and try again. ';
-                        document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
-                    } else if (response.status === 201) {
-                        Router.push(`/`);
-                    } else {
-                        document.getElementsByClassName('error-content')[0].innerHTML = 'Unknown error. Check the fields and try again. ';
+                        if (response.status === 401) {
+                            document.getElementsByClassName('error-content')[0].innerHTML = 'Unauthorized. ';
+                            document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+                        } else if (response.status === 500) {
+                            document.getElementsByClassName('error-content')[0].innerHTML = 'Server error. Check the fields and try again. ';
+                            document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+                        } else if (response.status === 201) {
+                            Router.push(`/`);
+                        } else {
+                            document.getElementsByClassName('error-content')[0].innerHTML = 'Unknown error. Check the fields and try again. ';
+                            document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+                        }
+                    } catch (e) {
+                        document.getElementsByClassName('error-content')[0].innerHTML += e.message + ' ';
                         document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
                     }
-                } catch (e) {
-                    document.getElementsByClassName('error-content')[0].innerHTML += e.message + ' ';
-                    document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
                 }
-            }
-        });
+            });
+        }
     }
 
     closeError(e) {

@@ -61,13 +61,13 @@ class Notification
     /**
      * @return int
      */
-    public function getType(): Integer
+    public function getType(): int
     {
         return $this->type;
     }
 
     /**
-     * @param integer $type
+     * @param int $type
      * @return Notification
      */
     public function setType($type): Notification

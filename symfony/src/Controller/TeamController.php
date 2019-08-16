@@ -2,8 +2,12 @@
 
 namespace App\Controller;
 
+use App\Entity\Account;
+use App\Entity\Notification;
 use App\Entity\Team;
+use App\Entity\User;
 use App\Repository\TeamRepository;
+use Doctrine\Common\Collections\ArrayCollection;
 use FOS\RestBundle\Controller\Annotations\Route;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -95,26 +99,24 @@ class TeamController extends AbstractFOSRestController
 
     /**
      * @Route("/api/teams/{id}", name="teams.update", methods={"PUT"})
+     * @param TeamRepository $teamRepository
      * @param Request $request
      * @param $id
      * @return Response
-     * @throws \Exception
      */
-    public function update(Request $request, $id): Response
+    public function update(TeamRepository $teamRepository, Request $request, $id): Response
     {
         $editedTeam = json_decode($request->getContent(), true);
+        $success = $teamRepository->updateTeam($editedTeam, $this->getUser(), $id);
 
-        $em = $this->getDoctrine()->getManager();
-        $team = $em->getRepository(Team::class)->findOneBy(['id' => $id]);
-
-        if($team) {
+        if($success) {
             return new Response(
                 'Team updated.', Response::HTTP_OK, ['content-type' => 'text/html']
             );
         }
 
         return new Response(
-            'No such team', Response::HTTP_NOT_FOUND, ['content-type'=> 'text/html']
+            'Error. Maybe this team does not exist. ', Response::HTTP_NOT_FOUND, ['content-type'=> 'text/html']
         );
     }
 

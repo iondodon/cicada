@@ -10,6 +10,7 @@ public_key and private_key pass phrase:
 
 notifications:
     type 1 - team member request
+    type 2 - team member removed
 
 sources:
     https://github.com/awd-studio/symfony-4-oauth2-server
