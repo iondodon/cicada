@@ -120,23 +120,35 @@ class TeamRepository extends ServiceEntityRepository
                             }
                         }
                         if ($isNew) {
-                            /** @var User $loggedUser $notification */
-                            $notification = new Notification();
-                            $notification->setMessage(
-                                'You were requested to be a member of the team '.$team->getName()
-                            );
-                            $notification->setDestinationAccount($user->getAccount());
-                            $notification->setSourceAccount($loggedUser->getAccount());
-                            $notification->setType(1);
-                            $em->persist($notification);
-                            /** @var ArrayCollection $requestedMembers */
-                            $requestedMembers = $team->getRequestedMembers();
-                            $requestedMembers->add($user->getAccount());
-                            $team->setRequestedMembers($requestedMembers);
-                            /** @var ArrayCollection $requestingTeams */
-                            $requestingTeams = $user->getAccount()->getRequestingTeams();
-                            $requestingTeams->add($team);
-                            $user->getAccount()->setRequestingTeams($requestingTeams);
+                            $alreadyRequested = false;
+
+                            foreach ($team->getRequestedMembers() as $requestedMember) {
+                                /** @var Account $requestedMember */
+                                if($requestedMember->getId() === $user->getAccount()->getId()) {
+                                    $alreadyRequested = true;
+                                    break;
+                                }
+                            }
+
+                            if(!$alreadyRequested) {
+                                /** @var User $loggedUser $notification */
+                                $notification = new Notification();
+                                $notification->setMessage(
+                                    'You were requested to be a member of the team '.$team->getName()
+                                );
+                                $notification->setDestinationAccount($user->getAccount());
+                                $notification->setSourceAccount($loggedUser->getAccount());
+                                $notification->setType(1);
+                                $em->persist($notification);
+                                /** @var ArrayCollection $requestedMembers */
+                                $requestedMembers = $team->getRequestedMembers();
+                                $requestedMembers->add($user->getAccount());
+                                $team->setRequestedMembers($requestedMembers);
+                                /** @var ArrayCollection $requestingTeams */
+                                $requestingTeams = $user->getAccount()->getRequestingTeams();
+                                $requestingTeams->add($team);
+                                $user->getAccount()->setRequestingTeams($requestingTeams);
+                            }
                         } else {
                             /** @var Account $user_account */
                             $user_account = $user->getAccount();
