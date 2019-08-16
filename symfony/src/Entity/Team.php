@@ -19,6 +19,7 @@ class Team
         $this->puzzleSessions = new ArrayCollection();
         $this->puzzlesEnrolledAt = new ArrayCollection();
         $this->members = new ArrayCollection();
+        $this->requestedMembers = new ArrayCollection();
     }
 
     /**
@@ -42,6 +43,14 @@ class Team
      * @ORM\JoinTable(name="teams_accounts")
      */
     private $members;
+
+    /**
+     * @var Collection
+     *
+     * @ORM\ManyToMany(targetEntity="Account", inversedBy="requestingTeams")
+     * @ORM\JoinTable(name="accounts_teams")
+     */
+    private $requestedMembers;
 
     /**
      * @var integer
@@ -128,6 +137,25 @@ class Team
     public function setMembers(Collection $members): Team
     {
         $this->members = $members;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection
+     */
+    public function getRequestedMembers(): Collection
+    {
+        return $this->requestedMembers;
+    }
+
+    /**
+     * @param Collection $requestedMembers
+     * @return Team
+     */
+    public function setRequestedMembers(Collection $requestedMembers): Team
+    {
+        $this->requestedMembers = $requestedMembers;
 
         return $this;
     }

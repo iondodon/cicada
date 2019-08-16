@@ -24,6 +24,7 @@ class Account
         $this->teamsMemberOf = new ArrayCollection();
         $this->notificationsSent = new ArrayCollection();
         $this->notificationsReceived = new ArrayCollection();
+        $this->requestingTeams = new ArrayCollection();
     }
 
     /**
@@ -117,6 +118,13 @@ class Account
      * @ORM\OneToMany(targetEntity="Notification", mappedBy="destinationAccount")
      */
     private $notificationsReceived;
+
+    /**
+     * @var Collection
+     *
+     * @@ORM\ManyToMany(targetEntity="Team", mappedBy="requestedMembers")
+     */
+    private $requestingTeams;
 
     /**
      * @return mixed
@@ -312,6 +320,25 @@ class Account
     public function setTeamsMemberOf(Collection $teamsMemberOf): Account
     {
         $this->teamsMemberOf = $teamsMemberOf;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection
+     */
+    public function getRequestingTeams(): Collection
+    {
+        return $this->teamsMemberOf;
+    }
+
+    /**
+     * @param Collection $requestingTeams
+     * @return Account
+     */
+    public function setRequestingTeams(Collection $requestingTeams): Account
+    {
+        $this->requestingTeams = $requestingTeams;
 
         return $this;
     }
