@@ -44,11 +44,13 @@ class TopMenu extends React.Component {
                     <Link href={"/login"}>
                         <a className="menu-item">Login</a>
                     </Link>{' '}
-
                     |
-
                     <Link href={"/signup"}>
                         <a className="menu-item">SignUp</a>
+                    </Link>{' '}
+                    |
+                    <Link href={"/notifications"}>
+                        <a className="menu-item">Notifications</a>
                     </Link>{' '}
                 </div>
 

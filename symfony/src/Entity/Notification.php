@@ -31,12 +31,6 @@ class Notification
     private $type;
 
     /**
-     * @var string
-     * @ORM\Column(type="text", nullable=false)
-     */
-    private $message;
-
-    /**
      * @var Account
      * @ORM\ManyToOne(targetEntity="Account", inversedBy="notificationsSent")
      * @ORM\JoinColumn(name="source_account_id", referencedColumnName="id")
@@ -73,25 +67,6 @@ class Notification
     public function setType($type): Notification
     {
         $this->type = $type;
-
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getMessage(): string
-    {
-        return $this->message;
-    }
-
-    /**
-     * @param string $message
-     * @return Notification
-     */
-    public function setMessage($message): Notification
-    {
-        $this->message = $message;
 
         return $this;
     }

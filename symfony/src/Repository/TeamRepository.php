@@ -45,8 +45,6 @@ class TeamRepository extends ServiceEntityRepository
                         $notification = new Notification();
                         $notification->setSourceAccount($user->getAccount());
                         $notification->setDestinationAccount($member_account);
-                        $message = $user->getFullName().' wants to add you in the team '.$data['teamName'].'. See Requesting Teams';
-                        $notification->setMessage($message);
                         $notification->setType(1);
                         $em->persist($notification);
                         $requestedMembers->add($member_account);
@@ -100,7 +98,6 @@ class TeamRepository extends ServiceEntityRepository
                     if (!$remains) {
                         /** @var User $loggedUser $notification */
                         $notification = new Notification();
-                        $notification->setMessage('You were removed from the team '.$team->getName());
                         $notification->setDestinationAccount($prevMember);
                         $notification->setSourceAccount($loggedUser->getAccount());
                         $notification->setType(2);
@@ -133,9 +130,6 @@ class TeamRepository extends ServiceEntityRepository
                             if(!$alreadyRequested) {
                                 /** @var User $loggedUser $notification */
                                 $notification = new Notification();
-                                $notification->setMessage(
-                                    'You were requested to be a member of the team '.$team->getName()
-                                );
                                 $notification->setDestinationAccount($user->getAccount());
                                 $notification->setSourceAccount($loggedUser->getAccount());
                                 $notification->setType(1);
