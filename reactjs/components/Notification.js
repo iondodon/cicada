@@ -18,13 +18,15 @@ class Notification extends React.Component {
     }
 
     componentDidMount() {
-        console.log(this.state);
+        
     }
 
     showMessage() {
         switch (this.state.type) {
             case 1:
                 return(<div>{ this.state['sourceAccount']['user']['fullName'] } wants to add you in his/her team. See team requests.</div>);
+            case 2:
+                return(<div>{ this.state['sourceAccount']['user']['fullName'] } removed you from his/her team.</div>);
             default:
                 return(<div>Unknown notification type...</div>);
         }
@@ -41,9 +43,8 @@ class Notification extends React.Component {
             let response = await fetch(config.API_URL + '/api/notifications/' + this.state['id'], request);
 
              if (response.status === 200) {
-                console.log('removed...');
-                e.target.parentElement.parentElement.setAttribute('style', 'display: none;');
-            }
+                 this.props.removeNotification(this.state['id']);
+             }
         } catch (e) {
             console.log(e);
         }

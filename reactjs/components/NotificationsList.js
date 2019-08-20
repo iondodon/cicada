@@ -19,10 +19,26 @@ class NotificationsList extends React.Component {
 
         this.getNotifications = this.getNotifications.bind(this);
         this.closeError = this.closeError.bind(this);
+        this.removeNotification = this.removeNotification.bind(this);
     }
 
     componentDidMount() {
         this.getNotifications().then();
+    }
+
+    async removeNotification(notificationId) {
+        const findNotification = (id, array) => {
+            for(let i = 0; i < array.length; i++) {
+                if(array[i]['id'] === id) {
+                    return i;
+                }
+            }
+        };
+
+        let notifications = this.state.notifications;
+        let index = findNotification(notificationId, notifications);
+        notifications.splice(index,1);
+        await this.setState({notifications: notifications});
     }
 
     async getNotifications() {
@@ -110,7 +126,11 @@ class NotificationsList extends React.Component {
                 {
                     this.state.notifications.map((notification) => {
                         return(
-                            <Notification notification={notification} key={notification.id} />
+                            <Notification
+                                notification={notification}
+                                key={notification.id}
+                                removeNotification={this.removeNotification}
+                            />
                         );
                     })
                 }
