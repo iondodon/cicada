@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/symfony/src/Controller/NotificationController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/components/Notification.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/Notification.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/components/NotificationsList.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/NotificationsList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Controller/NotificationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Controller/NotificationController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -415,7 +417,9 @@
       <workItem from="1565852968478" duration="5329000" />
       <workItem from="1565951739942" duration="9703000" />
       <workItem from="1565981239226" duration="2676000" />
-      <workItem from="1566204060338" duration="4879000" />
+      <workItem from="1566204060338" duration="5373000" />
+      <workItem from="1566309847524" duration="5132000" />
+      <workItem from="1566316331292" duration="2060000" />
     </task>
     <servers />
   </component>

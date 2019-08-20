@@ -15,13 +15,14 @@ use Symfony\Component\Serializer\Serializer;
 class NotificationController extends AbstractFOSRestController
 {
     /**
-     * @Route("/api/notifications/{destination_account_id}", name="notifications.getAll", methods={"GET"})
-     * @param int $destination_account_id
+     * @Route("/api/notifications", name="notifications.getAll", methods={"GET"})
      * @return JsonResponse
      */
-    public function getAll(int $destination_account_id): JsonResponse
+    public function getAll(): JsonResponse
     {
         $em = $this->getDoctrine()->getManager();
+
+        $destination_account_id = $this->getUser()->getAccount()->getId();
         $notifications = $em->getRepository(Notification::class)
             ->findBy(['destinationAccount' => $destination_account_id]);
 
@@ -39,7 +40,7 @@ class NotificationController extends AbstractFOSRestController
     }
 
     /**
-     * @Route("/api/teams/destroy/{id}", name="teams.destroy", methods={"DELETE"})
+     * @Route("/api/notifications/{id}", name="notifications.destroy", methods={"DELETE"})
      * @param Request $request
      * @param $id
      * @return Response
@@ -49,15 +50,16 @@ class NotificationController extends AbstractFOSRestController
         $em = $this->getDoctrine()->getManager();
         $notification = $em->getRepository(Notification::class)->findOneBy(['id' => $id]);
 
-        $em->remove($notification);
-        $em->flush();
+        if($notification) {
+            $em->remove($notification);
+            $em->flush();
+            return new Response(
+                'Notification deleted.', Response::HTTP_OK, ['content-type' => 'text/html']
+            );
+        }
 
-        $response = new Response(
-            'Notification deleted.',
-            Response::HTTP_OK,
-            ['content-type' => 'text/html']
+        return new Response(
+            'Notification not found.', Response::HTTP_NOT_FOUND, ['content-type' => 'text/html']
         );
-
-        return $response;
     }
 }
