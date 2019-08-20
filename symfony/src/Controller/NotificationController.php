@@ -41,11 +41,10 @@ class NotificationController extends AbstractFOSRestController
 
     /**
      * @Route("/api/notifications/{id}", name="notifications.destroy", methods={"DELETE"})
-     * @param Request $request
      * @param $id
      * @return Response
      */
-    public function destroy(Request $request, int $id): Response
+    public function destroy(int $id): Response
     {
         $em = $this->getDoctrine()->getManager();
         $notification = $em->getRepository(Notification::class)->findOneBy(['id' => $id]);

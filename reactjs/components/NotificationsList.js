@@ -62,7 +62,7 @@ class NotificationsList extends React.Component {
     render(){
         if(this.state.loading){
             return(
-                <div className={"list-puzzles-container"}>
+                <div className={"notifications-list"}>
                     <div className="alert alert-error" style={{ display: 'none' }} >
                         <div className={"error-content"} >Error message</div>
                         {'\u00A0'} <a onClick={this.closeError}>x</a>
@@ -96,7 +96,7 @@ class NotificationsList extends React.Component {
         }
 
         if(this.state.notifications.length === 0) {
-            return(<h2> there are no notifications</h2>);
+            return(<h2> empty </h2>);
         }
 
         return (

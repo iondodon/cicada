@@ -2,6 +2,7 @@ import React from 'react';
 
 import '../i18n';
 import { withNamespaces } from 'react-i18next';
+import config from "../configs/keys";
 
 
 class Notification extends React.Component {
@@ -29,8 +30,23 @@ class Notification extends React.Component {
         }
     }
 
-    removeNotification(e) {
-        e.target.parentElement.setAttribute('style', 'display: none;');
+    async removeNotification(e) {
+        const request = {
+            method: 'DELETE',
+            mode: 'cors',
+            credentials: 'include'
+        };
+
+        try {
+            let response = await fetch(config.API_URL + '/api/notifications/' + this.state['id'], request);
+
+             if (response.status === 200) {
+                console.log('removed...');
+                e.target.parentElement.parentElement.setAttribute('style', 'display: none;');
+            }
+        } catch (e) {
+            console.log(e);
+        }
     }
 
     render(){
