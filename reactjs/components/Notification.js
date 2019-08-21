@@ -18,7 +18,7 @@ class Notification extends React.Component {
     }
 
     componentDidMount() {
-        
+
     }
 
     showMessage() {
@@ -43,7 +43,7 @@ class Notification extends React.Component {
             let response = await fetch(config.API_URL + '/api/notifications/' + this.state['id'], request);
 
              if (response.status === 200) {
-                 this.props.removeNotification(this.state['id']);
+                 await this.props.removeNotification(this.state['id']);
              }
         } catch (e) {
             console.log(e);
