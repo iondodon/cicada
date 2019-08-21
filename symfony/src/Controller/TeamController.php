@@ -2,12 +2,8 @@
 
 namespace App\Controller;
 
-use App\Entity\Account;
-use App\Entity\Notification;
 use App\Entity\Team;
-use App\Entity\User;
 use App\Repository\TeamRepository;
-use Doctrine\Common\Collections\ArrayCollection;
 use FOS\RestBundle\Controller\Annotations\Route;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
 use Symfony\Component\HttpFoundation\JsonResponse;
