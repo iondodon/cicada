@@ -19,10 +19,20 @@ class RequestingTeams extends React.Component {
         this.getRequestingTeams = this.getRequestingTeams.bind(this);
         this.closeError = this.closeError.bind(this);
         this.removeRequestingTeam = this.removeRequestingTeam.bind(this);
+        this.acceptTeam = this.acceptTeam.bind(this);
+        this.declineTeam = this.declineTeam.bind(this);
     }
 
     componentDidMount() {
         this.getRequestingTeams().then();
+    }
+
+    acceptTeam(teamId) {
+        console.log(teamId);
+    }
+
+    declineTeam(teamId) {
+        console.log(teamId);
     }
 
     async removeRequestingTeam(teamId) {
@@ -125,13 +135,13 @@ class RequestingTeams extends React.Component {
                 {
                     this.state.requestingTeams.map((team) => {
                         return(
-                            <div className="alert alert-warning">
+                            <div className="alert alert-warning" key={team['id']}>
                                 <div className={"message"}>
                                     Someone invited you in the team { team['name'] }?
                                 </div>
                                 <div className={"action"}>
-                                    <button className="btn btn-primary">Accept</button>
-                                    <button className="btn btn-error">Decline</button>
+                                    <button className="btn btn-primary" onClick={() => this.acceptTeam(team['id'])}>Accept</button>
+                                    <button className="btn btn-error" onClick={() => this.declineTeam(team['id'])}>Decline</button>
                                 </div>
                             </div>
                         );
