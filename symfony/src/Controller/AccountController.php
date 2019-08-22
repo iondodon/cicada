@@ -5,6 +5,7 @@ namespace App\Controller;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
@@ -30,5 +31,15 @@ class AccountController extends AbstractFOSRestController
         ]);
 
         return new JsonResponse(json_decode($requestingTeamsJson, true));
+    }
+
+    /**
+     * @Route("/api/account/accept_team/{team_id}", name="account.accept_team", methods={"POST"})
+     * @param int $team_id
+     * @return Response
+     */
+    public function acceptTeam(int $team_id) : Response
+    {
+
     }
 }
