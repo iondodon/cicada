@@ -4,6 +4,7 @@ import '../i18n';
 import { withNamespaces } from 'react-i18next';
 import Pagination from "./Pagination";
 import config from "../configs/keys";
+import Link from "next/link";
 
 class ListPuzzles extends React.Component {
 
@@ -145,7 +146,11 @@ class ListPuzzles extends React.Component {
                         this.state.currentPuzzles.map((puzzle) => {
                             return (
                                 <tr key={puzzle['id']} >
-                                    <td>{ puzzle['name'] }</td>
+                                    <td>
+                                        <Link href={{ pathname: '/puzzle/show', query: { puzzleId: puzzle['id'] } }}>
+                                            <a className="menu-item">{ puzzle['name'] }</a>
+                                        </Link>{' '}
+                                    </td>
                                     <td>{ puzzle['difficultyByCreator'] }/{ puzzle['difficultyByStatistics'] }</td>
                                     <td>70</td>
                                     <td>{ puzzle['stagesCount'] }</td>
