@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/reactjs/components/ListMyPuzzles.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/pages/account/my_puzzles.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/LeftMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/LeftMenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony/src/Controller/AccountController.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Controller/AccountController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony/src/Controller/PuzzleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Controller/PuzzleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/components/ListMyPuzzles.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/ListMyPuzzles.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
