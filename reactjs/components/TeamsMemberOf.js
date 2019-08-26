@@ -37,7 +37,7 @@ class TeamsMemberOf extends React.Component {
             };
 
             try {
-                let response = await fetch(config.API_URL + '/api/teams', request);
+                let response = await fetch(config.API_URL + '/api/teams/member_of', request);
 
                 if (response.status === 401) {
                     document.getElementsByClassName('error-content')[0].innerHTML = 'Unauthorized.';

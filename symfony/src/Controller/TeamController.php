@@ -2,8 +2,11 @@
 
 namespace App\Controller;
 
+use App\Entity\Account;
 use App\Entity\Team;
 use App\Repository\TeamRepository;
+use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\EntityManagerInterface;
 use FOS\RestBundle\Controller\Annotations\Route;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -23,6 +26,33 @@ class TeamController extends AbstractFOSRestController
     {
         $em = $this->getDoctrine()->getManager();
         $teams = $em->getRepository(Team::class)->findAll();
+
+        $encoders = [new JsonEncoder()];
+        $normalizers = [new ObjectNormalizer()];
+        $serializer = new Serializer($normalizers, $encoders);
+
+        $teamsJson = $serializer->serialize($teams, 'json', [
+            'circular_reference_handler' => static function ($object) {
+                return $object->getId();
+            }
+        ]);
+
+        return new JsonResponse(json_decode($teamsJson, true));
+    }
+
+    /**
+     * @Route("/api/teams/member_of", name="teams.get_teams_member_of", methods={"GET"})
+     * @param EntityManagerInterface $em
+     * @return JsonResponse
+     */
+    public function getTeamsMemberOf(EntityManagerInterface $em): JsonResponse
+    {
+        /** @var Account $account */
+        $account = $this->getUser()->getAccount();
+
+        $query = $em->createQuery('SELECT t FROM App\Entity\Team t JOIN t.members acc WHERE acc.id = :id')
+            ->setParameter('id', $account->getId());
+        $teams = $query->getResult();
 
         $encoders = [new JsonEncoder()];
         $normalizers = [new ObjectNormalizer()];
