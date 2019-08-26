@@ -27,8 +27,40 @@ class RequestingTeams extends React.Component {
         this.getRequestingTeams().then();
     }
 
-    acceptTeam(teamId) {
-        console.log(teamId);
+    async acceptTeam(teamId) {
+        const findTeam = (id, array) => {
+            for(let i = 0; i < array.length; i++) {
+                if(array[i]['id'] === id){
+                    return i;
+                }
+            }
+        };
+
+        const request = {
+            method: 'POST',
+            mode: 'cors',
+            credentials: 'include'
+        };
+
+        try {
+            let response = await fetch(config.API_URL + '/api/account/accept_team/' + teamId, request);
+
+            if (response.status === 500) {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Server error.';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            } else if (response.status === 200) {
+                let requestingTeams = this.state.requestingTeams;
+                let index = findTeam(teamId, requestingTeams);
+                requestingTeams.splice(index, 1);
+                await this.setState({ requestingTeams: requestingTeams });
+            } else {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Unknown error.';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            }
+        } catch (e) {
+            document.getElementsByClassName('error-content')[0].innerHTML += e.message;
+            document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+        }
     }
 
     declineTeam(teamId) {

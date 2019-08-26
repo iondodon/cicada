@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/symfony/src/Repository/AccountRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/components/RequestingTeams.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/RequestingTeams.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/symfony/src/Controller/AccountController.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Controller/AccountController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony/src/Entity/Account.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Entity/Account.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -421,7 +422,10 @@
       <workItem from="1566316331292" duration="6553000" />
       <workItem from="1566371823290" duration="1485000" />
       <workItem from="1566393199302" duration="1772000" />
-      <workItem from="1566472711650" duration="3585000" />
+      <workItem from="1566472711650" duration="9328000" />
+      <workItem from="1566482765409" duration="2706000" />
+      <workItem from="1566568206585" duration="606000" />
+      <workItem from="1566806061268" duration="1365000" />
     </task>
     <servers />
   </component>
