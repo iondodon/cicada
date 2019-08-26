@@ -122,7 +122,8 @@ class Account
     /**
      * @var Collection
      *
-     * @@ORM\ManyToMany(targetEntity="Team", mappedBy="requestedMembers")
+     * @ORM\ManyToMany(targetEntity="Team", mappedBy="requestedMembers")
+     * @ORM\JoinTable(name="accounts_teams")
      */
     private $requestingTeams;
 
@@ -329,7 +330,7 @@ class Account
      */
     public function getRequestingTeams(): Collection
     {
-        return $this->teamsMemberOf;
+        return $this->requestingTeams;
     }
 
     /**
