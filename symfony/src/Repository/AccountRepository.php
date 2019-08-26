@@ -32,7 +32,33 @@ class AccountRepository extends ServiceEntityRepository
                 $members = $requestingTeam->getMembers();
                 $members->add($account);
                 $requestingTeam->setMembers($members);
-                
+
+                $requestedMembers = $requestingTeam->getRequestedMembers();
+                $requestedMembers->removeElement($account);
+                $requestingTeam->setRequestedMembers($requestedMembers);
+
+                $em->persist($requestingTeam);
+                $em->flush();
+            }
+        } catch (ORMException $e) {
+            return false;
+        }
+
+        return true;
+    }
+
+    public function declineTeam($team_id, User $user): bool
+    {
+        try {
+            $em = $this->getEntityManager();
+            /** @var ArrayCollection $requestingTeams */
+            $requestingTeams = $user->getAccount()->getRequestingTeams();
+            /** @var Team $requestingTeam */
+            $requestingTeam = $em->getRepository(Team::class)->find($team_id);
+
+            if($requestingTeam && $requestingTeams->contains($requestingTeam)) {
+                $account = $user->getAccount();
+
                 $requestedMembers = $requestingTeam->getRequestedMembers();
                 $requestedMembers->removeElement($account);
                 $requestingTeam->setRequestedMembers($requestedMembers);

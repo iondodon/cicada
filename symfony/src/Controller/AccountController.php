@@ -60,4 +60,30 @@ class AccountController extends AbstractFOSRestController
             ['content-type' => 'text/html']
         );
     }
+
+    /**
+     * @Route("/api/account/decline_team/{team_id}", name="account.decline_team", methods={"POST"})
+     * @param AccountRepository $accountRepository
+     * @param int $team_id
+     * @return Response
+     */
+    public function declineTeam(AccountRepository $accountRepository, int $team_id) : Response
+    {
+
+        $success = $accountRepository->declineTeam($team_id, $this->getUser());
+
+        if(!$success) {
+            return new Response(
+                'Server error',
+                Response::HTTP_INTERNAL_SERVER_ERROR,
+                ['content-type' => 'text/html']
+            );
+        }
+
+        return new Response(
+            'Team declined',
+            Response::HTTP_OK,
+            ['content-type' => 'text/html']
+        );
+    }
 }
