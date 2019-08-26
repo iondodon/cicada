@@ -203,7 +203,7 @@ class RequestingTeams extends React.Component {
                 {
                     this.state.requestingTeams.map((team) => {
                         return(
-                            <div className="alert alert-warning" key={team['id']}>
+                            <div className="alert alert-warning" id={"requesting-team-alert"} key={team['id']}>
                                 <div className={"message"}>
                                     Someone invited you in the team { team['name'] }?
                                 </div>

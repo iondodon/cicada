@@ -84,6 +84,11 @@ class TeamRepository extends ServiceEntityRepository
 
             $team = $em->getRepository(Team::class)->findOneBy(['id' => $teamId]);
             if ($team) {
+                /** @var User $loggedUser */
+                if($loggedUser->getAccount()->getId() !== $team->getCreator()->getId()) {
+                    return false;
+                }
+
                 $prevMembers = $team->getMembers();
                 foreach ($prevMembers as $prevMember) {
                     $remains = false;
