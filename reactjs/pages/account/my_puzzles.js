@@ -8,7 +8,7 @@ import Head from "next/head";
 import LeftPanel from "../../components/LeftPanel";
 import ListPuzzles from "../../components/ListPuzzles";
 
-class List extends React.Component {
+class ListMyPuzzlesPage extends React.Component {
 
     constructor(props, {t}){
         super(props, {t});
@@ -40,7 +40,7 @@ class List extends React.Component {
                         {/*<header className="card-header">Puzzles</header>*/}
                         <div className="card-content">
                             <div className="inner">
-                                <ListPuzzles type={"all"} />
+                                <ListPuzzles type={"my"} />
                             </div>
                         </div>
                     </div>
@@ -64,4 +64,4 @@ class List extends React.Component {
     }
 }
 
-export default withNamespaces()(List);
+export default withNamespaces()(ListMyPuzzlesPage);
