@@ -17,7 +17,7 @@ class TeamsMemberOf extends React.Component {
             currentTeams: [],
             loading: false,
             currentPage: 1,
-            teamsPerPage: 20
+            teamsPerPage: 1
         };
 
         this.closeError = this.closeError.bind(this);
@@ -136,6 +136,9 @@ class TeamsMemberOf extends React.Component {
                     <tr>
                         <th>name</th>
                         <th>nr members</th>
+                        <th>puzzles solved</th>
+                        <th>wined contest</th>
+                        <th>creator</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -146,6 +149,9 @@ class TeamsMemberOf extends React.Component {
                                 <tr key={team['id']} >
                                     <td>{ team['name'] }</td>
                                     <td>{ team['members'].length }</td>
+                                    <td>{ team['puzzlesSolvedCount'] }</td>
+                                    <td>{ team['winedContestsCount'] }</td>
+                                    <td>{ team['creator']['user']['fullName'] }</td>
                                 </tr>
                             );
                         })
