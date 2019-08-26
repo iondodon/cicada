@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Account;
 use App\Entity\Puzzle;
 use App\Entity\Stage;
 use App\Entity\Tag;
@@ -33,6 +34,28 @@ class PuzzleController extends AbstractFOSRestController
         $serializer = new Serializer($normalizers, $encoders);
 
         $puzzlesJson = $serializer->serialize($puzzles, 'json', [
+            'circular_reference_handler' => static function ($object) {
+                return $object->getId();
+            }
+        ]);
+
+        return new JsonResponse(json_decode($puzzlesJson, true));
+    }
+
+    /**
+     * @Route("/api/my_puzzles", name="puzzles.my_puzzles", methods={"GET"})
+     * @return JsonResponse
+     */
+    public function getMyPuzzles(): JsonResponse
+    {
+        /** @var Account $account */
+        $account = $this->getUser()->getAccount();
+
+        $encoders = [new JsonEncoder()];
+        $normalizers = [new ObjectNormalizer()];
+        $serializer = new Serializer($normalizers, $encoders);
+
+        $puzzlesJson = $serializer->serialize($account->getCreatedPuzzles(), 'json', [
             'circular_reference_handler' => static function ($object) {
                 return $object->getId();
             }

@@ -19,9 +19,11 @@ class LeftMenu extends React.Component {
                 <div className="card-content">
                     <div className="inner">
                         <div className="menu">
-                            <a className="menu-item">
-                                My puzzles <div className="pull-right">»</div>
-                            </a>
+                            <Link href={"/account/my_puzzles"}>
+                                <a className="menu-item">
+                                    My puzzles <div className="pull-right">»</div>
+                                </a>
+                            </Link>{' '}
                             <a className="menu-item active">
                                 Find puzzle <div className="pull-right">»</div>
                             </a>
