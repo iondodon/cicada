@@ -64,7 +64,7 @@ class RequestingTeams extends React.Component {
     }
 
     async declineTeam(teamId) {
-        if(confirm("Press OK if you don't want to be a member of this team?") === false) {
+        if(confirm("Press OK to confirm.") === false) {
             return;
         }
 
