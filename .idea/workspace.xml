@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="" />
+    <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/reactjs/pages/account/teams_member_of.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/components/RequestingTeams.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/RequestingTeams.js" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -420,7 +424,7 @@
       <workItem from="1566472711650" duration="9328000" />
       <workItem from="1566482765409" duration="2706000" />
       <workItem from="1566568206585" duration="606000" />
-      <workItem from="1566806061268" duration="2218000" />
+      <workItem from="1566806061268" duration="3949000" />
     </task>
     <servers />
   </component>
