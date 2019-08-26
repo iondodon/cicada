@@ -37,7 +37,12 @@ class ListPuzzles extends React.Component {
             };
 
             try {
-                let response = await fetch(config.API_URL + '/api/puzzles', request);
+                let response;
+                if(this.props.type === "all") {
+                    response = await fetch(config.API_URL + '/api/puzzles', request);
+                } else if(this.props.type === "my") {
+                    response = await fetch(config.API_URL + '/api/my_puzzles', request);
+                }
 
                 if (response.status === 401) {
                     document.getElementsByClassName('error-content')[0].innerHTML = 'Unauthorized.';
@@ -128,6 +133,22 @@ class ListPuzzles extends React.Component {
             );
         }
 
+        const showCreatedByHead = () => {
+            if(this.props.type === "all") {
+                return (
+                    <th>created by</th>
+                );
+            }
+        };
+
+        const showCreatedBy = (puzzle) => {
+            if(this.props.type === "all") {
+                return(
+                    <td>{ puzzle['createdBy']['user']['fullName'] }</td>
+                );
+            }
+        };
+
         return (
             <div className={"list-puzzles-container"}>
                 <table>
@@ -137,7 +158,9 @@ class ListPuzzles extends React.Component {
                         <th>difficulty</th>
                         <th>solved</th>
                         <th>stages</th>
-                        <th>created by</th>
+                        {
+                            showCreatedByHead()
+                        }
                     </tr>
                     </thead>
                     <tbody>
@@ -154,7 +177,7 @@ class ListPuzzles extends React.Component {
                                     <td>{ puzzle['difficultyByCreator'] }/{ puzzle['difficultyByStatistics'] }</td>
                                     <td>70</td>
                                     <td>{ puzzle['stagesCount'] }</td>
-                                    <td>{ puzzle['createdBy']['user']['fullName'] }</td>
+                                    { showCreatedBy(puzzle) }
                                 </tr>
                             );
                         })

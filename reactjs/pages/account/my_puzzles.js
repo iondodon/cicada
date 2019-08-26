@@ -6,7 +6,7 @@ import '../../i18n';
 import { withNamespaces } from 'react-i18next';
 import Head from "next/head";
 import LeftPanel from "../../components/LeftPanel";
-import ListMyPuzzles from "../../components/ListMyPuzzles";
+import ListPuzzles from "../../components/ListPuzzles";
 
 class ListMyPuzzlesPage extends React.Component {
 
@@ -40,7 +40,7 @@ class ListMyPuzzlesPage extends React.Component {
                         {/*<header className="card-header">Puzzles</header>*/}
                         <div className="card-content">
                             <div className="inner">
-                                <ListMyPuzzles/>
+                                <ListPuzzles type={"my"} />
                             </div>
                         </div>
                     </div>

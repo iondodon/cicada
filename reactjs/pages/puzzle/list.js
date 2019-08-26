@@ -40,7 +40,7 @@ class List extends React.Component {
                         {/*<header className="card-header">Puzzles</header>*/}
                         <div className="card-content">
                             <div className="inner">
-                                <ListPuzzles/>
+                                <ListPuzzles type={"all"} />
                             </div>
                         </div>
                     </div>
