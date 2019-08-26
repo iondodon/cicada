@@ -6,6 +6,7 @@ import '../../i18n';
 import { withNamespaces } from 'react-i18next';
 import Head from "next/head";
 import LeftPanel from "../../components/LeftPanel";
+import TeamsMemberOf from "../../components/TeamsMemberOf";
 
 class TeamsMemberOfPage extends React.Component {
 
@@ -39,7 +40,7 @@ class TeamsMemberOfPage extends React.Component {
                         {/*<header className="card-header"></header>*/}
                         <div className="card-content">
                             <div className="inner">
-                                mhm
+                                <TeamsMemberOf/>
                             </div>
                         </div>
                     </div>
