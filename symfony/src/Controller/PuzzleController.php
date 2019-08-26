@@ -112,6 +112,14 @@ class PuzzleController extends AbstractFOSRestController
         $puzzle = $em->getRepository(Puzzle::class)->findOneBy(['id' => $id]);
 
         if($puzzle) {
+            if($this->getUser()->getAccount()->getId() !== $puzzle->getCreatedBy()->getId()) {
+                return new Response(
+                    'This user cannot update the puzzle.',
+                    Response::HTTP_INTERNAL_SERVER_ERROR,
+                    ['content-type' => 'text/html']
+                );
+            }
+
             $puzzle->setName($editedPuzzle['name']);
             $puzzle->setDescription($editedPuzzle['description']);
             $puzzle->setStagesCount($editedPuzzle['stagesCount']);

@@ -142,7 +142,7 @@ class TeamController extends AbstractFOSRestController
         }
 
         return new Response(
-            'Error. Maybe this team does not exist. ', Response::HTTP_NOT_FOUND, ['content-type'=> 'text/html']
+            'Error. Maybe this team does not exist. Or this user cannot update this team.', Response::HTTP_INTERNAL_SERVER_ERROR, ['content-type'=> 'text/html']
         );
     }
 
