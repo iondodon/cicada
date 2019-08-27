@@ -56,8 +56,19 @@ class LoginController extends Controller
             true
         );
 
+        $userIdCookie = new Cookie(
+          'userId',
+          $user->getId(),
+          (new DateTime())->add(new DateInterval('PT' . 3600 . 'S')),
+            '/',
+            null,
+            false,
+            false
+        );
+
         $response = new Response();
         $response->headers->setCookie($tokenCookie);
+        $response->headers->setCookie($userIdCookie);
 
         return $response;
     }

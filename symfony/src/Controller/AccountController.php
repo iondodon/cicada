@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\User;
 use App\Repository\AccountRepository;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -13,6 +14,25 @@ use Symfony\Component\Serializer\Serializer;
 
 class AccountController extends AbstractFOSRestController
 {
+    /**
+     * @Route("/api/account", name="account.index", methods={"GET"})
+     * @return JsonResponse
+     */
+    public function index() : JsonResponse
+    {
+        $encoders = [new JsonEncoder()];
+        $normalizers = [new ObjectNormalizer()];
+        $serializer = new Serializer($normalizers, $encoders);
+
+        $account = $serializer->serialize($this->getUser()->getAccount(), 'json', [
+            'circular_reference_handler' => static function ($object) {
+                return $object->getId();
+            }
+        ]);
+
+        return new JsonResponse(json_decode($account, true));
+    }
+
     /**
      * @Route("/api/account/requesting_teams", name="account.requesting_teams", methods={"GET"})
      * @return JsonResponse

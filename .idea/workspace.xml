@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/reactjs/components/MyAccount.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/pages/account/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/ListPuzzles.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/ListPuzzles.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/PuzzleShow.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/PuzzleShow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony/src/Repository/PuzzleRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Repository/PuzzleRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/components/LeftMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/LeftMenu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Controller/AccountController.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Controller/AccountController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Controller/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Controller/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Entity/Account.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Entity/Account.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Security/JwtAuthenticator.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Security/JwtAuthenticator.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -427,7 +431,7 @@
       <workItem from="1566568206585" duration="606000" />
       <workItem from="1566806061268" duration="10166000" />
       <workItem from="1566832428108" duration="1751000" />
-      <workItem from="1566902869365" duration="618000" />
+      <workItem from="1566902869365" duration="7515000" />
     </task>
     <servers />
   </component>
