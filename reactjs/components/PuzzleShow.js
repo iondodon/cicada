@@ -62,7 +62,9 @@ class PuzzleShow extends React.Component {
         await this.setState({ name: responseJson['name'] });
         await this.setState( { createdBy: responseJson['createdBy']['user']['fullName'] } );
         await this.setState( { createdAt: timeConverter(responseJson['createdAt']['timestamp']) } );
-        await this.setState( { updatedAt: timeConverter(responseJson['updatedAt']['timestamp']) } );
+        if(responseJson['updatedAt']) {
+            await this.setState( { updatedAt: timeConverter(responseJson['updatedAt']['timestamp']) } );
+        }
         await this.setState( { difficultyByCreator: responseJson['difficultyByCreator'] } );
         await this.setState( { difficultyByStatistics: responseJson['difficultyByStatistics'] } );
         await this.setState( { tags: responseJson['tags'] } );
@@ -106,6 +108,14 @@ class PuzzleShow extends React.Component {
             );
         }
 
+        const showUpdatedAt = () => {
+            if(this.state['updatedAt']) {
+                return(
+                    <h2>updated at: { this.state['updatedAt'] }</h2>
+                );
+            }
+        };
+
         return (
             <div className={"puzzle-data"} >
                 <div className="alert alert-error" style={{ display: 'none' }} >
@@ -116,7 +126,7 @@ class PuzzleShow extends React.Component {
                 <h2>name: { this.state['name'] } </h2>
                 <h2>created by: { this.state['createdBy'] }</h2>
                 <h2>created at: { this.state['createdAt'] } </h2>
-                <h2>updated at: { this.state['updatedAt'] }</h2>
+                { showUpdatedAt() }
                 <h2>difficulty by creator: { this.state['difficultyByCreator'] }</h2>
                 <h2>difficulty by statistics: { this.state['difficultyByStatistics'] }</h2>
                 <h2>tags: </h2>

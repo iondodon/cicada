@@ -133,6 +133,10 @@ class ListPuzzles extends React.Component {
             );
         }
 
+        if(this.state.puzzles.length === 0) {
+            return(<h2> empty </h2>);
+        }
+
         const showCreatedByHead = () => {
             if(this.props.type === "all") {
                 return (
