@@ -62,4 +62,26 @@ class UserController extends AbstractFOSRestController
         $response->setStatusCode(Response::HTTP_FOUND);
         return $response;
     }
+
+    /**
+     * @Route("/api/users/{new_username}", name="users.change_username", methods={"PUT"})
+     * @param $new_username
+     * @return Response
+     */
+    public function changeUsername($new_username): Response
+    {
+        $em = $this->getDoctrine()->getManager();
+        $user = $this->getUser();
+
+        $user->setUsername($new_username);
+
+        $em->persist($user);
+        $em->flush();
+
+        return new Response(
+            'Username successfully changed.',
+            Response::HTTP_OK,
+            ['content-type' => 'text/html']
+        );
+    }
 }

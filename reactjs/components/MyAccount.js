@@ -1,10 +1,11 @@
 import React from "react";
+import Router from 'next/router';
 
 import '../i18n';
 import { withNamespaces } from 'react-i18next';
 import config from "../configs/keys";
 
-class PuzzleShow extends React.Component {
+class MyAccount extends React.Component {
 
     constructor(props, {t}){
         super(props, {t});
@@ -17,6 +18,8 @@ class PuzzleShow extends React.Component {
         this.fetchSetState = this.fetchSetState.bind(this);
         this.prepareState = this.prepareState.bind(this);
         this.closeError = this.closeError.bind(this);
+        this.changeUsername = this.changeUsername.bind(this);
+        this.updateUsernameState = this.updateUsernameState.bind(this);
     }
 
     async componentDidMount() {
@@ -40,7 +43,6 @@ class PuzzleShow extends React.Component {
                 let responseJson = await response.json();
                 await this.prepareState(responseJson);
                 await this.setState({ loading: false });
-                console.log(responseJson);
             } else {
                 document.getElementsByClassName('error-content')[0].innerHTML = 'Unknown error. Check the fields and try again.';
                 document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
@@ -53,11 +55,56 @@ class PuzzleShow extends React.Component {
 
     async prepareState(responseJson) {
         await this.setState({ account: responseJson });
-        console.log(this.state);
     }
 
     closeError(e) {
         e.target.parentElement.setAttribute('style', 'display: none;');
+    }
+
+    async changeUsername(e) {
+        let username_input = document.getElementById('username');
+
+        if(username_input.readOnly === true) {
+            e.target.innerText = 'Save';
+            username_input.readOnly = false;
+        } else {
+            const request = {
+                method: 'PUT',
+                mode: 'cors',
+                credentials: "include"
+            };
+
+            let new_username = document.getElementById("username").value;
+
+            if (new_username && new_username.length > 5) {
+                try {
+                    let response = await fetch(config.API_URL + '/api/users/' + new_username, request);
+
+                    if (response.status === 401) {
+                        document.getElementsByClassName('error-content')[0].innerHTML = 'Unauthorized.';
+                        document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+                    } else if (response.status === 200) {
+                        username_input.readOnly = "true";
+                        Router.push('/login');
+                    } else {
+                        document.getElementsByClassName('error-content')[0].innerHTML = 'Unknown error. Check the fields and try again.';
+                        document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+                    }
+                } catch (e) {
+                    document.getElementsByClassName('error-content')[0].innerHTML += e.message;
+                    document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+                }
+            } else {
+                document.getElementsByClassName('error-content')[0].innerHTML = "Username should be at least 6 chars long.";
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            }
+        }
+    }
+
+    async updateUsernameState(e) {
+        let account = this.state['account'];
+        account['user']['username'] = e.target.value;
+        await this.setState({ account: account });
     }
 
     render(){
@@ -107,8 +154,9 @@ class PuzzleShow extends React.Component {
                                className="form-control"
                                value={this.state['account']['user']['username']}
                                readOnly={true}
+                               onChange={this.updateUsernameState}
                         />
-                        <button className="btn btn-warning">Change username</button>
+                        <button type={"button"} className="btn btn-warning" onClick={this.changeUsername}>Change username</button>
                     </fieldset>
                     <fieldset className="form-group">
                         <label htmlFor="email">email:</label>
@@ -119,29 +167,29 @@ class PuzzleShow extends React.Component {
                                value={this.state['account']['user']['email']}
                                readOnly={true}
                         />
-                        <button className="btn btn-warning">Change email</button>
+                        <button type={"button"} className="btn btn-warning">Change email</button>
                     </fieldset>
                     <fieldset className="form-group">
                         <label htmlFor="email">full name:</label>
-                        <input id="email"
+                        <input id="full-name"
                                type="email"
                                placeholder=""
                                className="form-control"
                                value={this.state['account']['user']['fullName']}
                                readOnly={true}
                         />
-                        <button className="btn btn-warning">Change full name</button>
+                        <button type={"button"} className="btn btn-warning">Change full name</button>
                     </fieldset>
                     <fieldset className="form-group">
-                        <label htmlFor="email">password:</label>
-                        <input id="email"
-                               type="email"
+                        <label htmlFor="password">password:</label>
+                        <input id="password"
+                               type="password"
                                value={"##############"}
                                placeholder=""
                                className="form-control"
                                readOnly={true}
                         />
-                        <button className="btn btn-warning">Change password</button>
+                        <button type={"button"} className="btn btn-warning">Change password</button>
                     </fieldset>
                 </form>
 
@@ -168,7 +216,7 @@ class PuzzleShow extends React.Component {
                     <div className={"list"}>
                         {
                             this.state['account']['createdPuzzles'].map((puzzle) => {
-                                return(<a>{ puzzle['name'] }</a>)
+                                return(<a key={puzzle['id']}>{ puzzle['name'] }</a>)
                             })
                         }
                     </div>
@@ -176,7 +224,7 @@ class PuzzleShow extends React.Component {
                     <div className={"list"}>
                         {
                             this.state['account']['createdTeams'].map((team) => {
-                                return(<a>{ team['name'] }</a>)
+                                return(<a key={team['id']}>{ team['name'] }</a>)
                             })
                         }
                     </div>
@@ -184,7 +232,7 @@ class PuzzleShow extends React.Component {
                     <div className={"list"}>
                         {
                             this.state['account']['puzzleSessions'].map((session) => {
-                                return(<a>{ session['puzzle']['name'] }</a>)
+                                return(<a key={session['id']}>{ session['puzzle']['name'] }</a>)
                             })
                         }
                     </div>
@@ -192,7 +240,7 @@ class PuzzleShow extends React.Component {
                     <div className={"list"}>
                         {
                             this.state['account']['teamsMemberOf'].map((team) => {
-                                return(<a>{ team['name'] }</a>)
+                                return(<a key={team['id']}>{ team['name'] }</a>)
                             })
                         }
                     </div>
@@ -230,4 +278,4 @@ class PuzzleShow extends React.Component {
     }
 }
 
-export default withNamespaces()(PuzzleShow);
+export default withNamespaces()(MyAccount);
