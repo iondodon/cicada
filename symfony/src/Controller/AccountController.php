@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use App\Entity\User;
 use App\Repository\AccountRepository;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;

@@ -101,34 +101,111 @@ class PuzzleShow extends React.Component {
                 <form className="form">
                     <fieldset className="form-group">
                         <label htmlFor="username">username:</label>
-                        <input id="username" type="text" placeholder="type your name..." className="form-control"/>
-                        <button className="btn btn-warning">Edit</button>
+                        <input id="username"
+                               type="text"
+                               placeholder="type your username..."
+                               className="form-control"
+                               value={this.state['account']['user']['username']}
+                               readOnly={true}
+                        />
+                        <button className="btn btn-warning">Change username</button>
                     </fieldset>
                     <fieldset className="form-group">
                         <label htmlFor="email">email:</label>
-                        <input id="email" type="email" placeholder="" className="form-control"/>
-                        <button className="btn btn-warning">Edit</button>
+                        <input id="email"
+                               type="email"
+                               placeholder=""
+                               className="form-control"
+                               value={this.state['account']['user']['email']}
+                               readOnly={true}
+                        />
+                        <button className="btn btn-warning">Change email</button>
                     </fieldset>
                     <fieldset className="form-group">
                         <label htmlFor="email">full name:</label>
-                        <input id="email" type="email" placeholder="" className="form-control"/>
-                        <button className="btn btn-warning">Edit</button>
+                        <input id="email"
+                               type="email"
+                               placeholder=""
+                               className="form-control"
+                               value={this.state['account']['user']['fullName']}
+                               readOnly={true}
+                        />
+                        <button className="btn btn-warning">Change full name</button>
                     </fieldset>
                     <fieldset className="form-group">
                         <label htmlFor="email">password:</label>
-                        <input id="email" type="email" value={"##############"} placeholder="" className="form-control"/>
+                        <input id="email"
+                               type="email"
+                               value={"##############"}
+                               placeholder=""
+                               className="form-control"
+                               readOnly={true}
+                        />
                         <button className="btn btn-warning">Change password</button>
                     </fieldset>
                 </form>
 
                 <div className={"status"}>
-                    <h2>wined contests: </h2> { this.state['account']['winedContestsCount'] }
+                    <h2>wined contests: { this.state['account']['winedContestsCount'] } </h2>
+                    <h2>puzzles solved: { this.state['account']['puzzlesSolvedCount'] } </h2>
+                    <h2>contests enrolled at: { this.state['account']['contestsEnrolledAt'].length } </h2>
+                    <div className={"list"}>
+                        {
+                            this.state['account']['contestsEnrolledAt'].map((contest) => {
+                                return(<div>{ contest['name'] }</div>)
+                            })
+                        }
+                    </div>
+                    <h2>created contests: { this.state['account']['createdContests'].length } </h2>
+                    <div className={"list"}>
+                        {
+                            this.state['account']['createdContests'].map((contest) => {
+                                return(<div>{ contest['name'] }</div>)
+                            })
+                        }
+                    </div>
+                    <h2>created puzzles: { this.state['account']['createdPuzzles'].length } </h2>
+                    <div className={"list"}>
+                        {
+                            this.state['account']['createdPuzzles'].map((puzzle) => {
+                                return(<a>{ puzzle['name'] }</a>)
+                            })
+                        }
+                    </div>
+                    <h2>created teams: { this.state['account']['createdTeams'].length } </h2>
+                    <div className={"list"}>
+                        {
+                            this.state['account']['createdTeams'].map((team) => {
+                                return(<a>{ team['name'] }</a>)
+                            })
+                        }
+                    </div>
+                    <h2>puzzle sessions: { this.state['account']['puzzleSessions'].length } </h2>
+                    <div className={"list"}>
+                        {
+                            this.state['account']['puzzleSessions'].map((session) => {
+                                return(<a>{ session['puzzle']['name'] }</a>)
+                            })
+                        }
+                    </div>
+                    <h2>teams member of: { this.state['account']['teamsMemberOf'].length } </h2>
+                    <div className={"list"}>
+                        {
+                            this.state['account']['teamsMemberOf'].map((team) => {
+                                return(<a>{ team['name'] }</a>)
+                            })
+                        }
+                    </div>
                 </div>
 
                 { /*language=SCSS*/ }
                 <style jsx>{`                    
                     form {
                       width: 100%;
+                    }
+                    
+                    .list {
+                      margin-bottom: 2rem;
                     }
                     
                     button {
@@ -142,6 +219,10 @@ class PuzzleShow extends React.Component {
                     .account-info {
                       display: flex;
                       flex-direction: column;
+                    }
+                    
+                    a {
+                      margin-right: 0.5rem;
                     }
                 `}</style>
             </div>

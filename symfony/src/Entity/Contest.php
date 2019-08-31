@@ -29,6 +29,13 @@ class Contest
     private $id;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(unique=true, nullable=false)
+     */
+    private $name;
+
+    /**
      * @var Puzzle
      *
      * @ORM\OneToOne(targetEntity="Puzzle")
@@ -94,6 +101,25 @@ class Contest
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param string $name
+     * @return Contest
+     */
+    public function setName(string $name): Contest
+    {
+        $this->name = $name;
+
+        return $this;
     }
 
     /**
