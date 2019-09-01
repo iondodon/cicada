@@ -13,6 +13,10 @@ class MyAccount extends React.Component {
 
         this.state = {
             loading: true,
+            changingPassword: false,
+            newPassword: '',
+            confirmNewPassword: '',
+            oldPassword: '############'
         };
 
         this.fetchSetState = this.fetchSetState.bind(this);
@@ -20,6 +24,13 @@ class MyAccount extends React.Component {
         this.closeError = this.closeError.bind(this);
         this.changeUsername = this.changeUsername.bind(this);
         this.updateUsernameState = this.updateUsernameState.bind(this);
+        this.updateEmailState = this.updateEmailState.bind(this);
+        this.changeEmail = this.changeEmail.bind(this);
+        this.validateEmail = this.validateEmail.bind(this);
+        this.updateFullNameState = this.updateFullNameState.bind(this);
+        this.changeFullName = this.changeFullName.bind(this);
+        this.changePassword = this.changePassword.bind(this);
+        this.showTypeNewPassword = this.showTypeNewPassword.bind(this);
     }
 
     async componentDidMount() {
@@ -78,13 +89,14 @@ class MyAccount extends React.Component {
 
             if (new_username && new_username.length > 5) {
                 try {
-                    let response = await fetch(config.API_URL + '/api/users/' + new_username, request);
+                    let response = await fetch(config.API_URL + '/api/users/username/' + new_username, request);
 
                     if (response.status === 401) {
                         document.getElementsByClassName('error-content')[0].innerHTML = 'Unauthorized.';
                         document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
                     } else if (response.status === 200) {
                         username_input.readOnly = "true";
+                        //TODO: logout
                         Router.push('/login');
                     } else {
                         document.getElementsByClassName('error-content')[0].innerHTML = 'Unknown error. Check the fields and try again.';
@@ -101,10 +113,186 @@ class MyAccount extends React.Component {
         }
     }
 
+    async changeEmail(e) {
+        e.persist();
+        let email_input = document.getElementById('email');
+
+        if(email_input.readOnly === true) {
+            e.target.innerText = 'Save';
+            email_input.readOnly = false;
+        } else {
+            if(!this.validateEmail(this.state['account']['user']['email'])) {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Invalid email format.';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+                return;
+            }
+
+            const request = {
+                method: 'PUT',
+                mode: 'cors',
+                credentials: "include"
+            };
+
+            let new_email = document.getElementById("email").value;
+
+            if (new_email && new_email.length > 5) {
+                try {
+                    let response = await fetch(config.API_URL + '/api/users/email/' + new_email, request);
+
+                    if (response.status === 401) {
+                        document.getElementsByClassName('error-content')[0].innerHTML = 'Unauthorized.';
+                        document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+                    } else if (response.status === 200) {
+                        email_input.readOnly = "true";
+                        e.target.innerText = 'Change email';
+                    } else {
+                        document.getElementsByClassName('error-content')[0].innerHTML = 'Unknown error. Check the fields and try again.';
+                        document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+                    }
+                } catch (e) {
+                    document.getElementsByClassName('error-content')[0].innerHTML += e.message;
+                    document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+                }
+            } else {
+                document.getElementsByClassName('error-content')[0].innerHTML = "Username should be at least 6 chars long.";
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            }
+        }
+    }
+
+    async changeFullName(e) {
+        e.persist();
+        let fullName_input = document.getElementById('full-name');
+
+        if(fullName_input.readOnly === true) {
+            e.target.innerText = 'Save';
+            fullName_input.readOnly = false;
+        } else {
+            const request = {
+                method: 'PUT',
+                mode: 'cors',
+                credentials: "include"
+            };
+
+            let new_fullName = document.getElementById("full-name").value;
+
+            try {
+                let response = await fetch(config.API_URL + '/api/users/full_name/' + new_fullName, request);
+
+                if (response.status === 401) {
+                    document.getElementsByClassName('error-content')[0].innerHTML = 'Unauthorized.';
+                    document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+                } else if (response.status === 200) {
+                    fullName_input.readOnly = "true";
+                    e.target.innerText = 'Change full name';
+                } else {
+                    document.getElementsByClassName('error-content')[0].innerHTML = 'Unknown error. Check the fields and try again.';
+                    document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+                }
+            } catch (e) {
+                document.getElementsByClassName('error-content')[0].innerHTML += e.message;
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            }
+
+        }
+    }
+
+    async changePassword(e) {
+        e.persist();
+
+        let oldPasswordInput = document.getElementById('password');
+
+        if(oldPasswordInput.readOnly === true) {
+            e.target.innerText = 'Save';
+            await this.setState({changingPassword: true});
+            await this.setState({oldPassword: ''});
+            oldPasswordInput.placeholder = 'old password';
+            oldPasswordInput.readOnly = false;
+        } else {
+            let message = '';
+            let good = true;
+
+            if(!this.state['oldPassword'] || this.state['oldPassword'].length < 6) {
+                message += 'Old password is too short. Or even not written. ';
+                good = false;
+            }
+
+            if(!this.state['newPassword'] || this.state['newPassword'].length < 6) {
+                message += 'The new password should be at least 6 chard long. ';
+                good = false;
+            }
+
+            if(this.state['confirmNewPassword'] !== this.state['newPassword']) {
+                message += 'Password don\'t match. ';
+                good = false;
+            }
+
+            if(!good) {
+                document.getElementsByClassName('error-content')[0].innerHTML = message;
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            } else {
+                e.target.innerText = 'Change password';
+                oldPasswordInput.readOnly = true;
+                await this.setState({changingPassword: false});
+            }
+        }
+    }
+
+    showTypeNewPassword() {
+        if(this.state['changingPassword']) {
+            return(
+                <div>
+                    <fieldset className="form-group">
+                        <label htmlFor="password">new password:</label>
+                        <input id="new-password"
+                               type="password"
+                               placeholder="new password"
+                               className="form-control"
+                               onChange={async () => {
+                                   let newPasswordInput = document.getElementById('new-password');
+                                   await this.setState({newPassword: newPasswordInput.value})
+                               }}
+                        />
+                    </fieldset>
+
+                    <fieldset className="form-group">
+                        <label htmlFor="password">confirm:</label>
+                        <input id="confirm-password"
+                               type="password"
+                               placeholder="retype the new password"
+                               className="form-control"
+                               onChange={async () => {
+                                   let confirmNewPasswordInput = document.getElementById('confirm-password');
+                                   await this.setState({confirmNewPassword: confirmNewPasswordInput.value})
+                               }}
+                        />
+                    </fieldset>
+                </div>
+            )
+        }
+    }
+
     async updateUsernameState(e) {
         let account = this.state['account'];
         account['user']['username'] = e.target.value;
         await this.setState({ account: account });
+    }
+
+    async updateEmailState(e) {
+        let account = this.state['account'];
+        account['user']['email'] = e.target.value;
+        await this.setState({ account: account });
+    }
+
+    async updateFullNameState(e) {
+        let account = this.state['account'];
+        account['user']['fullName'] = e.target.value;
+        await this.setState({ account: account });
+    }
+
+    validateEmail(email) {
+        let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
     }
 
     render(){
@@ -166,31 +354,38 @@ class MyAccount extends React.Component {
                                className="form-control"
                                value={this.state['account']['user']['email']}
                                readOnly={true}
+                               onChange={this.updateEmailState}
                         />
-                        <button type={"button"} className="btn btn-warning">Change email</button>
+                        <button type={"button"} className="btn btn-warning" onClick={this.changeEmail}>Change email</button>
                     </fieldset>
                     <fieldset className="form-group">
-                        <label htmlFor="email">full name:</label>
+                        <label>full name:</label>
                         <input id="full-name"
-                               type="email"
-                               placeholder=""
+                               type="text"
+                               placeholder="your full name"
                                className="form-control"
                                value={this.state['account']['user']['fullName']}
                                readOnly={true}
+                               onChange={this.updateFullNameState}
                         />
-                        <button type={"button"} className="btn btn-warning">Change full name</button>
+                        <button type={"button"} className="btn btn-warning" onClick={this.changeFullName}>Change full name</button>
                     </fieldset>
                     <fieldset className="form-group">
                         <label htmlFor="password">password:</label>
                         <input id="password"
                                type="password"
-                               value={"##############"}
+                               value={this.state['oldPassword']}
                                placeholder=""
                                className="form-control"
                                readOnly={true}
+                               onChange={async () => {
+                                   let oldPassword = document.getElementById('password');
+                                   await this.setState({oldPassword: oldPassword.value})
+                               }}
                         />
-                        <button type={"button"} className="btn btn-warning">Change password</button>
+                        <button type={"button"} className="btn btn-warning" onClick={this.changePassword}>Change password</button>
                     </fieldset>
+                    { this.showTypeNewPassword() }
                 </form>
 
                 <div className={"status"}>
