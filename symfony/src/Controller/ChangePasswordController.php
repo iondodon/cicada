@@ -26,13 +26,11 @@ class ChangePasswordController extends FOSRestController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $email = $request->request->get('email');
             $old_plain_password = $request->request->get('old_password');
             $new_plain_password = $request->request->get('new_password');
 
 
-            $user = $this->getDoctrine()->getRepository(User::class)
-                ->findOneBy(['email'=> $email]);
+            $user = $this->getUser();
 
             if (!$user) {
                 throw $this->createNotFoundException();
@@ -49,7 +47,8 @@ class ChangePasswordController extends FOSRestController
                                ->encodePassword($user, $new_plain_password);
 
             $em = $this->getDoctrine()->getManager();
-            $userRepository = $em->getRepository(User::class)->findOneBy(['email' => $email]);
+
+            $userRepository = $em->getRepository(User::class)->findOneBy(['email' => $user->getEmail()]);
             $userRepository->setPassword($passwordNew);
 
             /** @var User $userRepository */

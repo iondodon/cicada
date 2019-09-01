@@ -4,7 +4,10 @@
     <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactjs/components/MyAccount.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/MyAccount.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Controller/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/.env" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Controller/ChangePasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Controller/ChangePasswordController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Event/EmailChangePasswordEvent.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Event/EmailChangePasswordEvent.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/EventListener/MailChangePasswordListener.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/EventListener/MailChangePasswordListener.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -430,7 +433,7 @@
       <workItem from="1566941610312" duration="169000" />
       <workItem from="1567266280071" duration="75000" />
       <workItem from="1567266463431" duration="7942000" />
-      <workItem from="1567317947384" duration="9894000" />
+      <workItem from="1567317947384" duration="13184000" />
     </task>
     <servers />
   </component>

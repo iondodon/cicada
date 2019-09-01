@@ -231,9 +231,47 @@ class MyAccount extends React.Component {
                 document.getElementsByClassName('error-content')[0].innerHTML = message;
                 document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
             } else {
-                e.target.innerText = 'Change password';
-                oldPasswordInput.readOnly = true;
-                await this.setState({changingPassword: false});
+
+                const formData = new URLSearchParams();
+                formData.append('old_password', this.state['oldPassword']);
+                formData.append('new_password', this.state['newPassword']);
+
+                let headers = new Headers();
+                headers.append('Content-Type', 'application/x-www-form-urlencoded');
+
+                const request = {
+                    method: 'POST',
+                    mode: 'cors',
+                    headers: headers,
+                    credentials: 'include',
+                    body: formData.toString()
+                };
+
+                try {
+                    let response = await fetch(config.API_URL + '/api/changePassword', request);
+
+                    if(response.status === 401){
+                        document.getElementsByClassName('error-content')[0].innerHTML = 'Unauthorised. ';
+                        document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+                    } else if(response.status === 400){
+                        document.getElementsByClassName('error-content')[0].innerHTML = 'Invalid data. ';
+                        document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+                    }  else if(response.status === 403){
+                        document.getElementsByClassName('error-content')[0].innerHTML = 'Access denied. ';
+                        document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+                    } else if(response.status === 200) {
+                        e.target.innerText = 'Change password';
+                        oldPasswordInput.readOnly = true;
+                        await this.setState({changingPassword: false});
+                        await this.setState({oldPassword: '#############'});
+                        await this.setState({newPassword: ''});
+                        await this.setState({confirmNewPassword: ''});
+                        //TODO: logout
+                        Router.push('/');
+                    }
+                } catch (e) {
+                    console.log(e.message);
+                }
             }
         }
     }
