@@ -31,6 +31,7 @@ class MyAccount extends React.Component {
         this.changeFullName = this.changeFullName.bind(this);
         this.changePassword = this.changePassword.bind(this);
         this.showTypeNewPassword = this.showTypeNewPassword.bind(this);
+        this.cancelChangeUsername = this.cancelChangeUsername.bind(this);
     }
 
     async componentDidMount() {
@@ -73,6 +74,7 @@ class MyAccount extends React.Component {
     }
 
     async changeUsername(e) {
+        document.getElementById('cancel-change-username').setAttribute('style', 'display: inline');
         let username_input = document.getElementById('username');
 
         if(username_input.readOnly === true) {
@@ -96,6 +98,7 @@ class MyAccount extends React.Component {
                         document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
                     } else if (response.status === 200) {
                         username_input.readOnly = "true";
+                        document.getElementById('cancel-change-username').setAttribute('style', 'display: none');
                         //TODO: logout
                         Router.push('/login');
                     } else {
@@ -333,6 +336,14 @@ class MyAccount extends React.Component {
         return re.test(String(email).toLowerCase());
     }
 
+    async cancelChangeUsername(e) {
+        e.persist();
+        document.getElementById('change-username-btn').innerText = 'Change username';
+        document.getElementById('username').readOnly = true;
+        await this.setState({changingUsername: false});
+        e.target.setAttribute('style', 'display: none');
+    }
+
     render(){
         if(this.state.loading) {
             return(
@@ -363,7 +374,6 @@ class MyAccount extends React.Component {
             );
         }
 
-
         return (
             <div className={"account-info"} >
                 <div className="alert alert-error" style={{ display: 'none' }} >
@@ -382,7 +392,16 @@ class MyAccount extends React.Component {
                                readOnly={true}
                                onChange={this.updateUsernameState}
                         />
-                        <button type={"button"} className="btn btn-warning" onClick={this.changeUsername}>Change username</button>
+                        <div className={"action"}>
+                            <button
+                                type={"button"}
+                                id={"cancel-change-username"}
+                                className="btn btn-info cancel"
+                                onClick={this.cancelChangeUsername}
+                                style={{display: "none"}}
+                            >Cancel</button>
+                            <button id={"change-username-btn"} type={"button"} className="btn btn-warning" onClick={this.changeUsername}>Change username</button>
+                        </div>
                     </fieldset>
                     <fieldset className="form-group">
                         <label htmlFor="email">email:</label>
@@ -504,6 +523,15 @@ class MyAccount extends React.Component {
                     
                     a {
                       margin-right: 0.5rem;
+                    }
+                    
+                    .action {
+                      display: flex;
+                      float: right;
+                    }
+                    
+                    .cancel {
+                        margin-right: 2rem;
                     }
                 `}</style>
             </div>
