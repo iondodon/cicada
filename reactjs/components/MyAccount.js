@@ -32,6 +32,9 @@ class MyAccount extends React.Component {
         this.changePassword = this.changePassword.bind(this);
         this.showTypeNewPassword = this.showTypeNewPassword.bind(this);
         this.cancelChangeUsername = this.cancelChangeUsername.bind(this);
+        this.cancelChangeEmail = this.cancelChangeEmail.bind(this);
+        this.cancelChangeFullName = this.cancelChangeFullName.bind(this);
+        this.cancelChangePassword = this.cancelChangePassword.bind(this);
     }
 
     async componentDidMount() {
@@ -74,12 +77,14 @@ class MyAccount extends React.Component {
     }
 
     async changeUsername(e) {
+        e.persist();
         document.getElementById('cancel-change-username').setAttribute('style', 'display: inline');
         let username_input = document.getElementById('username');
 
         if(username_input.readOnly === true) {
             e.target.innerText = 'Save';
             username_input.readOnly = false;
+            await this.setState({usernameTemp: this.state['account']['user']['username']});
         } else {
             const request = {
                 method: 'PUT',
@@ -118,11 +123,13 @@ class MyAccount extends React.Component {
 
     async changeEmail(e) {
         e.persist();
+        document.getElementById('cancel-change-email').setAttribute('style', 'display: inline');
         let email_input = document.getElementById('email');
 
         if(email_input.readOnly === true) {
             e.target.innerText = 'Save';
             email_input.readOnly = false;
+            await this.setState({emailTemp: this.state['account']['user']['email']});
         } else {
             if(!this.validateEmail(this.state['account']['user']['email'])) {
                 document.getElementsByClassName('error-content')[0].innerHTML = 'Invalid email format.';
@@ -146,6 +153,7 @@ class MyAccount extends React.Component {
                         document.getElementsByClassName('error-content')[0].innerHTML = 'Unauthorized.';
                         document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
                     } else if (response.status === 200) {
+                        document.getElementById('cancel-change-email').setAttribute('style', 'display: none');
                         email_input.readOnly = "true";
                         e.target.innerText = 'Change email';
                     } else {
@@ -165,11 +173,13 @@ class MyAccount extends React.Component {
 
     async changeFullName(e) {
         e.persist();
+        document.getElementById('cancel-change-fullName').setAttribute('style', 'display: inline');
         let fullName_input = document.getElementById('full-name');
 
         if(fullName_input.readOnly === true) {
             e.target.innerText = 'Save';
             fullName_input.readOnly = false;
+            await this.setState({fullNameTemp: this.state['account']['user']['fullName']});
         } else {
             const request = {
                 method: 'PUT',
@@ -202,7 +212,7 @@ class MyAccount extends React.Component {
 
     async changePassword(e) {
         e.persist();
-
+        document.getElementById('cancel-change-password').setAttribute('style', 'display: inline');
         let oldPasswordInput = document.getElementById('password');
 
         if(oldPasswordInput.readOnly === true) {
@@ -341,6 +351,46 @@ class MyAccount extends React.Component {
         document.getElementById('change-username-btn').innerText = 'Change username';
         document.getElementById('username').readOnly = true;
         await this.setState({changingUsername: false});
+
+        let account = this.state['account'];
+        account['user']['username'] = this.state['usernameTemp'];
+        await this.setState({ account: account });
+
+        e.target.setAttribute('style', 'display: none');
+    }
+
+    async cancelChangeEmail(e) {
+        e.persist();
+        document.getElementById('change-email-btn').innerText = 'Change email';
+        document.getElementById('email').readOnly = true;
+
+        let account = this.state['account'];
+        account['user']['email'] = this.state['emailTemp'];
+        await this.setState({ account: account });
+
+        await this.setState({changingEmail: false});
+        e.target.setAttribute('style', 'display: none');
+    }
+
+    async cancelChangeFullName(e) {
+        e.persist();
+        document.getElementById('change-fullName-btn').innerText = 'Change full name';
+        document.getElementById('full-name').readOnly = true;
+
+        let account = this.state['account'];
+        account['user']['fullName'] = this.state['fullNameTemp'];
+        await this.setState({ account: account });
+
+        await this.setState({changingFullName: false});
+        e.target.setAttribute('style', 'display: none');
+    }
+
+    async cancelChangePassword(e) {
+        e.persist();
+        document.getElementById('change-password-btn').innerText = 'Change password';
+        document.getElementById('password').readOnly = true;
+        await this.setState({'oldPassword': "############"});
+        await this.setState({changingPassword: false});
         e.target.setAttribute('style', 'display: none');
     }
 
@@ -413,7 +463,16 @@ class MyAccount extends React.Component {
                                readOnly={true}
                                onChange={this.updateEmailState}
                         />
-                        <button type={"button"} className="btn btn-warning" onClick={this.changeEmail}>Change email</button>
+                        <div className={"action"}>
+                            <button
+                                type={"button"}
+                                id={"cancel-change-email"}
+                                className="btn btn-info cancel"
+                                onClick={this.cancelChangeEmail}
+                                style={{display: "none"}}
+                            >Cancel</button>
+                            <button id={"change-email-btn"} type={"button"} className="btn btn-warning" onClick={this.changeEmail}>Change email</button>
+                        </div>
                     </fieldset>
                     <fieldset className="form-group">
                         <label>full name:</label>
@@ -425,7 +484,16 @@ class MyAccount extends React.Component {
                                readOnly={true}
                                onChange={this.updateFullNameState}
                         />
-                        <button type={"button"} className="btn btn-warning" onClick={this.changeFullName}>Change full name</button>
+                        <div className={"action"}>
+                            <button
+                                type={"button"}
+                                id={"cancel-change-fullName"}
+                                className="btn btn-info cancel"
+                                onClick={this.cancelChangeFullName}
+                                style={{display: "none"}}
+                            >Cancel</button>
+                            <button id={"change-fullName-btn"} type={"button"} className="btn btn-warning" onClick={this.changeFullName}>Change full name</button>
+                        </div>
                     </fieldset>
                     <fieldset className="form-group">
                         <label htmlFor="password">password:</label>
@@ -440,7 +508,16 @@ class MyAccount extends React.Component {
                                    await this.setState({oldPassword: oldPassword.value})
                                }}
                         />
-                        <button type={"button"} className="btn btn-warning" onClick={this.changePassword}>Change password</button>
+                        <div className={"action"}>
+                            <button
+                                type={"button"}
+                                id={"cancel-change-password"}
+                                className="btn btn-info cancel"
+                                onClick={this.cancelChangePassword}
+                                style={{display: "none"}}
+                            >Cancel</button>
+                            <button id={"change-password-btn"} type={"button"} className="btn btn-warning" onClick={this.changePassword}>Change password</button>
+                        </div>
                     </fieldset>
                     { this.showTypeNewPassword() }
                 </form>
