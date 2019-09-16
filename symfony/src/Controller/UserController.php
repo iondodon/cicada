@@ -62,4 +62,70 @@ class UserController extends AbstractFOSRestController
         $response->setStatusCode(Response::HTTP_FOUND);
         return $response;
     }
+
+    /**
+     * @Route("/api/users/username/{new_username}", name="users.change_username", methods={"PUT"})
+     * @param $new_username
+     * @return Response
+     */
+    public function changeUsername($new_username): Response
+    {
+        $em = $this->getDoctrine()->getManager();
+        $user = $this->getUser();
+
+        $user->setUsername($new_username);
+
+        $em->persist($user);
+        $em->flush();
+
+        return new Response(
+            'Username successfully changed.',
+            Response::HTTP_OK,
+            ['content-type' => 'text/html']
+        );
+    }
+
+    /**
+     * @Route("/api/users/email/{new_email}", name="users.change_email", methods={"PUT"})
+     * @param $new_email
+     * @return Response
+     */
+    public function changeEmail($new_email): Response
+    {
+        $em = $this->getDoctrine()->getManager();
+        $user = $this->getUser();
+
+        $user->setEmail($new_email);
+
+        $em->persist($user);
+        $em->flush();
+
+        return new Response(
+            'Email successfully changed.',
+            Response::HTTP_OK,
+            ['content-type' => 'text/html']
+        );
+    }
+
+    /**
+     * @Route("/api/users/full_name/{new_fullName}", name="users.change_fullName", methods={"PUT"})
+     * @param $new_fullName
+     * @return Response
+     */
+    public function changeFullName($new_fullName): Response
+    {
+        $em = $this->getDoctrine()->getManager();
+        $user = $this->getUser();
+
+        $user->setFullName($new_fullName);
+
+        $em->persist($user);
+        $em->flush();
+
+        return new Response(
+            'Full name successfully changed.',
+            Response::HTTP_OK,
+            ['content-type' => 'text/html']
+        );
+    }
 }

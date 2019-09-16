@@ -51,7 +51,7 @@ class PuzzleRepository extends ServiceEntityRepository
                 $stage->setCreatedAt(new DateTime());
                 $stage->setCode($stg['code']);
                 $stage->setDescription($stg['description']);
-                $stage->setLevel($stg['stageNumber']);
+                $stage->setLevel($stg['level']);
                 $stage->setPuzzleParent($puzzle);
                 $em->persist($stage);
                 $stages->add($stage);

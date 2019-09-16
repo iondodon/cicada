@@ -63,7 +63,7 @@ class Account
      *
      * @ORM\Column(type="integer", nullable=false)
      */
-    private $winedContestCount;
+    private $winedContestsCount;
 
     /**
      * @var Collection
@@ -195,18 +195,18 @@ class Account
     /**
      * @return int
      */
-    public function getWinedContestCount(): int
+    public function getWinedContestsCount(): int
     {
-        return $this->winedContestCount;
+        return $this->winedContestsCount;
     }
 
     /**
-     * @param int $winedContestCount
+     * @param int $winedContestsCount
      * @return Account
      */
-    public function setWinedContestCount(int $winedContestCount): Account
+    public function setWinedContestsCount(int $winedContestsCount): Account
     {
-        $this->winedContestCount = $winedContestCount;
+        $this->winedContestsCount = $winedContestsCount;
 
         return $this;
     }

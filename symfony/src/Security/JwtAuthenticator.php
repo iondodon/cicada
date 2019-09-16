@@ -86,7 +86,7 @@ class JwtAuthenticator extends AbstractGuardAuthenticator
     {
         $data = $this->jwtEncoder->decode($credentials);
 
-        if ($data == false) {
+        if ($data === false) {
             throw new CustomUserMessageAuthenticationException('Invalid Token');
         }
 
@@ -150,15 +150,15 @@ class JwtAuthenticator extends AbstractGuardAuthenticator
     {
         $data = $this->jwtEncoder->decode($token);
 
-        if ($data == false) {
+        if ($data === false) {
             throw new CustomUserMessageAuthenticationException('Invalid Token');
         }
 
-        if($data['clientIp'] != $request->getClientIp()) {
+        if($data['clientIp'] !== $request->getClientIp()) {
             return true;
         }
 
-        if($data['userAgent'] != $request->headers->get('User-Agent')) {
+        if($data['userAgent'] !== $request->headers->get('User-Agent')) {
             return true;
         }
 
