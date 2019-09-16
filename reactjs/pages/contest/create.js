@@ -6,8 +6,9 @@ import '../../i18n';
 import { withNamespaces } from 'react-i18next';
 import Head from "next/head";
 import LeftPanel from "../../components/LeftPanel";
+import ContestForm from "../../components/ContestForm";
 
-class Create extends React.Component {
+class CreateContestPage extends React.Component {
 
     constructor(props, {t}){
         super(props, {t});
@@ -41,7 +42,7 @@ class Create extends React.Component {
                         {/*<header className="card-header">Create puzzle</header>*/}
                         <div className="card-content">
                             <div className="inner">
-                                create contest
+                                <ContestForm/>
                             </div>
                         </div>
                     </div>
@@ -65,4 +66,4 @@ class Create extends React.Component {
     }
 }
 
-export default withNamespaces()(Create);
+export default withNamespaces()(CreateContestPage);
