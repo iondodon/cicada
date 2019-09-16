@@ -610,6 +610,13 @@ class MyAccount extends React.Component {
                     .cancel {
                         margin-right: 2rem;
                     }
+                    
+                    #change-username-btn,
+                    #change-email-btn,
+                    #change-fullName-btn,
+                    #change-password-btn {
+                      min-width: 148px;
+                    }
                 `}</style>
             </div>
         );
