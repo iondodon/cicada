@@ -59,6 +59,11 @@ class ContestForm extends React.Component {
                     />
                 </div>
 
+                <label htmlFor="finishesAt"  className={"form-group"}>
+                    <label htmlFor="finishesAt">finishes at:</label>
+                    <input type="datetime-local" name="finishesAt"/>
+                </label>
+
                 <label htmlFor="private" className={"is-private btn btn-success btn-ghost minus"}>Private
                     <input
                         type="checkbox"
@@ -68,9 +73,7 @@ class ContestForm extends React.Component {
                     />
                 </label>
 
-                <div className={"form-group"}>
-                    <input type="datetime-local" name="finishesAt"/>
-                </div>
+                <button className="btn btn-success btn-create">Create</button>
 
                 { /*language=SCSS*/ }
                 <style jsx>{`
@@ -80,36 +83,45 @@ class ContestForm extends React.Component {
                     justify-content: center;
                   }
                   
+                  .btn-create {
+                    width: 50%;
+                    margin: auto;
+                  }
+
                   .form-group {
                     display: flex;
                     flex-direction: row;
-                    margin: auto;
+                    margin: 3rem auto auto;
                   }
                   
+                  .btn {
+                    margin-top: 3rem;
+                  }
+
                   .is-private {
-                      margin-top: 2rem;
-                      margin-left: auto;
-                      margin-right: auto;
-                      cursor: auto;
+                    margin-top: 2rem;
+                    margin-left: auto;
+                    margin-right: auto;
+                    cursor: auto;
                   }
-                  
+
                   .is-private > input {
-                      cursor: pointer;
+                    cursor: pointer;
                   }
-                  
+
                   .minus, .plus {
-                   padding: .3rem .7rem;
-                   font-size: 1rem;
+                    padding: .3rem .7rem;
+                    font-size: 1rem;
                   }
-                  
-                  
+
+
                   .alert {
-                        display: flex;
-                        flex-direction: row;
-                        text-align: center;
-                        margin-top: 1rem;
-                        margin-bottom: 2rem;
-                        justify-content: center;
+                    display: flex;
+                    flex-direction: row;
+                    text-align: center;
+                    margin-top: 1rem;
+                    margin-bottom: 2rem;
+                    justify-content: center;
                   }
                 `}
                 </style>
