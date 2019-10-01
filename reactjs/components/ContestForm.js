@@ -11,7 +11,7 @@ class ContestForm extends React.Component {
         this.t = t;
 
         this.state = {
-
+            isPrivate: false
         };
 
 
@@ -38,6 +38,9 @@ class ContestForm extends React.Component {
                            type="text"
                            placeholder="contest name..."
                            className="form-control"
+                           onChange={async (e) => {
+                               await this.setState({contestName: e.target.value});
+                           }}
                     />
                 </div>
 
@@ -47,6 +50,9 @@ class ContestForm extends React.Component {
                            type="text"
                            placeholder="puzzle name..."
                            className="form-control"
+                           onChange={async (e) => {
+                               await this.setState({puzzleName: e.target.value});
+                           }}
                     />
                 </div>
 
@@ -56,12 +62,19 @@ class ContestForm extends React.Component {
                            type="text"
                            placeholder="key"
                            className="form-control"
+                           onChange={async (e) => {
+                               await this.setState({key: e.target.value});
+                           }}
                     />
                 </div>
 
                 <label htmlFor="finishesAt"  className={"form-group"}>
                     <label htmlFor="finishesAt">finishes at:</label>
-                    <input type="datetime-local" name="finishesAt"/>
+                    <input type="datetime-local" name="finishesAt"
+                        onChange={async (e) => {
+                            await this.setState({finishesAt: e.target.value});
+                        }}
+                    />
                 </label>
 
                 <label htmlFor="private" className={"is-private btn btn-success btn-ghost minus"}>Private
@@ -69,7 +82,9 @@ class ContestForm extends React.Component {
                         type="checkbox"
                         className={"is-private-ck-box"}
                         checked={this.state.isPrivate}
-                        onChange = {this.setIsPrivate}
+                        onChange = {async (e) => {
+                            await this.setState({isPrivate: e.target.checked});
+                        }}
                     />
                 </label>
 

@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/symfony/src/Controller/ContestController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/symfony/src/Repository/ContestRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/components/ContestForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/ContestForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Controller/ContestController.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Controller/ContestController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Controller/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Controller/RegistrationController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -443,7 +444,9 @@
       <workItem from="1568631671622" duration="4445000" />
       <workItem from="1568730963772" duration="4174000" />
       <workItem from="1569771713174" duration="3531000" />
-      <workItem from="1569788900949" duration="1443000" />
+      <workItem from="1569788900949" duration="1772000" />
+      <workItem from="1569853375163" duration="5363000" />
+      <workItem from="1569952634077" duration="2683000" />
     </task>
     <servers />
   </component>

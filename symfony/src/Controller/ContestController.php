@@ -48,7 +48,7 @@ class ContestController extends AbstractFOSRestController
      */
     public function show($id, ContestRepository $contestRepository): JsonResponse
     {
-        
+
     }
 
     /**
