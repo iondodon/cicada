@@ -24,9 +24,18 @@ class AccountController extends AbstractFOSRestController
         $serializer = new Serializer($normalizers, $encoders);
 
         $account = $serializer->serialize($this->getUser()->getAccount(), 'json', [
-            'circular_reference_handler' => static function ($object) {
-                return $object->getId();
-            }
+            'attributes' => [
+                'user' => ['username', 'email', 'fullName'],
+                'puzzlesSolvedCount',
+                'puzzlesEnrolledAt' => ['name'],
+                'winedContestsCount',
+                'puzzleSessions' => ['puzzle' => 'name'],
+                'createdPuzzles' => ['name'],
+                'createdTeams' => ['name'],
+                'createdContests' => ['name'],
+                'contestsEnrolledAt' => ['name'],
+                'teamsMemberOf' => ['name']
+            ]
         ]);
 
         return new JsonResponse(json_decode($account, true));
@@ -45,9 +54,10 @@ class AccountController extends AbstractFOSRestController
         $serializer = new Serializer($normalizers, $encoders);
 
         $requestingTeamsJson = $serializer->serialize($requestingTeams, 'json', [
-            'circular_reference_handler' => static function ($object) {
-                return $object->getId();
-            }
+            'attributes' => [
+                'id',
+                'name'
+            ]
         ]);
 
         return new JsonResponse(json_decode($requestingTeamsJson, true));
