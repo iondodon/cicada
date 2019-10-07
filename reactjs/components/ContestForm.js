@@ -23,9 +23,8 @@ class ContestForm extends React.Component {
     componentDidMount() {
         // language=JQuery-CSS
         $('#demo').datetimepicker({
-            inline: true,
+            inline: true
         });
-
     }
 
 
@@ -100,34 +99,32 @@ class ContestForm extends React.Component {
                 </div>
 
                 <label htmlFor="finishesAt"  className={"form-group"}>
-                    <label htmlFor="finishesAt">finishes at:</label>
-                    <input type="datetime-local"
-                           name="finishesAt"
-                        onChange={async (e) => {
-                            await this.setState({finishesAt: e.target.value});
-                            console.log(this.state['finishesAt']);
-                        }}
-                    />
-                </label>
-
-                <label htmlFor="private" className={"is-private btn btn-success btn-ghost minus"}>Private
-                    {/*<input*/}
-                    {/*    type="checkbox"*/}
-                    {/*    className={"is-private-ck-box"}*/}
-                    {/*    checked={this.state.isPrivate}*/}
-                    {/*    onChange = {async (e) => {*/}
-                    {/*        await this.setState({isPrivate: e.target.checked});*/}
+                    {/*<input type="datetime-local"*/}
+                    {/*       name="finishesAt"*/}
+                    {/*    onChange={async (e) => {*/}
+                    {/*        await this.setState({finishesAt: e.target.value});*/}
+                    {/*        console.log(this.state['finishesAt']);*/}
                     {/*    }}*/}
                     {/*/>*/}
-
 
                     <input type="text" id="demo"/>
 
                 </label>
 
+                <label htmlFor="private" className={"is-private btn btn-success btn-ghost minus"}>Private
+                    <input
+                        type="checkbox"
+                        className={"is-private-ck-box"}
+                        checked={this.state.isPrivate}
+                        onChange = {async (e) => {
+                            await this.setState({isPrivate: e.target.checked});
+                        }}
+                    />
+                </label>
+
                 <button
                     className="btn btn-success btn-create"
-                    onClick={this.createContest()}
+                    onClick={this.createContest}
                 >Create</button>
 
                 <div className="alert alert-error" style={{ display: 'none' }} >
