@@ -19,10 +19,10 @@ class CreateContestPage extends React.Component {
         return (
             <Layout>
                 <Head>
-                    <title>Create team</title>
+                    <title>Create contest</title>
                     <scr name="viewport" content="initial-scale=1.0, width=device-width" />
-                    <link href="../../static/select2-4.0.7/dist/css/select2.css" rel="stylesheet" />
-                    <script src="../../static/select2-4.0.7/dist/js/select2.min.js"/>
+                    <link rel="stylesheet" href="../../node_modules/jquery-datetimepicker/build/jquery.datetimepicker.min.css"/>
+                    <script src="../../node_modules/jquery-datetimepicker/build/jquery.datetimepicker.full.min.js"/>
                 </Head>
 
                 <Dashboard>

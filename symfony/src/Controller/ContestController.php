@@ -37,7 +37,43 @@ class ContestController extends AbstractFOSRestController
      */
     public function create(Request $request, ContestRepository $contestRepository): Response
     {
+        $data = json_decode($request->getContent(), true);
 
+        $contest_exists = $contestRepository->contestExists($data);
+
+        if($contest_exists){
+            return new Response(
+                'A contest with this name already exists.',
+                Response::HTTP_BAD_REQUEST,
+                ['content-type' => 'text/html']
+            );
+        }
+
+        $puzzle_exists = $contestRepository->puzzleExists($data);
+
+        if(!$puzzle_exists){
+            return new Response(
+                'A puzzle with such a name does not exist.',
+                Response::HTTP_BAD_REQUEST,
+                ['content-type' => 'text/html']
+            );
+        }
+
+        $created = $contestRepository->createContestAndSave($data, $this->getUser());
+
+        if(!$created){
+            return new Response(
+                'Contest wasn\'t created. Server Error.',
+                Response::HTTP_INTERNAL_SERVER_ERROR,
+                ['content-type' => 'text/html']
+            );
+        }
+
+        return new Response(
+            'Contest successfully created.',
+            Response::HTTP_CREATED,
+            ['content-type' => 'text/html']
+        );
     }
 
     /**

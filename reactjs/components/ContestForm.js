@@ -2,6 +2,7 @@ import React from 'react';
 
 import '../i18n';
 import { withNamespaces } from 'react-i18next';
+import config from "../configs/keys";
 
 
 class ContestForm extends React.Component {
@@ -16,9 +17,14 @@ class ContestForm extends React.Component {
 
 
         this.closeError = this.closeError.bind(this);
+        this.createContest = this.createContest.bind(this);
     }
 
     componentDidMount() {
+        // language=JQuery-CSS
+        $('#demo').datetimepicker({
+            inline: true,
+        });
 
     }
 
@@ -26,6 +32,31 @@ class ContestForm extends React.Component {
 
     closeError(e) {
         e.target.parentElement.setAttribute('style', 'display: none;');
+    }
+
+    async createContest() {
+        const request = {
+            method: 'POST',
+            mode: 'cors',
+            credentials: "include"
+        };
+
+        try {
+            let response = await fetch(config.API_URL + '/api/contests/create', request);
+
+            if (response.status === 401) {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Unauthorized.';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            } else if (response.status === 302) {
+
+            } else {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Unexpected error.';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            }
+        } catch (e) {
+            document.getElementsByClassName('error-content')[0].innerHTML += e.message;
+            document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+        }
     }
 
     render(){
@@ -70,25 +101,39 @@ class ContestForm extends React.Component {
 
                 <label htmlFor="finishesAt"  className={"form-group"}>
                     <label htmlFor="finishesAt">finishes at:</label>
-                    <input type="datetime-local" name="finishesAt"
+                    <input type="datetime-local"
+                           name="finishesAt"
                         onChange={async (e) => {
                             await this.setState({finishesAt: e.target.value});
+                            console.log(this.state['finishesAt']);
                         }}
                     />
                 </label>
 
                 <label htmlFor="private" className={"is-private btn btn-success btn-ghost minus"}>Private
-                    <input
-                        type="checkbox"
-                        className={"is-private-ck-box"}
-                        checked={this.state.isPrivate}
-                        onChange = {async (e) => {
-                            await this.setState({isPrivate: e.target.checked});
-                        }}
-                    />
+                    {/*<input*/}
+                    {/*    type="checkbox"*/}
+                    {/*    className={"is-private-ck-box"}*/}
+                    {/*    checked={this.state.isPrivate}*/}
+                    {/*    onChange = {async (e) => {*/}
+                    {/*        await this.setState({isPrivate: e.target.checked});*/}
+                    {/*    }}*/}
+                    {/*/>*/}
+
+
+                    <input type="text" id="demo"/>
+
                 </label>
 
-                <button className="btn btn-success btn-create">Create</button>
+                <button
+                    className="btn btn-success btn-create"
+                    onClick={this.createContest()}
+                >Create</button>
+
+                <div className="alert alert-error" style={{ display: 'none' }} >
+                    <div className={"error-content"} >Error message</div>
+                    {'\u00A0'} <a onClick={this.closeError}>x</a>
+                </div>
 
                 { /*language=SCSS*/ }
                 <style jsx>{`
@@ -128,8 +173,7 @@ class ContestForm extends React.Component {
                     padding: .3rem .7rem;
                     font-size: 1rem;
                   }
-
-
+                  
                   .alert {
                     display: flex;
                     flex-direction: row;
