@@ -2,78 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/.travis.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/MIT-LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/bower.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/build/jquery.datetimepicker.full.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/build/jquery.datetimepicker.full.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/build/jquery.datetimepicker.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/build/jquery.datetimepicker.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/datetimepicker.jquery.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/doc.tpl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/jquery.datetimepicker.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/jquery.datetimepicker.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/karma.conf.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/pull_request_template.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/screen/1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/screen/2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/screen/3.1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/screen/3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/screen/4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/screen/5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/screen/6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/tests/app.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/tests/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/tests/input_in_container_fixed_to_bottom_of_viewport.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/tests/input_in_container_fixed_to_top_of_viewport.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/tests/tests/bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/tests/tests/destroy.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/tests/tests/events.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/tests/tests/init.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/tests/tests/methods.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/tests/tests/options.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery-datetimepicker/.travis.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery-datetimepicker/MIT-LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery-datetimepicker/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery-datetimepicker/bower.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery-datetimepicker/build/jquery.datetimepicker.full.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery-datetimepicker/build/jquery.datetimepicker.full.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery-datetimepicker/build/jquery.datetimepicker.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery-datetimepicker/build/jquery.datetimepicker.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery-datetimepicker/datetimepicker.jquery.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery-datetimepicker/doc.tpl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery-datetimepicker/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery-datetimepicker/jquery.datetimepicker.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery-datetimepicker/jquery.datetimepicker.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery-datetimepicker/jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery-datetimepicker/karma.conf.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery-datetimepicker/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery-datetimepicker/screen/1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery-datetimepicker/screen/2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery-datetimepicker/screen/3.1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery-datetimepicker/screen/3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery-datetimepicker/screen/4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery-datetimepicker/screen/5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery-datetimepicker/screen/6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery-datetimepicker/tests/app.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery-datetimepicker/tests/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery-datetimepicker/tests/input_in_container_fixed_to_bottom_of_viewport.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery-datetimepicker/tests/input_in_container_fixed_to_top_of_viewport.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery-datetimepicker/tests/tests/bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery-datetimepicker/tests/tests/destroy.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery-datetimepicker/tests/tests/events.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery-datetimepicker/tests/tests/init.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery-datetimepicker/tests/tests/methods.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/jquery-datetimepicker/tests/tests/options.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactjs/components/ContestForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/ContestForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/pages/contest/create.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/pages/contest/create.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Entity/Contest.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Entity/Contest.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -527,7 +458,8 @@
       <workItem from="1570357028287" duration="1661000" />
       <workItem from="1570358738523" duration="9332000" />
       <workItem from="1570458111691" duration="7793000" />
-      <workItem from="1570469749053" duration="3828000" />
+      <workItem from="1570469749053" duration="4315000" />
+      <workItem from="1570552528340" duration="5082000" />
     </task>
     <servers />
   </component>

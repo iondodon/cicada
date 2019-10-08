@@ -66,6 +66,13 @@ class Contest
     private $finishesAt;
 
     /**
+     * @var DateTime
+     *
+     * @ORM\Column(type="datetime", nullable=false)
+     */
+    private $startsAt;
+
+    /**
      * @var string
      *
      * @ORM\Column(type="string", nullable=true)
@@ -194,6 +201,25 @@ class Contest
     public function setFinishesAt(DateTime $finishesAt): Contest
     {
         $this->finishesAt = $finishesAt;
+
+        return $this;
+    }
+
+    /**
+     * @return DateTime
+     */
+    public function getStartsAt(): DateTime
+    {
+        return $this->startsAt;
+    }
+
+    /**
+     * @param DateTime $startsAt
+     * @return Contest
+     */
+    public function setStartsAt(DateTime $startsAt): Contest
+    {
+        $this->startsAt = $startsAt;
 
         return $this;
     }

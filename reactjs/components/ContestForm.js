@@ -17,13 +17,29 @@ class ContestForm extends React.Component {
 
 
         this.closeError = this.closeError.bind(this);
-        this.createContest = this.createContest.bind(this);
+        this.saveContest = this.saveContest.bind(this);
     }
 
     componentDidMount() {
         // language=JQuery-CSS
-        $('#demo').datetimepicker({
-            inline: true
+        $('#startsAt').datetimepicker({
+            inline: true,
+            ownerDocument: document,
+            contentWindow: window,
+            onChangeDateTime: function () {
+                console.log(this.getValue());
+            },
+            format: 'Y/m/d H:i'
+        });
+
+        $('#finishesAt').datetimepicker({
+            inline: true,
+            ownerDocument: document,
+            contentWindow: window,
+            onChangeDateTime: function () {
+                console.log(this.getValue());
+            },
+            format:'Y/m/d H:i'
         });
     }
 
@@ -33,29 +49,35 @@ class ContestForm extends React.Component {
         e.target.parentElement.setAttribute('style', 'display: none;');
     }
 
-    async createContest() {
-        const request = {
-            method: 'POST',
-            mode: 'cors',
-            credentials: "include"
-        };
+    async saveContest() {
+        // $('#startsAt').datetimepicker('toggle');
+        // $('#finishesAt').datetimepicker('toggle');
 
-        try {
-            let response = await fetch(config.API_URL + '/api/contests/create', request);
+        console.log($('#startsAt').datetimepicker('getValue'));
+        console.log($('#finishesAt').datetimepicker('getValue'));
 
-            if (response.status === 401) {
-                document.getElementsByClassName('error-content')[0].innerHTML = 'Unauthorized.';
-                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
-            } else if (response.status === 302) {
-
-            } else {
-                document.getElementsByClassName('error-content')[0].innerHTML = 'Unexpected error.';
-                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
-            }
-        } catch (e) {
-            document.getElementsByClassName('error-content')[0].innerHTML += e.message;
-            document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
-        }
+        // const request = {
+        //     method: 'POST',
+        //     mode: 'cors',
+        //     credentials: "include"
+        // };
+        //
+        // try {
+        //     let response = await fetch(config.API_URL + '/api/contests/create', request);
+        //
+        //     if (response.status === 401) {
+        //         document.getElementsByClassName('error-content')[0].innerHTML = 'Unauthorized.';
+        //         document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+        //     } else if (response.status === 302) {
+        //
+        //     } else {
+        //         document.getElementsByClassName('error-content')[0].innerHTML = 'Unexpected error.';
+        //         document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+        //     }
+        // } catch (e) {
+        //     document.getElementsByClassName('error-content')[0].innerHTML += e.message;
+        //     document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+        // }
     }
 
     render(){
@@ -98,17 +120,13 @@ class ContestForm extends React.Component {
                     />
                 </div>
 
+                <div className={"form-group"}>
+                    starts at - finishes at
+                </div>
+
                 <label htmlFor="finishesAt"  className={"form-group"}>
-                    {/*<input type="datetime-local"*/}
-                    {/*       name="finishesAt"*/}
-                    {/*    onChange={async (e) => {*/}
-                    {/*        await this.setState({finishesAt: e.target.value});*/}
-                    {/*        console.log(this.state['finishesAt']);*/}
-                    {/*    }}*/}
-                    {/*/>*/}
-
-                    <input type="text" id="demo"/>
-
+                    <input name="startsAt" type="text" id="startsAt"/>
+                    <input name="finishesAt" type="text" id="finishesAt"/>
                 </label>
 
                 <label htmlFor="private" className={"is-private btn btn-success btn-ghost minus"}>Private
@@ -124,8 +142,8 @@ class ContestForm extends React.Component {
 
                 <button
                     className="btn btn-success btn-create"
-                    onClick={this.createContest}
-                >Create</button>
+                    onClick={this.saveContest}
+                >Save</button>
 
                 <div className="alert alert-error" style={{ display: 'none' }} >
                     <div className={"error-content"} >Error message</div>
