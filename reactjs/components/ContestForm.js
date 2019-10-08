@@ -21,25 +21,20 @@ class ContestForm extends React.Component {
     }
 
     componentDidMount() {
-        // language=JQuery-CSS
+        let component = this;
+
         $('#startsAt').datetimepicker({
             inline: true,
-            ownerDocument: document,
-            contentWindow: window,
-            onChangeDateTime: function () {
-                console.log(this.getValue());
-            },
-            format: 'Y/m/d H:i'
+            onChangeDateTime: async function () {
+                await component.setState({'startsAt': this.getValue()});
+            }
         });
 
         $('#finishesAt').datetimepicker({
             inline: true,
-            ownerDocument: document,
-            contentWindow: window,
-            onChangeDateTime: function () {
-                console.log(this.getValue());
-            },
-            format:'Y/m/d H:i'
+            onChangeDateTime: async function () {
+                await component.setState({'finishesAt': this.getValue()});
+            }
         });
     }
 
@@ -50,34 +45,29 @@ class ContestForm extends React.Component {
     }
 
     async saveContest() {
-        // $('#startsAt').datetimepicker('toggle');
-        // $('#finishesAt').datetimepicker('toggle');
+        const request = {
+            method: 'POST',
+            mode: 'no-cors',
+            credentials: "include",
+            body: JSON.stringify(this.state)
+        };
 
-        console.log($('#startsAt').datetimepicker('getValue'));
-        console.log($('#finishesAt').datetimepicker('getValue'));
+        try {
+            let response = await fetch(config.API_URL + '/api/contests/create', request);
 
-        // const request = {
-        //     method: 'POST',
-        //     mode: 'cors',
-        //     credentials: "include"
-        // };
-        //
-        // try {
-        //     let response = await fetch(config.API_URL + '/api/contests/create', request);
-        //
-        //     if (response.status === 401) {
-        //         document.getElementsByClassName('error-content')[0].innerHTML = 'Unauthorized.';
-        //         document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
-        //     } else if (response.status === 302) {
-        //
-        //     } else {
-        //         document.getElementsByClassName('error-content')[0].innerHTML = 'Unexpected error.';
-        //         document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
-        //     }
-        // } catch (e) {
-        //     document.getElementsByClassName('error-content')[0].innerHTML += e.message;
-        //     document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
-        // }
+            if (response.status === 401) {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Unauthorized.';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            } else if (response.status === 302) {
+
+            } else {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Unexpected error.';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            }
+        } catch (e) {
+            document.getElementsByClassName('error-content')[0].innerHTML += e.message;
+            document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+        }
     }
 
     render(){

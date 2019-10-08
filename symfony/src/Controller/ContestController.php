@@ -39,6 +39,7 @@ class ContestController extends AbstractFOSRestController
     {
         $data = json_decode($request->getContent(), true);
 
+
         $contest_exists = $contestRepository->contestExists($data);
 
         if($contest_exists){

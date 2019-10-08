@@ -31,16 +31,12 @@ class ContestRepository extends ServiceEntityRepository
                 return false;
             }
 
-//            dump($data); die;
-
             $contest->setKey($data['key']);
-            $contest->setCreatedAt(new DateTime);
+            $contest->setCreatedAt(new DateTime());
             $contest->setCreatedBy($user->getAccount());
 
-            $finishesAt = new DateTime();
-
+            $contest->setStartsAt(new DateTime($data['startsAt']));
             $contest->setFinishesAt(new DateTime($data['finishesAt']));
-
 
             $contest->setIsPrivate($data['isPrivate']);
 
@@ -48,12 +44,14 @@ class ContestRepository extends ServiceEntityRepository
         } catch (\Exception $e) {
             return false;
         }
+
+        return true;
     }
 
     public function contestExists($data): bool
     {
         $em = $this->getEntityManager();
-        $contest = $em->getRepository(Contest::class)->findOneBy(['name' => $data['contest_name']]);
+        $contest = $em->getRepository(Contest::class)->findOneBy(['name' => $data['contestName']]);
 
         if($contest){
             return true;
@@ -65,9 +63,10 @@ class ContestRepository extends ServiceEntityRepository
     public function puzzleExists($data): bool
     {
         $em = $this->getEntityManager();
-        $contest = $em->getRepository(Puzzle::class)->findOneBy(['name' => $data['puzzle_name']]);
+        $puzzle = $em->getRepository(Puzzle::class)->findOneBy(['name' => $data['puzzleName']]);
 
-        if($contest){
+
+        if($puzzle){
             return true;
         }
 
