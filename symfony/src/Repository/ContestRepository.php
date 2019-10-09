@@ -7,7 +7,6 @@ use App\Entity\Puzzle;
 use App\Entity\User;
 use DateTime;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
 class ContestRepository extends ServiceEntityRepository

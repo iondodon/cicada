@@ -47,7 +47,7 @@ class ContestForm extends React.Component {
     async saveContest() {
         const request = {
             method: 'POST',
-            mode: 'no-cors',
+            mode: 'cors',
             credentials: "include",
             body: JSON.stringify(this.state)
         };
@@ -58,8 +58,16 @@ class ContestForm extends React.Component {
             if (response.status === 401) {
                 document.getElementsByClassName('error-content')[0].innerHTML = 'Unauthorized.';
                 document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
-            } else if (response.status === 302) {
+            } else if (response.status === 201) {
 
+            } else if (response.status === 500) {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Internal server error.';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            } else if (response.status === 400) {
+                await response.text().then((a) => {
+                    document.getElementsByClassName('error-content')[0].innerHTML = a;
+                });
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
             } else {
                 document.getElementsByClassName('error-content')[0].innerHTML = 'Unexpected error.';
                 document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
