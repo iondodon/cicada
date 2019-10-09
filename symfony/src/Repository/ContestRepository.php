@@ -7,6 +7,7 @@ use App\Entity\Puzzle;
 use App\Entity\User;
 use DateTime;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
 class ContestRepository extends ServiceEntityRepository
@@ -22,16 +23,17 @@ class ContestRepository extends ServiceEntityRepository
 
         try {
             $contest = new Contest();
-            $contest->setName($data['contest_name']);
+            $contest->setName($data['contestName']);
 
-            $puzzle = $em->getRepository(Puzzle::class)->findOneBy(['name' => $data['puzzle_name']]);
+            $puzzle = $em->getRepository(Puzzle::class)->findOneBy(['name' => $data['puzzleName']]);
             if($puzzle){
+                /** @var Puzzle $puzzle */
                 $contest->setPuzzle($puzzle);
             } else {
                 return false;
             }
 
-            $contest->setKey($data['key']);
+            $contest->setCode($data['code']);
             $contest->setCreatedAt(new DateTime());
             $contest->setCreatedBy($user->getAccount());
 
@@ -40,8 +42,10 @@ class ContestRepository extends ServiceEntityRepository
 
             $contest->setIsPrivate($data['isPrivate']);
 
-
+            $em->persist($contest);
+            $em->flush();
         } catch (\Exception $e) {
+            echo $e;
             return false;
         }
 

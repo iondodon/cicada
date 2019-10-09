@@ -77,7 +77,7 @@ class Contest
      *
      * @ORM\Column(type="string", nullable=true)
      */
-    private $key;
+    private $code;
 
     /**
      * @var boolean
@@ -89,16 +89,14 @@ class Contest
     /**
      * @var Collection
      *
-     * @ORM\ManyToOne(targetEntity="Account", inversedBy="contestsEnrolledAt")
-     * @ORM\JoinColumn(name="account_id", referencedColumnName="id")
+     * @ORM\OneToMany(targetEntity="Account", mappedBy="contestsEnrolledAt")
      */
     private $enrolledPlayers;
 
     /**
      * @var Collection
      *
-     * @ORM\ManyToOne(targetEntity="Team", inversedBy="contestsEnrolledAt")
-     * @ORM\JoinColumn(name="team_id", referencedColumnName="id")
+     * @ORM\OneToMany(targetEntity="Team", mappedBy="contestsEnrolledAt")
      */
     private $enrolledTeams;
 
@@ -227,18 +225,18 @@ class Contest
     /**
      * @return string
      */
-    public function getKey(): string
+    public function getCode(): string
     {
-        return $this->key;
+        return $this->code;
     }
 
     /**
-     * @param string $key
+     * @param string $code
      * @return Contest
      */
-    public function setKey(string $key): Contest
+    public function setCode(string $code): Contest
     {
-        $this->key = $key;
+        $this->code = $code;
 
         return $this;
     }

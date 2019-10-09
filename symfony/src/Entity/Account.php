@@ -94,9 +94,10 @@ class Account
     private $createdContests;
 
     /**
-     * @var Contest
+     * @var Collection
      *
-     * @ORM\OneToMany(targetEntity="Contest", mappedBy="enrolledPlayers")
+     * @ORM\ManyToOne(targetEntity="Contest", inversedBy="enrolledPlayers")
+     * @ORM\JoinColumn(name="contest_id", referencedColumnName="id")
      */
     private $contestsEnrolledAt;
 

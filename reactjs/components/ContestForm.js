@@ -100,12 +100,12 @@ class ContestForm extends React.Component {
 
                 <div className={"form-group"}>
                     <label htmlFor="key">key:</label>
-                    <input id="key"
+                    <input id="code"
                            type="text"
-                           placeholder="key"
+                           placeholder="code"
                            className="form-control"
                            onChange={async (e) => {
-                               await this.setState({key: e.target.value});
+                               await this.setState({code: e.target.value});
                            }}
                     />
                 </div>

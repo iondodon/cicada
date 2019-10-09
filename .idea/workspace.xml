@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/ion.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/ion.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactjs/components/ContestForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/ContestForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony/src/Controller/ContestController.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Controller/ContestController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Entity/Account.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Entity/Account.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Entity/Contest.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Entity/Contest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Entity/Team.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Entity/Team.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/symfony/src/Repository/ContestRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Repository/ContestRepository.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -460,7 +463,9 @@
       <workItem from="1570358738523" duration="9332000" />
       <workItem from="1570458111691" duration="7793000" />
       <workItem from="1570469749053" duration="4315000" />
-      <workItem from="1570552528340" duration="10799000" />
+      <workItem from="1570552528340" duration="10960000" />
+      <workItem from="1570597831193" duration="4555000" />
+      <workItem from="1570610022358" duration="1488000" />
     </task>
     <servers />
   </component>

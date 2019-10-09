@@ -91,7 +91,8 @@ class Team
     /**
      * @var Collection
      *
-     * @ORM\OneToMany(targetEntity="Contest", mappedBy="enrolledTeams")
+     * @ORM\ManyToOne(targetEntity="Contest", inversedBy="enrolledTeams")
+     * @ORM\JoinColumn(name="contest_id", referencedColumnName="id")
      */
     private $contestsEnrolledAt;
 
