@@ -48,7 +48,6 @@ class ContestRepository extends ServiceEntityRepository
             $em->persist($contest);
             $em->flush();
         } catch (\Exception $e) {
-            echo $e;
             return false;
         }
 

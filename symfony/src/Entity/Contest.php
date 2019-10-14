@@ -38,7 +38,7 @@ class Contest
     /**
      * @var Puzzle
      *
-     * @ORM\OneToOne(targetEntity="Puzzle")
+     * @ORM\ManyToOne(targetEntity="Puzzle", inversedBy="contestsPartOf")
      * @ORM\JoinColumn(name="puzzle_id", referencedColumnName="id")
      * )
      */

@@ -51,6 +51,13 @@ class Puzzle
     /**
      * @var Collection
      *
+     * @ORM\OneToMany(targetEntity="Contest", mappedBy="puzzle")
+     */
+    private $contestsPartOf;
+
+    /**
+     * @var Collection
+     *
      * @ORM\OneToMany(targetEntity="Stage", mappedBy="puzzleParent")
      */
     private $stages;
@@ -207,6 +214,25 @@ class Puzzle
     public function setEnrolledTeams(Collection $enrolledTeams): Puzzle
     {
         $this->enrolledTeams = $enrolledTeams;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection
+     */
+    public function getContestsPartOf(): Collection
+    {
+        return $this->contestsPartOf;
+    }
+
+    /**
+     * @param Collection $contestsPartOf
+     * @return Puzzle
+     */
+    public function setContestsPartOf(Collection $contestsPartOf): Puzzle
+    {
+        $this->contestsPartOf = $contestsPartOf;
 
         return $this;
     }

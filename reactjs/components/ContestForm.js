@@ -1,4 +1,5 @@
 import React from 'react';
+import Router from 'next/router';
 
 import '../i18n';
 import { withNamespaces } from 'react-i18next';
@@ -101,9 +102,13 @@ class ContestForm extends React.Component {
             return;
         }
 
+        if(this.state.code === ''){
+            await this.setState({code: null});
+        }
+
         const request = {
             method: 'POST',
-            mode: 'no-cors',
+            mode: 'cors',
             credentials: "include",
             body: JSON.stringify(this.state)
         };
@@ -115,7 +120,7 @@ class ContestForm extends React.Component {
                 document.getElementsByClassName('error-content')[0].innerHTML = 'Unauthorized.';
                 document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
             } else if (response.status === 201) {
-
+                Router.push('/');
             } else if (response.status === 500) {
                 document.getElementsByClassName('error-content')[0].innerHTML = 'Internal server error.';
                 document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
