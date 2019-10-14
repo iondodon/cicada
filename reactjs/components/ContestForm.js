@@ -18,23 +18,26 @@ class ContestForm extends React.Component {
 
         this.closeError = this.closeError.bind(this);
         this.saveContest = this.saveContest.bind(this);
+        this.validForm = this.validForm.bind(this);
     }
 
     componentDidMount() {
         let component = this;
 
-        $('#startsAt').datetimepicker({
-            inline: true,
-            onChangeDateTime: async function () {
-                await component.setState({'startsAt': this.getValue()});
-            }
-        });
+        $(document).ready(() => {
+            $('#startsAt').datetimepicker({
+                inline: true,
+                onChangeDateTime: async function () {
+                    await component.setState({'startsAt': this.getValue()});
+                }
+            });
 
-        $('#finishesAt').datetimepicker({
-            inline: true,
-            onChangeDateTime: async function () {
-                await component.setState({'finishesAt': this.getValue()});
-            }
+            $('#finishesAt').datetimepicker({
+                inline: true,
+                onChangeDateTime: async function () {
+                    await component.setState({'finishesAt': this.getValue()});
+                }
+            });
         });
     }
 
@@ -44,10 +47,63 @@ class ContestForm extends React.Component {
         e.target.parentElement.setAttribute('style', 'display: none;');
     }
 
+    validForm() {
+        let message = '';
+        let goodForm = true;
+
+
+        if(!this.state.contestName){
+            message += 'Specify a contest name. </br>';
+            goodForm = false;
+        } else
+        if(this.state.contestName.length < 4){
+            message += 'Contest name should be at least 4 characters long. </br>';
+            goodForm = false;
+        }
+
+        if(!this.state.puzzleName){
+            message += 'Specify a puzzle name. </br>';
+            goodForm = false;
+        } else
+        if(this.state.puzzleName.length < 3){
+            message += 'Too short puzzle name. At least 3 characters.</br>';
+            goodForm = false;
+        }
+
+        if(!this.state.code){
+            this.setState({code: null});
+        } else
+        if(this.state.code && this.state.code.length < 4){
+            message += 'The code should be at least 4 characters long.</br>';
+            goodForm = false;
+        }
+
+        if(!this.state.startsAt) {
+            message += 'Specify the time when the contest will start.</br>';
+            goodForm = false;
+        }
+
+        if(!this.state.finishesAt){
+            message += 'Specify the time when the contest will end.</br>';
+            goodForm = false;
+        }
+
+        if(!goodForm){
+            document.getElementsByClassName('error-content')[0].innerHTML = message;
+            document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+        }
+
+        return goodForm;
+    }
+
     async saveContest() {
+        if(!this.validForm()){
+            return;
+        }
+
         const request = {
             method: 'POST',
-            mode: 'cors',
+            mode: 'no-cors',
             credentials: "include",
             body: JSON.stringify(this.state)
         };
@@ -107,7 +163,7 @@ class ContestForm extends React.Component {
                 </div>
 
                 <div className={"form-group"}>
-                    <label htmlFor="key">key:</label>
+                    <label htmlFor="code">code:</label>
                     <input id="code"
                            type="text"
                            placeholder="code"

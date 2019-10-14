@@ -32,7 +32,11 @@ class ContestRepository extends ServiceEntityRepository
                 return false;
             }
 
-            $contest->setCode($data['code']);
+            if(isset($data['code'])){
+                $contest->setCode($data['code']);
+            } else {
+                $contest->setCode(null);
+            }
             $contest->setCreatedAt(new DateTime());
             $contest->setCreatedBy($user->getAccount());
 

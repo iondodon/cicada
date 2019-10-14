@@ -40,6 +40,7 @@ class Contest
      *
      * @ORM\OneToOne(targetEntity="Puzzle")
      * @ORM\JoinColumn(name="puzzle_id", referencedColumnName="id")
+     * )
      */
     private $puzzle;
 
@@ -54,7 +55,7 @@ class Contest
      * @var Account
      *
      * @ORM\ManyToOne(targetEntity="Account", inversedBy="createdContests")
-     * @ORM\JoinColumn(name="account_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="account_id", referencedColumnName="id", nullable=false)
      */
     private $createdBy;
 
@@ -225,7 +226,7 @@ class Contest
     /**
      * @return string
      */
-    public function getCode(): string
+    public function getCode(): ?string
     {
         return $this->code;
     }
@@ -234,7 +235,7 @@ class Contest
      * @param string $code
      * @return Contest
      */
-    public function setCode(string $code): Contest
+    public function setCode(?string $code): Contest
     {
         $this->code = $code;
 
