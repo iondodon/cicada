@@ -28,6 +28,9 @@ class ContestForm extends React.Component {
 
         $('#startsAt').datetimepicker({
             inline: true,
+            startDate: new Date(),
+            step: 1,
+            minDate: new Date(),
             onChangeDateTime: async function () {
                 await component.setState({'startsAt': this.getValue()});
             }
@@ -35,6 +38,10 @@ class ContestForm extends React.Component {
 
         $('#finishesAt').datetimepicker({
             inline: true,
+            startDate: new Date(),
+            step: 1,
+            minDate: new Date(),
+            minTime: new Date(),
             onChangeDateTime: async function () {
                 await component.setState({'finishesAt': this.getValue()});
             }
