@@ -22,8 +22,6 @@ class CreateContestPage extends React.Component {
                     <title>Create contest</title>
                     <scr name="viewport" content="initial-scale=1.0, width=device-width" />
                     <link rel="stylesheet" href="../../static/jquery-datetimepicker/jquery.datetimepicker.css"/>
-                    <script src="../../static/jquery-datetimepicker/jquery.js"/>
-                    <script src="../../static/jquery-datetimepicker/build/jquery.datetimepicker.full.js"/>
                 </Head>
 
                 <Dashboard>

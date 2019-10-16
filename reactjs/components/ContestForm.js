@@ -4,6 +4,7 @@ import Router from 'next/router';
 import '../i18n';
 import { withNamespaces } from 'react-i18next';
 import config from "../configs/keys";
+import Head from "next/head";
 
 
 class ContestForm extends React.Component {
@@ -25,20 +26,18 @@ class ContestForm extends React.Component {
     componentDidMount() {
         let component = this;
 
-        $(document).ready(() => {
-            $('#startsAt').datetimepicker({
-                inline: true,
-                onChangeDateTime: async function () {
-                    await component.setState({'startsAt': this.getValue()});
-                }
-            });
+        $('#startsAt').datetimepicker({
+            inline: true,
+            onChangeDateTime: async function () {
+                await component.setState({'startsAt': this.getValue()});
+            }
+        });
 
-            $('#finishesAt').datetimepicker({
-                inline: true,
-                onChangeDateTime: async function () {
-                    await component.setState({'finishesAt': this.getValue()});
-                }
-            });
+        $('#finishesAt').datetimepicker({
+            inline: true,
+            onChangeDateTime: async function () {
+                await component.setState({'finishesAt': this.getValue()});
+            }
         });
     }
 
@@ -179,12 +178,10 @@ class ContestForm extends React.Component {
                     />
                 </div>
 
-                <div className={"form-group"}>
-                    starts at - finishes at
-                </div>
-
-                <label htmlFor="finishesAt"  className={"form-group"}>
+                <label htmlFor="finishesAt"  className={"date-time-pickers"}>
+                    starts at
                     <input name="startsAt" type="text" id="startsAt"/>
+                    finishes at
                     <input name="finishesAt" type="text" id="finishesAt"/>
                 </label>
 
@@ -220,6 +217,13 @@ class ContestForm extends React.Component {
                   .btn-create {
                     width: 50%;
                     margin: auto;
+                  }
+                  
+                  .date-time-pickers{
+                    display: flex;
+                    flex-direction: column;
+                    margin: 3rem auto auto;
+                    text-align: center;
                   }
 
                   .form-group {

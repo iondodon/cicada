@@ -26,6 +26,9 @@ class Layout extends React.Component {
 
                     <script src={"/static/jquery/dist/jquery.min.js"}/>
                     <script src={"/static/select2-4.0.7/dist/js/select2.min.js"}/>
+
+                    <script src="../static/jquery-datetimepicker/jquery.js"/>
+                    <script src="../static/jquery-datetimepicker/build/jquery.datetimepicker.full.js"/>
                 </Head>
 
                 <TopMenu/>
