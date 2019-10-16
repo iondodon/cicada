@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/reactjs/pages/contest/create.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/LeftMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/LeftMenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/MyAccount.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/MyAccount.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/components/ContestForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/ContestForm.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -60,6 +58,13 @@
   <component name="GOROOT" path="$USER_HOME$/go/sdk/go1.12.5" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="$PROJECT_DIR$/.idea" />
+      </set>
+    </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -203,6 +208,7 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -227,18 +233,18 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/reactjs/static" />
-      <recent name="$PROJECT_DIR$/reactjs/static/pages/login" />
-      <recent name="$PROJECT_DIR$/ExternalWork" />
-      <recent name="$PROJECT_DIR$/cicada-symfony/public" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/reactjs/pages/puzzle" />
       <recent name="$PROJECT_DIR$/reactjs" />
       <recent name="$PROJECT_DIR$/reactjs/pages" />
       <recent name="$PROJECT_DIR$/ExternalWork" />
       <recent name="$PROJECT_DIR$/symfony/src/Security" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/reactjs/static" />
+      <recent name="$PROJECT_DIR$/reactjs/static/pages/login" />
+      <recent name="$PROJECT_DIR$/ExternalWork" />
+      <recent name="$PROJECT_DIR$/cicada-symfony/public" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -441,7 +447,25 @@
       <workItem from="1567779198418" duration="721000" />
       <workItem from="1567951864750" duration="1948000" />
       <workItem from="1568059964183" duration="847000" />
-      <workItem from="1568631671622" duration="2918000" />
+      <workItem from="1568631671622" duration="4445000" />
+      <workItem from="1568730963772" duration="4174000" />
+      <workItem from="1569771713174" duration="3531000" />
+      <workItem from="1569788900949" duration="1772000" />
+      <workItem from="1569853375163" duration="5363000" />
+      <workItem from="1569952634077" duration="2683000" />
+      <workItem from="1570356830159" duration="86000" />
+      <workItem from="1570357028287" duration="1661000" />
+      <workItem from="1570358738523" duration="9332000" />
+      <workItem from="1570458111691" duration="7793000" />
+      <workItem from="1570469749053" duration="4315000" />
+      <workItem from="1570552528340" duration="10960000" />
+      <workItem from="1570597831193" duration="4555000" />
+      <workItem from="1570610022358" duration="1758000" />
+      <workItem from="1570643944973" duration="1876000" />
+      <workItem from="1570731302397" duration="1767000" />
+      <workItem from="1570968488988" duration="3336000" />
+      <workItem from="1571056519863" duration="2952000" />
+      <workItem from="1571236986071" duration="3683000" />
     </task>
     <servers />
   </component>
@@ -471,6 +495,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <ignored-roots>
       <path value="$PROJECT_DIR$/laradock" />
     </ignored-roots>

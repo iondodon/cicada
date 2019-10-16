@@ -6,7 +6,6 @@ use App\Entity\Notification;
 use FOS\RestBundle\Controller\Annotations\Route;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
@@ -31,9 +30,11 @@ class NotificationController extends AbstractFOSRestController
         $serializer = new Serializer($normalizers, $encoders);
 
         $notificationsJson = $serializer->serialize($notifications, 'json', [
-            'circular_reference_handler' => static function ($object) {
-                return $object->getId();
-            }
+            'attributes' => [
+                'id',
+                'type',
+                'sourceAccount' => ['user' => ['fullName']]
+            ]
         ]);
 
         return new JsonResponse(json_decode($notificationsJson, true));

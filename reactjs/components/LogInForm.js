@@ -94,7 +94,6 @@ class LogInForm extends React.Component {
                         <button type={"submit"} className="btn btn-default" onClick={this.getToken}>
                             Login
                         </button>
-                        <button className="btn btn-primary">SignUp</button>
                     </div>
                 </div>
 

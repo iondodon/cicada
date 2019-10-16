@@ -38,8 +38,9 @@ class Contest
     /**
      * @var Puzzle
      *
-     * @ORM\OneToOne(targetEntity="Puzzle")
+     * @ORM\ManyToOne(targetEntity="Puzzle", inversedBy="contestsPartOf")
      * @ORM\JoinColumn(name="puzzle_id", referencedColumnName="id")
+     * )
      */
     private $puzzle;
 
@@ -54,7 +55,7 @@ class Contest
      * @var Account
      *
      * @ORM\ManyToOne(targetEntity="Account", inversedBy="createdContests")
-     * @ORM\JoinColumn(name="account_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="account_id", referencedColumnName="id", nullable=false)
      */
     private $createdBy;
 
@@ -66,11 +67,18 @@ class Contest
     private $finishesAt;
 
     /**
+     * @var DateTime
+     *
+     * @ORM\Column(type="datetime", nullable=false)
+     */
+    private $startsAt;
+
+    /**
      * @var string
      *
      * @ORM\Column(type="string", nullable=true)
      */
-    private $key;
+    private $code;
 
     /**
      * @var boolean
@@ -82,16 +90,14 @@ class Contest
     /**
      * @var Collection
      *
-     * @ORM\ManyToOne(targetEntity="Account", inversedBy="contestsEnrolledAt")
-     * @ORM\JoinColumn(name="account_id", referencedColumnName="id")
+     * @ORM\OneToMany(targetEntity="Account", mappedBy="contestsEnrolledAt")
      */
     private $enrolledPlayers;
 
     /**
      * @var Collection
      *
-     * @ORM\ManyToOne(targetEntity="Team", inversedBy="contestsEnrolledAt")
-     * @ORM\JoinColumn(name="team_id", referencedColumnName="id")
+     * @ORM\OneToMany(targetEntity="Team", mappedBy="contestsEnrolledAt")
      */
     private $enrolledTeams;
 
@@ -199,20 +205,39 @@ class Contest
     }
 
     /**
-     * @return string
+     * @return DateTime
      */
-    public function getKey(): string
+    public function getStartsAt(): DateTime
     {
-        return $this->key;
+        return $this->startsAt;
     }
 
     /**
-     * @param string $key
+     * @param DateTime $startsAt
      * @return Contest
      */
-    public function setKey(string $key): Contest
+    public function setStartsAt(DateTime $startsAt): Contest
     {
-        $this->key = $key;
+        $this->startsAt = $startsAt;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCode(): ?string
+    {
+        return $this->code;
+    }
+
+    /**
+     * @param string $code
+     * @return Contest
+     */
+    public function setCode(?string $code): Contest
+    {
+        $this->code = $code;
 
         return $this;
     }

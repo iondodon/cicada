@@ -6,8 +6,9 @@ import '../../i18n';
 import { withNamespaces } from 'react-i18next';
 import Head from "next/head";
 import LeftPanel from "../../components/LeftPanel";
+import ContestForm from "../../components/ContestForm";
 
-class Create extends React.Component {
+class CreateContestPage extends React.Component {
 
     constructor(props, {t}){
         super(props, {t});
@@ -18,10 +19,9 @@ class Create extends React.Component {
         return (
             <Layout>
                 <Head>
-                    <title>Create team</title>
+                    <title>Create contest</title>
                     <scr name="viewport" content="initial-scale=1.0, width=device-width" />
-                    <link href="../../static/select2-4.0.7/dist/css/select2.css" rel="stylesheet" />
-                    <script src="../../static/select2-4.0.7/dist/js/select2.min.js"/>
+                    <link rel="stylesheet" href="../../static/jquery-datetimepicker/jquery.datetimepicker.css"/>
                 </Head>
 
                 <Dashboard>
@@ -41,7 +41,7 @@ class Create extends React.Component {
                         {/*<header className="card-header">Create puzzle</header>*/}
                         <div className="card-content">
                             <div className="inner">
-                                create contest
+                                <ContestForm/>
                             </div>
                         </div>
                     </div>
@@ -65,4 +65,4 @@ class Create extends React.Component {
     }
 }
 
-export default withNamespaces()(Create);
+export default withNamespaces()(CreateContestPage);

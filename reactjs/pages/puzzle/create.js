@@ -19,7 +19,7 @@ class Create extends React.Component {
         return (
             <Layout>
                 <Head>
-                    <title>Create team</title>
+                    <title>Create puzzle</title>
                     <scr name="viewport" content="initial-scale=1.0, width=device-width" />
                     <link href="../../static/select2-4.0.7/dist/css/select2.css" rel="stylesheet" />
                     <script src="../../static/select2-4.0.7/dist/js/select2.min.js"/>

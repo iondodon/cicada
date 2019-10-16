@@ -34,9 +34,14 @@ class PuzzleController extends AbstractFOSRestController
         $serializer = new Serializer($normalizers, $encoders);
 
         $puzzlesJson = $serializer->serialize($puzzles, 'json', [
-            'circular_reference_handler' => static function ($object) {
-                return $object->getId();
-            }
+            'attributes' => [
+                'id',
+                'name',
+                'createdBy' => ['user' => ['fullName']],
+                'difficultyByCreator',
+                'difficultyByStatistics',
+                'stagesCount'
+            ]
         ]);
 
         return new JsonResponse(json_decode($puzzlesJson, true));
@@ -56,9 +61,13 @@ class PuzzleController extends AbstractFOSRestController
         $serializer = new Serializer($normalizers, $encoders);
 
         $puzzlesJson = $serializer->serialize($account->getCreatedPuzzles(), 'json', [
-            'circular_reference_handler' => static function ($object) {
-                return $object->getId();
-            }
+            'attributes' => [
+                'id',
+                'name',
+                'difficultyByCreator',
+                'difficultyByStatistics',
+                'stagesCount'
+            ]
         ]);
 
         return new JsonResponse(json_decode($puzzlesJson, true));
