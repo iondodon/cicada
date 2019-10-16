@@ -21,6 +21,8 @@ class ContestForm extends React.Component {
         this.closeError = this.closeError.bind(this);
         this.saveContest = this.saveContest.bind(this);
         this.validForm = this.validForm.bind(this);
+        this.populateForm = this.populateForm(this);
+        this.getContestData = this.getContestData(this);
     }
 
     componentDidMount() {
@@ -47,13 +49,61 @@ class ContestForm extends React.Component {
                 await component.setState({'finishesAt': this.getValue()});
             }
         });
+
+        if(this.props.ifFor === 'update'){
+            this.populateForm();
+        }
     }
 
+
+    async getContestData() {
+        const request = {
+            method: 'GET',
+            mode: 'cors',
+            credentials: "include"
+        };
+
+        const urlParams = new URLSearchParams(window.location.search);
+        this.contestId = urlParams.get('contestId');
+
+        try {
+            let response = await fetch(config.API_URL + '/api/contests/' + this.contestId, request);
+
+            if (response.status === 401) {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Unauthorized.';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            } else if (response.status === 500) {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Internal server error.';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            } else if(response.status === 204) {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'No such contest found.';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            } else if(response.status === 200) {
+                return await response.json();
+            } else {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Unexpected error.';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            }
+        } catch (e) {
+            document.getElementsByClassName('error-content')[0].innerHTML += e.message;
+            document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+        }
+    }
+
+
+    populateForm() {
+        this.getContestData().then((contestData) => {
+            console.log(contestData);
+        }).catch((e) => {
+            console.log(e);
+        });
+    }
 
 
     closeError(e) {
         e.target.parentElement.setAttribute('style', 'display: none;');
     }
+
 
     validForm() {
         let message = '';
@@ -93,6 +143,11 @@ class ContestForm extends React.Component {
 
         if(!this.state.finishesAt){
             message += 'Specify the time when the contest will end.</br>';
+            goodForm = false;
+        }
+
+        if(this.state.startsAt && this.state.finishesAt && this.state.startsAt > this.state.finishesAt){
+            message += 'Start time bigger than the finish time.</br>';
             goodForm = false;
         }
 

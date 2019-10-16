@@ -2,12 +2,16 @@
 
 namespace App\Controller;
 
+use App\Entity\Contest;
 use FOS\RestBundle\Controller\Annotations\Route;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use App\Repository\ContestRepository;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+use Symfony\Component\Serializer\Serializer;
 
 class ContestController extends AbstractFOSRestController
 {
@@ -85,7 +89,30 @@ class ContestController extends AbstractFOSRestController
      */
     public function show($id, ContestRepository $contestRepository): JsonResponse
     {
+        $em = $this->getDoctrine()->getManager();
+        $contest = $em->getRepository(Contest::class)->findOneBy(['id' => $id]);
 
+        $encoders = [new JsonEncoder()];
+        $normalizers = [new ObjectNormalizer()];
+        $serializer = new Serializer($normalizers, $encoders);
+
+        $contestJson = $serializer->serialize($contest, 'json', [
+            'attributes' =>[
+                'name',
+                'puzzle' => ['name'],
+                'code',
+                'startsAt',
+                'finishesAt',
+                'private'
+            ]
+        ]);
+        $jsonResponse = new JsonResponse(json_decode($contestJson, true));
+
+        if(!$contest){
+            $jsonResponse->setStatusCode(204);
+        }
+
+        return $jsonResponse;
     }
 
     /**
