@@ -31,6 +31,7 @@ class ContestForm extends React.Component {
             startDate: new Date(),
             step: 1,
             minDate: new Date(),
+            minTime: new Date(),
             onChangeDateTime: async function () {
                 await component.setState({'startsAt': this.getValue()});
             }
