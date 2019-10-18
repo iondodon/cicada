@@ -4,7 +4,6 @@ import Router from 'next/router';
 import '../i18n';
 import { withNamespaces } from 'react-i18next';
 import config from "../configs/keys";
-import Head from "next/head";
 
 
 class ContestForm extends React.Component {
@@ -14,15 +13,18 @@ class ContestForm extends React.Component {
         this.t = t;
 
         this.state = {
+            contestName: '',
+            puzzleName: '',
+            code: '',
             isPrivate: false
         };
-
 
         this.closeError = this.closeError.bind(this);
         this.saveContest = this.saveContest.bind(this);
         this.validForm = this.validForm.bind(this);
-        this.populateForm = this.populateForm(this);
-        this.getContestData = this.getContestData(this);
+        this.updateContest = this.updateContest.bind(this);
+        this.chooseButton = this.chooseButton.bind(this);
+        // this.populateContestForm = this.populateContestForm(this);
     }
 
     componentDidMount() {
@@ -50,21 +52,20 @@ class ContestForm extends React.Component {
             }
         });
 
-        if(this.props.ifFor === 'update'){
-            this.populateForm();
+        if(this.props.isFor === 'update'){
+            this.populateContestForm().then();
         }
     }
 
-
-    async getContestData() {
-        const request = {
-            method: 'GET',
-            mode: 'cors',
-            credentials: "include"
-        };
-
+    async updateContest() {
         const urlParams = new URLSearchParams(window.location.search);
         this.contestId = urlParams.get('contestId');
+
+        const request = {
+            method: 'GET',
+            mode: 'PUT',
+            credentials: "include"
+        };
 
         try {
             let response = await fetch(config.API_URL + '/api/contests/' + this.contestId, request);
@@ -79,7 +80,7 @@ class ContestForm extends React.Component {
                 document.getElementsByClassName('error-content')[0].innerHTML = 'No such contest found.';
                 document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
             } else if(response.status === 200) {
-                return await response.json();
+
             } else {
                 document.getElementsByClassName('error-content')[0].innerHTML = 'Unexpected error.';
                 document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
@@ -90,13 +91,44 @@ class ContestForm extends React.Component {
         }
     }
 
+    async populateContestForm() {
+        const urlParams = new URLSearchParams(window.location.search);
+        this.contestId = urlParams.get('contestId');
 
-    populateForm() {
-        this.getContestData().then((contestData) => {
-            console.log(contestData);
-        }).catch((e) => {
-            console.log(e);
-        });
+        const request = {
+            method: 'GET',
+            mode: 'cors',
+            credentials: "include"
+        };
+
+        try {
+            let response = await fetch(config.API_URL + '/api/contests/' + this.contestId, request);
+
+            if (response.status === 401) {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Unauthorized.';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            } else if (response.status === 500) {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Internal server error.';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            } else if(response.status === 204) {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'No such contest found.';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            } else if(response.status === 200) {
+                let contestData = await response.json();
+                await this.setState({contestName: contestData['name']});
+                await this.setState({puzzleName: contestData['puzzle']['name']});
+                await this.setState({code: contestData['code']});
+                await this.setState({startsAt: contestData['startsAt']});
+                await this.setState({startsAt: contestData['finishesAt']});
+                await this.setState({isPrivate: contestData['private']});
+            } else {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Unexpected error.';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            }
+        } catch (e) {
+            document.getElementsByClassName('error-content')[0].innerHTML += e.message;
+            document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+        }
     }
 
 
@@ -201,6 +233,24 @@ class ContestForm extends React.Component {
         }
     }
 
+    chooseButton(){
+        if(this.props.isFor === 'update'){
+            return(
+                <button
+                    className="btn btn-success btn-create"
+                    onClick={this.saveContest}
+                >Save</button>
+            );
+        } else {
+            return(
+                <button
+                    className="btn btn-success btn-create"
+                    onClick={this.updateContest}
+                >Save</button>
+            );
+        }
+    }
+
     render(){
         return (
             <div className={"contest-form"}>
@@ -211,6 +261,7 @@ class ContestForm extends React.Component {
                            type="text"
                            placeholder="contest name..."
                            className="form-control"
+                           value={this.state.contestName}
                            onChange={async (e) => {
                                await this.setState({contestName: e.target.value});
                            }}
@@ -223,6 +274,7 @@ class ContestForm extends React.Component {
                            type="text"
                            placeholder="puzzle name..."
                            className="form-control"
+                           value={this.state.puzzleName}
                            onChange={async (e) => {
                                await this.setState({puzzleName: e.target.value});
                            }}
@@ -235,6 +287,7 @@ class ContestForm extends React.Component {
                            type="text"
                            placeholder="code"
                            className="form-control"
+                           value={this.state.code}
                            onChange={async (e) => {
                                await this.setState({code: e.target.value});
                            }}
@@ -259,10 +312,7 @@ class ContestForm extends React.Component {
                     />
                 </label>
 
-                <button
-                    className="btn btn-success btn-create"
-                    onClick={this.saveContest}
-                >Save</button>
+                {this.chooseButton}
 
                 <div className="alert alert-error" style={{ display: 'none' }} >
                     <div className={"error-content"} >Error message</div>
