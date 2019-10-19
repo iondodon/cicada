@@ -183,7 +183,7 @@ class ContestForm extends React.Component {
         }
 
         if(!this.state.code){
-            this.setState({code: null});
+            this.setState({code: ''});
         } else
         if(this.state.code && this.state.code.length < 4){
             message += 'The code should be at least 4 characters long.</br>';
@@ -216,10 +216,6 @@ class ContestForm extends React.Component {
     async saveContest() {
         if(!this.validForm()){
             return;
-        }
-
-        if(this.state.code === ''){
-            await this.setState({code: null});
         }
 
         const request = {
