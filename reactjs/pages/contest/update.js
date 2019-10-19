@@ -19,7 +19,7 @@ class CreateContestPage extends React.Component {
         return (
             <Layout>
                 <Head>
-                    <title>Create contest</title>
+                    <title>Update contest</title>
                     <scr name="viewport" content="initial-scale=1.0, width=device-width" />
                     <link rel="stylesheet" href="../../static/jquery-datetimepicker/jquery.datetimepicker.css"/>
                 </Head>

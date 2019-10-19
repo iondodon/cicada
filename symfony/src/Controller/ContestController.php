@@ -3,6 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\Contest;
+use App\Entity\Puzzle;
+use DateTime;
 use FOS\RestBundle\Controller\Annotations\Route;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -90,6 +92,7 @@ class ContestController extends AbstractFOSRestController
     public function show($id, ContestRepository $contestRepository): JsonResponse
     {
         $em = $this->getDoctrine()->getManager();
+        /** @var Contest $contest */
         $contest = $em->getRepository(Contest::class)->findOneBy(['id' => $id]);
 
         $encoders = [new JsonEncoder()];
@@ -101,8 +104,8 @@ class ContestController extends AbstractFOSRestController
                 'name',
                 'puzzle' => ['name'],
                 'code',
-                'startsAt',
-                'finishesAt',
+                'startsAt' => ['timestamp'],
+                'finishesAt' => ['timestamp'],
                 'private'
             ]
         ]);
@@ -124,7 +127,28 @@ class ContestController extends AbstractFOSRestController
      */
     public function update(Request $request, $id): Response
     {
+        $editedContest = json_decode($request->getContent(), true);
+        $em = $this->getDoctrine()->getManager();
 
+        $contest = $em->getRepository(Contest::class)->find($id);
+
+        /** @var $contest Contest */
+        if($contest) {
+            $contest->setName($editedContest['contestName']);
+
+            $contest->setIsPrivate($editedContest['isPrivate']);
+            $contest->setCode($editedContest['code']);
+
+            $contest->setStartsAt(new DateTime($editedContest['startsAt']));
+            $contest->setFinishesAt(new DateTime($editedContest['finishesAt']));
+
+            $em->persist($contest);
+            $em->flush();
+
+            return new Response('Contest successfully updated', 200);
+        }
+
+        return new Response('Such contest does not exist', 400);
     }
 
     /**

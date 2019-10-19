@@ -2,7 +2,7 @@ import React from 'react';
 import Router from 'next/router';
 
 import '../i18n';
-import { withNamespaces } from 'react-i18next';
+import {withNamespaces} from 'react-i18next';
 import config from "../configs/keys";
 
 
@@ -14,7 +14,6 @@ class ContestForm extends React.Component {
 
         this.state = {
             contestName: '',
-            puzzleName: '',
             code: '',
             isPrivate: false
         };
@@ -23,7 +22,7 @@ class ContestForm extends React.Component {
         this.saveContest = this.saveContest.bind(this);
         this.validForm = this.validForm.bind(this);
         this.updateContest = this.updateContest.bind(this);
-        this.chooseButton = this.chooseButton.bind(this);
+        this.timestampToDateTime = this.timestampToDateTime.bind(this);
         // this.populateContestForm = this.populateContestForm(this);
     }
 
@@ -32,23 +31,21 @@ class ContestForm extends React.Component {
 
         $('#startsAt').datetimepicker({
             inline: true,
-            startDate: new Date(),
             step: 1,
             minDate: new Date(),
             minTime: new Date(),
             onChangeDateTime: async function () {
-                await component.setState({'startsAt': this.getValue()});
+                await component.setState({'startsAt': this.getValue().toISOString()});
             }
         });
 
         $('#finishesAt').datetimepicker({
             inline: true,
-            startDate: new Date(),
             step: 1,
             minDate: new Date(),
             minTime: new Date(),
             onChangeDateTime: async function () {
-                await component.setState({'finishesAt': this.getValue()});
+                await component.setState({'finishesAt': this.getValue().toISOString()});
             }
         });
 
@@ -62,9 +59,10 @@ class ContestForm extends React.Component {
         this.contestId = urlParams.get('contestId');
 
         const request = {
-            method: 'GET',
-            mode: 'PUT',
-            credentials: "include"
+            method: 'PUT',
+            mode: 'cors',
+            credentials: "include",
+            body: JSON.stringify(this.state)
         };
 
         try {
@@ -80,7 +78,7 @@ class ContestForm extends React.Component {
                 document.getElementsByClassName('error-content')[0].innerHTML = 'No such contest found.';
                 document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
             } else if(response.status === 200) {
-
+                console.log('Contest updated...');
             } else {
                 document.getElementsByClassName('error-content')[0].innerHTML = 'Unexpected error.';
                 document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
@@ -89,6 +87,19 @@ class ContestForm extends React.Component {
             document.getElementsByClassName('error-content')[0].innerHTML += e.message;
             document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
         }
+    }
+
+    timestampToDateTime(timestamp){
+        let dt = new Date(timestamp*1000);
+        let hr = dt.getHours();
+        let m = "0" + dt.getMinutes();
+        let s = "0" + dt.getSeconds();
+
+        dt.setHours(hr);
+        dt.setMinutes(m);
+        dt.setSeconds(s);
+
+        return dt;
     }
 
     async populateContestForm() {
@@ -115,11 +126,22 @@ class ContestForm extends React.Component {
                 document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
             } else if(response.status === 200) {
                 let contestData = await response.json();
+
                 await this.setState({contestName: contestData['name']});
-                await this.setState({puzzleName: contestData['puzzle']['name']});
                 await this.setState({code: contestData['code']});
-                await this.setState({startsAt: contestData['startsAt']});
-                await this.setState({startsAt: contestData['finishesAt']});
+
+                let startsAt = this.timestampToDateTime(contestData['startsAt']['timestamp']);
+                let finishesAt = this.timestampToDateTime(contestData['finishesAt']['timestamp']);
+
+                await this.setState({startsAt: startsAt.toISOString()});
+                await this.setState({finishesAt: finishesAt.toISOString()});
+
+                console.log(this.state);
+
+                $('#startsAt').datetimepicker('setOptions', {value: startsAt});
+                $('#finishesAt').datetimepicker('setOptions', {value: finishesAt});
+
+
                 await this.setState({isPrivate: contestData['private']});
             } else {
                 document.getElementsByClassName('error-content')[0].innerHTML = 'Unexpected error.';
@@ -233,24 +255,6 @@ class ContestForm extends React.Component {
         }
     }
 
-    chooseButton(){
-        if(this.props.isFor === 'update'){
-            return(
-                <button
-                    className="btn btn-success btn-create"
-                    onClick={this.saveContest}
-                >Save</button>
-            );
-        } else {
-            return(
-                <button
-                    className="btn btn-success btn-create"
-                    onClick={this.updateContest}
-                >Save</button>
-            );
-        }
-    }
-
     render(){
         return (
             <div className={"contest-form"}>
@@ -268,18 +272,26 @@ class ContestForm extends React.Component {
                     />
                 </div>
 
-                <div className={"form-group"}>
-                    <label htmlFor="puzzle-name">puzzle name:</label>
-                    <input id="puzzle-name"
-                           type="text"
-                           placeholder="puzzle name..."
-                           className="form-control"
-                           value={this.state.puzzleName}
-                           onChange={async (e) => {
-                               await this.setState({puzzleName: e.target.value});
-                           }}
-                    />
-                </div>
+                {
+                    (()=>{
+                        if(this.props.isFor !=='update'){
+                            return(
+                                <div className={"form-group"}>
+                                    <label htmlFor="puzzle-name">puzzle name:</label>
+                                    <input id="puzzle-name"
+                                           type="text"
+                                           placeholder="puzzle name..."
+                                           className="form-control"
+                                           value={this.state.puzzleName}
+                                           onChange={async (e) => {
+                                               await this.setState({puzzleName: e.target.value});
+                                           }}
+                                    />
+                                </div>
+                            );
+                        }
+                    })()
+                }
 
                 <div className={"form-group"}>
                     <label htmlFor="code">code:</label>
@@ -312,7 +324,26 @@ class ContestForm extends React.Component {
                     />
                 </label>
 
-                {this.chooseButton}
+                {
+                    (() => {
+                        if(this.props.isFor === 'update'){
+                            return(
+                                <button
+                                    className="btn btn-success btn-create"
+                                    onClick={this.updateContest}
+                                >Save</button>
+                            );
+                        } else {
+                            return(
+                                <button
+                                    className="btn btn-success btn-create"
+                                    onClick={this.saveContest}
+                                >Save</button>
+                            );
+                        }
+                    })()
+                }
+
 
                 <div className="alert alert-error" style={{ display: 'none' }} >
                     <div className={"error-content"} >Error message</div>
