@@ -2,9 +2,8 @@ import React from 'react';
 import Router from 'next/router';
 
 import '../i18n';
-import { withNamespaces } from 'react-i18next';
+import {withNamespaces} from 'react-i18next';
 import config from "../configs/keys";
-import Head from "next/head";
 
 
 class ContestForm extends React.Component {
@@ -14,13 +13,18 @@ class ContestForm extends React.Component {
         this.t = t;
 
         this.state = {
+            contestName: '',
+            puzzleName: '',
+            code: '',
             isPrivate: false
         };
-
 
         this.closeError = this.closeError.bind(this);
         this.saveContest = this.saveContest.bind(this);
         this.validForm = this.validForm.bind(this);
+        this.updateContest = this.updateContest.bind(this);
+        this.timestampToDateTime = this.timestampToDateTime.bind(this);
+        // this.populateContestForm = this.populateContestForm(this);
     }
 
     componentDidMount() {
@@ -28,37 +32,143 @@ class ContestForm extends React.Component {
 
         $('#startsAt').datetimepicker({
             inline: true,
-            startDate: new Date(),
             step: 1,
             minDate: new Date(),
             minTime: new Date(),
             onChangeDateTime: async function () {
-                await component.setState({'startsAt': this.getValue()});
+                await component.setState({startsAt: this.getValue().toISOString()});
+                await component.setState({timeSet_startsAt: true});
             }
         });
 
         $('#finishesAt').datetimepicker({
             inline: true,
-            startDate: new Date(),
             step: 1,
             minDate: new Date(),
             minTime: new Date(),
             onChangeDateTime: async function () {
-                await component.setState({'finishesAt': this.getValue()});
+                await component.setState({finishesAt: this.getValue().toISOString()});
+                await component.setState({timeSet_finishesAt: true});
             }
         });
+
+        if(this.props.isFor === 'update'){
+            this.populateContestForm().then();
+        }
     }
 
+    async updateContest() {
+        if(!this.validForm()){
+            return;
+        }
+
+        const urlParams = new URLSearchParams(window.location.search);
+        this.contestId = urlParams.get('contestId');
+
+        const request = {
+            method: 'PUT',
+            mode: 'cors',
+            credentials: "include",
+            body: JSON.stringify(this.state)
+        };
+
+        try {
+            let response = await fetch(config.API_URL + '/api/contests/' + this.contestId, request);
+
+            if (response.status === 401) {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Unauthorized.';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            } else if (response.status === 500) {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Internal server error.';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            } else if(response.status === 204) {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'No such contest found.';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            } else if(response.status === 200) {
+                console.log('Contest updated...');
+            } else {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Unexpected error.';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            }
+        } catch (e) {
+            document.getElementsByClassName('error-content')[0].innerHTML += e.message;
+            document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+        }
+    }
+
+    timestampToDateTime(timestamp){
+        let dt = new Date(timestamp*1000);
+        let hr = dt.getHours();
+        let m = "0" + dt.getMinutes();
+        let s = "0" + dt.getSeconds();
+
+        dt.setHours(hr);
+        dt.setMinutes(m);
+        dt.setSeconds(s);
+
+        return dt;
+    }
+
+    async populateContestForm() {
+        const urlParams = new URLSearchParams(window.location.search);
+        this.contestId = urlParams.get('contestId');
+
+        const request = {
+            method: 'GET',
+            mode: 'cors',
+            credentials: "include"
+        };
+
+        try {
+            let response = await fetch(config.API_URL + '/api/contests/' + this.contestId, request);
+
+            if (response.status === 401) {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Unauthorized.';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            } else if (response.status === 500) {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Internal server error.';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            } else if(response.status === 204) {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'No such contest found.';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            } else if(response.status === 200) {
+                let contestData = await response.json();
+
+                await this.setState({contestName: contestData['name']});
+                await this.setState({code: contestData['code']});
+
+                let startsAt = this.timestampToDateTime(contestData['startsAt']['timestamp']);
+                let finishesAt = this.timestampToDateTime(contestData['finishesAt']['timestamp']);
+
+                await this.setState({startsAt: startsAt.toISOString()});
+                await this.setState({finishesAt: finishesAt.toISOString()});
+
+                $('#startsAt').datetimepicker('setOptions', {value: startsAt});
+                $('#finishesAt').datetimepicker('setOptions', {value: finishesAt});
+
+                await this.setState({timeSet_startsAt: false});
+                await this.setState({timeSet_finishesAt: false});
+
+                await this.setState({isPrivate: contestData['private']});
+            } else {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Unexpected error.';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            }
+        } catch (e) {
+            document.getElementsByClassName('error-content')[0].innerHTML += e.message;
+            document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+        }
+    }
 
 
     closeError(e) {
         e.target.parentElement.setAttribute('style', 'display: none;');
     }
 
+
     validForm() {
         let message = '';
         let goodForm = true;
-
 
         if(!this.state.contestName){
             message += 'Specify a contest name. </br>';
@@ -69,17 +179,18 @@ class ContestForm extends React.Component {
             goodForm = false;
         }
 
-        if(!this.state.puzzleName){
-            message += 'Specify a puzzle name. </br>';
-            goodForm = false;
-        } else
-        if(this.state.puzzleName.length < 3){
-            message += 'Too short puzzle name. At least 3 characters.</br>';
-            goodForm = false;
+        if(this.props.isFor !== 'update') {
+            if (!this.state.puzzleName || this.state.puzzleName === '') {
+                message += 'Specify a puzzle name. </br>';
+                goodForm = false;
+            } else if (this.state.puzzleName.length < 3) {
+                message += 'Too short puzzle name. At least 3 characters.</br>';
+                goodForm = false;
+            }
         }
 
         if(!this.state.code){
-            this.setState({code: null});
+            this.setState({code: ''});
         } else
         if(this.state.code && this.state.code.length < 4){
             message += 'The code should be at least 4 characters long.</br>';
@@ -96,6 +207,22 @@ class ContestForm extends React.Component {
             goodForm = false;
         }
 
+        if(this.state.startsAt && this.state.finishesAt && new Date(this.state.startsAt).getTime() > new Date(this.state.finishesAt).getTime()){
+            message += 'Start time bigger than the finish time.</br>';
+            goodForm = false;
+        }
+
+        if(this.props.isFor === 'update') {
+            if (!this.state['timeSet_startsAt']) {
+                message += 'Set the start time.</br>';
+                goodForm = false;
+            }
+            if (!this.state['timeSet_finishesAt']) {
+                message += 'Set the finish time.</br>';
+                goodForm = false;
+            }
+        }
+
         if(!goodForm){
             document.getElementsByClassName('error-content')[0].innerHTML = message;
             document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
@@ -107,10 +234,6 @@ class ContestForm extends React.Component {
     async saveContest() {
         if(!this.validForm()){
             return;
-        }
-
-        if(this.state.code === ''){
-            await this.setState({code: null});
         }
 
         const request = {
@@ -156,23 +279,33 @@ class ContestForm extends React.Component {
                            type="text"
                            placeholder="contest name..."
                            className="form-control"
+                           value={this.state.contestName}
                            onChange={async (e) => {
                                await this.setState({contestName: e.target.value});
                            }}
                     />
                 </div>
 
-                <div className={"form-group"}>
-                    <label htmlFor="puzzle-name">puzzle name:</label>
-                    <input id="puzzle-name"
-                           type="text"
-                           placeholder="puzzle name..."
-                           className="form-control"
-                           onChange={async (e) => {
-                               await this.setState({puzzleName: e.target.value});
-                           }}
-                    />
-                </div>
+                {
+                    (()=>{
+                        if(this.props.isFor !=='update'){
+                            return(
+                                <div className={"form-group"}>
+                                    <label htmlFor="puzzle-name">puzzle name:</label>
+                                    <input id="puzzle-name"
+                                           type="text"
+                                           placeholder="puzzle name..."
+                                           className="form-control"
+                                           value={this.state.puzzleName}
+                                           onChange={async (e) => {
+                                               await this.setState({puzzleName: e.target.value});
+                                           }}
+                                    />
+                                </div>
+                            );
+                        }
+                    })()
+                }
 
                 <div className={"form-group"}>
                     <label htmlFor="code">code:</label>
@@ -180,6 +313,7 @@ class ContestForm extends React.Component {
                            type="text"
                            placeholder="code"
                            className="form-control"
+                           value={this.state.code}
                            onChange={async (e) => {
                                await this.setState({code: e.target.value});
                            }}
@@ -204,10 +338,26 @@ class ContestForm extends React.Component {
                     />
                 </label>
 
-                <button
-                    className="btn btn-success btn-create"
-                    onClick={this.saveContest}
-                >Save</button>
+                {
+                    (() => {
+                        if(this.props.isFor === 'update'){
+                            return(
+                                <button
+                                    className="btn btn-success btn-create"
+                                    onClick={this.updateContest}
+                                >Save</button>
+                            );
+                        } else {
+                            return(
+                                <button
+                                    className="btn btn-success btn-create"
+                                    onClick={this.saveContest}
+                                >Save</button>
+                            );
+                        }
+                    })()
+                }
+
 
                 <div className="alert alert-error" style={{ display: 'none' }} >
                     <div className={"error-content"} >Error message</div>

@@ -102,10 +102,9 @@ class PuzzleController extends AbstractFOSRestController
     /**
      * @Route("/api/puzzles/{id}", name="puzzles.show", methods={"GET"})
      * @param $id
-     * @param PuzzleRepository $puzzleRepository
      * @return JsonResponse
      */
-    public function show($id, PuzzleRepository $puzzleRepository): JsonResponse
+    public function show($id): JsonResponse
     {
         $em = $this->getDoctrine()->getManager();
         $puzzle = $em->getRepository(Puzzle::class)->findOneBy(['id' => $id]);
@@ -174,6 +173,7 @@ class PuzzleController extends AbstractFOSRestController
                     $newStage->setCode($editedStage['code']);
                     $newStage->setDescription($editedStage['description']);
                     $newStage->setLevel($editedStage['level']);
+                    /** @var $puzzle Puzzle */
                     $newStage->setPuzzleParent($puzzle);
 
                     $em->persist($newStage);

@@ -26,11 +26,15 @@ class TopMenu extends React.Component {
                     </Link>{' '}
                     |
                     <Link href={{ pathname: '/puzzle/update', query: { puzzleId: 3 } }}>
-                        <a className="menu-item">Update puzzle 3</a>
+                        <a className="menu-item">u puzzle 3</a>
+                    </Link>{' '}
+                    |
+                    <Link href={{ pathname: '/contest/update', query: { contestId: 26 } }}>
+                        <a className="menu-item">u contest 26</a>
                     </Link>{' '}
                     |
                     <Link href={{ pathname: '/team/update', query: { teamId: 7 } }}>
-                        <a className="menu-item">Update team 7</a>
+                        <a className="menu-item">u team 7</a>
                     </Link>{' '}
                     |
                     <Link href={{ pathname: '/puzzle/show', query: { puzzleId: 3 } }}>

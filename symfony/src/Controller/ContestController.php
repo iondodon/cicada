@@ -2,12 +2,17 @@
 
 namespace App\Controller;
 
+use App\Entity\Contest;
+use DateTime;
 use FOS\RestBundle\Controller\Annotations\Route;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use App\Repository\ContestRepository;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+use Symfony\Component\Serializer\Serializer;
 
 class ContestController extends AbstractFOSRestController
 {
@@ -85,7 +90,31 @@ class ContestController extends AbstractFOSRestController
      */
     public function show($id, ContestRepository $contestRepository): JsonResponse
     {
+        $em = $this->getDoctrine()->getManager();
+        /** @var Contest $contest */
+        $contest = $em->getRepository(Contest::class)->findOneBy(['id' => $id]);
 
+        $encoders = [new JsonEncoder()];
+        $normalizers = [new ObjectNormalizer()];
+        $serializer = new Serializer($normalizers, $encoders);
+
+        $contestJson = $serializer->serialize($contest, 'json', [
+            'attributes' =>[
+                'name',
+                'puzzle' => ['name'],
+                'code',
+                'startsAt' => ['timestamp'],
+                'finishesAt' => ['timestamp'],
+                'private'
+            ]
+        ]);
+        $jsonResponse = new JsonResponse(json_decode($contestJson, true));
+
+        if(!$contest){
+            $jsonResponse->setStatusCode(204);
+        }
+
+        return $jsonResponse;
     }
 
     /**
@@ -97,7 +126,28 @@ class ContestController extends AbstractFOSRestController
      */
     public function update(Request $request, $id): Response
     {
+        $editedContest = json_decode($request->getContent(), true);
+        $em = $this->getDoctrine()->getManager();
 
+        $contest = $em->getRepository(Contest::class)->find($id);
+
+        /** @var $contest Contest */
+        if($contest) {
+            $contest->setName($editedContest['contestName']);
+
+            $contest->setIsPrivate($editedContest['isPrivate']);
+            $contest->setCode($editedContest['code']);
+
+            $contest->setStartsAt(new DateTime($editedContest['startsAt']));
+            $contest->setFinishesAt(new DateTime($editedContest['finishesAt']));
+
+            $em->persist($contest);
+            $em->flush();
+
+            return new Response('Contest successfully updated', 200);
+        }
+
+        return new Response('Such contest does not exist', 400);
     }
 
     /**
