@@ -14,6 +14,7 @@ class ContestForm extends React.Component {
 
         this.state = {
             contestName: '',
+            puzzleName: '',
             code: '',
             isPrivate: false
         };
@@ -169,7 +170,6 @@ class ContestForm extends React.Component {
         let message = '';
         let goodForm = true;
 
-
         if(!this.state.contestName){
             message += 'Specify a contest name. </br>';
             goodForm = false;
@@ -180,7 +180,7 @@ class ContestForm extends React.Component {
         }
 
         if(this.props.isFor !== 'update') {
-            if (!this.state.puzzleName) {
+            if (!this.state.puzzleName || this.state.puzzleName === '') {
                 message += 'Specify a puzzle name. </br>';
                 goodForm = false;
             } else if (this.state.puzzleName.length < 3) {
@@ -211,7 +211,7 @@ class ContestForm extends React.Component {
             message += 'Start time bigger than the finish time.</br>';
             goodForm = false;
         }
-        
+
         if(this.props.isFor === 'update') {
             if (!this.state['timeSet_startsAt']) {
                 message += 'Set the start time.</br>';
