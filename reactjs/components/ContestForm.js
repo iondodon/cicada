@@ -35,7 +35,8 @@ class ContestForm extends React.Component {
             minDate: new Date(),
             minTime: new Date(),
             onChangeDateTime: async function () {
-                await component.setState({'startsAt': this.getValue().toISOString()});
+                await component.setState({startsAt: this.getValue().toISOString()});
+                await component.setState({timeSet_startsAt: true});
             }
         });
 
@@ -45,7 +46,8 @@ class ContestForm extends React.Component {
             minDate: new Date(),
             minTime: new Date(),
             onChangeDateTime: async function () {
-                await component.setState({'finishesAt': this.getValue().toISOString()});
+                await component.setState({finishesAt: this.getValue().toISOString()});
+                await component.setState({timeSet_finishesAt: true});
             }
         });
 
@@ -55,6 +57,10 @@ class ContestForm extends React.Component {
     }
 
     async updateContest() {
+        if(!this.validForm()){
+            return;
+        }
+
         const urlParams = new URLSearchParams(window.location.search);
         this.contestId = urlParams.get('contestId');
 
@@ -136,11 +142,11 @@ class ContestForm extends React.Component {
                 await this.setState({startsAt: startsAt.toISOString()});
                 await this.setState({finishesAt: finishesAt.toISOString()});
 
-                console.log(this.state);
-
                 $('#startsAt').datetimepicker('setOptions', {value: startsAt});
                 $('#finishesAt').datetimepicker('setOptions', {value: finishesAt});
 
+                await this.setState({timeSet_startsAt: false});
+                await this.setState({timeSet_finishesAt: false});
 
                 await this.setState({isPrivate: contestData['private']});
             } else {
@@ -173,13 +179,14 @@ class ContestForm extends React.Component {
             goodForm = false;
         }
 
-        if(!this.state.puzzleName){
-            message += 'Specify a puzzle name. </br>';
-            goodForm = false;
-        } else
-        if(this.state.puzzleName.length < 3){
-            message += 'Too short puzzle name. At least 3 characters.</br>';
-            goodForm = false;
+        if(this.props.isFor !== 'update') {
+            if (!this.state.puzzleName) {
+                message += 'Specify a puzzle name. </br>';
+                goodForm = false;
+            } else if (this.state.puzzleName.length < 3) {
+                message += 'Too short puzzle name. At least 3 characters.</br>';
+                goodForm = false;
+            }
         }
 
         if(!this.state.code){
@@ -200,9 +207,20 @@ class ContestForm extends React.Component {
             goodForm = false;
         }
 
-        if(this.state.startsAt && this.state.finishesAt && this.state.startsAt > this.state.finishesAt){
+        if(this.state.startsAt && this.state.finishesAt && new Date(this.state.startsAt).getTime() > new Date(this.state.finishesAt).getTime()){
             message += 'Start time bigger than the finish time.</br>';
             goodForm = false;
+        }
+        
+        if(this.props.isFor === 'update') {
+            if (!this.state['timeSet_startsAt']) {
+                message += 'Set the start time.</br>';
+                goodForm = false;
+            }
+            if (!this.state['timeSet_finishesAt']) {
+                message += 'Set the finish time.</br>';
+                goodForm = false;
+            }
         }
 
         if(!goodForm){

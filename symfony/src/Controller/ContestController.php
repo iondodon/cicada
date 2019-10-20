@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use App\Entity\Contest;
-use App\Entity\Puzzle;
 use DateTime;
 use FOS\RestBundle\Controller\Annotations\Route;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
