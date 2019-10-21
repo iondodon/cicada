@@ -83,16 +83,19 @@ class ContestController extends AbstractFOSRestController
     }
 
     /**
-     * @Route("/api/contests/{id}", name="contests.show", methods={"GET"})
+     * @Route("/api/contests/get/{id}", name="contests.get", methods={"GET"})
      * @param $id
-     * @param ContestRepository $contestRepository
      * @return JsonResponse
      */
-    public function show($id, ContestRepository $contestRepository): JsonResponse
+    public function get($id): JsonResponse
     {
         $em = $this->getDoctrine()->getManager();
         /** @var Contest $contest */
         $contest = $em->getRepository(Contest::class)->findOneBy(['id' => $id]);
+
+        if($contest->getCreatedBy()->getId() !== $this->getUser()->getAccount()->getId()){
+            return new JsonResponse('Unauthorized', 401);
+        }
 
         $encoders = [new JsonEncoder()];
         $normalizers = [new ObjectNormalizer()];
@@ -118,6 +121,46 @@ class ContestController extends AbstractFOSRestController
     }
 
     /**
+     * @Route("/api/contests/{id}", name="contests.show", methods={"GET"})
+     * @param $id
+     * @return JsonResponse
+     */
+    public function show($id): JsonResponse
+    {
+        $em = $this->getDoctrine()->getManager();
+        /** @var Contest $contest */
+        $contest = $em->getRepository(Contest::class)->findOneBy(['id' => $id]);
+
+        if($contest->getCreatedBy()->getId() !== $this->getUser()->getAccount()->getId()){
+            return new JsonResponse('Unauthorized', 401);
+        }
+
+        $encoders = [new JsonEncoder()];
+        $normalizers = [new ObjectNormalizer()];
+        $serializer = new Serializer($normalizers, $encoders);
+
+        $contestJson = $serializer->serialize($contest, 'json', [
+            'attributes' =>[
+                'name',
+                'puzzle' => ['name'],
+                'startsAt' => ['timestamp'],
+                'finishesAt' => ['timestamp'],
+                'createdAt' => ['timestamp'],
+                'createdBy' => ['user' => ['fullName']],
+                'enrolledPlayers' => ['user' => ['fullName']],
+                'enrolledTeams' => ['name']
+            ]
+        ]);
+        $jsonResponse = new JsonResponse(json_decode($contestJson, true));
+
+        if(!$contest){
+            $jsonResponse->setStatusCode(204);
+        }
+
+        return $jsonResponse;
+    }
+
+    /**
      * @Route("/api/contests/{id}", name="contests.update", methods={"PUT"})
      * @param Request $request
      * @param $id
@@ -129,7 +172,12 @@ class ContestController extends AbstractFOSRestController
         $editedContest = json_decode($request->getContent(), true);
         $em = $this->getDoctrine()->getManager();
 
+        /** @var Contest $contest */
         $contest = $em->getRepository(Contest::class)->find($id);
+
+        if($contest->getCreatedBy()->getId() !== $this->getUser()->getAccount()->getId()){
+            return new Response('Unauthorized', 401);
+        }
 
         /** @var $contest Contest */
         if($contest) {
