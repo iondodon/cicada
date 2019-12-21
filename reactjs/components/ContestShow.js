@@ -61,6 +61,8 @@ class ContestShow extends React.Component {
         await this.setState({createdBy: responseJson['createdBy']['user']['fullName']});
         await this.setState({enrolledPlayers: responseJson['enrolledPlayers']});
         await this.setState({enrolledTeams: responseJson['enrolledTeams']});
+
+        await this.setState({loading: false});
         console.log(this.state);
     }
 
@@ -106,7 +108,34 @@ class ContestShow extends React.Component {
                     {'\u00A0'} <a onClick={this.closeError}>x</a>
                 </div>
 
+                <h2>name: {this.state['contestName']} </h2>
+                <h2>puzzle: {this.state['puzzleName']} </h2>
+                <h2>starts at: {this.state['startsAt']} </h2>
+                <h2>finishes at: {this.state['finishesAt']} </h2>
+                <h2>created: {this.state['createdAt']} </h2>
+                <h2>created by: {this.state['createdBy']} </h2>
 
+                <h2>enrolled players:</h2>
+                <div className={'tags'}>
+                    {
+                        this.state['enrolledPlayers'].map((player) => {
+                            return(
+                                <a key={player['user']['fullName']} className={'tag-link'}>{player['user']['fullName']}</a>
+                            )
+                        })
+                    }
+                </div>
+
+                <h2>enrolled teams:</h2>
+                <div className={'tags'}>
+                    {
+                        this.state['enrolledTeams'].map((team) => {
+                            return(
+                                <a key={team['name']} className={'tag-link'}>{team['name']}</a>
+                            )
+                        })
+                    }
+                </div>
 
                 { /*language=SCSS*/ }
                 <style jsx>{`
