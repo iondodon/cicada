@@ -96,8 +96,7 @@ class Account
     /**
      * @var Collection
      *
-     * @ORM\ManyToOne(targetEntity="Contest", inversedBy="enrolledPlayers")
-     * @ORM\JoinColumn(name="contest_id", referencedColumnName="id")
+     * @ORM\ManyToMany(targetEntity="Contest", mappedBy="enrolledPlayers")
      */
     private $contestsEnrolledAt;
 

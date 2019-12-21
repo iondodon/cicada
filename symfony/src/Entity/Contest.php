@@ -90,14 +90,16 @@ class Contest
     /**
      * @var Collection
      *
-     * @ORM\OneToMany(targetEntity="Account", mappedBy="contestsEnrolledAt")
+     * @ORM\ManyToMany(targetEntity="Account", inversedBy="contestsEnrolledAt")
+     * @ORM\JoinTable(name="contests_accounts")
      */
     private $enrolledPlayers;
 
     /**
      * @var Collection
      *
-     * @ORM\OneToMany(targetEntity="Team", mappedBy="contestsEnrolledAt")
+     * @ORM\ManyToMany(targetEntity="Team", inversedBy="contestsEnrolledAt")
+     * @ORM\JoinTable(name="contests_teams")
      */
     private $enrolledTeams;
 
