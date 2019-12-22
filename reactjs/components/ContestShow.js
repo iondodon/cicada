@@ -116,22 +116,22 @@ class ContestShow extends React.Component {
                 <h2>created by: {this.state['createdBy']} </h2>
 
                 <h2>enrolled players:</h2>
-                <div className={'tags'}>
+                <div className={'links'}>
                     {
                         this.state['enrolledPlayers'].map((player) => {
                             return(
-                                <a key={player['user']['fullName']} className={'tag-link'}>{player['user']['fullName']}</a>
+                                <a key={player['user']['fullName']} className={'link'}>{player['user']['fullName']}</a>
                             )
                         })
                     }
                 </div>
 
                 <h2>enrolled teams:</h2>
-                <div className={'tags'}>
+                <div className={'links'}>
                     {
                         this.state['enrolledTeams'].map((team) => {
                             return(
-                                <a key={team['name']} className={'tag-link'}>{team['name']}</a>
+                                <a key={team['name']} className={'link'}>{team['name']}</a>
                             )
                         })
                     }
@@ -142,6 +142,14 @@ class ContestShow extends React.Component {
                   .contest-data {
                     display: flex;
                     flex-direction: column;
+                  }
+                  
+                  .links {
+                    margin-bottom: 2rem;
+                  }
+                  
+                  .link {
+                    margin-right: 0.5rem;
                   }
                   
                   .alert {
