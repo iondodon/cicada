@@ -3,7 +3,6 @@ import React from "react";
 import '../i18n';
 import { withNamespaces } from 'react-i18next';
 import config from "../configs/keys";
-import { timeConverter } from '../utlis/utlis';
 
 class ContestShow extends React.Component {
 
@@ -52,7 +51,9 @@ class ContestShow extends React.Component {
     }
 
     async prepareState(responseJson) {
-        await this.setState({contestName: responseJson['name']});
+        console.log(responseJson);
+
+        await this.setState({teamName: responseJson['name']});
 
         await this.setState({loading: false});
         console.log(this.state);
