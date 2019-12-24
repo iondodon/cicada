@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Account;
 use App\Entity\Contest;
 use DateTime;
 use FOS\RestBundle\Controller\Annotations\Route;
@@ -22,7 +23,24 @@ class ContestController extends AbstractFOSRestController
      */
     public function index(): JsonResponse
     {
+        $em = $this->getDoctrine()->getManager();
+        $query = $em->createQuery('SELECT c FROM  App\Entity\Contest c WHERE c.isPrivate = 0');
+        $contests = $query->getResult();
 
+        $encoders = [new JsonEncoder()];
+        $normalizers = [new ObjectNormalizer()];
+        $serializer = new Serializer($normalizers, $encoders);
+
+        $contestsJson = $serializer->serialize($contests, 'json', [
+            'attributes' => [
+                'id',
+                'name',
+                'puzzle' => ['name'],
+                'createdBy' => ['user' => ['fullName']]
+            ]
+        ]);
+
+        return new JsonResponse(json_decode($contestsJson, true));
     }
 
     /**
@@ -31,7 +49,23 @@ class ContestController extends AbstractFOSRestController
      */
     public function getMyContests(): JsonResponse
     {
+        /** @var Account $account */
+        $account = $this->getUser()->getAccount();
 
+        $encoders = [new JsonEncoder()];
+        $normalizers = [new ObjectNormalizer()];
+        $serializer = new Serializer($normalizers, $encoders);
+
+        $contestsJson = $serializer->serialize($account->getCreatedContests(), 'json', [
+            'attributes' => [
+                'id',
+                'name',
+                'puzzle' => ['name'],
+                'createdBy' => ['user' => ['fullName']]
+            ]
+        ]);
+
+        return new JsonResponse(json_decode($contestsJson, true));
     }
 
     /**

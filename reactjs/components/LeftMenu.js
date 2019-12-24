@@ -35,15 +35,22 @@ class LeftMenu extends React.Component {
                                     Teams member of<div className="pull-right">»</div>
                                 </a>
                             </Link>{' '}
-                            <a className="menu-item">
-                                Created contests <div className="pull-right">»</div>
-                            </a>
+                            <Link href={"/account/my_contests"}>
+                                <a className="menu-item">
+                                    Created contests <div className="pull-right">»</div>
+                                </a>
+                            </Link>{' '}
                             <a className="menu-item">
                                 Contest enrolled at <div className="pull-right">»</div>
                             </a>
                             <Link href={"/puzzle/list"}>
                                 <a className="menu-item">
                                     Explore puzzles<div className="pull-right">»</div>
+                                </a>
+                            </Link>{' '}
+                            <Link href={"/contest/list"}>
+                                <a className="menu-item">
+                                    Explore contests<div className="pull-right">»</div>
                                 </a>
                             </Link>{' '}
                             <br/>
