@@ -1,0 +1,19 @@
+<?php
+
+namespace App\Controller;
+
+use FOS\RestBundle\Controller\Annotations\Route;
+use FOS\RestBundle\Controller\AbstractFOSRestController;
+use Symfony\Component\HttpFoundation\JsonResponse;
+
+class PuzzleSessionController extends AbstractFOSRestController
+{
+    /**
+     * @Route("/api/puzzles", name="puzzles.index", methods={"GET"})
+     * @return JsonResponse
+     */
+    public function index(): JsonResponse
+    {
+        return new JsonResponse();
+    }
+}

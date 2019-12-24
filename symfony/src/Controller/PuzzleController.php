@@ -33,6 +33,8 @@ class PuzzleController extends AbstractFOSRestController
         $normalizers = [new ObjectNormalizer()];
         $serializer = new Serializer($normalizers, $encoders);
 
+        dump($puzzles); die;
+
         $puzzlesJson = $serializer->serialize($puzzles, 'json', [
             'attributes' => [
                 'id',
@@ -223,12 +225,10 @@ class PuzzleController extends AbstractFOSRestController
         $em->remove($puzzle);
         $em->flush();
 
-        $response = new Response(
+        return new Response(
             'Puzzle deleted.',
             Response::HTTP_OK,
             ['content-type' => 'text/html']
         );
-
-        return $response;
     }
 }

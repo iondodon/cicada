@@ -3,8 +3,9 @@ import React from "react";
 import '../i18n';
 import { withNamespaces } from 'react-i18next';
 import config from "../configs/keys";
-import timeConverter from '../utlis/utlis';
+import {timeConverter} from '../utlis/utlis';
 import StageShow from "./StageShow";
+import PuzzleActionBar from "./PuzzleActionBar";
 
 class PuzzleShow extends React.Component {
 
@@ -164,6 +165,8 @@ class PuzzleShow extends React.Component {
 
                 <h2>description:</h2>
                 <div className={"description"} dangerouslySetInnerHTML={{__html:this.state['description']}} />
+
+                <PuzzleActionBar/>
 
                 <h2>stages:</h2>
                 <div className={"stages-cards"}>
