@@ -3,7 +3,6 @@ import React from "react";
 import '../i18n';
 import { withNamespaces } from 'react-i18next';
 import config from "../configs/keys";
-import { timeConverter } from '../utlis/utlis';
 
 class ContestShow extends React.Component {
 
@@ -22,7 +21,7 @@ class ContestShow extends React.Component {
 
     async fetchSetState() {
         const urlParams = new URLSearchParams(window.location.search);
-        this.contestId = urlParams.get('contestId');
+        this.teamId = urlParams.get('teamId');
 
         const request = {
             method: 'GET',
@@ -31,13 +30,13 @@ class ContestShow extends React.Component {
         };
 
         try {
-            let response = await fetch(config.API_URL + '/api/contests/' + this.contestId, request);
+            let response = await fetch(config.API_URL + '/api/teams/' + this.teamId, request);
 
             if (response.status === 401) {
                 document.getElementsByClassName('error-content')[0].innerHTML = 'Unauthorized.';
                 document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
             } else if (response.status === 204) {
-                document.getElementsByClassName('error-content')[0].innerHTML = 'Such puzzle doesn\'t exist.';
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Such team doesn\'t exist.';
                 document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
             } else if (response.status === 200) {
                 await this.prepareState(await response.json());
@@ -52,18 +51,16 @@ class ContestShow extends React.Component {
     }
 
     async prepareState(responseJson) {
-        await this.setState({contestName: responseJson['name']});
-        await this.setState({puzzleName: responseJson['puzzle']['name']});
-        await this.setState({startsAt: timeConverter(parseInt(responseJson['startsAt']['timestamp']))});
-        await this.setState({finishesAt: timeConverter(parseInt(responseJson['finishesAt']['timestamp']))});
-
-        await this.setState({createdAt: timeConverter(parseInt(responseJson['createdAt']['timestamp']))});
-        await this.setState({createdBy: responseJson['createdBy']['user']['fullName']});
-        await this.setState({enrolledPlayers: responseJson['enrolledPlayers']});
-        await this.setState({enrolledTeams: responseJson['enrolledTeams']});
+        await this.setState({teamName: responseJson['name']});
+        await this.setState({members: responseJson['members']});
+        await this.setState({puzzlesSolvedCount: responseJson['puzzlesSolvedCount']});
+        await this.setState({winedContestsCount: responseJson['winedContestsCount']});
+        await this.setState({puzzleSessions: responseJson['puzzleSessions']});
+        await this.setState({creator: responseJson['creator']});
+        await this.setState({puzzlesEnrolledAt: responseJson['puzzlesEnrolledAt']});
+        await this.setState({contestsEnrolledAt: responseJson['contestsEnrolledAt']});
 
         await this.setState({loading: false});
-        console.log(this.state);
     }
 
     closeError(e) {
@@ -108,30 +105,52 @@ class ContestShow extends React.Component {
                     {'\u00A0'} <a onClick={this.closeError}>x</a>
                 </div>
 
-                <h2>name: {this.state['contestName']} </h2>
-                <h2>puzzle: {this.state['puzzleName']} </h2>
-                <h2>starts at: {this.state['startsAt']} </h2>
-                <h2>finishes at: {this.state['finishesAt']} </h2>
-                <h2>created: {this.state['createdAt']} </h2>
-                <h2>created by: {this.state['createdBy']} </h2>
+                <h2>name: {this.state['teamName']} </h2>
 
-                <h2>enrolled players:</h2>
+                <h2>members:</h2>
                 <div className={'links'}>
                     {
-                        this.state['enrolledPlayers'].map((player) => {
+                        this.state['members'].map((member) => {
                             return(
-                                <a key={player['user']['fullName']} className={'link'}>{player['user']['fullName']}</a>
+                                <a key={member['user']['fullName']} className={'link'}>{member['user']['fullName']}</a>
                             )
                         })
                     }
                 </div>
 
-                <h2>enrolled teams:</h2>
+                <h2>puzzles solved: {this.state['puzzlesSolvedCount']} </h2>
+                <h2>wined contests: {this.state['winedContestsCount']}</h2>
+
+                <h2>puzzle sessions: </h2>
                 <div className={'links'}>
                     {
-                        this.state['enrolledTeams'].map((team) => {
+                        this.state['puzzleSessions'].map((session) => {
                             return(
-                                <a key={team['name']} className={'link'}>{team['name']}</a>
+                                <a key={session['puzzle']['name']} className={'link'}>{session['puzzle']['name']}</a>
+                            )
+                        })
+                    }
+                </div>
+
+                <h2>creator: {this.state['creator']['user']['fullName']}</h2>
+
+                <h2>puzzles enrolled at: </h2>
+                <div className={'links'}>
+                    {
+                        this.state['puzzlesEnrolledAt'].map((puzzle) => {
+                            return(
+                                <a key={puzzle['name']} className={'link'}>{puzzle['name']}</a>
+                            )
+                        })
+                    }
+                </div>
+
+                <h2>contests enrolled at: </h2>
+                <div className={'links'}>
+                    {
+                        this.state['contestsEnrolledAt'].map((contest) => {
+                            return(
+                                <a key={contest['name']} className={'link'}>{contest['name']}</a>
                             )
                         })
                     }

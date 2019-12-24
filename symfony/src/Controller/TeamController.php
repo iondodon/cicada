@@ -96,10 +96,9 @@ class TeamController extends AbstractFOSRestController
     /**
      * @Route("/api/teams/{id}", name="teams.show", methods={"GET"})
      * @param $id
-     * @param TeamRepository $teamRepository
      * @return JsonResponse
      */
-    public function show($id, TeamRepository $teamRepository): JsonResponse
+    public function show($id): JsonResponse
     {
         $em = $this->getDoctrine()->getManager();
         $team = $em->getRepository(Team::class)->findOneBy(['id' => $id]);
@@ -109,9 +108,16 @@ class TeamController extends AbstractFOSRestController
         $serializer = new Serializer($normalizers, $encoders);
 
         $teamJson = $serializer->serialize($team, 'json', [
-            'circular_reference_handler' => static function ($object) {
-                return $object->getId();
-            }
+            'attributes' => [
+                'name',
+                'members' => ['user' => ['fullName']],
+                'puzzlesSolvedCount',
+                'winedContestsCount',
+                'puzzleSessions' => ['puzzle' => ['name']],
+                'creator' => ['user' => ['fullName']],
+                'puzzlesEnrolledAt' => ['name'],
+                'contestsEnrolledAt' => ['name']
+            ]
         ]);
 
         $jsonResponse = new JsonResponse(json_decode($teamJson, true));
