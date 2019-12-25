@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 class PuzzleSessionController extends AbstractFOSRestController
 {
     /**
-     * @Route("/api/puzzles", name="puzzles.index", methods={"GET"})
+     * @Route("/api/puzzle_sessions", name="puzzle_sessions.index", methods={"GET"})
      * @return JsonResponse
      */
     public function index(): JsonResponse

@@ -124,6 +124,8 @@ class PuzzleShow extends React.Component {
                     {'\u00A0'} <a onClick={this.closeError}>x</a>
                 </div>
 
+                <PuzzleActionBar/>
+
                 <h2>name: { this.state['name'] } </h2>
                 <h2>created by: { this.state['createdBy'] }</h2>
                 <h2>created at: { this.state['createdAt'] } </h2>
@@ -165,8 +167,6 @@ class PuzzleShow extends React.Component {
 
                 <h2>description:</h2>
                 <div className={"description"} dangerouslySetInnerHTML={{__html:this.state['description']}} />
-
-                <PuzzleActionBar/>
 
                 <h2>stages:</h2>
                 <div className={"stages-cards"}>

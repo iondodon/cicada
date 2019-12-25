@@ -27,13 +27,12 @@ class PuzzleController extends AbstractFOSRestController
     public function index(): JsonResponse
     {
         $em = $this->getDoctrine()->getManager();
-        $puzzles = $em->getRepository(Puzzle::class)->findAll();
+        $query = $em->createQuery('SELECT p FROM App\Entity\Puzzle p WHERE p.isPrivate = 0');
+        $puzzles = $query->getResult();
 
         $encoders = [new JsonEncoder()];
         $normalizers = [new ObjectNormalizer()];
         $serializer = new Serializer($normalizers, $encoders);
-
-        dump($puzzles); die;
 
         $puzzlesJson = $serializer->serialize($puzzles, 'json', [
             'attributes' => [

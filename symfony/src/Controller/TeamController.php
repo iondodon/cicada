@@ -5,7 +5,6 @@ namespace App\Controller;
 use App\Entity\Account;
 use App\Entity\Team;
 use App\Repository\TeamRepository;
-use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
 use FOS\RestBundle\Controller\Annotations\Route;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
@@ -154,11 +153,10 @@ class TeamController extends AbstractFOSRestController
 
     /**
      * @Route("/api/teams/destroy/{id}", name="teams.destroy", methods={"DELETE"})
-     * @param Request $request
      * @param $id
      * @return Response
      */
-    public function destroy(Request $request, int $id): Response
+    public function destroy(int $id): Response
     {
         $em = $this->getDoctrine()->getManager();
         $team = $em->getRepository(Team::class)->findOneBy(['id' => $id]);
@@ -166,13 +164,11 @@ class TeamController extends AbstractFOSRestController
         $em->remove($team);
         $em->flush();
 
-        $response = new Response(
+        return new Response(
             'Team deleted.',
             Response::HTTP_OK,
             ['content-type' => 'text/html']
         );
-
-        return $response;
     }
 
     /**

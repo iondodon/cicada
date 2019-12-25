@@ -3,7 +3,7 @@ import React from 'react';
 import '../i18n';
 import { withNamespaces } from 'react-i18next';
 
-class PuzzleActionBar extends React.Component {
+class ShowPuzzleStatus extends React.Component {
 
     constructor(props, {t}) {
         super(props, {t});
@@ -24,9 +24,7 @@ class PuzzleActionBar extends React.Component {
         return(
             <div className="alert alert-warning">
 
-                <button className="btn btn-warning">Solve solo</button>
-
-                <button className="btn btn-warning">Solve in team</button>
+                puzzle status
 
                 { /*language=SCSS*/ }
                 <style jsx>{`                    
@@ -41,4 +39,4 @@ class PuzzleActionBar extends React.Component {
     }
 }
 
-export default withNamespaces()(PuzzleActionBar);
+export default withNamespaces()(ShowPuzzleStatus);
