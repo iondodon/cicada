@@ -40,7 +40,7 @@ class PuzzleSessionController extends AbstractFOSRestController
     }
 
     /**
-     * @Route("/api/enrole-single-player/{puzzleId}", name="puzzle_sessions.enrole-single-player", methods={"GET"})
+     * @Route("/api/enroll-single-player/{puzzleId}", name="puzzle_sessions.enroll-single-player", methods={"POST"})
      * @param $puzzleId
      * @return JsonResponse
      */
@@ -67,6 +67,9 @@ class PuzzleSessionController extends AbstractFOSRestController
         } else {
             return new JsonResponse(null, 400);
         }
+
+        $em->persist($session);
+        $em->flush();
 
         return new JsonResponse(null, 200);
     }

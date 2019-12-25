@@ -3,6 +3,7 @@ import React from 'react';
 import '../i18n';
 import { withNamespaces } from 'react-i18next';
 import config from "../configs/keys";
+import ShowPuzzleStatus from "./ShowPuzzleStatus";
 
 class PuzzleActionBar extends React.Component {
 
@@ -11,11 +12,16 @@ class PuzzleActionBar extends React.Component {
         this.t = t;
 
         this.state = {
+            enrolled: false
+        };
 
-        }
+        this.enrollSinglePlayer = this.enrollSinglePlayer.bind(this);
     }
 
     async componentDidMount() {
+        const urlParams = new URLSearchParams(window.location.search);
+        this.puzzleId = urlParams.get('puzzleId');
+
         const request = {
             method: 'GET',
             mode: 'cors',
@@ -23,8 +29,30 @@ class PuzzleActionBar extends React.Component {
         };
 
         try {
-            const response = await fetch(config.API_URL + '/api/get-session/' + '1', request);
+            const response = await fetch(config.API_URL + '/api/get-session/' + this.puzzleId, request);
             console.log(await response.json());
+        } catch(e) {
+            console.log(e);
+        }
+    }
+
+    async enrollSinglePlayer() {
+        const urlParams = new URLSearchParams(window.location.search);
+        this.puzzleId = urlParams.get('puzzleId');
+
+        const request = {
+            method: 'POST',
+            mode: 'cors',
+            'credentials': 'include'
+        };
+
+        try {
+            let response = await fetch(config.API_URL + '/api/enroll-single-player/' + this.puzzleId, request);
+            console.log(response);
+
+            if(response.status === 200){
+                await this.setState({enrolled: true});
+            }
         } catch(e) {
             console.log(e);
         }
@@ -36,8 +64,20 @@ class PuzzleActionBar extends React.Component {
         return(
             <div className="alert alert-warning">
 
-                <button className="btn btn-warning">Solve solo</button>
-                <button className="btn btn-warning">Solve in team</button>
+                {
+                    (()=>{
+                        if(this.state['enrolled']){
+                            return(<ShowPuzzleStatus/>);
+                        } else {
+                            return(
+                                <div className={"action"}>
+                                    <button className="btn btn-warning" onClick={this.enrollSinglePlayer}>Solve solo</button>
+                                    <button className="btn btn-warning">Solve with a team</button>
+                                </div>
+                            );
+                        }
+                    })()
+                }
 
                 { /*language=SCSS*/ }
                 <style jsx>{`                    
@@ -45,7 +85,13 @@ class PuzzleActionBar extends React.Component {
                         display: flex;
                         flex-direction: row;
                         justify-content: space-between;
-                  }
+                    }
+                    
+                    .action {
+                      display: flex;
+                      flex-direction: row;
+                      justify-content: center;
+                    }
                 `}</style>
             </div>
         );
