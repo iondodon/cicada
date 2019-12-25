@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/reactjs/components/ListCreatedTeams.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/components/PuzzleActionBarMessage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/components/ShowPuzzleStatus.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/ionut.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/ionut.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactjs/components/PuzzleActionBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/PuzzleActionBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony/src/Controller/PuzzleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Controller/PuzzleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/components/ShowPuzzleStatus.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/ShowPuzzleStatus.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/symfony/src/Controller/PuzzleSessionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Controller/PuzzleSessionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony/src/Controller/TeamController.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Controller/TeamController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -481,7 +476,8 @@
       <workItem from="1576942641968" duration="1450000" />
       <workItem from="1577022141992" duration="3382000" />
       <workItem from="1577213233866" duration="6343000" />
-      <workItem from="1577271049681" duration="4119000" />
+      <workItem from="1577271049681" duration="5026000" />
+      <workItem from="1577288643251" duration="7090000" />
     </task>
     <servers />
   </component>
@@ -521,10 +517,10 @@
       <screen x="0" y="0" width="1366" height="735" />
     </state>
     <state x="215" y="22" width="901" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.735@0.0.1366.735" timestamp="1576788604088" />
-    <state x="416" y="124" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1577188951330">
+    <state x="416" y="124" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1577297406248">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
-    <state x="416" y="124" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.735@0.0.1366.735" timestamp="1577188951330" />
+    <state x="416" y="124" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.735@0.0.1366.735" timestamp="1577297406248" />
     <state x="473" y="253" width="409" height="253" key="ComposerInitDialogKey" timestamp="1576771032968">
       <screen x="0" y="0" width="1366" height="735" />
     </state>

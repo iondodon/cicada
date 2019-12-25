@@ -2,6 +2,7 @@ import React from 'react';
 
 import '../i18n';
 import { withNamespaces } from 'react-i18next';
+import config from "../configs/keys";
 
 class ShowPuzzleStatus extends React.Component {
 
