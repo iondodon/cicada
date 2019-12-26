@@ -8,6 +8,9 @@ use App\Entity\PuzzleSession;
 use FOS\RestBundle\Controller\Annotations\Route;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+use Symfony\Component\Serializer\Serializer;
 
 class PuzzleSessionController extends AbstractFOSRestController
 {
@@ -30,13 +33,28 @@ class PuzzleSessionController extends AbstractFOSRestController
         /** @var Account $account */
         $account = $this->getUser()->getAccount();
 
+
+        $encoders = [new JsonEncoder()];
+        $normalizers = [new ObjectNormalizer()];
+        $serializer = new Serializer($normalizers, $encoders);
+
         foreach ($account->getPuzzleSessions() as $session) {
-            if($session->getPuzzle()->getId() === $puzzleId) {
-                return new JsonResponse(json_decode($session, true), 200);
+            if($session->getPuzzle()->getId() === (int)$puzzleId) {
+                $sessionJson = $serializer->serialize($session, 'json', [
+                    'attributes' => [
+                        'teamPlayer' => [
+                            'name',
+                            'members' => ['user' => ['fullName']]
+                        ],
+                        'completeness'
+                    ]
+                ]);
+
+                return new JsonResponse(json_decode($sessionJson, true), 200);
             }
         }
 
-        return new JsonResponse(null, 404);
+        return new JsonResponse(null, 204);
     }
 
     /**
@@ -51,7 +69,7 @@ class PuzzleSessionController extends AbstractFOSRestController
 
         foreach ($account->getPuzzleSessions() as $session) {
             if($session->getPuzzle()->getId() === $puzzleId) {
-                return new JsonResponse(null, 400);
+                return new JsonResponse(null, 204);
             }
         }
 
@@ -65,7 +83,7 @@ class PuzzleSessionController extends AbstractFOSRestController
             /** @var Puzzle $puzzle */
             $session->setPuzzle($puzzle);
         } else {
-            return new JsonResponse(null, 400);
+                return new JsonResponse(null, 204);
         }
 
         $em->persist($session);

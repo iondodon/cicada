@@ -58,9 +58,17 @@ class TeamController extends AbstractFOSRestController
         $serializer = new Serializer($normalizers, $encoders);
 
         $teamsJson = $serializer->serialize($teams, 'json', [
-            'circular_reference_handler' => static function ($object) {
-                return $object->getId();
-            }
+            'attributes' => [
+                'id',
+                'name',
+                'members' => [
+                    'id',
+                    'user' => ['fullName']
+                ],
+                'winedContestsCount',
+                'creator' => ['user' => ['fullName']],
+                'puzzlesSolvedCount'
+            ]
         ]);
 
         return new JsonResponse(json_decode($teamsJson, true));

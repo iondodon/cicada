@@ -4,6 +4,7 @@ import '../i18n';
 import { withNamespaces } from 'react-i18next';
 import config from "../configs/keys";
 import Pagination from "./Pagination";
+import Link from "next/link";
 
 
 class TeamsMemberOf extends React.Component {
@@ -147,7 +148,11 @@ class TeamsMemberOf extends React.Component {
                         this.state.currentTeams.map((team) => {
                             return (
                                 <tr key={team['id']} >
-                                    <td>{ team['name'] }</td>
+                                    <td>
+                                        <Link href={{ pathname: '/team/show', query: { teamId: team['id'] } }}>
+                                            <a className="menu-item">{ team['name'] }</a>
+                                        </Link>{' '}
+                                    </td>
                                     <td>{ team['members'].length }</td>
                                     <td>{ team['puzzlesSolvedCount'] }</td>
                                     <td>{ team['winedContestsCount'] }</td>

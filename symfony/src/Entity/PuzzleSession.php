@@ -65,7 +65,7 @@ class PuzzleSession
     /**
      * @return Account
      */
-    public function getSinglePlayer(): Account
+    public function getSinglePlayer(): ?Account
     {
         return $this->singlePlayer;
     }
@@ -84,7 +84,7 @@ class PuzzleSession
     /**
      * @return Team
      */
-    public function getTeamPlayer(): Team
+    public function getTeamPlayer(): ?Team
     {
         return $this->teamPlayer;
     }
