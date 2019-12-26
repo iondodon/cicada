@@ -5,12 +5,14 @@ namespace App\Controller;
 use App\Entity\Account;
 use App\Entity\Puzzle;
 use App\Entity\PuzzleSession;
+use App\Entity\Team;
 use FOS\RestBundle\Controller\Annotations\Route;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
+use function Sodium\add;
 
 class PuzzleSessionController extends AbstractFOSRestController
 {
@@ -44,10 +46,10 @@ class PuzzleSessionController extends AbstractFOSRestController
                     'attributes' => [
                         'teamPlayer' => [
                             'name',
-                            'members' => ['user' => ['fullName']]
+                            'members' => ['user' => ['fullName']],
                         ],
-                        'completeness'
-                    ]
+                        'completeness',
+                    ],
                 ]);
 
                 return new JsonResponse(json_decode($sessionJson, true), 200);
@@ -86,9 +88,90 @@ class PuzzleSessionController extends AbstractFOSRestController
                 return new JsonResponse(null, 204);
         }
 
+        $puzzles = $account->getPuzzlesEnrolledAt();
+        $puzzles->add($puzzle);
+        $account->setPuzzlesEnrolledAt($puzzles);
+
         $em->persist($session);
+
+        $sessions = $account->getPuzzleSessions();
+        $sessions->add($session);
+        $account->setPuzzleSessions($sessions);
+
+        $em->persist($account);
         $em->flush();
 
         return new JsonResponse(null, 200);
+    }
+
+    /**
+     * @Route("/api/enroll-team/{puzzleId}/{teamId}", name="puzzle_sessions.enroll-team", methods={"POST"})
+     * @param $puzzleId
+     * @param $teamId
+     * @return JsonResponse
+     */
+    public function enrollTeam($puzzleId, $teamId): JsonResponse
+    {
+        $encoders = [new JsonEncoder()];
+        $normalizers = [new ObjectNormalizer()];
+        $serializer = new Serializer($normalizers, $encoders);
+
+        /** @var Account $account */
+        $account = $this->getUser()->getAccount();
+
+        $puzzleSession = null;
+        foreach ($account->getPuzzleSessions() as $session) {
+            if($session->getPuzzle()->getId() === $puzzleId) {
+                $puzzleSession = $session;
+            }
+        }
+
+        if(!$puzzleSession) {
+            $em = $this->getDoctrine()->getManager();
+            $puzzle = $em->getRepository(Puzzle::class)->findOneBy(['id' => $puzzleId]);
+            $puzzleSession = new PuzzleSession();
+            $puzzleSession->setCompleteness(0);
+            $puzzleSession->setSinglePlayer($account);
+            $team = $em->getRepository(Team::class)->findOneBy(['id' => $teamId]);
+            if($team){
+                /** @var Team $team */
+                $puzzleSession->setTeamPlayer($team);
+                /** @var Account $memberAccount  $memberAccount */
+                $em->persist($puzzleSession);
+                foreach ($team->getMembers() as $memberAccount) {
+                    $puzzles = $memberAccount->getPuzzlesEnrolledAt();
+                    $puzzles->add($puzzle);
+                    $memberAccount->setPuzzlesEnrolledAt($puzzles);
+
+                    $sessions = $memberAccount->getPuzzleSessions();
+                    $sessions->add($puzzleSession);
+                    $memberAccount->setPuzzleSessions($sessions);
+
+                    $em->persist($memberAccount);
+                }
+                $em->flush();
+            } else {
+                return new JsonResponse(null, 204);
+            }
+            if ($puzzle) {
+                /** @var Puzzle $puzzle */
+                $puzzleSession->setPuzzle($puzzle);
+            } else {
+                return new JsonResponse(null, 204);
+            }
+            $em->flush();
+        }
+
+        $puzzleSessionJson = $serializer->serialize($puzzleSession, 'json', [
+            'attributes' => [
+                'teamPlayer' => [
+                    'name',
+                    'members' => ['user' => ['fullName']],
+                ],
+                'completeness',
+            ],
+        ]);
+
+        return new JsonResponse(json_decode($puzzleSessionJson, true), 200);
     }
 }

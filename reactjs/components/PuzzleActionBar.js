@@ -20,19 +20,20 @@ class PuzzleActionBar extends React.Component {
 
         this.enrollSinglePlayer = this.enrollSinglePlayer.bind(this);
         this.showTeamsMemberOf = this.showTeamsMemberOf.bind(this);
+        this.enrollTeam = this.enrollTeam.bind(this);
     }
 
     async componentDidMount() {
         const request = {
             method: 'GET',
             mode: 'cors',
-            'credentials': 'include'
+            credentials: 'include'
         };
 
         try {
-            const response = await fetch(config.API_URL + '/api/get-session/' + this.puzzleId, request);
-            let responseJson = await response.json();
+            let response = await fetch(config.API_URL + '/api/get-session/' + this.puzzleId, request);
             if(response.status === 200){
+                let responseJson = await response.json();
                 await this.setState({session: responseJson});
                 await this.setState({enrolled: true});
             }
@@ -45,7 +46,7 @@ class PuzzleActionBar extends React.Component {
         const request = {
             method: 'POST',
             mode: 'cors',
-            'credentials': 'include'
+            credentials: 'include'
         };
 
         try {
@@ -61,11 +62,33 @@ class PuzzleActionBar extends React.Component {
         }
     }
 
+    async enrollTeam(event) {
+        const request = {
+            method: 'POST',
+            mode: 'cors',
+            credentials: 'include'
+        };
+
+        let teamId = event.target.getAttribute('value');
+        try {
+            let response = await fetch(config.API_URL + '/api/enroll-team/' + this.puzzleId + '/' + teamId, request);
+            let responseJson = await response.json();
+
+            if(response.status === 200){
+                await this.setState({session: responseJson});
+                await this.setState({showTeamsMemberOf: false});
+                await this.setState({enrolled: true});
+            }
+        } catch(e) {
+            console.log(e);
+        }
+    }
+
     async showTeamsMemberOf() {
         const request = {
             method: 'GET',
             mode: 'cors',
-            'credentials': 'include'
+            credentials: 'include'
         };
 
         try {
@@ -104,11 +127,12 @@ class PuzzleActionBar extends React.Component {
                         } else if(this.state['showTeamsMemberOf']) {
                             return(
                                 <div>
-                                    Choose a team: 
+                                    Choose a team:
                                     {
                                         this.state['teamsMemberOf'].map((team)=>{
                                             return(
-                                                <a key={team['id']} className={"team-link"}> { team['name'] } </a>
+                                                <a key={team['id']} className={"team-link"} value={team['id']}
+                                                    onClick={this.enrollTeam}> { team['name'] } </a>
                                             );
                                         })
                                     }

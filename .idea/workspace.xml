@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/ListCreatedTeams.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/reactjs/components/PuzzleActionBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/PuzzleActionBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/ShowPuzzleStatus.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/TeamsMemberOf.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/TeamsMemberOf.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/symfony/src/Controller/PuzzleSessionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Controller/PuzzleSessionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony/src/Controller/TeamController.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Controller/TeamController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony/src/Entity/PuzzleSession.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Entity/PuzzleSession.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -484,7 +480,7 @@
       <workItem from="1577288643251" duration="7382000" />
       <workItem from="1577303029573" duration="1765000" />
       <workItem from="1577352174251" duration="4645000" />
-      <workItem from="1577357490525" duration="1823000" />
+      <workItem from="1577357490525" duration="6521000" />
     </task>
     <servers />
   </component>
