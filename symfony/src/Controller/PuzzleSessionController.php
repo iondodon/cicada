@@ -12,7 +12,6 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
-use function Sodium\add;
 
 class PuzzleSessionController extends AbstractFOSRestController
 {
@@ -56,6 +55,25 @@ class PuzzleSessionController extends AbstractFOSRestController
             }
         }
 
+        /** @var Team $team */
+        foreach ($account->getTeamsMemberOf() as $team) {
+            foreach ($team->getPuzzleSessions() as $session) {
+                if($session->getPuzzle()->getId() === (int)$puzzleId) {
+                    $sessionJson = $serializer->serialize($session, 'json', [
+                        'attributes' => [
+                            'teamPlayer' => [
+                                'name',
+                                'members' => ['user' => ['fullName']],
+                            ],
+                            'completeness',
+                        ],
+                    ]);
+
+                    return new JsonResponse(json_decode($sessionJson, true), 200);
+                }
+            }
+        }
+
         return new JsonResponse(null, 204);
     }
 
@@ -70,7 +88,7 @@ class PuzzleSessionController extends AbstractFOSRestController
         $account = $this->getUser()->getAccount();
 
         foreach ($account->getPuzzleSessions() as $session) {
-            if($session->getPuzzle()->getId() === $puzzleId) {
+            if($session->getPuzzle()->getId() === (int)$puzzleId) {
                 return new JsonResponse(null, 204);
             }
         }
@@ -101,7 +119,21 @@ class PuzzleSessionController extends AbstractFOSRestController
         $em->persist($account);
         $em->flush();
 
-        return new JsonResponse(null, 200);
+        $encoders = [new JsonEncoder()];
+        $normalizers = [new ObjectNormalizer()];
+        $serializer = new Serializer($normalizers, $encoders);
+
+        $sessionJson = $serializer->serialize($session, 'json', [
+            'attributes' => [
+                'teamPlayer' => [
+                    'name',
+                    'members' => ['user' => ['fullName']],
+                ],
+                'completeness',
+            ],
+        ]);
+
+        return new JsonResponse(json_decode($sessionJson, true), 200);
     }
 
     /**
@@ -121,7 +153,7 @@ class PuzzleSessionController extends AbstractFOSRestController
 
         $puzzleSession = null;
         foreach ($account->getPuzzleSessions() as $session) {
-            if($session->getPuzzle()->getId() === $puzzleId) {
+            if($session->getPuzzle()->getId() === (int)$puzzleId) {
                 $puzzleSession = $session;
             }
         }
@@ -130,8 +162,13 @@ class PuzzleSessionController extends AbstractFOSRestController
             $em = $this->getDoctrine()->getManager();
             $puzzle = $em->getRepository(Puzzle::class)->findOneBy(['id' => $puzzleId]);
             $puzzleSession = new PuzzleSession();
+            if($puzzle) {
+                /** @var Puzzle $puzzle */
+                $puzzleSession->setPuzzle($puzzle);
+            } else {
+                return new JsonResponse(null, 204);
+            }
             $puzzleSession->setCompleteness(0);
-            $puzzleSession->setSinglePlayer($account);
             $team = $em->getRepository(Team::class)->findOneBy(['id' => $teamId]);
             if($team){
                 /** @var Team $team */
@@ -140,6 +177,11 @@ class PuzzleSessionController extends AbstractFOSRestController
                 $em->persist($puzzleSession);
                 foreach ($team->getMembers() as $memberAccount) {
                     $puzzles = $memberAccount->getPuzzlesEnrolledAt();
+                    if($puzzles->contains($puzzle)) {
+                        return new JsonResponse(json_encode([
+                            'message' => 'A member of the team is already registered for this puzzle.',
+                        ]), 400);
+                    }
                     $puzzles->add($puzzle);
                     $memberAccount->setPuzzlesEnrolledAt($puzzles);
 

@@ -51,10 +51,9 @@ class PuzzleActionBar extends React.Component {
 
         try {
             let response = await fetch(config.API_URL + '/api/enroll-single-player/' + this.puzzleId, request);
-            console.log(response);
-
+            let responseJson = await response.json();
             if(response.status === 200){
-                await this.componentDidMount();
+                await this.setState({session: responseJson});
                 await this.setState({enrolled: true});
             }
         } catch(e) {
