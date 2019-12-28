@@ -45,7 +45,7 @@ class PuzzleSessionController extends AbstractFOSRestController
                     'attributes' => [
                         'teamPlayer' => [
                             'name',
-                            'members' => ['user' => ['fullName']],
+                            'members' => ['user' => ['id', 'fullName']],
                         ],
                         'completeness',
                     ],
@@ -63,7 +63,7 @@ class PuzzleSessionController extends AbstractFOSRestController
                         'attributes' => [
                             'teamPlayer' => [
                                 'name',
-                                'members' => ['user' => ['fullName']],
+                                'members' => ['user' => ['id', 'fullName']],
                             ],
                             'completeness',
                         ],
@@ -89,7 +89,7 @@ class PuzzleSessionController extends AbstractFOSRestController
 
         foreach ($account->getPuzzleSessions() as $session) {
             if($session->getPuzzle()->getId() === (int)$puzzleId) {
-                return new JsonResponse(null, 204);
+                return new JsonResponse(json_encode(['message' => 'Already enrolled']), 204);
             }
         }
 
@@ -103,14 +103,14 @@ class PuzzleSessionController extends AbstractFOSRestController
             /** @var Puzzle $puzzle */
             $session->setPuzzle($puzzle);
         } else {
-                return new JsonResponse(null, 204);
+                return new JsonResponse(json_encode(['message' => 'Puzzle not found.']), 204);
         }
+
+        $em->persist($session);
 
         $puzzles = $account->getPuzzlesEnrolledAt();
         $puzzles->add($puzzle);
         $account->setPuzzlesEnrolledAt($puzzles);
-
-        $em->persist($session);
 
         $sessions = $account->getPuzzleSessions();
         $sessions->add($session);
@@ -144,6 +144,8 @@ class PuzzleSessionController extends AbstractFOSRestController
      */
     public function enrollTeam($puzzleId, $teamId): JsonResponse
     {
+        $em = $this->getDoctrine()->getManager();
+
         $encoders = [new JsonEncoder()];
         $normalizers = [new ObjectNormalizer()];
         $serializer = new Serializer($normalizers, $encoders);
@@ -151,69 +153,75 @@ class PuzzleSessionController extends AbstractFOSRestController
         /** @var Account $account */
         $account = $this->getUser()->getAccount();
 
-        $puzzleSession = null;
-        foreach ($account->getPuzzleSessions() as $session) {
-            if($session->getPuzzle()->getId() === (int)$puzzleId) {
-                $puzzleSession = $session;
+        $session = null;
+        foreach ($account->getPuzzleSessions() as $sess) {
+            if($sess->getPuzzle()->getId() === (int)$puzzleId) {
+                $session = $sess;
+                break;
             }
         }
 
-        if(!$puzzleSession) {
-            $em = $this->getDoctrine()->getManager();
-            $puzzle = $em->getRepository(Puzzle::class)->findOneBy(['id' => $puzzleId]);
-            $puzzleSession = new PuzzleSession();
-            if($puzzle) {
-                /** @var Puzzle $puzzle */
-                $puzzleSession->setPuzzle($puzzle);
-            } else {
-                return new JsonResponse(null, 204);
-            }
-            $puzzleSession->setCompleteness(0);
-            $team = $em->getRepository(Team::class)->findOneBy(['id' => $teamId]);
-            if($team){
-                /** @var Team $team */
-                $puzzleSession->setTeamPlayer($team);
-                /** @var Account $memberAccount  $memberAccount */
-                $em->persist($puzzleSession);
-                foreach ($team->getMembers() as $memberAccount) {
-                    $puzzles = $memberAccount->getPuzzlesEnrolledAt();
-                    if($puzzles->contains($puzzle)) {
-                        return new JsonResponse(json_encode([
-                            'message' => 'A member of the team is already registered for this puzzle.',
-                        ]), 400);
-                    }
-                    $puzzles->add($puzzle);
-                    $memberAccount->setPuzzlesEnrolledAt($puzzles);
+        if(!$session) {
+            $session = new PuzzleSession();
+        }
 
-                    $sessions = $memberAccount->getPuzzleSessions();
-                    $sessions->add($puzzleSession);
-                    $memberAccount->setPuzzleSessions($sessions);
+        /** @var Puzzle $puzzle */
+        $puzzle = $em->getRepository(Puzzle::class)->findOneBy(['id' => $puzzleId]);
+        if($puzzle) {
+            $session->setPuzzle($puzzle);
+        } else {
+            return new JsonResponse(json_encode(['message' => 'No puzzle found.']), 204);
+        }
 
-                    $em->persist($memberAccount);
+        if(!$session->getCompleteness()){
+            $session->setCompleteness(0);
+        }
+
+        /** @var Team $team */
+        /** @var Account $memberAccount  $memberAccount */
+        $team = $em->getRepository(Team::class)->findOneBy(['id' => $teamId]);
+        if($team){
+            $session->setTeamPlayer($team);
+            $em->persist($session);
+            foreach ($team->getMembers() as $memberAccount) {
+                $puzzles = $memberAccount->getPuzzlesEnrolledAt();
+                if($puzzles->contains($puzzle) && $memberAccount->getId() === $account->getId()){
+                    continue;
                 }
-                $em->flush();
-            } else {
-                return new JsonResponse(null, 204);
+
+                if($puzzles->contains($puzzle)) {
+                    return new JsonResponse(json_encode([
+                        'message' => 'A member of the team is already registered for this puzzle.',
+                    ]), 400);
+                }
+                $puzzles->add($puzzle);
+                $memberAccount->setPuzzlesEnrolledAt($puzzles);
+
+                $sessions = $memberAccount->getPuzzleSessions();
+                $sessions->add($session);
+                $memberAccount->setPuzzleSessions($sessions);
+
+                $em->persist($memberAccount);
             }
-            if ($puzzle) {
-                /** @var Puzzle $puzzle */
-                $puzzleSession->setPuzzle($puzzle);
-            } else {
-                return new JsonResponse(null, 204);
-            }
-            $em->flush();
+        } else {
+            return new JsonResponse(json_encode(['message' => 'No team found.']), 204);
         }
 
-        $puzzleSessionJson = $serializer->serialize($puzzleSession, 'json', [
+
+        $em->flush();
+
+        $sessionJson = $serializer->serialize($session, 'json', [
             'attributes' => [
                 'teamPlayer' => [
                     'name',
-                    'members' => ['user' => ['fullName']],
+                    'members' => [
+                        'user' => ['fullName']
+                    ]
                 ],
                 'completeness',
             ],
         ]);
 
-        return new JsonResponse(json_decode($puzzleSessionJson, true), 200);
+        return new JsonResponse(json_decode($sessionJson, true), 200);
     }
 }

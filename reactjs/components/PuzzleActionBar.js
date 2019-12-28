@@ -23,6 +23,26 @@ class PuzzleActionBar extends React.Component {
         this.enrollTeam = this.enrollTeam.bind(this);
     }
 
+    async showTeamsMemberOf() {
+        const request = {
+            method: 'GET',
+            mode: 'cors',
+            credentials: 'include'
+        };
+
+        try {
+            let response = await fetch(config.API_URL + '/api/teams/member_of', request);
+            let responseJson = await response.json();
+
+            if(response.status === 200){
+                await this.setState({teamsMemberOf: responseJson});
+                await this.setState({showTeamsMemberOf: true});
+            }
+        } catch(e) {
+            console.log(e);
+        }
+    }
+
     async componentDidMount() {
         const request = {
             method: 'GET',
@@ -83,79 +103,87 @@ class PuzzleActionBar extends React.Component {
         }
     }
 
-    async showTeamsMemberOf() {
-        const request = {
-            method: 'GET',
-            mode: 'cors',
-            credentials: 'include'
-        };
-
-        try {
-            let response = await fetch(config.API_URL + '/api/teams/member_of', request);
-            let responseJson = await response.json();
-
-            if(response.status === 200){
-                await this.setState({teamsMemberOf: responseJson});
-                await this.setState({showTeamsMemberOf: true});
-            }
-        } catch(e) {
-            console.log(e);
-        }
-    }
-
     render() {
 
         return(
             <div className="alert alert-warning">
 
-                {
-                    (()=>{
-                        if(this.state['enrolled'] && this.state['session']){
-                            return(
-                                <div>
-                                   <h2>progress: {this.state['session']['completeness']} </h2>
-                                    {(()=>{
-                                        if(this.state['session']['teamPlayer']){
-                                            return(
+                {(()=>{
+                    if(this.state['enrolled'] && this.state['session']){
+                        return(
+                            <div>
+                               <h2>progress: {this.state['session']['completeness']} </h2>
+                                {(()=>{
+                                    if(this.state['session']['teamPlayer']){
+                                        return(
+                                            <div>
                                                 <h2>team: {this.state['session']['teamPlayer']['name']} </h2>
+                                                ## members:
+                                                {
+                                                    this.state['session']['teamPlayer']['members'].map((member) => {
+                                                        return (
+                                                            <a key={member['user']['id']}
+                                                               className={"member-link"}
+                                                            > {member['user']['fullName']} </a>
+                                                        );
+                                                    })
+                                                }
+
+                                            </div>
+                                        );
+                                    } else {
+                                        if(!this.state['showTeamsMemberOf']) {
+                                            return(
+                                                <button className="btn btn-warning"
+                                                        onClick={this.showTeamsMemberOf}>Solve with a team</button>
                                             );
                                         }
-                                    })()}
-                                </div>
-                            );
-                        } else if(this.state['showTeamsMemberOf']) {
-                            return(
-                                <div>
-                                    Choose a team:
-                                    {
-                                        this.state['teamsMemberOf'].map((team)=>{
-                                            return(
-                                                <a key={team['id']} className={"team-link"} value={team['id']}
-                                                    onClick={this.enrollTeam}> { team['name'] } </a>
-                                            );
-                                        })
                                     }
-                                </div>
-                            );
-                        } else {
-                            return(
-                                <div className={"action"}>
-                                    <button className="btn btn-warning"
-                                            onClick={this.enrollSinglePlayer}>Solve solo</button>
-                                    <button className="btn btn-warning"
-                                            onClick={this.showTeamsMemberOf}>Solve with a team</button>
-                                </div>
-                            );
-                        }
-                    })()
-                }
+                                })()}
+                            </div>
+                        );
+                    } else {
+                        return(
+                            <div className={"action"}>
+                                <button className="btn btn-warning"
+                                        onClick={this.enrollSinglePlayer}>Solve solo</button>
+                                <button className="btn btn-warning"
+                                        onClick={this.showTeamsMemberOf}>Solve with a team</button>
+                            </div>
+                        );
+                    }
+                })()}
+
+                {(()=>{
+                    if(this.state['showTeamsMemberOf']) {
+                        return (
+                            <div>
+                                <a onClick={()=>this.setState({showTeamsMemberOf: false})}>(cancel)</a>
+                                Choose a team:
+                                {
+                                    this.state['teamsMemberOf'].map((team) => {
+                                        return (
+                                            <a key={team['id']}
+                                               value={team['id']}
+                                               className={'team-link'}
+                                               onClick={this.enrollTeam}> {team['name']} </a>
+                                        );
+                                    })
+                                }
+                            </div>
+                        );
+                    }
+                })()}
 
                 { /*language=SCSS*/ }
                 <style jsx>{`                    
                     .alert {
                         display: flex;
-                        flex-direction: row;
-                        justify-content: space-between;
+                        flex-direction: column;
+                    }
+                    
+                    .member-link, .team-link {
+                      margin-right: 1rem;
                     }
                     
                     .action {

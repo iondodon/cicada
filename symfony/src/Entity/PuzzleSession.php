@@ -122,7 +122,7 @@ class PuzzleSession
     /**
      * @return int
      */
-    public function getCompleteness(): int
+    public function getCompleteness(): ?int
     {
         return $this->completeness;
     }
