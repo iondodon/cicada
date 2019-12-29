@@ -74,7 +74,7 @@ class PuzzleSessionController extends AbstractFOSRestController
             }
         }
 
-        return new JsonResponse(null, 204);
+        return new JsonResponse(['message' => 'No session found.'], 400);
     }
 
     /**
@@ -89,7 +89,7 @@ class PuzzleSessionController extends AbstractFOSRestController
 
         foreach ($account->getPuzzleSessions() as $session) {
             if($session->getPuzzle()->getId() === (int)$puzzleId) {
-                return new JsonResponse(json_encode(['message' => 'Already enrolled']), 204);
+                return new JsonResponse(['message' => 'Already enrolled'], 400);
             }
         }
 
@@ -103,7 +103,7 @@ class PuzzleSessionController extends AbstractFOSRestController
             /** @var Puzzle $puzzle */
             $session->setPuzzle($puzzle);
         } else {
-                return new JsonResponse(json_encode(['message' => 'Puzzle not found.']), 204);
+                return new JsonResponse(['message' => 'Puzzle not found.'], 400);
         }
 
         $em->persist($session);
@@ -170,7 +170,7 @@ class PuzzleSessionController extends AbstractFOSRestController
         if($puzzle) {
             $session->setPuzzle($puzzle);
         } else {
-            return new JsonResponse(json_encode(['message' => 'No puzzle found.']), 204);
+            return new JsonResponse(['message' => 'No puzzle found.'], 400);
         }
 
         if(!$session->getCompleteness()){
@@ -190,9 +190,9 @@ class PuzzleSessionController extends AbstractFOSRestController
                 }
 
                 if($puzzles->contains($puzzle)) {
-                    return new JsonResponse(json_encode([
+                    return new JsonResponse([
                         'message' => 'A member of the team is already registered for this puzzle.',
-                    ]), 400);
+                    ], 400);
                 }
                 $puzzles->add($puzzle);
                 $memberAccount->setPuzzlesEnrolledAt($puzzles);
@@ -203,8 +203,13 @@ class PuzzleSessionController extends AbstractFOSRestController
 
                 $em->persist($memberAccount);
             }
+
+            $teams = $puzzle->getEnrolledTeams();
+            $teams->add($team);
+            $puzzle->setEnrolledTeams($teams);
+            $em->persist($puzzle);
         } else {
-            return new JsonResponse(json_encode(['message' => 'No team found.']), 204);
+            return new JsonResponse(['message' => 'No team found.'], 400);
         }
 
 

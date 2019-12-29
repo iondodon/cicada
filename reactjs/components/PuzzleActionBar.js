@@ -12,7 +12,9 @@ class PuzzleActionBar extends React.Component {
 
         this.state = {
             enrolled: false,
-            showTeamsMemberOf: false
+            showTeamsMemberOf: false,
+            error: false,
+            errorMessage: null
         };
 
         const urlParams = new URLSearchParams(window.location.search);
@@ -37,9 +39,14 @@ class PuzzleActionBar extends React.Component {
             if(response.status === 200){
                 await this.setState({teamsMemberOf: responseJson});
                 await this.setState({showTeamsMemberOf: true});
+                await this.setState({error: false});
+            } else {
+                await this.setState({error: true});
+                await this.setState({errorMessage: responseJson['message']});
             }
         } catch(e) {
-            console.log(e);
+            await this.setState({error: true});
+            await this.setState({errorMessage: e});
         }
     }
 
@@ -52,13 +59,18 @@ class PuzzleActionBar extends React.Component {
 
         try {
             let response = await fetch(config.API_URL + '/api/get-session/' + this.puzzleId, request);
+            let responseJson = await response.json();
             if(response.status === 200){
-                let responseJson = await response.json();
                 await this.setState({session: responseJson});
                 await this.setState({enrolled: true});
+                await this.setState({error: false});
+            } else {
+                // await this.setState({error: true});
+                // await this.setState({errorMessage: responseJson['message']});
             }
         } catch(e) {
-            console.log(e);
+            await this.setState({error: true});
+            await this.setState({errorMessage: e});
         }
     }
 
@@ -75,9 +87,14 @@ class PuzzleActionBar extends React.Component {
             if(response.status === 200){
                 await this.setState({session: responseJson});
                 await this.setState({enrolled: true});
+                await this.setState({error: false});
+            } else {
+                await this.setState({error: true});
+                await this.setState({errorMessage: responseJson['message']});
             }
         } catch(e) {
-            console.log(e);
+            await this.setState({error: true});
+            await this.setState({errorMessage: e});
         }
     }
 
@@ -97,9 +114,14 @@ class PuzzleActionBar extends React.Component {
                 await this.setState({session: responseJson});
                 await this.setState({showTeamsMemberOf: false});
                 await this.setState({enrolled: true});
+                await this.setState({error: false});
+            } else {
+                await this.setState({error: true});
+                await this.setState({errorMessage: responseJson['message']});
             }
         } catch(e) {
-            console.log(e);
+            await this.setState({error: true});
+            await this.setState({errorMessage: e});
         }
     }
 
@@ -170,6 +192,16 @@ class PuzzleActionBar extends React.Component {
                                         );
                                     })
                                 }
+                            </div>
+                        );
+                    }
+                })()}
+
+                {(()=>{
+                    if(this.state['error']) {
+                        return(
+                            <div>
+                                {this.state['errorMessage']}
                             </div>
                         );
                     }
