@@ -25,6 +25,20 @@ class PuzzleSessionController extends AbstractFOSRestController
     }
 
     /**
+     * @Route("/api/leave-puzzle/{puzzleId}", name="puzzle_sessions.leave-puzzle", methods={"POST"})
+     * @param $puzzleId
+     * @return JsonResponse
+     */
+    public function leavePuzzle($puzzleId): JsonResponse
+    {
+        $em = $this->getDoctrine()->getManager();
+        $puzzle = $em->getRepository(Puzzle::class)->findOneBy(['id' => $puzzleId]);
+
+        return new JsonResponse();
+    }
+
+
+    /**
      * @Route("/api/get-session/{puzzleId}", name="puzzle_sessions.get-session", methods={"GET"})
      * @param $puzzleId
      * @return JsonResponse
