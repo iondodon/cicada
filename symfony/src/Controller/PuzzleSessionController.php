@@ -31,10 +31,38 @@ class PuzzleSessionController extends AbstractFOSRestController
      */
     public function leavePuzzle($puzzleId): JsonResponse
     {
+        /** @var Account $account */
+        /** @var Puzzle  $puzzle */
+
+        $account = $this->getUser()->getAccount();
+
         $em = $this->getDoctrine()->getManager();
         $puzzle = $em->getRepository(Puzzle::class)->findOneBy(['id' => $puzzleId]);
 
-        return new JsonResponse();
+        if(!$puzzle) {
+            return new JsonResponse(['message' => 'Puzzle not found.'], 400);
+        }
+        if(!$puzzle->getEnrolledPlayers()->contains($account)) {
+            return new JsonResponse(['message' => 'You are not solving this puzzle yet. hmm....'], 400);
+        }
+
+        $puzzles = $account->getPuzzlesEnrolledAt();
+        $puzzles->removeElement($puzzle);
+        $account->setPuzzlesEnrolledAt($puzzles);
+
+        $puzzleSessions = $account->getPuzzleSessions();
+        foreach ($puzzleSessions as $sess) {
+            if($sess->getPuzzle()->getId() === (int) $puzzleId) {
+                $em->remove($sess);
+                break;
+            }
+        }
+        $account->setPuzzleSessions($puzzleSessions);
+        
+        $em->persist($account);
+        $em->flush();
+
+        return new JsonResponse(null, 200);
     }
 
 
@@ -54,7 +82,8 @@ class PuzzleSessionController extends AbstractFOSRestController
         $serializer = new Serializer($normalizers, $encoders);
 
         foreach ($account->getPuzzleSessions() as $session) {
-            if($session->getPuzzle()->getId() === (int)$puzzleId) {
+            if($session->getPuzzle()->getId() === (int)$puzzleId
+                && $session->getPuzzle()->getEnrolledPlayers()->contains($account)) {
                 $sessionJson = $serializer->serialize($session, 'json', [
                     'attributes' => [
                         'teamPlayer' => [
@@ -72,7 +101,8 @@ class PuzzleSessionController extends AbstractFOSRestController
         /** @var Team $team */
         foreach ($account->getTeamsMemberOf() as $team) {
             foreach ($team->getPuzzleSessions() as $session) {
-                if($session->getPuzzle()->getId() === (int)$puzzleId) {
+                if($session->getPuzzle()->getId() === (int)$puzzleId
+                    && $session->getPuzzle()->getEnrolledPlayers()->contains($account)) {
                     $sessionJson = $serializer->serialize($session, 'json', [
                         'attributes' => [
                             'teamPlayer' => [

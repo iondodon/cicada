@@ -23,6 +23,7 @@ class PuzzleActionBar extends React.Component {
         this.enrollSinglePlayer = this.enrollSinglePlayer.bind(this);
         this.showTeamsMemberOf = this.showTeamsMemberOf.bind(this);
         this.enrollTeam = this.enrollTeam.bind(this);
+        this.leavePuzzle = this.leavePuzzle.bind(this);
     }
 
     async showTeamsMemberOf() {
@@ -125,6 +126,32 @@ class PuzzleActionBar extends React.Component {
         }
     }
 
+    async leavePuzzle() {
+        const request = {
+            method: 'POST',
+            mode: 'cors',
+            credentials: 'include'
+        };
+
+        try {
+            let response = await fetch(config.API_URL + '/api/leave-puzzle/' + this.puzzleId, request);
+            let responseJson = await response.json();
+
+            if(response.status === 200){
+                await this.setState({session: null});
+                await this.setState({showTeamsMemberOf: false});
+                await this.setState({enrolled: false});
+                await this.setState({error: false});
+            } else {
+                await this.setState({error: true});
+                await this.setState({errorMessage: responseJson['message']});
+            }
+        } catch(e) {
+            await this.setState({error: true});
+            await this.setState({errorMessage: e});
+        }
+    }
+
     render() {
 
         return(
@@ -134,6 +161,9 @@ class PuzzleActionBar extends React.Component {
                     if(this.state['enrolled'] && this.state['session']){
                         return(
                             <div>
+                                <div>
+                                    <a onClick={this.leavePuzzle} >leave</a>
+                                </div>
                                <h2>progress: {this.state['session']['completeness']} </h2>
                                 {(()=>{
                                     if(this.state['session']['teamPlayer']){
