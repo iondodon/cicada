@@ -27,7 +27,8 @@ class PuzzleController extends AbstractFOSRestController
     public function index(): JsonResponse
     {
         $em = $this->getDoctrine()->getManager();
-        $puzzles = $em->getRepository(Puzzle::class)->findAll();
+        $query = $em->createQuery('SELECT p FROM App\Entity\Puzzle p WHERE p.isPrivate = 0');
+        $puzzles = $query->getResult();
 
         $encoders = [new JsonEncoder()];
         $normalizers = [new ObjectNormalizer()];
@@ -223,12 +224,10 @@ class PuzzleController extends AbstractFOSRestController
         $em->remove($puzzle);
         $em->flush();
 
-        $response = new Response(
+        return new Response(
             'Puzzle deleted.',
             Response::HTTP_OK,
             ['content-type' => 'text/html']
         );
-
-        return $response;
     }
 }

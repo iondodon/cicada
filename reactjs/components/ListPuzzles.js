@@ -51,6 +51,8 @@ class ListPuzzles extends React.Component {
                     let responseJson = await response.json();
                     this.setState({puzzles: responseJson});
 
+                    console.log(responseJson);
+
                     const indexOfLastPuzzle = this.state.currentPage * this.state.puzzlesPerPage;
                     const indexOfFirstPuzzle = indexOfLastPuzzle - this.state.puzzlesPerPage;
                     this.setState({ currentPuzzles: this.state.puzzles.slice(indexOfFirstPuzzle, indexOfLastPuzzle) });

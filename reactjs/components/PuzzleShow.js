@@ -3,8 +3,9 @@ import React from "react";
 import '../i18n';
 import { withNamespaces } from 'react-i18next';
 import config from "../configs/keys";
-import timeConverter from '../utlis/utlis';
+import {timeConverter} from '../utlis/utlis';
 import StageShow from "./StageShow";
+import PuzzleActionBar from "./PuzzleActionBar";
 
 class PuzzleShow extends React.Component {
 
@@ -122,6 +123,8 @@ class PuzzleShow extends React.Component {
                     <div className={"error-content"} >Error message</div>
                     {'\u00A0'} <a onClick={this.closeError}>x</a>
                 </div>
+
+                <PuzzleActionBar/>
 
                 <h2>name: { this.state['name'] } </h2>
                 <h2>created by: { this.state['createdBy'] }</h2>
