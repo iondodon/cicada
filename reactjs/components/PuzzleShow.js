@@ -4,7 +4,6 @@ import '../i18n';
 import { withNamespaces } from 'react-i18next';
 import config from "../configs/keys";
 import {timeConverter} from '../utlis/utlis';
-import StageShow from "./StageShow";
 import PuzzleActionBar from "./PuzzleActionBar";
 
 class PuzzleShow extends React.Component {
@@ -72,7 +71,6 @@ class PuzzleShow extends React.Component {
         await this.setState( { enrolledPlayers: responseJson['enrolledPlayers'] } );
         await this.setState( { enrolledTeams: responseJson['enrolledTeams'] } );
         await this.setState( { description: responseJson['description'] } );
-        await this.setState( { stages: responseJson['stages'] } );
     }
 
     closeError(e) {
@@ -124,8 +122,6 @@ class PuzzleShow extends React.Component {
                     {'\u00A0'} <a onClick={this.closeError}>x</a>
                 </div>
 
-                <PuzzleActionBar/>
-
                 <h2>name: { this.state['name'] } </h2>
                 <h2>created by: { this.state['createdBy'] }</h2>
                 <h2>created at: { this.state['createdAt'] } </h2>
@@ -168,23 +164,8 @@ class PuzzleShow extends React.Component {
                 <h2>description:</h2>
                 <div className={"description"} dangerouslySetInnerHTML={{__html:this.state['description']}} />
 
-                <h2>stages:</h2>
-                <div className={"stages-cards"}>
-                    <div>
-                        {
-                            this.state.stages.map((stage, index) => {
-                                return(
-                                    <StageShow
-                                        key={stage.level}
-                                        description={stage.description}
-                                        level={stage.level}
-                                        code={stage.code}
-                                    />
-                                );
-                            })
-                        }
-                    </div>
-                </div>
+
+                <PuzzleActionBar/>
 
                 { /*language=SCSS*/ }
                 <style jsx>{`

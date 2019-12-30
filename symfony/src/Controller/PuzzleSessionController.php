@@ -122,6 +122,15 @@ class PuzzleSessionController extends AbstractFOSRestController
                             'members' => ['user' => ['id', 'fullName']],
                         ],
                         'completeness',
+                        'puzzle' => [
+                            'stages' => [
+                                'id',
+                                'level',
+                                'createdAt' => ['timestamp'],
+                                'updatedAt' => ['timestamp'],
+                                'description'
+                            ]
+                        ]
                     ],
                 ]);
 
@@ -141,6 +150,15 @@ class PuzzleSessionController extends AbstractFOSRestController
                                 'members' => ['user' => ['id', 'fullName']],
                             ],
                             'completeness',
+                            'puzzle' => [
+                                'stages' => [
+                                    'id',
+                                    'level',
+                                    'createdAt' => ['timestamp'],
+                                    'updatedAt' => ['timestamp'],
+                                    'description'
+                                ]
+                            ]
                         ],
                     ]);
 

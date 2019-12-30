@@ -3,6 +3,7 @@ import React from 'react';
 import '../i18n';
 import { withNamespaces } from 'react-i18next';
 import config from "../configs/keys";
+import StageShow from "./StageShow";
 
 class PuzzleActionBar extends React.Component {
 
@@ -65,6 +66,7 @@ class PuzzleActionBar extends React.Component {
                 await this.setState({session: responseJson});
                 await this.setState({enrolled: true});
                 await this.setState({error: false});
+                console.log(this.state);
             } else {
                 // await this.setState({error: true});
                 // await this.setState({errorMessage: responseJson['message']});
@@ -189,6 +191,29 @@ class PuzzleActionBar extends React.Component {
                                     }
                                 })()}
 
+
+                                {(()=>{
+                                    if(this.state['session'] && this.state['session']['puzzle'] && this.state['session']['puzzle']['stages']) {
+                                        return(
+                                            <div className={"stages-cards"}>
+                                                <h2>stages:</h2>
+                                                {
+                                                    this.state['session']['puzzle']['stages'].map((stage) => {
+                                                        return(
+                                                            <StageShow
+                                                                key={stage['level']}
+                                                                description={stage['description']}
+                                                                level={stage['level']}
+                                                                code={stage['code']}
+                                                            />
+                                                        );
+                                                    })
+                                                }
+                                            </div>
+                                        );
+                                    }
+                                })()}
+
                                 <div>
                                     <a onClick={async () => {
                                         if(confirm("Are you sure?")) {
@@ -196,6 +221,7 @@ class PuzzleActionBar extends React.Component {
                                         }
                                     }} >Leave this puzzle</a>
                                 </div>
+
                             </div>
                         );
                     } else {
