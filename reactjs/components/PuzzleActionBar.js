@@ -182,12 +182,6 @@ class PuzzleActionBar extends React.Component {
 
                                             </div>
                                         );
-                                    } else {
-                                        if(!this.state['showTeamsMemberOf']) {
-                                            return(
-                                                <a onClick={this.showTeamsMemberOf}>Solve with a team</a>
-                                            );
-                                        }
                                     }
                                 })()}
 
@@ -210,6 +204,14 @@ class PuzzleActionBar extends React.Component {
                                                     })
                                                 }
                                             </div>
+                                        );
+                                    }
+                                })()}
+
+                                {(()=>{
+                                    if(!this.state['session']['teamPlayer'] && !this.state['showTeamsMemberOf']) {
+                                        return(
+                                            <a onClick={this.showTeamsMemberOf}>Solve with a team</a>
                                         );
                                     }
                                 })()}
