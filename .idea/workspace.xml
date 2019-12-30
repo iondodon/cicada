@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony/src/Controller/PuzzleSessionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Controller/PuzzleSessionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/components/PuzzleActionBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/PuzzleActionBar.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -485,7 +485,7 @@
       <workItem from="1577632875915" duration="1855000" />
       <workItem from="1577635991890" duration="7340000" />
       <workItem from="1577654413399" duration="6129000" />
-      <workItem from="1577698489299" duration="6560000" />
+      <workItem from="1577698489299" duration="7071000" />
     </task>
     <servers />
   </component>

@@ -161,9 +161,6 @@ class PuzzleActionBar extends React.Component {
                     if(this.state['enrolled'] && this.state['session']){
                         return(
                             <div>
-                                <div>
-                                    <a onClick={this.leavePuzzle} >leave</a>
-                                </div>
                                <h2>progress: {this.state['session']['completeness']} </h2>
                                 {(()=>{
                                     if(this.state['session']['teamPlayer']){
@@ -186,12 +183,19 @@ class PuzzleActionBar extends React.Component {
                                     } else {
                                         if(!this.state['showTeamsMemberOf']) {
                                             return(
-                                                <button className="btn btn-warning"
-                                                        onClick={this.showTeamsMemberOf}>Solve with a team</button>
+                                                <a onClick={this.showTeamsMemberOf}>Solve with a team</a>
                                             );
                                         }
                                     }
                                 })()}
+
+                                <div>
+                                    <a onClick={async () => {
+                                        if(confirm("Are you sure?")) {
+                                            await this.leavePuzzle();
+                                        }
+                                    }} >Leave this puzzle</a>
+                                </div>
                             </div>
                         );
                     } else {
