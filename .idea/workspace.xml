@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/PuzzleActionBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/PuzzleActionBar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/symfony/src/Controller/PuzzleSessionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Controller/PuzzleSessionController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -485,7 +484,8 @@
       <workItem from="1577537389871" duration="8716000" />
       <workItem from="1577632875915" duration="1855000" />
       <workItem from="1577635991890" duration="7340000" />
-      <workItem from="1577654413399" duration="5885000" />
+      <workItem from="1577654413399" duration="6129000" />
+      <workItem from="1577698489299" duration="6560000" />
     </task>
     <servers />
   </component>
@@ -549,9 +549,9 @@
       <screen x="0" y="0" width="1366" height="735" />
     </state>
     <state x="441" y="215" width="474" height="303" key="cloudConfig.PluginsDialog/0.0.1366.735@0.0.1366.735" timestamp="1576942580841" />
-    <state x="346" y="56" width="672" height="678" key="search.everywhere.popup" timestamp="1577358933583">
+    <state x="346" y="56" width="672" height="678" key="search.everywhere.popup" timestamp="1577704654623">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
-    <state x="346" y="56" width="672" height="678" key="search.everywhere.popup/0.0.1366.735@0.0.1366.735" timestamp="1577358933583" />
+    <state x="346" y="56" width="672" height="678" key="search.everywhere.popup/0.0.1366.735@0.0.1366.735" timestamp="1577704654623" />
   </component>
 </project>

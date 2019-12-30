@@ -6,6 +6,8 @@ use App\Entity\Account;
 use App\Entity\Puzzle;
 use App\Entity\PuzzleSession;
 use App\Entity\Team;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use FOS\RestBundle\Controller\Annotations\Route;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -46,19 +48,48 @@ class PuzzleSessionController extends AbstractFOSRestController
             return new JsonResponse(['message' => 'You are not solving this puzzle yet. hmm....'], 400);
         }
 
-        $puzzles = $account->getPuzzlesEnrolledAt();
-        $puzzles->removeElement($puzzle);
-        $account->setPuzzlesEnrolledAt($puzzles);
-
-        $puzzleSessions = $account->getPuzzleSessions();
+        $puzzleSessions = $em->createQuery('select ps 
+                                            from App\Entity\PuzzleSession ps
+                                                join App\Entity\Puzzle p
+                                            where p.id=:puzzleId')
+                            ->setParameter('puzzleId', $puzzleId)
+                            ->getResult();
+        $puzzleSessions = new ArrayCollection($puzzleSessions);
         foreach ($puzzleSessions as $sess) {
-            if($sess->getPuzzle()->getId() === (int) $puzzleId) {
+            /** @var PuzzleSession $sess */
+            $singlePlayer = $sess->getSinglePlayer();
+            if($singlePlayer && $singlePlayer->getId() === $account->getId()) {
+                $teamPlayer = $sess->getTeamPlayer();
+                /** @var Team $teamPlayer */
+                if($teamPlayer) {
+                    $members = $teamPlayer->getMembers();
+                    foreach($members as $member) {
+                        if($member->getPuzzlesEnrolledAt()->contains($puzzle)) {
+                            /** @var Collection $puzzles */
+                            $puzzles = $member->getPuzzlesEnrolledAt();
+                            $puzzles->removeElement($puzzle);
+                            $member->setPuzzlesEnrolledAt($puzzles);
+                            $em->persist($member);
+                        }
+                    }
+
+                    $teams = $puzzle->getEnrolledTeams();
+                    $teams->removeElement($teamPlayer);
+                    $puzzle->setEnrolledTeams($teams);
+                    $em->persist($puzzle);
+                }  else {
+                    $puzzles = $account->getPuzzlesEnrolledAt();
+                    $puzzles->removeElement($puzzle);
+                    $account->setPuzzlesEnrolledAt($puzzles);
+                    $em->persist($account);
+                }
+
                 $em->remove($sess);
                 break;
             }
         }
         $account->setPuzzleSessions($puzzleSessions);
-        
+
         $em->persist($account);
         $em->flush();
 
@@ -226,6 +257,7 @@ class PuzzleSessionController extends AbstractFOSRestController
         $team = $em->getRepository(Team::class)->findOneBy(['id' => $teamId]);
         if($team){
             $session->setTeamPlayer($team);
+            $session->setSinglePlayer($account);
             $em->persist($session);
             foreach ($team->getMembers() as $memberAccount) {
                 $puzzles = $memberAccount->getPuzzlesEnrolledAt();
