@@ -162,6 +162,12 @@ class PuzzleController extends AbstractFOSRestController
             return new JsonResponse(['message' => 'Puzzle not found.'], 404);
         }
 
+        /** @var Account $account */
+        $account = $this->getUser()->getAccount();
+        if($puzzle->getCreator()->getId() !== $account->getId()) {
+            return new JsonResponse(['message' => 'You can not update this puzzle.'], 400);
+        }
+
         $encoders = [new JsonEncoder()];
         $normalizers = [new ObjectNormalizer()];
         $serializer = new Serializer($normalizers, $encoders);

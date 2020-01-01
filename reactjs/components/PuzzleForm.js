@@ -104,6 +104,9 @@ class PuzzleForm extends React.Component {
             } else if (response.status === 404) {
                 document.getElementsByClassName('error-content')[0].innerHTML = 'Such puzzle doesn\'t exist.';
                 document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            } else if (response.status === 400) {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'You can not update this puzzle.';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
             } else if (response.status === 200) {
                 let responseJson = await response.json();
                 if(this.props.isFor === "update"){
