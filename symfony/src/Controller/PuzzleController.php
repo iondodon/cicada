@@ -9,6 +9,7 @@ use App\Entity\Tag;
 use App\Repository\PuzzleRepository;
 use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
+use Exception;
 use FOS\RestBundle\Controller\Annotations\Route;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -147,11 +148,39 @@ class PuzzleController extends AbstractFOSRestController
     }
 
     /**
+     * @Route("/api/puzzles/get-for-update/{id}", name="puzzles.getForUpdate", methods={"GET"})
+     * @param $id
+     * @return Response
+     * @throws Exception
+     */
+    public function getForUpdate($id): Response
+    {
+        $em = $this->getDoctrine()->getManager();
+        $puzzle = $em->getRepository(Puzzle::class)->findOneBy(['id' => $id]);
+
+        if(!$puzzle) {
+            return new JsonResponse(['message' => 'Puzzle not found.'], 404);
+        }
+
+        $encoders = [new JsonEncoder()];
+        $normalizers = [new ObjectNormalizer()];
+        $serializer = new Serializer($normalizers, $encoders);
+
+        $puzzleJson = $serializer->serialize($puzzle, 'json', [
+            'circular_reference_handler' => static function ($object) {
+                return $object->getId();
+            }
+        ]);
+
+        return new JsonResponse(json_decode($puzzleJson, true), 200);
+    }
+
+    /**
      * @Route("/api/puzzles/{id}", name="puzzles.update", methods={"PUT"})
      * @param Request $request
      * @param $id
      * @return Response
-     * @throws \Exception
+     * @throws Exception
      */
     public function update(Request $request, $id): Response
     {

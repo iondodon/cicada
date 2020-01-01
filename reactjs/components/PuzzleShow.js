@@ -4,7 +4,7 @@ import '../i18n';
 import { withNamespaces } from 'react-i18next';
 import config from "../configs/keys";
 import {timeConverter} from '../utlis/utlis';
-import PuzzleActionBar from "./PuzzleActionBar";
+import PuzzleSession from "./PuzzleSession";
 
 class PuzzleShow extends React.Component {
 
@@ -165,7 +165,7 @@ class PuzzleShow extends React.Component {
                 <div className={"description"} dangerouslySetInnerHTML={{__html:this.state['description']}} />
 
 
-                <PuzzleActionBar/>
+                <PuzzleSession/>
 
                 { /*language=SCSS*/ }
                 <style jsx>{`

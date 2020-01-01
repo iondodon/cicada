@@ -5,7 +5,7 @@ import { withNamespaces } from 'react-i18next';
 import config from "../configs/keys";
 import StageShow from "./StageShow";
 
-class PuzzleActionBar extends React.Component {
+class PuzzleSession extends React.Component {
 
     constructor(props, {t}) {
         super(props, {t});
@@ -179,7 +179,6 @@ class PuzzleActionBar extends React.Component {
                                                         );
                                                     })
                                                 }
-
                                             </div>
                                         );
                                     }
@@ -190,6 +189,7 @@ class PuzzleActionBar extends React.Component {
                                     if(this.state['session'] && this.state['session']['puzzle'] && this.state['session']['puzzle']['stages']) {
                                         return(
                                             <div className={"stages-cards"}>
+                                                <br/>
                                                 <h2>stages:</h2>
                                                 {
                                                     this.state['session']['puzzle']['stages'].map((stage) => {
@@ -211,12 +211,16 @@ class PuzzleActionBar extends React.Component {
                                 {(()=>{
                                     if(!this.state['session']['teamPlayer'] && !this.state['showTeamsMemberOf']) {
                                         return(
-                                            <a onClick={this.showTeamsMemberOf}>Solve with a team</a>
+                                            <div className={"to-right space-left"}>
+                                                <br/>
+                                                <a onClick={this.showTeamsMemberOf}>Solve with a team</a>
+                                            </div>
                                         );
                                     }
                                 })()}
 
-                                <div>
+                                <div className={"to-right"}>
+                                    <br/>
                                     <a onClick={async () => {
                                         if(confirm("Are you sure?")) {
                                             await this.leavePuzzle();
@@ -276,6 +280,14 @@ class PuzzleActionBar extends React.Component {
                         flex-direction: column;
                     }
                     
+                    .to-right {
+                      float: right;
+                    }
+                    
+                    .space-left {
+                      margin-left: 1rem;
+                    } 
+                    
                     .member-link, .team-link {
                       margin-right: 1rem;
                     }
@@ -291,4 +303,4 @@ class PuzzleActionBar extends React.Component {
     }
 }
 
-export default withNamespaces()(PuzzleActionBar);
+export default withNamespaces()(PuzzleSession);

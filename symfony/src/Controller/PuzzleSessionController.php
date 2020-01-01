@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Account;
 use App\Entity\Puzzle;
 use App\Entity\PuzzleSession;
+use App\Entity\Stage;
 use App\Entity\Team;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -96,6 +97,21 @@ class PuzzleSessionController extends AbstractFOSRestController
         return new JsonResponse(null, 200);
     }
 
+    private function extractUnnecessaryStages($session) {
+        /** @var Stage $stage */
+        /** @var PuzzleSession  $session */
+        /** @var Collection $stages */
+
+        $stages = $session->getPuzzle()->getStages();
+        foreach ($stages as $stage) {
+            if($stage->getLevel() > $session->getCompleteness()) {
+                $stages->removeElement($stage);
+            }
+        }
+        $session->getPuzzle()->setStages($stages);
+
+        return $session;
+    }
 
     /**
      * @Route("/api/get-session/{puzzleId}", name="puzzle_sessions.get-session", methods={"GET"})
@@ -107,7 +123,6 @@ class PuzzleSessionController extends AbstractFOSRestController
         /** @var Account $account */
         $account = $this->getUser()->getAccount();
 
-
         $encoders = [new JsonEncoder()];
         $normalizers = [new ObjectNormalizer()];
         $serializer = new Serializer($normalizers, $encoders);
@@ -115,6 +130,9 @@ class PuzzleSessionController extends AbstractFOSRestController
         foreach ($account->getPuzzleSessions() as $session) {
             if($session->getPuzzle()->getId() === (int)$puzzleId
                 && $session->getPuzzle()->getEnrolledPlayers()->contains($account)) {
+
+                $session = $this->extractUnnecessaryStages($session);
+
                 $sessionJson = $serializer->serialize($session, 'json', [
                     'attributes' => [
                         'teamPlayer' => [
@@ -128,9 +146,9 @@ class PuzzleSessionController extends AbstractFOSRestController
                                 'level',
                                 'createdAt' => ['timestamp'],
                                 'updatedAt' => ['timestamp'],
-                                'description'
-                            ]
-                        ]
+                                'description',
+                            ],
+                        ],
                     ],
                 ]);
 
@@ -143,6 +161,9 @@ class PuzzleSessionController extends AbstractFOSRestController
             foreach ($team->getPuzzleSessions() as $session) {
                 if($session->getPuzzle()->getId() === (int)$puzzleId
                     && $session->getPuzzle()->getEnrolledPlayers()->contains($account)) {
+
+                    $session = $this->extractUnnecessaryStages($session);
+
                     $sessionJson = $serializer->serialize($session, 'json', [
                         'attributes' => [
                             'teamPlayer' => [
@@ -156,9 +177,9 @@ class PuzzleSessionController extends AbstractFOSRestController
                                     'level',
                                     'createdAt' => ['timestamp'],
                                     'updatedAt' => ['timestamp'],
-                                    'description'
-                                ]
-                            ]
+                                    'description',
+                                ],
+                            ],
                         ],
                     ]);
 
@@ -314,8 +335,8 @@ class PuzzleSessionController extends AbstractFOSRestController
                 'teamPlayer' => [
                     'name',
                     'members' => [
-                        'user' => ['fullName']
-                    ]
+                        'user' => ['fullName'],
+                    ],
                 ],
                 'completeness',
             ],
