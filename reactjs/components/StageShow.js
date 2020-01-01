@@ -9,7 +9,16 @@ class StageShow extends React.Component {
         super(props, {t});
         this.t = t;
 
+        this.state = {
+            code: ''
+        };
+
         this.toggleStage = this.toggleStage.bind(this);
+        this.checkStageCode = this.checkStageCode.bind(this);
+    }
+
+    checkStageCode() {
+        console.log(this.state['code']);
     }
 
     toggleStage(e){
@@ -29,12 +38,16 @@ class StageShow extends React.Component {
             <div className="card stage" key={this.props.key}>
                 <header className="card-header">
                     <div className="pull-left stage-word">Stage { this.props.level }</div>
-                    {/*<input*/}
-                    {/*    type="text"*/}
-                    {/*    placeholder="code"*/}
-                    {/*    defaultValue={this.props.code}*/}
-                    {/*    className={"stage-code pull-left"}*/}
-                    {/*/>*/}
+                    <input
+                        type="text"
+                        placeholder="stage code here"
+                        className={"stage-code pull-left"}
+                        onChange={async e => {
+                            await this.setState({code: e.target.value});
+                        }}
+                        value={this.state['code']}
+                        />
+                    <div className={"header-trigger pull-left"} onClick={this.checkStageCode}>check</div>
                     <div className={"header-trigger pull-right"} onClick={this.toggleStage}>-</div>
                     <p/>
                 </header>
