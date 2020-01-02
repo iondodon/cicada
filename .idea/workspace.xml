@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/symfony/src/Controller/StageController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/PuzzleForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/PuzzleForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony/src/Controller/PuzzleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Controller/PuzzleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/components/PuzzleSession.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/PuzzleSession.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/components/StageShow.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/StageShow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Controller/PuzzleSessionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Controller/PuzzleSessionController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -488,7 +490,9 @@
       <workItem from="1577654413399" duration="6129000" />
       <workItem from="1577698489299" duration="15312000" />
       <workItem from="1577797624442" duration="840000" />
-      <workItem from="1577899292437" duration="8706000" />
+      <workItem from="1577899292437" duration="9181000" />
+      <workItem from="1577912064311" duration="596000" />
+      <workItem from="1577962852517" duration="10701000" />
     </task>
     <servers />
   </component>
@@ -527,26 +531,26 @@
       <screen x="0" y="0" width="1366" height="735" />
     </state>
     <state x="416" y="117" width="524" height="498" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.735@0.0.1366.735" timestamp="1577354412028" />
-    <state x="416" y="124" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1577354124673">
+    <state x="416" y="124" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1577970038689">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
-    <state x="416" y="124" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.735@0.0.1366.735" timestamp="1577354124673" />
+    <state x="416" y="124" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.735@0.0.1366.735" timestamp="1577970038689" />
     <state x="473" y="253" width="409" height="253" key="ComposerInitDialogKey" timestamp="1576771032968">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
     <state x="473" y="253" width="409" height="253" key="ComposerInitDialogKey/0.0.1366.735@0.0.1366.735" timestamp="1576771032968" />
-    <state x="522" y="293" width="312" height="147" key="NewPhpFileDialog" timestamp="1577215790630">
+    <state x="522" y="293" width="312" height="147" key="NewPhpFileDialog" timestamp="1577967439879">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
-    <state x="522" y="293" width="312" height="147" key="NewPhpFileDialog/0.0.1366.735@0.0.1366.735" timestamp="1577215790630" />
+    <state x="522" y="293" width="312" height="147" key="NewPhpFileDialog/0.0.1366.735@0.0.1366.735" timestamp="1577967439879" />
     <state x="441" y="215" width="474" height="303" key="cloudConfig.PluginsDialog" timestamp="1576942580841">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
     <state x="441" y="215" width="474" height="303" key="cloudConfig.PluginsDialog/0.0.1366.735@0.0.1366.735" timestamp="1576942580841" />
-    <state x="346" y="56" width="672" height="678" key="search.everywhere.popup" timestamp="1577704654623">
+    <state x="346" y="56" width="672" height="678" key="search.everywhere.popup" timestamp="1577968595269">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
-    <state x="346" y="56" width="672" height="678" key="search.everywhere.popup/0.0.1366.735@0.0.1366.735" timestamp="1577704654623" />
+    <state x="346" y="56" width="672" height="678" key="search.everywhere.popup/0.0.1366.735@0.0.1366.735" timestamp="1577968595269" />
     <state x="408" y="207" width="540" height="319" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1577903621124">
       <screen x="0" y="0" width="1366" height="735" />
     </state>

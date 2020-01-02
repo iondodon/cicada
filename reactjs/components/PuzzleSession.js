@@ -52,7 +52,7 @@ class PuzzleSession extends React.Component {
         }
     }
 
-    async componentDidMount() {
+    async getSession() {
         const request = {
             method: 'GET',
             mode: 'cors',
@@ -66,7 +66,6 @@ class PuzzleSession extends React.Component {
                 await this.setState({session: responseJson});
                 await this.setState({enrolled: true});
                 await this.setState({error: false});
-                console.log(this.state);
             } else {
                 // await this.setState({error: true});
                 // await this.setState({errorMessage: responseJson['message']});
@@ -75,6 +74,11 @@ class PuzzleSession extends React.Component {
             await this.setState({error: true});
             await this.setState({errorMessage: e});
         }
+    }
+
+
+    async componentDidMount() {
+        await this.getSession();
     }
 
     async enrollSinglePlayer() {
@@ -91,6 +95,7 @@ class PuzzleSession extends React.Component {
                 await this.setState({session: responseJson});
                 await this.setState({enrolled: true});
                 await this.setState({error: false});
+                await this.getSession();
             } else {
                 await this.setState({error: true});
                 await this.setState({errorMessage: responseJson['message']});
@@ -118,6 +123,7 @@ class PuzzleSession extends React.Component {
                 await this.setState({showTeamsMemberOf: false});
                 await this.setState({enrolled: true});
                 await this.setState({error: false});
+                await this.getSession();
             } else {
                 await this.setState({error: true});
                 await this.setState({errorMessage: responseJson['message']});
@@ -163,7 +169,18 @@ class PuzzleSession extends React.Component {
                     if(this.state['enrolled'] && this.state['session']){
                         return(
                             <div>
-                               <h2>progress: {this.state['session']['completeness']} </h2>
+                               <h2>progress: {this.state['session']['completeness']}
+                               /
+                                   {(()=>{
+                                       if(this.state['session']['puzzle'] && this.state['session']['puzzle']['stagesCount']) {
+                                           console.log(this.state['session']['puzzle']['stagesCount']);
+                                           return(this.state['session']['puzzle']['stagesCount']);
+                                       } else {
+                                           return null;
+                                       }
+                                   })()}
+
+                               </h2>
                                 {(()=>{
                                     if(this.state['session']['teamPlayer']){
                                         return(
@@ -195,9 +212,12 @@ class PuzzleSession extends React.Component {
                                                     this.state['session']['puzzle']['stages'].map((stage) => {
                                                         return(
                                                             <StageShow
-                                                                key={stage['level']}
-                                                                description={stage['description']}
+                                                                current={this.state['session']['completeness'] === stage['level']}
+                                                                key={stage['id']}
+                                                                stageId={stage['id']}
+                                                                sessionId={this.state['session']['id']}
                                                                 level={stage['level']}
+                                                                description={stage['description']}
                                                                 code={stage['code']}
                                                             />
                                                         );

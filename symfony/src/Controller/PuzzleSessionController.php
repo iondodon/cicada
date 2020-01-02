@@ -19,15 +19,6 @@ use Symfony\Component\Serializer\Serializer;
 class PuzzleSessionController extends AbstractFOSRestController
 {
     /**
-     * @Route("/api/puzzle_sessions", name="puzzle_sessions.index", methods={"GET"})
-     * @return JsonResponse
-     */
-    public function index(): JsonResponse
-    {
-        return new JsonResponse();
-    }
-
-    /**
      * @Route("/api/leave-puzzle/{puzzleId}", name="puzzle_sessions.leave-puzzle", methods={"POST"})
      * @param $puzzleId
      * @return JsonResponse
@@ -135,6 +126,7 @@ class PuzzleSessionController extends AbstractFOSRestController
 
                 $sessionJson = $serializer->serialize($session, 'json', [
                     'attributes' => [
+                        'id',
                         'teamPlayer' => [
                             'name',
                             'members' => ['user' => ['id', 'fullName']],
@@ -148,8 +140,9 @@ class PuzzleSessionController extends AbstractFOSRestController
                                 'updatedAt' => ['timestamp'],
                                 'description',
                             ],
-                        ],
-                    ],
+                            'stagesCount'
+                        ]
+                    ]
                 ]);
 
                 return new JsonResponse(json_decode($sessionJson, true), 200);
@@ -166,6 +159,7 @@ class PuzzleSessionController extends AbstractFOSRestController
 
                     $sessionJson = $serializer->serialize($session, 'json', [
                         'attributes' => [
+                            'id',
                             'teamPlayer' => [
                                 'name',
                                 'members' => ['user' => ['id', 'fullName']],
@@ -179,8 +173,9 @@ class PuzzleSessionController extends AbstractFOSRestController
                                     'updatedAt' => ['timestamp'],
                                     'description',
                                 ],
-                            ],
-                        ],
+                                'stagesCount'
+                            ]
+                        ]
                     ]);
 
                     return new JsonResponse(json_decode($sessionJson, true), 200);
