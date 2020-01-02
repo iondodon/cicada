@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/89715e81-bc9c-4fca-9f4c-1a8fd517663e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/89715e81-bc9c-4fca-9f4c-1a8fd517663e.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/MyAccount.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/MyAccount.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/StageShow.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/StageShow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony/src/Controller/AccountController.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Controller/AccountController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/symfony/src/Controller/PuzzleSessionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Controller/PuzzleSessionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Controller/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Controller/RegistrationController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/symfony/src/Controller/StageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Controller/StageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Entity/Account.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Entity/Account.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Entity/PuzzleSession.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Entity/PuzzleSession.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Entity/Team.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Entity/Team.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -276,7 +278,12 @@
       <list>
         <serviceView>
           <treeState>
-            <expand />
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:MySQL - cicada_db@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+            </expand>
             <select />
           </treeState>
         </serviceView>
@@ -493,7 +500,8 @@
       <workItem from="1577797624442" duration="840000" />
       <workItem from="1577899292437" duration="9181000" />
       <workItem from="1577912064311" duration="596000" />
-      <workItem from="1577962852517" duration="16506000" />
+      <workItem from="1577962852517" duration="17331000" />
+      <workItem from="1577986428376" duration="4693000" />
     </task>
     <servers />
   </component>
@@ -520,10 +528,10 @@
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
-    <state x="215" y="22" width="901" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1576788604088">
+    <state x="215" y="22" width="901" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1577989238037">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
-    <state x="215" y="22" width="901" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.735@0.0.1366.735" timestamp="1576788604088" />
+    <state x="215" y="22" width="901" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.735@0.0.1366.735" timestamp="1577989238037" />
     <state x="366" y="100" width="624" height="532" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1577635921701">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
@@ -548,6 +556,14 @@
       <screen x="0" y="0" width="1366" height="735" />
     </state>
     <state x="441" y="215" width="474" height="303" key="cloudConfig.PluginsDialog/0.0.1366.735@0.0.1366.735" timestamp="1576942580841" />
+    <state x="572" y="264" width="307" height="228" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1577990107583">
+      <screen x="0" y="0" width="1366" height="735" />
+    </state>
+    <state x="572" y="264" width="307" height="228" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1366.735@0.0.1366.735" timestamp="1577990107583" />
+    <state x="347" y="160" width="672" height="677" key="run.anything.popup" timestamp="1577990044495">
+      <screen x="0" y="0" width="1366" height="735" />
+    </state>
+    <state x="347" y="160" width="672" height="677" key="run.anything.popup/0.0.1366.735@0.0.1366.735" timestamp="1577990044495" />
     <state x="346" y="56" width="672" height="678" key="search.everywhere.popup" timestamp="1577968595269">
       <screen x="0" y="0" width="1366" height="735" />
     </state>

@@ -7,8 +7,10 @@ use App\Entity\Puzzle;
 use App\Entity\PuzzleSession;
 use App\Entity\Stage;
 use App\Entity\Team;
+use Doctrine\Common\Collections\ArrayCollection;
 use FOS\RestBundle\Controller\Annotations\Route;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
+use phpDocumentor\Reflection\Types\Collection;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -74,14 +76,15 @@ class StageController extends AbstractFOSRestController
         if($session->getCompleteness() === $session->getPuzzle()->getStagesCount()) {
             $team = $session->getTeamPlayer();
             if($team) {
-                foreach ($team->getMembers() as $member) {
-                    $member->setPuzzlesSolvedCount($member->getPuzzlesSolvedCount() + 1);
-                    $em->persist($member);
-                }
-                $team->setPuzzlesSolvedCount($team->getPuzzlesSolvedCount() + 1);
+                /** @var ArrayCollection $puzzlesSolved */
+                $puzzlesSolved = $team->getPuzzlesSolved();
+                $puzzlesSolved->add($session->getPuzzle());
+                $team->setPuzzlesSolved($puzzlesSolved);
                 $em->persist($team);
             } else {
-                $account->setPuzzlesSolvedCount($account->getPuzzlesSolvedCount() + 1);
+                $puzzlesSolved = $account->getPuzzlesSolved();
+                $puzzlesSolved->add($session->getPuzzle());
+                $account->setPuzzlesSolved($puzzlesSolved);
                 $em->persist($account);
             }
         }
