@@ -53,6 +53,9 @@ class StageShow extends React.Component {
                 if(responseJson['message'] === 'Valid') {
                     window.location.reload();
                 }
+                setTimeout(async ()=>{
+                    await this.setState({responseMessage: ''});
+                }, 5000);
             } else {
                 await this.setState({error: true});
                 await this.setState({responseMessage: responseJson['message']});
@@ -80,7 +83,13 @@ class StageShow extends React.Component {
             <div className="card stage" key={this.props.key}>
                 <header className="card-header">
                     <div className="pull-left stage-word">Stage { this.props.level }</div>
-                    <div className={"header-trigger pull-left"} >{this.state['responseMessage']}</div>
+                    {(()=>{
+                        if(this.state['responseMessage']) {
+                            return(
+                                <div className={"header-trigger pull-left"} >{this.state['responseMessage']}</div>
+                            );
+                        }
+                    })()}
                     {(()=>{
                         if(this.state['current']) {
                             return(

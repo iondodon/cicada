@@ -62,6 +62,16 @@ class PuzzleSessionController extends AbstractFOSRestController
                             $puzzles->removeElement($puzzle);
                             $member->setPuzzlesEnrolledAt($puzzles);
                             $em->persist($member);
+
+                            /** @var Collection $puzzlesEnrolledAt */
+                            $puzzlesEnrolledAt = $member->getPuzzlesEnrolledAt();
+                            if($puzzlesEnrolledAt->contains($puzzle) && $sess->getCompleteness() === $puzzle->getStagesCount()) {
+                                $puzzlesEnrolledAt->removeElement($puzzle);
+                                $member->setPuzzlesEnrolledAt($puzzlesEnrolledAt);
+                                $member->setPuzzlesSolvedCount($member->getPuzzlesSolvedCount() - 1);
+                                $em->persist($member);
+                            }
+
                         }
                     }
 
@@ -74,6 +84,16 @@ class PuzzleSessionController extends AbstractFOSRestController
                     $puzzles->removeElement($puzzle);
                     $account->setPuzzlesEnrolledAt($puzzles);
                     $em->persist($account);
+
+                    /** @var Collection $puzzlesEnrolledAt */
+                    $puzzlesEnrolledAt = $account->getPuzzlesEnrolledAt();
+                    if($puzzlesEnrolledAt->contains($puzzle) && $sess->getCompleteness() === $puzzle->getStagesCount()) {
+                        $puzzlesEnrolledAt->removeElement($puzzle);
+                        $account->setPuzzlesEnrolledAt($puzzlesEnrolledAt);
+                        $account->setPuzzlesSolvedCount($account->getPuzzlesSolvedCount() - 1);
+                        $em->persist($account);
+                    }
+
                 }
 
                 $em->remove($sess);

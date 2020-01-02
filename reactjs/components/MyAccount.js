@@ -537,7 +537,7 @@ class MyAccount extends React.Component {
                     <div className={"list"}>
                         {
                             this.state['account']['createdContests'].map((contest) => {
-                                return(<div>{ contest['name'] }</div>)
+                                return(<a>{ contest['name'] }</a>)
                             })
                         }
                     </div>

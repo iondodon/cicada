@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use App\Repository\AccountRepository;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use FOS\RestBundle\Controller\Annotations\Route;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
@@ -29,7 +29,7 @@ class AccountController extends AbstractFOSRestController
                 'puzzlesSolvedCount',
                 'puzzlesEnrolledAt' => ['name'],
                 'winedContestsCount',
-                'puzzleSessions' => ['puzzle' => 'name'],
+                'puzzleSessions' => ['puzzle' => ['name']],
                 'createdPuzzles' => ['name'],
                 'createdTeams' => ['name'],
                 'createdContests' => ['name'],

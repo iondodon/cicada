@@ -72,9 +72,19 @@ class StageController extends AbstractFOSRestController
         $em->persist($session);
 
         if($session->getCompleteness() === $session->getPuzzle()->getStagesCount()) {
-            $account->setPuzzlesSolvedCount($account->getPuzzlesSolvedCount() + 1);
+            $team = $session->getTeamPlayer();
+            if($team) {
+                foreach ($team->getMembers() as $member) {
+                    $member->setPuzzlesSolvedCount($member->getPuzzlesSolvedCount() + 1);
+                    $em->persist($member);
+                }
+                $team->setPuzzlesSolvedCount($team->getPuzzlesSolvedCount() + 1);
+                $em->persist($team);
+            } else {
+                $account->setPuzzlesSolvedCount($account->getPuzzlesSolvedCount() + 1);
+                $em->persist($account);
+            }
         }
-        $em->persist($account);
 
         $em->flush();
         return new JsonResponse(['message' => 'Valid'], 200);
