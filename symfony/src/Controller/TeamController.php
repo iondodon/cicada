@@ -118,7 +118,7 @@ class TeamController extends AbstractFOSRestController
         $teamJson = $serializer->serialize($team, 'json', [
             'attributes' => [
                 'name',
-                'members' => ['user' => ['fullName']],
+                'members' => ['user' => ['fullName', 'username']],
                 'puzzlesSolvedCount',
                 'winedContestsCount',
                 'puzzleSessions' => ['puzzle' => ['name']],

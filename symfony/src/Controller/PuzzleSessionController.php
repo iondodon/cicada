@@ -7,7 +7,6 @@ use App\Entity\Puzzle;
 use App\Entity\PuzzleSession;
 use App\Entity\Stage;
 use App\Entity\Team;
-use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use FOS\RestBundle\Controller\Annotations\Route;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
@@ -116,10 +115,11 @@ class PuzzleSessionController extends AbstractFOSRestController
                 $sessionJson = $serializer->serialize($session, 'json', [
                     'attributes' => [
                         'id',
-                        'teamPlayer' => [
+                        'singlePlayer' => [
                             'id',
-                            'name',
-                            'members' => ['user' => ['id', 'fullName']],
+                            'user' => [
+                                'fullName'
+                            ]
                         ],
                         'completeness',
                         'puzzle' => [

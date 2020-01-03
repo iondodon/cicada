@@ -114,4 +114,14 @@ class AccountController extends AbstractFOSRestController
             ['content-type' => 'text/html']
         );
     }
+
+    /**
+     * @Route("/api/account/username", name="account.username", methods={"GET"})
+     * @return JsonResponse
+     */
+    public function getUsername() : JsonResponse
+    {
+        $username = $this->getUser()->getUsername();
+        return new JsonResponse(['username' => $username], 200);
+    }
 }
