@@ -57,8 +57,6 @@ class TeamRepository extends ServiceEntityRepository
             }
             $new_team->setRequestedMembers($requestedMembers);
 
-            $new_team->setPuzzlesSolvedCount(0);
-            $new_team->setWinedContestsCount(0);
             $new_team->setCreator($user->getAccount());
 
             $em->persist($new_team);

@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Account;
 use App\Entity\Team;
 use App\Repository\TeamRepository;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\EntityManagerInterface;
 use FOS\RestBundle\Controller\Annotations\Route;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
@@ -198,5 +199,33 @@ class TeamController extends AbstractFOSRestController
 
         $response->setStatusCode(Response::HTTP_FOUND);
         return $response;
+    }
+
+    /**
+     * @Route("/api/teams/leave-team/{teamId}", name="teams.leave-team", methods={"POST"})
+     * @param $teamId
+     * @return JsonResponse
+     */
+    public function leaveTeam($teamId): JsonResponse
+    {
+        $em = $this->getDoctrine()->getManager();
+        /** @var Team $team */
+        $team = $em->getRepository(Team::class)->find($teamId);
+        if(!$team) {
+            return new JsonResponse(['message' => 'Team not found.'], 400);
+        }
+
+        /** @var Account $account */
+        /** @var ArrayCollection  $members */
+        $account = $this->getUser()->getAccount();
+        $members = $team->getMembers();
+        $members->removeElement($account);
+
+        $team->setMembers($members);
+
+        $em->persist($team);
+        $em->flush();
+
+        return new JsonResponse(null, 200);
     }
 }

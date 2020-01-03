@@ -24,7 +24,8 @@ class PuzzleSession extends React.Component {
         this.enrollSinglePlayer = this.enrollSinglePlayer.bind(this);
         this.showTeamsMemberOf = this.showTeamsMemberOf.bind(this);
         this.enrollTeam = this.enrollTeam.bind(this);
-        this.leavePuzzle = this.leavePuzzle.bind(this);
+        this.singlePlayerLeavePuzzle = this.singlePlayerLeavePuzzle.bind(this);
+        this.leaveTeam = this.leaveTeam.bind(this);
     }
 
     async showTeamsMemberOf() {
@@ -134,7 +135,7 @@ class PuzzleSession extends React.Component {
         }
     }
 
-    async leavePuzzle() {
+    async leaveTeam() {
         const request = {
             method: 'POST',
             mode: 'cors',
@@ -142,7 +143,34 @@ class PuzzleSession extends React.Component {
         };
 
         try {
-            let response = await fetch(config.API_URL + '/api/leave-puzzle/' + this.puzzleId, request);
+            let response = await fetch(config.API_URL + '/api/teams/leave-team/' + this.state['session']['teamPlayer']['id'], request);
+            let responseJson = await response.json();
+
+            if(response.status === 200){
+                await this.setState({session: null});
+                await this.setState({showTeamsMemberOf: false});
+                await this.setState({enrolled: false});
+                await this.setState({error: false});
+                await this.getSession();
+            } else {
+                await this.setState({error: true});
+                await this.setState({errorMessage: responseJson['message']});
+            }
+        } catch(e) {
+            await this.setState({error: true});
+            await this.setState({errorMessage: e});
+        }
+    }
+
+    async singlePlayerLeavePuzzle() {
+        const request = {
+            method: 'POST',
+            mode: 'cors',
+            credentials: 'include'
+        };
+
+        try {
+            let response = await fetch(config.API_URL + '/api/single-player-leave-puzzle/' + this.puzzleId, request);
             let responseJson = await response.json();
 
             if(response.status === 200){
@@ -239,15 +267,31 @@ class PuzzleSession extends React.Component {
                                     }
                                 })()}
 
-                                <div className={"to-right"}>
-                                    <br/>
-                                    <a onClick={async () => {
-                                        if(confirm("Are you sure?")) {
-                                            await this.leavePuzzle();
-                                        }
-                                    }} >Leave this puzzle</a>
-                                </div>
-
+                                {(()=>{
+                                    if(this.state['session']['teamPlayer']) {
+                                        return(
+                                            <div className={"to-right"}>
+                                                <br/>
+                                                <a onClick={async () => {
+                                                    if(confirm("Are you sure?")) {
+                                                        await this.leaveTeam();
+                                                    }
+                                                }} >Leave team</a>
+                                            </div>
+                                        );
+                                    } else if(this.state['session']['singlePlayer']) {
+                                        return(
+                                            <div className={"to-right"}>
+                                                <br/>
+                                                <a onClick={async () => {
+                                                    if(confirm("Are you sure?")) {
+                                                        await this.singlePlayerLeavePuzzle();
+                                                    }
+                                                }} >Leave this puzzle</a>
+                                            </div>
+                                        );
+                                    }
+                                })()}
                             </div>
                         );
                     } else {
