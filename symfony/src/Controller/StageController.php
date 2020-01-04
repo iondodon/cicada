@@ -25,7 +25,6 @@ class StageController extends AbstractFOSRestController
         /** @var Account $account */
         /** @var Puzzle  $puzzle */
 
-        $account = $this->getUser()->getAccount();
         $body = json_decode($request->getContent(), true);
 
         $em = $this->getDoctrine()->getManager();

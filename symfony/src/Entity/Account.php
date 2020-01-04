@@ -15,7 +15,6 @@ class Account
 {
     public function __construct()
     {
-        $this->puzzlesEnrolledAt = new ArrayCollection();
         $this->puzzleSessions = new ArrayCollection();
         $this->createdPuzzles = new ArrayCollection();
         $this->createdTeams = new ArrayCollection();
@@ -45,17 +44,6 @@ class Account
     /**
      * @var Collection
      *
-     * @ORM\ManyToMany(targetEntity="Puzzle")
-     * @ORM\JoinTable(name="accounts_puzzles_solved",
-     *      joinColumns={@ORM\JoinColumn(name="account_id", referencedColumnName="id")},
-     *      inverseJoinColumns={@ORM\JoinColumn(name="puzzle_id", referencedColumnName="id", unique=true)}
-     * )
-     */
-    private $puzzlesSolved;
-
-    /**
-     * @var Collection
-     *
      * @ORM\ManyToMany(targetEntity="Contest")
      * @ORM\JoinTable(name="accounts_contests_wined",
      *      joinColumns={@ORM\JoinColumn(name="account_id", referencedColumnName="id")},
@@ -63,14 +51,6 @@ class Account
      * )
      */
     private $winedContests;
-
-    /**
-     * @var Collection
-     *
-     * @ORM\ManyToMany(targetEntity="Puzzle", inversedBy="enrolledPlayers")
-     * @ORM\JoinTable(name="accounts_puzzles_enrolled")
-     */
-    private $puzzlesEnrolledAt;
 
     /**
      * @var Collection
@@ -162,30 +142,18 @@ class Account
     }
 
     /**
-     * @return Collection
-     */
-    public function getPuzzlesSolved(): Collection
-    {
-        return $this->puzzlesSolved;
-    }
-
-    /**
-     * @param Collection $puzzlesSolved
-     * @return Account
-     */
-    public function setPuzzlesSolved($puzzlesSolved): Account
-    {
-        $this->puzzlesSolved = $puzzlesSolved;
-
-        return $this;
-    }
-
-    /**
      * @return int
      */
     public function getPuzzlesSolvedCount(): int
     {
-        return count($this->puzzlesSolved);
+        /** @var PuzzleSession  $sess */
+        $puzzlesSolved = 0;
+        foreach ($this->getPuzzleSessions() as $sess) {
+            if($sess->getCompleteness() === $sess->getPuzzle()->getStagesCount()) {
+                $puzzlesSolved++;
+            }
+        }
+        return $puzzlesSolved;
     }
 
     /**
@@ -193,7 +161,7 @@ class Account
      */
     public function getWinedContests(): Collection
     {
-        return $this->puzzlesSolved;
+        return $this->winedContests;
     }
 
     /**
@@ -213,25 +181,6 @@ class Account
     public function getWinedContestsCount(): int
     {
         return count($this->winedContests);
-    }
-
-    /**
-     * @return Collection
-     */
-    public function getPuzzlesEnrolledAt(): Collection
-    {
-        return $this->puzzlesEnrolledAt;
-    }
-
-    /**
-     * @param Collection $puzzlesEnrolledAt
-     * @return Account
-     */
-    public function setPuzzlesEnrolledAt(Collection $puzzlesEnrolledAt): Account
-    {
-        $this->puzzlesEnrolledAt = $puzzlesEnrolledAt;
-
-        return $this;
     }
 
     /**

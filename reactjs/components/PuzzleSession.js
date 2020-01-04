@@ -266,7 +266,7 @@ class PuzzleSession extends React.Component {
                                         );
                                     }
                                 })()}
-
+x`
                                 <div className={'info'}>
                                     *Team session overrides single player session.
                                     <br/>

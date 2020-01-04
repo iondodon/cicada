@@ -68,7 +68,6 @@ class PuzzleShow extends React.Component {
         await this.setState( { difficultyByCreator: responseJson['difficultyByCreator'] } );
         await this.setState( { difficultyByStatistics: responseJson['difficultyByStatistics'] } );
         await this.setState( { tags: responseJson['tags'] } );
-        await this.setState( { enrolledPlayers: responseJson['enrolledPlayers'] } );
         await this.setState( { enrolledTeams: responseJson['enrolledTeams'] } );
         await this.setState( { description: responseJson['description'] } );
     }
@@ -135,28 +134,6 @@ class PuzzleShow extends React.Component {
                             return(
                                 <a key={tag['id']} className={'tag-link'}>{tag['tag']}</a>
                             )
-                        })
-                    }
-                </div>
-
-                <h2>enrolled players:</h2>
-                <div className={"enrolled-players"}>
-                    {
-                        this.state['enrolledPlayers'].map((account) => {
-                            return (
-                                <a key={account['id']} className={"players-link"}> {account['user']['fullName']}</a>
-                            );
-                        })
-                    }
-                </div>
-
-                <h2>enrolled teams:</h2>
-                <div className={"enrolled-teams"}>
-                    {
-                        this.state['enrolledTeams'].map((team) => {
-                            return(
-                                <a key={team['id']} className={"team-link"}> { team['name'] } </a>
-                            );
                         })
                     }
                 </div>

@@ -17,7 +17,6 @@ class Team
     {
         $this->contestsEnrolledAt = new ArrayCollection();
         $this->puzzleSessions = new ArrayCollection();
-        $this->puzzlesEnrolledAt = new ArrayCollection();
         $this->members = new ArrayCollection();
         $this->requestedMembers = new ArrayCollection();
     }
@@ -88,13 +87,6 @@ class Team
      * @ORM\JoinColumn(name="creator_account_id", referencedColumnName="id")
      */
     private $creator;
-
-    /**
-     * @var Collection
-     *
-     * @ORM\ManyToMany(targetEntity="Puzzle", mappedBy="enrolledTeams")
-     */
-    private $puzzlesEnrolledAt;
 
     /**
      * @var Collection
@@ -192,9 +184,15 @@ class Team
      */
     public function getPuzzlesSolvedCount(): int
     {
-        return count($this->puzzlesSolved);
+        /** @var PuzzleSession  $sess */
+        $puzzlesSolved = 0;
+        foreach ($this->getPuzzleSessions() as $sess) {
+            if($sess->getCompleteness() === $sess->getPuzzle()->getStagesCount()) {
+                $puzzlesSolved++;
+            }
+        }
+        return $puzzlesSolved;
     }
-
 
     /**
      * @return Collection
@@ -257,25 +255,6 @@ class Team
     public function setCreator(Account $creator): Team
     {
         $this->creator = $creator;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection
-     */
-    public function getPuzzlesEnrolledAt(): Collection
-    {
-        return $this->puzzlesEnrolledAt;
-    }
-
-    /**
-     * @param Collection $puzzlesEnrolledAt
-     * @return Team
-     */
-    public function setPuzzlesEnrolledAt(Collection $puzzlesEnrolledAt): Team
-    {
-        $this->puzzlesEnrolledAt = $puzzlesEnrolledAt;
 
         return $this;
     }

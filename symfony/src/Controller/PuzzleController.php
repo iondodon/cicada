@@ -126,14 +126,6 @@ class PuzzleController extends AbstractFOSRestController
                 'difficultyByCreator',
                 'difficultyByStatistics',
                 'tags' => ['id', 'tag'],
-                'enrolledPlayers' => [
-                    'id',
-                    'user' => ['fullName']
-                ],
-                'enrolledTeams' => [
-                    'id',
-                    'name'
-                ],
                 'description'
             ]
         ]);

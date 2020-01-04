@@ -4,6 +4,14 @@
     <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactjs/components/PuzzleSession.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/PuzzleSession.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/components/PuzzleShow.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/PuzzleShow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/components/TeamShow.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/TeamShow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Controller/AccountController.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Controller/AccountController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Controller/PuzzleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Controller/PuzzleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Controller/StageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Controller/StageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Entity/Account.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Entity/Account.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Entity/Puzzle.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Entity/Puzzle.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Entity/Team.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Entity/Team.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -494,7 +502,7 @@
       <workItem from="1578051020353" duration="4977000" />
       <workItem from="1578071874614" duration="5567000" />
       <workItem from="1578082909175" duration="7909000" />
-      <workItem from="1578142032348" duration="2303000" />
+      <workItem from="1578142032348" duration="4587000" />
     </task>
     <servers />
   </component>

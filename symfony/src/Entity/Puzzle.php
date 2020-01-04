@@ -36,21 +36,6 @@ class Puzzle
     /**
      * @var Collection
      *
-     * @ORM\ManyToMany(targetEntity="Account", mappedBy="puzzlesEnrolledAt")
-     */
-    private $enrolledPlayers;
-
-    /**
-     * @var Collection
-     *
-     * @ORM\ManyToMany(targetEntity="Team", inversedBy="puzzlesEnrolledAt")
-     * @ORM\JoinTable(name="puzzles_teams")
-     */
-    private $enrolledTeams;
-
-    /**
-     * @var Collection
-     *
      * @ORM\OneToMany(targetEntity="Contest", mappedBy="puzzle")
      */
     private $contestsPartOf;
@@ -176,44 +161,6 @@ class Puzzle
     public function setName(string $name): Puzzle
     {
         $this->name = $name;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection
-     */
-    public function getEnrolledPlayers(): Collection
-    {
-        return $this->enrolledPlayers;
-    }
-
-    /**
-     * @param Collection $enrolledPlayers
-     * @return Puzzle
-     */
-    public function setEnrolledPlayers(Collection $enrolledPlayers): Puzzle
-    {
-        $this->enrolledPlayers = $enrolledPlayers;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection
-     */
-    public function getEnrolledTeams(): Collection
-    {
-        return $this->enrolledTeams;
-    }
-
-    /**
-     * @param Collection $enrolledTeams
-     * @return Puzzle
-     */
-    public function setEnrolledTeams(Collection $enrolledTeams): Puzzle
-    {
-        $this->enrolledTeams = $enrolledTeams;
 
         return $this;
     }

@@ -27,9 +27,10 @@ class AccountController extends AbstractFOSRestController
             'attributes' => [
                 'user' => ['username', 'email', 'fullName'],
                 'puzzlesSolvedCount',
-                'puzzlesEnrolledAt' => ['name'],
                 'winedContestsCount',
-                'puzzleSessions' => ['puzzle' => ['name']],
+                'puzzleSessions' => [
+                    'puzzle' => ['name']
+                ],
                 'createdPuzzles' => ['name'],
                 'createdTeams' => ['name'],
                 'createdContests' => ['name'],
