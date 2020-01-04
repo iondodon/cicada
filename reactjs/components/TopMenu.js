@@ -14,34 +14,80 @@ class TopMenu extends React.Component {
 
     render(){
         return (
-            <div className="menu top-menu">
-                <Link href={"/"}>
-                    <a className="menu-item">Home</a>
-                </Link>{' '}
+            <div className="alert alert-success">
 
-                |
-                <Link href={"/login"}>
-                    <a className="menu-item">Login</a>
-                </Link>{' '}
+                <div className="menu left-menu">
+                    <Link href={"/"}>
+                        <a className="menu-item">Home</a>
+                    </Link>{' '}
+                    |
+                    <Link href={"/about"}>
+                        <a className="menu-item">About</a>
+                    </Link>{' '}
+                    |
+                    <Link href={{ pathname: '/puzzle/update', query: { puzzleId: 3 } }}>
+                        <a className="menu-item">u puzzle 3</a>
+                    </Link>{' '}
+                    |
+                    <Link href={{ pathname: '/contest/update', query: { contestId: 26 } }}>
+                        <a className="menu-item">u contest 26</a>
+                    </Link>{' '}
+                    |
+                    <Link href={{ pathname: '/team/update', query: { teamId: 7 } }}>
+                        <a className="menu-item">u team 7</a>
+                    </Link>{' '}
+                    |
+                    <Link href={{ pathname: '/puzzle/show', query: { puzzleId: 3 } }}>
+                        <a className="menu-item">Show</a>
+                    </Link>{' '}
+                </div>
 
-                |
+                <img src={'../static/cicada.png'} className={"logo"}  alt="true" />
 
-                <Link href={"/signup"}>
-                    <a className="menu-item">SignUp</a>
-                </Link>{' '}
-
-                |
-                <a className="menu-item">About</a>
+                <div className="menu right-menu">
+                    <Link href={"/login"}>
+                        <a className="menu-item">Login</a>
+                    </Link>{' '}
+                    |
+                    <Link href={"/signup"}>
+                        <a className="menu-item">SignUp</a>
+                    </Link>{' '}
+                    |
+                    <Link href={"/notifications"}>
+                        <a className="menu-item">Notifications</a>
+                    </Link>{' '}
+                </div>
 
                 { /*language=SCSS*/ }
                 <style jsx>{`
-                  .top-menu {
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: center;
-                    margin-bottom: 1rem;
-                  }
-                `}
+                      .right-menu {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: flex-end;
+                        width: 30%;
+                      }
+                      
+                      .left-menu {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: flex-start;
+                        width: 30%;
+                      }
+                      
+                      .alert {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        margin-top: -1px;
+                        margin-left: 1rem;
+                        margin-right: 1rem;
+                        margin-bottom: 1rem;
+                      }
+                      
+                      .logo {
+                        height: 2rem;
+                      }
+                    `}
                 </style>
             </div>
         );

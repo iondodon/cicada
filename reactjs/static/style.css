@@ -1,5 +1,9 @@
 /* Medium screens */
 @media all and (max-width: 800px) {
+    #page-content {
+        min-width: 100%;
+    }
+
     #container {
         min-width: 100%;
     }
@@ -51,5 +55,11 @@
     #create-puzzle-from > * {
         margin: auto;
         width: 100%;
+    }
+
+    #requesting-team-alert {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
     }
 }

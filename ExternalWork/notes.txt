@@ -1,10 +1,16 @@
 possible problems:
     when tokens expire, maybe to use refresh tokens to get new access tokens
 
+brand:
+    Creativity&Authenticity
+    C&A
 
 public_key and private_key pass phrase:
     eronat98
 
+notifications:
+    type 1 - team member request
+    type 2 - team member removed
 
 sources:
     https://github.com/awd-studio/symfony-4-oauth2-server

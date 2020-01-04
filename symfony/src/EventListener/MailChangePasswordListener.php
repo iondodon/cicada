@@ -5,6 +5,9 @@ namespace App\EventListener;
 use Swift_Mailer;
 use Swift_Message;
 use App\Event\EmailChangePasswordEvent;
+use Twig\Error\LoaderError;
+use Twig\Error\RuntimeError;
+use Twig\Error\SyntaxError;
 use Twig_Environment;
 
 class MailChangePasswordListener
@@ -22,7 +25,7 @@ class MailChangePasswordListener
     public function onMailChangePasswordEvent(EmailChangePasswordEvent $event): void
     {
         $user = $event->getUser();
-        $name = $user->getName();
+        $name = $user->getFullName();
         $email = $user->getEmail();
         $password = $user->getPassword();
 
@@ -37,13 +40,18 @@ class MailChangePasswordListener
         $this->mailer->send($message);
     }
 
-    protected function renderTemplate($name): string
+    protected function renderTemplate($name, $password, $email): string
     {
-		return $this->twig->render(
-            'emails/changePassword.html.twig',
-            [
-                'name' => $name
-            ]
-        );
+        try {
+            return $this->twig->render(
+                'emails/changePassword.html.twig',
+                [
+                    'name' => $name,
+                ]
+            );
+        } catch (LoaderError $e) {
+        } catch (RuntimeError $e) {
+        } catch (SyntaxError $e) {
+        }
     }
 }

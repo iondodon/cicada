@@ -16,7 +16,7 @@ class EmailChangePasswordEvent extends Event
         $this->user = $user;
     }
 
-    public function getUser()
+    public function getUser(): User
     {
         return $this->user;
     }

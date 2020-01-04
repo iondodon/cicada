@@ -36,17 +36,9 @@ class Puzzle
     /**
      * @var Collection
      *
-     * @ORM\ManyToMany(targetEntity="Account", mappedBy="puzzlesEnrolledAt")
+     * @ORM\OneToMany(targetEntity="Contest", mappedBy="puzzle")
      */
-    private $enrolledPlayers;
-
-    /**
-     * @var Collection
-     *
-     * @ORM\ManyToMany(targetEntity="Team", inversedBy="puzzlesEnrolledAt")
-     * @ORM\JoinTable(name="puzzles_teams")
-     */
-    private $enrolledTeams;
+    private $contestsPartOf;
 
     /**
      * @var Collection
@@ -121,6 +113,13 @@ class Puzzle
     private $openSessions;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(type="text", nullable=false)
+     */
+    private $description;
+
+    /**
      * @return integer
      */
     public function getId(): int
@@ -169,37 +168,18 @@ class Puzzle
     /**
      * @return Collection
      */
-    public function getEnrolledPlayers(): Collection
+    public function getContestsPartOf(): Collection
     {
-        return $this->enrolledPlayers;
+        return $this->contestsPartOf;
     }
 
     /**
-     * @param Collection $enrolledPlayers
+     * @param Collection $contestsPartOf
      * @return Puzzle
      */
-    public function setEnrolledPlayers(Collection $enrolledPlayers): Puzzle
+    public function setContestsPartOf(Collection $contestsPartOf): Puzzle
     {
-        $this->enrolledPlayers = $enrolledPlayers;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection
-     */
-    public function getEnrolledTeams(): Collection
-    {
-        return $this->enrolledTeams;
-    }
-
-    /**
-     * @param Collection $enrolledTeams
-     * @return Puzzle
-     */
-    public function setEnrolledTeams(Collection $enrolledTeams): Puzzle
-    {
-        $this->enrolledTeams = $enrolledTeams;
+        $this->contestsPartOf = $contestsPartOf;
 
         return $this;
     }
@@ -359,7 +339,7 @@ class Puzzle
     /**
      * @return DateTime
      */
-    public function getUpdatedAt(): DateTime
+    public function getUpdatedAt(): ?DateTime
     {
         return $this->updatedAt;
     }
@@ -371,6 +351,25 @@ class Puzzle
     public function setUpdatedAt(DateTime $updatedAt): Puzzle
     {
         $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDescription(): string
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param string $description
+     * @return Puzzle
+     */
+    public function setDescription(string $description): Puzzle
+    {
+        $this->description = $description;
 
         return $this;
     }

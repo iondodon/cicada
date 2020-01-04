@@ -17,6 +17,8 @@ class Stage extends React.Component {
         this.toggleStage = this.toggleStage.bind(this);
         this.removeStage = this.removeStage.bind(this);
         this.checkRemoveBtn = this.checkRemoveBtn.bind(this);
+        this.updateDescription = this.updateDescription.bind(this);
+        this.setCode = this.setCode.bind(this);
     }
 
     toggleStage(e){
@@ -33,6 +35,14 @@ class Stage extends React.Component {
 
     removeStage(){
         this.props.removeStage(this);
+    }
+
+    updateDescription(data){
+        this.props.updateDescription(this, data);
+    }
+
+    setCode(code) {
+        this.props.setCode(this, code);
     }
 
     checkRemoveBtn(){
@@ -59,15 +69,21 @@ class Stage extends React.Component {
         return (
             <div className="card stage" key={this.props.key}>
                 <header className="card-header">
-                    <div className="pull-left stage-word">Stage { this.props.stageNumber }</div>
-                    <input type="text" placeholder="code" className={"stage-code pull-left"}/>
+                    <div className="pull-left stage-word">Stage { this.props.level }</div>
+                    <input
+                        type="text"
+                        placeholder="code"
+                        value={this.props.code}
+                        className={"stage-code pull-left"}
+                        onChange={e => this.setCode(e.target.value)}
+                    />
                     <div className={"header-trigger pull-right"} onClick={this.toggleStage}>-</div>
                     { this.checkRemoveBtn() }
                     <p/>
                 </header>
                 <div className="card-content">
                     <CKEditor
-                        data={this.props.startContent}
+                        data={this.props.startDescription}
 
                         onInit={ editor => {
                             // You can store the "editor" and use when it is needed.
@@ -76,7 +92,7 @@ class Stage extends React.Component {
 
                         onChange={ ( event, editor ) => {
                             const data = editor.getData();
-
+                            this.updateDescription(data);
                         } }
 
                         onBlur={ editor => {

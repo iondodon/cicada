@@ -53,8 +53,6 @@ class RegistrationController extends FOSRestController
 
             $account = new Account();
             $account->setUser($user);
-            $account->setPuzzlesSolvedCount(0);
-            $account->setWinedContestCount(0);
             $em->persist($account);
 
             $user->setAccount($account);

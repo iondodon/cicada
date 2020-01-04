@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * PuzzleSession
  * @ORM\Entity
- * @ORM\Table(name="puzzleSessions")
+ * @ORM\Table(name="sessions")
  */
 class PuzzleSession
 {
@@ -26,7 +26,7 @@ class PuzzleSession
     /**
      * @var Account
      *
-     * @ORM\ManyToOne(targetEntity="Account", inversedBy="puzzleSessions")
+     * @ORM\ManyToOne(targetEntity="Account", inversedBy="puzzle_sessions")
      * @ORM\JoinColumn(name="account_id", referencedColumnName="id")
      */
     private $singlePlayer;
@@ -65,7 +65,7 @@ class PuzzleSession
     /**
      * @return Account
      */
-    public function getSinglePlayer(): Account
+    public function getSinglePlayer(): ?Account
     {
         return $this->singlePlayer;
     }
@@ -84,7 +84,7 @@ class PuzzleSession
     /**
      * @return Team
      */
-    public function getTeamPlayer(): Team
+    public function getTeamPlayer(): ?Team
     {
         return $this->teamPlayer;
     }
@@ -122,7 +122,7 @@ class PuzzleSession
     /**
      * @return int
      */
-    public function getCompleteness(): int
+    public function getCompleteness(): ?int
     {
         return $this->completeness;
     }

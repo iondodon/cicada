@@ -36,8 +36,8 @@ class Index extends React.Component {
                     </LeftPanel>
                     <hr/>
 
-                    <div className="card page-content">
-                        <header className="card-header">title</header>
+                    <div className="card page-content" id={"page-content"}>
+                        {/*<header className="card-header">title</header>*/}
                         <div className="card-content">
                             <div className="inner">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita,
                                 quas ex vero enim in doloribus officiis ullam vel nam esse sapiente velit incidunt.
@@ -53,6 +53,7 @@ class Index extends React.Component {
                       display: flex;
                       flex-direction: column;
                       min-width: 75%;
+                      max-width: 75%;
                     }
                 `}</style>
             </Layout>
