@@ -15,7 +15,7 @@ class TeamForm extends React.Component {
         this.state = {
             teamName: "",
             newMemberUsername: "",
-            members: ["iondodon"] //TODO: current logged in user
+            members: []
         };
 
         this.addNewMember = this.addNewMember.bind(this);
@@ -28,9 +28,34 @@ class TeamForm extends React.Component {
         this.fetchUpdateTeam = this.fetchUpdateTeam.bind(this);
     }
 
-    componentDidMount() {
+    async componentDidMount() {
         if(this.props.isFor === "update") {
             this.fetchAndSetState().then()
+        } else {
+            const request = {
+                method: 'GET',
+                mode: 'cors',
+                credentials: "include"
+            };
+
+            try {
+                let response = await fetch(config.API_URL + '/api/account/username', request);
+                let responseJson = await response.json();
+
+                if (response.status === 401) {
+                    document.getElementsByClassName('error-content')[0].innerHTML = 'Unauthorized.';
+                    document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+                } else if (response.status === 200) {
+                    await this.setState({members: [responseJson['username']]});
+                    console.log(this.state);
+                } else {
+                    document.getElementsByClassName('error-content')[0].innerHTML = 'Unknown error. Check the fields and try again.';
+                    document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+                }
+            } catch (e) {
+                document.getElementsByClassName('error-content')[0].innerHTML += e.message;
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            }
         }
     }
 
@@ -41,6 +66,7 @@ class TeamForm extends React.Component {
             array.push(member['user']['username']);
         });
         await this.setState( { members: array } );
+        console.log(this.state);
     }
 
     async fetchAndSetState() {
@@ -64,6 +90,7 @@ class TeamForm extends React.Component {
                 document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
             } else if (response.status === 200) {
                 let responseJson = await response.json();
+                console.log(responseJson);
                 if(this.props.isFor === "update"){
                     this.populateForm(responseJson);
                 }
@@ -314,7 +341,7 @@ class TeamForm extends React.Component {
                                 };
 
                                 return(
-                                    <tr key={member}>
+                                    <tr key={index}>
                                         <td>{index + 1}</td>
                                         <td>{member}</td>
                                         {getRemoveBtn()}

@@ -9,6 +9,7 @@ use App\Entity\Tag;
 use App\Repository\PuzzleRepository;
 use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
+use Exception;
 use FOS\RestBundle\Controller\Annotations\Route;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -115,9 +116,18 @@ class PuzzleController extends AbstractFOSRestController
         $serializer = new Serializer($normalizers, $encoders);
 
         $puzzleJson = $serializer->serialize($puzzle, 'json', [
-            'circular_reference_handler' => static function ($object) {
-                return $object->getId();
-            }
+            'attributes' => [
+                'name',
+                'createdBy' => [
+                    'id',
+                    'user' => ['fullName']
+                ],
+                'createdAt' => ['timestamp'],
+                'difficultyByCreator',
+                'difficultyByStatistics',
+                'tags' => ['id', 'tag'],
+                'description'
+            ]
         ]);
 
         $jsonResponse = new JsonResponse(json_decode($puzzleJson, true));
@@ -130,11 +140,45 @@ class PuzzleController extends AbstractFOSRestController
     }
 
     /**
+     * @Route("/api/puzzles/get-for-update/{id}", name="puzzles.getForUpdate", methods={"GET"})
+     * @param $id
+     * @return Response
+     * @throws Exception
+     */
+    public function getForUpdate($id): Response
+    {
+        $em = $this->getDoctrine()->getManager();
+        $puzzle = $em->getRepository(Puzzle::class)->findOneBy(['id' => $id]);
+
+        if(!$puzzle) {
+            return new JsonResponse(['message' => 'Puzzle not found.'], 404);
+        }
+
+        /** @var Account $account */
+        $account = $this->getUser()->getAccount();
+        if($puzzle->getCreator()->getId() !== $account->getId()) {
+            return new JsonResponse(['message' => 'You can not update this puzzle.'], 400);
+        }
+
+        $encoders = [new JsonEncoder()];
+        $normalizers = [new ObjectNormalizer()];
+        $serializer = new Serializer($normalizers, $encoders);
+
+        $puzzleJson = $serializer->serialize($puzzle, 'json', [
+            'circular_reference_handler' => static function ($object) {
+                return $object->getId();
+            }
+        ]);
+
+        return new JsonResponse(json_decode($puzzleJson, true), 200);
+    }
+
+    /**
      * @Route("/api/puzzles/{id}", name="puzzles.update", methods={"PUT"})
      * @param Request $request
      * @param $id
      * @return Response
-     * @throws \Exception
+     * @throws Exception
      */
     public function update(Request $request, $id): Response
     {

@@ -3,8 +3,9 @@ import React from 'react';
 import '../i18n';
 import { withNamespaces } from 'react-i18next';
 import config from "../configs/keys";
+import StageShow from "./StageShow";
 
-class PuzzleActionBar extends React.Component {
+class PuzzleSession extends React.Component {
 
     constructor(props, {t}) {
         super(props, {t});
@@ -23,7 +24,8 @@ class PuzzleActionBar extends React.Component {
         this.enrollSinglePlayer = this.enrollSinglePlayer.bind(this);
         this.showTeamsMemberOf = this.showTeamsMemberOf.bind(this);
         this.enrollTeam = this.enrollTeam.bind(this);
-        this.leavePuzzle = this.leavePuzzle.bind(this);
+        this.singlePlayerLeavePuzzle = this.singlePlayerLeavePuzzle.bind(this);
+        this.leaveTeam = this.leaveTeam.bind(this);
     }
 
     async showTeamsMemberOf() {
@@ -51,7 +53,7 @@ class PuzzleActionBar extends React.Component {
         }
     }
 
-    async componentDidMount() {
+    async getSession() {
         const request = {
             method: 'GET',
             mode: 'cors',
@@ -75,6 +77,11 @@ class PuzzleActionBar extends React.Component {
         }
     }
 
+
+    async componentDidMount() {
+        await this.getSession();
+    }
+
     async enrollSinglePlayer() {
         const request = {
             method: 'POST',
@@ -89,6 +96,7 @@ class PuzzleActionBar extends React.Component {
                 await this.setState({session: responseJson});
                 await this.setState({enrolled: true});
                 await this.setState({error: false});
+                await this.getSession();
             } else {
                 await this.setState({error: true});
                 await this.setState({errorMessage: responseJson['message']});
@@ -116,6 +124,7 @@ class PuzzleActionBar extends React.Component {
                 await this.setState({showTeamsMemberOf: false});
                 await this.setState({enrolled: true});
                 await this.setState({error: false});
+                await this.getSession();
             } else {
                 await this.setState({error: true});
                 await this.setState({errorMessage: responseJson['message']});
@@ -126,7 +135,7 @@ class PuzzleActionBar extends React.Component {
         }
     }
 
-    async leavePuzzle() {
+    async leaveTeam() {
         const request = {
             method: 'POST',
             mode: 'cors',
@@ -134,7 +143,34 @@ class PuzzleActionBar extends React.Component {
         };
 
         try {
-            let response = await fetch(config.API_URL + '/api/leave-puzzle/' + this.puzzleId, request);
+            let response = await fetch(config.API_URL + '/api/teams/leave-team/' + this.state['session']['teamPlayer']['id'], request);
+            let responseJson = await response.json();
+
+            if(response.status === 200){
+                await this.setState({session: null});
+                await this.setState({showTeamsMemberOf: false});
+                await this.setState({enrolled: false});
+                await this.setState({error: false});
+                await this.getSession();
+            } else {
+                await this.setState({error: true});
+                await this.setState({errorMessage: responseJson['message']});
+            }
+        } catch(e) {
+            await this.setState({error: true});
+            await this.setState({errorMessage: e});
+        }
+    }
+
+    async singlePlayerLeavePuzzle() {
+        const request = {
+            method: 'POST',
+            mode: 'cors',
+            credentials: 'include'
+        };
+
+        try {
+            let response = await fetch(config.API_URL + '/api/single-player-leave-puzzle/' + this.puzzleId, request);
             let responseJson = await response.json();
 
             if(response.status === 200){
@@ -161,7 +197,18 @@ class PuzzleActionBar extends React.Component {
                     if(this.state['enrolled'] && this.state['session']){
                         return(
                             <div>
-                               <h2>progress: {this.state['session']['completeness']} </h2>
+                               <h2>progress: {this.state['session']['completeness']}
+                               /
+                                   {(()=>{
+                                       if(this.state['session']['puzzle'] && this.state['session']['puzzle']['stagesCount']) {
+                                           console.log(this.state['session']['puzzle']['stagesCount']);
+                                           return(this.state['session']['puzzle']['stagesCount']);
+                                       } else {
+                                           return null;
+                                       }
+                                   })()}
+
+                               </h2>
                                 {(()=>{
                                     if(this.state['session']['teamPlayer']){
                                         return(
@@ -177,25 +224,84 @@ class PuzzleActionBar extends React.Component {
                                                         );
                                                     })
                                                 }
-
                                             </div>
                                         );
-                                    } else {
-                                        if(!this.state['showTeamsMemberOf']) {
-                                            return(
-                                                <a onClick={this.showTeamsMemberOf}>Solve with a team</a>
-                                            );
-                                        }
                                     }
                                 })()}
 
-                                <div>
-                                    <a onClick={async () => {
-                                        if(confirm("Are you sure?")) {
-                                            await this.leavePuzzle();
-                                        }
-                                    }} >Leave this puzzle</a>
+
+                                {(()=>{
+                                    if(this.state['session'] && this.state['session']['puzzle'] && this.state['session']['puzzle']['stages']) {
+                                        return(
+                                            <div className={"stages-cards"}>
+                                                <br/>
+                                                <h2>stages:</h2>
+                                                {
+                                                    this.state['session']['puzzle']['stages'].map((stage) => {
+                                                        return(
+                                                            <StageShow
+                                                                current={this.state['session']['completeness'] === stage['level']}
+                                                                key={stage['id']}
+                                                                stageId={stage['id']}
+                                                                sessionId={this.state['session']['id']}
+                                                                level={stage['level']}
+                                                                description={stage['description']}
+                                                                code={stage['code']}
+                                                            />
+                                                        );
+                                                    })
+                                                }
+                                            </div>
+                                        );
+                                    }
+                                })()}
+
+                                {(()=>{
+                                    if(!this.state['session']['teamPlayer'] && !this.state['showTeamsMemberOf']) {
+                                        return(
+                                            <div className={"to-right space-left"}>
+                                                <br/>
+                                                <a onClick={this.showTeamsMemberOf}>Solve with a team</a>
+                                            </div>
+                                        );
+                                    }
+                                })()}
+x`
+                                <div className={'info'}>
+                                    *Team session overrides single player session.
+                                    <br/>
+                                    *If a team session if shown and you want to play solo you have to leave the team.
+                                    <br/>
+                                    *In order to switch to a new team session you have to leave the other
+                                    <br/>
+                                    *Team sessions are prioritized from older teams to younger.
                                 </div>
+
+                                {(()=>{
+                                    if(this.state['session']['teamPlayer']) {
+                                        return(
+                                            <div className={"to-right"}>
+                                                <br/>
+                                                <a onClick={async () => {
+                                                    if(confirm("Are you sure?")) {
+                                                        await this.leaveTeam();
+                                                    }
+                                                }} >Leave team {this.state['session']['teamPlayer']['name']}</a>
+                                            </div>
+                                        );
+                                    } else if(this.state['session']['singlePlayer']) {
+                                        return(
+                                            <div className={"to-right"}>
+                                                <br/>
+                                                <a onClick={async () => {
+                                                    if(confirm("Are you sure?")) {
+                                                        await this.singlePlayerLeavePuzzle();
+                                                    }
+                                                }} >Leave this puzzle</a>
+                                            </div>
+                                        );
+                                    }
+                                })()}
                             </div>
                         );
                     } else {
@@ -248,6 +354,18 @@ class PuzzleActionBar extends React.Component {
                         flex-direction: column;
                     }
                     
+                    .info {
+                      margin-top: 1rem;
+                    }
+                    
+                    .to-right {
+                      float: right;
+                    }
+                    
+                    .space-left {
+                      margin-left: 1rem;
+                    } 
+                    
                     .member-link, .team-link {
                       margin-right: 1rem;
                     }
@@ -263,4 +381,4 @@ class PuzzleActionBar extends React.Component {
     }
 }
 
-export default withNamespaces()(PuzzleActionBar);
+export default withNamespaces()(PuzzleSession);

@@ -17,7 +17,6 @@ class Team
     {
         $this->contestsEnrolledAt = new ArrayCollection();
         $this->puzzleSessions = new ArrayCollection();
-        $this->puzzlesEnrolledAt = new ArrayCollection();
         $this->members = new ArrayCollection();
         $this->requestedMembers = new ArrayCollection();
     }
@@ -53,18 +52,26 @@ class Team
     private $requestedMembers;
 
     /**
-     * @var integer
+     * @var Collection
      *
-     * @ORM\Column(type="integer", nullable=false)
+     * @ORM\ManyToMany(targetEntity="Puzzle")
+     * @ORM\JoinTable(name="team_puzzles_solved",
+     *      joinColumns={@ORM\JoinColumn(name="account_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="puzzle_id", referencedColumnName="id", unique=true)}
+     * )
      */
-    private $puzzlesSolvedCount;
+    private $puzzlesSolved;
 
     /**
-     * @var integer
+     * @var Collection
      *
-     * @ORM\Column(type="integer", nullable=false)
+     * @ORM\ManyToMany(targetEntity="Contest")
+     * @ORM\JoinTable(name="teams_contests_wined",
+     *      joinColumns={@ORM\JoinColumn(name="account_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="contest_id", referencedColumnName="id", unique=true)}
+     * )
      */
-    private $winedContestsCount;
+    private $winedContests;
 
     /**
      * @var Collection
@@ -80,13 +87,6 @@ class Team
      * @ORM\JoinColumn(name="creator_account_id", referencedColumnName="id")
      */
     private $creator;
-
-    /**
-     * @var Collection
-     *
-     * @ORM\ManyToMany(targetEntity="Puzzle", mappedBy="enrolledTeams")
-     */
-    private $puzzlesEnrolledAt;
 
     /**
      * @var Collection
@@ -161,20 +161,54 @@ class Team
     }
 
     /**
+     * @return Collection
+     */
+    public function getPuzzlesSolved(): Collection
+    {
+        return $this->puzzlesSolved;
+    }
+
+    /**
+     * @param Collection $puzzlesSolved
+     * @return Team
+     */
+    public function setPuzzlesSolved($puzzlesSolved): Team
+    {
+        $this->puzzlesSolved = $puzzlesSolved;
+
+        return $this;
+    }
+
+    /**
      * @return int
      */
     public function getPuzzlesSolvedCount(): int
     {
-        return $this->puzzlesSolvedCount;
+        /** @var PuzzleSession  $sess */
+        $puzzlesSolved = 0;
+        foreach ($this->getPuzzleSessions() as $sess) {
+            if($sess->getCompleteness() === $sess->getPuzzle()->getStagesCount()) {
+                $puzzlesSolved++;
+            }
+        }
+        return $puzzlesSolved;
     }
 
     /**
-     * @param int $puzzlesSolvedCount
+     * @return Collection
+     */
+    public function getWinedContests(): Collection
+    {
+        return $this->puzzlesSolved;
+    }
+
+    /**
+     * @param Collection $winedContests
      * @return Team
      */
-    public function setPuzzlesSolvedCount(int $puzzlesSolvedCount): Team
+    public function setWinedContests($winedContests): Team
     {
-        $this->puzzlesSolvedCount = $puzzlesSolvedCount;
+        $this->winedContests = $winedContests;
 
         return $this;
     }
@@ -184,18 +218,7 @@ class Team
      */
     public function getWinedContestsCount(): int
     {
-        return $this->winedContestsCount;
-    }
-
-    /**
-     * @param int $winedContestsCount
-     * @return Team
-     */
-    public function setWinedContestsCount(int $winedContestsCount): Team
-    {
-        $this->winedContestsCount = $winedContestsCount;
-
-        return $this;
+        return count($this->winedContests);
     }
 
     /**
@@ -232,25 +255,6 @@ class Team
     public function setCreator(Account $creator): Team
     {
         $this->creator = $creator;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection
-     */
-    public function getPuzzlesEnrolledAt(): Collection
-    {
-        return $this->puzzlesEnrolledAt;
-    }
-
-    /**
-     * @param Collection $puzzlesEnrolledAt
-     * @return Team
-     */
-    public function setPuzzlesEnrolledAt(Collection $puzzlesEnrolledAt): Team
-    {
-        $this->puzzlesEnrolledAt = $puzzlesEnrolledAt;
 
         return $this;
     }

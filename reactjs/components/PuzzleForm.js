@@ -96,13 +96,16 @@ class PuzzleForm extends React.Component {
         };
 
         try {
-            let response = await fetch(config.API_URL + '/api/puzzles/' + this.puzzleId, request);
+            let response = await fetch(config.API_URL + '/api/puzzles/get-for-update/' + this.puzzleId, request);
 
             if (response.status === 401) {
                 document.getElementsByClassName('error-content')[0].innerHTML = 'Unauthorized.';
                 document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
-            } else if (response.status === 204) {
+            } else if (response.status === 404) {
                 document.getElementsByClassName('error-content')[0].innerHTML = 'Such puzzle doesn\'t exist.';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            } else if (response.status === 400) {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'You can not update this puzzle.';
                 document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
             } else if (response.status === 200) {
                 let responseJson = await response.json();

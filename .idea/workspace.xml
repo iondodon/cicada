@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/89715e81-bc9c-4fca-9f4c-1a8fd517663e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/89715e81-bc9c-4fca-9f4c-1a8fd517663e.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/PuzzleActionBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/PuzzleActionBar.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -272,7 +272,12 @@
       <list>
         <serviceView>
           <treeState>
-            <expand />
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:MySQL - cicada_db@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+            </expand>
             <select />
           </treeState>
         </serviceView>
@@ -485,18 +490,18 @@
       <workItem from="1577632875915" duration="1855000" />
       <workItem from="1577635991890" duration="7340000" />
       <workItem from="1577654413399" duration="6129000" />
-      <workItem from="1577698489299" duration="7071000" />
+      <workItem from="1577698489299" duration="15312000" />
+      <workItem from="1577797624442" duration="840000" />
+      <workItem from="1577899292437" duration="9181000" />
+      <workItem from="1577912064311" duration="596000" />
+      <workItem from="1577962852517" duration="17331000" />
+      <workItem from="1577986428376" duration="5110000" />
+      <workItem from="1578051020353" duration="4977000" />
+      <workItem from="1578071874614" duration="5567000" />
+      <workItem from="1578082909175" duration="7909000" />
+      <workItem from="1578142032348" duration="4867000" />
     </task>
     <servers />
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -521,10 +526,10 @@
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
-    <state x="215" y="22" width="901" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1576788604088">
+    <state x="215" y="22" width="901" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1577989238037">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
-    <state x="215" y="22" width="901" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.735@0.0.1366.735" timestamp="1576788604088" />
+    <state x="215" y="22" width="901" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.735@0.0.1366.735" timestamp="1577989238037" />
     <state x="366" y="100" width="624" height="532" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1577635921701">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
@@ -533,25 +538,37 @@
       <screen x="0" y="0" width="1366" height="735" />
     </state>
     <state x="416" y="117" width="524" height="498" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.735@0.0.1366.735" timestamp="1577354412028" />
-    <state x="416" y="124" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1577354124673">
+    <state x="416" y="124" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1577970038689">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
-    <state x="416" y="124" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.735@0.0.1366.735" timestamp="1577354124673" />
+    <state x="416" y="124" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.735@0.0.1366.735" timestamp="1577970038689" />
     <state x="473" y="253" width="409" height="253" key="ComposerInitDialogKey" timestamp="1576771032968">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
     <state x="473" y="253" width="409" height="253" key="ComposerInitDialogKey/0.0.1366.735@0.0.1366.735" timestamp="1576771032968" />
-    <state x="522" y="293" width="312" height="147" key="NewPhpFileDialog" timestamp="1577215790630">
+    <state x="522" y="293" width="312" height="147" key="NewPhpFileDialog" timestamp="1577967439879">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
-    <state x="522" y="293" width="312" height="147" key="NewPhpFileDialog/0.0.1366.735@0.0.1366.735" timestamp="1577215790630" />
+    <state x="522" y="293" width="312" height="147" key="NewPhpFileDialog/0.0.1366.735@0.0.1366.735" timestamp="1577967439879" />
     <state x="441" y="215" width="474" height="303" key="cloudConfig.PluginsDialog" timestamp="1576942580841">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
     <state x="441" y="215" width="474" height="303" key="cloudConfig.PluginsDialog/0.0.1366.735@0.0.1366.735" timestamp="1576942580841" />
-    <state x="346" y="56" width="672" height="678" key="search.everywhere.popup" timestamp="1577704654623">
+    <state x="572" y="264" width="307" height="228" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1578148929400">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
-    <state x="346" y="56" width="672" height="678" key="search.everywhere.popup/0.0.1366.735@0.0.1366.735" timestamp="1577704654623" />
+    <state x="572" y="264" width="307" height="228" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1366.735@0.0.1366.735" timestamp="1578148929400" />
+    <state x="347" y="160" width="672" height="677" key="run.anything.popup" timestamp="1577990044495">
+      <screen x="0" y="0" width="1366" height="735" />
+    </state>
+    <state x="347" y="160" width="672" height="677" key="run.anything.popup/0.0.1366.735@0.0.1366.735" timestamp="1577990044495" />
+    <state x="346" y="56" width="672" height="678" key="search.everywhere.popup" timestamp="1578088078213">
+      <screen x="0" y="0" width="1366" height="735" />
+    </state>
+    <state x="346" y="56" width="672" height="678" key="search.everywhere.popup/0.0.1366.735@0.0.1366.735" timestamp="1578088078213" />
+    <state x="408" y="207" width="540" height="319" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1577903621124">
+      <screen x="0" y="0" width="1366" height="735" />
+    </state>
+    <state x="408" y="207" width="540" height="319" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.0.1366.735@0.0.1366.735" timestamp="1577903621124" />
   </component>
 </project>

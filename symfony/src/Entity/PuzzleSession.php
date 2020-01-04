@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * PuzzleSession
  * @ORM\Entity
- * @ORM\Table(name="puzzleSessions")
+ * @ORM\Table(name="sessions")
  */
 class PuzzleSession
 {
@@ -26,7 +26,7 @@ class PuzzleSession
     /**
      * @var Account
      *
-     * @ORM\ManyToOne(targetEntity="Account", inversedBy="puzzleSessions")
+     * @ORM\ManyToOne(targetEntity="Account", inversedBy="puzzle_sessions")
      * @ORM\JoinColumn(name="account_id", referencedColumnName="id")
      */
     private $singlePlayer;

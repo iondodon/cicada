@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use App\Repository\AccountRepository;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use FOS\RestBundle\Controller\Annotations\Route;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
@@ -27,9 +27,10 @@ class AccountController extends AbstractFOSRestController
             'attributes' => [
                 'user' => ['username', 'email', 'fullName'],
                 'puzzlesSolvedCount',
-                'puzzlesEnrolledAt' => ['name'],
                 'winedContestsCount',
-                'puzzleSessions' => ['puzzle' => 'name'],
+                'puzzleSessions' => [
+                    'puzzle' => ['name']
+                ],
                 'createdPuzzles' => ['name'],
                 'createdTeams' => ['name'],
                 'createdContests' => ['name'],
@@ -113,5 +114,15 @@ class AccountController extends AbstractFOSRestController
             Response::HTTP_OK,
             ['content-type' => 'text/html']
         );
+    }
+
+    /**
+     * @Route("/api/account/username", name="account.username", methods={"GET"})
+     * @return JsonResponse
+     */
+    public function getUsername() : JsonResponse
+    {
+        $username = $this->getUser()->getUsername();
+        return new JsonResponse(['username' => $username], 200);
     }
 }

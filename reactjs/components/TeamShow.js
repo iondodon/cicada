@@ -134,17 +134,6 @@ class ContestShow extends React.Component {
 
                 <h2>creator: {this.state['creator']['user']['fullName']}</h2>
 
-                <h2>puzzles enrolled at: </h2>
-                <div className={'links'}>
-                    {
-                        this.state['puzzlesEnrolledAt'].map((puzzle) => {
-                            return(
-                                <a key={puzzle['name']} className={'link'}>{puzzle['name']}</a>
-                            )
-                        })
-                    }
-                </div>
-
                 <h2>contests enrolled at: </h2>
                 <div className={'links'}>
                     {
