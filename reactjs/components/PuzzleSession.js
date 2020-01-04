@@ -267,6 +267,16 @@ class PuzzleSession extends React.Component {
                                     }
                                 })()}
 
+                                <div className={'info'}>
+                                    *Team session overrides single player session.
+                                    <br/>
+                                    *If a team session if shown and you want to play solo you have to leave the team.
+                                    <br/>
+                                    *In order to switch to a new team session you have to leave the other
+                                    <br/>
+                                    *Team sessions are prioritized from older teams to younger.
+                                </div>
+
                                 {(()=>{
                                     if(this.state['session']['teamPlayer']) {
                                         return(
@@ -276,7 +286,7 @@ class PuzzleSession extends React.Component {
                                                     if(confirm("Are you sure?")) {
                                                         await this.leaveTeam();
                                                     }
-                                                }} >Leave team</a>
+                                                }} >Leave team {this.state['session']['teamPlayer']['name']}</a>
                                             </div>
                                         );
                                     } else if(this.state['session']['singlePlayer']) {
@@ -342,6 +352,10 @@ class PuzzleSession extends React.Component {
                     .alert {
                         display: flex;
                         flex-direction: column;
+                    }
+                    
+                    .info {
+                      margin-top: 1rem;
                     }
                     
                     .to-right {
