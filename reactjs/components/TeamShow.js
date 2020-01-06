@@ -131,6 +131,7 @@ class ContestShow extends React.Component {
                         })
                     }
                 </div>
+                //TODO: cancel session
 
                 <h2>creator: {this.state['creator']['user']['fullName']}</h2>
 

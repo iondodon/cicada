@@ -5,6 +5,7 @@ import { withNamespaces } from 'react-i18next';
 import config from "../configs/keys";
 import { timeConverter } from '../utlis/utlis';
 import ContestActionBar from "./ContestActionBar";
+import Link from 'next/link'
 
 class ContestShow extends React.Component {
 
@@ -111,7 +112,11 @@ class ContestShow extends React.Component {
                 </div>
 
                 <h2>name: {this.state['contestName']} </h2>
-                <h2>puzzle: {this.state['puzzleName']} </h2>
+
+                <Link href={{pathname: '/puzzle/show', query: {puzzleId: this.state['puzzleId']} }}>
+                    <h2>puzzle: <a> {this.state['puzzleName']} </a> </h2>
+                </Link>{' '}
+
                 <h2>starts at: {this.state['startsAt']} </h2>
                 <h2>finishes at: {this.state['finishesAt']} </h2>
                 <h2>created: {this.state['createdAt']} </h2>

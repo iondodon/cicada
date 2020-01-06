@@ -331,12 +331,12 @@ class PuzzleSessionController extends AbstractFOSRestController
 
         $enrolledPlayers = $contest->getEnrolledPlayers();
         if(!$enrolledPlayers->contains($account)) {
-            return new JsonResponse(['message' => 'Player not found among the players enrolled for this contest.'], 400);
+            return new JsonResponse(['message' => 'Player not found among players enrolled for this contest.'], 400);
         }
         $enrolledPlayers->removeElement($account);
         $contest->setEnrolledPlayers($enrolledPlayers);
         $em->persist($contest);
-        
+
         return $this->singlePlayerLeavePuzzle($contest->getPuzzle()->getId());
     }
 }

@@ -4,6 +4,7 @@ import Router from 'next/router';
 import '../i18n';
 import { withNamespaces } from 'react-i18next';
 import config from "../configs/keys";
+import Link from 'next/link';
 
 class MyAccount extends React.Component {
 
@@ -529,7 +530,11 @@ class MyAccount extends React.Component {
                     <div className={"list"}>
                         {
                             this.state['account']['contestsEnrolledAt'].map((contest) => {
-                                return(<div>{ contest['name'] }</div>)
+                                return(
+                                    <Link key={contest['id']} href={{ pathname: '/contest/show', query: {contestId: contest['id'] } }}>
+                                        <a>{ contest['name'] }</a>
+                                    </Link>
+                                )
                             })
                         }
                     </div>
@@ -537,7 +542,11 @@ class MyAccount extends React.Component {
                     <div className={"list"}>
                         {
                             this.state['account']['createdContests'].map((contest) => {
-                                return(<a>{ contest['name'] }</a>)
+                                return(
+                                    <Link key={contest['id']} href={{ pathname: '/contest/show', query: {contestId: contest['id']} }}>
+                                        <a>{ contest['name'] }</a>
+                                    </Link>
+                                )
                             })
                         }
                     </div>
@@ -545,7 +554,11 @@ class MyAccount extends React.Component {
                     <div className={"list"}>
                         {
                             this.state['account']['createdPuzzles'].map((puzzle) => {
-                                return(<a key={puzzle['id']}>{ puzzle['name'] }</a>)
+                                return(
+                                    <Link key={puzzle['id']} href={{ pathname: '/puzzle/show', query: {puzzleId: puzzle['id']} }}>
+                                        <a>{ puzzle['name'] }</a>
+                                    </Link>
+                                )
                             })
                         }
                     </div>
@@ -553,7 +566,11 @@ class MyAccount extends React.Component {
                     <div className={"list"}>
                         {
                             this.state['account']['createdTeams'].map((team) => {
-                                return(<a key={team['id']}>{ team['name'] }</a>)
+                                return(
+                                    <Link key={team['id']} href={{ pathname: '/team/show', query: {teamId: team['id']} }}>
+                                        <a>{ team['name'] }</a>
+                                    </Link>
+                                )
                             })
                         }
                     </div>
@@ -561,7 +578,11 @@ class MyAccount extends React.Component {
                     <div className={"list"}>
                         {
                             this.state['account']['puzzleSessions'].map((session) => {
-                                return(<a key={session['id']}>{ session['puzzle']['name'] }</a>)
+                                return(
+                                    <Link key={session['id']} href={{ pathname: '/puzzle/show', query: {puzzleId: session['puzzle']['id']} }}>
+                                        <a>{ session['puzzle']['name'] }</a>
+                                    </Link>
+                                )
                             })
                         }
                     </div>
@@ -569,7 +590,11 @@ class MyAccount extends React.Component {
                     <div className={"list"}>
                         {
                             this.state['account']['teamsMemberOf'].map((team) => {
-                                return(<a key={team['id']}>{ team['name'] }</a>)
+                                return(
+                                    <Link key={team['id']} href={{ pathname: '/team/show', query: {teamId: team['id']} }}>
+                                        <a>{ team['name'] }</a>
+                                    </Link>
+                                )
                             })
                         }
                     </div>
