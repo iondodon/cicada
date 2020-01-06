@@ -4,6 +4,7 @@ import '../i18n';
 import { withNamespaces } from 'react-i18next';
 import config from "../configs/keys";
 import { timeConverter } from '../utlis/utlis';
+import ContestActionBar from "./ContestActionBar";
 
 class ContestShow extends React.Component {
 
@@ -54,6 +55,7 @@ class ContestShow extends React.Component {
     async prepareState(responseJson) {
         await this.setState({contestName: responseJson['name']});
         await this.setState({puzzleName: responseJson['puzzle']['name']});
+        await this.setState({puzzleId: responseJson['puzzle']['id']});
         await this.setState({startsAt: timeConverter(parseInt(responseJson['startsAt']['timestamp']))});
         await this.setState({finishesAt: timeConverter(parseInt(responseJson['finishesAt']['timestamp']))});
 
@@ -136,6 +138,12 @@ class ContestShow extends React.Component {
                         })
                     }
                 </div>
+
+                {(()=>{
+                    if(this.state['puzzleId']) {
+                        return(<ContestActionBar puzzleId={this.state['puzzleId']} />);
+                    }
+                })()}
 
                 { /*language=SCSS*/ }
                 <style jsx>{`

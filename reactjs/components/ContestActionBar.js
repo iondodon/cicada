@@ -5,7 +5,7 @@ import { withNamespaces } from 'react-i18next';
 import config from "../configs/keys";
 import StageShow from "./StageShow";
 
-class PuzzleSession extends React.Component {
+class ContestActionBar extends React.Component {
 
     constructor(props, {t}) {
         super(props, {t});
@@ -19,12 +19,14 @@ class PuzzleSession extends React.Component {
         };
 
         const urlParams = new URLSearchParams(window.location.search);
-        this.puzzleId = urlParams.get('puzzleId');
+        this.contestId = urlParams.get('contestId');
+
+        this.puzzleId = this.props.puzzleId;
 
         this.enrollSinglePlayer = this.enrollSinglePlayer.bind(this);
         this.showTeamsMemberOf = this.showTeamsMemberOf.bind(this);
         this.enrollTeam = this.enrollTeam.bind(this);
-        this.singlePlayerLeavePuzzle = this.singlePlayerLeavePuzzle.bind(this);
+        this.singlePlayerLeaveContest = this.singlePlayerLeaveContest.bind(this);
         this.leaveTeam = this.leaveTeam.bind(this);
     }
 
@@ -60,6 +62,8 @@ class PuzzleSession extends React.Component {
             credentials: 'include'
         };
 
+        console.log(this.puzzleId);
+
         try {
             let response = await fetch(config.API_URL + '/api/puzzle/get-session/' + this.puzzleId, request);
             let responseJson = await response.json();
@@ -90,7 +94,7 @@ class PuzzleSession extends React.Component {
         };
 
         try {
-            let response = await fetch(config.API_URL + '/api/puzzle/enroll-single-player/' + this.puzzleId, request);
+            let response = await fetch(config.API_URL + '/api/contest/enroll-single-player/' + this.contestId, request);
             let responseJson = await response.json();
             if(response.status === 200){
                 await this.setState({session: responseJson});
@@ -116,7 +120,7 @@ class PuzzleSession extends React.Component {
 
         let teamId = event.target.getAttribute('value');
         try {
-            let response = await fetch(config.API_URL + '/api/puzzle/enroll-team/' + this.puzzleId + '/' + teamId, request);
+            let response = await fetch(config.API_URL + '/api/contest/enroll-team/' + this.contestId + '/' + teamId, request);
             let responseJson = await response.json();
 
             if(response.status === 200){
@@ -162,7 +166,7 @@ class PuzzleSession extends React.Component {
         }
     }
 
-    async singlePlayerLeavePuzzle() {
+    async singlePlayerLeaveContest() {
         const request = {
             method: 'POST',
             mode: 'cors',
@@ -170,7 +174,7 @@ class PuzzleSession extends React.Component {
         };
 
         try {
-            let response = await fetch(config.API_URL + '/api/single-player-leave-puzzle/' + this.puzzleId, request);
+            let response = await fetch(config.API_URL + '/api/single-player-leave-contest/' + this.puzzleId, request);
             let responseJson = await response.json();
 
             if(response.status === 200){
@@ -197,18 +201,18 @@ class PuzzleSession extends React.Component {
                     if(this.state['enrolled'] && this.state['session']){
                         return(
                             <div>
-                               <h2>progress: {this.state['session']['completeness']}
-                               /
-                                   {(()=>{
-                                       if(this.state['session']['puzzle'] && this.state['session']['puzzle']['stagesCount']) {
-                                           console.log(this.state['session']['puzzle']['stagesCount']);
-                                           return(this.state['session']['puzzle']['stagesCount']);
-                                       } else {
-                                           return null;
-                                       }
-                                   })()}
+                                <h2>progress: {this.state['session']['completeness']}
+                                    /
+                                    {(()=>{
+                                        if(this.state['session']['puzzle'] && this.state['session']['puzzle']['stagesCount']) {
+                                            console.log(this.state['session']['puzzle']['stagesCount']);
+                                            return(this.state['session']['puzzle']['stagesCount']);
+                                        } else {
+                                            return null;
+                                        }
+                                    })()}
 
-                               </h2>
+                                </h2>
                                 {(()=>{
                                     if(this.state['session']['teamPlayer']){
                                         return(
@@ -295,9 +299,9 @@ class PuzzleSession extends React.Component {
                                                 <br/>
                                                 <a onClick={async () => {
                                                     if(confirm("Are you sure?")) {
-                                                        await this.singlePlayerLeavePuzzle();
+                                                        await this.singlePlayerLeaveContest();
                                                     }
-                                                }} >Leave this puzzle</a>
+                                                }} >Leave this contest</a>
                                             </div>
                                         );
                                     }
@@ -381,4 +385,4 @@ class PuzzleSession extends React.Component {
     }
 }
 
-export default withNamespaces()(PuzzleSession);
+export default withNamespaces()(ContestActionBar);

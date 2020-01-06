@@ -138,7 +138,7 @@ class ContestController extends AbstractFOSRestController
         $contestJson = $serializer->serialize($contest, 'json', [
             'attributes' =>[
                 'name',
-                'puzzle' => ['name'],
+                'puzzle' => ['id', 'name'],
                 'code',
                 'startsAt' => ['timestamp'],
                 'finishesAt' => ['timestamp'],
@@ -176,7 +176,7 @@ class ContestController extends AbstractFOSRestController
         $contestJson = $serializer->serialize($contest, 'json', [
             'attributes' =>[
                 'name',
-                'puzzle' => ['name'],
+                'puzzle' => ['id', 'name'],
                 'startsAt' => ['timestamp'],
                 'finishesAt' => ['timestamp'],
                 'createdAt' => ['timestamp'],
@@ -234,12 +234,11 @@ class ContestController extends AbstractFOSRestController
 
     /**
      * @Route("/api/contests/destroy/{id}", name="contests.destroy", methods={"DELETE"})
-     * @param Request $request
      * @param $id
-     * @return Response
+     * @return JsonResponse
      */
-    public function destroy(Request $request, int $id): Response
+    public function destroy(int $id): Response
     {
-
+        return new JsonResponse();
     }
 }
