@@ -5,7 +5,8 @@ import { withNamespaces } from 'react-i18next';
 import config from "../configs/keys";
 import { timeConverter } from '../utlis/utlis';
 import ContestActionBar from "./ContestActionBar";
-import Link from 'next/link'
+import Link from 'next/link';
+import {getCookie} from "../utlis/utlis";
 
 class ContestShow extends React.Component {
 
@@ -16,6 +17,11 @@ class ContestShow extends React.Component {
         this.state = {
             loading: true,
         };
+
+        this.fetchSetState = this.fetchSetState.bind(this);
+        this.prepareState = this.prepareState.bind(this);
+        this.closeError = this.closeError.bind(this);
+        this.deleteContest = this.deleteContest.bind(this);
     }
 
     async componentDidMount() {
@@ -54,14 +60,15 @@ class ContestShow extends React.Component {
     }
 
     async prepareState(responseJson) {
+        await this.setState({contestId: responseJson['id']});
         await this.setState({contestName: responseJson['name']});
         await this.setState({puzzleName: responseJson['puzzle']['name']});
         await this.setState({puzzleId: responseJson['puzzle']['id']});
         await this.setState({startsAt: timeConverter(parseInt(responseJson['startsAt']['timestamp']))});
         await this.setState({finishesAt: timeConverter(parseInt(responseJson['finishesAt']['timestamp']))});
-
         await this.setState({createdAt: timeConverter(parseInt(responseJson['createdAt']['timestamp']))});
         await this.setState({createdBy: responseJson['createdBy']['user']['fullName']});
+        await this.setState({userId: responseJson['createdBy']['id']});
         await this.setState({enrolledPlayers: responseJson['enrolledPlayers']});
         await this.setState({enrolledTeams: responseJson['enrolledTeams']});
 
@@ -71,6 +78,37 @@ class ContestShow extends React.Component {
 
     closeError(e) {
         e.target.parentElement.setAttribute('style', 'display: none;');
+    }
+
+    async deleteContest() {
+        const urlParams = new URLSearchParams(window.location.search);
+        this.contestId = urlParams.get('contestId');
+
+        const request = {
+            method: 'DELETE',
+            mode: 'cors',
+            credentials: "include"
+        };
+
+        try {
+            let response = await fetch(config.API_URL + '/api/contests/destroy/' + this.contestId, request);
+
+            if (response.status === 401) {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Unauthorized.';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            } else if (response.status === 204) {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Such contest doesn\'t exist.';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            } else if (response.status === 200) {
+                document.location = '/';
+            } else {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Unknown error. Check the fields and try again.';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            }
+        } catch (e) {
+            document.getElementsByClassName('error-content')[0].innerHTML += e.message;
+            document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+        }
     }
 
     render(){
@@ -150,11 +188,38 @@ class ContestShow extends React.Component {
                     }
                 })()}
 
+                {(()=>{
+                    if(this.state['userId'] == getCookie('userId')) {
+                        return(
+                            <div className="alert alert-info">
+                                <div className="btn-group">
+                                    <button className="btn btn-primary btn-ghost update-btn"
+                                            onClick={()=>{
+                                                document.location = '/contest/update?contestId=' + this.state['contestId'];
+                                            }}
+                                    >Update</button>
+                                    <button className="btn btn-error btn-ghost"
+                                            onClick={async ()=>{
+                                                if(confirm("Are you sure?")) {
+                                                    await this.deleteContest();
+                                                }
+                                            }}
+                                    >Delete</button>
+                                </div>
+                            </div>
+                        );
+                    }
+                })()}
+
                 { /*language=SCSS*/ }
                 <style jsx>{`
                   .contest-data {
                     display: flex;
                     flex-direction: column;
+                  }
+                  
+                  .update-btn {
+                    margin-right: 1rem;
                   }
                   
                   .links {

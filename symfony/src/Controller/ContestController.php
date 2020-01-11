@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Account;
 use App\Entity\Contest;
+use App\Entity\Team;
 use DateTime;
 use FOS\RestBundle\Controller\Annotations\Route;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
@@ -175,12 +176,13 @@ class ContestController extends AbstractFOSRestController
 
         $contestJson = $serializer->serialize($contest, 'json', [
             'attributes' =>[
+                'id',
                 'name',
                 'puzzle' => ['id', 'name'],
                 'startsAt' => ['timestamp'],
                 'finishesAt' => ['timestamp'],
                 'createdAt' => ['timestamp'],
-                'createdBy' => ['user' => ['fullName']],
+                'createdBy' => ['id', 'user' => ['fullName']],
                 'enrolledPlayers' => ['user' => ['fullName']],
                 'enrolledTeams' => ['name']
             ]
@@ -235,10 +237,21 @@ class ContestController extends AbstractFOSRestController
     /**
      * @Route("/api/contests/destroy/{id}", name="contests.destroy", methods={"DELETE"})
      * @param $id
-     * @return JsonResponse
+     * @return Response
      */
     public function destroy(int $id): Response
     {
-        return new JsonResponse();
+        $em = $this->getDoctrine()->getManager();
+
+        /** @var Contest $contest */
+        $contest = $em->getRepository(Contest::class)->find($id);
+        $em->remove($contest);
+        $em->flush();
+
+        return new Response(
+            'Contest deleted.',
+            Response::HTTP_OK,
+            ['content-type' => 'text/html']
+        );
     }
 }

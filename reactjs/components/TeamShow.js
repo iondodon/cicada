@@ -101,7 +101,6 @@ class ContestShow extends React.Component {
             document.getElementsByClassName('error-content')[0].innerHTML += e.message;
             document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
         }
-
     }
 
     closeError(e) {

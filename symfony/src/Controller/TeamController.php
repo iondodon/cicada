@@ -175,7 +175,7 @@ class TeamController extends AbstractFOSRestController
         foreach ($team->getPuzzleSessions() as $sess) {
             $em->remove($sess);
         }
-        
+
         $em->remove($team);
         $em->flush();
 
