@@ -3,6 +3,8 @@ import React from "react";
 import '../i18n';
 import { withNamespaces } from 'react-i18next';
 import config from "../configs/keys";
+import {getCookie} from "../utlis/utlis";
+import Link from 'next/link'
 
 class ContestShow extends React.Component {
 
@@ -13,6 +15,11 @@ class ContestShow extends React.Component {
         this.state = {
             loading: true,
         };
+
+        this.deleteTeam = this.deleteTeam.bind(this);
+        this.fetchSetState = this.fetchSetState.bind(this);
+        this.prepareState = this.prepareState.bind(this);
+        this.closeError = this.closeError.bind(this);
     }
 
     async componentDidMount() {
@@ -51,7 +58,9 @@ class ContestShow extends React.Component {
     }
 
     async prepareState(responseJson) {
+        await this.setState({teamId: responseJson['id']});
         await this.setState({teamName: responseJson['name']});
+        await this.setState({userId: responseJson['creator']['id']});
         await this.setState({members: responseJson['members']});
         await this.setState({puzzlesSolvedCount: responseJson['puzzlesSolvedCount']});
         await this.setState({winedContestsCount: responseJson['winedContestsCount']});
@@ -61,6 +70,38 @@ class ContestShow extends React.Component {
         await this.setState({contestsEnrolledAt: responseJson['contestsEnrolledAt']});
 
         await this.setState({loading: false});
+    }
+
+    async deleteTeam() {
+        const urlParams = new URLSearchParams(window.location.search);
+        this.teamId = urlParams.get('teamId');
+
+        const request = {
+            method: 'DELETE',
+            mode: 'cors',
+            credentials: "include"
+        };
+
+        try {
+            let response = await fetch(config.API_URL + '/api/teams/destroy/' + this.teamId, request);
+
+            if (response.status === 401) {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Unauthorized.';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            } else if (response.status === 204) {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Such team doesn\'t exist.';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            } else if (response.status === 200) {
+                document.location = '/';
+            } else {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Unknown error. Check the fields and try again.';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            }
+        } catch (e) {
+            document.getElementsByClassName('error-content')[0].innerHTML += e.message;
+            document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+        }
+
     }
 
     closeError(e) {
@@ -126,11 +167,14 @@ class ContestShow extends React.Component {
                     {
                         this.state['puzzleSessions'].map((session) => {
                             return(
-                                <a key={session['puzzle']['name']} className={'link'}>{session['puzzle']['name']}</a>
+                                <Link href={{pathname: '/puzzle/show', query: {puzzleId: session['puzzle']['id']} }}>
+                                    <a key={session['puzzle']['name']} className={'link'}>{session['puzzle']['name']}</a>
+                                </Link>
                             )
                         })
                     }
                 </div>
+
                 //TODO: cancel session
 
                 <h2>creator: {this.state['creator']['user']['fullName']}</h2>
@@ -140,11 +184,36 @@ class ContestShow extends React.Component {
                     {
                         this.state['contestsEnrolledAt'].map((contest) => {
                             return(
-                                <a key={contest['name']} className={'link'}>{contest['name']}</a>
+                                <Link href={{pathname: '/contest/show', query: {contestId: contest['id']} }}>
+                                    <a key={contest['name']} className={'link'}>{contest['name']}</a>
+                                </Link>
                             )
                         })
                     }
                 </div>
+
+                {(()=>{
+                    if(this.state['userId'] == getCookie('userId')) {
+                        return(
+                            <div className="alert alert-info">
+                                <div className="btn-group">
+                                    <button className="btn btn-primary btn-ghost update-btn"
+                                            onClick={()=>{
+                                                document.location = '/team/update?teamId=' + this.state['teamId'];
+                                            }}
+                                    >Update</button>
+                                    <button className="btn btn-error btn-ghost"
+                                            onClick={async ()=>{
+                                                if(confirm("Are you sure?")) {
+                                                    await this.deleteTeam();
+                                                }
+                                            }}
+                                    >Delete</button>
+                                </div>
+                            </div>
+                        );
+                    }
+                })()}
 
                 { /*language=SCSS*/ }
                 <style jsx>{`
@@ -152,6 +221,11 @@ class ContestShow extends React.Component {
                     display: flex;
                     flex-direction: column;
                   }
+                  
+                  .update-btn {
+                    margin-right: 1rem;
+                  }
+                  
                   
                   .links {
                     margin-bottom: 2rem;
