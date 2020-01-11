@@ -228,4 +228,34 @@ class TeamController extends AbstractFOSRestController
 
         return new JsonResponse(null, 200);
     }
+
+    /**
+     * @Route("/api/my_teams", name="teams.my_teams", methods={"GET"})
+     * @return JsonResponse
+     */
+    public function getMyTeams(): JsonResponse
+    {
+        /** @var Account $account */
+        $account = $this->getUser()->getAccount();
+
+        $encoders = [new JsonEncoder()];
+        $normalizers = [new ObjectNormalizer()];
+        $serializer = new Serializer($normalizers, $encoders);
+
+        $contestsJson = $serializer->serialize($account->getCreatedTeams(), 'json', [
+            'attributes' => [
+                'id',
+                'name',
+                'members' => [
+                    'id',
+                    'user' => ['fullName']
+                ],
+                'winedContestsCount',
+                'creator' => ['user' => ['fullName']],
+                'puzzlesSolvedCount'
+            ]
+        ]);
+
+        return new JsonResponse(json_decode($contestsJson, true));
+    }
 }
