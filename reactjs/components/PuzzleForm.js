@@ -134,20 +134,20 @@ class PuzzleForm extends React.Component {
         }
     }
 
-    addNewStage(){
+    async addNewStage(){
         if(this.state.stagesCount + 1 > 30){
             alert("No more than 30 stages.");
             return;
         }
 
-        this.setState({
+        await this.setState({
             stages: [...this.state.stages, {
                 level: this.state.stagesCount,
                 description: 'Description of stage ' + this.state.stagesCount + '...'
             }]
         });
 
-        this.setState({stagesCount: this.state.stagesCount + 1});
+        await this.setState({stagesCount: this.state.stagesCount + 1});
     }
 
     findInAttr(array, attr, value) {
