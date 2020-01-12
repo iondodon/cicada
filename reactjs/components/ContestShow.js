@@ -71,6 +71,8 @@ class ContestShow extends React.Component {
         await this.setState({userId: responseJson['createdBy']['id']});
         await this.setState({enrolledPlayers: responseJson['enrolledPlayers']});
         await this.setState({enrolledTeams: responseJson['enrolledTeams']});
+        await this.setState({singlePlayerWinner: responseJson['singlePlayerWinner']});
+        await this.setState({teamWinner: responseJson['teamWinner']});
 
         await this.setState({loading: false});
         console.log(this.state);
@@ -181,6 +183,9 @@ class ContestShow extends React.Component {
                         })
                     }
                 </div>
+
+                <h2>single player winner: {this.state['singlePlayerWinner']} </h2>
+                <h2>team winner: {this.state['teamWinner']} </h2>
 
                 {(()=>{
                     if(this.state['puzzleId']) {

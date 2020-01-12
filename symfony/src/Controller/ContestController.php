@@ -4,7 +4,6 @@ namespace App\Controller;
 
 use App\Entity\Account;
 use App\Entity\Contest;
-use App\Entity\Team;
 use DateTime;
 use FOS\RestBundle\Controller\Annotations\Route;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
@@ -184,7 +183,15 @@ class ContestController extends AbstractFOSRestController
                 'createdAt' => ['timestamp'],
                 'createdBy' => ['id', 'user' => ['fullName']],
                 'enrolledPlayers' => ['user' => ['fullName']],
-                'enrolledTeams' => ['name']
+                'enrolledTeams' => ['name'],
+                'singlePlayerWinner' => [
+                    'singlePlayerWinner' => [
+                        'user' => ['fullName']
+                    ]
+                ],
+                'teamWinner' => [
+                    'teamWinner' => ['name']
+                ]
             ]
         ]);
         $jsonResponse = new JsonResponse(json_decode($contestJson, true));
