@@ -174,7 +174,7 @@ class ContestActionBar extends React.Component {
         };
 
         try {
-            let response = await fetch(config.API_URL + '/api/single-player-leave-contest/' + this.puzzleId, request);
+            let response = await fetch(config.API_URL + '/api/single-player-leave-contest/' + this.contestId, request);
             let responseJson = await response.json();
 
             if(response.status === 200){
@@ -272,6 +272,9 @@ class ContestActionBar extends React.Component {
                                 })()}
 
                                 <div className={'info'}>
+                                    *If you want to be signed up for this contest you have to leave the previous puzzle sessions
+                                    that you have for the puzzle related to the contest.
+                                    <br/>
                                     *Team session overrides single player session.
                                     <br/>
                                     *If a team session if shown and you want to play solo you have to leave the team.

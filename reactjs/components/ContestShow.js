@@ -178,14 +178,36 @@ class ContestShow extends React.Component {
                     {
                         this.state['enrolledTeams'].map((team) => {
                             return(
-                                <a key={team['name']} className={'link'}>{team['name']}</a>
+                                <Link  key={team['id']} href={{pathname: '/team/show', query: {teamId: team['id']} }}>
+                                    <a className={'link'}>{team['name']}</a>
+                                </Link>
                             )
                         })
                     }
                 </div>
 
-                <h2>single player winner: {this.state['singlePlayerWinner']} </h2>
-                <h2>team winner: {this.state['teamWinner']} </h2>
+                {(()=>{
+                    if(this.state['singlePlayerWinner'] && this.state['singlePlayerWinner']['user']) {
+                        return(
+                            <h2>
+                                single player winner: <a>{this.state['singlePlayerWinner']['user']['fullName']}</a>
+                            </h2>
+                        );
+                    }
+                })()}
+
+                {(()=>{
+                    if(this.state['teamWinner'] && this.state['teamWinner']['name']) {
+                        return(
+                            <h2>
+                                team winner:{' '}
+                                <Link  key={this.state['teamWinner']['id']} href={{pathname: '/team/show', query: {teamId: this.state['teamWinner']['id']} }}>
+                                    <a>{this.state['teamWinner']['name']} </a>
+                                </Link>
+                            </h2>
+                        );
+                    }
+                })()}
 
                 {(()=>{
                     if(this.state['puzzleId']) {

@@ -183,15 +183,11 @@ class ContestController extends AbstractFOSRestController
                 'createdAt' => ['timestamp'],
                 'createdBy' => ['id', 'user' => ['fullName']],
                 'enrolledPlayers' => ['user' => ['fullName']],
-                'enrolledTeams' => ['name'],
+                'enrolledTeams' => ['id', 'name'],
                 'singlePlayerWinner' => [
-                    'singlePlayerWinner' => [
                         'user' => ['fullName']
-                    ]
                 ],
-                'teamWinner' => [
-                    'teamWinner' => ['name']
-                ]
+                'teamWinner' => ['id', 'name']
             ]
         ]);
         $jsonResponse = new JsonResponse(json_decode($contestJson, true));
