@@ -3,9 +3,11 @@
 namespace App\Controller;
 
 use App\Entity\Account;
+use App\Entity\Contest;
 use App\Entity\Puzzle;
 use App\Entity\PuzzleSession;
 use App\Entity\Stage;
+use DateTime;
 use FOS\RestBundle\Controller\Annotations\Route;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -17,6 +19,7 @@ class StageController extends AbstractFOSRestController
      * @Route("/api/stage/check-code", name="stage.check-code", methods={"POST"})
      * @param Request $request
      * @return JsonResponse
+     * @throws \Exception
      */
     public function checkCode(Request $request): JsonResponse
     {
@@ -54,6 +57,45 @@ class StageController extends AbstractFOSRestController
             $session->setCompleteness($session->getCompleteness() + 1);
         }
         $em->persist($session);
+
+        if($session->getCompleteness() === $session->getPuzzle()->getStagesCount()) {
+            $singlePlayer = $session->getSinglePlayer();
+            $teamPlayer = $session->getTeamPlayer();
+
+            if($singlePlayer) {
+                $contests = $singlePlayer->getContestsEnrolledAt();
+                /** @var Contest $contest */
+                foreach ($contests as $contest) {
+                    if($contest->getPuzzle()->getId() === $session->getPuzzle()->getId()) {
+                        $currentTime = new DateTime();
+                        if($contest->getFinishesAt()->getTimestamp() > $currentTime->getTimestamp()
+                            && $contest->getStartsAt()->getTimestamp() < $currentTime->getTimestamp()) {
+                            if(!$contest->getSinglePlayerWinner() && !$contest->getTeamWinner()) {
+                                $contest->setSinglePlayerWinner($singlePlayer);
+                                $em->persist($contest);
+                            }
+                        }
+                    }
+                }
+            }
+
+            if($teamPlayer) {
+                $contests = $teamPlayer->getContestsEnrolledAt();
+                /** @var Contest $contest */
+                foreach ($contests as $contest) {
+                    if($contest->getPuzzle()->getId() === $session->getPuzzle()->getId()) {
+                        $currentTime = new DateTime();
+                        if($contest->getFinishesAt()->getTimestamp() > $currentTime->getTimestamp()
+                            && $contest->getStartsAt()->getTimestamp() < $currentTime->getTimestamp()) {
+                            if(!$contest->getSinglePlayerWinner() && !$contest->getTeamWinner()) {
+                                $contest->setTeamWinner($teamPlayer);
+                                $em->persist($contest);
+                            }
+                        }
+                    }
+                }
+            }
+        }
 
         $em->flush();
         return new JsonResponse(['message' => 'Valid'], 200);

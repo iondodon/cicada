@@ -117,14 +117,15 @@ class TeamController extends AbstractFOSRestController
 
         $teamJson = $serializer->serialize($team, 'json', [
             'attributes' => [
+                'id',
                 'name',
                 'members' => ['user' => ['fullName', 'username']],
                 'puzzlesSolvedCount',
                 'winedContestsCount',
-                'puzzleSessions' => ['puzzle' => ['name']],
-                'creator' => ['user' => ['fullName']],
-                'puzzlesEnrolledAt' => ['name'],
-                'contestsEnrolledAt' => ['name']
+                'puzzleSessions' => ['id', 'puzzle' => ['id', 'name']],
+                'creator' => ['id', 'user' => ['fullName']],
+                'puzzlesEnrolledAt' => ['id', 'name'],
+                'contestsEnrolledAt' => ['id', 'name']
             ]
         ]);
 
@@ -168,7 +169,12 @@ class TeamController extends AbstractFOSRestController
     public function destroy(int $id): Response
     {
         $em = $this->getDoctrine()->getManager();
+
+        /** @var Team $team */
         $team = $em->getRepository(Team::class)->findOneBy(['id' => $id]);
+        foreach ($team->getPuzzleSessions() as $sess) {
+            $em->remove($sess);
+        }
 
         $em->remove($team);
         $em->flush();
@@ -227,5 +233,35 @@ class TeamController extends AbstractFOSRestController
         $em->flush();
 
         return new JsonResponse(null, 200);
+    }
+
+    /**
+     * @Route("/api/my_teams", name="teams.my_teams", methods={"GET"})
+     * @return JsonResponse
+     */
+    public function getMyTeams(): JsonResponse
+    {
+        /** @var Account $account */
+        $account = $this->getUser()->getAccount();
+
+        $encoders = [new JsonEncoder()];
+        $normalizers = [new ObjectNormalizer()];
+        $serializer = new Serializer($normalizers, $encoders);
+
+        $contestsJson = $serializer->serialize($account->getCreatedTeams(), 'json', [
+            'attributes' => [
+                'id',
+                'name',
+                'members' => [
+                    'id',
+                    'user' => ['fullName']
+                ],
+                'winedContestsCount',
+                'creator' => ['user' => ['fullName']],
+                'puzzlesSolvedCount'
+            ]
+        ]);
+
+        return new JsonResponse(json_decode($contestsJson, true));
     }
 }

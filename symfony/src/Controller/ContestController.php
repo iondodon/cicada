@@ -138,7 +138,7 @@ class ContestController extends AbstractFOSRestController
         $contestJson = $serializer->serialize($contest, 'json', [
             'attributes' =>[
                 'name',
-                'puzzle' => ['name'],
+                'puzzle' => ['id', 'name'],
                 'code',
                 'startsAt' => ['timestamp'],
                 'finishesAt' => ['timestamp'],
@@ -175,14 +175,19 @@ class ContestController extends AbstractFOSRestController
 
         $contestJson = $serializer->serialize($contest, 'json', [
             'attributes' =>[
+                'id',
                 'name',
-                'puzzle' => ['name'],
+                'puzzle' => ['id', 'name'],
                 'startsAt' => ['timestamp'],
                 'finishesAt' => ['timestamp'],
                 'createdAt' => ['timestamp'],
-                'createdBy' => ['user' => ['fullName']],
+                'createdBy' => ['id', 'user' => ['fullName']],
                 'enrolledPlayers' => ['user' => ['fullName']],
-                'enrolledTeams' => ['name']
+                'enrolledTeams' => ['id', 'name'],
+                'singlePlayerWinner' => [
+                        'user' => ['fullName']
+                ],
+                'teamWinner' => ['id', 'name']
             ]
         ]);
         $jsonResponse = new JsonResponse(json_decode($contestJson, true));
@@ -234,12 +239,22 @@ class ContestController extends AbstractFOSRestController
 
     /**
      * @Route("/api/contests/destroy/{id}", name="contests.destroy", methods={"DELETE"})
-     * @param Request $request
      * @param $id
      * @return Response
      */
-    public function destroy(Request $request, int $id): Response
+    public function destroy(int $id): Response
     {
+        $em = $this->getDoctrine()->getManager();
 
+        /** @var Contest $contest */
+        $contest = $em->getRepository(Contest::class)->find($id);
+        $em->remove($contest);
+        $em->flush();
+
+        return new Response(
+            'Contest deleted.',
+            Response::HTTP_OK,
+            ['content-type' => 'text/html']
+        );
     }
 }

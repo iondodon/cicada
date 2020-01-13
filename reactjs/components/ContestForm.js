@@ -316,16 +316,16 @@ class ContestForm extends React.Component {
                     <input name="finishesAt" type="text" id="finishesAt"/>
                 </label>
 
-                <label htmlFor="private" className={"is-private btn btn-success btn-ghost minus"}>Private
-                    <input
-                        type="checkbox"
-                        className={"is-private-ck-box"}
-                        checked={this.state.isPrivate}
-                        onChange = {async (e) => {
-                            await this.setState({isPrivate: e.target.checked});
-                        }}
-                    />
-                </label>
+                {/*<label htmlFor="private" className={"is-private btn btn-success btn-ghost minus"}>Private*/}
+                {/*    <input*/}
+                {/*        type="checkbox"*/}
+                {/*        className={"is-private-ck-box"}*/}
+                {/*        checked={this.state.isPrivate}*/}
+                {/*        onChange = {async (e) => {*/}
+                {/*            await this.setState({isPrivate: e.target.checked});*/}
+                {/*        }}*/}
+                {/*    />*/}
+                {/*</label>*/}
 
                 {
                     (() => {

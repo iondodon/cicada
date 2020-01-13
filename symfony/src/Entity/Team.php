@@ -19,6 +19,7 @@ class Team
         $this->puzzleSessions = new ArrayCollection();
         $this->members = new ArrayCollection();
         $this->requestedMembers = new ArrayCollection();
+        $this->contestsWon = new ArrayCollection();
     }
 
     /**
@@ -65,13 +66,9 @@ class Team
     /**
      * @var Collection
      *
-     * @ORM\ManyToMany(targetEntity="Contest")
-     * @ORM\JoinTable(name="teams_contests_wined",
-     *      joinColumns={@ORM\JoinColumn(name="account_id", referencedColumnName="id")},
-     *      inverseJoinColumns={@ORM\JoinColumn(name="contest_id", referencedColumnName="id", unique=true)}
-     * )
+     * @ORM\OneToMany(targetEntity="Contest", mappedBy="teamWinner")
      */
-    private $winedContests;
+    private $contestsWon;
 
     /**
      * @var Collection
@@ -203,25 +200,6 @@ class Team
     }
 
     /**
-     * @param Collection $winedContests
-     * @return Team
-     */
-    public function setWinedContests($winedContests): Team
-    {
-        $this->winedContests = $winedContests;
-
-        return $this;
-    }
-
-    /**
-     * @return int
-     */
-    public function getWinedContestsCount(): int
-    {
-        return count($this->winedContests);
-    }
-
-    /**
      * @return Collection
      */
     public function getPuzzleSessions(): Collection
@@ -276,5 +254,32 @@ class Team
         $this->contestsEnrolledAt = $contestsEnrolledAt;
 
         return $this;
+    }
+
+    /**
+     * @return Collection
+     */
+    public function getContestsWon(): Collection
+    {
+        return $this->contestsWon;
+    }
+
+    /**
+     * @param Collection $contestsWon
+     * @return Team
+     */
+    public function setContestsWon(Collection $contestsWon): Team
+    {
+        $this->contestsWon = $contestsWon;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getWinedContestsCount(): int
+    {
+        return count($this->contestsWon);
     }
 }

@@ -24,6 +24,7 @@ class Account
         $this->notificationsSent = new ArrayCollection();
         $this->notificationsReceived = new ArrayCollection();
         $this->requestingTeams = new ArrayCollection();
+        $this->contestsWon = new ArrayCollection();
     }
 
     /**
@@ -44,13 +45,9 @@ class Account
     /**
      * @var Collection
      *
-     * @ORM\ManyToMany(targetEntity="Contest")
-     * @ORM\JoinTable(name="accounts_contests_wined",
-     *      joinColumns={@ORM\JoinColumn(name="account_id", referencedColumnName="id")},
-     *      inverseJoinColumns={@ORM\JoinColumn(name="contest_id", referencedColumnName="id", unique=true)}
-     * )
+     * @ORM\OneToMany(targetEntity="Contest", mappedBy="singlePlayerWinner")
      */
-    private $winedContests;
+    private $contestsWon;
 
     /**
      * @var Collection
@@ -154,33 +151,6 @@ class Account
             }
         }
         return $puzzlesSolved;
-    }
-
-    /**
-     * @return Collection
-     */
-    public function getWinedContests(): Collection
-    {
-        return $this->winedContests;
-    }
-
-    /**
-     * @param Collection $winedContests
-     * @return Account
-     */
-    public function setWinedContests($winedContests): Account
-    {
-        $this->winedContests = $winedContests;
-
-        return $this;
-    }
-
-    /**
-     * @return int
-     */
-    public function getWinedContestsCount(): int
-    {
-        return count($this->winedContests);
     }
 
     /**
@@ -352,5 +322,32 @@ class Account
         $this->notificationsReceived = $notificationsReceived;
 
         return $this;
+    }
+
+    /**
+     * @return Collection
+     */
+    public function getContestsWon(): Collection
+    {
+        return $this->contestsWon;
+    }
+
+    /**
+     * @param Collection $contestsWon
+     * @return Account
+     */
+    public function setContestsWon(Collection $contestsWon): Account
+    {
+        $this->contestsWon = $contestsWon;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getWinedContestsCount(): int
+    {
+        return count($this->contestsWon);
     }
 }

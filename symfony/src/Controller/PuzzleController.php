@@ -3,7 +3,9 @@
 namespace App\Controller;
 
 use App\Entity\Account;
+use App\Entity\Contest;
 use App\Entity\Puzzle;
+use App\Entity\PuzzleSession;
 use App\Entity\Stage;
 use App\Entity\Tag;
 use App\Repository\PuzzleRepository;
@@ -117,10 +119,11 @@ class PuzzleController extends AbstractFOSRestController
 
         $puzzleJson = $serializer->serialize($puzzle, 'json', [
             'attributes' => [
+                'id',
                 'name',
                 'createdBy' => [
                     'id',
-                    'user' => ['fullName']
+                    'user' => ['id', 'fullName']
                 ],
                 'createdAt' => ['timestamp'],
                 'difficultyByCreator',
@@ -156,7 +159,7 @@ class PuzzleController extends AbstractFOSRestController
 
         /** @var Account $account */
         $account = $this->getUser()->getAccount();
-        if($puzzle->getCreator()->getId() !== $account->getId()) {
+        if($puzzle->getCreatedBy()->getId() !== $account->getId()) {
             return new JsonResponse(['message' => 'You can not update this puzzle.'], 400);
         }
 
@@ -256,16 +259,31 @@ class PuzzleController extends AbstractFOSRestController
 
     /**
      * @Route("/api/puzzles/destroy/{id}", name="puzzles.destroy", methods={"DELETE"})
-     * @param Request $request
      * @param $id
      * @return Response
      */
-    public function destroy(Request $request, int $id): Response
+    public function destroy(int $id): Response
     {
         $em = $this->getDoctrine()->getManager();
+        /** @var Puzzle $puzzle */
         $puzzle = $em->getRepository(Puzzle::class)->findOneBy(['id' => $id]);
 
+        foreach($puzzle->getStages() as $stage) {
+            $em->remove($stage);
+        }
+
+        $sessions = $em->getRepository(PuzzleSession::class)->findBy(['puzzle' => $puzzle]);
+        foreach ($sessions as $sess) {
+            $em->remove($sess);
+        }
+
+        $sessions = $em->getRepository(Contest::class)->findBy(['puzzle' => $puzzle]);
+        foreach ($sessions as $sess) {
+            $em->remove($sess);
+        }
+
         $em->remove($puzzle);
+
         $em->flush();
 
         return new Response(

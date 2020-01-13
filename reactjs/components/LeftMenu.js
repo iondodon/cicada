@@ -27,9 +27,6 @@ class LeftMenu extends React.Component {
                             <a className="menu-item active">
                                 Find puzzle <div className="pull-right">»</div>
                             </a>
-                            <a className="menu-item">
-                                Created teams <div className="pull-right">»</div>
-                            </a>
                             <Link href={"/account/teams_member_of"}>
                                 <a className="menu-item">
                                     Teams member of<div className="pull-right">»</div>
@@ -38,6 +35,11 @@ class LeftMenu extends React.Component {
                             <Link href={"/account/my_contests"}>
                                 <a className="menu-item">
                                     Created contests <div className="pull-right">»</div>
+                                </a>
+                            </Link>{' '}
+                            <Link href={"/account/my_teams"}>
+                                <a className="menu-item">
+                                    Created teams <div className="pull-right">»</div>
                                 </a>
                             </Link>{' '}
                             <a className="menu-item">
