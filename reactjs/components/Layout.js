@@ -48,6 +48,9 @@ class Layout extends React.Component {
 
                     <script src="../static/jquery-datetimepicker/jquery.js"/>
                     <script src="../static/jquery-datetimepicker/build/jquery.datetimepicker.full.js"/>
+
+                    <script src="/reactjs/node_modules/topbar/topbar.js"/>
+
                 </Head>
                 
                 <img id={"loading-gif"} className={"loading-gif"} src="/static/Pulse-1s-244px-croped.gif" alt="loading"/>
@@ -64,12 +67,14 @@ class Layout extends React.Component {
                     html, body {
                         height: 100%;
                         margin: 0;
+                        
+                        
                     }
                     
                     .loading-gif {
                         position: fixed;
                         top: -4px;
-                        right: 1.5%;
+                        right: 2rem;
                         display: none;
                     }
                     
