@@ -4,13 +4,32 @@ import TopMenu from "./TopMenu";
 import Footer from "./Footer";
 import React from "react";
 import {withNamespaces} from "react-i18next";
+import Router from "next/router";
+
+Router.events.on('routeChangeStart', (url) => {
+    document.getElementById("loading-gif").setAttribute('style', 'display: block;');
+});
+
+
+Router.events.on('routeChangeComplete', (url) => {
+    document.getElementById("loading-gif").setAttribute('style', 'display: none;');
+});
 
 class Layout extends React.Component {
 
     constructor(props, {t}){
         super(props, {t});
         this.t = t;
+
+        this.state = {
+            loading: true
+        }
     }
+
+    async componentDidMount() {
+        await this.setState({loading: false});
+    }
+
 
     render(){
 
@@ -29,7 +48,12 @@ class Layout extends React.Component {
 
                     <script src="../static/jquery-datetimepicker/jquery.js"/>
                     <script src="../static/jquery-datetimepicker/build/jquery.datetimepicker.full.js"/>
+
+                    <script src="/reactjs/node_modules/topbar/topbar.js"/>
+
                 </Head>
+                
+                <img id={"loading-gif"} className={"loading-gif"} src="/static/Pulse-1s-244px-croped.gif" alt="loading"/>
 
                 <TopMenu/>
 
@@ -43,6 +67,15 @@ class Layout extends React.Component {
                     html, body {
                         height: 100%;
                         margin: 0;
+                        
+                        
+                    }
+                    
+                    .loading-gif {
+                        position: fixed;
+                        top: -4px;
+                        right: 2rem;
+                        display: none;
                     }
                     
                     hr {
