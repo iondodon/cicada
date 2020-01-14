@@ -27,7 +27,7 @@ class ContestForm extends React.Component {
         // this.populateContestForm = this.populateContestForm(this);
     }
 
-    componentDidMount() {
+    async componentDidMount() {
         let component = this;
 
         $('#startsAt').datetimepicker({
