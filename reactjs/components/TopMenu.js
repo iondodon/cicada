@@ -1,15 +1,34 @@
 import React from 'react';
-
 import '../i18n';
 import { withNamespaces } from 'react-i18next';
-
 import Link from 'next/link';
+import Router from "next/router";
+import config from "../configs/keys";
+import {deleteAllCookies, getCookie} from '../utlis/utlis';
 
 class TopMenu extends React.Component {
 
     constructor(props, {t}){
         super(props, {t});
         this.t = t;
+
+        this.logout = this.logout.bind(this);
+    }
+
+
+    async logout() {
+        const request = {
+            method: 'POST',
+            mode: 'cors',
+            credentials: "include"
+        };
+
+        let response = await fetch(config.API_URL + '/api/logout', request);
+
+        if (response.status === 200) {
+            Router.push('/');
+            deleteAllCookies();
+        }
     }
 
     render(){
@@ -40,6 +59,16 @@ class TopMenu extends React.Component {
                     <Link href={"/notifications"}>
                         <a className="menu-item">Notifications</a>
                     </Link>{' '}
+                    {/*{(()=>{*/}
+                    {/*    if(getCookie('userId').length > 0) {*/}
+                    {/*        return(*/}
+                    {/*            <div>*/}
+                    {/*                |*/}
+                    {/*                <a onClick={this.logout} className="menu-item">Logout</a>*/}
+                    {/*            </div>*/}
+                    {/*        );*/}
+                    {/*    }*/}
+                    {/*})()}*/}
                 </div>
 
                 { /*language=SCSS*/ }

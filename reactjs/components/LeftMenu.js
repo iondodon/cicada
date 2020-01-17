@@ -43,7 +43,7 @@ class LeftMenu extends React.Component {
                                 </a>
                             </Link>{' '}
                             {/*<a className="menu-item">*/}
-                            {/*    Contest enrolled at <div className="pull-right">»</div>*/}
+                            {/* enrolled at <div className="pull-right">»</div>*/}
                             {/*</a>*/}
                             <Link href={"/puzzle/list"}>
                                 <a className="menu-item">
