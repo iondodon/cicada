@@ -45,8 +45,8 @@ class TopMenu extends React.Component {
         let response = await fetch(config.API_URL + '/api/logout', request);
 
         if (response.status === 200) {
-            Router.push('/');
             deleteAllCookies();
+            Router.push("/welcome");
         }
     }
 
@@ -71,11 +71,11 @@ class TopMenu extends React.Component {
                         if(this.state['loggedIn']) {
                             return(
                                 <div className={"topbar-right-action"}>
-                                <Link href={"/notifications"}>
-                                    <a className="menu-item">Notifications</a>
-                                </Link>{' '}
-                                |
-                                <a onClick={this.logout} className="menu-item">Logout</a>
+                                    <Link href={"/notifications"}>
+                                        <a className="menu-item">Notifications</a>
+                                    </Link>{' '}
+                                    |
+                                    <a onClick={this.logout} className="menu-item">Logout</a>
                                 </div>
                             );
                         } else {
