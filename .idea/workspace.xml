@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/cicada" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cicada.pub" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/LeftMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/LeftMenu.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactjs/components/TopMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/TopMenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/utlis/utlis.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/utlis/utlis.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony/src/Controller/HelloController.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Controller/HelloController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony/src/Controller/LogoutController.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Controller/LogoutController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -515,7 +507,8 @@
       <workItem from="1578909265983" duration="11670000" />
       <workItem from="1579022334654" duration="11531000" />
       <workItem from="1579108764252" duration="8097000" />
-      <workItem from="1579284683272" duration="7824000" />
+      <workItem from="1579284683272" duration="8115000" />
+      <workItem from="1579348145033" duration="2824000" />
     </task>
     <servers />
   </component>
