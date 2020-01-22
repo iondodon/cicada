@@ -21,10 +21,23 @@ class PuzzleShow extends React.Component {
         this.prepareState = this.prepareState.bind(this);
         this.closeError = this.closeError.bind(this);
         this.deletePuzzle = this.deletePuzzle.bind(this);
+        this.getUsername = this.getUsername.bind(this);
     }
 
     async componentDidMount() {
+        this.getUsername().then();
         await this.fetchSetState();
+    }
+
+    async getUsername() {
+        const request = {
+            method: 'GET',
+            mode: 'cors',
+            credentials: "include"
+        };
+
+        let response = await fetch(config.API_URL + '/api/account/username', request);
+        await this.setState({loggedIn: response.status === 200});
     }
 
     async fetchSetState() {
@@ -176,8 +189,11 @@ class PuzzleShow extends React.Component {
                 <h2>description:</h2>
                 <div className={"description"} dangerouslySetInnerHTML={{__html:this.state['description']}} />
 
-
-                <PuzzleSession/>
+                {(()=>{
+                    if(getCookie('userId').length > 0) {
+                        return(<PuzzleSession/>);
+                    }
+                })()}
 
                 {(()=>{
                     if(this.state['userId'] == getCookie('userId')) {

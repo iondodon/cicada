@@ -17,6 +17,7 @@ class LogoutController extends AbstractFOSRestController
     {
         $response = new Response();
         $response->headers->clearCookie('BEARER');
+        $response->headers->clearCookie('userId');
         $response->setStatusCode(200);
         return $response;
     }

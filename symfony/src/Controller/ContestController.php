@@ -165,9 +165,9 @@ class ContestController extends AbstractFOSRestController
         /** @var Contest $contest */
         $contest = $em->getRepository(Contest::class)->findOneBy(['id' => $id]);
 
-        if($contest->getCreatedBy()->getId() !== $this->getUser()->getAccount()->getId()){
-            return new JsonResponse('Unauthorized', 401);
-        }
+//        if($contest->getCreatedBy()->getId() !== $this->getUser()->getAccount()->getId()){
+//            return new JsonResponse('Unauthorized', 401);
+//        }
 
         $encoders = [new JsonEncoder()];
         $normalizers = [new ObjectNormalizer()];

@@ -4,7 +4,11 @@
     <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/dictionaries/ionut.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/ionut.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/Layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/components/PuzzleShow.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/PuzzleShow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/components/TopMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/TopMenu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Controller/ContestController.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Controller/ContestController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Controller/LogoutController.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Controller/LogoutController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -509,7 +513,9 @@
       <workItem from="1579022334654" duration="11531000" />
       <workItem from="1579108764252" duration="8097000" />
       <workItem from="1579284683272" duration="8115000" />
-      <workItem from="1579348145033" duration="8572000" />
+      <workItem from="1579348145033" duration="9558000" />
+      <workItem from="1579642357835" duration="737000" />
+      <workItem from="1579702667375" duration="3809000" />
     </task>
     <servers />
   </component>

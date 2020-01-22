@@ -4,7 +4,7 @@ import { withNamespaces } from 'react-i18next';
 import Link from 'next/link';
 import Router from "next/router";
 import config from "../configs/keys";
-import {deleteAllCookies, getCookie} from '../utlis/utlis';
+import { getCookie } from "../utlis/utlis";
 
 class TopMenu extends React.Component {
 
@@ -45,7 +45,6 @@ class TopMenu extends React.Component {
         let response = await fetch(config.API_URL + '/api/logout', request);
 
         if (response.status === 200) {
-            deleteAllCookies();
             Router.push("/welcome");
         }
     }
