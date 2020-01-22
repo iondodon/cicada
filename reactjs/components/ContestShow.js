@@ -217,7 +217,7 @@ class ContestShow extends React.Component {
                         }
                     }
                 })()}
-                
+
                 {(()=>{
                     if(this.state['userId'] == getCookie('userId')) {
                         return(
