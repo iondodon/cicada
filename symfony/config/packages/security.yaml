@@ -29,7 +29,14 @@ security:
         - { path: ^/api/token, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/api/register, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/api/forgotPassword, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/api/puzzles, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/api/contests, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/api/contests/get/^, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/api/^, role: ROLE_USER }
+        - { path: ^/api/my_puzzles, role: ROLE_USER }
+        - { path: ^/api/puzzles/create, role: ROLE_USER }
+        - { path: ^/api/puzzles/^, role: ROLE_USER }
+        - { path: ^/api/puzzles/destroy/^, role: ROLE_USER }
         - { path: ^/api, roles: ROLE_USER }
-
           # form_login: ~
             # https://symfony.com/doc/current/cookbook/security/form_login_setup.html

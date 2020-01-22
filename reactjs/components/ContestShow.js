@@ -7,6 +7,7 @@ import { timeConverter } from '../utlis/utlis';
 import ContestActionBar from "./ContestActionBar";
 import Link from 'next/link';
 import {getCookie} from "../utlis/utlis";
+import PuzzleSession from "./PuzzleSession";
 
 class ContestShow extends React.Component {
 
@@ -210,8 +211,10 @@ class ContestShow extends React.Component {
                 })()}
 
                 {(()=>{
-                    if(this.state['puzzleId']) {
-                        return(<ContestActionBar puzzleId={this.state['puzzleId']} />);
+                    if(getCookie('userId').length > 0) {
+                        if(this.state['puzzleId']) {
+                            return(<ContestActionBar puzzleId={this.state['puzzleId']} />);
+                        }
                     }
                 })()}
 

@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/ionut.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/ionut.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/Layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/components/ContestShow.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/ContestShow.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -509,7 +504,12 @@
       <workItem from="1578865830007" duration="1333000" />
       <workItem from="1578909213610" duration="21000" />
       <workItem from="1578909265983" duration="11670000" />
-      <workItem from="1579022334654" duration="10014000" />
+      <workItem from="1579022334654" duration="11531000" />
+      <workItem from="1579108764252" duration="8097000" />
+      <workItem from="1579284683272" duration="8115000" />
+      <workItem from="1579348145033" duration="9558000" />
+      <workItem from="1579642357835" duration="737000" />
+      <workItem from="1579702667375" duration="4196000" />
     </task>
     <servers />
   </component>
@@ -548,10 +548,10 @@
       <screen x="0" y="0" width="1366" height="735" />
     </state>
     <state x="416" y="117" width="524" height="498" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.735@0.0.1366.735" timestamp="1577354412028" />
-    <state x="416" y="124" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1578758156017">
+    <state x="416" y="124" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1579285968216">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
-    <state x="416" y="124" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.735@0.0.1366.735" timestamp="1578758156017" />
+    <state x="416" y="124" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.735@0.0.1366.735" timestamp="1579285968216" />
     <state x="473" y="253" width="409" height="253" key="ComposerInitDialogKey" timestamp="1576771032968">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
@@ -584,10 +584,10 @@
       <screen x="0" y="0" width="1366" height="735" />
     </state>
     <state x="572" y="264" width="307" height="228" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1366.735@0.0.1366.735" timestamp="1578826177807" />
-    <state x="347" y="160" width="672" height="677" key="run.anything.popup" timestamp="1579023689547">
+    <state x="347" y="160" width="672" height="677" key="run.anything.popup" timestamp="1579112135253">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
-    <state x="347" y="160" width="672" height="677" key="run.anything.popup/0.0.1366.735@0.0.1366.735" timestamp="1579023689547" />
+    <state x="347" y="160" width="672" height="677" key="run.anything.popup/0.0.1366.735@0.0.1366.735" timestamp="1579112135253" />
     <state x="346" y="56" width="672" height="678" key="search.everywhere.popup" timestamp="1578321917895">
       <screen x="0" y="0" width="1366" height="735" />
     </state>

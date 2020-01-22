@@ -1,15 +1,52 @@
 import React from 'react';
-
 import '../i18n';
 import { withNamespaces } from 'react-i18next';
-
 import Link from 'next/link';
+import Router from "next/router";
+import config from "../configs/keys";
+import { getCookie } from "../utlis/utlis";
 
 class TopMenu extends React.Component {
 
     constructor(props, {t}){
         super(props, {t});
         this.t = t;
+
+        this.state = {
+            loggedIn: false
+        };
+
+        this.logout = this.logout.bind(this);
+        this.getUsername = this.getUsername.bind(this);
+    }
+
+    componentDidMount() {
+        this.getUsername().then();
+    }
+
+    async getUsername() {
+        const request = {
+            method: 'GET',
+            mode: 'cors',
+            credentials: "include"
+        };
+
+        let response = await fetch(config.API_URL + '/api/account/username', request);
+        await this.setState({loggedIn: response.status === 200});
+    }
+
+    async logout() {
+        const request = {
+            method: 'POST',
+            mode: 'cors',
+            credentials: "include"
+        };
+
+        let response = await fetch(config.API_URL + '/api/logout', request);
+
+        if (response.status === 200) {
+            Router.push("/welcome");
+        }
     }
 
     render(){
@@ -29,21 +66,40 @@ class TopMenu extends React.Component {
                 <img src={'../static/cicada.png'} className={"logo"}  alt="true" />
 
                 <div className="menu right-menu">
-                    <Link href={"/login"}>
-                        <a className="menu-item">Login</a>
-                    </Link>{' '}
-                    |
-                    <Link href={"/signup"}>
-                        <a className="menu-item">SignUp</a>
-                    </Link>{' '}
-                    |
-                    <Link href={"/notifications"}>
-                        <a className="menu-item">Notifications</a>
-                    </Link>{' '}
+                    {(()=>{
+                        if(this.state['loggedIn']) {
+                            return(
+                                <div className={"topbar-right-action"}>
+                                    <Link href={"/notifications"}>
+                                        <a className="menu-item">Notifications</a>
+                                    </Link>{' '}
+                                    |
+                                    <a onClick={this.logout} className="menu-item">Logout</a>
+                                </div>
+                            );
+                        } else {
+                            return(
+                                <div className={"topbar-right-action"}>
+                                    <Link href={"/login"}>
+                                        <a className="menu-item">Login</a>
+                                    </Link>{' '}
+                                    |
+                                    <Link href={"/signup"}>
+                                        <a className="menu-item">SignUp</a>
+                                    </Link>{' '}
+                                </div>
+                            );
+                        }
+                    })()}
                 </div>
 
                 { /*language=SCSS*/ }
                 <style jsx>{`
+                      .topbar-right-action {
+                        display: flex;
+                        flex-direction: row;
+                      }
+
                       .right-menu {
                         display: flex;
                         flex-direction: row;

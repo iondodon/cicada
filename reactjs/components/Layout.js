@@ -7,12 +7,12 @@ import {withNamespaces} from "react-i18next";
 import Router from "next/router";
 
 Router.events.on('routeChangeStart', (url) => {
-    document.getElementById("loading-gif").setAttribute('style', 'display: block;');
+    document.getElementById("page-loading").setAttribute('style', 'display: block;');
 });
 
 
 Router.events.on('routeChangeComplete', (url) => {
-    document.getElementById("loading-gif").setAttribute('style', 'display: none;');
+    document.getElementById("page-loading").setAttribute('style', 'display: none;');
 });
 
 class Layout extends React.Component {
@@ -52,8 +52,8 @@ class Layout extends React.Component {
                     <script src="/reactjs/node_modules/topbar/topbar.js"/>
 
                 </Head>
-                
-                <img id={"loading-gif"} className={"loading-gif"} src="/static/Pulse-1s-244px-croped.gif" alt="loading"/>
+
+                <div id={"page-loading"} className={"page-loading"}>loading...</div>
 
                 <TopMenu/>
 
@@ -63,24 +63,28 @@ class Layout extends React.Component {
                 </Container>
 
                 { /*language=SCSS*/ }
-                <style jsx>{`            
-                    html, body {
-                        height: 100%;
-                        margin: 0;
-                        
-                        
-                    }
-                    
-                    .loading-gif {
-                        position: fixed;
-                        top: -4px;
-                        right: 2rem;
-                        display: none;
-                    }
-                    
-                    hr {
-                        text-align: center;
-                    }
+                <style jsx>{`
+                  html, body {
+                    height: 100%;
+                    margin: 0;
+
+
+                  }
+
+                  .page-loading {
+                    position: fixed;
+                    top: 0;
+                    width: 100%;
+                    height: 1.3rem;
+                    background-color: #009b07;
+                    text-align: center;
+                    display: none;
+                  }
+
+
+                  hr {
+                    text-align: center;
+                  }
                 `}
                 </style>
             </div>
