@@ -5,7 +5,7 @@ import { withNamespaces } from 'react-i18next';
 
 import config from '../configs/keys';
 import Router from 'next/router';
-
+import Cookies from 'js-cookie'
 
 class LogInForm extends React.Component {
 
@@ -55,7 +55,6 @@ class LogInForm extends React.Component {
                     document.getElementsByClassName('alert-error')[0]
                         .setAttribute('style', 'display: inline');
                  } else if(response.status === 200) {
-                    console.log("Logged in successfully");
                     Router.push('/');
                 }
             }catch (e) {

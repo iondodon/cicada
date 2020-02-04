@@ -4,36 +4,16 @@ import '../i18n';
 import { withNamespaces } from 'react-i18next';
 
 import Link from 'next/link';
-import config from "../configs/keys";
+import Cookies from 'js-cookie';
 
 class LeftMenu extends React.Component {
 
     constructor(props, {t}){
         super(props, {t});
         this.t = t;
-
-
-        this.state = {
-            loggedIn: false
-        };
-
-        this.getUsername = this.getUsername.bind(this);
     }
 
-    componentDidMount() {
-        this.getUsername().then();
-    }
-
-    async getUsername() {
-        const request = {
-            method: 'GET',
-            mode: 'cors',
-            credentials: "include"
-        };
-
-        let response = await fetch(config.API_URL + '/api/account/username', request);
-        await this.setState({loggedIn: response.status === 200});
-    }
+    componentDidMount() {}
 
     render(){
         return (
@@ -54,7 +34,7 @@ class LeftMenu extends React.Component {
                             </Link>{' '}
 
                             {(()=>{
-                                if(this.state['loggedIn']) {
+                                if(Cookies.get('userId')) {
                                     return(
                                         <div>
                                             <br/>

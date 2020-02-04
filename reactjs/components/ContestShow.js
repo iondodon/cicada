@@ -6,8 +6,7 @@ import config from "../configs/keys";
 import { timeConverter } from '../utlis/utlis';
 import ContestActionBar from "./ContestActionBar";
 import Link from 'next/link';
-import {getCookie} from "../utlis/utlis";
-import PuzzleSession from "./PuzzleSession";
+import Cookies from 'js-cookie';
 
 class ContestShow extends React.Component {
 
@@ -211,7 +210,7 @@ class ContestShow extends React.Component {
                 })()}
 
                 {(()=>{
-                    if(getCookie('userId').length > 0) {
+                    if(Cookies.get('userId')) {
                         if(this.state['puzzleId']) {
                             return(<ContestActionBar puzzleId={this.state['puzzleId']} />);
                         }
@@ -219,7 +218,7 @@ class ContestShow extends React.Component {
                 })()}
 
                 {(()=>{
-                    if(this.state['userId'] == getCookie('userId')) {
+                    if(this.state['userId'] == Cookies.get('userId')) {
                         return(
                             <div className="alert alert-info">
                                 <div className="btn-group">

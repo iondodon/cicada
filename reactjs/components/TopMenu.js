@@ -4,7 +4,7 @@ import { withNamespaces } from 'react-i18next';
 import Link from 'next/link';
 import Router from "next/router";
 import config from "../configs/keys";
-import { getCookie } from "../utlis/utlis";
+import Cookie from 'js-cookie';
 
 class TopMenu extends React.Component {
 
@@ -12,27 +12,10 @@ class TopMenu extends React.Component {
         super(props, {t});
         this.t = t;
 
-        this.state = {
-            loggedIn: false
-        };
-
         this.logout = this.logout.bind(this);
-        this.getUsername = this.getUsername.bind(this);
     }
 
     componentDidMount() {
-        this.getUsername().then();
-    }
-
-    async getUsername() {
-        const request = {
-            method: 'GET',
-            mode: 'cors',
-            credentials: "include"
-        };
-
-        let response = await fetch(config.API_URL + '/api/account/username', request);
-        await this.setState({loggedIn: response.status === 200});
     }
 
     async logout() {
@@ -67,7 +50,7 @@ class TopMenu extends React.Component {
 
                 <div className="menu right-menu">
                     {(()=>{
-                        if(this.state['loggedIn']) {
+                        if(Cookie.get('userId')) {
                             return(
                                 <div className={"topbar-right-action"}>
                                     <Link href={"/notifications"}>

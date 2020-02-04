@@ -5,7 +5,7 @@ import { withNamespaces } from 'react-i18next';
 import config from "../configs/keys";
 import {timeConverter} from '../utlis/utlis';
 import PuzzleSession from "./PuzzleSession";
-import { getCookie } from "../utlis/utlis";
+import Cookies from 'js-cookie';
 
 class PuzzleShow extends React.Component {
 
@@ -21,23 +21,10 @@ class PuzzleShow extends React.Component {
         this.prepareState = this.prepareState.bind(this);
         this.closeError = this.closeError.bind(this);
         this.deletePuzzle = this.deletePuzzle.bind(this);
-        this.getUsername = this.getUsername.bind(this);
     }
 
     async componentDidMount() {
-        this.getUsername().then();
         await this.fetchSetState();
-    }
-
-    async getUsername() {
-        const request = {
-            method: 'GET',
-            mode: 'cors',
-            credentials: "include"
-        };
-
-        let response = await fetch(config.API_URL + '/api/account/username', request);
-        await this.setState({loggedIn: response.status === 200});
     }
 
     async fetchSetState() {
@@ -190,13 +177,13 @@ class PuzzleShow extends React.Component {
                 <div className={"description"} dangerouslySetInnerHTML={{__html:this.state['description']}} />
 
                 {(()=>{
-                    if(getCookie('userId').length > 0) {
+                    if(Cookies.get('userId')) {
                         return(<PuzzleSession/>);
                     }
                 })()}
 
                 {(()=>{
-                    if(this.state['userId'] == getCookie('userId')) {
+                    if(this.state['userId'] == Cookies.get('userId')) {
                         return(
                             <div className="alert alert-info">
                                 <div className="btn-group">

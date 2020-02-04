@@ -10,11 +10,7 @@ class Footer extends React.Component {
         super(props, {t});
         this.t = t;
 
-        this.state = {
-            username: '',
-            password: ''
-        };
-
+        this.state = {};
     }
 
     render(){
