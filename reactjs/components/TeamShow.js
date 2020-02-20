@@ -192,7 +192,7 @@ class ContestShow extends React.Component {
                 </div>
 
                 {(()=>{
-                    if(this.state['userId'] == Cookies.get('userId')) {
+                    if(this.state['userId'] == Cookies.get('userId',  { domain: config.DOMAIN })) {
                         return(
                             <div className="alert alert-info">
                                 <div className="btn-group">

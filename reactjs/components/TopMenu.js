@@ -50,7 +50,7 @@ class TopMenu extends React.Component {
 
                 <div className="menu right-menu">
                     {(()=>{
-                        if(Cookie.get('userId')) {
+                        if(Cookie.get('userId',  { domain: config.DOMAIN })) {
                             return(
                                 <div className={"topbar-right-action"}>
                                     <Link href={"/notifications"}>

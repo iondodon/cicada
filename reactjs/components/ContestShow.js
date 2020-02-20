@@ -2,11 +2,11 @@ import React from "react";
 
 import '../i18n';
 import { withNamespaces } from 'react-i18next';
-import config from "../configs/keys";
 import { timeConverter } from '../utlis/utlis';
 import ContestActionBar from "./ContestActionBar";
 import Link from 'next/link';
 import Cookies from 'js-cookie';
+import config from "../configs/keys";
 
 class ContestShow extends React.Component {
 
@@ -210,7 +210,7 @@ class ContestShow extends React.Component {
                 })()}
 
                 {(()=>{
-                    if(Cookies.get('userId')) {
+                    if(Cookies.get('userId',  { domain: config.DOMAIN })) {
                         if(this.state['puzzleId']) {
                             return(<ContestActionBar puzzleId={this.state['puzzleId']} />);
                         }
@@ -218,7 +218,7 @@ class ContestShow extends React.Component {
                 })()}
 
                 {(()=>{
-                    if(this.state['userId'] == Cookies.get('userId')) {
+                    if(this.state['userId'] == Cookies.get('userId',  { domain: config.DOMAIN })) {
                         return(
                             <div className="alert alert-info">
                                 <div className="btn-group">

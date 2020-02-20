@@ -177,13 +177,13 @@ class PuzzleShow extends React.Component {
                 <div className={"description"} dangerouslySetInnerHTML={{__html:this.state['description']}} />
 
                 {(()=>{
-                    if(Cookies.get('userId')) {
+                    if(Cookies.get('userId',  { domain: config.DOMAIN })) {
                         return(<PuzzleSession/>);
                     }
                 })()}
 
                 {(()=>{
-                    if(this.state['userId'] == Cookies.get('userId')) {
+                    if(this.state['userId'] == Cookies.get('userId',  { domain: config.DOMAIN })) {
                         return(
                             <div className="alert alert-info">
                                 <div className="btn-group">

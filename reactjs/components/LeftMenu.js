@@ -5,6 +5,7 @@ import { withNamespaces } from 'react-i18next';
 
 import Link from 'next/link';
 import Cookies from 'js-cookie';
+import config from "../configs/keys";
 
 class LeftMenu extends React.Component {
 
@@ -34,9 +35,7 @@ class LeftMenu extends React.Component {
                             </Link>{' '}
 
                             {(()=>{
-                                console.log(Cookies.get('userId',  { domain: '162.243.168.205' }));
-
-                                if(Cookies.get('userId',  { domain: '162.243.168.205' })) {
+                                if(Cookies.get('userId',  { domain: config.DOMAIN })) {
                                     return(
                                         <div>
                                             <br/>
