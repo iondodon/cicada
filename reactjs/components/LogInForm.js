@@ -5,7 +5,6 @@ import { withNamespaces } from 'react-i18next';
 
 import config from '../configs/keys';
 import Router from 'next/router';
-import Cookies from 'js-cookie'
 
 class LogInForm extends React.Component {
 

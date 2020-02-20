@@ -34,7 +34,7 @@ class LeftMenu extends React.Component {
                             </Link>{' '}
 
                             {(()=>{
-                                console.log(Cookies.get('userId',  { path: '', domain: 'localhost' }));
+                                console.log(Cookies.get('userId',  { domain: '162.243.168.205' }));
 
                                 if(Cookies.get('userId',  { domain: '162.243.168.205' })) {
                                     return(
