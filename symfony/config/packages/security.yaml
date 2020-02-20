@@ -13,8 +13,6 @@ security:
         main:
             pattern: ^/api/token
             anonymous: true
-            remember_me:
-                samesite: 'lax'
 
         api:
             pattern:  ^/api
@@ -23,8 +21,6 @@ security:
             guard:
                 authenticators:
                     - App\Security\JwtAuthenticator
-            remember_me:
-                samesite: 'lax'
             # activate different ways to authenticate
 
             # http_basic: ~
