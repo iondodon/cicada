@@ -11,6 +11,6 @@ nelmio_cors:
         forced_allow_origin_value: ~
     paths:
         '^/api/':
-            allow_origin: ['*']
+            allow_origin: ['']
             allow_headers: ['*']
             allow_methods: ['POST', 'PUT', 'GET', 'DELETE']

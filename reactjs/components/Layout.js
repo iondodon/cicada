@@ -48,9 +48,6 @@ class Layout extends React.Component {
 
                     <script src="../static/jquery-datetimepicker/jquery.js"/>
                     <script src="../static/jquery-datetimepicker/build/jquery.datetimepicker.full.js"/>
-
-                    <script src="/reactjs/node_modules/topbar/topbar.js"/>
-
                 </Head>
 
                 <div id={"page-loading"} className={"page-loading"}>loading...</div>
