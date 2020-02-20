@@ -14,7 +14,7 @@ security:
             pattern: ^/api/token
             anonymous: true
             remember_me:
-                samesite: 'strict'
+                samesite: 'null'
 
         api:
             pattern:  ^/api
