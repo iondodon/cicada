@@ -48,6 +48,8 @@ class Layout extends React.Component {
 
                     <script src="../static/jquery-datetimepicker/jquery.js"/>
                     <script src="../static/jquery-datetimepicker/build/jquery.datetimepicker.full.js"/>
+
+                    <script data-ad-client="ca-pub-2264192843635875" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                 </Head>
 
                 <div id={"page-loading"} className={"page-loading"}>loading...</div>
