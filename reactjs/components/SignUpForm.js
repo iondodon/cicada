@@ -4,6 +4,7 @@ import '../i18n';
 import { withNamespaces } from 'react-i18next';
 
 import config from '../configs/keys';
+import Router from "next/router";
 
 
 class SignUpForm extends React.Component {
@@ -97,7 +98,7 @@ class SignUpForm extends React.Component {
 
         const request = {
             method: 'POST',
-            mode: 'no-cors',
+            mode: 'cors',
             headers: headers,
             body: formData.toString()
         };
@@ -105,12 +106,15 @@ class SignUpForm extends React.Component {
         try {
             let response = await fetch(config.API_URL + '/api/register', request);
 
-            if(response.status === 403){
+            console.log(response.status);
+
+            if(response.status === 201) {
+                console.log("Successfully registered.");
+                Router.push('/login');
+            } else if(response.status === 403){
                 console.log(response.statusText);
                 document.getElementsByClassName('alert-error')[0]
                     .setAttribute('style', 'display: inline');
-            } else if(response.status === 201) {
-                console.log("Registered successfully");
             }
         } catch (e) {
             console.log(e.message);
@@ -195,6 +199,10 @@ class SignUpForm extends React.Component {
                     </div>
                     <div className="alert alert-warning terms-of-use-agree" style={{display: 'none', 'marginTop': '3px'}}>
                         Read - terms of use.
+                        {'\u00A0'} <a onClick={this.closeWarning}>x</a>
+                    </div>
+                    <div className="alert alert-error" style={{display: 'none', 'marginTop': '3px'}}>
+                        Username or Email already taken.
                         {'\u00A0'} <a onClick={this.closeWarning}>x</a>
                     </div>
                 </div>
