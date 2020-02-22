@@ -106,13 +106,9 @@ class SignUpForm extends React.Component {
         try {
             let response = await fetch(config.API_URL + '/api/register', request);
 
-            console.log(response.status);
-
             if(response.status === 201) {
-                console.log("Successfully registered.");
                 Router.push('/login');
             } else if(response.status === 403){
-                console.log(response.statusText);
                 document.getElementsByClassName('alert-error')[0]
                     .setAttribute('style', 'display: inline');
             }

@@ -53,7 +53,7 @@ class PuzzleSession extends React.Component {
         }
     }
 
-    async getSession() {
+    async getSessions() {
         const request = {
             method: 'GET',
             mode: 'cors',
@@ -61,16 +61,20 @@ class PuzzleSession extends React.Component {
         };
 
         try {
-            let response = await fetch(config.API_URL + '/api/puzzle/get-session/' + this.puzzleId, request);
+            let response = await fetch(config.API_URL + '/api/puzzle/get-sessions/' + this.puzzleId, request);
             let responseJson = await response.json();
             if(response.status === 200){
-                await this.setState({session: responseJson});
-                await this.setState({enrolled: true});
+                await this.setState({sessions: responseJson});
+                if(this.state['sessions'].length > 0) {
+                    await this.setState({enrolled: true});
+                }
                 await this.setState({error: false});
             } else {
                 // await this.setState({error: true});
                 // await this.setState({errorMessage: responseJson['message']});
             }
+
+            console.log(this.state);
         } catch(e) {
             await this.setState({error: true});
             await this.setState({errorMessage: e});
@@ -79,7 +83,7 @@ class PuzzleSession extends React.Component {
 
 
     async componentDidMount() {
-        await this.getSession();
+        await this.getSessions();
     }
 
     async enrollSinglePlayer() {
@@ -96,7 +100,7 @@ class PuzzleSession extends React.Component {
                 await this.setState({session: responseJson});
                 await this.setState({enrolled: true});
                 await this.setState({error: false});
-                await this.getSession();
+                await this.getSessions();
             } else {
                 await this.setState({error: true});
                 await this.setState({errorMessage: responseJson['message']});

@@ -8,6 +8,7 @@ use App\Entity\Puzzle;
 use App\Entity\PuzzleSession;
 use App\Entity\Stage;
 use App\Entity\Team;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use FOS\RestBundle\Controller\Annotations\Route;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
@@ -66,7 +67,7 @@ class PuzzleSessionController extends AbstractFOSRestController
     }
 
     /**
-     * @Route("/api/puzzle/get-session/{puzzleId}", name="puzzle_sessions.get-session", methods={"GET"})
+     * @Route("/api/puzzle/get-sessions/{puzzleId}", name="puzzle_sessions.get-sessions", methods={"GET"})
      * @param $puzzleId
      * @return JsonResponse
      */
@@ -79,34 +80,14 @@ class PuzzleSessionController extends AbstractFOSRestController
         $normalizers = [new ObjectNormalizer()];
         $serializer = new Serializer($normalizers, $encoders);
 
+        $sessions = new ArrayCollection();
+
         /** @var Team $team */
         foreach ($account->getTeamsMemberOf() as $team) {
             foreach ($team->getPuzzleSessions() as $session) {
                 if($session->getPuzzle()->getId() === (int)$puzzleId) {
                     $session = $this->extractUnnecessaryStages($session);
-                    $sessionJson = $serializer->serialize($session, 'json', [
-                        'attributes' => [
-                            'id',
-                            'teamPlayer' => [
-                                'id',
-                                'name',
-                                'members' => ['user' => ['id', 'fullName']],
-                            ],
-                            'completeness',
-                            'puzzle' => [
-                                'stages' => [
-                                    'id',
-                                    'level',
-                                    'createdAt' => ['timestamp'],
-                                    'updatedAt' => ['timestamp'],
-                                    'description',
-                                ],
-                                'stagesCount',
-                            ],
-                        ],
-                    ]);
-
-                    return new JsonResponse(json_decode($sessionJson, true), 200);
+                    $sessions->add($session);
                 }
             }
         }
@@ -114,34 +95,40 @@ class PuzzleSessionController extends AbstractFOSRestController
         foreach ($account->getPuzzleSessions() as $session) {
             if($session->getPuzzle()->getId() === (int)$puzzleId) {
                 $session = $this->extractUnnecessaryStages($session);
-                $sessionJson = $serializer->serialize($session, 'json', [
-                    'attributes' => [
-                        'id',
-                        'singlePlayer' => [
-                            'id',
-                            'user' => [
-                                'fullName',
-                            ],
-                        ],
-                        'completeness',
-                        'puzzle' => [
-                            'stages' => [
-                                'id',
-                                'level',
-                                'createdAt' => ['timestamp'],
-                                'updatedAt' => ['timestamp'],
-                                'description',
-                            ],
-                            'stagesCount',
-                        ],
-                    ],
-                ]);
-
-                return new JsonResponse(json_decode($sessionJson, true), 200);
+                $sessions->add($session);
             }
         }
 
-        return new JsonResponse(['message' => 'No session found.'], 400);
+        if($sessions->isEmpty()) {
+            return new JsonResponse(['message' => 'No session found.'], 400);
+        }
+
+        $sessionsJson = $serializer->serialize($sessions, 'json', [
+            'attributes' => [
+                'id',
+                'singlePlayer' => [
+                    'user' => ['fullName']
+                ],
+                'teamPlayer' => [
+                    'id',
+                    'name',
+                    'members' => ['user' => ['id', 'fullName']],
+                ],
+                'completeness',
+                'puzzle' => [
+                    'stages' => [
+                        'id',
+                        'level',
+                        'createdAt' => ['timestamp'],
+                        'updatedAt' => ['timestamp'],
+                        'description',
+                    ],
+                    'stagesCount',
+                ],
+            ]
+        ]);
+
+        return new JsonResponse(json_decode($sessionsJson, true), 200);
     }
 
     /**
