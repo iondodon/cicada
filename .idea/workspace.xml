@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/ion.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/ion.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactjs/components/PuzzleSession.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/PuzzleSession.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/SignUpForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/SignUpForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony/src/Controller/PuzzleSessionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Controller/PuzzleSessionController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -518,6 +517,7 @@
       <workItem from="1582203837933" duration="277000" />
       <workItem from="1582281044745" duration="927000" />
       <workItem from="1582388744497" duration="7207000" />
+      <workItem from="1582484389322" duration="3883000" />
     </task>
     <servers />
   </component>
