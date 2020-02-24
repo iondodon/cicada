@@ -28,6 +28,8 @@ class ContestActionBar extends React.Component {
         this.enrollTeam = this.enrollTeam.bind(this);
         this.singlePlayerLeaveContest = this.singlePlayerLeaveContest.bind(this);
         this.leaveTeam = this.leaveTeam.bind(this);
+        this.getSessions = this.getSessions.bind(this);
+        this.selectSession = this.selectSession.bind(this);
     }
 
     async showTeamsMemberOf() {
@@ -55,21 +57,24 @@ class ContestActionBar extends React.Component {
         }
     }
 
-    async getSession() {
+    async getSessions() {
         const request = {
             method: 'GET',
             mode: 'cors',
             credentials: 'include'
         };
 
-        console.log(this.puzzleId);
-
         try {
-            let response = await fetch(config.API_URL + '/api/puzzle/get-session/' + this.puzzleId, request);
+            let response = await fetch(config.API_URL + '/api/puzzle/get-sessions/' + this.puzzleId, request);
             let responseJson = await response.json();
+
+            console.log(responseJson);
+
             if(response.status === 200){
-                await this.setState({session: responseJson});
-                await this.setState({enrolled: true});
+                await this.setState({sessions: responseJson});
+                if(this.state['sessions']) {
+                    await this.setState({enrolled: true});
+                }
                 await this.setState({error: false});
             } else {
                 // await this.setState({error: true});
@@ -83,7 +88,7 @@ class ContestActionBar extends React.Component {
 
 
     async componentDidMount() {
-        await this.getSession();
+        await this.getSessions();
     }
 
     async enrollSinglePlayer() {
@@ -97,10 +102,12 @@ class ContestActionBar extends React.Component {
             let response = await fetch(config.API_URL + '/api/contest/enroll-single-player/' + this.contestId, request);
             let responseJson = await response.json();
             if(response.status === 200){
-                await this.setState({session: responseJson});
-                await this.setState({enrolled: true});
+                await this.setState({sessions: responseJson});
+                if(this.state['sessions']) {
+                    await this.setState({enrolled: true});
+                }
                 await this.setState({error: false});
-                await this.getSession();
+                await this.getSessions();
             } else {
                 await this.setState({error: true});
                 await this.setState({errorMessage: responseJson['message']});
@@ -124,11 +131,13 @@ class ContestActionBar extends React.Component {
             let responseJson = await response.json();
 
             if(response.status === 200){
-                await this.setState({session: responseJson});
+                await this.setState({sessions: responseJson});
                 await this.setState({showTeamsMemberOf: false});
-                await this.setState({enrolled: true});
+                if(this.state['sessions']) {
+                    await this.setState({enrolled: true});
+                }
                 await this.setState({error: false});
-                await this.getSession();
+                await this.getSessions();
             } else {
                 await this.setState({error: true});
                 await this.setState({errorMessage: responseJson['message']});
@@ -151,11 +160,14 @@ class ContestActionBar extends React.Component {
             let responseJson = await response.json();
 
             if(response.status === 200){
-                await this.setState({session: null});
+                await this.setState({sessions: null});
                 await this.setState({showTeamsMemberOf: false});
-                await this.setState({enrolled: false});
+                await this.getSessions();
+                if(this.state['sessions']) {
+                    await this.setState({enrolled: false});
+                }
                 await this.setState({error: false});
-                await this.getSession();
+                await this.getSessions();
             } else {
                 await this.setState({error: true});
                 await this.setState({errorMessage: responseJson['message']});
@@ -178,9 +190,12 @@ class ContestActionBar extends React.Component {
             let responseJson = await response.json();
 
             if(response.status === 200){
-                await this.setState({session: null});
+                await this.setState({sessions: null});
                 await this.setState({showTeamsMemberOf: false});
-                await this.setState({enrolled: false});
+                await this.getSessions();
+                if(this.state['sessions']) {
+                    await this.setState({enrolled: false});
+                }
                 await this.setState({error: false});
             } else {
                 await this.setState({error: true});
@@ -192,123 +207,147 @@ class ContestActionBar extends React.Component {
         }
     }
 
+
+    async selectSession(sessionIndex) {
+        await this.setState({session: this.state['sessions'][sessionIndex]});
+    }
+
     render() {
 
         return(
             <div className="alert alert-warning">
 
                 {(()=>{
-                    if(this.state['enrolled'] && this.state['session']){
+                    if(this.state['enrolled'] && this.state['sessions']){
                         return(
                             <div>
-                                <h2>progress: {this.state['session']['completeness']}
-                                    /
-                                    {(()=>{
-                                        if(this.state['session']['puzzle'] && this.state['session']['puzzle']['stagesCount']) {
-                                            console.log(this.state['session']['puzzle']['stagesCount']);
-                                            return(this.state['session']['puzzle']['stagesCount']);
-                                        } else {
-                                            return null;
-                                        }
-                                    })()}
-
-                                </h2>
-                                {(()=>{
-                                    if(this.state['session']['teamPlayer']){
-                                        return(
-                                            <div>
-                                                <h2>team: {this.state['session']['teamPlayer']['name']} </h2>
-                                                ## members:
-                                                {
-                                                    this.state['session']['teamPlayer']['members'].map((member) => {
-                                                        return (
-                                                            <a key={member['user']['id']}
-                                                               className={"member-link"}
-                                                            > {member['user']['fullName']} </a>
-                                                        );
-                                                    })
-                                                }
-                                            </div>
-                                        );
+                                <div>
+                                    ## open sessions:
+                                    {
+                                        this.state.sessions.map((sess, index) => {
+                                            if(sess['singlePlayer']) {
+                                                return(
+                                                    <a className={"team_anchor"} key={sess['id']} value={index} onClick={async () => await this.selectSession(index)}>
+                                                        {sess['id']} Solo
+                                                    </a>
+                                                );
+                                            } else if(sess['teamPlayer']) {
+                                                return(
+                                                    <a className={"team_anchor"} key={sess['id']} value={index} onClick={async () => await this.selectSession(index)}>
+                                                        {sess['id']} team:{sess['teamPlayer']['name']}
+                                                    </a>
+                                                );
+                                            }
+                                        })
                                     }
-                                })()}
-
-
-                                {(()=>{
-                                    if(this.state['session'] && this.state['session']['puzzle'] && this.state['session']['puzzle']['stages']) {
-                                        return(
-                                            <div className={"stages-cards"}>
-                                                <br/>
-                                                <h2>stages:</h2>
-                                                {
-                                                    this.state['session']['puzzle']['stages'].map((stage) => {
-                                                        return(
-                                                            <StageShow
-                                                                current={this.state['session']['completeness'] === stage['level']}
-                                                                key={stage['id']}
-                                                                stageId={stage['id']}
-                                                                sessionId={this.state['session']['id']}
-                                                                level={stage['level']}
-                                                                description={stage['description']}
-                                                                code={stage['code']}
-                                                            />
-                                                        );
-                                                    })
-                                                }
-                                            </div>
-                                        );
-                                    }
-                                })()}
-
-                                {(()=>{
-                                    if(!this.state['session']['teamPlayer'] && !this.state['showTeamsMemberOf']) {
-                                        return(
-                                            <div className={"to-right space-left"}>
-                                                <br/>
-                                                <a onClick={this.showTeamsMemberOf}>Solve with a team</a>
-                                            </div>
-                                        );
-                                    }
-                                })()}
-
-                                <div className={'info'}>
-                                    *If you want to be signed up for this contest you have to leave the previous puzzle sessions
-                                    that you have for the puzzle related to the contest.
-                                    <br/>
-                                    *Team session overrides single player session.
-                                    <br/>
-                                    *If a team session if shown and you want to play solo you have to leave the team.
-                                    <br/>
-                                    *In order to switch to a new team session you have to leave the other
-                                    <br/>
-                                    *Team sessions are prioritized from older teams to younger.
                                 </div>
 
+                                <br/>
+
                                 {(()=>{
-                                    if(this.state['session']['teamPlayer']) {
+                                    if(this.state['session']){
                                         return(
-                                            <div className={"to-right"}>
-                                                <br/>
-                                                <a onClick={async () => {
-                                                    if(confirm("Are you sure?")) {
-                                                        await this.leaveTeam();
+                                            <div>
+                                                <h2>progress: {this.state['session']['completeness']}
+                                                    /
+                                                    {(()=>{
+                                                        if(this.state['session']['puzzle'] && this.state['session']['puzzle']['stagesCount']) {
+                                                            console.log(this.state['session']['puzzle']['stagesCount']);
+                                                            return(this.state['session']['puzzle']['stagesCount']);
+                                                        } else {
+                                                            return null;
+                                                        }
+                                                    })()}
+
+                                                </h2>
+                                                {(()=>{
+                                                    if(this.state['session']['teamPlayer']){
+                                                        return(
+                                                            <div>
+                                                                <h2>team: {this.state['session']['teamPlayer']['name']} </h2>
+                                                                ## members:
+                                                                {
+                                                                    this.state['session']['teamPlayer']['members'].map((member) => {
+                                                                        return (
+                                                                            <a key={member['user']['id']}
+                                                                               className={"member-link"}
+                                                                            > {member['user']['fullName']} </a>
+                                                                        );
+                                                                    })
+                                                                }
+                                                            </div>
+                                                        );
                                                     }
-                                                }} >Leave team {this.state['session']['teamPlayer']['name']}</a>
-                                            </div>
-                                        );
-                                    } else if(this.state['session']['singlePlayer']) {
-                                        return(
-                                            <div className={"to-right"}>
-                                                <br/>
-                                                <a onClick={async () => {
-                                                    if(confirm("Are you sure?")) {
-                                                        await this.singlePlayerLeaveContest();
+                                                })()}
+
+
+                                                {(()=>{
+                                                    if(this.state['session'] && this.state['session']['puzzle'] && this.state['session']['puzzle']['stages']) {
+                                                        return(
+                                                            <div className={"stages-cards"}>
+                                                                <br/>
+                                                                <h2>stages:</h2>
+                                                                {
+                                                                    this.state['session']['puzzle']['stages'].map((stage) => {
+                                                                        return(
+                                                                            <StageShow
+                                                                                current={this.state['session']['completeness'] === stage['level']}
+                                                                                key={stage['id']}
+                                                                                stageId={stage['id']}
+                                                                                sessionId={this.state['session']['id']}
+                                                                                level={stage['level']}
+                                                                                description={stage['description']}
+                                                                                code={stage['code']}
+                                                                            />
+                                                                        );
+                                                                    })
+                                                                }
+                                                            </div>
+                                                        );
                                                     }
-                                                }} >Leave this contest</a>
+                                                })()}
+
+                                                {(()=>{
+                                                    if(!this.state['session']['teamPlayer'] && !this.state['showTeamsMemberOf']) {
+                                                        return(
+                                                            <div className={"to-right space-left"}>
+                                                                <br/>
+                                                                <a onClick={this.showTeamsMemberOf}>Solve with a team</a>
+                                                            </div>
+                                                        );
+                                                    }
+                                                })()}
+
+                                                {(()=>{
+                                                    if(this.state['session']['teamPlayer']) {
+                                                        return(
+                                                            <div className={"to-right"}>
+                                                                <br/>
+                                                                <a onClick={async () => {
+                                                                    if(confirm("Are you sure?")) {
+                                                                        await this.leaveTeam();
+                                                                    }
+                                                                }} >Leave team {this.state['session']['teamPlayer']['name']}</a>
+                                                            </div>
+                                                        );
+                                                    } else if(this.state['session']['singlePlayer']) {
+                                                        return(
+                                                            <div className={"to-right"}>
+                                                                <br/>
+                                                                <a onClick={async () => {
+                                                                    if(confirm("Are you sure?")) {
+                                                                        await this.singlePlayerLeaveContest();
+                                                                    }
+                                                                }} >Leave this contest</a>
+                                                            </div>
+                                                        );
+                                                    }
+                                                })()}
                                             </div>
                                         );
                                     }
                                 })()}
+
                             </div>
                         );
                     } else {

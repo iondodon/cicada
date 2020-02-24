@@ -68,7 +68,7 @@ class PuzzleSession extends React.Component {
 
             if(response.status === 200){
                 await this.setState({sessions: responseJson});
-                if(this.state['sessions'].length > 0) {
+                if(this.state['sessions']) {
                     await this.setState({enrolled: true});
                 }
                 await this.setState({error: false});
@@ -195,7 +195,6 @@ class PuzzleSession extends React.Component {
     }
 
     async selectSession(sessionIndex) {
-        console.log(sessionIndex);
         await this.setState({session: this.state['sessions'][sessionIndex]});
     }
 
@@ -230,7 +229,7 @@ class PuzzleSession extends React.Component {
                                 </div>
 
                                 <br/>
-                                
+
                                 {(()=>{
                                     if(this.state['session']){
                                         return(
