@@ -205,7 +205,7 @@ class PuzzleSession extends React.Component {
             <div className="alert alert-warning">
 
                 {(()=>{
-                    if(this.state['enrolled'] && this.state['sessions'].length > 0){
+                    if(this.state['enrolled'] && this.state['sessions']){
                         return(
                             <div>
                                 <div>
@@ -229,6 +229,8 @@ class PuzzleSession extends React.Component {
                                     }
                                 </div>
 
+                                <br/>
+                                
                                 {(()=>{
                                     if(this.state['session']){
                                         return(
@@ -333,27 +335,6 @@ class PuzzleSession extends React.Component {
                                     }
                                 })()}
 
-                                {(()=>{
-                                    if(this.state['showTeamsMemberOf']) {
-                                        return (
-                                            <div>
-                                                <a onClick={()=>this.setState({showTeamsMemberOf: false})}>(cancel)</a>
-                                                Choose a team:
-                                                {
-                                                    this.state['teamsMemberOf'].map((team) => {
-                                                        return (
-                                                            <a key={team['id']}
-                                                               value={team['id']}
-                                                               className={'team-link'}
-                                                               onClick={this.enrollTeam}> {team['name']} </a>
-                                                        );
-                                                    })
-                                                }
-                                            </div>
-                                        );
-                                    }
-                                })()}
-
                             </div>
                         );
                     } else {
@@ -368,6 +349,26 @@ class PuzzleSession extends React.Component {
                     }
                 })()}
 
+                {(()=>{
+                    if(this.state['showTeamsMemberOf']) {
+                        return (
+                            <div>
+                                <a onClick={()=>this.setState({showTeamsMemberOf: false})}>(cancel)</a>
+                                Choose a team:
+                                {
+                                    this.state['teamsMemberOf'].map((team) => {
+                                        return (
+                                            <a key={team['id']}
+                                               value={team['id']}
+                                               className={'team-link'}
+                                               onClick={this.enrollTeam}> {team['name']} </a>
+                                        );
+                                    })
+                                }
+                            </div>
+                        );
+                    }
+                })()}
 
                 {(()=>{
                     if(this.state['error']) {
