@@ -15,7 +15,7 @@ class ContestShow extends React.Component {
         this.t = t;
 
         this.state = {
-            loading: true,
+            loading: true
         };
 
         this.fetchSetState = this.fetchSetState.bind(this);
@@ -60,6 +60,8 @@ class ContestShow extends React.Component {
     }
 
     async prepareState(responseJson) {
+        console.log(responseJson);
+
         await this.setState({contestId: responseJson['id']});
         await this.setState({contestName: responseJson['name']});
         await this.setState({puzzleName: responseJson['puzzle']['name']});
@@ -75,7 +77,6 @@ class ContestShow extends React.Component {
         await this.setState({teamWinner: responseJson['teamWinner']});
 
         await this.setState({loading: false});
-        console.log(this.state);
     }
 
     closeError(e) {
