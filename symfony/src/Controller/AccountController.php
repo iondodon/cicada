@@ -29,13 +29,13 @@ class AccountController extends AbstractFOSRestController
                 'puzzlesSolvedCount',
                 'winedContestsCount',
                 'puzzleSessions' => [
-                    'puzzle' => ['name']
+                    'puzzle' => ['id', 'name']
                 ],
-                'createdPuzzles' => ['name'],
-                'createdTeams' => ['name'],
-                'createdContests' => ['name'],
-                'contestsEnrolledAt' => ['name'],
-                'teamsMemberOf' => ['name']
+                'createdPuzzles' => ['id', 'name'],
+                'createdTeams' => ['id', 'name'],
+                'createdContests' => ['id', 'name'],
+                'contestsEnrolledAt' => ['id', 'name'],
+                'teamsMemberOf' => ['id', 'name']
             ]
         ]);
 

@@ -4,13 +4,32 @@ import TopMenu from "./TopMenu";
 import Footer from "./Footer";
 import React from "react";
 import {withNamespaces} from "react-i18next";
+import Router from "next/router";
+
+Router.events.on('routeChangeStart', (url) => {
+    document.getElementById("page-loading").setAttribute('style', 'display: block;');
+});
+
+
+Router.events.on('routeChangeComplete', (url) => {
+    document.getElementById("page-loading").setAttribute('style', 'display: none;');
+});
 
 class Layout extends React.Component {
 
     constructor(props, {t}){
         super(props, {t});
         this.t = t;
+
+        this.state = {
+            loading: true
+        }
     }
+
+    async componentDidMount() {
+        await this.setState({loading: false});
+    }
+
 
     render(){
 
@@ -29,7 +48,11 @@ class Layout extends React.Component {
 
                     <script src="../static/jquery-datetimepicker/jquery.js"/>
                     <script src="../static/jquery-datetimepicker/build/jquery.datetimepicker.full.js"/>
+
+                    <script data-ad-client="ca-pub-2264192843635875" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                 </Head>
+
+                <div id={"page-loading"} className={"page-loading"}>loading...</div>
 
                 <TopMenu/>
 
@@ -39,15 +62,28 @@ class Layout extends React.Component {
                 </Container>
 
                 { /*language=SCSS*/ }
-                <style jsx>{`            
-                    html, body {
-                        height: 100%;
-                        margin: 0;
-                    }
-                    
-                    hr {
-                        text-align: center;
-                    }
+                <style jsx>{`
+                  html, body {
+                    height: 100%;
+                    margin: 0;
+
+
+                  }
+
+                  .page-loading {
+                    position: fixed;
+                    top: 0;
+                    width: 100%;
+                    height: 1.3rem;
+                    background-color: #009b07;
+                    text-align: center;
+                    display: none;
+                  }
+
+
+                  hr {
+                    text-align: center;
+                  }
                 `}
                 </style>
             </div>

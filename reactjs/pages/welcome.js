@@ -1,14 +1,13 @@
 import React from 'react';
-import Layout from "../../components/Layout";
-import Dashboard from "../../components/Dashboard";
+import Layout from "../components/Layout";
+import Dashboard from "../components/Dashboard";
 
-import '../../i18n';
+import '../i18n';
 import { withNamespaces } from 'react-i18next';
 import Head from "next/head";
-import LeftPanel from "../../components/LeftPanel";
-import ListTeams from "../../components/ListTeams";
+import LeftPanel from "../components/LeftPanel";
 
-class TeamsMemberOfPage extends React.Component {
+class Notifications extends React.Component {
 
     constructor(props, {t}){
         super(props, {t});
@@ -19,7 +18,7 @@ class TeamsMemberOfPage extends React.Component {
         return (
             <Layout>
                 <Head>
-                    <title>Teams member of</title>
+                    <title>Cicada</title>
                     <scr name="viewport" content="initial-scale=1.0, width=device-width" />
                 </Head>
 
@@ -40,7 +39,7 @@ class TeamsMemberOfPage extends React.Component {
                         {/*<header className="card-header"></header>*/}
                         <div className="card-content">
                             <div className="inner">
-                                <ListTeams type={"memberOf"}/>
+                                aaaaaaaaaa
                             </div>
                         </div>
                     </div>
@@ -64,4 +63,4 @@ class TeamsMemberOfPage extends React.Component {
     }
 }
 
-export default withNamespaces()(TeamsMemberOfPage);
+export default withNamespaces()(Notifications);

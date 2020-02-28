@@ -7,7 +7,7 @@ import Pagination from "./Pagination";
 import Link from "next/link";
 
 
-class TeamsMemberOf extends React.Component {
+class ListTeams extends React.Component {
 
     constructor(props, {t}){
         super(props, {t});
@@ -16,10 +16,12 @@ class TeamsMemberOf extends React.Component {
         this.state = {
             teams: [],
             currentTeams: [],
-            loading: false,
+            loading: true,
             currentPage: 1,
-            teamsPerPage: 1
+            teamsPerPage: 3
         };
+
+        this.type = this.props.type;
 
         this.closeError = this.closeError.bind(this);
         this.paginate = this.paginate.bind(this);
@@ -37,8 +39,15 @@ class TeamsMemberOf extends React.Component {
                 credentials: "include"
             };
 
+            let url;
+            if(this.type === "memberOf") {
+                url = '/api/teams/member_of';
+            } else {
+                url = '/api/my_teams';
+            }
+
             try {
-                let response = await fetch(config.API_URL + '/api/teams/member_of', request);
+                let response = await fetch(config.API_URL + url, request);
 
                 if (response.status === 401) {
                     document.getElementsByClassName('error-content')[0].innerHTML = 'Unauthorized.';
@@ -130,6 +139,10 @@ class TeamsMemberOf extends React.Component {
             );
         }
 
+        if(this.state.teams.length === 0) {
+            return(<h2> empty </h2>);
+        }
+
         return (
             <div className={"list-teams_member_of"}>
                 <table>
@@ -188,4 +201,4 @@ class TeamsMemberOf extends React.Component {
     }
 }
 
-export default withNamespaces()(TeamsMemberOf);
+export default withNamespaces()(ListTeams);

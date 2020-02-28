@@ -103,6 +103,20 @@ class Contest
      */
     private $enrolledTeams;
 
+    /** @var Account
+     *
+     * @ORM\ManyToOne(targetEntity="Account", inversedBy="contestsWon")
+     * @ORM\JoinColumn(name="single_player_winner_id", referencedColumnName="id")
+     */
+    private $singlePlayerWinner;
+
+    /** @var Team
+     *
+     * @ORM\ManyToOne(targetEntity="Team", inversedBy="contestsWon")
+     * @ORM\JoinColumn(name="team_winner_id", referencedColumnName="id")
+     */
+    private $teamWinner;
+
     /**
      * @return mixed
      */
@@ -297,6 +311,44 @@ class Contest
     public function setEnrolledTeams(Collection $enrolledTeams): Contest
     {
         $this->enrolledTeams = $enrolledTeams;
+
+        return $this;
+    }
+
+    /**
+     * @return Account
+     */
+    public function getSinglePlayerWinner(): ?Account
+    {
+        return $this->singlePlayerWinner;
+    }
+
+    /**
+     * @param Account $singlePlayerWinner
+     * @return Contest
+     */
+    public function setSinglePlayerWinner(Account $singlePlayerWinner): Contest
+    {
+        $this->singlePlayerWinner = $singlePlayerWinner;
+
+        return $this;
+    }
+
+    /**
+     * @return Team
+     */
+    public function getTeamWinner(): ?Team
+    {
+        return $this->teamWinner;
+    }
+
+    /**
+     * @param Team $teamWinner
+     * @return Contest
+     */
+    public function setTeamWinner(Team $teamWinner): Contest
+    {
+        $this->teamWinner = $teamWinner;
 
         return $this;
     }

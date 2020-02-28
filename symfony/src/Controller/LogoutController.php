@@ -2,25 +2,23 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Request;
+use FOS\RestBundle\Controller\AbstractFOSRestController;
 use Symfony\Component\HttpFoundation\Response;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use FOS\RestBundle\Controller\Annotations\Route;
 
-class LogoutController extends Controller
+class LogoutController extends AbstractFOSRestController
 {
     /**
-     * @Route("/api/logout", name="logout")
-     * @Method("POST")
-     * @param Request $request
+     * @Route("/api/logout", name="logout", methods={"POST"})
      * @return Response
      * @throws \Exception
      */
-    public function newTokenAction(Request $request): Response
+    public function logout(): Response
     {
         $response = new Response();
         $response->headers->clearCookie('BEARER');
+        $response->headers->clearCookie('userId');
+        $response->setStatusCode(200);
         return $response;
     }
 }

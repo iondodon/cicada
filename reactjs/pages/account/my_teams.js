@@ -6,9 +6,10 @@ import '../../i18n';
 import { withNamespaces } from 'react-i18next';
 import Head from "next/head";
 import LeftPanel from "../../components/LeftPanel";
+import ListPuzzles from "../../components/ListPuzzles";
 import ListTeams from "../../components/ListTeams";
 
-class TeamsMemberOfPage extends React.Component {
+class ListMyTeamsPage extends React.Component {
 
     constructor(props, {t}){
         super(props, {t});
@@ -19,7 +20,7 @@ class TeamsMemberOfPage extends React.Component {
         return (
             <Layout>
                 <Head>
-                    <title>Teams member of</title>
+                    <title>My created teams</title>
                     <scr name="viewport" content="initial-scale=1.0, width=device-width" />
                 </Head>
 
@@ -37,10 +38,10 @@ class TeamsMemberOfPage extends React.Component {
                     </LeftPanel>
 
                     <div className="card page-content" id={"page-content"}>
-                        {/*<header className="card-header"></header>*/}
+                        {/*<header className="card-header">Puzzles</header>*/}
                         <div className="card-content">
                             <div className="inner">
-                                <ListTeams type={"memberOf"}/>
+                                <ListTeams type={"myTeams"} />
                             </div>
                         </div>
                     </div>
@@ -64,4 +65,4 @@ class TeamsMemberOfPage extends React.Component {
     }
 }
 
-export default withNamespaces()(TeamsMemberOfPage);
+export default withNamespaces()(ListMyTeamsPage);

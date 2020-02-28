@@ -1,15 +1,35 @@
 import React from 'react';
-
 import '../i18n';
 import { withNamespaces } from 'react-i18next';
-
 import Link from 'next/link';
+import Router from "next/router";
+import config from "../configs/keys";
+import Cookie from 'js-cookie';
 
 class TopMenu extends React.Component {
 
     constructor(props, {t}){
         super(props, {t});
         this.t = t;
+
+        this.logout = this.logout.bind(this);
+    }
+
+    componentDidMount() {
+    }
+
+    async logout() {
+        const request = {
+            method: 'POST',
+            mode: 'cors',
+            credentials: "include"
+        };
+
+        let response = await fetch(config.API_URL + '/api/logout', request);
+
+        if (response.status === 200) {
+            Router.push("/welcome");
+        }
     }
 
     render(){
@@ -24,42 +44,45 @@ class TopMenu extends React.Component {
                     <Link href={"/about"}>
                         <a className="menu-item">About</a>
                     </Link>{' '}
-                    |
-                    <Link href={{ pathname: '/puzzle/update', query: { puzzleId: 3 } }}>
-                        <a className="menu-item">u puzzle 3</a>
-                    </Link>{' '}
-                    |
-                    <Link href={{ pathname: '/contest/update', query: { contestId: 26 } }}>
-                        <a className="menu-item">u contest 26</a>
-                    </Link>{' '}
-                    |
-                    <Link href={{ pathname: '/team/update', query: { teamId: 7 } }}>
-                        <a className="menu-item">u team 7</a>
-                    </Link>{' '}
-                    |
-                    <Link href={{ pathname: '/puzzle/show', query: { puzzleId: 3 } }}>
-                        <a className="menu-item">Show</a>
-                    </Link>{' '}
                 </div>
 
                 <img src={'../static/cicada.png'} className={"logo"}  alt="true" />
 
                 <div className="menu right-menu">
-                    <Link href={"/login"}>
-                        <a className="menu-item">Login</a>
-                    </Link>{' '}
-                    |
-                    <Link href={"/signup"}>
-                        <a className="menu-item">SignUp</a>
-                    </Link>{' '}
-                    |
-                    <Link href={"/notifications"}>
-                        <a className="menu-item">Notifications</a>
-                    </Link>{' '}
+                    {(()=>{
+                        if(Cookie.get('userId',  { domain: config.DOMAIN })) {
+                            return(
+                                <div className={"topbar-right-action"}>
+                                    <Link href={"/notifications"}>
+                                        <a className="menu-item">Notifications</a>
+                                    </Link>{' '}
+                                    |
+                                    <a onClick={this.logout} className="menu-item">Logout</a>
+                                </div>
+                            );
+                        } else {
+                            return(
+                                <div className={"topbar-right-action"}>
+                                    <Link href={"/login"}>
+                                        <a className="menu-item">Login</a>
+                                    </Link>{' '}
+                                    |
+                                    <Link href={"/signup"}>
+                                        <a className="menu-item">SignUp</a>
+                                    </Link>{' '}
+                                </div>
+                            );
+                        }
+                    })()}
                 </div>
 
                 { /*language=SCSS*/ }
                 <style jsx>{`
+                      .topbar-right-action {
+                        display: flex;
+                        flex-direction: row;
+                      }
+
                       .right-menu {
                         display: flex;
                         flex-direction: row;

@@ -138,7 +138,7 @@ class ContestController extends AbstractFOSRestController
         $contestJson = $serializer->serialize($contest, 'json', [
             'attributes' =>[
                 'name',
-                'puzzle' => ['name'],
+                'puzzle' => ['id', 'name'],
                 'code',
                 'startsAt' => ['timestamp'],
                 'finishesAt' => ['timestamp'],
@@ -165,9 +165,9 @@ class ContestController extends AbstractFOSRestController
         /** @var Contest $contest */
         $contest = $em->getRepository(Contest::class)->findOneBy(['id' => $id]);
 
-        if($contest->getCreatedBy()->getId() !== $this->getUser()->getAccount()->getId()){
-            return new JsonResponse('Unauthorized', 401);
-        }
+//        if($contest->getCreatedBy()->getId() !== $this->getUser()->getAccount()->getId()){
+//            return new JsonResponse('Unauthorized', 401);
+//        }
 
         $encoders = [new JsonEncoder()];
         $normalizers = [new ObjectNormalizer()];
@@ -175,14 +175,19 @@ class ContestController extends AbstractFOSRestController
 
         $contestJson = $serializer->serialize($contest, 'json', [
             'attributes' =>[
+                'id',
                 'name',
-                'puzzle' => ['name'],
+                'puzzle' => ['id', 'name'],
                 'startsAt' => ['timestamp'],
                 'finishesAt' => ['timestamp'],
                 'createdAt' => ['timestamp'],
-                'createdBy' => ['user' => ['fullName']],
-                'enrolledPlayers' => ['user' => ['fullName']],
-                'enrolledTeams' => ['name']
+                'createdBy' => ['id', 'user' => ['fullName']],
+                'enrolledPlayers' => ['user' => ['id', 'fullName']],
+                'enrolledTeams' => ['id', 'name'],
+                'singlePlayerWinner' => [
+                        'user' => ['fullName']
+                ],
+                'teamWinner' => ['id', 'name']
             ]
         ]);
         $jsonResponse = new JsonResponse(json_decode($contestJson, true));
@@ -234,12 +239,72 @@ class ContestController extends AbstractFOSRestController
 
     /**
      * @Route("/api/contests/destroy/{id}", name="contests.destroy", methods={"DELETE"})
-     * @param Request $request
      * @param $id
      * @return Response
      */
-    public function destroy(Request $request, int $id): Response
+    public function destroy(int $id): Response
     {
+        $em = $this->getDoctrine()->getManager();
 
+        /** @var Contest $contest */
+        $contest = $em->getRepository(Contest::class)->find($id);
+        $em->remove($contest);
+        $em->flush();
+
+        return new Response(
+            'Contest deleted.',
+            Response::HTTP_OK,
+            ['content-type' => 'text/html']
+        );
+    }
+
+    /**
+     * @Route("/api/contests/get-enrolled/{id}", name="contests.get-enrolled", methods={"GET"})
+     * @param $id
+     * @return JsonResponse
+     */
+    public function getEnrolled(int $id): JsonResponse
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        /** @var Contest $contest */
+        $contest = $em->getRepository(Contest::class)->find($id);
+
+        if(!$contest) {
+            return new JsonResponse(['message' => 'Such a contest does not exist.'], 400);
+        }
+
+        /** @var Account $account */
+        $account = $this->getUser()->getAccount();
+
+        /** @var Account $player*/
+        foreach ($account->getContestsEnrolledAt() as $contestEnrolledAt) {
+            if($contestEnrolledAt->getId() == $contest->getId()) {
+                return new JsonResponse(
+                    [
+                        'enrolled' => true,
+                        'singlePlayer' => true,
+                        'singlePlayerId' => $account->getId(),
+                        'teamPlayer' => false
+                    ], 200);
+            }
+        }
+
+        foreach ($contest->getEnrolledTeams() as $enrolledTeam) {
+            foreach ($account->getTeamsMemberOf() as $teamMemberOf) {
+                if($enrolledTeam->getId() == $teamMemberOf->getId()) {
+                    return new JsonResponse(
+                        [
+                            'enrolled' => true,
+                            'singlePlayer' => false,
+                            'teamPlayer' => true,
+                            'teamName' => $enrolledTeam->getName(),
+                            'teamId' => $enrolledTeam->getId()
+                        ], 200);
+                }
+            }
+        }
+
+        return new JsonResponse(['enrolled' => false], 200);
     }
 }

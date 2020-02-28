@@ -134,20 +134,20 @@ class PuzzleForm extends React.Component {
         }
     }
 
-    addNewStage(){
+    async addNewStage(){
         if(this.state.stagesCount + 1 > 30){
             alert("No more than 30 stages.");
             return;
         }
 
-        this.setState({
+        await this.setState({
             stages: [...this.state.stages, {
                 level: this.state.stagesCount,
                 description: 'Description of stage ' + this.state.stagesCount + '...'
             }]
         });
 
-        this.setState({stagesCount: this.state.stagesCount + 1});
+        await this.setState({stagesCount: this.state.stagesCount + 1});
     }
 
     findInAttr(array, attr, value) {
@@ -327,14 +327,14 @@ class PuzzleForm extends React.Component {
                     />
                 </fieldset>
 
-                <label htmlFor="private" className={"is-private btn btn-success btn-ghost minus"}>Private
-                    <input
-                        type="checkbox"
-                        className={"is-private-ck-box"}
-                        checked={this.state.isPrivate}
-                        onChange = {this.setIsPrivate}
-                    />
-                </label>
+                {/*<label htmlFor="private" className={"is-private btn btn-success btn-ghost minus"}>Private*/}
+                {/*    <input*/}
+                {/*        type="checkbox"*/}
+                {/*        className={"is-private-ck-box"}*/}
+                {/*        checked={this.state.isPrivate}*/}
+                {/*        onChange = {this.setIsPrivate}*/}
+                {/*    />*/}
+                {/*</label>*/}
 
                 <label htmlFor="difficulty" className={"difficulty"}>
                     <div className={"btn btn-success btn-ghost minus"}>Difficulty</div>
