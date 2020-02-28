@@ -67,6 +67,20 @@ class ContestActionBar extends React.Component {
             let responseJson = await response.json();
             if(response.status === 200){
                 await this.setState({enrolled: responseJson['enrolled']});
+                if(responseJson['enrolled']) {
+                    await this.setState({singlePlayer: responseJson['singlePlayer']});
+                    if(responseJson['singlePlayer']) {
+                        await this.setState({singlePlayerId: responseJson['singlePlayerId']});
+                    }
+
+                    await this.setState({teamPlayer: responseJson['teamPlayer']});
+                    if(responseJson['teamPlayer']) {
+                        await this.setState({teamName: responseJson['teamName']});
+                        await this.setState({teamId: responseJson['teamId']});
+                    }
+                }
+
+                console.log(this.state);
             } else {
                 await this.setState({error: true});
                 await this.setState({errorMessage: responseJson['message']});
@@ -127,6 +141,7 @@ class ContestActionBar extends React.Component {
                     await this.setState({enrolled: true});
                 }
                 await this.setState({error: false});
+                await this.getEnrolled();
             } else {
                 await this.setState({error: true});
                 await this.setState({errorMessage: responseJson['message']});
@@ -145,7 +160,7 @@ class ContestActionBar extends React.Component {
         };
 
         try {
-            let response = await fetch(config.API_URL + '/api/teams/leave-team/' + this.state['session']['teamPlayer']['id'], request);
+            let response = await fetch(config.API_URL + '/api/teams/leave-team/' + this.state['teamId'], request);
             let responseJson = await response.json();
 
             if(response.status === 200){
@@ -183,6 +198,10 @@ class ContestActionBar extends React.Component {
                     await this.setState({enrolled: false});
                 }
                 await this.setState({error: false});
+
+                await this.setState({enrolled: false});
+                await this.setState({singlePlayer: false});
+                this.getEnrolled();
             } else {
                 await this.setState({error: true});
                 await this.setState({errorMessage: responseJson['message']});
@@ -212,6 +231,32 @@ class ContestActionBar extends React.Component {
                                         onClick={this.enrollSinglePlayer}>Solve solo</button>
                                 <button className="btn btn-warning"
                                         onClick={this.showTeamsMemberOf}>Solve with a team</button>
+                            </div>
+                        );
+                    }
+                })()}
+
+                {(()=>{
+                    if(this.state['teamPlayer']) {
+                        return(
+                            <div className={"to-right"}>
+                                <br/>
+                                <a onClick={async () => {
+                                    if(confirm("Are you sure?")) {
+                                        await this.leaveTeam();
+                                    }
+                                }} >Leave team {this.state['teamName']}</a>
+                            </div>
+                        );
+                    } else if(this.state['singlePlayer']) {
+                        return(
+                            <div className={"to-right"}>
+                                <br/>
+                                <a onClick={async () => {
+                                    if(confirm("Are you sure?")) {
+                                        await this.singlePlayerLeaveContest();
+                                    }
+                                }} >Leave the contest</a>
                             </div>
                         );
                     }

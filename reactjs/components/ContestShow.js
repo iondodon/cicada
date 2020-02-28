@@ -60,8 +60,6 @@ class ContestShow extends React.Component {
     }
 
     async prepareState(responseJson) {
-        console.log(responseJson);
-
         await this.setState({contestId: responseJson['id']});
         await this.setState({contestName: responseJson['name']});
         await this.setState({puzzleName: responseJson['puzzle']['name']});

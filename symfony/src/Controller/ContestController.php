@@ -280,14 +280,27 @@ class ContestController extends AbstractFOSRestController
         /** @var Account $player*/
         foreach ($account->getContestsEnrolledAt() as $contestEnrolledAt) {
             if($contestEnrolledAt->getId() == $contest->getId()) {
-                return new JsonResponse(['enrolled' => true], 200);
+                return new JsonResponse(
+                    [
+                        'enrolled' => true,
+                        'singlePlayer' => true,
+                        'singlePlayerId' => $account->getId(),
+                        'teamPlayer' => false
+                    ], 200);
             }
         }
 
         foreach ($contest->getEnrolledTeams() as $enrolledTeam) {
             foreach ($account->getTeamsMemberOf() as $teamMemberOf) {
                 if($enrolledTeam->getId() == $teamMemberOf->getId()) {
-                    return new JsonResponse(['enrolled' => true], 200);
+                    return new JsonResponse(
+                        [
+                            'enrolled' => true,
+                            'singlePlayer' => false,
+                            'teamPlayer' => true,
+                            'teamName' => $enrolledTeam->getName(),
+                            'teamId' => $enrolledTeam->getId()
+                        ], 200);
                 }
             }
         }
