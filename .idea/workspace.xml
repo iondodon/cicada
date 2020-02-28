@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/components/ContestActionBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/ContestActionBar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactjs/components/ContestShow.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/ContestShow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Controller/ContestController.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Controller/ContestController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Entity/Team.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Entity/Team.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -510,6 +514,14 @@
       <workItem from="1579348145033" duration="9558000" />
       <workItem from="1579642357835" duration="737000" />
       <workItem from="1579702667375" duration="4196000" />
+      <workItem from="1580823396781" duration="70000" />
+      <workItem from="1580823497585" duration="5120000" />
+      <workItem from="1582203837933" duration="277000" />
+      <workItem from="1582281044745" duration="927000" />
+      <workItem from="1582388744497" duration="7207000" />
+      <workItem from="1582484389322" duration="4656000" />
+      <workItem from="1582539253585" duration="6655000" />
+      <workItem from="1582904394902" duration="5985000" />
     </task>
     <servers />
   </component>
@@ -536,14 +548,21 @@
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
-    <state x="215" y="22" width="901" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1577989238037">
-      <screen x="0" y="0" width="1366" height="735" />
+    <state x="276" y="18" width="804" height="667" key="#Inspections" timestamp="1582545076235">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="276" y="18" width="804" height="667" key="#Inspections/0.0.1366.768@0.0.1366.768" timestamp="1582545076235" />
+    <state x="207" y="1" width="804" height="667" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582907673215">
+      <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="215" y="22" width="901" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.735@0.0.1366.735" timestamp="1577989238037" />
-    <state x="366" y="100" width="624" height="532" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1578909230334">
-      <screen x="0" y="0" width="1366" height="735" />
+    <state x="215" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.742@0.0.1366.742" timestamp="1580031571283" />
+    <state x="207" y="1" width="804" height="667" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.768@0.0.1366.768" timestamp="1582907673215" />
+    <state x="366" y="101" width="624" height="540" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1580823465884">
+      <screen x="0" y="0" width="1366" height="742" />
     </state>
     <state x="366" y="100" width="624" height="532" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.735@0.0.1366.735" timestamp="1578909230334" />
+    <state x="366" y="101" width="624" height="540" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.742@0.0.1366.742" timestamp="1580823465884" />
     <state x="416" y="117" width="524" height="498" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1577354412028">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
@@ -588,10 +607,11 @@
       <screen x="0" y="0" width="1366" height="735" />
     </state>
     <state x="347" y="160" width="672" height="677" key="run.anything.popup/0.0.1366.735@0.0.1366.735" timestamp="1579112135253" />
-    <state x="346" y="56" width="672" height="678" key="search.everywhere.popup" timestamp="1578321917895">
-      <screen x="0" y="0" width="1366" height="735" />
+    <state x="346" y="59" width="672" height="709" key="search.everywhere.popup" timestamp="1582192998248">
+      <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="346" y="56" width="672" height="678" key="search.everywhere.popup/0.0.1366.735@0.0.1366.735" timestamp="1578321917895" />
+    <state x="346" y="59" width="672" height="709" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1582192998248" />
     <state x="408" y="207" width="540" height="319" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1577903621124">
       <screen x="0" y="0" width="1366" height="735" />
     </state>

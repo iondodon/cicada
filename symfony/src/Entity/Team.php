@@ -11,6 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity
  * @ORM\Table(name="teams")
  */
+
 class Team
 {
     public function __construct()

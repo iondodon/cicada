@@ -182,7 +182,7 @@ class ContestController extends AbstractFOSRestController
                 'finishesAt' => ['timestamp'],
                 'createdAt' => ['timestamp'],
                 'createdBy' => ['id', 'user' => ['fullName']],
-                'enrolledPlayers' => ['user' => ['fullName']],
+                'enrolledPlayers' => ['user' => ['id', 'fullName']],
                 'enrolledTeams' => ['id', 'name'],
                 'singlePlayerWinner' => [
                         'user' => ['fullName']
@@ -256,5 +256,55 @@ class ContestController extends AbstractFOSRestController
             Response::HTTP_OK,
             ['content-type' => 'text/html']
         );
+    }
+
+    /**
+     * @Route("/api/contests/get-enrolled/{id}", name="contests.get-enrolled", methods={"GET"})
+     * @param $id
+     * @return JsonResponse
+     */
+    public function getEnrolled(int $id): JsonResponse
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        /** @var Contest $contest */
+        $contest = $em->getRepository(Contest::class)->find($id);
+
+        if(!$contest) {
+            return new JsonResponse(['message' => 'Such a contest does not exist.'], 400);
+        }
+
+        /** @var Account $account */
+        $account = $this->getUser()->getAccount();
+
+        /** @var Account $player*/
+        foreach ($account->getContestsEnrolledAt() as $contestEnrolledAt) {
+            if($contestEnrolledAt->getId() == $contest->getId()) {
+                return new JsonResponse(
+                    [
+                        'enrolled' => true,
+                        'singlePlayer' => true,
+                        'singlePlayerId' => $account->getId(),
+                        'teamPlayer' => false
+                    ], 200);
+            }
+        }
+
+        foreach ($contest->getEnrolledTeams() as $enrolledTeam) {
+            foreach ($account->getTeamsMemberOf() as $teamMemberOf) {
+                if($enrolledTeam->getId() == $teamMemberOf->getId()) {
+                    return new JsonResponse(
+                        [
+                            'enrolled' => true,
+                            'singlePlayer' => false,
+                            'teamPlayer' => true,
+                            'teamName' => $enrolledTeam->getName(),
+                            'teamId' => $enrolledTeam->getId()
+                        ], 200);
+                }
+            }
+        }
+
+        return new JsonResponse(['enrolled' => false], 200);
     }
 }

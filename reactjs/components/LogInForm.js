@@ -6,7 +6,6 @@ import { withNamespaces } from 'react-i18next';
 import config from '../configs/keys';
 import Router from 'next/router';
 
-
 class LogInForm extends React.Component {
 
     constructor(props, {t}){
@@ -51,11 +50,10 @@ class LogInForm extends React.Component {
                     // body: JSON.stringify(data), // body data type must match "Content-Type" header
                 });
 
-                if(response.status === 404){
+                if(response.status === 404 || response.status === 401){
                     document.getElementsByClassName('alert-error')[0]
                         .setAttribute('style', 'display: inline');
                  } else if(response.status === 200) {
-                    console.log("Logged in successfully");
                     Router.push('/');
                 }
             }catch (e) {

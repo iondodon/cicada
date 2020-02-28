@@ -3,7 +3,7 @@ import React from "react";
 import '../i18n';
 import { withNamespaces } from 'react-i18next';
 import config from "../configs/keys";
-import {getCookie} from "../utlis/utlis";
+import Cookies from 'js-cookie';
 import Link from 'next/link'
 
 class ContestShow extends React.Component {
@@ -192,7 +192,7 @@ class ContestShow extends React.Component {
                 </div>
 
                 {(()=>{
-                    if(this.state['userId'] == getCookie('userId')) {
+                    if(this.state['userId'] == Cookies.get('userId',  { domain: config.DOMAIN })) {
                         return(
                             <div className="alert alert-info">
                                 <div className="btn-group">
