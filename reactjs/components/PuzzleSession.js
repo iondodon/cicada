@@ -215,12 +215,22 @@ class PuzzleSession extends React.Component {
                                                 return(
                                                     <a className={"team_anchor"} key={sess['id']} value={index} onClick={async () => await this.selectSession(index)}>
                                                         {sess['id']} Solo
+                                                        {(()=>{
+                                                           if(sess['contest']) {
+                                                               return(<span> contest:{sess['contest']['name']}</span>);
+                                                           }
+                                                        })()}
                                                     </a>
                                                 );
                                             } else if(sess['teamPlayer']) {
                                                 return(
                                                     <a className={"team_anchor"} key={sess['id']} value={index} onClick={async () => await this.selectSession(index)}>
                                                         {sess['id']} team:{sess['teamPlayer']['name']}
+                                                        {(()=>{
+                                                            if(sess['contest']) {
+                                                                return(<span> contest:{sess['contest']['name']}</span>);
+                                                            }
+                                                        })()}
                                                     </a>
                                                 );
                                             }

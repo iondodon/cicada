@@ -167,7 +167,16 @@ class ContestShow extends React.Component {
                         this.state['puzzleSessions'].map((session) => {
                             return(
                                 <Link href={{pathname: '/puzzle/show', query: {puzzleId: session['puzzle']['id']} }}>
-                                    <a key={session['puzzle']['name']} className={'link'}>{session['puzzle']['name']}</a>
+                                    <a key={session['puzzle']['name']} className={'link'}>
+                                        {session['puzzle']['name']}
+                                        {(()=>{
+                                            if(session['contest']) {
+                                                return(
+                                                    <div> {session['contest']['name']} </div>
+                                                );
+                                            }
+                                        })()}
+                                    </a>
                                 </Link>
                             )
                         })
@@ -177,19 +186,6 @@ class ContestShow extends React.Component {
                 //TODO: cancel session
 
                 <h2>creator: {this.state['creator']['user']['fullName']}</h2>
-
-                <h2>contests enrolled at: </h2>
-                <div className={'links'}>
-                    {
-                        this.state['contestsEnrolledAt'].map((contest) => {
-                            return(
-                                <Link href={{pathname: '/contest/show', query: {contestId: contest['id']} }}>
-                                    <a key={contest['name']} className={'link'}>{contest['name']}</a>
-                                </Link>
-                            )
-                        })
-                    }
-                </div>
 
                 {(()=>{
                     if(this.state['userId'] == Cookies.get('userId',  { domain: config.DOMAIN })) {

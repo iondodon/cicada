@@ -39,9 +39,18 @@ class Index extends React.Component {
                     <div className="card page-content" id={"page-content"}>
                         {/*<header className="card-header">title</header>*/}
                         <div className="card-content">
-                            <div className="inner">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita,
+                            <div className="inner">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita,
                                 quas ex vero enim in doloribus officiis ullam vel nam esse sapiente velit incidunt.
                                 Eaque quod et, aut maiores excepturi sint.
+
+                                <div className={"container"}>
+                                    <iframe className={"video"}
+                                            src="https://www.youtube.com/embed/I2O7blSSzpI"
+                                            frameBorder="0"
+                                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                            allowFullScreen/>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -54,6 +63,21 @@ class Index extends React.Component {
                       flex-direction: column;
                       min-width: 75%;
                       max-width: 75%;
+                    }
+                    
+                    .container {
+                        position: relative;
+                        width: 100%;
+                        height: 0;
+                        padding-bottom: 56.25%;
+                    }
+                    .video {
+                        position: absolute;
+                        align-self: center;
+                        padding: 1rem;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
                     }
                 `}</style>
             </Layout>
