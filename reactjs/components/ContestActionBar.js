@@ -170,6 +170,7 @@ class ContestActionBar extends React.Component {
                     await this.setState({enrolled: false});
                 }
                 await this.setState({error: false});
+                await this.getEnrolled();
             } else {
                 await this.setState({error: true});
                 await this.setState({errorMessage: responseJson['message']});
@@ -231,32 +232,6 @@ class ContestActionBar extends React.Component {
                                         onClick={this.enrollSinglePlayer}>Solve solo</button>
                                 <button className="btn btn-warning"
                                         onClick={this.showTeamsMemberOf}>Solve with a team</button>
-                            </div>
-                        );
-                    }
-                })()}
-
-                {(()=>{
-                    if(this.state['teamPlayer']) {
-                        return(
-                            <div className={"to-right"}>
-                                <br/>
-                                <a onClick={async () => {
-                                    if(confirm("Are you sure?")) {
-                                        await this.leaveTeam();
-                                    }
-                                }} >Leave team {this.state['teamName']}</a>
-                            </div>
-                        );
-                    } else if(this.state['singlePlayer']) {
-                        return(
-                            <div className={"to-right"}>
-                                <br/>
-                                <a onClick={async () => {
-                                    if(confirm("Are you sure?")) {
-                                        await this.singlePlayerLeaveContest();
-                                    }
-                                }} >Leave the contest</a>
                             </div>
                         );
                     }

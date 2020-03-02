@@ -4,6 +4,8 @@ namespace App\Controller;
 
 use App\Entity\Account;
 use App\Entity\Contest;
+use App\Entity\PuzzleSession;
+use App\Entity\Team;
 use DateTime;
 use FOS\RestBundle\Controller\Annotations\Route;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
@@ -182,8 +184,12 @@ class ContestController extends AbstractFOSRestController
                 'finishesAt' => ['timestamp'],
                 'createdAt' => ['timestamp'],
                 'createdBy' => ['id', 'user' => ['fullName']],
-                'enrolledPlayers' => ['user' => ['id', 'fullName']],
-                'enrolledTeams' => ['id', 'name'],
+                'sessions' => [
+                    'id',
+                    'singlePlayer' => ['user' => ['id', 'fullName']],
+                    'teamPlayer' => ['id', 'name'],
+                    'contest' => ['id', 'name']
+                ],
                 'singlePlayerWinner' => [
                         'user' => ['fullName']
                 ],
@@ -276,31 +282,52 @@ class ContestController extends AbstractFOSRestController
 
         /** @var Account $account */
         $account = $this->getUser()->getAccount();
-
-        /** @var Account $player*/
-        foreach ($account->getContestsEnrolledAt() as $contestEnrolledAt) {
-            if($contestEnrolledAt->getId() == $contest->getId()) {
-                return new JsonResponse(
-                    [
-                        'enrolled' => true,
-                        'singlePlayer' => true,
-                        'singlePlayerId' => $account->getId(),
-                        'teamPlayer' => false
-                    ], 200);
-            }
-        }
-
-        foreach ($contest->getEnrolledTeams() as $enrolledTeam) {
-            foreach ($account->getTeamsMemberOf() as $teamMemberOf) {
-                if($enrolledTeam->getId() == $teamMemberOf->getId()) {
+        /** @var PuzzleSession $session */
+        foreach ($account->getPuzzleSessions() as $session) {
+            if($session->getContest() && $session->getContest()->getId() == $id) {
+                if($session->getSinglePlayer()) {
+                    return new JsonResponse(
+                        [
+                            'enrolled' => true,
+                            'singlePlayer' => true,
+                            'singlePlayerId' => $account->getId(),
+                            'teamPlayer' => false
+                        ], 200);
+                } else if($session->getTeamPlayer()) {
                     return new JsonResponse(
                         [
                             'enrolled' => true,
                             'singlePlayer' => false,
                             'teamPlayer' => true,
-                            'teamName' => $enrolledTeam->getName(),
-                            'teamId' => $enrolledTeam->getId()
+                            'teamName' => $session->getTeamPlayer()->getName(),
+                            'teamId' => $session->getTeamPlayer()->getId()
                         ], 200);
+                }
+            }
+        }
+
+        /** @var Team $teamMemberOf */
+        foreach ($account->getTeamsMemberOf() as $teamMemberOf) {
+            foreach ($teamMemberOf->getPuzzleSessions() as $session) {
+                if($session->getContest() && $session->getContest()->getId() == $id) {
+                    if($session->getSinglePlayer()) {
+                        return new JsonResponse(
+                            [
+                                'enrolled' => true,
+                                'singlePlayer' => true,
+                                'singlePlayerId' => $account->getId(),
+                                'teamPlayer' => false
+                            ], 200);
+                    } else if($session->getTeamPlayer()) {
+                        return new JsonResponse(
+                            [
+                                'enrolled' => true,
+                                'singlePlayer' => false,
+                                'teamPlayer' => true,
+                                'teamName' => $session->getTeamPlayer()->getName(),
+                                'teamId' => $session->getTeamPlayer()->getId()
+                            ], 200);
+                    }
                 }
             }
         }

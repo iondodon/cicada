@@ -26,7 +26,7 @@ class PuzzleSession
     /**
      * @var Account
      *
-     * @ORM\ManyToOne(targetEntity="Account", inversedBy="puzzle_sessions")
+     * @ORM\ManyToOne(targetEntity="Account", inversedBy="puzzleSessions")
      * @ORM\JoinColumn(name="account_id", referencedColumnName="id")
      */
     private $singlePlayer;
@@ -46,6 +46,15 @@ class PuzzleSession
      * @ORM\JoinColumn(name="puzzle_id", referencedColumnName="id")
      */
     private $puzzle;
+
+
+    /**
+     * @var Contest
+     *
+     * @ORM\ManyToOne(targetEntity="Contest", inversedBy="$puzzleSessions")
+     * @ORM\JoinColumn(name="contest_id", referencedColumnName="id")
+     */
+    private $contest;
 
     /**
      * @var integer
@@ -116,6 +125,24 @@ class PuzzleSession
     {
         $this->puzzle = $puzzle;
 
+        return $this;
+    }
+
+    /**
+     * @return Contest
+     */
+    public function getContest(): ?Contest
+    {
+        return $this->contest;
+    }
+
+    /**
+     * @param Contest $contest
+     * @return PuzzleSession
+     */
+    public function setContest(Contest $contest): PuzzleSession
+    {
+        $this->contest = $contest;
         return $this;
     }
 
