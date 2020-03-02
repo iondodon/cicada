@@ -17,8 +17,7 @@ class Contest
 {
     public function __construct()
     {
-        $this->enrolledTeams = new ArrayCollection();
-        $this->enrolledPlayers = new ArrayCollection();
+        $this->puzzleSessions = new ArrayCollection();
     }
 
     /**
@@ -43,6 +42,14 @@ class Contest
      * )
      */
     private $puzzle;
+
+    /**
+     * @var Collection
+     *
+     * @ORM\OneToMany(targetEntity="PuzzleSession", mappedBy="contest")
+     * )
+     */
+    private $puzzleSessions;
 
     /**
      * @var DateTime
@@ -86,22 +93,6 @@ class Contest
      * @ORM\Column(type="integer", nullable=false)
      */
     private $isPrivate;
-
-    /**
-     * @var Collection
-     *
-     * @ORM\ManyToMany(targetEntity="Account", inversedBy="contestsEnrolledAt")
-     * @ORM\JoinTable(name="contests_accounts")
-     */
-    private $enrolledPlayers;
-
-    /**
-     * @var Collection
-     *
-     * @ORM\ManyToMany(targetEntity="Team", inversedBy="contestsEnrolledAt")
-     * @ORM\JoinTable(name="contests_teams")
-     */
-    private $enrolledTeams;
 
     /** @var Account
      *
@@ -160,6 +151,24 @@ class Contest
     {
         $this->puzzle = $puzzle;
 
+        return $this;
+    }
+
+    /**
+     * @return Collection
+     */
+    public function getPuzzleSessions(): Collection
+    {
+        return $this->puzzleSessions;
+    }
+
+    /**
+     * @param Collection $puzzleSessions
+     * @return Contest
+     */
+    public function setPuzzleSessions(Collection $puzzleSessions): Contest
+    {
+        $this->puzzleSessions = $puzzleSessions;
         return $this;
     }
 
@@ -273,44 +282,6 @@ class Contest
     public function setIsPrivate(bool $isPrivate): Contest
     {
         $this->isPrivate = $isPrivate;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection
-     */
-    public function getEnrolledPlayers(): Collection
-    {
-        return $this->enrolledPlayers;
-    }
-
-    /**
-     * @param Collection $enrolledPlayers
-     * @return Contest
-     */
-    public function setEnrolledPlayers(Collection $enrolledPlayers): Contest
-    {
-        $this->enrolledPlayers = $enrolledPlayers;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection
-     */
-    public function getEnrolledTeams(): Collection
-    {
-        return $this->enrolledTeams;
-    }
-
-    /**
-     * @param Collection $enrolledTeams
-     * @return Contest
-     */
-    public function setEnrolledTeams(Collection $enrolledTeams): Contest
-    {
-        $this->enrolledTeams = $enrolledTeams;
 
         return $this;
     }

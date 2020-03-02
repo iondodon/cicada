@@ -122,10 +122,12 @@ class TeamController extends AbstractFOSRestController
                 'members' => ['user' => ['fullName', 'username']],
                 'puzzlesSolvedCount',
                 'winedContestsCount',
-                'puzzleSessions' => ['id', 'puzzle' => ['id', 'name']],
-                'creator' => ['id', 'user' => ['fullName']],
-                'puzzlesEnrolledAt' => ['id', 'name'],
-                'contestsEnrolledAt' => ['id', 'name']
+                'puzzleSessions' => [
+                    'id',
+                    'puzzle' => ['id', 'name'],
+                    'contest' => ['id', 'name']
+                ],
+                'creator' => ['id', 'user' => ['fullName']]
             ]
         ]);
 

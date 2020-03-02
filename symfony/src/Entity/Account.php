@@ -19,7 +19,6 @@ class Account
         $this->createdPuzzles = new ArrayCollection();
         $this->createdTeams = new ArrayCollection();
         $this->createdContests = new ArrayCollection();
-        $this->contestsEnrolledAt = new ArrayCollection();
         $this->teamsMemberOf = new ArrayCollection();
         $this->notificationsSent = new ArrayCollection();
         $this->notificationsReceived = new ArrayCollection();
@@ -76,13 +75,6 @@ class Account
      * @ORM\OneToMany(targetEntity="Contest", mappedBy="createdBy")
      */
     private $createdContests;
-
-    /**
-     * @var Collection
-     *
-     * @ORM\ManyToMany(targetEntity="Contest", mappedBy="enrolledPlayers")
-     */
-    private $contestsEnrolledAt;
 
     /**
      * @var Collection
@@ -168,7 +160,6 @@ class Account
     public function setPuzzleSessions(Collection $puzzleSessions): Account
     {
         $this->puzzleSessions = $puzzleSessions;
-
         return $this;
     }
 
@@ -225,25 +216,6 @@ class Account
     public function setCreatedContests(Collection $createdContests): Account
     {
         $this->createdContests = $createdContests;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection
-     */
-    public function getContestsEnrolledAt(): Collection
-    {
-        return $this->contestsEnrolledAt;
-    }
-
-    /**
-     * @param Contest $contestsEnrolledAt
-     * @return Account
-     */
-    public function setContestsEnrolledAt(Contest $contestsEnrolledAt): Account
-    {
-        $this->contestsEnrolledAt = $contestsEnrolledAt;
 
         return $this;
     }

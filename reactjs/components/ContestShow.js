@@ -73,6 +73,7 @@ class ContestShow extends React.Component {
         await this.setState({enrolledTeams: responseJson['enrolledTeams']});
         await this.setState({singlePlayerWinner: responseJson['singlePlayerWinner']});
         await this.setState({teamWinner: responseJson['teamWinner']});
+        await this.setState({sessions: responseJson['sessions']});
 
         await this.setState({loading: false});
     }
@@ -161,29 +162,16 @@ class ContestShow extends React.Component {
                 <h2>created: {this.state['createdAt']} </h2>
                 <h2>created by: {this.state['createdBy']} </h2>
 
-                <h2>enrolled players:</h2>
-                <div className={'links'}>
-                    {
-                        this.state['enrolledPlayers'].map((player) => {
+                <h2>sessions: </h2>
+                {(()=>{
+                    if(this.state['sessions']) {
+                        this.state['sessions'].map((session) => {
                             return(
-                                <a key={player['user']['fullName']} className={'link'}>{player['user']['fullName']}</a>
-                            )
+                                <a>{session['id']} </a>
+                            );
                         })
                     }
-                </div>
-
-                <h2>enrolled teams:</h2>
-                <div className={'links'}>
-                    {
-                        this.state['enrolledTeams'].map((team) => {
-                            return(
-                                <Link  key={team['id']} href={{pathname: '/team/show', query: {teamId: team['id']} }}>
-                                    <a className={'link'}>{team['name']}</a>
-                                </Link>
-                            )
-                        })
-                    }
-                </div>
+                })()}
 
                 {(()=>{
                     if(this.state['singlePlayerWinner'] && this.state['singlePlayerWinner']['user']) {

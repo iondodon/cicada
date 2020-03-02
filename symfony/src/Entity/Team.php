@@ -16,7 +16,6 @@ class Team
 {
     public function __construct()
     {
-        $this->contestsEnrolledAt = new ArrayCollection();
         $this->puzzleSessions = new ArrayCollection();
         $this->members = new ArrayCollection();
         $this->requestedMembers = new ArrayCollection();
@@ -85,13 +84,6 @@ class Team
      * @ORM\JoinColumn(name="creator_account_id", referencedColumnName="id")
      */
     private $creator;
-
-    /**
-     * @var Collection
-     *
-     * @ORM\ManyToMany(targetEntity="Contest", mappedBy="enrolledTeams")
-     */
-    private $contestsEnrolledAt;
 
     /**
      * @return mixed
@@ -234,25 +226,6 @@ class Team
     public function setCreator(Account $creator): Team
     {
         $this->creator = $creator;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection
-     */
-    public function getContestsEnrolledAt(): Collection
-    {
-        return $this->contestsEnrolledAt;
-    }
-
-    /**
-     * @param Collection $contestsEnrolledAt
-     * @return Team
-     */
-    public function setContestsEnrolledAt(Collection $contestsEnrolledAt): Team
-    {
-        $this->contestsEnrolledAt = $contestsEnrolledAt;
 
         return $this;
     }

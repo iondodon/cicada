@@ -35,13 +35,13 @@ class PuzzleSessionController extends AbstractFOSRestController
 
         /** @var Account $account */
         $account = $this->getUser()->getAccount();
-        foreach($account->getPuzzleSessions() as $sess) {
+        $sessions = $account->getPuzzleSessions();
+        foreach($sessions as $sess) {
             if($sess->getPuzzle()->getId() === (int)$puzzleId) {
-                $sessions = $account->getPuzzleSessions();
                 $sessions->removeElement($sess);
                 $account->setPuzzleSessions($sessions);
-                $em->remove($sess);
                 $em->persist($account);
+                $em->remove($sess);
                 $em->flush();
                 return new JsonResponse(null, 200);
             }
@@ -71,7 +71,7 @@ class PuzzleSessionController extends AbstractFOSRestController
      * @param $puzzleId
      * @return JsonResponse
      */
-    public function getSession($puzzleId): JsonResponse
+    public function getSessions($puzzleId): JsonResponse
     {
         /** @var Account $account */
         $account = $this->getUser()->getAccount();
@@ -125,6 +125,7 @@ class PuzzleSessionController extends AbstractFOSRestController
                     ],
                     'stagesCount',
                 ],
+                'contest' => ['id', 'name']
             ]
         ]);
 
@@ -134,9 +135,10 @@ class PuzzleSessionController extends AbstractFOSRestController
     /**
      * @Route("/api/puzzle/enroll-single-player/{puzzleId}", name="puzzle_sessions.enroll-single-player", methods={"POST"})
      * @param $puzzleId
+     * @param $contestId
      * @return JsonResponse
      */
-    public function enrollSinglePlayer($puzzleId): JsonResponse
+    public function enrollSinglePlayer($puzzleId, $contestId = null): JsonResponse
     {
         /** @var Account $account */
         $account = $this->getUser()->getAccount();
@@ -155,6 +157,15 @@ class PuzzleSessionController extends AbstractFOSRestController
         }
 
         $session = new PuzzleSession();
+        if($contestId) {
+            /** @var Contest $contest */
+            $contest = $em->getRepository(Contest::class)->find($contestId);
+            if(!$contest) {
+                return new JsonResponse(['message' => 'Contest not found.'], 400);
+            }
+
+            $session->setContest($contest);
+        }
         $session->setCompleteness(0);
         $session->setSinglePlayer($account);
         $session->setPuzzle($puzzle);
@@ -187,9 +198,10 @@ class PuzzleSessionController extends AbstractFOSRestController
      * @Route("/api/puzzle/enroll-team/{puzzleId}/{teamId}", name="puzzle_sessions.enroll-team", methods={"POST"})
      * @param $puzzleId
      * @param $teamId
+     * @param $contestId
      * @return JsonResponse
      */
-    public function enrollTeam($puzzleId, $teamId): JsonResponse
+    public function enrollTeam($puzzleId, $teamId, $contestId = null): JsonResponse
     {
         $em = $this->getDoctrine()->getManager();
 
@@ -212,6 +224,15 @@ class PuzzleSessionController extends AbstractFOSRestController
         }
 
         $session = new PuzzleSession();
+        if($contestId) {
+            /** @var Contest $contest */
+            $contest = $em->getRepository(Contest::class)->find($contestId);
+            if(!$contest) {
+                return new JsonResponse(['message' => 'Contest not found.'], 400);
+            }
+
+            $session->setContest($contest);
+        }
         $session->setPuzzle($puzzle);
         $session->setCompleteness(0);
         $session->setTeamPlayer($team);
@@ -253,19 +274,10 @@ class PuzzleSessionController extends AbstractFOSRestController
         /** @var Contest $contest */
         $contest = $em->getRepository(Contest::class)->find($contestId);
         if(!$contest) {
-            return new JsonResponse(['message' => 'contest not found.'], 400);
+            return new JsonResponse(['message' => 'Contest not found.'], 400);
         }
 
-        $account = $this->getUser()->getAccount();
-        $enrolledPlayers = $contest->getEnrolledPlayers();
-        if($enrolledPlayers->contains($account)) {
-            return new JsonResponse(['message' => 'You are already registered for this contest.'], 400);
-        }
-        $enrolledPlayers->add($account);
-        $contest->setEnrolledPlayers($enrolledPlayers);
-        $em->persist($contest);
-
-        return $this->enrollSinglePlayer($contest->getPuzzle()->getId());
+        return $this->enrollSinglePlayer($contest->getPuzzle()->getId(), $contestId);
     }
 
     /**
@@ -280,7 +292,7 @@ class PuzzleSessionController extends AbstractFOSRestController
         /** @var Contest $contest */
         $contest = $em->getRepository(Contest::class)->find($contestId);
         if(!$contest) {
-            return new JsonResponse(['message' => 'contest not found.'], 400);
+            return new JsonResponse(['message' => 'Contest not found.'], 400);
         }
 
         /** @var Team $team */
@@ -289,41 +301,6 @@ class PuzzleSessionController extends AbstractFOSRestController
             return new JsonResponse(['message' => 'Team not found'], 400);
         }
 
-        $enrolledTeams = $contest->getEnrolledTeams();
-        if($enrolledTeams->contains($team)) {
-            return new JsonResponse(['message' => 'This teams is already enrolled.'], 400);
-        }
-        $enrolledTeams->add($team);
-        $contest->setEnrolledTeams($enrolledTeams);
-        $em->persist($contest);
-
-        return $this->enrollTeam($contest->getPuzzle()->getId(), $teamId);
-    }
-
-    /**
-     * @Route("/api/single-player-leave-contest/{contestId}", name="puzzle_sessions.leave-contest", methods={"POST"})
-     * @param $contestId
-     * @return JsonResponse
-     */
-    public function singlePlayerLeaveContest($contestId): JsonResponse
-    {
-        $em = $this->getDoctrine()->getManager();
-        /** @var Contest $contest */
-        $contest = $em->getRepository(Contest::class)->find($contestId);
-        if(!$contest) {
-            return new JsonResponse(['message' => 'Contest not found.'], 400);
-        }
-
-        $account = $this->getUser()->getAccount();
-
-        $enrolledPlayers = $contest->getEnrolledPlayers();
-        if(!$enrolledPlayers->contains($account)) {
-            return new JsonResponse(['message' => 'Player not found among players enrolled for this contest.'], 400);
-        }
-        $enrolledPlayers->removeElement($account);
-        $contest->setEnrolledPlayers($enrolledPlayers);
-        $em->persist($contest);
-
-        return $this->singlePlayerLeavePuzzle($contest->getPuzzle()->getId());
+        return $this->enrollTeam($contest->getPuzzle()->getId(), $teamId, $contestId);
     }
 }

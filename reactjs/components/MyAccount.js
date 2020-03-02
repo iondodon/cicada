@@ -526,18 +526,6 @@ class MyAccount extends React.Component {
                 <div className={"status"}>
                     <h2>wined contests: { this.state['account']['winedContestsCount'] } </h2>
                     <h2>puzzles solved: { this.state['account']['puzzlesSolvedCount'] } </h2>
-                    <h2>contests enrolled at: { this.state['account']['contestsEnrolledAt'].length } </h2>
-                    <div className={"list"}>
-                        {
-                            this.state['account']['contestsEnrolledAt'].map((contest) => {
-                                return(
-                                    <Link key={contest['id']} href={{ pathname: '/contest/show', query: {contestId: contest['id'] } }}>
-                                        <a>{ contest['name'] }</a>
-                                    </Link>
-                                )
-                            })
-                        }
-                    </div>
                     <h2>created contests: { this.state['account']['createdContests'].length } </h2>
                     <div className={"list"}>
                         {
@@ -580,7 +568,16 @@ class MyAccount extends React.Component {
                             this.state['account']['puzzleSessions'].map((session) => {
                                 return(
                                     <Link key={session['id']} href={{ pathname: '/puzzle/show', query: {puzzleId: session['puzzle']['id']} }}>
-                                        <a>{ session['puzzle']['name'] }</a>
+                                        <a>
+                                            { session['puzzle']['name'] }
+                                            {(()=>{
+                                                if(session['contest']) {
+                                                    return(
+                                                        <div> {session['contest']['name']} </div>
+                                                    );
+                                                }
+                                            })()}
+                                        </a>
                                     </Link>
                                 )
                             })
