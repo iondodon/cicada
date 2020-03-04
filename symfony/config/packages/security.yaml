@@ -26,6 +26,7 @@ security:
             # http_basic: ~
             # https://symfony.com/doc/current/book/security.html#a-configuring-how-your-users-will-authenticate
     access_control:
+        - { path: ^/api/get-top-players, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/api/token, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/api/register, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/api/forgotPassword, roles: IS_AUTHENTICATED_ANONYMOUSLY }
