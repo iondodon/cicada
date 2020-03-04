@@ -62,36 +62,27 @@ class StageController extends AbstractFOSRestController
             $singlePlayer = $session->getSinglePlayer();
             $teamPlayer = $session->getTeamPlayer();
 
+            /** @var Contest $contest */
             if($singlePlayer) {
-                $contests = $singlePlayer->getContestsEnrolledAt();
-                /** @var Contest $contest */
-                foreach ($contests as $contest) {
-                    if($contest->getPuzzle()->getId() === $session->getPuzzle()->getId()) {
-                        $currentTime = new DateTime();
-                        if($contest->getFinishesAt()->getTimestamp() > $currentTime->getTimestamp()
-                            && $contest->getStartsAt()->getTimestamp() < $currentTime->getTimestamp()) {
-                            if(!$contest->getSinglePlayerWinner() && !$contest->getTeamWinner()) {
-                                $contest->setSinglePlayerWinner($singlePlayer);
-                                $em->persist($contest);
-                            }
-                        }
+                $contest = $session->getContest();
+                $currentTime = new DateTime();
+                if($contest->getFinishesAt()->getTimestamp() > $currentTime->getTimestamp()
+                    && $contest->getStartsAt()->getTimestamp() < $currentTime->getTimestamp()) {
+                    if(!$contest->getSinglePlayerWinner() && !$contest->getTeamWinner()) {
+                        $contest->setSinglePlayerWinner($singlePlayer);
+                        $em->persist($contest);
                     }
                 }
             }
 
             if($teamPlayer) {
-                $contests = $teamPlayer->getContestsEnrolledAt();
-                /** @var Contest $contest */
-                foreach ($contests as $contest) {
-                    if($contest->getPuzzle()->getId() === $session->getPuzzle()->getId()) {
-                        $currentTime = new DateTime();
-                        if($contest->getFinishesAt()->getTimestamp() > $currentTime->getTimestamp()
-                            && $contest->getStartsAt()->getTimestamp() < $currentTime->getTimestamp()) {
-                            if(!$contest->getSinglePlayerWinner() && !$contest->getTeamWinner()) {
-                                $contest->setTeamWinner($teamPlayer);
-                                $em->persist($contest);
-                            }
-                        }
+                $contest = $session->getContest();
+                $currentTime = new DateTime();
+                if($contest->getFinishesAt()->getTimestamp() > $currentTime->getTimestamp()
+                    && $contest->getStartsAt()->getTimestamp() < $currentTime->getTimestamp()) {
+                    if(!$contest->getSinglePlayerWinner() && !$contest->getTeamWinner()) {
+                        $contest->setTeamWinner($teamPlayer);
+                        $em->persist($contest);
                     }
                 }
             }
