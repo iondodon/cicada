@@ -334,7 +334,7 @@ class PuzzleSession extends React.Component {
                                                                     if(confirm("Are you sure?")) {
                                                                         await this.singlePlayerLeavePuzzle();
                                                                     }
-                                                                }} >Leave this puzzle</a>
+                                                                }} >Remove session</a>
                                                             </div>
                                                         );
                                                     }

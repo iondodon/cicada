@@ -140,7 +140,7 @@ class PuzzleSession
      * @param Contest $contest
      * @return PuzzleSession
      */
-    public function setContest(Contest $contest): PuzzleSession
+    public function setContest(?Contest $contest): PuzzleSession
     {
         $this->contest = $contest;
         return $this;

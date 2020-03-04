@@ -19,6 +19,7 @@ class ContestShow extends React.Component {
         this.deleteTeam = this.deleteTeam.bind(this);
         this.fetchSetState = this.fetchSetState.bind(this);
         this.prepareState = this.prepareState.bind(this);
+        this.removeTeamSession = this.removeTeamSession.bind(this);
         this.closeError = this.closeError.bind(this);
     }
 
@@ -103,6 +104,34 @@ class ContestShow extends React.Component {
         }
     }
 
+    async removeTeamSession(sessionId) {
+        const request = {
+            method: 'DELETE',
+            mode: 'cors',
+            credentials: "include"
+        };
+
+        try {
+            let response = await fetch(config.API_URL + '/api/remove-team-session/' + sessionId, request);
+
+            if (response.status === 401) {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Unauthorized.';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            } else if (response.status === 400) {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Something was not found.';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            } else if (response.status === 200) {
+                await this.fetchSetState();
+            } else {
+                document.getElementsByClassName('error-content')[0].innerHTML = 'Unknown error. Check the fields and try again.';
+                document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+            }
+        } catch (e) {
+            document.getElementsByClassName('error-content')[0].innerHTML += e.message;
+            document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
+        }
+    }
+
     closeError(e) {
         e.target.parentElement.setAttribute('style', 'display: none;');
     }
@@ -147,7 +176,16 @@ class ContestShow extends React.Component {
 
                 <h2>name: {this.state['teamName']} </h2>
 
-                <h2>members:</h2>
+                <h2>
+                    members:
+                    {(()=>{
+                        if(this.state['members']) {
+                            return(this.state['members'].length);
+                        } else {
+                            return(0);
+                        }
+                    })()}
+                </h2>
                 <div className={'links'}>
                     {
                         this.state['members'].map((member) => {
@@ -159,31 +197,47 @@ class ContestShow extends React.Component {
                 </div>
 
                 <h2>puzzles solved: {this.state['puzzlesSolvedCount']} </h2>
-                <h2>wined contests: {this.state['winedContestsCount']}</h2>
+                <h2>wined contests: {this.state['winedContestsCount']} </h2>
 
-                <h2>puzzle sessions: </h2>
+                <h2>
+                    puzzle sessions:
+                    {(()=>{
+                        if(this.state['puzzleSessions']) {
+                            return(this.state['puzzleSessions'].length);
+                        } else {
+                            return(0);
+                        }
+                    })()}
+                </h2>
                 <div className={'links'}>
                     {
                         this.state['puzzleSessions'].map((session) => {
                             return(
-                                <Link href={{pathname: '/puzzle/show', query: {puzzleId: session['puzzle']['id']} }}>
-                                    <a key={session['puzzle']['name']} className={'link'}>
-                                        {session['puzzle']['name']}
-                                        {(()=>{
-                                            if(session['contest']) {
-                                                return(
-                                                    <div> {session['contest']['name']} </div>
-                                                );
-                                            }
-                                        })()}
-                                    </a>
-                                </Link>
+                                <span>
+                                    (
+                                    <Link href={{pathname: '/puzzle/show', query: {puzzleId: session['puzzle']['id']} }}>
+                                        <a key={session['id']} className={'link'}>
+                                            {session['puzzle']['name']}
+                                            {(()=>{
+                                                if(session['contest']) {
+                                                    return(
+                                                        <span> contest:{session['contest']['name']} </span>
+                                                    );
+                                                }
+                                            })()}
+                                        </a>
+                                    </Link>
+                                    <a onClick={async () => {
+                                        if(confirm("Are you sure?")) {
+                                            await this.removeTeamSession(session['id'])
+                                        }
+                                    }}> remove</a>
+                                    )
+                                </span>
                             )
                         })
                     }
                 </div>
-
-                //TODO: cancel session
 
                 <h2>creator: {this.state['creator']['user']['fullName']}</h2>
 
