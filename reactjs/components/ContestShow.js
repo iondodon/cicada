@@ -162,7 +162,16 @@ class ContestShow extends React.Component {
                 <h2>created: {this.state['createdAt']} </h2>
                 <h2>created by: {this.state['createdBy']} </h2>
 
-                <h2>sessions: </h2>
+                <h2>
+                    sessions:
+                    {(()=>{
+                        if(this.state['sessions']){
+                            return(this.state['sessions'].length);
+                        } else {
+                            return(0);
+                        }
+                    })()}
+                </h2>
                 {(()=>{
                     if(this.state['sessions']) {
                         this.state['sessions'].map((session) => {

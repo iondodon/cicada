@@ -50,6 +50,44 @@ class PuzzleSessionController extends AbstractFOSRestController
         return new JsonResponse(['message' => 'No session found.'], 400);
     }
 
+    /**
+     * @Route("/api/remove-team-session/{sessionId}", name="puzzle_sessions.remove-team-session", methods={"DELETE"})
+     * @param $sessionId
+     * @return JsonResponse
+     */
+    public function removeTeamSession($sessionId): JsonResponse
+    {
+        $em = $this->getDoctrine()->getManager();
+        $session = $em->getRepository(PuzzleSession::class)->find($sessionId);
+        if(!$session) {
+            return new JsonResponse(['message' => 'Session not found.'], 400);
+        }
+
+        $team = $session->getTeamPlayer();
+        if(!$team) {
+            return new JsonResponse(['message' => 'Team not found.'], 400);
+        }
+
+        /** @var Account $teamCreator */
+        /** @var Team $team */
+        $teamCreator = $team->getCreator();
+        if(!$teamCreator) {
+            return new JsonResponse(['message' => 'Team creator not found.'], 400);
+        }
+
+        /** @var Account $account */
+        $account = $this->getUser()->getAccount();
+
+        if($teamCreator->getId() !== $account->getId()) {
+            return new JsonResponse(['message' => 'You are not allowed to remove this team session.'], 400);
+        }
+
+        $em->remove($session);
+        $em->flush();
+
+        return new JsonResponse(null, 200);
+    }
+
     private function extractUnnecessaryStages($session) {
         /** @var Stage $stage */
         /** @var PuzzleSession  $session */

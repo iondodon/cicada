@@ -18,7 +18,7 @@ class ListTeams extends React.Component {
             currentTeams: [],
             loading: true,
             currentPage: 1,
-            teamsPerPage: 3
+            teamsPerPage: 20
         };
 
         this.type = this.props.type;

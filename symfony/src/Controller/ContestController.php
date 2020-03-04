@@ -7,6 +7,7 @@ use App\Entity\Contest;
 use App\Entity\PuzzleSession;
 use App\Entity\Team;
 use DateTime;
+use Doctrine\ORM\EntityManagerInterface;
 use FOS\RestBundle\Controller\Annotations\Route;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -245,15 +246,25 @@ class ContestController extends AbstractFOSRestController
 
     /**
      * @Route("/api/contests/destroy/{id}", name="contests.destroy", methods={"DELETE"})
-     * @param $id
+     * @param int $id
+     * @param EntityManagerInterface $em
      * @return Response
      */
-    public function destroy(int $id): Response
+    public function destroy(int $id, EntityManagerInterface $em): Response
     {
-        $em = $this->getDoctrine()->getManager();
-
         /** @var Contest $contest */
         $contest = $em->getRepository(Contest::class)->find($id);
+
+        $query = $em->createQuery('SELECT ps FROM App\Entity\PuzzleSession ps JOIN ps.contest c WHERE c.id = :id')
+            ->setParameter('id',$id);
+        $puzzleSessions = $query->getResult();
+
+        /** @var PuzzleSession $sess */
+        foreach ($puzzleSessions as $sess) {
+            $sess->setContest(null);
+            $em->persist($sess);
+        }
+
         $em->remove($contest);
         $em->flush();
 

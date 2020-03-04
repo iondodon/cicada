@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/89715e81-bc9c-4fca-9f4c-1a8fd517663e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/89715e81-bc9c-4fca-9f4c-1a8fd517663e.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/ContestActionBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/ContestActionBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/ContestShow.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/ContestShow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/MyAccount.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/MyAccount.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/PuzzleSession.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/PuzzleSession.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/TeamShow.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/TeamShow.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactjs/configs/keys.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/configs/keys.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony/src/Controller/AccountController.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Controller/AccountController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony/src/Controller/ContestController.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Controller/ContestController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony/src/Controller/PuzzleSessionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Controller/PuzzleSessionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony/src/Controller/TeamController.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Controller/TeamController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony/src/Entity/Account.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Entity/Account.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony/src/Entity/Contest.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Entity/Contest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony/src/Entity/PuzzleSession.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Entity/PuzzleSession.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony/src/Entity/Team.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Entity/Team.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -538,7 +522,9 @@
       <workItem from="1582970873037" duration="2135000" />
       <workItem from="1583082578016" duration="7336000" />
       <workItem from="1583143891128" duration="1893000" />
-      <workItem from="1583146658974" duration="8898000" />
+      <workItem from="1583146658974" duration="9071000" />
+      <workItem from="1583155990960" duration="229000" />
+      <workItem from="1583309193800" duration="6882000" />
     </task>
     <servers />
   </component>
@@ -569,12 +555,12 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="276" y="18" width="804" height="667" key="#Inspections/0.0.1366.768@0.0.1366.768" timestamp="1582545076235" />
-    <state x="207" y="1" width="804" height="667" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582907673215">
+    <state x="199" y="29" width="804" height="667" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583310883662">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="215" y="22" width="901" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.735@0.0.1366.735" timestamp="1577989238037" />
     <state x="215" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.742@0.0.1366.742" timestamp="1580031571283" />
-    <state x="207" y="1" width="804" height="667" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.768@0.0.1366.768" timestamp="1582907673215" />
+    <state x="199" y="29" width="804" height="667" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.768@0.0.1366.768" timestamp="1583310883662" />
     <state x="366" y="101" width="624" height="540" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1580823465884">
       <screen x="0" y="0" width="1366" height="742" />
     </state>
@@ -584,10 +570,11 @@
       <screen x="0" y="0" width="1366" height="735" />
     </state>
     <state x="416" y="117" width="524" height="498" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.735@0.0.1366.735" timestamp="1577354412028" />
-    <state x="416" y="124" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1579285968216">
-      <screen x="0" y="0" width="1366" height="735" />
+    <state x="414" y="112" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1583316279976">
+      <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="416" y="124" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.735@0.0.1366.735" timestamp="1579285968216" />
+    <state x="414" y="112" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.768@0.0.1366.768" timestamp="1583316279976" />
     <state x="473" y="253" width="409" height="253" key="ComposerInitDialogKey" timestamp="1576771032968">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
@@ -616,11 +603,11 @@
       <screen x="0" y="0" width="1366" height="735" />
     </state>
     <state x="441" y="215" width="474" height="303" key="cloudConfig.PluginsDialog/0.0.1366.735@0.0.1366.735" timestamp="1576942580841" />
-    <state x="562" y="186" width="336" height="239" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1583153158060">
+    <state x="560" y="168" width="336" height="239" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1583156119883">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="572" y="264" width="307" height="228" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1366.735@0.0.1366.735" timestamp="1578826177807" />
-    <state x="562" y="186" width="336" height="239" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1366.768@0.0.1366.768" timestamp="1583153158060" />
+    <state x="560" y="168" width="336" height="239" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1366.768@0.0.1366.768" timestamp="1583156119883" />
     <state x="347" y="160" width="672" height="677" key="run.anything.popup" timestamp="1579112135253">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
