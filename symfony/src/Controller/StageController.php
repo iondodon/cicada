@@ -66,7 +66,7 @@ class StageController extends AbstractFOSRestController
             if($singlePlayer) {
                 $contest = $session->getContest();
                 $currentTime = new DateTime();
-                if($contest->getFinishesAt()->getTimestamp() > $currentTime->getTimestamp()
+                if($contest && $contest->getFinishesAt()->getTimestamp() > $currentTime->getTimestamp()
                     && $contest->getStartsAt()->getTimestamp() < $currentTime->getTimestamp()) {
                     if(!$contest->getSinglePlayerWinner() && !$contest->getTeamWinner()) {
                         $contest->setSinglePlayerWinner($singlePlayer);
@@ -78,7 +78,7 @@ class StageController extends AbstractFOSRestController
             if($teamPlayer) {
                 $contest = $session->getContest();
                 $currentTime = new DateTime();
-                if($contest->getFinishesAt()->getTimestamp() > $currentTime->getTimestamp()
+                if($contest && $contest->getFinishesAt()->getTimestamp() > $currentTime->getTimestamp()
                     && $contest->getStartsAt()->getTimestamp() < $currentTime->getTimestamp()) {
                     if(!$contest->getSinglePlayerWinner() && !$contest->getTeamWinner()) {
                         $contest->setTeamWinner($teamPlayer);

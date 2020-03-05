@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/ExternalWork/top10.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/docker/mysql/docker-entrypoint-initdb.d/createdb.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/symfony/src/Controller/CommonController.php" dialect="GenericSQL" />
   </component>
 </project>

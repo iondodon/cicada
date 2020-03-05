@@ -227,11 +227,17 @@ class ContestShow extends React.Component {
                                             })()}
                                         </a>
                                     </Link>
-                                    <a onClick={async () => {
-                                        if(confirm("Are you sure?")) {
-                                            await this.removeTeamSession(session['id'])
-                                        }
-                                    }}> remove</a>
+                                        {(() => {
+                                            if(this.state['creator']['user']['id'] == Cookies.get('userId',  { domain: config.DOMAIN })) {
+                                                return(
+                                                    <a onClick={async () => {
+                                                        if(confirm("Are you sure?")) {
+                                                            await this.removeTeamSession(session['id'])
+                                                        }
+                                                    }}> remove</a>
+                                                );
+                                            }
+                                        })()}
                                     )
                                 </span>
                             )

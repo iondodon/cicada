@@ -43,13 +43,13 @@ class LoginController extends Controller
                 'username' => $user->getUsername(),
                 'clientIp' => $request->getClientIp(),
                 'userAgent' => $request->headers->get('User-Agent'),
-                'exp' => time() + 3600 // 1 hour expiration
+                'exp' => time() + 86400 // 24 hours expiration
             ]);
 
         $tokenCookie = new Cookie(
             'BEARER',
             $token,
-            (new DateTime())->add(new DateInterval('PT' . 3600 . 'S')),
+            (new DateTime())->add(new DateInterval('PT' . 86400 . 'S')),
             '/',
             null,
             false,
@@ -59,7 +59,7 @@ class LoginController extends Controller
         $userIdCookie = new Cookie(
           'userId',
           $user->getId(),
-          (new DateTime())->add(new DateInterval('PT' . 3600 . 'S')),
+          (new DateTime())->add(new DateInterval('PT' . 86400 . 'S')),
             '/',
             null,
             false,
