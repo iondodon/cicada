@@ -24,29 +24,29 @@ class CommonController extends AbstractFOSRestController
     public function getTopPlayers(EntityManagerInterface $em) : JsonResponse
     {
         $query = $em->createQuery(/** @lang DQL */ '
-            SELECT u, COUNT(u) AS HIDDEN solved
-            FROM App\Entity\User u
-                JOIN App\Entity\Account acc
+            SELECT acc as account, COUNT(acc) AS solved
+            FROM App\Entity\Account acc
                 JOIN App\Entity\PuzzleSession sess
                 JOIN App\Entity\Puzzle puzz
-            WHERE sess.completeness = puzz.stagesCount
-            GROUP BY u
-            ORDER BY solved
+            WHERE sess.puzzle = puzz AND sess.singlePlayer = acc
+                AND sess.completeness = puzz.stagesCount
+            GROUP BY account
+            ORDER BY solved DESC
         ')->setMaxResults(10);
 
-        dump($query->getResult()); die;
+        $result = $query->getResult();
 
         $encoders = [new JsonEncoder()];
         $normalizers = [new ObjectNormalizer()];
         $serializer = new Serializer($normalizers, $encoders);
 
-        $playersJson = $serializer->serialize($players, 'json', [
+        $resultJson = $serializer->serialize($result, 'json', [
             'attributes' => [
                 'id',
                 'user' => ['fullName']
             ]
         ]);
 
-        return new JsonResponse(json_decode(null, true), 200);
+        return new JsonResponse(json_decode($resultJson, true), 200);
     }
 }

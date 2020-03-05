@@ -30,7 +30,8 @@ class TopPlayers extends React.Component {
             if(response.status === 400){
                 console.log("Client Error");
             } else if(response.status === 200) {
-                console.log(response.json());
+                await this.setState({topPlayers: await response.json()})
+                console.log(this.state);
             }
         } catch (e) {
             console.log(e.message);
@@ -50,13 +51,13 @@ class TopPlayers extends React.Component {
                         <ul>
                             {
                                 this.state['topPlayers'].map((player) => {
-                                    return(<li> - {player['user']['fullName']}</li>);
+                                    return(<li key={player['account']['id']}> - {player['account']['user']['fullName']} : {player['solved']}</li>);
                                 })
                             }
                         </ul>
                     </div>
                 </div>
-
+                
                 { /*language=SCSS*/ }
                 <style jsx>{`
                     .inner {
