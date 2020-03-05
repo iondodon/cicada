@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/reactjs/components/TopTeams.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/pages/top20.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/components/LeftPanel.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/LeftPanel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/components/TopMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/TopMenu.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactjs/components/TopPlayers.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/TopPlayers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/config/packages/security.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/symfony/src/Controller/CommonController.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Controller/CommonController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -538,7 +543,7 @@
       <workItem from="1583155990960" duration="229000" />
       <workItem from="1583309193800" duration="6882000" />
       <workItem from="1583338656851" duration="12734000" />
-      <workItem from="1583389151261" duration="4264000" />
+      <workItem from="1583389151261" duration="6511000" />
     </task>
     <servers />
   </component>
@@ -634,19 +639,20 @@
     </state>
     <state x="572" y="264" width="307" height="228" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1366.735@0.0.1366.735" timestamp="1578826177807" />
     <state x="560" y="168" width="336" height="239" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1366.768@0.0.1366.768" timestamp="1583156119883" />
-    <state x="347" y="160" width="672" height="677" key="run.anything.popup" timestamp="1579112135253">
-      <screen x="0" y="0" width="1366" height="735" />
+    <state x="347" y="167" width="672" height="708" key="run.anything.popup" timestamp="1583395702113">
+      <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="347" y="160" width="672" height="677" key="run.anything.popup/0.0.1366.735@0.0.1366.735" timestamp="1579112135253" />
-    <state x="346" y="59" width="672" height="709" key="search.everywhere.popup" timestamp="1583151451610">
+    <state x="347" y="167" width="672" height="708" key="run.anything.popup/0.0.1366.768@0.0.1366.768" timestamp="1583395702113" />
+    <state x="346" y="59" width="672" height="709" key="search.everywhere.popup" timestamp="1583395746991">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="346" y="56" width="672" height="678" key="search.everywhere.popup/0.0.1366.735@0.0.1366.735" timestamp="1578321917895" />
-    <state x="346" y="59" width="672" height="709" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1583151451610" />
-    <state x="404" y="180" width="544" height="162" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1583151462993">
+    <state x="346" y="59" width="672" height="709" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1583395746991" />
+    <state x="402" y="162" width="544" height="162" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1583394703449">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="408" y="207" width="540" height="319" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.0.1366.735@0.0.1366.735" timestamp="1577903621124" />
-    <state x="404" y="180" width="544" height="162" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.0.1366.768@0.0.1366.768" timestamp="1583151462993" />
+    <state x="402" y="162" width="544" height="162" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.0.1366.768@0.0.1366.768" timestamp="1583394703449" />
   </component>
 </project>

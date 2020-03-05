@@ -4,20 +4,20 @@ import '../i18n';
 import { withNamespaces } from 'react-i18next';
 import config from "../configs/keys";
 
-class TopPlayers extends React.Component {
+class TopTeams extends React.Component {
 
     constructor(props, {t}){
         super(props, {t});
         this.t = t;
 
         this.state = {
-            topPlayers: []
+            topTeams: []
         };
 
-        this.fetchTopPlayers = this.fetchTopPlayers.bind(this);
+        this.fetchTopTeams = this.fetchTopTeams.bind(this);
     }
 
-    async fetchTopPlayers() {
+    async fetchTopTeams() {
         const request = {
             method: 'GET',
             mode: 'cors',
@@ -25,12 +25,12 @@ class TopPlayers extends React.Component {
         };
 
         try {
-            let response = await fetch(config.API_URL + '/api/get-top-players', request);
+            let response = await fetch(config.API_URL + '/api/get-top-teams', request);
 
             if(response.status === 400){
                 console.log("Client Error");
             } else if(response.status === 200) {
-                await this.setState({topPlayers: await response.json()})
+                await this.setState({topTeams: await response.json()});
                 console.log(this.state);
             }
         } catch (e) {
@@ -39,19 +39,19 @@ class TopPlayers extends React.Component {
     }
 
     async componentDidMount() {
-        await this.fetchTopPlayers();
+        await this.fetchTopTeams();
     }
 
     render(){
         return (
-            <div className="card" id={"top-players-card"}>
-                <header className="card-header">Solo players</header>
+            <div className="card" id={"top-teams-card"}>
+                <header className="card-header">Teams</header>
                 <div className="card-content">
                     <div className="inner">
                         <ul>
                             {
-                                this.state['topPlayers'].map((player) => {
-                                    return(<li key={player['account']['id']}> - {player['account']['user']['fullName']} : {player['solved']}</li>);
+                                this.state['topTeams'].map((team) => {
+                                    return(<li key={team['id']}> - {team['team']['name']} : {team['solved']} </li>);
                                 })
                             }
                         </ul>
@@ -81,4 +81,4 @@ class TopPlayers extends React.Component {
     }
 }
 
-export default withNamespaces()(TopPlayers);
+export default withNamespaces()(TopTeams);

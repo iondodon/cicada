@@ -17,7 +17,7 @@ use Symfony\Component\Serializer\Serializer;
 class CommonController extends AbstractFOSRestController
 {
     /**
-     * @Route("/api/get-top-players", name="contests.get-top-players", methods={"GET"})
+     * @Route("/api/get-top-players", name="common.get-top-players", methods={"GET"})
      * @param EntityManagerInterface $em
      * @return JsonResponse
      */
@@ -44,6 +44,40 @@ class CommonController extends AbstractFOSRestController
             'attributes' => [
                 'id',
                 'user' => ['fullName']
+            ]
+        ]);
+
+        return new JsonResponse(json_decode($resultJson, true), 200);
+    }
+
+    /**
+     * @Route("/api/get-top-teams", name="common.get-top-teams", methods={"GET"})
+     * @param EntityManagerInterface $em
+     * @return JsonResponse
+     */
+    public function getTopTeams(EntityManagerInterface $em) : JsonResponse
+    {
+        $query = $em->createQuery(/** @lang DQL */ '
+            SELECT t as team, COUNT(t) AS solved
+            FROM App\Entity\Team t
+                JOIN App\Entity\PuzzleSession sess
+                JOIN App\Entity\Puzzle puzz
+            WHERE sess.puzzle = puzz AND sess.teamPlayer = t
+                AND sess.completeness = puzz.stagesCount
+            GROUP BY team
+            ORDER BY solved DESC
+        ')->setMaxResults(10);
+
+        $result = $query->getResult();
+
+        $encoders = [new JsonEncoder()];
+        $normalizers = [new ObjectNormalizer()];
+        $serializer = new Serializer($normalizers, $encoders);
+
+        $resultJson = $serializer->serialize($result, 'json', [
+            'attributes' => [
+                'id',
+                'name'
             ]
         ]);
 
