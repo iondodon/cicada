@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/reactjs/configs/keys.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/configs/keys.js" afterDir="false" />
-    </list>
+    <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -637,11 +635,11 @@
     </state>
     <state x="347" y="160" width="672" height="677" key="run.anything.popup/0.0.1366.735@0.0.1366.735" timestamp="1579112135253" />
     <state x="347" y="167" width="672" height="708" key="run.anything.popup/0.0.1366.768@0.0.1366.768" timestamp="1583395702113" />
-    <state x="346" y="59" width="672" height="709" key="search.everywhere.popup" timestamp="1583395746991">
+    <state x="346" y="59" width="672" height="709" key="search.everywhere.popup" timestamp="1583525813605">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="346" y="56" width="672" height="678" key="search.everywhere.popup/0.0.1366.735@0.0.1366.735" timestamp="1578321917895" />
-    <state x="346" y="59" width="672" height="709" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1583395746991" />
+    <state x="346" y="59" width="672" height="709" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1583525813605" />
     <state x="402" y="162" width="544" height="162" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1583394703449">
       <screen x="0" y="0" width="1366" height="768" />
     </state>

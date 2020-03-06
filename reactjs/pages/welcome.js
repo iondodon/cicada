@@ -6,6 +6,7 @@ import '../i18n';
 import { withNamespaces } from 'react-i18next';
 import Head from "next/head";
 import LeftPanel from "../components/LeftPanel";
+import SocialShare from "../components/SocialShare";
 
 class Notifications extends React.Component {
 
@@ -39,7 +40,8 @@ class Notifications extends React.Component {
                         {/*<header className="card-header"></header>*/}
                         <div className="card-content">
                             <div className="inner">
-                                aaaaaaaaaa
+                                See you soon!
+                                <SocialShare/>
                             </div>
                         </div>
                     </div>

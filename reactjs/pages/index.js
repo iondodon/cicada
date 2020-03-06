@@ -6,6 +6,7 @@ import '../i18n';
 import { withNamespaces } from 'react-i18next';
 import Head from "next/head";
 import LeftPanel from "../components/LeftPanel";
+import SocialShare from "../components/SocialShare";
 
 class Index extends React.Component {
 
@@ -44,6 +45,7 @@ class Index extends React.Component {
                                 quas ex vero enim in doloribus officiis ullam vel nam esse sapiente velit incidunt.
                                 Eaque quod et, aut maiores excepturi sint.
 
+
                                 <div className={"container"}>
                                     <iframe className={"video"}
                                             src="https://www.youtube.com/embed/I2O7blSSzpI"
@@ -51,6 +53,8 @@ class Index extends React.Component {
                                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                             allowFullScreen/>
                                 </div>
+
+                                <SocialShare/>
                             </div>
                         </div>
                     </div>
