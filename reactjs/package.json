@@ -25,6 +25,7 @@
     "react-i18next": "^9.0.10",
     "react-responsive": "^7.0.0",
     "react-router": "^5.0.1",
+    "react-share": "^4.0.1",
     "select2": "^4.0.7",
     "url-loader": "^2.1.0"
   },

@@ -6,6 +6,7 @@ import config from "../configs/keys";
 import {timeConverter} from '../utlis/utlis';
 import PuzzleSession from "./PuzzleSession";
 import Cookies from 'js-cookie';
+import SocialShare from "./SocialShare";
 
 class PuzzleShow extends React.Component {
 
@@ -181,6 +182,8 @@ class PuzzleShow extends React.Component {
                         return(<PuzzleSession/>);
                     }
                 })()}
+
+                <SocialShare/>
 
                 {(()=>{
                     if(this.state['userId'] == Cookies.get('userId',  { domain: config.DOMAIN })) {
