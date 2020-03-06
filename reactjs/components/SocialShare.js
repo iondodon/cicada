@@ -54,14 +54,21 @@ import {
     TumblrShareCount,
     VKShareCount,
 } from "react-share";
+import keys from "../configs/keys";
 
 class SocialShare extends React.Component {
 
-    constructor(props, {t}){
-        super(props, {t});
+    constructor(props, {t, children, href }){
+        super(props, {t, children, href });
         this.t = t;
 
-        this.state = {};
+        this.state = {
+            url: keys.DOMAIN
+        };
+    }
+
+    async componentDidMount() {
+        await this.setState({url: window.location.href});
     }
 
 
@@ -71,53 +78,53 @@ class SocialShare extends React.Component {
 
                 <div className="alert alert-success">
                     <div className={"btns"}>
-                        <FacebookShareButton url={location.href}>
+                        <FacebookShareButton url={this.state.url}>
                             <FacebookIcon  size={32} />
                             <br/>
-                            <FacebookShareCount url={location.href} />
+                            <FacebookShareCount url={this.state.url} />
                         </FacebookShareButton>
-                        <OKShareButton url={location.href}>
+                        <OKShareButton url={this.state.url}>
                             <OKIcon size={32} />
                             <br/>
-                            <OKShareCount url={location.href} />
+                            <OKShareCount url={this.state.url} />
                         </OKShareButton>
-                        <VKShareButton url={location.href}>
+                        <VKShareButton url={this.state.url}>
                             <VKIcon size={32} />
                             <br/>
-                            <VKShareCount url={location.href} />
+                            <VKShareCount url={this.state.url} />
                         </VKShareButton>
-                        <TwitterShareButton url={location.href}>
+                        <TwitterShareButton url={this.state.url}>
                             <TwitterIcon size={32} />
                         </TwitterShareButton>
-                        <ViberShareButton url={location.href}>
+                        <ViberShareButton url={this.state.url}>
                             <ViberIcon size={32} />
                         </ViberShareButton>
-                        <WhatsappShareButton url={location.href}>
+                        <WhatsappShareButton url={this.state.url}>
                             <WhatsappIcon size={32} />
                         </WhatsappShareButton>
-                        <RedditShareButton url={location.href}>
+                        <RedditShareButton url={this.state.url}>
                             <RedditIcon size={32} />
                             <br/>
-                            <RedditShareCount url={location.href} />
+                            <RedditShareCount url={this.state.url} />
                         </RedditShareButton>
-                        <EmailShareButton url={location.href}>
+                        <EmailShareButton url={this.state.url}>
                             <EmailIcon size={32} />
                         </EmailShareButton>
-                        <MailruShareButton url={location.href}>
+                        <MailruShareButton url={this.state.url}>
                             <MailruIcon size={32} />
                         </MailruShareButton>
-                        <TelegramShareButton url={location.href}>
+                        <TelegramShareButton url={this.state.url}>
                             <TelegramIcon size={32} />
                         </TelegramShareButton>
-                        <PinterestShareButton url={location.href}>
+                        <PinterestShareButton url={this.state.url}>
                             <PinterestIcon size={32} />
                             <br/>
-                            <PinterestShareCount url={location.href} />
+                            <PinterestShareCount url={this.state.url} />
                         </PinterestShareButton>
-                        <InstapaperShareButton url={location.href}>
+                        <InstapaperShareButton url={this.state.url}>
                             <InstapaperIcon size={32} />
                             <br/>
-                            <PinterestShareCount url={location.href} />
+                            <PinterestShareCount url={this.state.url} />
                         </InstapaperShareButton>
                     </div>
                 </div>

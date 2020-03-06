@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="" />
+    <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/components/SocialShare.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/SocialShare.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/configs/keys.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/configs/keys.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -535,6 +539,8 @@
       <workItem from="1583309193800" duration="6882000" />
       <workItem from="1583338656851" duration="12734000" />
       <workItem from="1583389151261" duration="8399000" />
+      <workItem from="1583526593653" duration="814000" />
+      <workItem from="1583530765257" duration="2346000" />
     </task>
     <servers />
   </component>
@@ -630,6 +636,10 @@
     </state>
     <state x="572" y="264" width="307" height="228" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1366.735@0.0.1366.735" timestamp="1578826177807" />
     <state x="560" y="168" width="336" height="239" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1366.768@0.0.1366.768" timestamp="1583156119883" />
+    <state x="361" y="-10" width="789" height="768" key="find.popup" timestamp="1583532163434">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="361" y="-10" width="789" height="768" key="find.popup/0.0.1366.768@0.0.1366.768" timestamp="1583532163434" />
     <state x="347" y="167" width="672" height="708" key="run.anything.popup" timestamp="1583395702113">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
