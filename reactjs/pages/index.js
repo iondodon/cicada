@@ -7,6 +7,7 @@ import { withNamespaces } from 'react-i18next';
 import Head from "next/head";
 import LeftPanel from "../components/LeftPanel";
 import SocialShare from "../components/SocialShare";
+import config from '../configs/keys';
 
 class Index extends React.Component {
 
@@ -54,7 +55,7 @@ class Index extends React.Component {
                                             allowFullScreen/>
                                 </div>
 
-                                <SocialShare/>
+                                <SocialShare message={config.GLOBAL_SOCIAL_MESSAGE} />
                             </div>
                         </div>
                     </div>

@@ -214,7 +214,9 @@ class ContestShow extends React.Component {
                     }
                 })()}
 
-                <SocialShare/>
+                <SocialShare
+                    message={"Hey, solve this us the puzzle" + this.state['puzzleName'] + " in contest " + this.state['contestName']}
+                />
 
                 {(()=>{
                     if(this.state['userId'] == Cookies.get('userId',  { domain: config.DOMAIN })) {

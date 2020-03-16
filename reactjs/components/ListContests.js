@@ -158,7 +158,6 @@ class ListContests extends React.Component {
                 <table>
                     <thead>
                     <tr>
-                        <th>id</th>
                         <th>name</th>
                         <th>puzzle</th>
                         {
@@ -172,7 +171,6 @@ class ListContests extends React.Component {
                         this.state.currentContests.map((contest) => {
                             return (
                                 <tr key={contest['id']} >
-                                    <td>{ contest['id'] }</td>
                                     <td>
                                         <Link href={{ pathname: '/contest/show', query: { contestId: contest['id'] } }}>
                                             <a className="menu-item">{ contest['name'] }</a>

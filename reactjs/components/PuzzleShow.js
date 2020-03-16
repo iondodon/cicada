@@ -179,7 +179,9 @@ class PuzzleShow extends React.Component {
 
                 {(()=>{
                     if(Cookies.get('userId',  { domain: config.DOMAIN })) {
-                        return(<PuzzleSession/>);
+                        return(<PuzzleSession
+                            message={this.state['name'] + ".\n" + this.state['description']}
+                        />);
                     }
                 })()}
 
