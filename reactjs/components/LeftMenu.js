@@ -20,7 +20,9 @@ class LeftMenu extends React.Component {
         this.toggleMenu = this.toggleMenu.bind(this);
     }
 
-    componentDidMount() {}
+    componentDidMount() {
+
+    }
 
     async toggleMenu() {
         this.setState({
