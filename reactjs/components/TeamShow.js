@@ -213,10 +213,10 @@ class ContestShow extends React.Component {
                     {
                         this.state['puzzleSessions'].map((session) => {
                             return(
-                                <span>
+                                <span key={session['id']} >
                                     (
                                     <Link href={{pathname: '/puzzle/show', query: {puzzleId: session['puzzle']['id']} }}>
-                                        <a key={session['id']} className={'link'}>
+                                        <a className={'link'}>
                                             {session['puzzle']['name']}
                                             {(()=>{
                                                 if(session['contest']) {

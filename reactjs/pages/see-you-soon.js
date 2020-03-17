@@ -7,6 +7,7 @@ import { withNamespaces } from 'react-i18next';
 import Head from "next/head";
 import LeftPanel from "../components/LeftPanel";
 import SocialShare from "../components/SocialShare";
+import config from '../configs/keys';
 
 class Notifications extends React.Component {
 
@@ -40,8 +41,10 @@ class Notifications extends React.Component {
                         {/*<header className="card-header"></header>*/}
                         <div className="card-content">
                             <div className="inner">
-                                See you soon!
-                                <SocialShare/>
+                                <div className={'goodbye-message'}>
+                                    See you soon!
+                                </div>
+                                <SocialShare message={config.GLOBAL_SOCIAL_MESSAGE} />
                             </div>
                         </div>
                     </div>
@@ -54,6 +57,10 @@ class Notifications extends React.Component {
                       flex-direction: column;
                       min-width: 75%;
                       max-width: 75%;
+                    }
+                    
+                    .goodbye-message {
+                      text-align: center;
                     }
                     
                     .card-content {

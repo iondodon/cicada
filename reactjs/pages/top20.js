@@ -40,7 +40,7 @@ class Notifications extends React.Component {
                     <div className="card page-content" id={"page-content"}>
                         {/*<header className="card-header"></header>*/}
                         <div className="card-content">
-                            <div className="inner">
+                            <div className="inner" id={"top20-inner"}>
                                 <TopPlayers/>
                                 <TopTeams/>
                             </div>
@@ -61,9 +61,9 @@ class Notifications extends React.Component {
                         padding: 2rem;
                     }
                     
-                    .inner {
+                    #top20-inner {
                       display: flex;
-                      flex-direction: row;
+                      flex-direction: column;
                     }
                 `}</style>
             </Layout>

@@ -139,22 +139,6 @@ class ListPuzzles extends React.Component {
             return(<h2> empty </h2>);
         }
 
-        const showCreatedByHead = () => {
-            if(this.props.type === "all") {
-                return (
-                    <th>created by</th>
-                );
-            }
-        };
-
-        const showCreatedBy = (puzzle) => {
-            if(this.props.type === "all") {
-                return(
-                    <td>{ puzzle['createdBy']['user']['fullName'] }</td>
-                );
-            }
-        };
-
         return (
             <div className={"list-puzzles-container"}>
                 <table>
@@ -164,9 +148,6 @@ class ListPuzzles extends React.Component {
                         <th>difficulty</th>
                         <th>solved</th>
                         <th>stages</th>
-                        {
-                            showCreatedByHead()
-                        }
                     </tr>
                     </thead>
                     <tbody>
@@ -183,7 +164,6 @@ class ListPuzzles extends React.Component {
                                     <td>{ puzzle['difficultyByCreator'] }/{ puzzle['difficultyByStatistics'] }</td>
                                     <td>70</td>
                                     <td>{ puzzle['stagesCount'] }</td>
-                                    { showCreatedBy(puzzle) }
                                 </tr>
                             );
                         })

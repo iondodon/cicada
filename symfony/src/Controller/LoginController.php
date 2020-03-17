@@ -66,8 +66,19 @@ class LoginController extends Controller
             false
         );
 
+        $usernameCookie = new Cookie(
+            'username',
+            $user->getUsername(),
+            (new DateTime())->add(new DateInterval('PT' . 86400 . 'S')),
+            '/',
+            null,
+            false,
+            false
+        );
+
         $response = new Response();
         $response->headers->setCookie($tokenCookie);
+        $response->headers->setCookie($usernameCookie);
         $response->headers->setCookie($userIdCookie);
 
         return $response;

@@ -573,7 +573,7 @@ class MyAccount extends React.Component {
                                             {(()=>{
                                                 if(session['contest']) {
                                                     return(
-                                                        <div> {session['contest']['name']} </div>
+                                                        <span> {"contest: " + session['contest']['name']} </span>
                                                     );
                                                 }
                                             })()}

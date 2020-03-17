@@ -28,7 +28,7 @@ class TopMenu extends React.Component {
         let response = await fetch(config.API_URL + '/api/logout', request);
 
         if (response.status === 200) {
-            Router.push("/welcome");
+            Router.push("/see-you-soon");
         }
     }
 
@@ -42,7 +42,7 @@ class TopMenu extends React.Component {
                     </Link>{' '}
                     |
                     <Link href={"/top20"}>
-                        <a className="menu-item">Top 20</a>
+                        <a className="menu-item">Top</a>
                     </Link>{' '}
                     |
                     <Link href={"/about"}>
@@ -50,7 +50,7 @@ class TopMenu extends React.Component {
                     </Link>{' '}
                 </div>
 
-                <img src={'../static/cicada.png'} className={"logo"}  alt="true" />
+                <img src={'../static/cicada.png'} className={"logo"} id={"logo"}  alt="true" />
 
                 <div className="menu right-menu">
                     {(()=>{
@@ -59,6 +59,12 @@ class TopMenu extends React.Component {
                                 <div className={"topbar-right-action"}>
                                     <Link href={"/notifications"}>
                                         <a className="menu-item">Notifications</a>
+                                    </Link>{' '}
+                                    |
+                                    <Link href={"/account"}>
+                                        <a className="menu-item">
+                                            {Cookie.get('username', {domain: config.DOMAIN})}
+                                        </a>
                                     </Link>{' '}
                                     |
                                     <a onClick={this.logout} className="menu-item">Logout</a>
