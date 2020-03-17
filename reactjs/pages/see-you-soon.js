@@ -49,7 +49,7 @@ class Notifications extends React.Component {
                         </div>
                     </div>
                 </Dashboard>
-1
+
                 { /*language=SCSS*/ }
                 <style jsx>{`
                     .page-content {

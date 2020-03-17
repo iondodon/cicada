@@ -42,7 +42,7 @@ class TopMenu extends React.Component {
                     </Link>{' '}
                     |
                     <Link href={"/top20"}>
-                        <a className="menu-item">Top 20</a>
+                        <a className="menu-item">Top</a>
                     </Link>{' '}
                     |
                     <Link href={"/about"}>

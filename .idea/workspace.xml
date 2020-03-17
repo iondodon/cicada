@@ -2,24 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/ContestShow.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/ContestShow.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactjs/components/LeftMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/LeftMenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/ListContests.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/ListContests.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/ListPuzzles.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/ListPuzzles.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/MyAccount.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/MyAccount.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/PuzzleShow.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/PuzzleShow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/SocialShare.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/SocialShare.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/components/ListTeams.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/ListTeams.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/components/StageShow.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/StageShow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/components/TeamShow.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/TeamShow.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactjs/components/TopMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/TopMenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/TopTeams.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/TopTeams.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/configs/keys.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/configs/keys.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/pages/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/pages/top20.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/pages/top20.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/pages/welcome.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/pages/see-you-soon.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony/src/Controller/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Controller/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony/src/Controller/LogoutController.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Controller/LogoutController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/pages/see-you-soon.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/pages/see-you-soon.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/hack/dist/hack.css" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/hack/dist/hack.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -557,7 +547,8 @@
       <workItem from="1583526593653" duration="814000" />
       <workItem from="1583530765257" duration="3749000" />
       <workItem from="1583660569759" duration="17000" />
-      <workItem from="1584371825091" duration="4304000" />
+      <workItem from="1584371825091" duration="4340000" />
+      <workItem from="1584442715166" duration="4337000" />
     </task>
     <servers />
   </component>
