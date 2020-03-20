@@ -756,13 +756,13 @@ select.form-control {
 }
 
 .card {
-    border: 1px solid #ccc
+    border: 1px solid #9db9ff
 }
 
 .card .card-header {
     color: #333;
     text-align: center;
-    background-color: #ddd;
+    background-color: #9DB9FF;
     padding: .5rem 0
 }
 

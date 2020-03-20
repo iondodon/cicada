@@ -120,10 +120,10 @@ class TopMenu extends React.Component {
                   .menu-box {
                     border: none;
                     
-                    background-color: #cccccc;
-                    --webkit-box-shadow: 10px 10px 59px 80px #cccccc;
-                    -moz-box-shadow: 10px 10px 59px 80px #cccccc;
-                    box-shadow: 10px 10px 59px 80px #cccccc;
+                    background-color: #9DB9FF;
+                    --webkit-box-shadow: 10px 10px 59px 80px #9DB9FF;
+                    -moz-box-shadow: 10px 10px 59px 80px #9DB9FF;
+                    box-shadow: 10px 10px 59px 80px #9DB9FF;
                   }
 
                   .logo {
