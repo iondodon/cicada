@@ -17,7 +17,10 @@ class Footer extends React.Component {
         return (
             <div className="footer hack">
                 <hr/>
-                Footer content here
+
+                cicadapuzzle.com
+                <br/>
+                2020
 
                 { /*language=SCSS*/ }
                 <style jsx>{`
