@@ -58,16 +58,15 @@ class Layout extends React.Component {
 
                 <Container>
                     {this.props.children}
-                    <Footer/>
                 </Container>
+
+                <Footer/>
 
                 { /*language=SCSS*/ }
                 <style jsx>{`
                   html, body {
                     height: 100%;
                     margin: 0;
-
-
                   }
 
                   .page-loading {

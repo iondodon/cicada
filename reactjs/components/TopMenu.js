@@ -34,7 +34,7 @@ class TopMenu extends React.Component {
 
     render(){
         return (
-            <div className="alert alert-success">
+            <div className="alert alert-success menu-box">
 
                 <div className="menu left-menu">
                     <Link href={"/"}>
@@ -88,39 +88,48 @@ class TopMenu extends React.Component {
 
                 { /*language=SCSS*/ }
                 <style jsx>{`
-                      .topbar-right-action {
-                        display: flex;
-                        flex-direction: row;
-                      }
+                  .topbar-right-action {
+                    display: flex;
+                    flex-direction: row;
+                  }
 
-                      .right-menu {
-                        display: flex;
-                        flex-direction: row;
-                        justify-content: flex-end;
-                        width: 30%;
-                      }
-                      
-                      .left-menu {
-                        display: flex;
-                        flex-direction: row;
-                        justify-content: flex-start;
-                        width: 30%;
-                      }
-                      
-                      .alert {
-                        display: flex;
-                        flex-direction: row;
-                        justify-content: space-between;
-                        margin-top: -1px;
-                        margin-left: 1rem;
-                        margin-right: 1rem;
-                        margin-bottom: 1rem;
-                      }
-                      
-                      .logo {
-                        height: 2rem;
-                      }
-                    `}
+                  .right-menu {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-end;
+                    width: 30%;
+                  }
+
+                  .left-menu {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    width: 30%;
+                  }
+
+                  .alert {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    margin-top: -1px;
+                    margin-left: 1rem;
+                    margin-right: 1rem;
+                    margin-bottom: 1rem;
+                  }
+
+                  .menu-box {
+                    border: none;
+                    
+                    background-color: #cccccc;
+                    --webkit-box-shadow: 10px 10px 59px 80px #cccccc;
+                    -moz-box-shadow: 10px 10px 59px 80px #cccccc;
+                    box-shadow: 10px 10px 59px 80px #cccccc;
+                  }
+
+                  .logo {
+                    height: 2rem;
+                  }
+                `}
                 </style>
             </div>
         );

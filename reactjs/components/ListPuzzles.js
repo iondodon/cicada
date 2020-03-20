@@ -162,7 +162,7 @@ class ListPuzzles extends React.Component {
                                         </Link>{' '}
                                     </td>
                                     <td>{ puzzle['difficultyByCreator'] }/{ puzzle['difficultyByStatistics'] }</td>
-                                    <td>70</td>
+                                    <td> {puzzle['solved']} </td>
                                     <td>{ puzzle['stagesCount'] }</td>
                                 </tr>
                             );

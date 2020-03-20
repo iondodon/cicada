@@ -3,7 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/components/Container.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/Container.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/components/ContestShow.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/ContestShow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/components/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/Footer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/components/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/Layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/components/ListPuzzles.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/ListPuzzles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/components/PuzzleShow.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/PuzzleShow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/components/TopMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/TopMenu.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactjs/configs/keys.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/configs/keys.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/hack/dist/hack.css" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/hack/dist/hack.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Controller/PuzzleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Controller/PuzzleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Entity/Puzzle.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Entity/Puzzle.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -543,7 +553,8 @@
       <workItem from="1583660569759" duration="17000" />
       <workItem from="1584371825091" duration="4340000" />
       <workItem from="1584442715166" duration="4755000" />
-      <workItem from="1584477198701" duration="777000" />
+      <workItem from="1584477198701" duration="3683000" />
+      <workItem from="1584706586325" duration="6571000" />
     </task>
     <servers />
   </component>
@@ -652,11 +663,11 @@
     </state>
     <state x="347" y="160" width="672" height="677" key="run.anything.popup/0.0.1366.735@0.0.1366.735" timestamp="1579112135253" />
     <state x="347" y="167" width="672" height="708" key="run.anything.popup/0.0.1366.768@0.0.1366.768" timestamp="1583395702113" />
-    <state x="346" y="59" width="672" height="709" key="search.everywhere.popup" timestamp="1583525813605">
+    <state x="346" y="59" width="672" height="709" key="search.everywhere.popup" timestamp="1584485322299">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="346" y="56" width="672" height="678" key="search.everywhere.popup/0.0.1366.735@0.0.1366.735" timestamp="1578321917895" />
-    <state x="346" y="59" width="672" height="709" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1583525813605" />
+    <state x="346" y="59" width="672" height="709" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1584485322299" />
     <state x="402" y="162" width="544" height="162" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1583394703449">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
