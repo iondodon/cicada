@@ -125,6 +125,7 @@ class StageShow extends React.Component {
                   
                   .card {
                     margin-top: 10px;
+                    color: black;
                   }
                   
                   .card-content {

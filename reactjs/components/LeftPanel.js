@@ -17,7 +17,6 @@ class LeftPanel extends React.Component {
             <div className={'left-panel'} id={"left-panel"}>
                 <LeftMenu/>
                 {this.props.children}
-                <TopPlayers/>
 
                 { /*language=SCSS*/ }
                 <style jsx>{`

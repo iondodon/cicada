@@ -44,7 +44,8 @@ class PuzzleController extends AbstractFOSRestController
                 'createdBy' => ['user' => ['fullName']],
                 'difficultyByCreator',
                 'difficultyByStatistics',
-                'stagesCount'
+                'stagesCount',
+                'solved'
             ]
         ]);
 
@@ -70,7 +71,8 @@ class PuzzleController extends AbstractFOSRestController
                 'name',
                 'difficultyByCreator',
                 'difficultyByStatistics',
-                'stagesCount'
+                'stagesCount',
+                'solved'
             ]
         ]);
 

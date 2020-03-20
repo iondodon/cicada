@@ -7,6 +7,7 @@ import ContestActionBar from "./ContestActionBar";
 import Link from 'next/link';
 import Cookies from 'js-cookie';
 import config from "../configs/keys";
+import SocialShare from "./SocialShare";
 
 class ContestShow extends React.Component {
 
@@ -212,6 +213,10 @@ class ContestShow extends React.Component {
                         }
                     }
                 })()}
+
+                <SocialShare
+                    message={"Hey, solve with us the puzzle " + this.state['puzzleName'] + " in contest " + this.state['contestName']}
+                />
 
                 {(()=>{
                     if(this.state['userId'] == Cookies.get('userId',  { domain: config.DOMAIN })) {

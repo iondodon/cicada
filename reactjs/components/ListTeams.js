@@ -151,7 +151,7 @@ class ListTeams extends React.Component {
                         <th>name</th>
                         <th>nr members</th>
                         <th>puzzles solved</th>
-                        <th>wined contest</th>
+                        <th>contests won</th>
                         <th>creator</th>
                     </tr>
                     </thead>

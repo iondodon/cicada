@@ -6,6 +6,8 @@ import '../i18n';
 import { withNamespaces } from 'react-i18next';
 import Head from "next/head";
 import LeftPanel from "../components/LeftPanel";
+import TopPlayers from "../components/TopPlayers";
+import TopTeams from "../components/TopTeams";
 
 class Notifications extends React.Component {
 
@@ -38,8 +40,9 @@ class Notifications extends React.Component {
                     <div className="card page-content" id={"page-content"}>
                         {/*<header className="card-header"></header>*/}
                         <div className="card-content">
-                            <div className="inner">
-                                aaaaaaaaaa
+                            <div className="inner" id={"top20-inner"}>
+                                <TopPlayers/>
+                                <TopTeams/>
                             </div>
                         </div>
                     </div>
@@ -56,6 +59,11 @@ class Notifications extends React.Component {
                     
                     .card-content {
                         padding: 2rem;
+                    }
+                    
+                    #top20-inner {
+                      display: flex;
+                      flex-direction: column;
                     }
                 `}</style>
             </Layout>

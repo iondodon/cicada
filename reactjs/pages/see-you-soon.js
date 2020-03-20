@@ -9,7 +9,7 @@ import LeftPanel from "../components/LeftPanel";
 import SocialShare from "../components/SocialShare";
 import config from '../configs/keys';
 
-class Index extends React.Component {
+class Notifications extends React.Component {
 
     constructor(props, {t}){
         super(props, {t});
@@ -17,13 +17,13 @@ class Index extends React.Component {
     }
 
     render(){
-
         return (
             <Layout>
                 <Head>
                     <title>Cicada</title>
-                    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+                    <scr name="viewport" content="initial-scale=1.0, width=device-width" />
                 </Head>
+
                 <Dashboard>
                     <LeftPanel>
                         <div className="card">
@@ -36,25 +36,14 @@ class Index extends React.Component {
                             </div>
                         </div>
                     </LeftPanel>
-                    <hr/>
 
                     <div className="card page-content" id={"page-content"}>
-                        {/*<header className="card-header">title</header>*/}
+                        {/*<header className="card-header"></header>*/}
                         <div className="card-content">
                             <div className="inner">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita,
-                                quas ex vero enim in doloribus officiis ullam vel nam esse sapiente velit incidunt.
-                                Eaque quod et, aut maiores excepturi sint.
-
-
-                                <div className={"container"}>
-                                    <iframe className={"video"}
-                                            src="https://www.youtube.com/embed/I2O7blSSzpI"
-                                            frameBorder="0"
-                                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                            allowFullScreen/>
+                                <div className={'goodbye-message'}>
+                                    See you soon!
                                 </div>
-
                                 <SocialShare message={config.GLOBAL_SOCIAL_MESSAGE} />
                             </div>
                         </div>
@@ -70,19 +59,12 @@ class Index extends React.Component {
                       max-width: 75%;
                     }
                     
-                    .container {
-                        position: relative;
-                        width: 100%;
-                        height: 0;
-                        padding-bottom: 56.25%;
+                    .goodbye-message {
+                      text-align: center;
                     }
-                    .video {
-                        position: absolute;
-                        align-self: center;
-                        padding: 1rem;
-                        left: 0;
-                        width: 100%;
-                        height: 100%;
+                    
+                    .card-content {
+                        padding: 2rem;
                     }
                 `}</style>
             </Layout>
@@ -90,4 +72,4 @@ class Index extends React.Component {
     }
 }
 
-export default withNamespaces()(Index);
+export default withNamespaces()(Notifications);

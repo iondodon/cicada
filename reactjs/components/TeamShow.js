@@ -213,10 +213,10 @@ class ContestShow extends React.Component {
                     {
                         this.state['puzzleSessions'].map((session) => {
                             return(
-                                <span>
+                                <span key={session['id']} >
                                     (
                                     <Link href={{pathname: '/puzzle/show', query: {puzzleId: session['puzzle']['id']} }}>
-                                        <a key={session['id']} className={'link'}>
+                                        <a className={'link'}>
                                             {session['puzzle']['name']}
                                             {(()=>{
                                                 if(session['contest']) {
@@ -227,11 +227,17 @@ class ContestShow extends React.Component {
                                             })()}
                                         </a>
                                     </Link>
-                                    <a onClick={async () => {
-                                        if(confirm("Are you sure?")) {
-                                            await this.removeTeamSession(session['id'])
-                                        }
-                                    }}> remove</a>
+                                        {(() => {
+                                            if(this.state['creator']['user']['id'] == Cookies.get('userId',  { domain: config.DOMAIN })) {
+                                                return(
+                                                    <a onClick={async () => {
+                                                        if(confirm("Are you sure?")) {
+                                                            await this.removeTeamSession(session['id'])
+                                                        }
+                                                    }}> remove</a>
+                                                );
+                                            }
+                                        })()}
                                     )
                                 </span>
                             )

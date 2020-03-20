@@ -28,17 +28,21 @@ class TopMenu extends React.Component {
         let response = await fetch(config.API_URL + '/api/logout', request);
 
         if (response.status === 200) {
-            Router.push("/welcome");
+            Router.push("/see-you-soon");
         }
     }
 
     render(){
         return (
-            <div className="alert alert-success">
+            <div className="alert alert-success menu-box">
 
                 <div className="menu left-menu">
                     <Link href={"/"}>
                         <a className="menu-item">Home</a>
+                    </Link>{' '}
+                    |
+                    <Link href={"/top20"}>
+                        <a className="menu-item">Top</a>
                     </Link>{' '}
                     |
                     <Link href={"/about"}>
@@ -46,7 +50,7 @@ class TopMenu extends React.Component {
                     </Link>{' '}
                 </div>
 
-                <img src={'../static/cicada.png'} className={"logo"}  alt="true" />
+                <img src={'../static/cicada.png'} className={"logo"} id={"logo"}  alt="true" />
 
                 <div className="menu right-menu">
                     {(()=>{
@@ -55,6 +59,12 @@ class TopMenu extends React.Component {
                                 <div className={"topbar-right-action"}>
                                     <Link href={"/notifications"}>
                                         <a className="menu-item">Notifications</a>
+                                    </Link>{' '}
+                                    |
+                                    <Link href={"/account"}>
+                                        <a className="menu-item">
+                                            {Cookie.get('username', {domain: config.DOMAIN})}
+                                        </a>
                                     </Link>{' '}
                                     |
                                     <a onClick={this.logout} className="menu-item">Logout</a>
@@ -78,39 +88,48 @@ class TopMenu extends React.Component {
 
                 { /*language=SCSS*/ }
                 <style jsx>{`
-                      .topbar-right-action {
-                        display: flex;
-                        flex-direction: row;
-                      }
+                  .topbar-right-action {
+                    display: flex;
+                    flex-direction: row;
+                  }
 
-                      .right-menu {
-                        display: flex;
-                        flex-direction: row;
-                        justify-content: flex-end;
-                        width: 30%;
-                      }
-                      
-                      .left-menu {
-                        display: flex;
-                        flex-direction: row;
-                        justify-content: flex-start;
-                        width: 30%;
-                      }
-                      
-                      .alert {
-                        display: flex;
-                        flex-direction: row;
-                        justify-content: space-between;
-                        margin-top: -1px;
-                        margin-left: 1rem;
-                        margin-right: 1rem;
-                        margin-bottom: 1rem;
-                      }
-                      
-                      .logo {
-                        height: 2rem;
-                      }
-                    `}
+                  .right-menu {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-end;
+                    width: 30%;
+                  }
+
+                  .left-menu {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    width: 30%;
+                  }
+
+                  .alert {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    margin-top: -1px;
+                    margin-left: 1rem;
+                    margin-right: 1rem;
+                    margin-bottom: 1rem;
+                  }
+
+                  .menu-box {
+                    border: none;
+                    
+                    background-color: #9DB9FF;
+                    --webkit-box-shadow: 10px 10px 59px 80px #9DB9FF;
+                    -moz-box-shadow: 10px 10px 59px 80px #9DB9FF;
+                    box-shadow: 10px 10px 59px 80px #9DB9FF;
+                  }
+
+                  .logo {
+                    height: 2rem;
+                  }
+                `}
                 </style>
             </div>
         );

@@ -30,10 +30,6 @@
         max-width: 100%;
     }
 
-    #top-players-card {
-        display: none;
-    }
-
     #dashboard {
         display: flex;
         flex-direction: column;
@@ -63,4 +59,7 @@
         justify-content: flex-end;
     }
 
+    #logo {
+        display: none;
+    }
 }
