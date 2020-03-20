@@ -16,6 +16,7 @@ class PuzzleShow extends React.Component {
 
         this.state = {
             loading: true,
+            mounted: false
         };
 
         this.fetchSetState = this.fetchSetState.bind(this);
@@ -26,6 +27,7 @@ class PuzzleShow extends React.Component {
 
     async componentDidMount() {
         await this.fetchSetState();
+        await this.setState({mounted: true});
     }
 
     async fetchSetState() {
@@ -185,7 +187,9 @@ class PuzzleShow extends React.Component {
                     }
                 })()}
 
-                <SocialShare/>
+                <SocialShare
+                    message={"Hey, solve with us the puzzle " + this.state['puzzleName']}
+                />
 
                 {(()=>{
                     if(this.state['userId'] == Cookies.get('userId',  { domain: config.DOMAIN })) {

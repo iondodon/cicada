@@ -215,7 +215,7 @@ class ContestShow extends React.Component {
                 })()}
 
                 <SocialShare
-                    message={"Hey, solve this us the puzzle" + this.state['puzzleName'] + " in contest " + this.state['contestName']}
+                    message={"Hey, solve with us the puzzle " + this.state['puzzleName'] + " in contest " + this.state['contestName']}
                 />
 
                 {(()=>{

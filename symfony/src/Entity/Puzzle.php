@@ -301,6 +301,24 @@ class Puzzle
     /**
      * @return int
      */
+    public function getSolved(): int
+    {
+        $sessions = $this->getOpenSessions();
+        $solved = 0;
+
+        /** @var PuzzleSession $sess */
+        foreach ($sessions as $sess) {
+            if($sess->getPuzzle()->getStagesCount() == $sess->getCompleteness()) {
+                $solved++;
+            }
+        }
+
+        return $solved;
+    }
+
+    /**
+     * @return int
+     */
     public function getDifficultyByStatistics(): int
     {
         return $this->difficultyByStatistics;

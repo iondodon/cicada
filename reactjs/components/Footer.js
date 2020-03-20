@@ -15,17 +15,24 @@ class Footer extends React.Component {
 
     render(){
         return (
-            <div className="footer">
+            <div className="footer hack">
                 <hr/>
-                Footer content here
+
+                cicadapuzzle.com
+                <br/>
+                2020
 
                 { /*language=SCSS*/ }
                 <style jsx>{`
                   .footer {
-                        align-self: flex-end;
-                        margin-bottom: 2%;
-                        width: 100%;
-                        text-align: center;
+                     align-self: flex-end;
+                    width: 100%;
+                    text-align: center;
+                    
+                    // background-color: #cccccc;
+                    // --webkit-box-shadow: 10px 10px 59px 80px #cccccc;
+                    // -moz-box-shadow: 10px 10px 59px 80px #cccccc;
+                    // box-shadow: 10px 10px 59px 80px #cccccc;
                   }
                 `}
                 </style>
