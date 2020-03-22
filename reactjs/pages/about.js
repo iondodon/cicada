@@ -9,7 +9,7 @@ import LeftPanel from "../components/LeftPanel";
 import SocialShare from "../components/SocialShare";
 import config from '../configs/keys';
 
-class SeeYouSoon extends React.Component {
+class About extends React.Component {
 
     constructor(props, {t}){
         super(props, {t});
@@ -20,7 +20,7 @@ class SeeYouSoon extends React.Component {
         return (
             <Layout>
                 <Head>
-                    <title>Cicada</title>
+                    <title>Cicada | About</title>
                     <scr name="viewport" content="initial-scale=1.0, width=device-width" />
                 </Head>
 
@@ -42,7 +42,7 @@ class SeeYouSoon extends React.Component {
                         <div className="card-content">
                             <div className="inner">
                                 <div className={'goodbye-message'}>
-                                    See you soon!
+                                    Intellectual puzzles...
                                 </div>
                                 <SocialShare message={config.GLOBAL_SOCIAL_MESSAGE} />
                             </div>
@@ -72,4 +72,4 @@ class SeeYouSoon extends React.Component {
     }
 }
 
-export default withNamespaces()(SeeYouSoon);
+export default withNamespaces()(About);

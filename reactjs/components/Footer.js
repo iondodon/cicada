@@ -16,6 +16,7 @@ class Footer extends React.Component {
     render(){
         return (
             <div className="footer hack">
+
                 <hr/>
 
                 cicadapuzzle.com
@@ -33,8 +34,14 @@ class Footer extends React.Component {
                     // --webkit-box-shadow: 10px 10px 59px 80px #cccccc;
                     // -moz-box-shadow: 10px 10px 59px 80px #cccccc;
                     // box-shadow: 10px 10px 59px 80px #cccccc;
+                    
+                    background: linear-gradient(to bottom, rgba(157,185,255,1) , 30%,  rgba(255,0,0,0));
                   }
-                `}
+                  
+                  
+                  hr {
+                     text-align: center;
+                  }                `}
                 </style>
             </div>
         );
