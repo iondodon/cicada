@@ -123,6 +123,10 @@ class LeftMenu extends React.Component {
                     cursor: pointer;
                   }
                   
+                  a:hover {
+                   background: linear-gradient(to right, rgba(157,185,255,1) , 10%,  rgba(255,0,0,0));
+                  }
+                  
                   @media all and (max-width: 800px) { 
                     #toggle-menu {
                       cursor: pointer;

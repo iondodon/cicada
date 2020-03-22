@@ -9,7 +9,7 @@ import LeftPanel from "../components/LeftPanel";
 import SocialShare from "../components/SocialShare";
 import config from '../configs/keys';
 
-class Notifications extends React.Component {
+class SeeYouSoon extends React.Component {
 
     constructor(props, {t}){
         super(props, {t});
@@ -26,7 +26,7 @@ class Notifications extends React.Component {
 
                 <Dashboard>
                     <LeftPanel>
-                        <div className="card">
+                        <div className="card specific">
                             <header className="card-header">specific to page</header>
                             <div className="card-content">
                                 <div className="inner">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita, quas
@@ -66,10 +66,14 @@ class Notifications extends React.Component {
                     .card-content {
                         padding: 2rem;
                     }
+                    
+                     .specific {
+                      height: 100%;
+                    }
                 `}</style>
             </Layout>
         );
     }
 }
 
-export default withNamespaces()(Notifications);
+export default withNamespaces()(SeeYouSoon);

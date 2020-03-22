@@ -6,10 +6,10 @@ import '../i18n';
 import { withNamespaces } from 'react-i18next';
 import Head from "next/head";
 import LeftPanel from "../components/LeftPanel";
-import TopPlayers from "../components/TopPlayers";
-import TopTeams from "../components/TopTeams";
+import SocialShare from "../components/SocialShare";
+import config from '../configs/keys';
 
-class Notifications extends React.Component {
+class About extends React.Component {
 
     constructor(props, {t}){
         super(props, {t});
@@ -20,7 +20,7 @@ class Notifications extends React.Component {
         return (
             <Layout>
                 <Head>
-                    <title>Cicada</title>
+                    <title>Cicada | About</title>
                     <scr name="viewport" content="initial-scale=1.0, width=device-width" />
                 </Head>
 
@@ -40,9 +40,11 @@ class Notifications extends React.Component {
                     <div className="card page-content" id={"page-content"}>
                         {/*<header className="card-header"></header>*/}
                         <div className="card-content">
-                            <div className="inner" id={"top20-inner"}>
-                                <TopPlayers/>
-                                <TopTeams/>
+                            <div className="inner">
+                                <div className={'goodbye-message'}>
+                                    Intellectual puzzles...
+                                </div>
+                                <SocialShare message={config.GLOBAL_SOCIAL_MESSAGE} />
                             </div>
                         </div>
                     </div>
@@ -57,13 +59,12 @@ class Notifications extends React.Component {
                       max-width: 75%;
                     }
                     
-                    .card-content {
-                        padding: 2rem;
+                    .goodbye-message {
+                      text-align: center;
                     }
                     
-                    #top20-inner {
-                      display: flex;
-                      flex-direction: column;
+                    .card-content {
+                        padding: 2rem;
                     }
                     
                     .specific {
@@ -75,4 +76,4 @@ class Notifications extends React.Component {
     }
 }
 
-export default withNamespaces()(Notifications);
+export default withNamespaces()(About);

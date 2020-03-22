@@ -27,7 +27,7 @@ class Show extends React.Component {
 
                 <Dashboard>
                     <LeftPanel>
-                        <div className="card">
+                        <div className="card specific">
                             <header className="card-header">specific to page</header>
                             <div className="card-content">
                                 <div className="inner">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita, quas
@@ -59,6 +59,10 @@ class Show extends React.Component {
                     
                     .card-content {
                         padding: 2rem;
+                    }
+                    
+                    .specific {
+                      height: 100%;
                     }
                 `}</style>
             </Layout>
