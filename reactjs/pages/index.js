@@ -26,7 +26,7 @@ class Index extends React.Component {
                 </Head>
                 <Dashboard>
                     <LeftPanel>
-                        <div className="card">
+                        <div className="card specific">
                             <header className="card-header">specific to page</header>
                             <div className="card-content">
                                 <div className="inner">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita, quas
@@ -83,6 +83,10 @@ class Index extends React.Component {
                         left: 0;
                         width: 100%;
                         height: 100%;
+                    }
+                    
+                    .specific {
+                      height: 100%;
                     }
                 `}</style>
             </Layout>
