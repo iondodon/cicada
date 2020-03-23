@@ -58,9 +58,9 @@ class Layout extends React.Component {
 
                 <Container>
                     {this.props.children}
+                    <Footer/>
                 </Container>
 
-                <Footer/>
 
                 { /*language=SCSS*/ }
                 <style jsx>{`
@@ -74,14 +74,10 @@ class Layout extends React.Component {
                     top: 0;
                     width: 100%;
                     height: 1.3rem;
-                    background-color: #009b07;
+                    // background-color: #009b07;
+                    background-color: rgba(0, 155, 7, 0.9);
                     text-align: center;
                     display: none;
-                  }
-
-
-                  hr {
-                    text-align: center;
                   }
                 `}
                 </style>

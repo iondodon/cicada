@@ -1,14 +1,15 @@
 import React from 'react';
-import Layout from "../../components/Layout";
-import Dashboard from "../../components/Dashboard";
+import Layout from "../components/Layout";
+import Dashboard from "../components/Dashboard";
 
-import '../../i18n';
+import '../i18n';
 import { withNamespaces } from 'react-i18next';
 import Head from "next/head";
-import LeftPanel from "../../components/LeftPanel";
-import ListContests from "../../components/ListContests";
+import LeftPanel from "../components/LeftPanel";
+import SocialShare from "../components/SocialShare";
+import config from '../configs/keys';
 
-class List extends React.Component {
+class About extends React.Component {
 
     constructor(props, {t}){
         super(props, {t});
@@ -19,7 +20,7 @@ class List extends React.Component {
         return (
             <Layout>
                 <Head>
-                    <title>Newest contests</title>
+                    <title>Cicada | About</title>
                     <scr name="viewport" content="initial-scale=1.0, width=device-width" />
                 </Head>
 
@@ -36,10 +37,13 @@ class List extends React.Component {
                     </LeftPanel>
 
                     <div className="card page-content" id={"page-content"}>
-                        {/*<header className="card-header">Puzzles</header>*/}
+                        {/*<header className="card-header"></header>*/}
                         <div className="card-content">
                             <div className="inner">
-                                <ListContests type={"all"} />
+                                <div className={'goodbye-message'}>
+                                    Intellectual puzzles...
+                                </div>
+                                <SocialShare message={config.GLOBAL_SOCIAL_MESSAGE} />
                             </div>
                         </div>
                     </div>
@@ -52,6 +56,10 @@ class List extends React.Component {
                       flex-direction: column;
                       min-width: 75%;
                       max-width: 75%;
+                    }
+                    
+                    .goodbye-message {
+                      text-align: center;
                     }
                     
                     .card-content {
@@ -67,4 +75,4 @@ class List extends React.Component {
     }
 }
 
-export default withNamespaces()(List);
+export default withNamespaces()(About);

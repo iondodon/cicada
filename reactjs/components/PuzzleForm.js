@@ -348,8 +348,53 @@ class PuzzleForm extends React.Component {
 
                 <div className="form-tags-group" >
                     <select className="tags-multiple-select" name="states[]" multiple="multiple">
-                        <option value="AL">Alabama</option>
-                        <option value="WY">Wyoming</option>
+                        <option value="CyberSecurity">CyberSecurity</option>
+                        <option value="Cryptography">Cryptography</option>
+                        <option value="Blockchain">Blockchain</option>
+                        <option value="DataScience">DataScience</option>
+                        <option value="DigitalLife">DigitalLife</option>
+                        <option value="MachineLearning">MachineLearning</option>
+                        <option value="Math">Math</option>
+                        <option value="NeuroScience">NeuroScience</option>
+                        <option value="Programming">Programming</option>
+                        <option value="Science">Science</option>
+                        <option value="SoftwareEngineering">SoftwareEngineering</option>
+                        <option value="Space">Space</option>
+                        <option value="Technology">Technology</option>
+                        <option value="Creativity">Creativity</option>
+                        <option value="Disability">Disability</option>
+                        <option value="Health">Health</option>
+                        <option value="Money">Money</option>
+                        <option value="Outdoors">Outdoors</option>
+                        <option value="Psychology">Psychology</option>
+                        <option value="Travel">Travel</option>
+                        <option value="Cities">Cities</option>
+                        <option value="Education">Education</option>
+                        <option value="Environment">Environment</option>
+                        <option value="Future">Future</option>
+                        <option value="History">History</option>
+                        <option value="Justice">Justice</option>
+                        <option value="Media">Media</option>
+                        <option value="Language">Language</option>
+                        <option value="Philosophy">Philosophy</option>
+                        <option value="Society">Society</option>
+                        <option value="World">World</option>
+                        <option value="Art">Art</option>
+                        <option value="Books">Books</option>
+                        <option value="Culture">Culture</option>
+                        <option value="Fiction">Fiction</option>
+                        <option value="Film">Film</option>
+                        <option value="Makers">Makers</option>
+                        <option value="Music">Music</option>
+                        <option value="Humor">Humor</option>
+                        <option value="Poetry">Poetry</option>
+                        <option value="Photography">Photography</option>
+                        <option value="Social media">Social media</option>
+                        <option value="Sports">Sports</option>
+                        <option value="Crime">Crime</option>
+                        <option value="Writing">Writing</option>
+                        <option value="Marketing">Marketing</option>
+                        <option value="Artificial Intelligence">Artificial Intelligence</option>
                     </select>
                 </div>
 

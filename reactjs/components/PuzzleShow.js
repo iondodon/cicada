@@ -187,9 +187,9 @@ class PuzzleShow extends React.Component {
                     }
                 })()}
 
-                <SocialShare
-                    message={"Hey, solve with us the puzzle " + this.state['puzzleName']}
-                />
+               <SocialShare
+                   message={"Hey, solve with us the puzzle " + this.state['name']}
+               />
 
                 {(()=>{
                     if(this.state['userId'] == Cookies.get('userId',  { domain: config.DOMAIN })) {
