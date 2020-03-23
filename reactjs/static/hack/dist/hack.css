@@ -50,7 +50,9 @@ a {
     cursor: pointer;
     color: #ff2e88;
     text-decoration: none;
-    border-bottom: 1px solid #ff2e88
+    border-bottom: 1px solid #ff2e88;
+
+    border-radius: 3px;
 }
 
 a:hover {
@@ -458,7 +460,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin: 1.75rem 0;
-    color: #778087
+    color: #778087;
 }
 
 table td,
@@ -582,7 +584,9 @@ select.form-control {
     -ms-user-select: none;
     user-select: none;
     position: relative;
-    z-index: 1
+    z-index: 1;
+
+    border-radius: 2px;
 }
 
 .btn:active {
@@ -776,7 +780,9 @@ select.form-control {
 .alert {
     color: #ccc;
     padding: 1rem;
-    border: 1px solid #ccc;
+    /*border: 1px solid #ccc;*/
+    border: 0;
+    border-radius: 4px;
     margin-bottom: 1.75rem;
 
     background: linear-gradient(to top, rgba(157,185,255,1) , 10%,  rgba(255,0,0,0));

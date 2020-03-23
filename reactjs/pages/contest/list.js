@@ -26,11 +26,10 @@ class List extends React.Component {
                 <Dashboard>
                     <LeftPanel>
                         <div className="card specific">
-                            <header className="card-header">specific to page</header>
+                            <header className="card-header">Cicada 3301</header>
                             <div className="card-content">
-                                <div className="inner">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita, quas
-                                    ex vero enim in doloribus officiis ullam vel nam esse sapiente velit incidunt. Eaque quod
-                                    et, aut maiores excepturi sint.
+                                <div className="inner">
+                                    Cicada 3301 is a nickname given to an organization that on three occasions has posted a set of puzzles to recruit codebreakers from the public. The first internet puzzle started on January 4, 2012 on 4chan and ran for approximately one month.
                                 </div>
                             </div>
                         </div>
