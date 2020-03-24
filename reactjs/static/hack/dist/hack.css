@@ -754,7 +754,7 @@ select.form-control {
 }
 
 .btn-group {
-    overflow: auto
+    overflow: auto;
 }
 
 .btn-group .btn {

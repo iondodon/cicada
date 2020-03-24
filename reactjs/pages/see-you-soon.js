@@ -7,7 +7,7 @@ import { withNamespaces } from 'react-i18next';
 import Head from "next/head";
 import LeftPanel from "../components/LeftPanel";
 import SocialShare from "../components/SocialShare";
-import config from '../configs/keys';
+import text from '../text/text';
 
 class SeeYouSoon extends React.Component {
 
@@ -43,7 +43,7 @@ class SeeYouSoon extends React.Component {
                                 <div className={'goodbye-message'}>
                                     See you soon!
                                 </div>
-                                <SocialShare message={config.GLOBAL_SOCIAL_MESSAGE} />
+                                <SocialShare message={text.GLOBAL_SOCIAL_MESSAGE} />
                             </div>
                         </div>
                     </div>
