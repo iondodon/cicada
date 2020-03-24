@@ -349,9 +349,9 @@ class PuzzleSession extends React.Component {
                     } else {
                         return(
                             <div className={"action"}>
-                                <button className="btn btn-warning"
+                                <button className="btn btn-warning btn-ghost"
                                         onClick={this.enrollSinglePlayer}>Solve solo</button>
-                                <button className="btn btn-warning"
+                                <button className="btn  btn-warning btn-ghost"
                                         onClick={this.showTeamsMemberOf}>Solve with a team</button>
                             </div>
                         );
@@ -361,7 +361,7 @@ class PuzzleSession extends React.Component {
                 {(()=>{
                     if(this.state['showTeamsMemberOf']) {
                         return (
-                            <div>
+                            <div className={"show-teams"}>
                                 <a onClick={()=>this.setState({showTeamsMemberOf: false})}>(cancel)</a>
                                 Choose a team:
                                 {
@@ -416,10 +416,14 @@ class PuzzleSession extends React.Component {
                       margin-right: 1rem;
                     }
                     
+                    .show-teams {
+                      margin-top: 1rem;
+                    }
+                    
                     .action {
                       display: flex;
                       flex-direction: row;
-                      justify-content: center;
+                      justify-content: space-between;
                     }
                 `}</style>
             </div>

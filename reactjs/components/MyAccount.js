@@ -447,11 +447,11 @@ class MyAccount extends React.Component {
                             <button
                                 type={"button"}
                                 id={"cancel-change-username"}
-                                className="btn btn-info cancel"
+                                className="btn btn-info cancel btn-ghost"
                                 onClick={this.cancelChangeUsername}
                                 style={{display: "none"}}
                             >Cancel</button>
-                            <button id={"change-username-btn"} type={"button"} className="btn btn-warning" onClick={this.changeUsername}>Change username</button>
+                            <button id={"change-username-btn"} type={"button"} className="btn btn-warning btn-ghost" onClick={this.changeUsername}>Change username</button>
                         </div>
                     </fieldset>
                     <fieldset className="form-group">
@@ -468,11 +468,11 @@ class MyAccount extends React.Component {
                             <button
                                 type={"button"}
                                 id={"cancel-change-email"}
-                                className="btn btn-info cancel"
+                                className="btn btn-info cancel btn-ghost"
                                 onClick={this.cancelChangeEmail}
                                 style={{display: "none"}}
                             >Cancel</button>
-                            <button id={"change-email-btn"} type={"button"} className="btn btn-warning" onClick={this.changeEmail}>Change email</button>
+                            <button id={"change-email-btn"} type={"button"} className="btn btn-warning btn-ghost" onClick={this.changeEmail}>Change email</button>
                         </div>
                     </fieldset>
                     <fieldset className="form-group">
@@ -489,11 +489,11 @@ class MyAccount extends React.Component {
                             <button
                                 type={"button"}
                                 id={"cancel-change-fullName"}
-                                className="btn btn-info cancel"
+                                className="btn btn-info cancel btn-ghost"
                                 onClick={this.cancelChangeFullName}
                                 style={{display: "none"}}
                             >Cancel</button>
-                            <button id={"change-fullName-btn"} type={"button"} className="btn btn-warning" onClick={this.changeFullName}>Change full name</button>
+                            <button id={"change-fullName-btn"} type={"button"} className="btn btn-warning btn-ghost" onClick={this.changeFullName}>Change full name</button>
                         </div>
                     </fieldset>
                     <fieldset className="form-group">
@@ -513,11 +513,11 @@ class MyAccount extends React.Component {
                             <button
                                 type={"button"}
                                 id={"cancel-change-password"}
-                                className="btn btn-info cancel"
+                                className="btn btn-info cancel btn-ghost"
                                 onClick={this.cancelChangePassword}
                                 style={{display: "none"}}
                             >Cancel</button>
-                            <button id={"change-password-btn"} type={"button"} className="btn btn-warning" onClick={this.changePassword}>Change password</button>
+                            <button id={"change-password-btn"} type={"button"} className="btn btn-warning btn-ghost" onClick={this.changePassword}>Change password</button>
                         </div>
                     </fieldset>
                     { this.showTypeNewPassword() }
