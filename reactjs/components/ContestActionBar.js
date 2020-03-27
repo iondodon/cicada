@@ -228,9 +228,9 @@ class ContestActionBar extends React.Component {
                     } else {
                         return(
                             <div className={"action"}>
-                                <button className="btn btn-warning"
+                                <button className="btn btn-warning btn-ghost"
                                         onClick={this.enrollSinglePlayer}>Solve solo</button>
-                                <button className="btn btn-warning"
+                                <button className="btn btn-warning btn-ghost"
                                         onClick={this.showTeamsMemberOf}>Solve with a team</button>
                             </div>
                         );
@@ -240,7 +240,7 @@ class ContestActionBar extends React.Component {
                 {(()=>{
                     if(this.state['showTeamsMemberOf']) {
                         return (
-                            <div>
+                            <div className={"show-teams"}>
                                 <a onClick={()=>this.setState({showTeamsMemberOf: false})}>(cancel)</a>
                                 Choose a team:
                                 {
@@ -294,7 +294,11 @@ class ContestActionBar extends React.Component {
                     .action {
                       display: flex;
                       flex-direction: row;
-                      justify-content: center;
+                      justify-content: space-between;
+                    }
+                    
+                    .show-teams {
+                      margin-top: 1rem;
                     }
                 `}</style>
             </div>

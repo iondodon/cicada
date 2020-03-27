@@ -195,20 +195,18 @@ class PuzzleShow extends React.Component {
                     if(this.state['userId'] == Cookies.get('userId',  { domain: config.DOMAIN })) {
                         return(
                             <div className="alert alert-info">
-                                <div className="btn-group">
-                                    <button className="btn btn-primary btn-ghost update-btn"
-                                            onClick={()=>{
-                                                document.location = '/puzzle/update?puzzleId=' + this.state['puzzleId'];
-                                            }}
-                                        >Update</button>
-                                    <button className="btn btn-error btn-ghost"
-                                            onClick={async ()=>{
-                                                if(confirm("Are you sure?")) {
-                                                    await this.deletePuzzle();
-                                                }
-                                            }}
-                                        >Delete</button>
-                                </div>
+                                <button className="btn btn-primary btn-ghost update-btn"
+                                        onClick={()=>{
+                                            document.location = '/puzzle/update?puzzleId=' + this.state['puzzleId'];
+                                        }}
+                                    >Update</button>
+                                <button className="btn btn-error btn-ghost"
+                                        onClick={async ()=>{
+                                            if(confirm("Are you sure?")) {
+                                                await this.deletePuzzle();
+                                            }
+                                        }}
+                                    >Delete</button>
                             </div>
                         );
                     }
@@ -219,10 +217,6 @@ class PuzzleShow extends React.Component {
                   .puzzle-data {
                     display: flex;
                     flex-direction: column;
-                  }
-                  
-                  .update-btn {
-                    margin-right: 1rem;
                   }
                   
                   .enrolled-players, .enrolled-teams, .tags {
@@ -236,14 +230,13 @@ class PuzzleShow extends React.Component {
                   .description {
                     margin: 0;
                   }
-
+                  
                   .alert {
                         display: flex;
                         flex-direction: row;
-                        text-align: center;
+                        justify-content: space-around;
                         margin-top: 2rem;
                         margin-bottom: 0;
-                        justify-content: center;
                   }
                 `}</style>
             </div>

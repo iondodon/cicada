@@ -222,20 +222,18 @@ class ContestShow extends React.Component {
                     if(this.state['userId'] == Cookies.get('userId',  { domain: config.DOMAIN })) {
                         return(
                             <div className="alert alert-info">
-                                <div className="btn-group">
-                                    <button className="btn btn-primary btn-ghost update-btn"
-                                            onClick={()=>{
-                                                document.location = '/contest/update?contestId=' + this.state['contestId'];
-                                            }}
-                                    >Update</button>
-                                    <button className="btn btn-error btn-ghost"
-                                            onClick={async ()=>{
-                                                if(confirm("Are you sure?")) {
-                                                    await this.deleteContest();
-                                                }
-                                            }}
-                                    >Delete</button>
-                                </div>
+                                <button className="btn btn-primary btn-ghost"
+                                        onClick={()=>{
+                                            document.location = '/contest/update?contestId=' + this.state['contestId'];
+                                        }}
+                                >Update</button>
+                                <button className="btn btn-error btn-ghost"
+                                        onClick={async ()=>{
+                                            if(confirm("Are you sure?")) {
+                                                await this.deleteContest();
+                                            }
+                                        }}
+                                >Delete</button>
                             </div>
                         );
                     }
@@ -246,10 +244,6 @@ class ContestShow extends React.Component {
                   .contest-data {
                     display: flex;
                     flex-direction: column;
-                  }
-                  
-                  .update-btn {
-                    margin-right: 1rem;
                   }
                   
                   .links {
@@ -263,10 +257,9 @@ class ContestShow extends React.Component {
                   .alert {
                         display: flex;
                         flex-direction: row;
-                        text-align: center;
+                        justify-content: space-around;
                         margin-top: 2rem;
                         margin-bottom: 0;
-                        justify-content: center;
                   }
                 `}</style>
             </div>

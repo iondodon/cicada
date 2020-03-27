@@ -348,6 +348,7 @@ class PuzzleForm extends React.Component {
 
                 <div className="form-tags-group" >
                     <select className="tags-multiple-select" name="states[]" multiple="multiple">
+                        <option value="General">General</option>
                         <option value="CyberSecurity">CyberSecurity</option>
                         <option value="Cryptography">Cryptography</option>
                         <option value="Blockchain">Blockchain</option>
