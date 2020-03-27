@@ -13,8 +13,8 @@ security:
         main:
             pattern: ^/api/token
             anonymous: true
-            remember_me:
-                samesite: 'strict'
+#            remember_me:
+#                samesite: 'strict'
 
         api:
             pattern:  ^/api
