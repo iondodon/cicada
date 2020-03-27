@@ -2,21 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/reactjs/text/text.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/89715e81-bc9c-4fca-9f4c-1a8fd517663e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/89715e81-bc9c-4fca-9f4c-1a8fd517663e.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/ContestActionBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/ContestActionBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/ContestShow.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/ContestShow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/Footer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/MyAccount.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/MyAccount.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/PuzzleForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/PuzzleForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/PuzzleSession.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/PuzzleSession.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/PuzzleShow.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/PuzzleShow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/TeamShow.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/TeamShow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/configs/keys.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/configs/keys.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/pages/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/pages/see-you-soon.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/pages/see-you-soon.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/hack/dist/hack.css" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/hack/dist/hack.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/config/packages/framework.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/config/packages/framework.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -560,7 +548,12 @@
       <workItem from="1584477198701" duration="3683000" />
       <workItem from="1584706586325" duration="8032000" />
       <workItem from="1584900094140" duration="4651000" />
-      <workItem from="1585045035937" duration="5854000" />
+      <workItem from="1585045035937" duration="6562000" />
+      <workItem from="1585060003850" duration="749000" />
+      <workItem from="1585068372792" duration="55000" />
+      <workItem from="1585248572594" duration="1760000" />
+      <workItem from="1585253781047" duration="827000" />
+      <workItem from="1585304190069" duration="2103000" />
     </task>
     <servers />
   </component>
@@ -595,12 +588,12 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="274" y="0" width="804" height="667" key="#SQL_Dialects/0.0.1366.768@0.0.1366.768" timestamp="1583351466939" />
-    <state x="214" y="26" width="804" height="667" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585045103665">
+    <state x="278" y="22" width="798" height="657" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585307893925">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="215" y="22" width="901" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.735@0.0.1366.735" timestamp="1577989238037" />
     <state x="215" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.742@0.0.1366.742" timestamp="1580031571283" />
-    <state x="214" y="26" width="804" height="667" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.768@0.0.1366.768" timestamp="1585045103665" />
+    <state x="278" y="22" width="798" height="657" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.768@0.0.1366.768" timestamp="1585307893925" />
     <state x="366" y="101" width="624" height="540" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1580823465884">
       <screen x="0" y="0" width="1366" height="742" />
     </state>
