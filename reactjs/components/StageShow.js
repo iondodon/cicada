@@ -55,7 +55,8 @@ class StageShow extends React.Component {
                 }
                 setTimeout(async ()=>{
                     await this.setState({responseMessage: ''});
-                }, 5000);
+                }, 10000);
+                await this.setState({responseMessage: ''});
             } else {
                 await this.setState({error: true});
                 await this.setState({responseMessage: responseJson['message']});
@@ -91,7 +92,7 @@ class StageShow extends React.Component {
                         }
                     })()}
                     {(()=>{
-                        if(this.state['current']) {
+                        if(this.props.completeness === this.props.level) {
                             return(
                                 <input
                                     type="text"
@@ -106,7 +107,7 @@ class StageShow extends React.Component {
                         }
                     })()}
                     {(()=>{
-                        if(this.state['current']) {
+                        if(this.props.completeness === this.props.level) {
                             return(
                                 <div className={"header-trigger pull-left"} onClick={this.checkStageCode}>check</div>
                             );
