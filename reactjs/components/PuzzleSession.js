@@ -16,6 +16,7 @@ class PuzzleSession extends React.Component {
             showTeamsMemberOf: false,
             error: false,
             errorMessage: null,
+            sessions: null,
             session: null
         };
 
@@ -68,6 +69,7 @@ class PuzzleSession extends React.Component {
 
             if(response.status === 200){
                 await this.setState({sessions: responseJson});
+                await this.setState({session: responseJson[0]});
                 if(this.state['sessions']) {
                     await this.setState({enrolled: true});
                 }
@@ -208,13 +210,16 @@ class PuzzleSession extends React.Component {
                         return(
                             <div>
                                 <div>
-                                    ## open sessions:
+                                    ## select session:
                                     {
                                         this.state.sessions.map((sess, index) => {
                                             if(sess['singlePlayer']) {
                                                 return(
-                                                    <a className={"team_anchor"} key={sess['id']} value={index} onClick={async () => await this.selectSession(index)}>
-                                                        {sess['id']} Solo
+                                                    <a className={"team_anchor"}
+                                                       key={sess['id']}
+                                                       value={index}
+                                                       onClick={async () => await this.selectSession(index)}>
+                                                        Solo
                                                         {(()=>{
                                                            if(sess['contest']) {
                                                                return(<span> contest:{sess['contest']['name']}</span>);
@@ -225,7 +230,7 @@ class PuzzleSession extends React.Component {
                                             } else if(sess['teamPlayer']) {
                                                 return(
                                                     <a className={"team_anchor"} key={sess['id']} value={index} onClick={async () => await this.selectSession(index)}>
-                                                        {sess['id']} team:{sess['teamPlayer']['name']}
+                                                        team:{sess['teamPlayer']['name']}
                                                         {(()=>{
                                                             if(sess['contest']) {
                                                                 return(<span> contest:{sess['contest']['name']}</span>);
@@ -248,7 +253,6 @@ class PuzzleSession extends React.Component {
                                                     /
                                                     {(()=>{
                                                         if(this.state['session']['puzzle'] && this.state['session']['puzzle']['stagesCount']) {
-                                                            console.log(this.state['session']['puzzle']['stagesCount']);
                                                             return(this.state['session']['puzzle']['stagesCount']);
                                                         } else {
                                                             return null;
@@ -285,17 +289,19 @@ class PuzzleSession extends React.Component {
                                                                 <h2>stages:</h2>
                                                                 {
                                                                     this.state['session']['puzzle']['stages'].map((stage) => {
-                                                                        return(
-                                                                            <StageShow
-                                                                                current={this.state['session']['completeness'] === stage['level']}
-                                                                                key={stage['id']}
-                                                                                stageId={stage['id']}
-                                                                                sessionId={this.state['session']['id']}
-                                                                                level={stage['level']}
-                                                                                description={stage['description']}
-                                                                                code={stage['code']}
-                                                                            />
-                                                                        );
+                                                                        if(stage['level'] <= this.state['session']['completeness']) {
+                                                                            return (
+                                                                                <StageShow
+                                                                                    completeness={this.state['session']['completeness']}
+                                                                                    key={stage['id']}
+                                                                                    stageId={stage['id']}
+                                                                                    sessionId={this.state['session']['id']}
+                                                                                    level={stage['level']}
+                                                                                    description={stage['description']}
+                                                                                    code={stage['code']}
+                                                                                />
+                                                                            );
+                                                                        }
                                                                     })
                                                                 }
                                                             </div>
@@ -308,7 +314,14 @@ class PuzzleSession extends React.Component {
                                                         return(
                                                             <div className={"to-right space-left"}>
                                                                 <br/>
-                                                                <a onClick={this.showTeamsMemberOf}>Solve with a team</a>
+                                                                <a onClick={this.showTeamsMemberOf}>Solve in a team</a>
+                                                            </div>
+                                                        );
+                                                    } else {
+                                                        return(
+                                                            <div className={"to-right space-left"}>
+                                                                <br/>
+                                                                <a onClick={this.enrollSinglePlayer}>Solve solo</a>
                                                             </div>
                                                         );
                                                     }
