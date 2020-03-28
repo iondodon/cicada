@@ -88,22 +88,6 @@ class PuzzleSessionController extends AbstractFOSRestController
         return new JsonResponse(null, 200);
     }
 
-    private function extractUnnecessaryStages($session) {
-        /** @var Stage $stage */
-        /** @var PuzzleSession  $session */
-        /** @var Collection $stages */
-
-        $stages = $session->getPuzzle()->getStages();
-        foreach ($stages as $stage) {
-            if($stage->getLevel() > $session->getCompleteness()) {
-                $stages->removeElement($stage);
-            }
-        }
-        $session->getPuzzle()->setStages($stages);
-
-        return $session;
-    }
-
     /**
      * @Route("/api/puzzle/get-sessions/{puzzleId}", name="puzzle_sessions.get-sessions", methods={"GET"})
      * @param $puzzleId
@@ -122,20 +106,33 @@ class PuzzleSessionController extends AbstractFOSRestController
 
         /** @var Team $team */
         foreach ($account->getTeamsMemberOf() as $team) {
-            foreach ($team->getPuzzleSessions() as $session) {
-                if($session->getPuzzle()->getId() === (int)$puzzleId) {
-                    $session = $this->extractUnnecessaryStages($session);
-                    $sessions->add($session);
+            foreach ($team->getPuzzleSessions() as $sess) {
+                if($sess->getPuzzle()->getId() === (int)$puzzleId) {
+                    $sessions->add($sess);
                 }
             }
         }
 
-        foreach ($account->getPuzzleSessions() as $session) {
-            if($session->getPuzzle()->getId() === (int)$puzzleId) {
-                $session = $this->extractUnnecessaryStages($session);
-                $sessions->add($session);
+        foreach ($account->getPuzzleSessions() as $sess) {
+            if($sess->getPuzzle()->getId() === (int)$puzzleId) {
+                $sessions->add($sess);
             }
         }
+
+        // TODO: to hide the unnecessary stages
+//        /** @var PuzzleSession $sess */
+//        /** @var Stage $stage */
+//        foreach ($sessions as $sess) {
+//            $puzzle = $sess->getPuzzle();
+//            $filteredStages = new ArrayCollection();
+//            foreach ($sess->getPuzzle()->getStages() as $stage) {
+//                if($stage->getLevel() <= $sess->getCompleteness()) {
+//                    $filteredStages->add($stage);
+//                }
+//            }
+//            $puzzle->setStages($filteredStages);
+//            $sess->setPuzzle($puzzle);
+//        }
 
         if($sessions->isEmpty()) {
             return new JsonResponse(['message' => 'No session found.'], 400);
