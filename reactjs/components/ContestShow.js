@@ -164,7 +164,7 @@ class ContestShow extends React.Component {
                 <h2>created by: {this.state['createdBy']} </h2>
 
                 <h2>
-                    sessions:
+                    sessions: &nbsp;
                     {(()=>{
                         if(this.state['sessions']){
                             return(this.state['sessions'].length);

@@ -212,7 +212,7 @@ class PuzzleSession extends React.Component {
                         return(
                             <div>
                                 <div>
-                                    ## select session:
+                                    ## select a session: &nbsp;
                                     {
                                         this.state.sessions.map((sess, index) => {
                                             if(sess['singlePlayer']) {
@@ -371,7 +371,7 @@ class PuzzleSession extends React.Component {
                                 <button className="btn btn-warning btn-ghost"
                                         onClick={this.enrollSinglePlayer}>Solve solo</button>
                                 <button className="btn  btn-warning btn-ghost"
-                                        onClick={this.showTeamsMemberOf}>Solve with a team</button>
+                                        onClick={this.showTeamsMemberOf}>Solve in a team</button>
                             </div>
                         );
                     }
