@@ -25,6 +25,11 @@ class TopMenu extends React.Component {
             credentials: "include"
         };
 
+        Cookie.remove('userId',  { domain: config.DOMAIN });
+        Cookie.remove('username',  { domain: config.DOMAIN });
+
+        Router.push("/");
+
         let response = await fetch(config.API_URL + '/api/logout', request);
 
         if (response.status === 200) {
