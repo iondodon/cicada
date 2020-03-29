@@ -12,10 +12,6 @@ class StageShow extends React.Component {
 
         this.state = {
             code: '',
-            stageId: this.props.stageId,
-            sessionId: this.props.sessionId,
-            level: this.props.level,
-            current: this.props.current,
             error: false,
             responseMessage: null
         };
@@ -34,8 +30,8 @@ class StageShow extends React.Component {
             headers: headers,
             credentials: 'include',
             body: JSON.stringify({
-                sessionId: this.state['sessionId'],
-                stageId: this.state['stageId'],
+                sessionId: this.props.sessionId,
+                stageId: this.props.stageId,
                 code: this.state['code']
             })
         };

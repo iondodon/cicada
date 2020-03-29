@@ -17,7 +17,8 @@ class PuzzleSession extends React.Component {
             error: false,
             errorMessage: null,
             sessions: null,
-            session: null
+            session: null,
+            selected: 0
         };
 
         const urlParams = new URLSearchParams(window.location.search);
@@ -198,6 +199,7 @@ class PuzzleSession extends React.Component {
 
     async selectSession(sessionIndex) {
         await this.setState({session: this.state['sessions'][sessionIndex]});
+        await this.setState({selected: sessionIndex})
     }
 
     render() {
@@ -215,10 +217,13 @@ class PuzzleSession extends React.Component {
                                         this.state.sessions.map((sess, index) => {
                                             if(sess['singlePlayer']) {
                                                 return(
-                                                    <a className={"team_anchor"}
+                                                    <a
+                                                       className={this.state['selected'] === index ? "team_anchor highlighted" : "team_anchor"}
                                                        key={sess['id']}
                                                        value={index}
-                                                       onClick={async () => await this.selectSession(index)}>
+                                                       onClick={async () => {
+                                                           await this.selectSession(index);
+                                                       }}>
                                                         Solo
                                                         {(()=>{
                                                            if(sess['contest']) {
@@ -229,7 +234,8 @@ class PuzzleSession extends React.Component {
                                                 );
                                             } else if(sess['teamPlayer']) {
                                                 return(
-                                                    <a className={"team_anchor"} key={sess['id']} value={index} onClick={async () => await this.selectSession(index)}>
+                                                    <a className={this.state['selected'] === index ? "team_anchor highlighted" : "team_anchor"}
+                                                       key={sess['id']} value={index} onClick={async () => await this.selectSession(index)}>
                                                         team:{sess['teamPlayer']['name']}
                                                         {(()=>{
                                                             if(sess['contest']) {
@@ -437,6 +443,11 @@ class PuzzleSession extends React.Component {
                       display: flex;
                       flex-direction: row;
                       justify-content: space-between;
+                    }
+                    
+                    .highlighted {
+                      background-color: #ff2e88;
+                      color: #fff;
                     }
                 `}</style>
             </div>
