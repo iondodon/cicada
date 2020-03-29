@@ -51,7 +51,7 @@ class StageShow extends React.Component {
                 }
                 setTimeout(async ()=>{
                     await this.setState({responseMessage: ''});
-                }, 10000);
+                }, 5000);
                 await this.setState({responseMessage: ''});
             } else {
                 await this.setState({error: true});

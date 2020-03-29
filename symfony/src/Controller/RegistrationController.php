@@ -24,6 +24,9 @@ class RegistrationController extends FOSRestController
     {
         $username = $request->request->get('username');
         $email = $request->request->get('email');
+        $captchaToken = $request->request->get('captchaToken');
+
+//        dump($captchaToken); die;
 
         $em  = $this->getDoctrine()->getManager();
 
@@ -44,7 +47,6 @@ class RegistrationController extends FOSRestController
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
-
 
         if ($form->isSubmitted() && $form->isValid()) {
             $password = $this->get('security.password_encoder')->encodePassword($user, $user->getPassword());

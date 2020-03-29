@@ -2,9 +2,13 @@ import React from 'react';
 
 import '../i18n';
 import { withNamespaces } from 'react-i18next';
-
 import config from '../configs/keys';
 import Router from "next/router";
+
+import {
+    GoogleReCaptchaProvider,
+    GoogleReCaptcha
+} from 'react-google-recaptcha-v3';
 
 
 class SignUpForm extends React.Component {
@@ -19,7 +23,8 @@ class SignUpForm extends React.Component {
             username: '',
             password: '',
             passwordRetyped: '',
-            agree: false
+            agree: false,
+            captchaToken: null
         };
 
         this.sendData = this.sendData.bind(this);
@@ -92,6 +97,7 @@ class SignUpForm extends React.Component {
         formData.append('fullName', this.state.fullName);
         formData.append('username', this.state.username);
         formData.append('password', this.state.password);
+        formData.append('captchaToken', this.state['captchaToken']);
 
         let headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
@@ -170,9 +176,15 @@ class SignUpForm extends React.Component {
                         <label htmlFor="passwordRetyped">agree:</label>
                         <input type="checkbox" onChange={e => this.setState({agree: e.target.checked})} name="agree"/>
                     </div>
+
+                    <GoogleReCaptchaProvider reCaptchaKey={config.CAPTCHA_KEY} >
+                        <GoogleReCaptcha onVerify={async token => await this.setState({captchaToken: token}) } />
+                    </GoogleReCaptchaProvider>
+
                     <div className="btn-group">
                         <button className="btn btn-primary" onClick={this.validateFields}>SignUp</button>
                     </div>
+
                     <div className="alert alert-warning fill-all" style={{display: 'none', 'marginTop': '3px'}}>
                         Fill all fields.
                         {'\u00A0'} <a onClick={this.closeWarning}>x</a>
