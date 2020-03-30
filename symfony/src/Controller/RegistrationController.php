@@ -24,6 +24,43 @@ class RegistrationController extends FOSRestController
     {
         $username = $request->request->get('username');
         $email = $request->request->get('email');
+        $captcha = $request->request->get('captchaToken');
+
+        ///////////////////////////////////////////////////////////////////
+
+        if(!$captcha){
+            throw new HttpException(Response::HTTP_FORBIDDEN, 'Invalid captcha.');
+        }
+
+        $secretKey = "6Leb8-QUAAAAAIkl4RpKD4-zwajSrNJfInJobVJk";
+        $ip = $_SERVER['REMOTE_ADDR'];
+
+        // post request to server
+        $url = 'https://www.google.com/recaptcha/api/siteverify';
+        $data = array('secret' => $secretKey, 'response' => $captcha, 'remoteip' => $ip);
+
+
+        $options = array(
+            'http' => array(
+                'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+                'method'  => 'POST',
+                'content' => http_build_query($data)
+            )
+        );
+
+        $context  = stream_context_create($options);
+        $response = file_get_contents($url, false, $context);
+        $responseKeys = json_decode($response,true);
+        header('Content-type: application/json');
+
+        if(!$responseKeys["success"]) {
+            $response = new Response();
+            $response->setStatusCode(Response::HTTP_BAD_REQUEST);
+            $response->setContent(json_encode($responseKeys));
+            return $response;
+        }
+
+        ///////////////////////////////////////////////////////////////////
 
         $em  = $this->getDoctrine()->getManager();
 
@@ -44,7 +81,6 @@ class RegistrationController extends FOSRestController
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
-
 
         if ($form->isSubmitted() && $form->isValid()) {
             $password = $this->get('security.password_encoder')->encodePassword($user, $user->getPassword());

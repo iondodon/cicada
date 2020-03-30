@@ -23,6 +23,7 @@ class LeftPanel extends React.Component {
                   .left-panel {
                         display: flex;
                         flex-direction: column;
+                        border-radius: 0;
                    }
                 `}
                 </style>
