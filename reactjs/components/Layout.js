@@ -5,8 +5,6 @@ import Footer from "./Footer";
 import React from "react";
 import {withNamespaces} from "react-i18next";
 import Router from "next/router";
-import config from '../configs/keys';
-import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 
 Router.events.on('routeChangeStart', (url) => {
     document.getElementById("page-loading").setAttribute('style', 'display: block;');
@@ -56,13 +54,11 @@ class Layout extends React.Component {
 
                 <div id={"page-loading"} className={"page-loading"}>loading...</div>
 
-                <GoogleReCaptchaProvider reCaptchaKey={config.CAPTCHA_KEY} language="en" >
-                    <TopMenu/>
-                    <Container>
-                        {this.props.children}
-                        <Footer/>
-                    </Container>
-                </GoogleReCaptchaProvider>
+                <TopMenu/>
+                <Container>
+                    {this.props.children}
+                    <Footer/>
+                </Container>
 
                 { /*language=SCSS*/ }
                 <style jsx>{`

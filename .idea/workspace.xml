@@ -3,8 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/components/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/Layout.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactjs/components/SignUpForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/SignUpForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/pages/signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/pages/signup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/configs/keys.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/configs/keys.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
