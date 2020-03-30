@@ -39,6 +39,8 @@ class Layout extends React.Component {
                     <title>Cicada</title>
                     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
 
+                    <link rel="shortcut icon" href="../static/favicon-16x16.png" />
+
                     <link rel="stylesheet" type="text/css" href={"/static/hack/dist/hack.css"}/>
                     <link href={"/static/select2-4.0.7/dist/css/select2.min.css"} rel="stylesheet" />
                     <link rel="stylesheet" type="text/css" href={"/static/style.css"}/>
