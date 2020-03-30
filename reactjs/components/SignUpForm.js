@@ -87,18 +87,25 @@ class SignUpForm extends React.Component {
             validFields = false;
         }
 
-        if(validFields){
-            this.sendData().then(() => console.log('sent'));
+        if(validFields) {
+            grecaptcha.execute(config.CAPTCHA_KEY, {action: 'signup'}).then((token) => {
+                if (token) {
+                    this.sendData(token).then(() => console.log('sent'));
+                } else {
+                    document.getElementsByClassName('captcha-error')[0]
+                        .setAttribute('style', 'display: inline');
+                }
+            });
         }
     }
 
-    async sendData(){
+    async sendData(captchaToken){
         const formData = new URLSearchParams();
         formData.append('email', this.state.email);
         formData.append('fullName', this.state.fullName);
         formData.append('username', this.state.username);
         formData.append('password', this.state.password);
-        formData.append('captchaToken', this.state['captchaToken']);
+        formData.append('captchaToken', captchaToken);
 
         let headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
@@ -182,18 +189,14 @@ class SignUpForm extends React.Component {
                         <input type="checkbox" onChange={e => this.setState({agree: e.target.checked})} name="agree"/>
                     </div>
 
-                    {
-                        this.state['googleReCaptchaEnabled'] ?
-                            <GoogleReCaptchaProvider reCaptchaKey={config.CAPTCHA_KEY} >
-                                <GoogleReCaptcha
-                                    onVerify={async token => {
-                                        await this.setState({captchaToken: token});
-                                        console.log(this.state['captchaToken']);
-                                    } }
-                                />
-                            </GoogleReCaptchaProvider> : ""
-                    }
-
+                    {/*<GoogleReCaptchaProvider reCaptchaKey={config.CAPTCHA_KEY} >*/}
+                    {/*    <GoogleReCaptcha*/}
+                    {/*        onVerify={async token => {*/}
+                    {/*            await this.setState({captchaToken: token});*/}
+                    {/*            console.log(this.state['captchaToken']);*/}
+                    {/*        } }*/}
+                    {/*    />*/}
+                    {/*</GoogleReCaptchaProvider>*/}
 
                     <div className="btn-group">
                         <button className="btn btn-primary" onClick={this.validateFields}>SignUp</button>
