@@ -103,13 +103,17 @@ class LogInForm extends React.Component {
                         max-width: 35%;
                         min-width: 35%;
                         text-align: center;
-                        margin: auto;
+                        margin: 5rem auto auto;
                     }
                     
                     .card-content {
                         display: flex;
                         flex-wrap: wrap;
                     
+                    }
+                    
+                    .btn {
+                      border-radius: 4px;
                     }
                     
                     .btn-group {

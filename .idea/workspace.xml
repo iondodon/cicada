@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="" />
+    <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/components/SignUpForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/SignUpForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/pages/signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/pages/signup.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -550,7 +554,9 @@
       <workItem from="1585248572594" duration="1760000" />
       <workItem from="1585253781047" duration="827000" />
       <workItem from="1585304190069" duration="2993000" />
-      <workItem from="1585484092420" duration="2752000" />
+      <workItem from="1585484092420" duration="17907000" />
+      <workItem from="1585551616980" duration="15000" />
+      <workItem from="1585552439343" duration="6918000" />
     </task>
     <servers />
   </component>
@@ -585,12 +591,12 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="274" y="0" width="804" height="667" key="#SQL_Dialects/0.0.1366.768@0.0.1366.768" timestamp="1583351466939" />
-    <state x="278" y="22" width="798" height="657" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585307893925">
+    <state x="272" y="38" width="798" height="657" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585487986075">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="215" y="22" width="901" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.735@0.0.1366.735" timestamp="1577989238037" />
     <state x="215" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.742@0.0.1366.742" timestamp="1580031571283" />
-    <state x="278" y="22" width="798" height="657" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.768@0.0.1366.768" timestamp="1585307893925" />
+    <state x="272" y="38" width="798" height="657" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.768@0.0.1366.768" timestamp="1585487986075" />
     <state x="366" y="101" width="624" height="540" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1580823465884">
       <screen x="0" y="0" width="1366" height="742" />
     </state>
@@ -605,10 +611,6 @@
     </state>
     <state x="416" y="124" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.735@0.0.1366.735" timestamp="1579285968216" />
     <state x="410" y="76" width="528" height="474" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.768@0.0.1366.768" timestamp="1583343228927" />
-    <state x="473" y="253" width="409" height="253" key="ComposerInitDialogKey" timestamp="1576771032968">
-      <screen x="0" y="0" width="1366" height="735" />
-    </state>
-    <state x="473" y="253" width="409" height="253" key="ComposerInitDialogKey/0.0.1366.735@0.0.1366.735" timestamp="1576771032968" />
     <state x="458" y="77" width="428" height="503" key="FileChooserDialogImpl" timestamp="1583350689784">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -654,11 +656,11 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="361" y="-10" width="789" height="768" key="find.popup/0.0.1366.768@0.0.1366.768" timestamp="1583532163434" />
-    <state x="347" y="167" width="672" height="708" key="run.anything.popup" timestamp="1583395702113">
+    <state x="347" y="167" width="672" height="708" key="run.anything.popup" timestamp="1585488281248">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="347" y="160" width="672" height="677" key="run.anything.popup/0.0.1366.735@0.0.1366.735" timestamp="1579112135253" />
-    <state x="347" y="167" width="672" height="708" key="run.anything.popup/0.0.1366.768@0.0.1366.768" timestamp="1583395702113" />
+    <state x="347" y="167" width="672" height="708" key="run.anything.popup/0.0.1366.768@0.0.1366.768" timestamp="1585488281248" />
     <state x="346" y="59" width="672" height="709" key="search.everywhere.popup" timestamp="1584485322299">
       <screen x="0" y="0" width="1366" height="768" />
     </state>

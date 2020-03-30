@@ -2,9 +2,13 @@ import React from 'react';
 
 import '../i18n';
 import { withNamespaces } from 'react-i18next';
-
 import config from '../configs/keys';
 import Router from "next/router";
+
+import {
+    GoogleReCaptchaProvider,
+    GoogleReCaptcha
+} from 'react-google-recaptcha-v3';
 
 
 class SignUpForm extends React.Component {
@@ -19,7 +23,9 @@ class SignUpForm extends React.Component {
             username: '',
             password: '',
             passwordRetyped: '',
-            agree: false
+            agree: false,
+            captchaToken: null,
+            googleReCaptchaEnabled: false
         };
 
         this.sendData = this.sendData.bind(this);
@@ -81,17 +87,25 @@ class SignUpForm extends React.Component {
             validFields = false;
         }
 
-        if(validFields){
-            this.sendData().then(() => console.log('sent'));
+        if(validFields) {
+            grecaptcha.execute(config.CAPTCHA_KEY, {action: 'signup'}).then((token) => {
+                if (token) {
+                    this.sendData(token).then(() => console.log('sent'));
+                } else {
+                    document.getElementsByClassName('captcha-error')[0]
+                        .setAttribute('style', 'display: inline');
+                }
+            });
         }
     }
 
-    async sendData(){
+    async sendData(captchaToken){
         const formData = new URLSearchParams();
         formData.append('email', this.state.email);
         formData.append('fullName', this.state.fullName);
         formData.append('username', this.state.username);
         formData.append('password', this.state.password);
+        formData.append('captchaToken', captchaToken);
 
         let headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
@@ -108,6 +122,10 @@ class SignUpForm extends React.Component {
 
             if(response.status === 201) {
                 Router.push('/login');
+            } else if(response.status === 400){
+                document.getElementsByClassName('captcha-error')[0]
+                    .setAttribute('style', 'display: inline');
+                console.log("Invalid Captcha.");
             } else if(response.status === 403){
                 document.getElementsByClassName('alert-error')[0]
                     .setAttribute('style', 'display: inline');
@@ -170,8 +188,23 @@ class SignUpForm extends React.Component {
                         <label htmlFor="passwordRetyped">agree:</label>
                         <input type="checkbox" onChange={e => this.setState({agree: e.target.checked})} name="agree"/>
                     </div>
+
+                    {/*<GoogleReCaptchaProvider reCaptchaKey={config.CAPTCHA_KEY} >*/}
+                    {/*    <GoogleReCaptcha*/}
+                    {/*        onVerify={async token => {*/}
+                    {/*            await this.setState({captchaToken: token});*/}
+                    {/*            console.log(this.state['captchaToken']);*/}
+                    {/*        } }*/}
+                    {/*    />*/}
+                    {/*</GoogleReCaptchaProvider>*/}
+
                     <div className="btn-group">
                         <button className="btn btn-primary" onClick={this.validateFields}>SignUp</button>
+                    </div>
+
+                    <div className="alert alert-warning captcha-error" style={{display: 'none', 'marginTop': '3px'}}>
+                        Captcha error.
+                        {'\u00A0'} <a onClick={this.closeWarning}>x</a>
                     </div>
                     <div className="alert alert-warning fill-all" style={{display: 'none', 'marginTop': '3px'}}>
                         Fill all fields.
@@ -206,41 +239,41 @@ class SignUpForm extends React.Component {
                 { /*language=SCSS*/ }
                 <style jsx>{`
                   .card {
-                        max-width: 40%;
-                        min-width: 40%;
-                        text-align: center;
-                        margin: auto;
-                    }
-                    
-                    .card-content {
-                        display: flex;
-                        flex-wrap: wrap;
-                    
-                    }
-                    
-                    .btn-group {
-                        display: flex;
-                        width: 100%;
-                        justify-content: center;
-                        margin-top: 10px;
-                    }
-                    
-                    fieldset {
-                        min-width: 100%;
-                        justify-content: center;
-                    }
-                    
-                    label {
-                        max-width: 25%;
-                    }
-                    
-                    input {
-                        max-width: 74%;
-                    }
-                    
-                    .alert {
-                        margin: auto;
-                    }
+                    max-width: 40%;
+                    min-width: 40%;
+                    text-align: center;
+                    margin: 3rem auto auto;
+                  }
+
+                  .card-content {
+                    display: flex;
+                    flex-wrap: wrap;
+
+                  }
+
+                  .btn-group {
+                    display: flex;
+                    width: 100%;
+                    justify-content: center;
+                    margin-top: 10px;
+                  }
+
+                  fieldset {
+                    min-width: 100%;
+                    justify-content: center;
+                  }
+
+                  label {
+                    max-width: 25%;
+                  }
+
+                  input {
+                    max-width: 74%;
+                  }
+
+                  .alert {
+                    margin: auto;
+                  }
                 `}
                 </style>
             </div>

@@ -199,7 +199,7 @@ class PuzzleSession extends React.Component {
 
     async selectSession(sessionIndex) {
         await this.setState({session: this.state['sessions'][sessionIndex]});
-        await this.setState({selected: sessionIndex})
+        await this.setState({selected: sessionIndex});
     }
 
     render() {
@@ -295,6 +295,7 @@ class PuzzleSession extends React.Component {
                                                                 <h2>stages:</h2>
                                                                 {
                                                                     this.state['session']['puzzle']['stages'].map((stage) => {
+                                                                        console.log(stage['level'], this.state['session']['completeness']);
                                                                         if(stage['level'] <= this.state['session']['completeness']) {
                                                                             return (
                                                                                 <StageShow

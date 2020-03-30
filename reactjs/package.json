@@ -22,6 +22,7 @@
     "react": "^16.8.6",
     "react-cookie": "^4.0.3",
     "react-dom": "^16.8.6",
+    "react-google-recaptcha-v3": "^1.4.1",
     "react-i18next": "^9.0.10",
     "react-responsive": "^7.0.0",
     "react-router": "^5.0.1",
