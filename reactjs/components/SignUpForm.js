@@ -5,11 +5,6 @@ import { withNamespaces } from 'react-i18next';
 import config from '../configs/keys';
 import Router from "next/router";
 
-import {
-    GoogleReCaptchaProvider,
-    GoogleReCaptcha
-} from 'react-google-recaptcha-v3';
-
 
 class SignUpForm extends React.Component {
 
