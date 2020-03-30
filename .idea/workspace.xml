@@ -2,20 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/89715e81-bc9c-4fca-9f4c-1a8fd517663e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/89715e81-bc9c-4fca-9f4c-1a8fd517663e.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dictionaries/ion.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/ion.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/Footer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/Layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/LeftPanel.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/LeftPanel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/PuzzleSession.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/PuzzleSession.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/components/LogInForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/LogInForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactjs/components/SignUpForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/SignUpForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/StageShow.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/StageShow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/configs/keys.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/configs/keys.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/hack/dist/hack.css" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/hack/dist/hack.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/symfony/src/Controller/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Controller/RegistrationController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -566,7 +556,9 @@
       <workItem from="1585248572594" duration="1760000" />
       <workItem from="1585253781047" duration="827000" />
       <workItem from="1585304190069" duration="2993000" />
-      <workItem from="1585484092420" duration="17597000" />
+      <workItem from="1585484092420" duration="17907000" />
+      <workItem from="1585551616980" duration="15000" />
+      <workItem from="1585552439343" duration="5166000" />
     </task>
     <servers />
   </component>
