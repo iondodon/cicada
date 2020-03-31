@@ -69,7 +69,11 @@ class JwtAuthenticator extends AbstractGuardAuthenticator
 
         $token = $extractor->extract($request);
 
-        if (!$token || $this->isHack($token, $request)) {
+//        if (!$token || $this->isHack($token, $request)) {
+//            return false;
+//        }
+
+        if(!$token) {
             return false;
         }
 

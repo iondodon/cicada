@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ExternalWork/71276d18884c91fc924df696e8c55284.ico.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ExternalWork/71276d18884c91fc924df696e8c55284.ico/favicon-16x16.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ExternalWork/71276d18884c91fc924df696e8c55284.ico/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/static/favicon-16x16.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Security/JwtAuthenticator.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Security/JwtAuthenticator.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,18 +239,18 @@
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/ExternalWork" />
-      <recent name="$PROJECT_DIR$/reactjs/static" />
-      <recent name="$PROJECT_DIR$/reactjs/static/pages/login" />
-      <recent name="$PROJECT_DIR$/cicada-symfony/public" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/reactjs/text" />
       <recent name="$PROJECT_DIR$/reactjs/pages/puzzle" />
       <recent name="$PROJECT_DIR$/reactjs" />
       <recent name="$PROJECT_DIR$/reactjs/pages" />
       <recent name="$PROJECT_DIR$/ExternalWork" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/reactjs/static" />
+      <recent name="$PROJECT_DIR$/ExternalWork" />
+      <recent name="$PROJECT_DIR$/reactjs/static/pages/login" />
+      <recent name="$PROJECT_DIR$/cicada-symfony/public" />
     </key>
   </component>
   <component name="RunManager">
@@ -560,7 +557,9 @@
       <workItem from="1585551616980" duration="15000" />
       <workItem from="1585552439343" duration="6918000" />
       <workItem from="1585562261883" duration="601000" />
-      <workItem from="1585563193258" duration="237000" />
+      <workItem from="1585563193258" duration="433000" />
+      <workItem from="1585588387207" duration="4773000" />
+      <workItem from="1585664917534" duration="671000" />
     </task>
     <servers />
   </component>
