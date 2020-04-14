@@ -228,9 +228,9 @@ class ContestActionBar extends React.Component {
                     } else {
                         return(
                             <div className={"action"}>
-                                <button className="btn btn-warning btn-ghost"
+                                <button className="btn btn-warning btn-ghost solve-solo-btn"
                                         onClick={this.enrollSinglePlayer}>Solve solo</button>
-                                <button className="btn btn-warning btn-ghost"
+                                <button className="btn btn-warning btn-ghost solve-in-a-team-btn"
                                         onClick={this.showTeamsMemberOf}>Solve with a team</button>
                             </div>
                         );
@@ -299,6 +299,16 @@ class ContestActionBar extends React.Component {
                     
                     .show-teams {
                       margin-top: 1rem;
+                    }
+                    
+                    .solve-solo-btn {
+                       width: 70%;
+                       margin-right: 1px;
+                    }
+                    
+                    .solve-in-a-team-btn {
+                       width: 30%;
+                       margin-left: 1px;
                     }
                 `}</style>
             </div>

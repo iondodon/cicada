@@ -200,7 +200,7 @@ class PuzzleShow extends React.Component {
                                             document.location = '/puzzle/update?puzzleId=' + this.state['puzzleId'];
                                         }}
                                     >Update</button>
-                                <button className="btn btn-error btn-ghost"
+                                <button className="btn btn-error btn-ghost delete-btn"
                                         onClick={async ()=>{
                                             if(confirm("Are you sure?")) {
                                                 await this.deletePuzzle();
@@ -229,6 +229,16 @@ class PuzzleShow extends React.Component {
                   
                   .description {
                     margin: 0;
+                  }
+                  
+                  .update-btn {
+                       width: 70%;
+                       margin-right: 1px;
+                  }
+                  
+                  .delete-btn {
+                    width: 30%;
+                    margin-left: 1px;
                   }
                   
                   .alert {
