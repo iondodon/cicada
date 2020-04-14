@@ -231,7 +231,7 @@ class ContestActionBar extends React.Component {
                                 <button className="btn btn-warning btn-ghost solve-solo-btn"
                                         onClick={this.enrollSinglePlayer}>Solve solo</button>
                                 <button className="btn btn-warning btn-ghost solve-in-a-team-btn"
-                                        onClick={this.showTeamsMemberOf}>Solve with a team</button>
+                                        onClick={this.showTeamsMemberOf}>Solve in a team</button>
                             </div>
                         );
                     }
