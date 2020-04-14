@@ -149,6 +149,16 @@ class StageShow extends React.Component {
                     color: gray;
                     border: 1px solid gray;
                     margin-left: 2rem;
+                    border-radius: 3px;
+                  }
+                  
+                  .card-header {
+                    border-bottom-left-radius: 3px;
+                    border-bottom-right-radius: 3px;
+                  }
+                  
+                  input {
+                    border-radius: 3px;
                   }
                 `}</style>
             </div>

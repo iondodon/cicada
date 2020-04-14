@@ -222,12 +222,12 @@ class ContestShow extends React.Component {
                     if(this.state['userId'] == Cookies.get('userId',  { domain: config.DOMAIN })) {
                         return(
                             <div className="alert alert-info">
-                                <button className="btn btn-primary btn-ghost"
+                                <button className="btn btn-primary btn-ghost update-btn"
                                         onClick={()=>{
                                             document.location = '/contest/update?contestId=' + this.state['contestId'];
                                         }}
                                 >Update</button>
-                                <button className="btn btn-error btn-ghost"
+                                <button className="btn btn-error btn-ghost delete-btn"
                                         onClick={async ()=>{
                                             if(confirm("Are you sure?")) {
                                                 await this.deleteContest();
@@ -260,6 +260,16 @@ class ContestShow extends React.Component {
                         justify-content: space-around;
                         margin-top: 2rem;
                         margin-bottom: 0;
+                  }
+                  
+                  .update-btn {
+                       width: 70%;
+                       margin-right: 1px;
+                  }
+                  
+                  .delete-btn {
+                    width: 30%;
+                    margin-left: 1px;
                   }
                 `}</style>
             </div>

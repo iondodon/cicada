@@ -24,7 +24,7 @@ class ContestForm extends React.Component {
         this.saveContest = this.saveContest.bind(this);
         this.validForm = this.validForm.bind(this);
         this.updateContest = this.updateContest.bind(this);
-        // this.populateContestForm = this.populateContestForm(this);
+        this.populateContestForm = this.populateContestForm.bind(this);
     }
 
     async componentDidMount() {
@@ -309,12 +309,16 @@ class ContestForm extends React.Component {
                     />
                 </div>
 
-                <label htmlFor="finishesAt"  className={"date-time-pickers"}>
-                    starts at
-                    <input name="startsAt" type="text" id="startsAt"/>
-                    finishes at
-                    <input name="finishesAt" type="text" id="finishesAt"/>
-                </label>
+                <div className={"date-time-pickers"}>
+                    <div className={"picker"}>
+                        starts at
+                        <input name="startsAt" type="text" id="startsAt"/>
+                    </div>
+                    <div className={"picker"}>
+                        finishes at
+                        <input name="finishesAt" type="text" id="finishesAt"/>
+                    </div>
+                </div>
 
                 {/*<label htmlFor="private" className={"is-private btn btn-success btn-ghost minus"}>Private*/}
                 {/*    <input*/}
@@ -367,10 +371,12 @@ class ContestForm extends React.Component {
                   }
                   
                   .date-time-pickers{
+                    margin-top: 3rem;
                     display: flex;
-                    flex-direction: column;
-                    margin: 3rem auto auto;
-                    text-align: center;
+                    justify-content: space-around;
+                    flex-direction: row;
+                    //margin: 3rem auto auto;
+                    //text-align: center;
                   }
 
                   .form-group {
@@ -379,7 +385,12 @@ class ContestForm extends React.Component {
                     margin: 3rem auto auto;
                   }
                   
+                  .picker {
+                    text-align: center;
+                  }
+                  
                   .btn {
+                    width: 100%;
                     margin-top: 3rem;
                   }
 

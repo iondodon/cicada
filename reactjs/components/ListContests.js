@@ -171,7 +171,7 @@ class ListContests extends React.Component {
                         this.state.currentContests.map((contest) => {
                             return (
                                 <tr key={contest['id']} >
-                                    <td>
+                                    <td className={"name"}>
                                         <Link href={{ pathname: '/contest/show', query: { contestId: contest['id'] } }}>
                                             <a className="menu-item">{ contest['name'] }</a>
                                         </Link>{' '}
@@ -201,6 +201,11 @@ class ListContests extends React.Component {
                     display: flex;
                     flex-direction: column;
                   }
+                  
+                  .name {
+                    text-align: left;
+                  }
+                  
                 `}
                 </style>
             </div>
