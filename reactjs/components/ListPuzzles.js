@@ -156,7 +156,7 @@ class ListPuzzles extends React.Component {
                         this.state.currentPuzzles.map((puzzle) => {
                             return (
                                 <tr key={puzzle['id']} >
-                                    <td>
+                                    <td className={"name"}>
                                         <Link href={{ pathname: '/puzzle/show', query: { puzzleId: puzzle['id'] } }}>
                                             <a className="menu-item">{ puzzle['name'] }</a>
                                         </Link>{' '}
@@ -186,6 +186,10 @@ class ListPuzzles extends React.Component {
                   .list-puzzles-container {
                     display: flex;
                     flex-direction: column;
+                  }
+                  
+                  .name {
+                    text-align: left;
                   }
                 `}
                 </style>

@@ -73,6 +73,10 @@ class JwtAuthenticator extends AbstractGuardAuthenticator
             return false;
         }
 
+        if(!$token) {
+            return false;
+        }
+
         return $token;
     }
 

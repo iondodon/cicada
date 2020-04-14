@@ -369,9 +369,9 @@ class PuzzleSession extends React.Component {
                     } else {
                         return(
                             <div className={"action"}>
-                                <button className="btn btn-warning btn-ghost"
+                                <button className="btn btn-warning btn-ghost solve-solo-btn"
                                         onClick={this.enrollSinglePlayer}>Solve solo</button>
-                                <button className="btn  btn-warning btn-ghost"
+                                <button className="btn  btn-warning btn-ghost solve-in-a-team-btn"
                                         onClick={this.showTeamsMemberOf}>Solve in a team</button>
                             </div>
                         );
@@ -449,6 +449,16 @@ class PuzzleSession extends React.Component {
                     .highlighted {
                       background-color: #ff2e88;
                       color: #fff;
+                    }
+                    
+                    .solve-solo-btn {
+                       width: 70%;
+                       margin-right: 1px;
+                    }
+                    
+                    .solve-in-a-team-btn {
+                       width: 30%;
+                       margin-left: 1px;
                     }
                 `}</style>
             </div>
