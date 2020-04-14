@@ -47,32 +47,26 @@ class About extends React.Component {
                                     <p>
                                         The idea of creating this site came from a puzzle made-up by a secret group in 2014. This puzzle consisted in two levels/rounds and was created to indentificate clever people, who’ve got general knowledge about multifarious domains, and especially, cryptography.
                                     </p>
-                                    <br/>
 
                                     <p>
                                         Cicadapuzzle gives you the possibility to create your own puzzles and to show them to the people desirous of solving puzzles in order to improve and better their mind.
                                     </p>
-                                    <br/>
 
                                     <p>
                                         Creating puzzles signifies a method by which you can augment the vigor of your rationality, because they are intricate and they demand logical, lucid elements, which ought to be perceived by the player as interesting and vivid ones.
                                     </p>
-                                    <br/>
 
                                     <p>
                                         The game is mostly based on the player’s intuition and general knowledge. However, the player shouldn’t be immersed in every domain or theme regarding general knowledge, inasmuch as puzzles can be created based on one specific domain, such as history, archeology, cryptography, linguistics, etc.
                                     </p>
-                                    <br/>
 
                                     <p>
                                         The purpose of the game is to solve each part of the puzzle through finding out the secret code of each part.
                                     </p>
-                                    <br/>
 
                                     <p>
                                         In order to solve a puzzle, the player can log as a team or a singular participant. If you’re logged via a team, the achievements regarding the puzzle will be shown identically to every member of the team.
                                     </p>
-                                    <br/>
 
                                     <h2>
                                         Creating Puzzles Rules

@@ -41,11 +41,13 @@ class Index extends React.Component {
                         {/*<header className="card-header">title</header>*/}
                         <div className="card-content">
                             <div className="inner">
+                                <p>
+                                    Cicadapuzzle gives you the possibility to create your own puzzles and to show them to the people desirous of solving puzzles in order to improve and better their mind.
+                                </p>
 
-                                <h2>Idea based on Cicada 3301</h2>
-                                <br/>
-                                <h2>The site offers you the possibility to create puzzles and solve other puzzles.</h2>
-
+                                <p>
+                                    Creating puzzles signifies a method by which you can augment the vigor of your rationality, because they are intricate and they demand logical, lucid elements, which ought to be perceived by the player as interesting and vivid ones.
+                                </p>
 
                                 <div className={"container"}>
                                     <iframe className={"video"}
@@ -83,6 +85,10 @@ class Index extends React.Component {
                         left: 0;
                         width: 100%;
                         height: 100%;
+                    }
+                    
+                    .inner {
+                        text-align: center;
                     }
                     
                     .specific {
