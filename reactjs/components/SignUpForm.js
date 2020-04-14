@@ -180,8 +180,15 @@ class SignUpForm extends React.Component {
                         />
                     </fieldset>
                     <div style={{'margin' : 'auto'}}>
-                        <label htmlFor="passwordRetyped">agree:</label>
+                        <label className={"terms-and-rules"}>
+                            Please read -
+                            <a href={"/terms-and-rules"} target="_blank">Terms and rules</a>
+                        </label>
+                        <br/>
                         <input type="checkbox" onChange={e => this.setState({agree: e.target.checked})} name="agree"/>
+                        <label htmlFor="passwordRetyped">
+                            Agree
+                        </label>
                     </div>
 
                     {/*<GoogleReCaptchaProvider reCaptchaKey={config.CAPTCHA_KEY} >*/}
@@ -268,6 +275,10 @@ class SignUpForm extends React.Component {
 
                   .alert {
                     margin: auto;
+                  }
+                  
+                  .terms-and-rules {
+                    margin-right: 1rem;
                   }
                 `}
                 </style>
