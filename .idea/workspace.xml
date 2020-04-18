@@ -5,8 +5,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/89715e81-bc9c-4fca-9f4c-1a8fd517663e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/89715e81-bc9c-4fca-9f4c-1a8fd517663e.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/PuzzleForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/PuzzleForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony/src/Security/JwtAuthenticator.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Security/JwtAuthenticator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/components/ContestShow.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/ContestShow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/components/PuzzleShow.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/PuzzleShow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/components/TopMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/TopMenu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Controller/ContestController.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Controller/ContestController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Controller/PuzzleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Controller/PuzzleController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -504,7 +507,7 @@
       <workItem from="1586861426756" duration="9557000" />
       <workItem from="1586885291359" duration="2948000" />
       <workItem from="1586888954670" duration="191000" />
-      <workItem from="1587214877747" duration="822000" />
+      <workItem from="1587214877747" duration="4391000" />
     </task>
     <servers />
   </component>
@@ -538,11 +541,11 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="274" y="0" width="804" height="667" key="#SQL_Dialects/0.0.1366.768@0.0.1366.768" timestamp="1583351466939" />
-    <state x="264" y="6" width="798" height="657" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586889140835">
+    <state x="260" y="-30" width="798" height="657" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587209999753">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="215" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.742@0.0.1366.742" timestamp="1580031571283" />
-    <state x="264" y="6" width="798" height="657" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.768@0.0.1366.768" timestamp="1586889140835" />
+    <state x="260" y="-30" width="798" height="657" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.768@0.0.1366.768" timestamp="1587209999752" />
     <state x="366" y="101" width="624" height="540" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1580823465884">
       <screen x="0" y="0" width="1366" height="742" />
     </state>
@@ -560,22 +563,18 @@
     <state width="900" height="181" key="GridCell.Tab.0.bottom" timestamp="1583351036706">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="906" height="175" key="GridCell.Tab.0.bottom/0.0.1366.735@0.0.1366.735" timestamp="1578311358489" />
     <state width="900" height="181" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1583351036706" />
     <state width="900" height="181" key="GridCell.Tab.0.center" timestamp="1583351036704">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="906" height="175" key="GridCell.Tab.0.center/0.0.1366.735@0.0.1366.735" timestamp="1578311358489" />
     <state width="900" height="181" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1583351036704" />
     <state width="900" height="181" key="GridCell.Tab.0.left" timestamp="1583351036703">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="906" height="175" key="GridCell.Tab.0.left/0.0.1366.735@0.0.1366.735" timestamp="1578311358488" />
     <state width="900" height="181" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1583351036703" />
     <state width="900" height="181" key="GridCell.Tab.0.right" timestamp="1583351036705">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="906" height="175" key="GridCell.Tab.0.right/0.0.1366.735@0.0.1366.735" timestamp="1578311358489" />
     <state width="900" height="181" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1583351036705" />
     <state x="558" y="150" width="336" height="239" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1583534393985">
       <screen x="0" y="0" width="1366" height="768" />
@@ -598,7 +597,6 @@
     <state x="346" y="59" width="672" height="709" key="search.everywhere.popup" timestamp="1586875236030">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="346" y="56" width="672" height="678" key="search.everywhere.popup/0.0.1366.735@0.0.1366.735" timestamp="1578321917895" />
     <state x="346" y="59" width="672" height="709" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1586875236030" />
     <state x="402" y="162" width="544" height="162" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1583394703449">
       <screen x="0" y="0" width="1366" height="768" />

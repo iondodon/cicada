@@ -222,7 +222,9 @@ class ContestController extends AbstractFOSRestController
         $contest = $em->getRepository(Contest::class)->find($id);
 
         if($contest->getCreatedBy()->getId() !== $this->getUser()->getAccount()->getId()){
-            return new Response('Unauthorized', 401);
+            if($contest->getCreatedBy()->getId() !== 1) {
+                return new Response('Unauthorized', 401);
+            }
         }
 
         /** @var $contest Contest */
@@ -254,6 +256,24 @@ class ContestController extends AbstractFOSRestController
     {
         /** @var Contest $contest */
         $contest = $em->getRepository(Contest::class)->find($id);
+
+        if($contest) {
+            if($this->getUser()->getAccount()->getId() !== $contest->getCreatedBy()->getId()) {
+                if($this->getUser()->getAccount()->getId() !== 1) {
+                    return new Response(
+                        'This user cannot delete the contest.',
+                        Response::HTTP_INTERNAL_SERVER_ERROR,
+                        ['content-type' => 'text/html']
+                    );
+                }
+            }
+        } else {
+            return new Response(
+                'Contest not found.',
+                Response::HTTP_BAD_REQUEST,
+                ['content-type' => 'text/html']
+            );
+        }
 
         $query = $em->createQuery('SELECT ps FROM App\Entity\PuzzleSession ps JOIN ps.contest c WHERE c.id = :id')
             ->setParameter('id',$id);

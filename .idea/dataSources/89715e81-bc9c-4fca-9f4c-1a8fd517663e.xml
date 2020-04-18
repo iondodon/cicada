@@ -9,7 +9,7 @@
     </root>
     <schema id="2" parent="1" name="cicada_db">
       <Current>1</Current>
-      <Collation>utf8_unicode_ci</Collation>
+      <Collation>utf8_general_ci</Collation>
     </schema>
     <schema id="3" parent="1" name="information_schema">
       <Collation>utf8_general_ci</Collation>
