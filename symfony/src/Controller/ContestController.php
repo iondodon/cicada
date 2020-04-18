@@ -222,7 +222,7 @@ class ContestController extends AbstractFOSRestController
         $contest = $em->getRepository(Contest::class)->find($id);
 
         if($contest->getCreatedBy()->getId() !== $this->getUser()->getAccount()->getId()){
-            if($contest->getCreatedBy()->getId() !== 1) {
+            if($this->getUser()->getId() !== 1) {
                 return new Response('Unauthorized', 401);
             }
         }
@@ -259,7 +259,7 @@ class ContestController extends AbstractFOSRestController
 
         if($contest) {
             if($this->getUser()->getAccount()->getId() !== $contest->getCreatedBy()->getId()) {
-                if($this->getUser()->getAccount()->getId() !== 1) {
+                if($this->getUser()->getId() !== 1) {
                     return new Response(
                         'This user cannot delete the contest.',
                         Response::HTTP_INTERNAL_SERVER_ERROR,

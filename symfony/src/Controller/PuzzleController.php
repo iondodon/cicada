@@ -159,9 +159,8 @@ class PuzzleController extends AbstractFOSRestController
             return new JsonResponse(['message' => 'Puzzle not found.'], 404);
         }
 
-        /** @var Account $account */
-        $account = $this->getUser()->getAccount();
-        if($puzzle->getCreatedBy()->getId() !== $account->getId()) {
+        if($this->getUser()->getId() !== 1 &&
+            $puzzle->getCreatedBy()->getId() !== $this->getUser()->getAccount()->getId()) {
             return new JsonResponse(['message' => 'You can not update this puzzle.'], 400);
         }
 
@@ -194,7 +193,7 @@ class PuzzleController extends AbstractFOSRestController
 
         if($puzzle) {
             if($this->getUser()->getAccount()->getId() !== $puzzle->getCreatedBy()->getId()) {
-                if($this->getUser()->getAccount()->getId() !== 1) {
+                if($this->getUser()->getId() !== 1) {
                     return new Response(
                         'This user cannot update the puzzle.',
                         Response::HTTP_INTERNAL_SERVER_ERROR,
@@ -274,7 +273,7 @@ class PuzzleController extends AbstractFOSRestController
 
         if($puzzle) {
             if($this->getUser()->getAccount()->getId() !== $puzzle->getCreatedBy()->getId()) {
-                if($this->getUser()->getAccount()->getId() !== 1) {
+                if($this->getUser()->getId() !== 1) {
                     return new Response(
                         'This user cannot delete the puzzle.',
                         Response::HTTP_INTERNAL_SERVER_ERROR,
