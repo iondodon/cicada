@@ -197,8 +197,8 @@ class PuzzleForm extends React.Component {
         if(this.state.name === '') {
             errorMsg += 'You should specify a name' + '<br/>';
             valid = false;
-        } else if(this.state.name.length < 3) {
-            errorMsg += 'The name should have at least 3 chars' + '<br/>';
+        } else if(this.state.name.length < 1) {
+            errorMsg += 'The name should have at least 1 character.' + '<br/>';
             valid = false;
         }
 
@@ -207,14 +207,14 @@ class PuzzleForm extends React.Component {
             valid = false;
         }
 
-        if(this.state.description.length < 300) {
-            errorMsg += 'Puzzle description and stage description should have at least 300 chars' + '<br/>';
+        if(this.state.description.length < 20) {
+            errorMsg += 'Puzzle description and stage description should have at least 20 chars' + '<br/>';
             valid = false;
         }
 
         this.state.stages.map((stage, index) => {
-            if(stage.description.length < 200) {
-                errorMsg += 'Stage ' + index + ' description should have at least 200 chars' + '<br/>';
+            if(stage.description.length < 10) {
+                errorMsg += 'Stage ' + index + ' description should have at least 10 characters.' + '<br/>';
                 valid = false;
             }
 

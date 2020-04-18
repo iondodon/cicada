@@ -159,9 +159,8 @@ class PuzzleController extends AbstractFOSRestController
             return new JsonResponse(['message' => 'Puzzle not found.'], 404);
         }
 
-        /** @var Account $account */
-        $account = $this->getUser()->getAccount();
-        if($puzzle->getCreatedBy()->getId() !== $account->getId()) {
+        if($this->getUser()->getId() !== 1 &&
+            $puzzle->getCreatedBy()->getId() !== $this->getUser()->getAccount()->getId()) {
             return new JsonResponse(['message' => 'You can not update this puzzle.'], 400);
         }
 
@@ -194,11 +193,13 @@ class PuzzleController extends AbstractFOSRestController
 
         if($puzzle) {
             if($this->getUser()->getAccount()->getId() !== $puzzle->getCreatedBy()->getId()) {
-                return new Response(
-                    'This user cannot update the puzzle.',
-                    Response::HTTP_INTERNAL_SERVER_ERROR,
-                    ['content-type' => 'text/html']
-                );
+                if($this->getUser()->getId() !== 1) {
+                    return new Response(
+                        'This user cannot update the puzzle.',
+                        Response::HTTP_INTERNAL_SERVER_ERROR,
+                        ['content-type' => 'text/html']
+                    );
+                }
             }
 
             $puzzle->setName($editedPuzzle['name']);
@@ -269,6 +270,24 @@ class PuzzleController extends AbstractFOSRestController
         $em = $this->getDoctrine()->getManager();
         /** @var Puzzle $puzzle */
         $puzzle = $em->getRepository(Puzzle::class)->findOneBy(['id' => $id]);
+
+        if($puzzle) {
+            if($this->getUser()->getAccount()->getId() !== $puzzle->getCreatedBy()->getId()) {
+                if($this->getUser()->getId() !== 1) {
+                    return new Response(
+                        'This user cannot delete the puzzle.',
+                        Response::HTTP_INTERNAL_SERVER_ERROR,
+                        ['content-type' => 'text/html']
+                    );
+                }
+            }
+        } else {
+            return new Response(
+                'Puzzle not found.',
+                Response::HTTP_BAD_REQUEST,
+                ['content-type' => 'text/html']
+            );
+        }
 
         foreach($puzzle->getStages() as $stage) {
             $em->remove($stage);

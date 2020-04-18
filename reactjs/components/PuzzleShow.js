@@ -192,7 +192,8 @@ class PuzzleShow extends React.Component {
                />
 
                 {(()=>{
-                    if(this.state['userId'] == Cookies.get('userId',  { domain: config.DOMAIN })) {
+                    if(this.state['userId'] == Cookies.get('userId',  { domain: config.DOMAIN })
+                        || Cookies.get('userId',  { domain: config.DOMAIN }) == 1) {
                         return(
                             <div className="alert alert-info">
                                 <button className="btn btn-primary btn-ghost update-btn"
