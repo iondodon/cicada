@@ -91,13 +91,13 @@ class TermsAndRules extends React.Component {
                                             Cicadapuzzle doesn’t bear responsibility for the actions or decisions made up by the players, neither for the content provided by the puzzles.
                                         </li>
                                         <li>
-                                            The general description of a puzzle must have at least 100 characters.
+                                            The general description of a puzzle must have at least 20 characters.
                                         </li>
                                         <li>
                                             The code of each level must have a length of at least three characters.
                                         </li>
                                         <li>
-                                            The description of each level must have a length of at least 30 characters.
+                                            The description of each level must have a length of at least 10 characters.
                                         </li>
                                     </ol>
 
