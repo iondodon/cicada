@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/symfony/src/Controller/ContestController.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Controller/ContestController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony/src/Controller/PuzzleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Controller/PuzzleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/nginx/sites/react.conf" beforeDir="false" afterPath="$PROJECT_DIR$/docker/nginx/sites/react.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/components/PuzzleSession.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/PuzzleSession.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/components/StageShow.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/StageShow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/components/TopMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/TopMenu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/configs/keys.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/configs/keys.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -501,7 +507,9 @@
       <workItem from="1586861426756" duration="9557000" />
       <workItem from="1586885291359" duration="2948000" />
       <workItem from="1586888954670" duration="191000" />
-      <workItem from="1587214877747" duration="5302000" />
+      <workItem from="1587214877747" duration="5792000" />
+      <workItem from="1587290904389" duration="1803000" />
+      <workItem from="1587293111660" duration="6660000" />
     </task>
     <servers />
   </component>
@@ -540,6 +548,10 @@
     </state>
     <state x="215" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.742@0.0.1366.742" timestamp="1580031571283" />
     <state x="260" y="-30" width="798" height="657" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.768@0.0.1366.768" timestamp="1587209999752" />
+    <state x="412" y="158" width="531" height="386" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1587295729170">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="412" y="158" width="531" height="386" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.768@0.0.1366.768" timestamp="1587295729170" />
     <state x="366" y="101" width="624" height="540" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1580823465884">
       <screen x="0" y="0" width="1366" height="742" />
     </state>
