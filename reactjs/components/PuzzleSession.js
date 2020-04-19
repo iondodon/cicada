@@ -187,6 +187,8 @@ class PuzzleSession extends React.Component {
                 await this.setState({showTeamsMemberOf: false});
                 await this.setState({enrolled: false});
                 await this.setState({error: false});
+                
+                await this.getSessions();
             } else {
                 await this.setState({error: true});
                 await this.setState({errorMessage: responseJson['message']});
@@ -299,6 +301,7 @@ class PuzzleSession extends React.Component {
                                                                         if(stage['level'] <= this.state['session']['completeness']) {
                                                                             return (
                                                                                 <StageShow
+                                                                                    patentComponent={this}
                                                                                     completeness={this.state['session']['completeness']}
                                                                                     key={stage['id']}
                                                                                     stageId={stage['id']}
