@@ -47,15 +47,17 @@ class StageShow extends React.Component {
                 await this.setState({error: false});
                 await this.setState({responseMessage: responseJson['message']});
                 if(responseJson['message'] === 'Valid') {
-                    window.location.reload();
+                    await this.props.patentComponent.getSessions();
                 }
                 setTimeout(async ()=>{
                     await this.setState({responseMessage: ''});
                 }, 5000);
-                await this.setState({responseMessage: ''});
             } else {
                 await this.setState({error: true});
-                await this.setState({responseMessage: responseJson['message']});
+                await this.setState({responseMessage: responseJson['message']})
+                setTimeout(async ()=>{
+                    await this.setState({responseMessage: ''});
+                }, 5000);
             }
         } catch(e) {
             await this.setState({error: true});
@@ -109,10 +111,25 @@ class StageShow extends React.Component {
                             );
                         }
                     })()}
-                    <div className={"header-trigger pull-right"} onClick={this.toggleStage}>-</div>
+                    <div className={"header-trigger pull-right"} onClick={this.toggleStage}>
+                        {(()=>{
+                            if(this.props.completeness === this.props.level) {
+                                return("-");
+                            } else {
+                                return("+");
+                            }
+                        })()}
+                    </div>
                     <p/>
                 </header>
-                <div className="card-content" dangerouslySetInnerHTML={{__html: this.props.description}} />
+
+                <div
+                    style={
+                        this.props.completeness === this.props.level ? {display: "block"} : {display: "none"}
+                    }
+                    className="card-content"
+                    dangerouslySetInnerHTML={{__html: this.props.description}} />
+
 
                 { /*language=SCSS*/ }
                 <style jsx>{`                    

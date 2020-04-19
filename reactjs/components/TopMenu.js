@@ -54,7 +54,7 @@ class TopMenu extends React.Component {
                         <a className="menu-item">About</a>
                     </Link>{' '}
                     |
-                    <a className="menu-item">#StayHome</a>
+                    <a className="menu-item">#StayAtHome</a>
                 </div>
 
                 <img src={'../static/cicada.png'} className={"logo"} id={"logo"}  alt="true" />
