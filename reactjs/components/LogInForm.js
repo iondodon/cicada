@@ -27,6 +27,9 @@ class LogInForm extends React.Component {
         document.getElementsByClassName('alert-error')[0]
             .setAttribute('style', 'display: none');
 
+        document.getElementById("username").disabled = true;
+        document.getElementById("password").disabled = true;
+
         if(this.state.username === '' || this.state.password === ''){
             document.getElementsByClassName('alert-warning')[0]
                 .setAttribute('style', 'display: inline');
@@ -53,6 +56,9 @@ class LogInForm extends React.Component {
                 if(response.status === 404 || response.status === 401){
                     document.getElementsByClassName('alert-error')[0]
                         .setAttribute('style', 'display: inline');
+
+                    document.getElementById("username").disabled = false;
+                    document.getElementById("password").disabled = false;
                  } else if(response.status === 200) {
                     Router.push('/');
                 }
@@ -74,7 +80,7 @@ class LogInForm extends React.Component {
                 <div className="card-content inner">
                     <fieldset className="form-group form-success">
                         <label htmlFor="username">username:</label>
-                        <input type="text" placeholder="" className="form-control"
+                        <input id={"username"} type="text" placeholder="" className="form-control"
                                onChange={e => this.setState({ username: e.target.value })}
                                onKeyDown={this._handleKeyDown}
                                value={this.state.username}
@@ -82,7 +88,7 @@ class LogInForm extends React.Component {
                     </fieldset>
                     <fieldset className="form-group form-warning">
                         <label htmlFor="password">password:</label>
-                        <input type="password" placeholder="" className="form-control"
+                        <input id={"password"} type="password" placeholder="" className="form-control"
                                onChange={e => this.setState({ password: e.target.value })}
                                onKeyDown={this._handleKeyDown}
                                value={this.state.password}
