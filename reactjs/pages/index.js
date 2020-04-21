@@ -8,6 +8,9 @@ import Head from "next/head";
 import LeftPanel from "../components/LeftPanel";
 import SocialShare from "../components/SocialShare";
 import text from "../text/text";
+import config from "../configs/keys";
+import Cookie from "js-cookie";
+import Router from "next/router"
 
 class Index extends React.Component {
 
@@ -49,6 +52,38 @@ class Index extends React.Component {
                                     Creating puzzles signifies a method by which you can augment the vigor of your rationality, because they are intricate and they demand logical, lucid elements, which ought to be perceived by the player as interesting and vivid ones.
                                 </p>
 
+                                <div className="alert alert-success">
+                                    {(()=>{
+                                       if (Cookie.get('userId',  { domain: config.DOMAIN })) {
+                                           return(
+                                               <div>
+                                                   <button className="btn btn-primary btn-block"
+                                                    onClick={() => Router.push("/puzzle/list")}>
+                                                       Show puzzles
+                                                   </button>
+                                                   <button className="btn btn-primary btn-block"
+                                                           onClick={() => Router.push("/puzzle/create")}>
+                                                       Create puzzle
+                                                   </button>
+                                               </div>
+                                           );
+                                       } else {
+                                           return(
+                                               <div>
+                                                   <button className="btn btn-primary btn-block"
+                                                           onClick={() => Router.push("/login")}>
+                                                       SignIn
+                                                   </button>
+                                                   <button className="btn btn-primary btn-block"
+                                                           onClick={() => Router.push("/signup")}>
+                                                       SignUp
+                                                   </button>
+                                               </div>
+                                           );
+                                       }
+                                    })()}
+                                </div>
+
                                 <div className={"container"}>
                                     <iframe className={"video"}
                                             src="https://www.youtube.com/embed/I2O7blSSzpI"
@@ -78,6 +113,11 @@ class Index extends React.Component {
                         height: 0;
                         padding-bottom: 56.25%;
                     }
+                    
+                    button {
+                        margin-top: 1rem;
+                    }
+                    
                     .video {
                         position: absolute;
                         align-self: center;
