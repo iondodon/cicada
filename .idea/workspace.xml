@@ -2,12 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/components/AccountShow.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reactjs/pages/account/show.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/LogInForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/LogInForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/components/ContestShow.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/ContestShow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/components/PuzzleShow.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/PuzzleShow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/components/TeamShow.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/TeamShow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/components/TopPlayers.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/TopPlayers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactjs/configs/keys.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/configs/keys.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactjs/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/pages/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/hack/dist/hack.css" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/hack/dist/hack.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Controller/AccountController.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Controller/AccountController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -509,7 +514,8 @@
       <workItem from="1587214877747" duration="5792000" />
       <workItem from="1587290904389" duration="1803000" />
       <workItem from="1587293111660" duration="8101000" />
-      <workItem from="1587487486809" duration="1904000" />
+      <workItem from="1587487486809" duration="1991000" />
+      <workItem from="1587994185804" duration="5795000" />
     </task>
     <servers />
   </component>
@@ -555,13 +561,11 @@
     <state x="366" y="101" width="624" height="540" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1580823465884">
       <screen x="0" y="0" width="1366" height="742" />
     </state>
-    <state x="366" y="100" width="624" height="532" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.735@0.0.1366.735" timestamp="1578909230334" />
     <state x="366" y="101" width="624" height="540" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.742@0.0.1366.742" timestamp="1580823465884" />
-    <state x="410" y="76" width="528" height="474" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1583343228927">
+    <state x="408" y="58" width="528" height="474" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1587996351467">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="416" y="124" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.735@0.0.1366.735" timestamp="1579285968216" />
-    <state x="410" y="76" width="528" height="474" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.768@0.0.1366.768" timestamp="1583343228927" />
+    <state x="408" y="58" width="528" height="474" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.768@0.0.1366.768" timestamp="1587996351467" />
     <state x="458" y="77" width="428" height="503" key="FileChooserDialogImpl" timestamp="1583350689784">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -585,7 +589,6 @@
     <state x="558" y="150" width="336" height="239" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1583534393985">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="572" y="264" width="307" height="228" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1366.735@0.0.1366.735" timestamp="1578826177807" />
     <state x="558" y="150" width="336" height="239" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1366.768@0.0.1366.768" timestamp="1583534393985" />
     <state x="386" y="0" width="412" height="606" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1584371890253">
       <screen x="0" y="0" width="1366" height="768" />
@@ -598,7 +601,6 @@
     <state x="347" y="167" width="672" height="708" key="run.anything.popup" timestamp="1585488281248">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="347" y="160" width="672" height="677" key="run.anything.popup/0.0.1366.735@0.0.1366.735" timestamp="1579112135253" />
     <state x="347" y="167" width="672" height="708" key="run.anything.popup/0.0.1366.768@0.0.1366.768" timestamp="1585488281248" />
     <state x="346" y="59" width="672" height="709" key="search.everywhere.popup" timestamp="1586875236030">
       <screen x="0" y="0" width="1366" height="768" />

@@ -7,6 +7,7 @@ import {timeConverter} from '../utlis/utlis';
 import PuzzleSession from "./PuzzleSession";
 import Cookies from 'js-cookie';
 import SocialShare from "./SocialShare";
+import Link from "next/link";
 
 class PuzzleShow extends React.Component {
 
@@ -160,7 +161,11 @@ class PuzzleShow extends React.Component {
                 </div>
 
                 <h2>name: { this.state['name'] } </h2>
-                <h2>created by: { this.state['createdBy'] }</h2>
+                <h2>created by:
+                    <Link href={{pathname: '/account/show', query: {fullName: this.state['createdBy'] }}}>
+                        <a>{this.state['createdBy']}</a>
+                    </Link>
+                </h2>
                 <h2>created at: { this.state['createdAt'] } </h2>
                 { showUpdatedAt() }
                 <h2>difficulty by creator: { this.state['difficultyByCreator'] }</h2>
