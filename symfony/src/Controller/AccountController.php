@@ -2,9 +2,11 @@
 
 namespace App\Controller;
 
+use App\Entity\Account;
+use App\Entity\User;
 use App\Repository\AccountRepository;
-use FOS\RestBundle\Controller\AbstractFOSRestController;
 use FOS\RestBundle\Controller\Annotations\Route;
+use FOS\RestBundle\Controller\AbstractFOSRestController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
@@ -24,6 +26,40 @@ class AccountController extends AbstractFOSRestController
         $serializer = new Serializer($normalizers, $encoders);
 
         $account = $serializer->serialize($this->getUser()->getAccount(), 'json', [
+            'attributes' => [
+                'user' => ['username', 'email', 'fullName'],
+                'puzzlesSolvedCount',
+                'winedContestsCount',
+                'puzzleSessions' => [
+                    'puzzle' => ['id', 'name'],
+                    'contest' => ['id', 'name'],
+                ],
+                'createdPuzzles' => ['id', 'name'],
+                'createdTeams' => ['id', 'name'],
+                'createdContests' => ['id', 'name'],
+                'teamsMemberOf' => ['id', 'name']
+            ]
+        ]);
+
+        return new JsonResponse(json_decode($account, true));
+    }
+
+    /**
+     * @Route("/api/account/show/{fullName}", name="account.show", methods={"GET"})
+     * @param String $fullName
+     * @return JsonResponse
+     */
+    public function accountShow(String $fullName) : JsonResponse
+    {
+        $em = $this->getDoctrine()->getManager();
+        $user = $em->getRepository(User::class)->findOneBy(['fullName' => $fullName]);
+        $account = $user->getAccount();
+
+        $encoders = [new JsonEncoder()];
+        $normalizers = [new ObjectNormalizer()];
+        $serializer = new Serializer($normalizers, $encoders);
+
+        $account = $serializer->serialize($account, 'json', [
             'attributes' => [
                 'user' => ['username', 'email', 'fullName'],
                 'puzzlesSolvedCount',

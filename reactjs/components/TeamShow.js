@@ -245,7 +245,11 @@ class ContestShow extends React.Component {
                     }
                 </div>
 
-                <h2>creator: {this.state['creator']['user']['fullName']}</h2>
+                <h2>creator:
+                    <Link href={{pathname: '/account/show', query: {fullName: this.state['creator']['user']['fullName'] }}}>
+                        <a>{this.state['creator']['user']['fullName']}</a>
+                    </Link>
+                </h2>
 
                 {(()=>{
                     if(this.state['userId'] == Cookies.get('userId',  { domain: config.DOMAIN })) {

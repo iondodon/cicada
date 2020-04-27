@@ -161,7 +161,11 @@ class ContestShow extends React.Component {
                 <h2>starts at: {this.state['startsAt']} </h2>
                 <h2>finishes at: {this.state['finishesAt']} </h2>
                 <h2>created: {this.state['createdAt']} </h2>
-                <h2>created by: {this.state['createdBy']} </h2>
+                <h2>created by:
+                    <Link href={{pathname: '/account/show', query: {fullName: this.state['createdBy'] }}}>
+                        <a>{this.state['createdBy']}</a>
+                    </Link>
+                </h2>
 
                 <h2>
                     sessions: &nbsp;
