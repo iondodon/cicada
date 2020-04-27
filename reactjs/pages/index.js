@@ -52,37 +52,38 @@ class Index extends React.Component {
                                     Creating puzzles signifies a method by which you can augment the vigor of your rationality, because they are intricate and they demand logical, lucid elements, which ought to be perceived by the player as interesting and vivid ones.
                                 </p>
 
-                                <div className="alert alert-success">
-                                    {(()=>{
-                                       if (Cookie.get('userId',  { domain: config.DOMAIN })) {
-                                           return(
-                                               <div>
-                                                   <button className="btn btn-primary btn-block"
-                                                    onClick={() => Router.push("/puzzle/list")}>
-                                                       Show puzzles
-                                                   </button>
-                                                   <button className="btn btn-primary btn-block"
-                                                           onClick={() => Router.push("/puzzle/create")}>
-                                                       Create puzzle
-                                                   </button>
-                                               </div>
-                                           );
-                                       } else {
-                                           return(
-                                               <div>
-                                                   <button className="btn btn-primary btn-block"
-                                                           onClick={() => Router.push("/login")}>
-                                                       SignIn
-                                                   </button>
-                                                   <button className="btn btn-primary btn-block"
-                                                           onClick={() => Router.push("/signup")}>
-                                                       SignUp
-                                                   </button>
-                                               </div>
-                                           );
-                                       }
-                                    })()}
-                                </div>
+
+                                {(()=>{
+                                   if (Cookie.get('userId',  { domain: config.DOMAIN })) {
+                                       return(
+                                           <div>
+                                               <a href={"/puzzle/list"}>
+                                                   Show puzzles
+                                               </a>
+
+                                               |
+
+                                               <a href={"/puzzle/create"}>
+                                                   Create puzzle
+                                               </a>
+                                           </div>
+                                       );
+                                   } else {
+                                       return(
+                                           <div>
+                                               <a href={"/login"}>
+                                                   SignIn
+                                               </a>
+
+                                               |
+
+                                               <a href={"/signup"}>
+                                                   SignUp
+                                               </a>
+                                           </div>
+                                       );
+                                   }
+                                })()}
 
                                 <div className={"container"}>
                                     <iframe className={"video"}

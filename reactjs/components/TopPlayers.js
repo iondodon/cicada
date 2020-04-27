@@ -3,6 +3,7 @@ import React from 'react';
 import '../i18n';
 import { withNamespaces } from 'react-i18next';
 import config from "../configs/keys";
+import Link from 'next/link'
 
 class TopPlayers extends React.Component {
 
@@ -51,7 +52,13 @@ class TopPlayers extends React.Component {
                         <ul>
                             {
                                 this.state['topPlayers'].map((player) => {
-                                    return(<li key={player['account']['id']}> - {player['account']['user']['fullName']} : {player['solved']}</li>);
+                                    return(
+                                        <li key={player['account']['id']}>
+                                            -
+                                            <Link href={{pathname: '/account/show', query: {fullName: player['account']['user']['fullName'] }}}>
+                                                 <a>{player['account']['user']['fullName']}</a>
+                                            </Link> : {player['solved']}
+                                        </li>);
                                 })
                             }
                         </ul>
