@@ -2,17 +2,93 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/reactjs/components/AccountShow.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/pages/account/show.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker/nginx/sites/react_443.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.directory" beforeDir="false" afterPath="$PROJECT_DIR$/.directory" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/89715e81-bc9c-4fca-9f4c-1a8fd517663e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/89715e81-bc9c-4fca-9f4c-1a8fd517663e.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/ionut.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/ionut.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExternalWork/71276d18884c91fc924df696e8c55284.ico.zip" beforeDir="false" afterPath="$PROJECT_DIR$/ExternalWork/71276d18884c91fc924df696e8c55284.ico.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExternalWork/71276d18884c91fc924df696e8c55284.ico/favicon-16x16.png" beforeDir="false" afterPath="$PROJECT_DIR$/ExternalWork/71276d18884c91fc924df696e8c55284.ico/favicon-16x16.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExternalWork/71276d18884c91fc924df696e8c55284.ico/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/ExternalWork/71276d18884c91fc924df696e8c55284.ico/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExternalWork/Pulse-1.2s-164px.gif" beforeDir="false" afterPath="$PROJECT_DIR$/ExternalWork/Pulse-1.2s-164px.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExternalWork/Pulse-1s-244px-croped.gif" beforeDir="false" afterPath="$PROJECT_DIR$/ExternalWork/Pulse-1s-244px-croped.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExternalWork/Pulse-1s-244px.gif" beforeDir="false" afterPath="$PROJECT_DIR$/ExternalWork/Pulse-1s-244px.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExternalWork/bootstrap-datetimepicker-master.zip" beforeDir="false" afterPath="$PROJECT_DIR$/ExternalWork/bootstrap-datetimepicker-master.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExternalWork/datetimepicker-master.zip" beforeDir="false" afterPath="$PROJECT_DIR$/ExternalWork/datetimepicker-master.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExternalWork/notes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ExternalWork/notes.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExternalWork/rules.docx" beforeDir="false" afterPath="$PROJECT_DIR$/ExternalWork/rules.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExternalWork/rules_eng.docx" beforeDir="false" afterPath="$PROJECT_DIR$/ExternalWork/rules_eng.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExternalWork/top10.sql" beforeDir="false" afterPath="$PROJECT_DIR$/ExternalWork/top10.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cicada" beforeDir="false" afterPath="$PROJECT_DIR$/cicada" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cicada.pub" beforeDir="false" afterPath="$PROJECT_DIR$/cicada.pub" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/.env" beforeDir="false" afterPath="$PROJECT_DIR$/docker/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/nginx/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/docker/nginx/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/nginx/sites/react.conf" beforeDir="false" afterPath="$PROJECT_DIR$/docker/nginx/sites/react_80.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/components/AccountShow.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/AccountShow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/components/ContestActionBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/ContestActionBar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactjs/components/ContestShow.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/ContestShow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/PuzzleShow.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/PuzzleShow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/components/ListContests.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/ListContests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/components/PuzzleSession.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/PuzzleSession.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/components/SocialShare.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/SocialShare.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactjs/components/TeamShow.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/TeamShow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/TopPlayers.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/TopPlayers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/components/TopTeams.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/TopTeams.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactjs/configs/keys.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/configs/keys.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/pages/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/hack/dist/hack.css" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/hack/dist/hack.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony/src/Controller/AccountController.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Controller/AccountController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/pages/about.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/pages/about.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/pages/account/my_contests.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/pages/account/my_contests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/pages/account/my_teams.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/pages/account/my_teams.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/pages/account/show.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/pages/account/show.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/pages/contest/list.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/pages/contest/list.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/pages/contest/show.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/pages/contest/show.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/pages/contest/update.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/pages/contest/update.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/pages/see-you-soon.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/pages/see-you-soon.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/pages/team/show.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/pages/team/show.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/pages/terms-and-rules.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/pages/terms-and-rules.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/pages/top20.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/pages/top20.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/.travis.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/MIT-LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/MIT-LICENSE.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/bower.json" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/bower.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/build/jquery.datetimepicker.full.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/build/jquery.datetimepicker.full.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/build/jquery.datetimepicker.full.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/build/jquery.datetimepicker.full.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/build/jquery.datetimepicker.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/build/jquery.datetimepicker.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/build/jquery.datetimepicker.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/build/jquery.datetimepicker.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/datetimepicker.jquery.json" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/datetimepicker.jquery.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/doc.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/doc.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/jquery.datetimepicker.css" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/jquery.datetimepicker.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/jquery.datetimepicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/jquery.datetimepicker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/karma.conf.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/karma.conf.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/pull_request_template.md" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/pull_request_template.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/screen/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/screen/1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/screen/2.png" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/screen/2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/screen/3.1.png" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/screen/3.1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/screen/3.png" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/screen/3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/screen/4.png" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/screen/4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/screen/5.png" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/screen/5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/screen/6.png" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/screen/6.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/tests/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/tests/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/tests/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/tests/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/tests/input_in_container_fixed_to_bottom_of_viewport.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/tests/input_in_container_fixed_to_bottom_of_viewport.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/tests/input_in_container_fixed_to_top_of_viewport.html" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/tests/input_in_container_fixed_to_top_of_viewport.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/tests/tests/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/tests/tests/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/tests/tests/destroy.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/tests/tests/destroy.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/tests/tests/events.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/tests/tests/events.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/tests/tests/init.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/tests/tests/init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/tests/tests/methods.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/tests/tests/methods.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/tests/tests/options.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/datetimepicker-master/tests/tests/options.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/favicon-16x16.png" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/favicon-16x16.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/text/text.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/text/text.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/config/packages/prod/routing.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/config/packages/prod/routing.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/config/packages/test/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/config/packages/test/twig.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Controller/PuzzleSessionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Controller/PuzzleSessionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Controller/StageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Controller/StageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/src/Entity/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Entity/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -515,7 +591,9 @@
       <workItem from="1587290904389" duration="1803000" />
       <workItem from="1587293111660" duration="8101000" />
       <workItem from="1587487486809" duration="1991000" />
-      <workItem from="1587994185804" duration="5795000" />
+      <workItem from="1587994185804" duration="6316000" />
+      <workItem from="1588331471768" duration="53000" />
+      <workItem from="1589460952025" duration="4230000" />
     </task>
     <servers />
   </component>
