@@ -1,4 +1,4 @@
-FROM nginx:1.17.9
+FROM nginx:alpine
 
 LABEL maintainer="Mahmoud Zalt <mahmoud@zalt.me>"
 
@@ -12,15 +12,15 @@ RUN if [ ${CHANGE_SOURCE} = true ]; then \
     sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/' /etc/apk/repositories \
 ;fi
 
-#RUN apk update \
-#    && apk upgrade \
-#    && apk --update add logrotate \
-#    && apk add --no-cache openssl \
-#    && apk add --no-cache bash
+RUN apk update \
+    && apk upgrade \
+    && apk --update add logrotate \
+    && apk add --no-cache openssl \
+    && apk add --no-cache bash
 
-#RUN set -x ; \
-#    addgroup -g 82 -S www-data ; \
-#    adduser -u 82 -D -S -G www-data www-data && exit 0 ; exit 1
+RUN set -x ; \
+    addgroup -g 82 -S www-data ; \
+    adduser -u 82 -D -S -G www-data www-data && exit 0 ; exit 1
 
 ARG PHP_UPSTREAM_CONTAINER=php-fpm
 ARG PHP_UPSTREAM_PORT=9000
