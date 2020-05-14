@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/docker/.env" beforeDir="false" afterPath="$PROJECT_DIR$/docker/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/nginx/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/docker/nginx/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/nginx/sites/react_443.conf" beforeDir="false" afterPath="$PROJECT_DIR$/docker/nginx/sites/react_443.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/nginx/sites/react_80.conf" beforeDir="false" afterPath="$PROJECT_DIR$/docker/nginx/sites/react_80.conf" afterDir="false" />
-    </list>
+    <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
