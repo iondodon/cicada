@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/docker/nginx/nginx.conf" beforeDir="false" afterPath="$PROJECT_DIR$/docker/nginx/nginx.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/.env" beforeDir="false" afterPath="$PROJECT_DIR$/docker/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/nginx/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/docker/nginx/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/nginx/sites/react_443.conf" beforeDir="false" afterPath="$PROJECT_DIR$/docker/nginx/sites/react_443.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/nginx/sites/react_80.conf" beforeDir="false" afterPath="$PROJECT_DIR$/docker/nginx/sites/react_80.conf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,18 +202,18 @@
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/reactjs/static" />
+      <recent name="$PROJECT_DIR$/ExternalWork" />
+      <recent name="$PROJECT_DIR$/reactjs/static/pages/login" />
+      <recent name="$PROJECT_DIR$/cicada-symfony/public" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/reactjs/text" />
       <recent name="$PROJECT_DIR$/reactjs/pages/puzzle" />
       <recent name="$PROJECT_DIR$/reactjs" />
       <recent name="$PROJECT_DIR$/reactjs/pages" />
       <recent name="$PROJECT_DIR$/ExternalWork" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/reactjs/static" />
-      <recent name="$PROJECT_DIR$/ExternalWork" />
-      <recent name="$PROJECT_DIR$/reactjs/static/pages/login" />
-      <recent name="$PROJECT_DIR$/cicada-symfony/public" />
     </key>
   </component>
   <component name="RunManager">
