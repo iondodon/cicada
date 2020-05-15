@@ -67,6 +67,7 @@ class Layout extends React.Component {
                   html, body {
                     height: 100%;
                     margin: 0;
+                    background: #ffb6b9;
                   }
 
                   .page-loading {

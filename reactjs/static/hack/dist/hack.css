@@ -1,5 +1,6 @@
 html {
-    font-size: 14px
+    font-size: 14px;
+    background-color: #f7c873;
 }
 
 * {
@@ -52,15 +53,15 @@ pre code {
 
 a {
     cursor: pointer;
-    color: #ff2e88;
+    color: #434343;
     text-decoration: none;
-    border-bottom: 1px solid #ff2e88;
+    border-bottom: 1px solid #434343;
 
     border-radius: 3px;
 }
 
 a:hover {
-    background-color: #ff2e88;
+    background-color: #434343;
     color: #fff
 }
 
@@ -473,8 +474,9 @@ table th {
     /*border: 1px solid #ccc;*/
     line-height: 15px;
     padding: 10px;
+    border: 1px solid #434343!important;
     border-radius: 4px;
-    background: linear-gradient(to top, rgba(157,185,255,1) , 10%,  rgba(255,0,0,0));
+    background: #f7c873;
     text-align: center;
 }
 
@@ -603,10 +605,6 @@ select.form-control {
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, .12)
 }
 
-.btn:hover {
-    background: linear-gradient(to top, rgba(157,185,255,1) , 10%,  rgba(255,0,0,0));
-}
-
 .btn.btn-ghost {
     border-color: #757575;
     color: #757575;
@@ -693,24 +691,24 @@ select.form-control {
 
 .btn-warning {
     color: #fff;
-    background-color: #ff9800;
-    border: 1px solid #ff9800
+    background-color: #f7c873;
+    border: 1px solid #434343
 }
 
 .btn-warning:focus:not(.btn-ghost),
 .btn-warning:hover {
-    background-color: #fb8c00;
-    border-color: #fb8c00
+    background-color: #f7c873;
+    border-color: #434343
 }
 
 .btn-warning.btn-ghost {
-    border-color: #ff9800;
+    border-color: #434343;
     color: #ff9800
 }
 
 .btn-warning.btn-ghost:focus,
 .btn-warning.btn-ghost:hover {
-    border-color: #f57c00;
+    border-color: #434343;
     color: #f57c00;
     z-index: 2
 }
@@ -776,8 +774,8 @@ select.form-control {
 }
 
 .card {
-    border: 1px solid #9db9ff;
-    background: linear-gradient(to top, rgba(157,185,255,1) , 10%,  rgba(255,0,0,0));
+    border: 1px solid #434343;
+    background: #faebcd;
     border-radius: 4px;
     margin: 1px;
 }
@@ -785,7 +783,7 @@ select.form-control {
 .card .card-header {
     color: #333;
     text-align: center;
-    background-color: #9DB9FF;
+    background-color: #faebcd;
     padding: .5rem 0
 }
 
@@ -793,31 +791,26 @@ select.form-control {
     color: #ccc;
     padding: 1rem;
     /*border: 1px solid #ccc;*/
-    border: 0;
     border-radius: 4px;
     margin-bottom: 1.75rem;
-
-    background: linear-gradient(to top, rgba(157,185,255,1) , 10%,  rgba(255,0,0,0));
+    border: 1px solid #434343;
+    background-color: #f6eec7;
 }
 
 .alert-success {
     color: #4caf50;
-    border-color: #4caf50;
 }
 
 .alert-error {
     color: #f44336;
-    border-color: #f44336
 }
 
 .alert-info {
     color: #00bcd4;
-    border-color: #00bcd4
 }
 
 .alert-warning {
     color: #ff9800;
-    border-color: #ff9800
 }
 
 .media:not(:last-child) {

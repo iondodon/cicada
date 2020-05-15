@@ -122,15 +122,16 @@ class TopMenu extends React.Component {
                     margin-left: 1rem;
                     margin-right: 1rem;
                     margin-bottom: 1rem;
+                    background-color: #f6eec7;
                   }
 
                   .menu-box {
                     border: none;
                     
-                    background-color: #9DB9FF;
-                    --webkit-box-shadow: 10px 10px 59px 80px #9DB9FF;
-                    -moz-box-shadow: 10px 10px 59px 80px #9DB9FF;
-                    box-shadow: 10px 10px 59px 80px #9DB9FF;
+                    background-color: #f6eec7;
+                    --webkit-box-shadow: 10px 10px 59px 80px #f6eec7;
+                    -moz-box-shadow: 10px 10px 59px 80px #f6eec7;
+                    box-shadow: 10px 10px 59px 80px #f6eec7;
                   }
                   
                   @media all and (max-width: 800px) {

@@ -34,7 +34,7 @@ class Footer extends React.Component {
                     // -moz-box-shadow: 10px 10px 59px 80px #cccccc;
                     // box-shadow: 10px 10px 59px 80px #cccccc;
                     
-                    background: linear-gradient(to bottom, rgba(157,185,255,1) , 30%,  rgba(255,0,0,0));
+                    background: #f6eec7;
                   }
                   
                   
