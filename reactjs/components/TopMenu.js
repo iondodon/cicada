@@ -39,7 +39,7 @@ class TopMenu extends React.Component {
 
     render(){
         return (
-            <div className="alert alert-success menu-box">
+            <div className="alert menu-box" id={"top-menu"}>
 
                 <div className="menu left-menu">
                     <Link href={"/"}>
@@ -131,6 +131,28 @@ class TopMenu extends React.Component {
                     --webkit-box-shadow: 10px 10px 59px 80px #9DB9FF;
                     -moz-box-shadow: 10px 10px 59px 80px #9DB9FF;
                     box-shadow: 10px 10px 59px 80px #9DB9FF;
+                  }
+                  
+                  @media all and (max-width: 800px) {
+                    .menu-box {
+                      display: flex;
+                      flex-direction: column;
+                    }
+                    
+                      .right-menu {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        margin-top: 1rem;
+                        width: auto;
+                      }
+    
+                      .left-menu {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        width: auto;
+                      }
                   }
 
                   .logo {

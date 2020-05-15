@@ -418,6 +418,14 @@ class ContestForm extends React.Component {
                     margin-bottom: 2rem;
                     justify-content: center;
                   }
+                  
+                  @media all and (max-width: 800px) {
+                    .date-time-pickers {
+                      display: flex;
+                      flex-direction: column;
+                    }
+                  }
+                  
                 `}
                 </style>
             </div>

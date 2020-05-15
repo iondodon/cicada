@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="" />
+    <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/.env" beforeDir="false" afterPath="$PROJECT_DIR$/docker/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/nginx/sites/react_443.conf" beforeDir="false" afterPath="$PROJECT_DIR$/docker/nginx/sites/react_443.conf.example" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/nginx/sites/react_80.conf" beforeDir="false" afterPath="$PROJECT_DIR$/docker/nginx/sites/react_80.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/nginx/sites/symfony.conf" beforeDir="false" afterPath="$PROJECT_DIR$/docker/nginx/sites/symfony.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/components/ContestShow.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/ContestShow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/components/PuzzleShow.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/PuzzleShow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/components/TopMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/TopMenu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/configs/keys.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/configs/keys.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/style.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -506,7 +517,8 @@
       <workItem from="1587994185804" duration="6316000" />
       <workItem from="1588331471768" duration="53000" />
       <workItem from="1589460952025" duration="7955000" />
-      <workItem from="1589514446217" duration="5343000" />
+      <workItem from="1589514446217" duration="8741000" />
+      <workItem from="1589530695972" duration="4508000" />
     </task>
     <servers />
   </component>
@@ -544,10 +556,10 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="274" y="0" width="804" height="667" key="#SQL_Dialects/0.0.1366.768@0.0.1366.768" timestamp="1583351466939" />
-    <state x="254" y="33" width="798" height="657" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589519794622">
+    <state x="253" y="15" width="798" height="657" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589519900286">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="254" y="33" width="798" height="657" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.768@0.0.1366.768" timestamp="1589519794622" />
+    <state x="253" y="15" width="798" height="657" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.768@0.0.1366.768" timestamp="1589519900286" />
     <state x="412" y="158" width="531" height="386" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1587295729170">
       <screen x="0" y="0" width="1366" height="768" />
     </state>

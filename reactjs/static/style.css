@@ -4,6 +4,10 @@
         min-width: 100%;
     }
 
+    .specific {
+        display: none;
+    }
+
     #container {
         min-width: 100%;
     }
