@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/reactjs/components/AccountShow.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reactjs/pages/account/show.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/ContestShow.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/ContestShow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/PuzzleShow.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/PuzzleShow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/TeamShow.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/TeamShow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/TopPlayers.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/TopPlayers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/configs/keys.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/configs/keys.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/pages/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/static/hack/dist/hack.css" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/static/hack/dist/hack.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony/src/Controller/AccountController.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Controller/AccountController.php" afterDir="false" />
-    </list>
+    <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -209,18 +197,18 @@
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/reactjs/static" />
+      <recent name="$PROJECT_DIR$/ExternalWork" />
+      <recent name="$PROJECT_DIR$/reactjs/static/pages/login" />
+      <recent name="$PROJECT_DIR$/cicada-symfony/public" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/reactjs/text" />
       <recent name="$PROJECT_DIR$/reactjs/pages/puzzle" />
       <recent name="$PROJECT_DIR$/reactjs" />
       <recent name="$PROJECT_DIR$/reactjs/pages" />
       <recent name="$PROJECT_DIR$/ExternalWork" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/reactjs/static" />
-      <recent name="$PROJECT_DIR$/ExternalWork" />
-      <recent name="$PROJECT_DIR$/reactjs/static/pages/login" />
-      <recent name="$PROJECT_DIR$/cicada-symfony/public" />
     </key>
   </component>
   <component name="RunManager">
@@ -515,7 +503,10 @@
       <workItem from="1587290904389" duration="1803000" />
       <workItem from="1587293111660" duration="8101000" />
       <workItem from="1587487486809" duration="1991000" />
-      <workItem from="1587994185804" duration="5795000" />
+      <workItem from="1587994185804" duration="6316000" />
+      <workItem from="1588331471768" duration="53000" />
+      <workItem from="1589460952025" duration="7955000" />
+      <workItem from="1589514446217" duration="3768000" />
     </task>
     <servers />
   </component>
@@ -541,6 +532,10 @@
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
+    <state x="301" y="8" width="754" height="668" key="#Illuminated_Cloud" timestamp="1589514542890">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="301" y="8" width="754" height="668" key="#Illuminated_Cloud/0.0.1366.768@0.0.1366.768" timestamp="1589514542890" />
     <state x="276" y="18" width="804" height="667" key="#Inspections" timestamp="1582545076235">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -552,16 +547,11 @@
     <state x="258" y="22" width="798" height="657" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587304256096">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="215" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.742@0.0.1366.742" timestamp="1580031571283" />
     <state x="258" y="22" width="798" height="657" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.768@0.0.1366.768" timestamp="1587304256096" />
     <state x="412" y="158" width="531" height="386" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1587295729170">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="412" y="158" width="531" height="386" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.768@0.0.1366.768" timestamp="1587295729170" />
-    <state x="366" y="101" width="624" height="540" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1580823465884">
-      <screen x="0" y="0" width="1366" height="742" />
-    </state>
-    <state x="366" y="101" width="624" height="540" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.742@0.0.1366.742" timestamp="1580823465884" />
     <state x="408" y="58" width="528" height="474" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1587996351467">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -586,6 +576,10 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state width="900" height="181" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1583351036705" />
+    <state x="178" y="-17" key="SettingsEditor" timestamp="1589514731679">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="178" y="-17" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1589514731679" />
     <state x="558" y="150" width="336" height="239" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1583534393985">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
