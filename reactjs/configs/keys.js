@@ -1,5 +1,5 @@
 export default {
-    API_URL: 'https://cicadapuzzle.com:443',
+    API_URL: 'https://cicadapuzzle.com:9000',
     DOMAIN: 'cicadapuzzle.com',
     CAPTCHA_KEY: '6Leb8-QUAAAAANsfBh3CEHi6hWyaLzmyF5oxyoTd'
 }
