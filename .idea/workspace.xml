@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/nginx/sites/symfony.conf" beforeDir="false" afterPath="$PROJECT_DIR$/docker/nginx/sites/symfony.conf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -508,7 +509,7 @@
       <workItem from="1587994185804" duration="6316000" />
       <workItem from="1588331471768" duration="53000" />
       <workItem from="1589460952025" duration="7955000" />
-      <workItem from="1589514446217" duration="286000" />
+      <workItem from="1589514446217" duration="1051000" />
     </task>
     <servers />
   </component>
