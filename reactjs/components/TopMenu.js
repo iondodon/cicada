@@ -39,7 +39,7 @@ class TopMenu extends React.Component {
 
     render(){
         return (
-            <div className="alert alert-success menu-box">
+            <div className="alert menu-box" id={"top-menu"}>
 
                 <div className="menu left-menu">
                     <Link href={"/"}>
@@ -53,8 +53,6 @@ class TopMenu extends React.Component {
                     <Link href={"/about"}>
                         <a className="menu-item">About</a>
                     </Link>{' '}
-                    |
-                    <a className="menu-item">#StayAtHome</a>
                 </div>
 
                 <img src={'../static/cicada.png'} className={"logo"} id={"logo"}  alt="true" />
@@ -122,15 +120,38 @@ class TopMenu extends React.Component {
                     margin-left: 1rem;
                     margin-right: 1rem;
                     margin-bottom: 1rem;
+                    background-color: #f6eec7;
                   }
 
                   .menu-box {
                     border: none;
                     
-                    background-color: #9DB9FF;
-                    --webkit-box-shadow: 10px 10px 59px 80px #9DB9FF;
-                    -moz-box-shadow: 10px 10px 59px 80px #9DB9FF;
-                    box-shadow: 10px 10px 59px 80px #9DB9FF;
+                    background-color: #f6eec7;
+                    --webkit-box-shadow: 10px 10px 59px 80px #f6eec7;
+                    -moz-box-shadow: 10px 10px 59px 80px #f6eec7;
+                    box-shadow: 10px 10px 59px 80px #f6eec7;
+                  }
+                  
+                  @media all and (max-width: 800px) {
+                    .menu-box {
+                      display: flex;
+                      flex-direction: column;
+                    }
+                    
+                      .right-menu {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        margin-top: 1rem;
+                        width: auto;
+                      }
+    
+                      .left-menu {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        width: auto;
+                      }
                   }
 
                   .logo {

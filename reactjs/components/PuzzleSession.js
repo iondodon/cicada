@@ -450,7 +450,7 @@ class PuzzleSession extends React.Component {
                     }
                     
                     .highlighted {
-                      background-color: #ff2e88;
+                      background-color: #434343;
                       color: #fff;
                     }
                     

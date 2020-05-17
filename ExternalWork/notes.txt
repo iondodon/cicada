@@ -35,3 +35,4 @@ ssl:
     certbot
     https://www.youtube.com/watch?v=d4QDyHLHZ9c
     https://ssl-config.mozilla.org/
+    certbot certonly --standalone -d localhost

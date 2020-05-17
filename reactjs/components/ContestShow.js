@@ -215,6 +215,22 @@ class ContestShow extends React.Component {
                         if(this.state['puzzleId']) {
                             return(<ContestActionBar puzzleId={this.state['puzzleId']} />);
                         }
+                    } else {
+                        return(
+                            <div className={"call-to-action"} >
+                                <Link href={"/signup"} >
+                                    <a className="menu-item" >
+                                        Create account
+                                    </a>
+                                </Link>
+                                |
+                                <Link href={"/login"} >
+                                    <a className="menu-item" >
+                                        SignIn
+                                    </a>
+                                </Link>
+                            </div>
+                        );
                     }
                 })()}
 
@@ -276,6 +292,11 @@ class ContestShow extends React.Component {
                     width: 30%;
                     margin-left: 1px;
                   }
+                  
+                  .call-to-action {
+                    text-align: center;
+                  }
+                  
                 `}</style>
             </div>
         );
