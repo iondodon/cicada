@@ -26,13 +26,10 @@ class Footer extends React.Component {
                     width: 100%;
                     text-align: center;
                     padding: 2rem;
-                    border-radius: 3px;
                     margin-top: 4px;
-                    
-                    // background-color: #cccccc;
-                    // --webkit-box-shadow: 10px 10px 59px 80px #cccccc;
-                    // -moz-box-shadow: 10px 10px 59px 80px #cccccc;
-                    // box-shadow: 10px 10px 59px 80px #cccccc;
+                    margin-bottom: 4px;
+                    border: 1px solid #434343;
+                    border-radius: 3px;
                     
                     background: #f6eec7;
                   }
