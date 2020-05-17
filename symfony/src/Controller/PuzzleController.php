@@ -169,9 +169,29 @@ class PuzzleController extends AbstractFOSRestController
         $serializer = new Serializer($normalizers, $encoders);
 
         $puzzleJson = $serializer->serialize($puzzle, 'json', [
-            'circular_reference_handler' => static function ($object) {
-                return $object->getId();
-            }
+            'attributes' => [
+                'id',
+                'name',
+                'isPrivate',
+                'createdBy' => [
+                    'id',
+                    'user' => ['id', 'fullName']
+                ],
+                'stages' => [
+                    'id',
+                    'level',
+                    'createdAt' => ['timestamp'],
+                    'updatedAt' => ['timestamp'],
+                    'description',
+                    'code'
+                ],
+                'stagesCount',
+                'createdAt' => ['timestamp'],
+                'difficultyByCreator',
+                'difficultyByStatistics',
+                'tags' => ['id', 'tag'],
+                'description'
+            ]
         ]);
 
         return new JsonResponse(json_decode($puzzleJson, true), 200);
@@ -204,32 +224,30 @@ class PuzzleController extends AbstractFOSRestController
 
             $puzzle->setName($editedPuzzle['name']);
             $puzzle->setDescription($editedPuzzle['description']);
-            $puzzle->setStagesCount($editedPuzzle['stagesCount']);
-            $puzzle->setIsPrivate($editedPuzzle['isPrivate']);
+            $puzzle->setStagesCount(sizeof($editedPuzzle['stages']));
+//            $puzzle->setIsPrivate($editedPuzzle['isPrivate']);
 
+            // remove existing stages, they will be re-persisted
+            // get stages
+            $stages = $em->getRepository(Stage::class)->findBy(['puzzleParent' => $puzzle]);
+            foreach ($stages as $stage) {
+                $em->remove($stage);
+            }
+            $em->flush();
+
+            // re-persist stages
             $stages = new ArrayCollection();
             foreach ($editedPuzzle['stages'] as $editedStage) {
-                $stageLevel = $editedStage['level'];
-                $stage = $em->getRepository(Stage::class)->findOneBy(['level' => $stageLevel]);
-                if($stage){
-                    $stage->setDescription($editedStage['description']);
-                    $stage->setCode($editedStage['code']);
-                    $stage->setUpdatedAt(new DateTime());
+                $newStage = new Stage();
+                $newStage->setCreatedAt(new DateTime());
+                $newStage->setCode($editedStage['code']);
+                $newStage->setDescription($editedStage['description']);
+                $newStage->setLevel($editedStage['level']);
+                /** @var $puzzle Puzzle */
+                $newStage->setPuzzleParent($puzzle);
 
-                    $em->persist($stage);
-                    $stages->add($stage);
-                } else {
-                    $newStage = new Stage();
-                    $newStage->setCreatedAt(new DateTime());
-                    $newStage->setCode($editedStage['code']);
-                    $newStage->setDescription($editedStage['description']);
-                    $newStage->setLevel($editedStage['level']);
-                    /** @var $puzzle Puzzle */
-                    $newStage->setPuzzleParent($puzzle);
-
-                    $em->persist($newStage);
-                    $stages->add($newStage);
-                }
+                $em->persist($newStage);
+                $stages->add($newStage);
             }
             $puzzle->setStages($stages);
 
@@ -243,7 +261,16 @@ class PuzzleController extends AbstractFOSRestController
                 }
                 $tags->add($tag);
             }
-            $puzzle->setTags($tags);
+
+            $oldTags = $puzzle->getTags();
+            $oldTags->clear();
+
+            foreach ($tags as $tag) {
+                $oldTags->add($tag);
+            }
+
+            $puzzle->setTags($oldTags);
+            $em->persist($puzzle);
 
             $puzzle->setUpdatedAt(new DateTime());
             $puzzle->setDifficultyByCreator($editedPuzzle['difficultyByCreator']);

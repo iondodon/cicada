@@ -189,6 +189,22 @@ class PuzzleShow extends React.Component {
                         return(<PuzzleSession
                             message={this.state['name'] + ".\n" + this.state['description']}
                         />);
+                    } else {
+                        return(
+                            <div className={"call-to-action"} >
+                                <Link href={"/signup"} >
+                                    <a className="menu-item" >
+                                        Create account
+                                    </a>
+                                </Link>
+                                |
+                                <Link href={"/login"} >
+                                    <a className="menu-item" >
+                                        SignIn
+                                    </a>
+                                </Link>
+                            </div>
+                        );
                     }
                 })()}
 
@@ -220,6 +236,10 @@ class PuzzleShow extends React.Component {
 
                 { /*language=SCSS*/ }
                 <style jsx>{`
+                  .call-to-action {
+                    text-align: center;
+                  }
+
                   .puzzle-data {
                     display: flex;
                     flex-direction: column;

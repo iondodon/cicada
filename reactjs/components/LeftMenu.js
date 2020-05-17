@@ -121,10 +121,12 @@ class LeftMenu extends React.Component {
                     text-align: center;
                     display: none;
                     cursor: pointer;
+                    background: #f7c873;
                   }
                   
-                  a:hover {
-                   background: linear-gradient(to right, rgba(157,185,255,1) , 10%,  rgba(255,0,0,0));
+                  .menu-item:hover {
+                    background: #f7c873;
+                    color: #434343;
                   }
                   
                   @media all and (max-width: 800px) { 

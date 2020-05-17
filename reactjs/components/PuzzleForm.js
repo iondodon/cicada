@@ -18,15 +18,17 @@ class PuzzleForm extends React.Component {
         this.t = t;
 
         this.state = {
-            name: '',
-            description: 'Puzzle description...',
-            difficultyByCreator: 1,
-            isPrivate: false,
-            stagesCount: 1,
-            stages: [
-                {level: 0, description: 'Description of stage 0...', code: ""}
-            ],
-            tags: [],
+            puzzle: {
+                name: '',
+                description: 'Puzzle description...',
+                difficultyByCreator: 1,
+                isPrivate: false,
+                stagesCount: 1,
+                stages: [
+                    {level: 0, description: 'Description of stage 0...', code: ""}
+                ],
+                tags: []
+            }
         };
 
         this.CreatePuzzleForm = React.createRef();
@@ -43,7 +45,7 @@ class PuzzleForm extends React.Component {
         this.validateForm = this.validateForm.bind(this);
         this.closeError = this.closeError.bind(this);
         this.fetchSetState = this.fetchSetState.bind(this);
-        this.populateForm = this.populateForm.bind(this);
+        this.setTags = this.setTags.bind(this);
         this.fetchUpdatePuzzle = this.fetchUpdatePuzzle.bind(this);
     }
 
@@ -55,7 +57,9 @@ class PuzzleForm extends React.Component {
         });
 
         $('.tags-multiple-select').on('change', () => {
-            this.setState({ tags: $(".tags-multiple-select").val() });
+            this.setState({
+                puzzle: {...this.state['puzzle'], tags: $(".tags-multiple-select").val() }
+            });
         });
 
         if(this.props.isFor === "update") {
@@ -63,26 +67,13 @@ class PuzzleForm extends React.Component {
         }
     }
 
-    populateForm(responseJson) {
-        this.setState( {name: responseJson['name'] });
-        this.setState( {isPrivate: responseJson['private'] });
-        this.setState({difficultyByCreator: responseJson['difficultyByCreator']});
-
+    setTags(puzzle) {
         let tags = [];
-        responseJson['tags'].forEach((value) => {
+        puzzle['tags'].forEach((value) => {
             tags.push(value.tag);
         });
         $('.tags-multiple-select').val(tags);
         $('.tags-multiple-select').trigger('change');
-        this.setState({tags: tags});
-
-        this.setState({description: responseJson['description']});
-
-        let stages = [];
-        responseJson['stages'].forEach((value) => {
-            stages.push(value);
-        });
-        this.setState({stages: stages});
     }
 
     async fetchSetState() {
@@ -109,9 +100,12 @@ class PuzzleForm extends React.Component {
                 document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
             } else if (response.status === 200) {
                 let responseJson = await response.json();
+                await this.setState({puzzle: responseJson});
                 if(this.props.isFor === "update"){
-                    this.populateForm(responseJson);
+                    this.setTags(responseJson);
                 }
+                await this.setState({loading: false});
+                console.log(this.state);
             } else {
                 document.getElementsByClassName('error-content')[0].innerHTML = 'Unknown error. Check the fields and try again.';
                 document.getElementsByClassName('alert-error')[0].setAttribute('style', 'display: inline;');
@@ -122,32 +116,39 @@ class PuzzleForm extends React.Component {
         }
     }
 
-    difficultyUp() {
-        if(this.state.difficultyByCreator + 1 <= 5){
-            this.setState(prevState => ({difficultyByCreator: prevState.difficultyByCreator+1}));
+    async difficultyUp() {
+        if(this.state['puzzle']['difficultyByCreator'] + 1 <= 5){
+            await this.setState(prevState => ({
+                puzzle: {...this.state['puzzle'], difficultyByCreator: prevState['puzzle']['difficultyByCreator'] + 1}
+            }));
         }
     }
 
-    difficultyDown() {
-        if(parseInt(this.state.difficultyByCreator) - 1 > 0){
-            this.setState(prevState => ({difficultyByCreator: prevState.difficultyByCreator-1}));
+    async difficultyDown() {
+        if(parseInt(this.state['puzzle']['difficultyByCreator']) - 1 > 0){
+            await this.setState(prevState => ({
+                puzzle: {...this.state['puzzle'], difficultyByCreator: prevState['puzzle']['difficultyByCreator'] - 1}
+            }));
         }
     }
 
     async addNewStage(){
-        if(this.state.stagesCount + 1 > 30){
+        if(this.state['puzzle']['stagesCount'] + 1 > 30){
             alert("No more than 30 stages.");
             return;
         }
 
-        await this.setState({
-            stages: [...this.state.stages, {
-                level: this.state.stagesCount,
-                description: 'Description of stage ' + this.state.stagesCount + '...'
-            }]
-        });
+        let puzzle = this.state['puzzle'];
+        let stages = this.state['puzzle']['stages'];
 
-        await this.setState({stagesCount: this.state.stagesCount + 1});
+        stages = [...stages, {
+            level: puzzle['stagesCount'],
+            description: 'Description of stage ' + puzzle['stagesCount'] + '...'
+        }];
+        puzzle['stages'] = stages;
+        puzzle['stagesCount'] += 1;
+        await this.setState({puzzle: puzzle});
+        console.log(this.state);
     }
 
     findInAttr(array, attr, value) {
@@ -163,57 +164,65 @@ class PuzzleForm extends React.Component {
         let r = confirm('Press OK to confirm.');
 
         if(r === true){
-            let array = [...this.state.stages];
+            let array = [...this.state['puzzle']['stages']];
             let index = this.findInAttr(array, 'level', child.props.level);
             if (index !== -1) {
                 array.splice(index, 1);
-                this.setState({stages: array});
+                let puzzle = this.state['puzzle'];
+                puzzle['stages'] = array;
+                puzzle['stagesCount'] -= 1;
+                this.setState({puzzle: puzzle});
             }
-
-            this.setState({ stagesCount: this.state.stagesCount - 1 });
         }
     }
 
     updateDescription(child, data) {
-        let array = [...this.state.stages];
+        let puzzle = this.state['puzzle'];
+        let array = [...puzzle['stages']];
         array[child.props.level].description = data;
-        this.setState({ stages: array });
+        puzzle['stages'] = array;
+        this.setState({ puzzle: puzzle });
     }
 
     setCode(child, code) {
-        let array = [...this.state.stages];
+        let puzzle = this.state['puzzle'];
+        let array = [...puzzle['stages']];
         array[child.props.level].code = code;
-        this.setState({ stages: array });
+        puzzle['stages'] = array;
+        this.setState({ puzzle: puzzle });
     }
 
     setIsPrivate(e){
-        this.setState({ isPrivate: e.target.checked });
+        let puzzle = this.state['puzzle'];
+        puzzle['isPrivate'] = e.target.checked;
+        this.setState({ puzzle: puzzle });
     }
 
     async validateForm() {
         let valid = true;
         let errorMsg = '';
+        const puzzle = this.state['puzzle'];
 
-        if(this.state.name === '') {
+        if(puzzle['name'] === '') {
             errorMsg += 'You should specify a name' + '<br/>';
             valid = false;
-        } else if(this.state.name.length < 1) {
+        } else if(puzzle['name'].length < 1) {
             errorMsg += 'The name should have at least 1 character.' + '<br/>';
             valid = false;
         }
 
-        if(this.state.tags.length < 1) {
+        if(puzzle['tags'] == null || puzzle['tags'].length < 1) {
             errorMsg += 'Specify at least one tag' + '<br/>';
             valid = false;
         }
 
-        if(this.state.description.length < 20) {
+        if(puzzle['description'].length < 20) {
             errorMsg += 'Puzzle description and stage description should have at least 20 chars' + '<br/>';
             valid = false;
         }
 
-        this.state.stages.map((stage, index) => {
-            if(stage.description.length < 10) {
+        puzzle['stages'].map((stage, index) => {
+            if(puzzle['description'].length < 10) {
                 errorMsg += 'Stage ' + index + ' description should have at least 10 characters.' + '<br/>';
                 valid = false;
             }
@@ -240,6 +249,9 @@ class PuzzleForm extends React.Component {
     }
 
     async fetchUpdatePuzzle() {
+        const urlParams = new URLSearchParams(window.location.search);
+        this.puzzleId = urlParams.get('puzzleId');
+
         let headers = new Headers();
         headers.append('Content-Type', 'application/json');
 
@@ -248,7 +260,7 @@ class PuzzleForm extends React.Component {
             mode: 'cors',
             headers: headers,
             credentials: "include",
-            body: JSON.stringify(this.state)
+            body: JSON.stringify(this.state['puzzle'])
         };
 
         try {
@@ -281,8 +293,10 @@ class PuzzleForm extends React.Component {
             mode: 'cors',
             headers: headers,
             credentials: "include",
-            body: JSON.stringify(this.state)
+            body: JSON.stringify(this.state['puzzle'])
         };
+
+        console.log(this.state['puzzle']);
 
         try {
             let response = await fetch(config.API_URL + '/api/puzzles/create', request);
@@ -318,12 +332,14 @@ class PuzzleForm extends React.Component {
         return (
             <form className="form" id={"create-puzzle-form"}>
                 <fieldset className="form-group">
-                    <label >Name:</label>
+                    <label>Name:</label>
                     <input
                         type="text" placeholder="puzzle name..."
                         className="form-control"
-                        value={this.state.name}
-                        onChange={(e) => this.setState({ name: e.target.value }) }
+                        value={this.state['puzzle']['name']}
+                        onChange={(e) => this.setState({
+                            puzzle: {...this.state['puzzle'], name: e.target.value}
+                        })}
                     />
                 </fieldset>
 
@@ -340,13 +356,13 @@ class PuzzleForm extends React.Component {
                     <div className={"btn btn-success btn-ghost minus"}>Difficulty</div>
                     <div className="number-input">
                         <div onClick={this.difficultyDown} className="btn btn-success btn-ghost minus">-</div>
-                        <div className="quantity btn btn-success btn-ghost"> {this.state.difficultyByCreator} </div>
+                        <div className="quantity btn btn-success btn-ghost"> {this.state['puzzle']['difficultyByCreator']} </div>
                         <div onClick={this.difficultyUp} className="btn btn-success btn-ghost minus plus">+</div>
                     </div>
                 </label>
 
 
-                <div className="form-tags-group" >
+                <div className="form-tags-group">
                     <select className="tags-multiple-select" name="states[]" multiple="multiple">
                         <option value="General">General</option>
                         <option value="CyberSecurity">CyberSecurity</option>
@@ -401,21 +417,23 @@ class PuzzleForm extends React.Component {
 
                 <div className={"puzzle-description"}>
                     <CKEditor
-                        data={this.state.description}
-                        onInit={ editor => {
+                        data={this.state['puzzle']['description']}
+                        onInit={editor => {
                             // You can store the "editor" and use when it is needed.
-                        } }
+                        }}
 
-                        onChange={ ( event, editor ) => {
+                        onChange={(event, editor) => {
                             const data = editor.getData();
-                            this.setState({ description: data });
-                        } }
-                        onBlur={ editor => {
+                            this.setState({
+                                puzzle: {...this.state['puzzle'], description: data}
+                            });
+                        }}
+                        onBlur={editor => {
 
-                        } }
-                        onFocus={ editor => {
+                        }}
+                        onFocus={editor => {
 
-                        } }
+                        }}
                     />
                 </div>
 
@@ -423,14 +441,14 @@ class PuzzleForm extends React.Component {
                 <div className={"stages-cards"}>
                     <div>
                         {
-                            this.state.stages.map((stage, index) => {
+                            this.state['puzzle']['stages'].map((stage, index) => {
                                 let isLast = false;
 
-                                if(index === this.state.stagesCount - 1 && index !== 0){
+                                if (index === this.state['puzzle']['stagesCount'] - 1 && index !== 0) {
                                     isLast = true;
                                 }
 
-                                return(
+                                return (
                                     <Stage
                                         key={stage.level}
                                         startDescription={stage.description}
@@ -445,11 +463,13 @@ class PuzzleForm extends React.Component {
                             })
                         }
                     </div>
-                    <div className={"btn btn-primary btn-ghost btn-block btn-add-scene"} onClick={this.addNewStage}>Add stage</div>
+                    <div className={"btn btn-primary btn-ghost btn-block btn-add-scene"}
+                         onClick={this.addNewStage}>Add stage
+                    </div>
                 </div>
 
-                <div className="alert alert-error" style={{ display: 'none' }} >
-                    <div className={"error-content"} >Error message</div>
+                <div className="alert alert-error" style={{display: 'none'}}>
+                    <div className={"error-content"}>Error message</div>
                     {'\u00A0'} <a onClick={this.closeError}>x</a>
                 </div>
 
@@ -457,64 +477,65 @@ class PuzzleForm extends React.Component {
                     type={"button"}
                     onClick={this.validateForm}
                     className={"btn btn-success btn-block btn-save-puzzle"}
-                >Save puzzle</button>
+                >Save puzzle
+                </button>
 
 
-                { /*language=SCSS*/ }
+                { /*language=SCSS*/}
                 <style jsx>{`
                   .alert {
-                        display: flex;
-                        flex-direction: row;
-                        text-align: center;
-                        margin-top: 2rem;
-                        margin-bottom: 0;
-                        justify-content: center;
+                    display: flex;
+                    flex-direction: row;
+                    text-align: center;
+                    margin-top: 2rem;
+                    margin-bottom: 0;
+                    justify-content: center;
                   }
-                
+
                   .form {
-                       display: flex;
-                       flex-direction: column;
-                       width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
                   }
-                  
+
                   fieldset {
                     margin: auto;
                   }
 
                   .puzzle-description {
-                      max-width: 100%;
-                      margin-top: 2rem;
+                    max-width: 100%;
+                    margin-top: 2rem;
                   }
-                  
+
                   .form-tags-group {
                     margin-left: auto;
                     margin-right: auto;
                     margin-top: 2rem;
                     width: 100%;
                   }
-                  
+
                   .tags-multiple-select {
                     width: 100%;
                   }
-                  
+
                   input[type=number]::-webkit-inner-spin-button,
                   input[type=number]::-webkit-outer-spin-button {
-                   -webkit-appearance: none;
+                    -webkit-appearance: none;
                   }
 
                   .number-input {
                     border: 1px solid #ddd;
                     display: inline-flex;
-                    
+
                   }
 
                   .minus, .plus {
-                   padding: .3rem .7rem;
-                   font-size: 1rem;
+                    padding: .3rem .7rem;
+                    font-size: 1rem;
                   }
 
                   .number-input > input {
-                   text-align: center;
+                    text-align: center;
                   }
 
                   .quantity {
@@ -522,37 +543,37 @@ class PuzzleForm extends React.Component {
                     cursor: auto;
                   }
 
-                  .btn-save-puzzle{
+                  .btn-save-puzzle {
                     margin-top: 2rem;
                   }
 
                   .stages-cards {
-                      margin-top: 20px;
+                    margin-top: 20px;
                   }
-                  
-                  .btn-add-scene{
-                      margin-top: 1rem;
+
+                  .btn-add-scene {
+                    margin-top: 1rem;
                   }
-                  
+
                   .is-private {
-                      margin-top: 2rem;
-                      margin-left: auto;
-                      margin-right: auto;
-                      cursor: auto;
+                    margin-top: 2rem;
+                    margin-left: auto;
+                    margin-right: auto;
+                    cursor: auto;
                   }
-                  
+
                   .is-private > input {
-                      cursor: pointer;
+                    cursor: pointer;
                   }
-                 
+
                   .difficulty {
-                      margin-top: 1rem;
-                      margin-left: auto;
-                      margin-right: auto;
+                    margin-top: 1rem;
+                    margin-left: auto;
+                    margin-right: auto;
                   }
-                  
+
                   .difficulty > div {
-                      cursor: auto;
+                    cursor: auto;
                   }
                 `}</style>
             </form>
