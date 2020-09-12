@@ -2,14 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker/nginx/sites/react_80_nossl.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker/nginx/sites/symfony_nossl.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/symfony/config/packages/prod/deprecations.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/symfony/migrations/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/symfony/tests/bootstrap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/89715e81-bc9c-4fca-9f4c-1a8fd517663e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/89715e81-bc9c-4fca-9f4c-1a8fd517663e.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/nginx/sites/symfony.conf" beforeDir="false" afterPath="$PROJECT_DIR$/docker/nginx/sites/symfony.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/Footer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/PuzzleForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/PuzzleForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reactjs/components/TopMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/components/TopMenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony/src/Controller/PuzzleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/src/Controller/PuzzleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/nginx/nginx.conf" beforeDir="false" afterPath="$PROJECT_DIR$/docker/nginx/nginx.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/nginx/sites/react_443.conf" beforeDir="false" afterPath="$PROJECT_DIR$/docker/nginx/sites/react_443_ssl.conf.example" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/nginx/sites/react_80.conf" beforeDir="false" afterPath="$PROJECT_DIR$/docker/nginx/sites/react_80_ssl.conf.example" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/nginx/sites/symfony.conf" beforeDir="false" afterPath="$PROJECT_DIR$/docker/nginx/sites/symfony_ssl.conf.example" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reactjs/configs/keys.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/configs/keys.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/composer.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,7 +215,7 @@
     <property name="go.vendoring.notification.had.been.shown" value="true" />
     <property name="javascript.nodejs.core.library.configured.version" value="8.10.0" />
     <property name="last.edited.regexp" value="iondods2onoda@s.com" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/reactjs/static" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -221,6 +228,7 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -252,6 +260,7 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="project-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -535,11 +544,15 @@
       <workItem from="1589514446217" duration="8741000" />
       <workItem from="1589530695972" duration="11462000" />
       <workItem from="1589626733454" duration="22314000" />
+      <workItem from="1599674565449" duration="69000" />
+      <workItem from="1599906856054" duration="89000" />
+      <workItem from="1599907015596" duration="954000" />
+      <workItem from="1599914773093" duration="5865000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -560,77 +573,33 @@
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
-    <state x="301" y="8" width="754" height="668" key="#Illuminated_Cloud" timestamp="1589514542890">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state x="278" y="33" width="806" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599918637274">
+      <screen x="0" y="0" width="1366" height="740" />
     </state>
-    <state x="301" y="8" width="754" height="668" key="#Illuminated_Cloud/0.0.1366.768@0.0.1366.768" timestamp="1589514542890" />
-    <state x="276" y="18" width="804" height="667" key="#Inspections" timestamp="1582545076235">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state x="278" y="33" width="806" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.740@0.0.1366.740" timestamp="1599918637274" />
+    <state x="380" y="175" width="602" height="400" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1599919971482">
+      <screen x="0" y="0" width="1366" height="740" />
     </state>
-    <state x="276" y="18" width="804" height="667" key="#Inspections/0.0.1366.768@0.0.1366.768" timestamp="1582545076235" />
-    <state x="274" y="0" width="804" height="667" key="#SQL_Dialects" timestamp="1583351466940">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state x="380" y="175" width="602" height="400" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.740@0.0.1366.740" timestamp="1599919971482" />
+    <state x="452" y="286" width="458" height="322" key="ComposerInitDialogKey" timestamp="1599916846041">
+      <screen x="0" y="0" width="1366" height="740" />
     </state>
-    <state x="274" y="0" width="804" height="667" key="#SQL_Dialects/0.0.1366.768@0.0.1366.768" timestamp="1583351466939" />
-    <state x="255" y="23" width="798" height="657" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589718190561">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state x="452" y="286" width="458" height="322" key="ComposerInitDialogKey/0.0.1366.740@0.0.1366.740" timestamp="1599916846041" />
+    <state x="464" y="191" width="430" height="519" key="FileChooserDialogImpl" timestamp="1599916131752">
+      <screen x="0" y="0" width="1366" height="740" />
     </state>
-    <state x="255" y="23" width="798" height="657" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.768@0.0.1366.768" timestamp="1589718190561" />
-    <state x="412" y="158" width="531" height="386" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1587295729170">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state x="464" y="191" width="430" height="519" key="FileChooserDialogImpl/0.0.1366.740@0.0.1366.740" timestamp="1599916131752" />
+    <state x="565" y="218" width="427" height="313" key="cloudConfig.SelfSettingsDialog" timestamp="1599917240465">
+      <screen x="0" y="0" width="1366" height="740" />
     </state>
-    <state x="412" y="158" width="531" height="386" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.768@0.0.1366.768" timestamp="1587295729170" />
-    <state x="408" y="58" width="528" height="474" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1587996351467">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state x="565" y="218" width="427" height="313" key="cloudConfig.SelfSettingsDialog/0.0.1366.740@0.0.1366.740" timestamp="1599917240465" />
+    <state x="390" y="22" width="587" height="700" key="find.popup" timestamp="1599920513372">
+      <screen x="0" y="0" width="1366" height="740" />
     </state>
-    <state x="408" y="58" width="528" height="474" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.768@0.0.1366.768" timestamp="1587996351467" />
-    <state x="458" y="77" width="428" height="503" key="FileChooserDialogImpl" timestamp="1583350689784">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state x="390" y="22" width="587" height="700" key="find.popup/0.0.1366.740@0.0.1366.740" timestamp="1599920513372" />
+    <state x="379" y="241" width="546" height="335" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1599920409123">
+      <screen x="0" y="0" width="1366" height="740" />
     </state>
-    <state x="458" y="77" width="428" height="503" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1583350689784" />
-    <state width="900" height="181" key="GridCell.Tab.0.bottom" timestamp="1583351036706">
-      <screen x="0" y="0" width="1366" height="768" />
-    </state>
-    <state width="900" height="181" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1583351036706" />
-    <state width="900" height="181" key="GridCell.Tab.0.center" timestamp="1583351036704">
-      <screen x="0" y="0" width="1366" height="768" />
-    </state>
-    <state width="900" height="181" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1583351036704" />
-    <state width="900" height="181" key="GridCell.Tab.0.left" timestamp="1583351036703">
-      <screen x="0" y="0" width="1366" height="768" />
-    </state>
-    <state width="900" height="181" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1583351036703" />
-    <state width="900" height="181" key="GridCell.Tab.0.right" timestamp="1583351036705">
-      <screen x="0" y="0" width="1366" height="768" />
-    </state>
-    <state width="900" height="181" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1583351036705" />
-    <state x="178" y="-17" key="SettingsEditor" timestamp="1589514731679">
-      <screen x="0" y="0" width="1366" height="768" />
-    </state>
-    <state x="178" y="-17" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1589514731679" />
-    <state x="558" y="150" width="336" height="239" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1583534393985">
-      <screen x="0" y="0" width="1366" height="768" />
-    </state>
-    <state x="558" y="150" width="336" height="239" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1366.768@0.0.1366.768" timestamp="1583534393985" />
-    <state x="386" y="0" width="412" height="606" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1584371890253">
-      <screen x="0" y="0" width="1366" height="768" />
-    </state>
-    <state x="386" y="0" width="412" height="606" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1366.768@0.0.1366.768" timestamp="1584371890253" />
-    <state x="361" y="-10" width="789" height="768" key="find.popup" timestamp="1583532163434">
-      <screen x="0" y="0" width="1366" height="768" />
-    </state>
-    <state x="361" y="-10" width="789" height="768" key="find.popup/0.0.1366.768@0.0.1366.768" timestamp="1583532163434" />
-    <state x="347" y="167" width="672" height="708" key="run.anything.popup" timestamp="1585488281248">
-      <screen x="0" y="0" width="1366" height="768" />
-    </state>
-    <state x="347" y="167" width="672" height="708" key="run.anything.popup/0.0.1366.768@0.0.1366.768" timestamp="1585488281248" />
-    <state x="346" y="59" width="672" height="709" key="search.everywhere.popup" timestamp="1586875236030">
-      <screen x="0" y="0" width="1366" height="768" />
-    </state>
-    <state x="346" y="59" width="672" height="709" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1586875236030" />
-    <state x="402" y="162" width="544" height="162" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1583394703449">
-      <screen x="0" y="0" width="1366" height="768" />
-    </state>
-    <state x="402" y="162" width="544" height="162" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.0.1366.768@0.0.1366.768" timestamp="1583394703449" />
+    <state x="379" y="241" width="546" height="335" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.0.1366.740@0.0.1366.740" timestamp="1599920409123" />
   </component>
 </project>

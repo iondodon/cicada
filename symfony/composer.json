@@ -17,7 +17,6 @@
         "symfony/form": "4.2.*",
         "symfony/framework-bundle": "4.2.*",
         "symfony/http-foundation": "4.2.*",
-        "symfony/orm-pack": "^1.0",
         "symfony/phpunit-bridge": "4.2.*",
         "symfony/routing": "4.2.*",
         "symfony/security": "4.2.*",
@@ -29,7 +28,8 @@
         "symfony/swiftmailer-bundle": "^3.1",
         "symfony/templating": "4.2.*",
         "symfony/twig-bundle": "4.2.*",
-        "symfony/yaml": "4.2.*"
+        "symfony/yaml": "4.2.*",
+        "doctrine/doctrine-migrations-bundle": "2"
     },
     "require-dev": {
         "doctrine/doctrine-fixtures-bundle": "^3.0",

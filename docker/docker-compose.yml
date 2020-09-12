@@ -114,8 +114,8 @@ services:
         - ${FULLAPP_CODE_PATH_HOST}:${APP_CODE_PATH_CONTAINER}${APP_CODE_CONTAINER_FLAG}
       extra_hosts:
         - "dockerhost:${DOCKER_HOST_IP}"
-      ports:
-        - "${WORKSPACE_SSH_PORT}:22"
+#      ports:
+#        - "${WORKSPACE_SSH_PORT}:22"
       tty: true
       environment:
         - PHP_IDE_CONFIG=${PHP_IDE_CONFIG}
@@ -171,8 +171,8 @@ services:
       volumes:
         - ./php-fpm/php${PHP_VERSION}.ini:/usr/local/etc/php/php.ini
         - ${SYMFONY_CODE_PATH_HOST}:${APP_CODE_PATH_CONTAINER}${APP_CODE_CONTAINER_FLAG}
-      expose:
-        - "9000"
+#      expose:
+#        - "9000"
       extra_hosts:
         - "dockerhost:${DOCKER_HOST_IP}"
       environment:
@@ -195,8 +195,8 @@ services:
         - ${REACT_CODE_PATH_HOST}:${APP_CODE_PATH_CONTAINER}${APP_CODE_CONTAINER_FLAG}
       extra_hosts:
         - "dockerhost:${DOCKER_HOST_IP}"
-      ports:
-        - "${NODE_REACT_PORT}:3000"
+#      ports:
+#        - "${NODE_REACT_PORT}:3000"
       tty: true
       environment:
         - DOCKER_HOST=tcp://docker-in-docker:2375
@@ -266,8 +266,8 @@ services:
       volumes:
         - ${DATA_PATH_HOST}/mysql:/var/lib/mysql
         - ${MYSQL_ENTRYPOINT_INITDB}:/docker-entrypoint-initdb.d
-#      ports:
-#        - "${MYSQL_PORT}:3306"
+      ports:
+        - "${MYSQL_PORT}:3306"
       networks:
         - backend
 
