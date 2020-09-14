@@ -2,21 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f23bc049-24ff-4b0b-844b-938497fe39d3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/docker/nginx/sites/react_80_nossl.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker/nginx/sites/symfony_nossl.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/symfony/config/packages/prod/deprecations.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/symfony/migrations/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/symfony/tests/bootstrap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/89715e81-bc9c-4fca-9f4c-1a8fd517663e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/89715e81-bc9c-4fca-9f4c-1a8fd517663e.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/nginx/nginx.conf" beforeDir="false" afterPath="$PROJECT_DIR$/docker/nginx/nginx.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/nginx/sites/react_443.conf" beforeDir="false" afterPath="$PROJECT_DIR$/docker/nginx/sites/react_443_ssl.conf.example" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/nginx/sites/react_80.conf" beforeDir="false" afterPath="$PROJECT_DIR$/docker/nginx/sites/react_80_ssl.conf.example" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/nginx/sites/symfony.conf" beforeDir="false" afterPath="$PROJECT_DIR$/docker/nginx/sites/symfony_ssl.conf.example" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/nginx/sites/react_80_nossl.conf" beforeDir="false" afterPath="$PROJECT_DIR$/docker/nginx/sites/react_80_nossl.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/nginx/sites/symfony_nossl.conf" beforeDir="false" afterPath="$PROJECT_DIR$/docker/nginx/sites/symfony_nossl.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reactjs/configs/keys.js" beforeDir="false" afterPath="$PROJECT_DIR$/reactjs/configs/keys.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/symfony/composer.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +29,9 @@
   <component name="GOROOT" path="$USER_HOME$/go/sdk/go1.12.5" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="2" />
   </component>
   <component name="IlluminatedCloudWorkspaceSettings">
     <option name="projectWorkspaceSettings">
@@ -226,7 +220,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="zielu.svntoolbox.prj.config" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -547,7 +541,9 @@
       <workItem from="1599674565449" duration="69000" />
       <workItem from="1599906856054" duration="89000" />
       <workItem from="1599907015596" duration="954000" />
-      <workItem from="1599914773093" duration="5865000" />
+      <workItem from="1599914773093" duration="6107000" />
+      <workItem from="1600082269101" duration="5774000" />
+      <workItem from="1600092571545" duration="4461000" />
     </task>
     <servers />
   </component>
@@ -573,10 +569,10 @@
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
-    <state x="278" y="33" width="806" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599918637274">
+    <state x="278" y="33" width="806" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600090442385">
       <screen x="0" y="0" width="1366" height="740" />
     </state>
-    <state x="278" y="33" width="806" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.740@0.0.1366.740" timestamp="1599918637274" />
+    <state x="278" y="33" width="806" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.740@0.0.1366.740" timestamp="1600090442385" />
     <state x="380" y="175" width="602" height="400" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1599919971482">
       <screen x="0" y="0" width="1366" height="740" />
     </state>
@@ -589,14 +585,18 @@
       <screen x="0" y="0" width="1366" height="740" />
     </state>
     <state x="464" y="191" width="430" height="519" key="FileChooserDialogImpl/0.0.1366.740@0.0.1366.740" timestamp="1599916131752" />
+    <state x="95" y="3" width="992" height="737" key="SettingsEditor" timestamp="1600092768704">
+      <screen x="0" y="0" width="1366" height="740" />
+    </state>
+    <state x="95" y="3" width="992" height="737" key="SettingsEditor/0.0.1366.740@0.0.1366.740" timestamp="1600092768704" />
     <state x="565" y="218" width="427" height="313" key="cloudConfig.SelfSettingsDialog" timestamp="1599917240465">
       <screen x="0" y="0" width="1366" height="740" />
     </state>
     <state x="565" y="218" width="427" height="313" key="cloudConfig.SelfSettingsDialog/0.0.1366.740@0.0.1366.740" timestamp="1599917240465" />
-    <state x="390" y="22" width="587" height="700" key="find.popup" timestamp="1599920513372">
+    <state x="390" y="22" width="587" height="700" key="find.popup" timestamp="1600095818772">
       <screen x="0" y="0" width="1366" height="740" />
     </state>
-    <state x="390" y="22" width="587" height="700" key="find.popup/0.0.1366.740@0.0.1366.740" timestamp="1599920513372" />
+    <state x="390" y="22" width="587" height="700" key="find.popup/0.0.1366.740@0.0.1366.740" timestamp="1600095818772" />
     <state x="379" y="241" width="546" height="335" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1599920409123">
       <screen x="0" y="0" width="1366" height="740" />
     </state>
